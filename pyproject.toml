@@ -1,0 +1,21 @@
+[project]
+name = "motrixsim-docs"
+description = "A high-performance physics simulation engine designed for multibody dynamics and robotics simulation."
+authors = [
+    { name = "Motphys", email = "developers@motphys.com" },
+]
+dependencies = [
+    "motrixsim",
+]
+requires-python = "==3.10.*"
+readme = "README.md"
+license = "Apache-2.0"
+dynamic = ["version"]
+
+[project.optional-dependencies]
+docs = [
+    "motrixsim[docs]",
+]
+examples = [
+    "motrixsim[demo,mujoco_demo]",
+]
