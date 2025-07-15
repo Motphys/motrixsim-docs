@@ -23,33 +23,33 @@ MotrixSim 是一个高性能的物理仿真引擎，专为多体动力学和机�
 
 <div class="video-grid">
   <div class="video-item">
-    <video controls loop autoplay style="width: 100%;">
-        <source src="_static/videos/t1.webm" type="video/webm">
+    <video loop muted playsinline autoplay style="width: 100%;">
+        <source src="_static/videos/t1.mp4" type="video/mp4">
     </video>
   </div>
   <div class="video-item">
-    <video controls loop autoplay style="width: 100%;">
-        <source src="_static/videos/gyroscope_motrixsim.webm" type="video/webm">
+    <video loop muted playsinline autoplay style="width: 100%;">
+        <source src="_static/videos/gyroscope_motrixsim.mp4" type="video/mp4">
     </video>
   </div>
   <div class="video-item">
-    <video controls loop autoplay style="width: 100%;">
-        <source src="_static/videos/go1.webm" type="video/webm">
+    <video loop muted playsinline autoplay style="width: 100%;">
+        <source src="_static/videos/go1.mp4" type="video/mp4">
     </video>
   </div>
   <div class="video-item">
-    <video controls loop autoplay style="width: 100%;">
-        <source src="_static/videos/arm.webm" type="video/webm">
+    <video loop muted playsinline autoplay style="width: 100%;">
+        <source src="_static/videos/arm.mp4" type="video/mp4">
     </video>
   </div>
   <div class="video-item">
-    <video controls loop autoplay style="width: 100%;">
-        <source src="_static/videos/gyro_no_gravity.webm" type="video/webm">
+    <video loop muted playsinline autoplay style="width: 100%;">
+        <source src="_static/videos/gyro_no_gravity.mp4" type="video/mp4">
     </video>
   </div>
   <div class="video-item">
-    <video controls loop autoplay style="width: 100%;">
-        <source src="_static/videos/store_motrixsim.webm" type="video/webm">
+    <video loop muted playsinline autoplay style="width: 100%;">
+        <source src="_static/videos/store_motrixsim.mp4" type="video/mp4">
     </video>
   </div>
 

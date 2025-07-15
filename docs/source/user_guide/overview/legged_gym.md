@@ -100,14 +100,14 @@ poetry run python legged_gym/scripts/t1_play.py
 
 <div style="display: flex; gap: 20px; margin: 20px 0;">
   <div style="flex: 1;">
-    <video controls loop autoplay style="width: 100%;">
-      <source src="../../_static/videos/go1.webm" type="video/webm">
+    <video playsinline muted loop autoplay style="width: 100%;">
+      <source src="../../_static/videos/go1.mp4" type="video/mp4">
     </video>
     <p style="text-align: center; font-weight: bold; margin-top: 10px;">Go1</p>
   </div>
   <div style="flex: 1;">
-    <video controls loop autoplay style="width: 100%;">
-      <source src="../../_static/videos/t1.webm" type="video/webm">
+    <video playsinline muted loop autoplay style="width: 100%;">
+      <source src="../../_static/videos/t1.mp4" type="video/mp4">
     </video>
     <p style="text-align: center; font-weight: bold; margin-top: 10px;">T1</p>
   </div>

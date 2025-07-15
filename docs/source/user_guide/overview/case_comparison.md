@@ -12,14 +12,14 @@
 
 <div style="display: flex; gap: 20px; margin: 20px 0;">
   <div style="flex: 1;">
-    <video controls loop autoplay style="width: 100%;">
-      <source src="../../_static/videos/gyroscope_motrixsim.webm" type="video/webm">
+    <video playsinline loop autoplay muted style="width: 100%;">
+      <source src="../../_static/videos/gyroscope_motrixsim.mp4" type="video/mp4">
     </video>
     <p style="text-align: center; font-weight: bold; margin-top: 10px;">MotrixSim</p>
   </div>
   <div style="flex: 1;">
-    <video controls loop autoplay style="width: 100%;">
-      <source src="../../_static/videos/gyroscope_mujoco.webm" type="video/webm">
+    <video playsinline loop autoplay muted style="width: 100%;">
+      <source src="../../_static/videos/gyroscope_mujoco.mp4" type="video/mp4">
     </video>
     <p style="text-align: center; font-weight: bold; margin-top: 10px;">MuJoCo</p>
   </div>
@@ -119,14 +119,14 @@ poetry run python examples/mujoco/gyroscope.py
 
 <div style="display: flex; gap: 20px; margin: 20px 0;">
   <div style="flex: 1;">
-    <video controls loop autoplay style="width: 100%;">
-      <source src="../../_static/videos/newton_cradle_motrixsim.webm" type="video/webm">
+    <video playsinline loop autoplay muted style="width: 100%;">
+      <source src="../../_static/videos/newton_cradle_motrixsim.mp4" type="video/mp4">
     </video>
     <p style="text-align: center; font-weight: bold; margin-top: 10px;">MotrixSim</p>
   </div>
   <div style="flex: 1;">
-    <video controls loop autoplay style="width: 100%;">
-      <source src="../../_static/videos/newton_cradle_mujoco.webm" type="video/webm">
+    <video playsinline loop autoplay muted style="width: 100%;">
+      <source src="../../_static/videos/newton_cradle_mujoco.mp4" type="video/mp4">
     </video>
     <p style="text-align: center; font-weight: bold; margin-top: 10px;">MuJoCo</p>
   </div>
@@ -235,14 +235,14 @@ poetry run python examples/mujoco/newton_cradle.py
 
 <div style="display: flex; gap: 20px; margin: 20px 0;">
   <div style="flex: 1;">
-    <video controls loop autoplay style="width: 100%;">
-      <source src="../../_static/videos/spot_motrixsim.webm" type="video/webm">
+    <video playsinline loop autoplay muted style="width: 100%;">
+      <source src="../../_static/videos/spot_motrixsim.mp4" type="video/mp4">
     </video>
     <p style="text-align: center; font-weight: bold; margin-top: 10px;">MotrixSim</p>
   </div>
   <div style="flex: 1;">
-    <video controls loop autoplay style="width: 100%;">
-      <source src="../../_static/videos/spot_mujoco.webm" type="video/webm">
+    <video playsinline loop autoplay muted style="width: 100%;">
+      <source src="../../_static/videos/spot_mujoco.mp4" type="video/mp4">
     </video>
     <p style="text-align: center; font-weight: bold; margin-top: 10px;">MuJoCo</p>
   </div>
@@ -344,14 +344,14 @@ poetry run python -m mujoco.viewer --mjcf=examples/assets/boston_dynamics_spot/s
 
 <div style="display: flex; gap: 20px; margin: 20px 0;">
   <div style="flex: 1;">
-    <video controls loop autoplay style="width: 100%;">
-      <source src="../../_static/videos/store_motrixsim.webm" type="video/webm">
+    <video playsinline loop autoplay muted style="width: 100%;">
+      <source src="../../_static/videos/store_motrixsim.mp4" type="video/mp4">
     </video>
     <p style="text-align: center; font-weight: bold; margin-top: 10px;">MotrixSim</p>
   </div>
   <div style="flex: 1;">
-    <video controls loop autoplay style="width: 100%;">
-      <source src="../../_static/videos/store_mujoco.webm" type="video/webm">
+    <video playsinline loop autoplay muted style="width: 100%;">
+      <source src="../../_static/videos/store_mujoco.mp4" type="video/mp4">
     </video>
     <p style="text-align: center; font-weight: bold; margin-top: 10px;">MuJoCo</p>
   </div>
