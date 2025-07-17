@@ -4,6 +4,24 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.10"
+  jobs:
+    post_checkout:
+      - mkdir -p tools
+      # Download and uncompress the binary
+      # https://git-lfs.github.com/
+      - wget https://github.com/git-lfs/git-lfs/releases/download/v3.1.4/git-lfs-linux-amd64-v3.1.4.tar.gz -P tools
+      - tar xvfz ./tools/git-lfs-linux-amd64-v3.1.4.tar.gz -C tools
+      # Modify LFS config paths to point where git-lfs binary was downloaded
+      - git config filter.lfs.process "`pwd`/tools/git-lfs filter-process"
+      - git config filter.lfs.smudge  "`pwd`/tools/git-lfs smudge -- %f"
+      - git config filter.lfs.clean "`pwd`/tools/git-lfs clean -- %f"
+      # Make LFS available in current repository
+      - ./tools/git-lfs install
+      # Download content from remote
+      - ./tools/git-lfs fetch
+      # Make local files to have the real content on them
+      - ./tools/git-lfs checkout
+      - rm -rf ./tools
 
 sphinx:
   configuration: docs/source/conf.py

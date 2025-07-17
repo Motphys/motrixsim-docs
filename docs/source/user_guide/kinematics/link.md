@@ -28,44 +28,9 @@ MJCF 中的`<worldbody>`不会被视作一个 Link 对象。
 
 您可以通过
 
-::::{tab-set}
-:sync-group: installation-mode
-
-:::{tab-item} 使用 pip
-:sync: pip
-
-```bash
-python examples/link.py
-```
-
-:::
-:::{tab-item} 使用 uv
-:sync: uv
-
-```bash
-uv run examples/link.py
-```
-
-:::
-:::{tab-item} 使用 pdm
-:sync: pdm
-
 ```bash
 pdm run examples/link.py
 ```
-
-:::
-
-:::{tab-item} 使用 poetry
-:sync: poetry
-
-```bash
-poetry run python examples/link.py
-```
-
-:::
-
-::::
 
 来运行一个简单的关于 link api 调用的例子。
 

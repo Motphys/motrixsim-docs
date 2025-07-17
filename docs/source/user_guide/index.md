@@ -14,6 +14,7 @@ getting_started/mjcf
 :caption: 对比与示例
 :maxdepth: 1
 
+overview/environment_setup
 overview/case_comparison
 overview/examples
 overview/legged_gym

@@ -2,47 +2,15 @@
 
 :::{tip}
 模型和代码详见 [MotrixSim Docs](https://github.com/Motphys/motrixsim-docs) 仓库
+
+在运行示例之前，请先参考 {doc}`../overview/environment_setup` 完成环境准备。
 :::
 
 我们提供了一系列示例程序帮助您从零开始掌握 MotrixSim 的使用方法。您可以通过
 
-::::{tab-set}
-:sync-group: installation-mode
-
-:::{tab-item} 使用 pip
-:sync: pip
-
-```bash
-python examples/{example_name}.py
-```
-
-:::
-:::{tab-item} 使用 uv
-:sync: uv
-
-```bash
-uv run examples/{example_name}.py
-```
-
-:::
-:::{tab-item} 使用 pdm
-:sync: pdm
-
 ```bash
 pdm run examples/{example_name}.py
 ```
-
-:::
-:::{tab-item} 使用 poetry
-:sync: poetry
-
-```bash
-poetry run python examples/{example_name}.py
-```
-
-:::
-
-::::
 
 来运行您感兴趣的示例
 

@@ -59,7 +59,7 @@ pdm sync -G examples -v
 
 ### 4. 执行对比与示例
 
-> 参考 [文档](https://motrixsim.readthedocs.io/user_guide/overview/examples.html) 中的说明
+> 参考 [文档](https://motrixsim.readthedocs.io) 中的说明
 
 ## 📬 联系方式
 

@@ -2,6 +2,8 @@
 
 :::{tip}
 模型和代码详见 [MotrixSim Docs](https://github.com/Motphys/motrixsim-docs) 仓库
+
+在运行示例之前，请先参考 {doc}`../overview/environment_setup` 完成环境准备。
 :::
 
 我们在使用范例里，提供了一个简易的、类似 legged gym 的框架，方便用户将 legged gym 里训练的策略 sim2sim 到 MotrixSim 中进行测试。
@@ -12,106 +14,51 @@
 
 您可以通过
 
-::::{tab-set}
-:sync-group: installation-mode
-
-:::{tab-item} 使用 pip
-:sync: pip
-
-```bash
-python legged_gym/scripts/go1_play.py
-```
-
-:::
-
-:::{tab-item} 使用 uv
-:sync: uv
-
-```bash
-uv run legged_gym/scripts/go1_play.py
-```
-
-:::
-
-:::{tab-item} 使用 pdm
-:sync: pdm
-
 ```bash
 pdm run legged_gym/scripts/go1_play.py
 ```
 
-:::
-
-:::{tab-item} 使用 poetry
-:sync: poetry
-
-```bash
-poetry run python legged_gym/scripts/go1_play.py
-```
-
-:::
-
-::::
-
 以及
-
-::::{tab-set}
-:sync-group: installation-mode
-
-:::{tab-item} 使用 pip
-:sync: pip
-
-```bash
-python legged_gym/scripts/t1_play.py
-```
-
-:::
-
-:::{tab-item} 使用 uv
-:sync: uv
-
-```bash
-uv run legged_gym/scripts/t1_play.py
-```
-
-:::
-
-:::{tab-item} 使用 pdm
-:sync: pdm
 
 ```bash
 pdm run legged_gym/scripts/t1_play.py
 ```
 
+来分别运行这两个 Inference 示例，效果如下：
+
+::::{grid} 1 1 2 2
+
+:::{grid-item}
+
+```{video} ../../_static/videos/go1.mp4
+:poster: ../../_static/images/poster/go1.jpg
+:caption: Go1
+:nocontrols:
+:autoplay:
+:playsinline:
+:muted:
+:loop:
+:width: 100%
+```
+
 :::
 
-:::{tab-item} 使用 poetry
-:sync: poetry
+:::{grid-item}
 
-```bash
-poetry run python legged_gym/scripts/t1_play.py
+```{video} ../../_static/videos/t1.mp4
+:poster: ../../_static/images/poster/t1.jpg
+:caption: T1
+:nocontrols:
+:autoplay:
+:playsinline:
+:muted:
+:loop:
+:width: 100%
 ```
 
 :::
 
 ::::
-
-来分别运行这两个 Inference 示例，效果如下：
-
-<div style="display: flex; gap: 20px; margin: 20px 0;">
-  <div style="flex: 1;">
-    <video playsinline muted loop autoplay style="width: 100%;">
-      <source src="../../_static/videos/go1.mp4" type="video/mp4">
-    </video>
-    <p style="text-align: center; font-weight: bold; margin-top: 10px;">Go1</p>
-  </div>
-  <div style="flex: 1;">
-    <video playsinline muted loop autoplay style="width: 100%;">
-      <source src="../../_static/videos/t1.mp4" type="video/mp4">
-    </video>
-    <p style="text-align: center; font-weight: bold; margin-top: 10px;">T1</p>
-  </div>
-</div>
 
 ## Custom Env
 

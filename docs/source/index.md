@@ -2,58 +2,93 @@
 
 MotrixSim 是一个高性能的物理仿真引擎，专为多体动力学和机器人仿真设计。它提供了一个高效、稳定的物理仿真平台，支持广泛的应用场景，包括机器人控制、强化学习、工业仿真等。
 
-<style>
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  margin: 30px 0;
-}
-.video-item {
-  background: #f8f9fa;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-.video-item video {
-  width: 100%;
-  border-radius: 4px;
-}
-</style>
+::::{grid} 1 2 3 3
 
-<div class="video-grid">
-  <div class="video-item">
-    <video loop muted playsinline autoplay style="width: 100%;">
-        <source src="_static/videos/t1.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="video-item">
-    <video loop muted playsinline autoplay style="width: 100%;">
-        <source src="_static/videos/gyroscope_motrixsim.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="video-item">
-    <video loop muted playsinline autoplay style="width: 100%;">
-        <source src="_static/videos/go1.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="video-item">
-    <video loop muted playsinline autoplay style="width: 100%;">
-        <source src="_static/videos/arm.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="video-item">
-    <video loop muted playsinline autoplay style="width: 100%;">
-        <source src="_static/videos/gyro_no_gravity.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="video-item">
-    <video loop muted playsinline autoplay style="width: 100%;">
-        <source src="_static/videos/store_motrixsim.mp4" type="video/mp4">
-    </video>
-  </div>
+:::{grid-item}
 
-</div>
+```{video} _static/videos/t1.mp4
+:poster: _static/images/poster/t1.jpg
+:nocontrols:
+:autoplay:
+:playsinline:
+:muted:
+:loop:
+:width: 100%
+```
+
+:::
+
+:::{grid-item}
+
+```{video} _static/videos/gyroscope_motrixsim.mp4
+:poster: _static/images/poster/gyroscope_motrixsim.jpg
+:nocontrols:
+:autoplay:
+:playsinline:
+:muted:
+:loop:
+:width: 100%
+```
+
+:::
+
+:::{grid-item}
+
+```{video} _static/videos/go1.mp4
+:poster: _static/images/poster/go1.jpg
+:nocontrols:
+:autoplay:
+:playsinline:
+:muted:
+:loop:
+:width: 100%
+```
+
+:::
+
+:::{grid-item}
+
+```{video} _static/videos/arm.mp4
+:poster: _static/images/poster/arm.jpg
+:nocontrols:
+:autoplay:
+:playsinline:
+:muted:
+:loop:
+:width: 100%
+```
+
+:::
+
+:::{grid-item}
+
+```{video} _static/videos/gyro_no_gravity.mp4
+:poster: _static/images/poster/gyro_no_gravity.jpg
+:nocontrols:
+:autoplay:
+:playsinline:
+:muted:
+:loop:
+:width: 100%
+```
+
+:::
+
+:::{grid-item}
+
+```{video} _static/videos/store_motrixsim.mp4
+:poster: _static/images/poster/store_motrixsim.jpg
+:nocontrols:
+:autoplay:
+:playsinline:
+:muted:
+:loop:
+:width: 100%
+```
+
+:::
+
+::::
 
 ## 主要特性
 
