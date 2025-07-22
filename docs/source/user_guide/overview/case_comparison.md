@@ -228,7 +228,7 @@ MotrixSim 在处理大量物体接触时表现稳定，而 MuJoCo 在这个场�
 您可以通过
 
 ```bash
-pdm run python -m mujoco.viewer --file examples/assets/store/scene.xml
+pdm run python -m motrixsim.run --file examples/assets/store/scene.xml
 ```
 
 以及

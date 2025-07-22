@@ -37,13 +37,15 @@
 
 ```bash
 git clone https://github.com/Motphys/motrixsim-docs
+
+cd motrixsim-docs
+
+git lfs pull
 ```
 
 ### 2. 创建虚拟环境
 
 ```bash
-cd motrixsim-docs
-
 pdm use 3.10
 ```
 

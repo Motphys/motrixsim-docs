@@ -21,7 +21,7 @@ pdm run legged_gym/scripts/go1_play.py
 以及
 
 ```bash
-pdm run legged_gym/scripts/t1_play.py
+pdm run legged_gym/scripts/T1_play.py
 ```
 
 来分别运行这两个 Inference 示例，效果如下：
