@@ -1,16 +1,16 @@
-# 💾 数据（SceneData）
+# 💾 Data (SceneData)
 
-在上一章节中，我们了解了 [`SceneModel`](scene_model.md) 用于描述静态的物理模型。本章节将重点介绍 `SceneData`的创建和使用方法。
+In the previous chapter, we learned that [`SceneModel`](scene_model.md) is used to describe the static physical model. This chapter focuses on the creation and usage of `SceneData`.
 
-## 基本概念
+## Basic Concepts
 
-`SceneData` 是 MotrixSim 仿真系统中的**动态数据容器**，存储了系统在运行过程中的所有变化量。这些数据不限于关节的位置和速度，还包括物体在空间中的位置和姿态、传感器的数值等。
+`SceneData` is the **dynamic data container** in the MotrixSim simulation system, storing all variables that change during runtime. These data include not only joint positions and velocities, but also the spatial positions and orientations of objects, sensor values, and more.
 
-`SceneData` 中的状态更新需要通过调用运动学函数来更新系统状态。
+State updates in `SceneData` require calling kinematic functions to update the system state.
 
-## 创建数据
+## Creating Data
 
-### 基本创建
+### Basic Creation
 
 ```{literalinclude} ../../../../examples/empty.py
 :language: python
@@ -19,11 +19,11 @@
 :end-before:  "# end::create_data[]"
 ```
 
-完整的示例代码请参见 [`examples/empty.py`](../../../../examples/empty.py)。
+For the complete example, see [`examples/empty.py`](../../../../examples/empty.py).
 
-### 多数据实例
+### Multiple Data Instances
 
-MotrixSim 支持基于同一个 `SceneModel` 创建多个独立的 `SceneData` 实例，适用于并行实验、状态备份、参数对比等场景。
+MotrixSim supports creating multiple independent `SceneData` instances from the same `SceneModel`, which is useful for parallel experiments, state backups, parameter comparisons, and more.
 
 ```{literalinclude} ../../../../examples/model.py
 :language: python
@@ -32,26 +32,26 @@ MotrixSim 支持基于同一个 `SceneModel` 创建多个独立的 `SceneData` �
 :end-before:  "# end::create_data[]"
 ```
 
-各数据实例之间互不影响，可以独立进行状态更新。
+Each data instance is independent and can be updated separately.
 
-完整的示例代码请参见 [`examples/model.py`](../../../../examples/model.py)。
+For the complete example, see [`examples/model.py`](../../../../examples/model.py).
 
-## 状态访问
+## State Access
 
-### 直接数组访问
+### Direct Array Access
 
-`SceneData` 提供了直接访问系统状态数组的方式：
+`SceneData` provides direct access to system state arrays:
 
 ```python
 pos = data.dof_pos_array
 vel = data.dof_vel_array
 ```
 
-详细的 `SceneData` 属性，请参阅：[**API 快速参考 - SceneData**](../../api_reference/api_quick_reference.md#-scenedata---状态数据)
+For detailed `SceneData` attributes, see: [**API Quick Reference - SceneData**](../../api_reference/api_quick_reference.md#-scenedata---状态数据)
 
-### 通过组件访问
+### Access via Components
 
-结合 `SceneModel` 的 Named Access，可以通过组件对象来访问或设置特定的状态：
+Combined with the Named Access of `SceneModel`, you can access or set specific states through component objects:
 
 ```{literalinclude} ../../../../examples/body.py
 :language: python
@@ -60,10 +60,10 @@ vel = data.dof_vel_array
 :end-before:  "# end::access_body[]"
 ```
 
-完整的示例代码请参见 [`examples/body.py`](../../../../examples/body.py)。
+For the complete example, see [`examples/body.py`](../../../../examples/body.py).
 
 ## API Reference
 
-更多与 SceneData 相关的 API，请参考 [`SceneData API`]
+For more APIs related to SceneData, see [`SceneData API`]
 
 [`SceneData API`]: motrixsim.SceneData
