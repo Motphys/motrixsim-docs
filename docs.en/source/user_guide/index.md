@@ -1,7 +1,7 @@
-# 用户指南
+# User Guide
 
 ```{toctree}
-:caption: 入门指南
+:caption: Getting Started
 :maxdepth: 1
 
 getting_started/installation
@@ -11,7 +11,7 @@ getting_started/mjcf
 ```
 
 ```{toctree}
-:caption: 对比与示例
+:caption: Comparison & Examples
 :maxdepth: 1
 
 overview/environment_setup
@@ -22,7 +22,7 @@ overview/legged_gym
 ```
 
 ```{toctree}
-:caption: 主要功能
+:caption: Main Features
 :maxdepth: 1
 
 main_function/scene_model
@@ -33,7 +33,7 @@ main_function/render
 ```
 
 ```{toctree}
-:caption: 动力学
+:caption: Kinematics
 :maxdepth: 1
 
 kinematics/body
