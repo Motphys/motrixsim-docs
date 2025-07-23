@@ -1,25 +1,25 @@
-# 🎨 渲染器（RenderApp）
+# 🎨 Renderer (RenderApp)
 
-## 启动与加载
+## Launching and Loading
 
-[`RenderApp`] 负责基本的场景渲染。一般的，在代码中创建一个 [`RenderApp`] 实例，通过 [`load_model`] 加载模型后调用 [`render.launch(model)`] 来为渲染器加载模型。
+[`RenderApp`] is responsible for basic scene rendering. Typically, you create a [`RenderApp`] instance in your code, load a model using [`load_model`], and then call [`render.launch(model)`] to load the model into the renderer.
 
-## 同步
+## Synchronization
 
-在主循环中，推荐每经过一次物理模拟 step 之后，调用 [`render.sync(data)`] 进行渲染双向同步更新。
+In the main loop, it is recommended to call [`render.sync(data)`] after each physics simulation step to perform bidirectional synchronization and update rendering.
 
-用户也可按实际需求自行调整 step 与 sync 之间的倍率。
+Users can also adjust the ratio between step and sync according to their needs.
 
-同步的内容包括：
+Synchronization includes:
 
--   向渲染器发送物理模拟数据、自定义 UI 组件、gizmos 绘制等指令
--   从渲染器获取 IO 输入事件。
+-   Sending physics simulation data, custom UI components, gizmo drawing instructions, etc. to the renderer
+-   Receiving IO input events from the renderer
 
-### 自定义 UI 组件
+### Custom UI Components
 
-目前支持按钮 [`add_button`] 与复选框 [`add_toggle`] 两种组件，通过设置回调函数的方式来响应用户的点击事件。
+Currently, two types of components are supported: buttons ([`add_button`]) and toggles ([`add_toggle`]). You can set callback functions to respond to user click events.
 
-用户需要通过 [`render.opt.set_left_panel_vis(True)`] 来显示左侧面板，组件会按添加顺序显示在面板上。
+To display the left panel, call [`render.opt.set_left_panel_vis(True)`]. Components will be displayed in the order they are added.
 
 ```{literalinclude} ../../../../examples/custom_ui.py
 :language: python
@@ -28,15 +28,15 @@
 :end-before:  "# end::custom_ui[]"
 ```
 
-_完整代码见 [examples/custom_ui.py](../../../../examples/custom_ui.py)_
+_See the complete code at [examples/custom_ui.py](../../../../examples/custom_ui.py)_
 
-### Gizmos 绘制
+### Gizmo Drawing
 
-Gizmos 是一种用于辅助调试的图形元素，渲染器提供了一个简单的 API 来绘制 gizmos。
+Gizmos are graphical elements used for debugging assistance. The renderer provides a simple API for drawing gizmos.
 
-Gizmos 采用即时模式，即使不需要更新，用户也需要在每次渲染同步时添加 gizmos。
+Gizmos use immediate mode; even if no update is needed, users must add gizmos on every render sync.
 
-目前支持球体 [`draw_sphere`] 与立方体 [`draw_cuboid`] 两种形状的 gizmos。
+Currently, two shapes are supported: spheres ([`draw_sphere`]) and cuboids ([`draw_cuboid`]).
 
 ```{literalinclude} ../../../../examples/gizmos.py
 :language: python
@@ -45,28 +45,28 @@ Gizmos 采用即时模式，即使不需要更新，用户也需要在每次渲�
 :end-before:  "# end::draw_gizmos[]"
 ```
 
-_完整代码见 [examples/gizmos.py](../../../../examples/gizmos.py)_
+_See the complete code at [examples/gizmos.py](../../../../examples/gizmos.py)_
 
-### IO 输入事件
+### IO Input Events
 
-通过 [`render.input`] 可以获取到[`Input`]对象，Input 对象提供了一系列方法，用于查询渲染器的鼠标、键盘以及 UI 事件。
+You can access the [`Input`] object via [`render.input`]. The Input object provides a series of methods for querying mouse, keyboard, and UI events from the renderer.
 
-您可以通过以下的例子来了解更详细的用法：
+For more detailed usage, refer to the following examples:
 
 -   [example/mouse_click.py](../../../../examples/mouse_click.py)
 -   [example/read_keyboard.py](../../../../examples/read_keyboard.py)
 
-## 摄像头控制
+## Camera Control
 
-渲染器提供了一个自由的摄像头控制系统，用户可以通过鼠标操作来控制摄像头的视角和焦点（始终位于屏幕中心）。
+The renderer provides a free camera control system. Users can control the camera's viewpoint and focus (always at the center of the screen) using the mouse:
 
--   鼠标左键按下并拖动：绕着焦点旋转摄像头
--   鼠标右键按下并拖动：移动焦点（此时显示红圈为焦点）
--   鼠标滚轮：缩放（到焦点位置不可再放大）
+-   Left mouse button drag: Rotate the camera around the focus point
+-   Right mouse button drag: Move the focus point (a red circle indicates the focus)
+-   Mouse wheel: Zoom (cannot zoom in beyond the focus point)
 
-## 单模型多实例渲染
+## Multi-Instance Rendering of a Single Model
 
-[`render.launch(model)`] 还有 repeat:int 与 render_offset:List[:3] 两个可选参数，在需要单个模型多实例渲染时，分别用于设置实例数与偏移位置。
+[`render.launch(model)`] also supports two optional parameters: repeat:int and render_offset:List[:3]. These are used to set the number of instances and the offset positions when rendering multiple instances of a single model.
 
 ```{literalinclude} ../../../../examples/model.py
 :language: python
@@ -75,7 +75,7 @@ _完整代码见 [examples/gizmos.py](../../../../examples/gizmos.py)_
 :end-before:  "# Create the physics data of the model"
 ```
 
-_完整代码见 [examples/model.py](../../../../examples/model.py)_
+_See the complete code at [examples/model.py](../../../../examples/model.py)_
 
 [`RenderApp`]: motrixsim.render.RenderApp
 [`load_model`]: motrixsim.load_model
