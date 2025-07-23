@@ -1,33 +1,33 @@
-# 🌡️ 传感器（Sensor）
+# 🌡️ Sensor
 
-通过配置传感器，用户可以更方便的获取物理对象状态信息，如位置，旋转，速度，加速度等。传感器不会影响到物理仿真的结果，可以添加在不同的对象上，如刚体（Body），参考点（Site）等。传感器的配置示例可参考 [`examples/assets/site_and_sensor.xml`](../../../../examples/assets/site_and_sensor.xml)
+By configuring sensors, users can conveniently obtain the state information of physical objects, such as position, rotation, velocity, acceleration, and more. Sensors do not affect the results of the physical simulation and can be attached to different objects, such as bodies or sites. For configuration examples, see [`examples/assets/site_and_sensor.xml`](../../../../examples/assets/site_and_sensor.xml).
 
-## 现在已经支持的传感器如下：
+## Currently Supported Sensors
 
-| 类型                          | 作用                                                                 | 返回值                     |
-| :---------------------------- | :------------------------------------------------------------------- | :------------------------- |
-| 加速度计（accelerometer）     | 三轴加速度计，用于测量安装点的线性加速度                             | `list[float]` <br> 长度：3 |
-| 速度计（velocimeter）         | 三轴速率计， 用于测量安装点的线性速度                                | `list[float]` <br> 长度：3 |
-| 角速度计（gryo）              | 用于测量安装点的角速度                                               | `list[float]` <br> 长度：3 |
-| 扭矩计（torque）              | 用于测量安装点的扭矩大小                                             | `list[float]` <br> 长度：3 |
-| 关节位置（jointpos）          | 用于测量关节的位置或角度                                             | `list[float]` <br> 长度：1 |
-| 关节速度（jointvel）          | 用于测量关节的线速度或角速度                                         | `list[float]` <br> 长度：1 |
-| 参考框位置（framepos）        | 参考框在全局坐标系下或指定参考坐标系下的位置                         | `list[float]` <br> 长度：3 |
-| 参考框旋转（framequat）       | 参考框在全局坐标系下的旋转四元数                                     | `list[float]` <br> 长度：4 |
-| 参考框 X 轴（framexaxis）     | 参考框 X 轴在全局坐标系中的单位向量                                  | `list[float]` <br> 长度：3 |
-| 参考框 Y 轴（frameyaxis）     | 参考框 Y 轴在全局坐标系中的单位向量                                  | `list[float]` <br> 长度：3 |
-| 参考框 Z 轴（framezaxis）     | 参考框 Z 轴在全局坐标系中的单位向量                                  | `list[float]` <br> 长度：3 |
-| 参考框线速度（framelinvel）   | 参考框在全局坐标系下的线速度                                         | `list[float]` <br> 长度：3 |
-| 参考框角速度（frameangvel）   | 参考框在全局坐标系下的角速度                                         | `list[float]` <br> 长度：3 |
-| 参考框线加速度（framelinacc） | 参考框在全局坐标系下的线加速度                                       | `list[float]` <br> 长度：3 |
-| 参考框角加速度（frameangacc） | 参考框在全局坐标系下的角加速度                                       | `list[float]` <br> 长度：3 |
-| 子树质心（subtreecom）        | 返回以指定刚体为根节点的运动学子树的质心（以全局坐标系表示）         | `list[float]` <br> 长度：3 |
-| 子树线速度（subtreelinvel）   | 返回以指定刚体为根节点的运动学子树的质心的线速度（以全局坐标系表示） | `list[float]` <br> 长度：3 |
-| 子树角动量（subtreeangmom）   | 返回以指定刚体为根节点的运动学子树质心处的角动量（以全局坐标系表示） | `list[float]` <br> 长度：3 |
+| Type                          | Function                                                                 | Return Value                |
+| :---------------------------- | :----------------------------------------------------------------------- | :-------------------------- |
+| Accelerometer                 | 3-axis accelerometer, measures linear acceleration at the mounting point | `list[float]` <br> len: 3   |
+| Velocimeter                   | 3-axis velocimeter, measures linear velocity at the mounting point       | `list[float]` <br> len: 3   |
+| Gyroscope                     | Measures angular velocity at the mounting point                          | `list[float]` <br> len: 3   |
+| Torque                        | Measures torque at the mounting point                                    | `list[float]` <br> len: 3   |
+| Joint Position (jointpos)     | Measures joint position or angle                                         | `list[float]` <br> len: 1   |
+| Joint Velocity (jointvel)     | Measures joint linear or angular velocity                                | `list[float]` <br> len: 1   |
+| Frame Position (framepos)     | Position of the reference frame in the global or specified frame         | `list[float]` <br> len: 3   |
+| Frame Quaternion (framequat)  | Quaternion rotation of the reference frame in the global frame           | `list[float]` <br> len: 4   |
+| Frame X Axis (framexaxis)     | X axis unit vector of the reference frame in the global frame            | `list[float]` <br> len: 3   |
+| Frame Y Axis (frameyaxis)     | Y axis unit vector of the reference frame in the global frame            | `list[float]` <br> len: 3   |
+| Frame Z Axis (framezaxis)     | Z axis unit vector of the reference frame in the global frame            | `list[float]` <br> len: 3   |
+| Frame Linear Velocity (framelinvel)   | Linear velocity of the reference frame in the global frame      | `list[float]` <br> len: 3   |
+| Frame Angular Velocity (frameangvel)  | Angular velocity of the reference frame in the global frame     | `list[float]` <br> len: 3   |
+| Frame Linear Acceleration (framelinacc) | Linear acceleration of the reference frame in the global frame | `list[float]` <br> len: 3   |
+| Frame Angular Acceleration (frameangacc) | Angular acceleration of the reference frame in the global frame | `list[float]` <br> len: 3   |
+| Subtree Center of Mass (subtreecom)   | Center of mass of the kinematic subtree rooted at the specified body (global frame) | `list[float]` <br> len: 3   |
+| Subtree Linear Velocity (subtreelinvel) | Linear velocity of the subtree's center of mass (global frame) | `list[float]` <br> len: 3   |
+| Subtree Angular Momentum (subtreeangmom) | Angular momentum at the subtree's center of mass (global frame) | `list[float]` <br> len: 3   |
 
-## 相关 API 使用示例：
+## Related API Usage Examples
 
-获取某个指定的"sensor_name"的传感器数据
+Get the sensor data for a specified "sensor_name":
 
 ```{literalinclude} ../../../../examples/site_and_sensor.py
 :language: python
@@ -36,7 +36,7 @@
 :end-before:  "# end::get_sensor_value[]"
 ```
 
-获取模型中所有的传感器数据
+Get all sensor data in the model:
 
 ```{literalinclude} ../../../../examples/site_and_sensor.py
 :language: python
@@ -45,4 +45,4 @@
 :end-before:  "# end::get_sensor_values[]"
 ```
 
-完整实例代码参见 [`examples/site_and_sensor.py`](../../../../examples/site_and_sensor.py)
+For the complete example code, see [`examples/site_and_sensor.py`](../../../../examples/site_and_sensor.py)
