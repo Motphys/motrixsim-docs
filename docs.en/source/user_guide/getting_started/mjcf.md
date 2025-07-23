@@ -1,21 +1,21 @@
-# 📋 MJCF 文件
+# 📋 MJCF Files
 
-MJCF 是机器人仿真领域常用的格式。您可以通过以下链接了解更多 MJCF 格式信息：
+MJCF is a widely used format in the field of robotics simulation. You can learn more about the MJCF format via the following link:
 
--   [MJCF 格式说明](https://mujoco.readthedocs.io/en/stable/XMLreference.html)
+-   [MJCF Format Documentation](https://mujoco.readthedocs.io/en/stable/XMLreference.html)
 
-MotrixSim 在保持自己仿真能力特性的基础上，为 MJCF 提供了充分的兼容性支持。
+MotrixSim provides extensive compatibility support for MJCF while maintaining its own simulation capabilities and features.
 
-您可以通过以下方式加载 MJCF 格式的机器人模型：
+You can load robot models in MJCF format as follows:
 
 ```py
 import motrixsim
-model = motrixsim.load_model("path/to/robot.xml")  # 加载 MJCF 格式的模型
+model = motrixsim.load_model("path/to/robot.xml")  # Load a model in MJCF format
 ```
 
-## MJCF 支持情况
+## MJCF Support Status
 
-MJCF 包含了丰富的标签和属性，本章节会罗列 MotrixSim 当前版本对 MJCF 的支持情况。
+MJCF contains a rich set of tags and attributes. This section lists the current support status for MJCF in MotrixSim.
 
 ### Global Configuration
 
@@ -24,10 +24,10 @@ MJCF 包含了丰富的标签和属性，本章节会罗列 MotrixSim 当前版�
 :widths: 25 30 30 40
 :class: longtable
 
-* - **标签**
-  - **已支持属性**
-  - **计划支持属性**
-  - **不支持属性**
+* - **Tag**
+  - **Supported Attributes**
+  - **Planned Attributes**
+  - **Unsupported Attributes**
 * - option
   - timestep, gravity, iterations, tolerance
   - apirate, wind, magnetic, density, viscosity, o_margin, o_solref, o_solimp, o_friction, actuatorgroupdisable
@@ -43,20 +43,20 @@ MJCF 包含了丰富的标签和属性，本章节会罗列 MotrixSim 当前版�
 
 ```
 
-不支持的标签：`size`
+Unsupported tag: `size`
 
 ### Asset
-
-已支持标签：
+z
+Supported tags:
 
 ```{list-table}
 :header-rows: 1
 :widths: 25 50 40 20
 :class: longtable
-* - **标签**
-  - **已支持属性**
-  - **计划支持属性**
-  - **不支持属性**
+* - **Tag**
+  - **Supported Attributes**
+  - **Planned Attributes**
+  - **Unsupported Attributes**
 * - mesh
   - file, vertex, normal, texcoord, face, scale, refpos, refquat
   - content_type, smoothnormal, maxhullvert, inertia
@@ -79,29 +79,29 @@ MJCF 包含了丰富的标签和属性，本章节会罗列 MotrixSim 当前版�
   - \\
 ```
 
-计划支持标签：
+Planned tags:
 
 `skin`, `model`，`mesh/plugin`
 
 ```{note}
-mesh 文件目前支持 stl、obj、dae 格式。
+Currently, mesh files support stl, obj, and dae formats.
 
-对于 texture 中的 type 属性，目前支持 2d, skybox, 不支持 cube。
+For the type attribute in texture, only 2d and skybox are supported; cube is not supported.
 ```
 
 ### Scene
 
-已支持标签：
+Supported tags:
 
 ```{list-table}
 :header-rows: 1
 :widths: 25 50 40 20
 :class: longtable
 
-* - **标签**
-  - **已支持属性**
-  - **计划支持属性**
-  - **不支持属性**
+* - **Tag**
+  - **Supported Attributes**
+  - **Planned Attributes**
+  - **Unsupported Attributes**
 * - body
   - mocap, pos, orientation, gravcomp
   - \\
@@ -152,26 +152,26 @@ mesh 文件目前支持 stl、obj、dae 格式。
   - \\
 ```
 
-计划支持的标签：
+Planned tags:
 
 `flexcomp`, `frame`, `attach`, `contact/pair`, `deformable`
 
-不支持的标签：
+Unsupported tags:
 
 `compisite`
 
 ### Equality
 
-已支持标签：
+Supported tags:
 
 ```{list-table}
 :header-rows: 1
 :widths: 25 50 40 20
 :class: longtable
-* - **标签**
-  - **已支持属性**
-  - **计划支持属性**
-  - **不支持属性**
+* - **Tag**
+  - **Supported Attributes**
+  - **Planned Attributes**
+  - **Unsupported Attributes**
 * - connect
   - active, solref, solimp, body1, body2, anchor, site1, site2
   - \\
@@ -186,22 +186,22 @@ mesh 文件目前支持 stl、obj、dae 格式。
   - \\
 ```
 
-计划支持标签：
+Planned tags:
 
 `tendon`, `flex`, `distance`
 
 ### Tendons
 
-已支持标签：
+Supported tags:
 
 ```{list-table}
 :header-rows: 1
 :widths: 25 50 40 20
 :class: longtable
-* - **标签**
-  - **已支持属性**
-  - **计划支持属性**
-  - **不支持属性**
+* - **Tag**
+  - **Supported Attributes**
+  - **Planned Attributes**
+  - **Unsupported Attributes**
 * - fixed
   - limited, range, solreflimit, solimplimit, springlength, stiffness, damping
   - solreffriction, solimpfriction, frictionloss
@@ -209,20 +209,20 @@ mesh 文件目前支持 stl、obj、dae 格式。
 
 ```
 
-计划支持标签：`spatial`
+Planned tags: `spatial`
 
 ### Actuator
 
-已支持标签：
+Supported tags:
 
 ```{list-table}
 :header-rows: 1
 :widths: 25 50 40 20
 :class: longtable
-* - **标签**
-  - **已支持属性**
-  - **计划支持属性**
-  - **不支持属性**
+* - **Tag**
+  - **Supported Attributes**
+  - **Planned Attributes**
+  - **Unsupported Attributes**
 * - general
   - ctrllimited, forcelimited, ctrlrange, forcerange, gear, joint, tendon, gaintype, biastype, dynprm, gainprm, biasprm
   - dyntype, actlimited, actrange, lengthrange, cranklength, jointinparent, site, refsite, body, cranksite, slidersite, actdim, actearly
@@ -250,7 +250,7 @@ mesh 文件目前支持 stl、obj、dae 格式。
 
 ```
 
-计划支持标签：
+Planned tags:
 
 `intvelocity`, `damper`, `cylinder`, `muscle`, `adhesion`
 
@@ -260,10 +260,10 @@ mesh 文件目前支持 stl、obj、dae 格式。
 :header-rows: 1
 :widths: 25 50 40 20
 :class: longtable
-* - **标签**
-  - **已支持属性**
-  - **计划支持属性**
-  - **不支持属性**
+* - **Tag**
+  - **Supported Attributes**
+  - **Planned Attributes**
+  - **Unsupported Attributes**
 * - accelerometer<br>velocimeter<br>
   - site
   - \\
@@ -287,7 +287,7 @@ mesh 文件目前支持 stl、obj、dae 格式。
 
 ```
 
-计划支持标签：
+Planned tags:
 
 `touch`,`force`,`torque`,`magnetometer`,`cameraprojection`,`rangefinder`,
 `tendonpos`,`tendonvel`,`actuatorpos`,`actuatorvel`,`actuatorfrc`,
@@ -297,21 +297,21 @@ mesh 文件目前支持 stl、obj、dae 格式。
 `distance`,`normal`,`fromto`,`e_potential`,`e_kinetic`,`clock`
 
 ```{note}
-对于 sensor 中的 objtype 属性，目前支持 body, xbody, geom, site, 不支持 camera
+For the objtype attribute in sensor, currently supported values are body, xbody, geom, site; camera is not supported.
 ```
 
 ### Meta
 
-已支持标签：
+Supported tags:
 
 ```{list-table}
 :header-rows: 1
 :widths: 25 50 40 20
 :class: longtable
-* - **标签**
-  - **已支持属性**
-  - **计划支持属性**
-  - **不支持属性**
+* - **Tag**
+  - **Supported Attributes**
+  - **Planned Attributes**
+  - **Unsupported Attributes**
 * - replicate
   - count, sep, offset, euler
   - \\
@@ -323,13 +323,13 @@ mesh 文件目前支持 stl、obj、dae 格式。
 ```
 
 ```{note}
-请您注意，MotrixSim 目前在 meta 标签上处理与 mujoco 存在一些出入。主要包含以下方面：
+Please note that MotrixSim currently handles meta tags differently from Mujoco. The main differences are as follows:
 
-- `replicate`标签功能目前处于有限支持，如果 replicate 内包含了被 actuator 或者 sensor 引用的 body，将会导致引用错误。
-- 无论`include`标签出现在 xml 的什么位置，motroxsim 都会把它放在文件的开头进行处理。 这意味着，如果您在 mjcf 的末尾或中间使用了 include，可能会导致一些对象的遍历顺序发生变化。
+- The `replicate` tag is currently only partially supported. If a body referenced by an actuator or sensor is included within replicate, it may cause reference errors.
+- Regardless of where the `include` tag appears in the XML, MotrixSim will process it at the beginning of the file. This means that if you use include at the end or in the middle of the MJCF, the traversal order of some objects may change.
 ```
 
-计划支持标签：
+Planned tags:
 
 `frame`
 
@@ -339,10 +339,10 @@ mesh 文件目前支持 stl、obj、dae 格式。
 :header-rows: 1
 :widths: 25 50 40 20
 :class: longtable
-* - **标签**
-  - **已支持属性**
-  - **计划支持属性**
-  - **不支持属性**
+* - **Tag**
+  - **Supported Attributes**
+  - **Planned Attributes**
+  - **Unsupported Attributes**
 * - key
   - time, qpos, qvel, ctrl
   - act, mpos, mquat
@@ -351,27 +351,27 @@ mesh 文件目前支持 stl、obj、dae 格式。
 
 ### Default
 
-支持子标签：
+Supported sub tags:
 
 `mesh`,`material`,`joint`,`geom`,`site`,`camera`,`light`,`tendon`,`general`,`motor`,
 `position`,`velocity`,`equality`
 
-计划支持：
+Planned:
 
 `pair`,,`intvelocity`,`damper`,`cylinder`,`muscle`,`adhesion`
 
 ### Visual
 
-已支持标签：
+Supported tags:
 
 ```{list-table}
 :header-rows: 1
 :widths: 25 50 40 20
 :class: longtable
-* - **标签**
-  - **已支持属性**
-  - **计划支持属性**
-  - **不支持属性**
+* - **Tag**
+  - **Supported Attributes**
+  - **Planned Attributes**
+  - **Unsupported Attributes**
 * - global
   - orthographic, fovy, azimuth, elevation
   - ipd, linewidth, glow, offwidth, offheight, realtime, ellipsoidinertia, bvactive
@@ -391,9 +391,9 @@ mesh 文件目前支持 stl、obj、dae 格式。
 ```
 
 ```{note}
-始终会有一个根据 global 配置的自由摄像机作为初始相机。
+There will always be a free camera configured according to the global settings as the initial camera.
 
-始终会有头灯和环境光两个光源，且均不产生阴影。
+There will always be two light sources: a headlight and ambient light, neither of which cast shadows.
 ```
 
-计划支持标签：`quality`，`scale`
+Planned tags: `quality`, `scale`
