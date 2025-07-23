@@ -1,21 +1,21 @@
-# API 参考
+# API Reference
 
-MotrixSim 是一个高性能的物理仿真引擎，提供了丰富的 Python API 用于机器人仿真、物理建模和实时渲染。
+MotrixSim is a high-performance physics simulation engine that provides a comprehensive Python API for robotics simulation, physical modeling, and real-time rendering.
 
-## 🚀 快速开始
+## 🚀 Quick Start
 
-**[API 快速参考](api_quick_reference.md)** - 汇总常用 API 并按功能分组，帮助你快速定位所需接口
+**[API Quick Reference](api_quick_reference.md)** - Summarizes commonly used APIs grouped by functionality to help you quickly locate the required interfaces
 
-## 📋 API 层级架构
+## 📋 API Architecture
 
-MotrixSim 的 API 设计采用分层架构，满足不同用户的使用需求：
+The MotrixSim API is designed with a layered architecture to meet the needs of different users:
 
-| 层级         | 模块                                     | 特点               | 适用场景             |
-| ------------ | ---------------------------------------- | ------------------ | -------------------- |
-| **核心模块** | [`motrixsim`](core/index.md)             | 简单易用、接口友好 | 机器人控制、强化学习 |
-| **渲染模块** | [`motrixsim.render`](rendering/index.md) | 实时渲染、交互界面 | 仿真可视化、调试分析 |
+| Layer         | Module                                   | Features                    | Application Scenarios         |
+| ------------- | ---------------------------------------- | --------------------------- | ----------------------------- |
+| **Core**      | [`motrixsim`](core/index.md)             | Simple, user-friendly API   | Robot control, reinforcement learning |
+| **Rendering** | [`motrixsim.render`](rendering/index.md) | Real-time rendering, interactive UI | Simulation visualization, debugging and analysis |
 
-## 📚 详细模块文档
+## 📚 Detailed Module Documentation
 
 ```{toctree}
 :titlesonly:
