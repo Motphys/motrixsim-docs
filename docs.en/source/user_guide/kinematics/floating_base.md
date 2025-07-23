@@ -1,26 +1,26 @@
-# 🛸 浮动基（FloatingBase）
+# 🛸 Floating Base
 
-在 [Body](body.md) 中，我们介绍了 Body 与 World 有三种连接方式，分别是：
+In [Body](body.md), we introduced three types of connections between a Body and the World:
 
--   固定连接（Fixed）
--   关节连接（Joint）
--   自由移动（FloatingBase）
+-   Fixed connection (Fixed)
+-   Joint connection (Joint)
+-   Free movement (FloatingBase)
 
-自由移动的 Body，我们认为它的基座是浮动的，因而它拥有一个浮动基（FloatingBase）对象。FloatingBase 拥有 3 位移自由度和 3 旋转自由度。 通过 floatingbase 对象，MotrixSim 提供了一些额外的功能和属性，允许用户更方便地控制和获取浮动基的状态。
+For a freely moving Body, its base is considered floating, and it possesses a FloatingBase object. A FloatingBase has 3 translational and 3 rotational degrees of freedom. Through the floatingbase object, MotrixSim provides additional features and properties, allowing users to conveniently control and query the state of the floating base.
 
-当我们对机器狗、或者人形机器人进行仿真时，他们通常都拥有浮动基。
+When simulating quadruped or humanoid robots, they typically have a floating base.
 
-## MJCF 映射
+## MJCF Mapping
 
-在 MJCF 中，如果一个 `<body>` 元素下有 `<freejoint>` 元素，则 MotrixSim 会自动将其解析为一个浮动基（FloatingBase）对象。 关于 MJCF 中 `<freejoint>` 的介绍，请参考官方文档：
+In MJCF, if a `<body>` element contains a `<freejoint>` element, MotrixSim will automatically parse it as a FloatingBase object. For more information about `<freejoint>` in MJCF, refer to the official documentation:
 [freejoint](https://mujoco.readthedocs.io/en/stable/XMLreference.html#body-freejoint)
 
-## 访问 FloatingBase
+## Accessing FloatingBase
 
-一般来说，您可以通过以下方式访问 FloatingBase 对象：
+Generally, you can access the FloatingBase object as follows:
 
 ```python
-# 获取 Body 对象
+# Get the Body object
 cube = model.get_body('free_cube')
 fb = cube.floatingbase
 if fb is not None:
@@ -31,15 +31,14 @@ if fb is not None:
 ```
 
 ```{note}
-FloatingBase 对象拥有普通的 Joint 没有的方法，例如它可以直接通过笛卡尔坐标系来设置位置、旋转、速度等，MotrixSim 会自动将参数从笛卡尔坐标系转换为广义坐标系，并更新到 [`data.dof_pos`] 以及 [`data.dof_vel`] 中。
+The FloatingBase object provides methods not available to ordinary Joints. For example, it allows direct setting of position, rotation, and velocity in Cartesian coordinates. MotrixSim will automatically convert these parameters from Cartesian to generalized coordinates and update [`data.dof_pos`] and [`data.dof_vel`].
 
-需要注意的是，通过 [`floatingbase.set_translation`] 等方法设置位置、旋转、速度时，MotrixSim 只更新了 Data 中的 dof 数据， 对整个 link tree 的 kinematics 状态更新需要在用户调用`motrixsim.step`或者`motrixsim.forward`方法后才会进行
-
+Note that when you set position, rotation, or velocity using methods like [`floatingbase.set_translation`], MotrixSim only updates the dof data in Data. The kinematic state of the entire link tree will only be updated after you call `motrixsim.step` or `motrixsim.forward`.
 ```
 
 ## API Reference
 
-更多与 FloatingBase 相关的 API，请参考 [`FloatingBase API`]
+For more APIs related to FloatingBase, see [`FloatingBase API`]
 
 [`FloatingBase API`]: motrixsim.FloatingBase
 [`data.dof_pos`]: motrixsim.SceneData.dof_pos
