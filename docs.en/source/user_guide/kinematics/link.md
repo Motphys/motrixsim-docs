@@ -1,44 +1,42 @@
-# 📏 连杆（Link）
+# 📏 Link
 
-我们将多体系统中的刚性构件称为连杆（Link）。在 MotrixSim 中，连杆是一个重要的概念，它代表了多体系统中的每个刚性部分。每个连杆都可以有不同的属性和行为，并通过 Joint（关节）连接到其他连杆。
+We refer to the rigid components in a multibody system as links. In MotrixSim, a link is an important concept representing each rigid part of a multibody system. Each link can have different properties and behaviors, and is connected to other links via joints.
 
 ![link](../../_static/images/link.png)
 
-## MJCF 映射
+## MJCF Mapping
 
-当您使用 MJCF 来描述多体系统时，MotrixSim 会将所有的 `<body>` 元素映射为 `Link` 对象。
+When you use MJCF to describe a multibody system, MotrixSim maps all `<body>` elements to `Link` objects.
 
-关于 MotrixSim 目前对 MJCF 中 `<body>` 标签属性的支持情况，您可以参考 [MJCF 支持情况](../getting_started/mjcf.md#scene)。
+For the current support status of `<body>` tag attributes in MJCF, see [MJCF Support Status](../getting_started/mjcf.md#scene).
 
 ```{note}
-MJCF 中的`<worldbody>`不会被视作一个 Link 对象。
+The `<worldbody>` element in MJCF is not treated as a Link object.
 ```
 
-## 主要接口
+## Main Interfaces
 
-在 MotrixSim 中，您可以通过以下方式访问 Link 对象：
+In MotrixSim, you can access Link objects as follows:
 
--   [`model.num_links`]: 获取当前世界中的 Link 数量。
--   [`model.links`]: 获取当前世界中的所有 Link 对象。
--   [`model.get_link(key)`]: 根据名称或索引获取特定的 Link 对象。
+-   [`model.num_links`]: Get the number of Link objects in the current world.
+-   [`model.links`]: Get all Link objects in the current world.
+-   [`model.get_link(key)`]: Get a specific Link object by name or index.
 
-当您获取到一个 Link 对象后，可以通过系列的属性和方法来操作它，更细的 API 请参考 [`Link API`]。
+Once you have a Link object, you can manipulate it using a variety of properties and methods. For more detailed APIs, refer to the [`Link API`].
 
-## 例子
+## Example
 
-您可以通过
+You can run a simple example demonstrating link API usage with:
 
 ```bash
 pdm run examples/link.py
 ```
 
-来运行一个简单的关于 link api 调用的例子。
-
-源码可以参考 [`examples/link.py`](../../../../examples/link.py)。
+See the source code at [`examples/link.py`](../../../../examples/link.py).
 
 ## API Reference
 
-更多与 Link 相关的 API，请参考 [`Link API`]
+For more APIs related to Link, see [`Link API`]
 
 [`model.num_links`]: motrixsim.SceneModel.num_links
 [`model.links`]: motrixsim.SceneModel.links
