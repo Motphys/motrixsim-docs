@@ -1,46 +1,46 @@
-# 🔩 关节（Joint）
+# 🔩 Joint
 
-关节用来定义它所在的刚体 ([Body](body.md)) 与父刚体之间的运动自由度。每个刚体可以定义多个关节，组合多种自由度。如果一个刚体没有定义关节，该刚体与父刚体刚性连接。世界刚体 (world body) 中不能定义关节。关节的状态数据（位置、速度）保存在 [SceneData](../main_function/scene_data.md) 中，由于关节定义的自由度不同，状态数据的长度也有所不同。
+A joint defines the degrees of freedom (DoF) between its associated rigid body ([Body](body.md)) and its parent body. Each rigid body can define multiple joints to combine various degrees of freedom. If a body does not define any joints, it is rigidly connected to its parent. Joints cannot be defined in the world body. The state data (position, velocity) of joints is stored in [SceneData](../main_function/scene_data.md). Since joints can define different numbers of DoF, the length of the state data varies accordingly.
 
-## 关节类型
+## Joint Types
 
 ```{list-table}
    :header-rows: 1
    :widths: 15 15 15 10 45
 
-   * - 类型
-     - 自由度
-     - 旋转表示
-     - 限制
-     - 说明
-   * - 滑动关节（Slide）
-     - 1 位移
-     - 无
-     - 可配置
-     - 由关节位置和滑动方向定义。
-   * - 铰链关节（Hinge）
-     - 1 旋转
-     - 角度
-     - 可配置
-     - 绕指定旋转轴旋转，旋转通过指定位置，是默认的关节类型。
-   * - 球形关节（Ball）
-     - 3 旋转
-     - 四元数
-     - 可配置
-     - 绕指定点旋转，可与滑动关节组合，不可与球形关节或铰链关节同时定义。
+   * - Type
+     - DoF
+     - Rotation Representation
+     - Limits
+     - Description
+   * - Slide Joint
+     - 1 translation
+     - None
+     - Configurable
+     - Defined by joint position and sliding direction.
+   * - Hinge Joint
+     - 1 rotation
+     - Angle
+     - Configurable
+     - Rotates about a specified axis and position; this is the default joint type.
+   * - Ball Joint
+     - 3 rotations
+     - Quaternion
+     - Configurable
+     - Rotates about a specified point; can be combined with slide joints, but not with other ball or hinge joints simultaneously.
 ```
 
-与 Mujoco 不同，mjcf 文件中的`<freejoint>`元素在 MotrixSim 中会解析为[FloatingBase](floating_base.md)。
+Unlike Mujoco, the `<freejoint>` element in an mjcf file is parsed as a [FloatingBase](floating_base.md) in MotrixSim.
 
-## 配置示例
+## Configuration Example
 
-关节通过 MJCF 文件进行配置，可参考 [`examples/assets/joint.xml`](../../../../examples/assets/joint.xml)
+Joints are configured via MJCF files. See [`examples/assets/joint.xml`](../../../../examples/assets/joint.xml) for reference.
 
-[MJCF 关节相关标签说明](https://mujoco.readthedocs.io/en/stable/XMLreference.html#body-joint)
+[Explanation of MJCF joint-related tags](https://mujoco.readthedocs.io/en/stable/XMLreference.html#body-joint)
 
-## API 使用示例
+## API Usage Example
 
-在 MotrixSim 中加载 MJCF 文件创建场景和数据
+Load an MJCF file in MotrixSim to create a scene and data:
 
 ```{literalinclude} ../../../../examples/joint.py
 :language: python
@@ -49,7 +49,7 @@
 :end-before:  "# end::init[]"
 ```
 
-获取场景中的所有关节
+Access all joints in the scene:
 
 ```{literalinclude} ../../../../examples/joint.py
 :language: python
@@ -58,7 +58,7 @@
 :end-before:  "# end::access_all[]"
 ```
 
-通过关节名称获取关节索引和访问
+Get joint index and access by joint name:
 
 ```{literalinclude} ../../../../examples/joint.py
 :language: python
@@ -67,7 +67,7 @@
 :end-before:  "# end::joint_index[]"
 ```
 
-获取关节对应自由度的值和速度
+Get the value and velocity of the DoF associated with a joint:
 
 ```{literalinclude} ../../../../examples/joint.py
 :language: python
@@ -76,7 +76,7 @@
 :end-before:  "# end::joint_dof_pos_vel[]"
 ```
 
-获取关节的限制
+Get joint limits:
 
 ```{literalinclude} ../../../../examples/joint.py
 :language: python
@@ -85,7 +85,7 @@
 :end-before:  "# end::joint_limits[]"
 ```
 
-配置关节的位置和速度
+Set joint position and velocity:
 
 ```{literalinclude} ../../../../examples/joint.py
 :language: python
@@ -94,10 +94,10 @@
 :end-before:  "# end::set_pos_vel[]"
 ```
 
-完整代码见 [joint.py](../../../../examples/joint.py)
+For the complete code, see [joint.py](../../../../examples/joint.py)
 
 ## API Reference
 
-更多与 Joint 相关的 API，请参考 [`Joint API`]
+For more APIs related to Joint, see [`Joint API`]
 
 [`Joint API`]: motrixsim.Joint
