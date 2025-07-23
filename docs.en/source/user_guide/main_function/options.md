@@ -1,22 +1,22 @@
-# ⚙️ 全局设置（Options）
+# ⚙️ Global Settings (Options)
 
-`Options` 是 MotrixSim 中的全局配置对象，用于设置物理仿真的各项参数。这些参数会影响仿真的精度、稳定性和性能。
+`Options` is the global configuration object in MotrixSim, used to set various parameters for physical simulation. These parameters affect the accuracy, stability, and performance of the simulation.
 
-## 基本概念
+## Basic Concepts
 
-常用的配置参数包括：
+Common configuration parameters include:
 
-| 参数             | 说明                     | 默认值        |
-| ---------------- | ------------------------ | ------------- |
-| `timestep`       | 仿真时间步长（秒）       | 0.002         |
-| `gravity`        | 重力加速度 [x, y, z]     | [0, 0, -9.81] |
-| `max_iterations` | 约束求解器的最大迭代次数 | 100           |
+| Parameter         | Description                        | Default Value   |
+| ----------------- | ----------------------------------- | -------------- |
+| `timestep`        | Simulation time step (seconds)      | 0.002          |
+| `gravity`         | Gravity acceleration [x, y, z]      | [0, 0, -9.81]  |
+| `max_iterations`  | Max iterations for constraint solver| 100            |
 
-## 配置方式
+## Configuration Methods
 
-### 通过 XML 配置
+### XML Configuration
 
-在 MJCF 文件中，可以使用 `<option>` 标签来配置参数：
+In MJCF files, you can use the `<option>` tag to configure parameters:
 
 ```xml
 <mujoco>
@@ -24,9 +24,9 @@
 </mujoco>
 ```
 
-### 通过代码配置
+### Code Configuration
 
-可以通过 `SceneModel` 的 `options` 属性来获取和修改配置。
+You can access and modify the configuration via the `options` attribute of `SceneModel`.
 
 ```{literalinclude} ../../../../examples/options.py
 :language: python
@@ -35,10 +35,10 @@
 :end-before:  "# end::options_code[]"
 ```
 
-完整示例代码参见 [`examples/options.py`](../../../../examples/options.py)。
+For a complete example, see [`examples/options.py`](../../../../examples/options.py).
 
 ## API Reference
 
-更多与 Options 相关的 API，请参考 [`Options API`]
+For more APIs related to Options, see [`Options API`]
 
 [`Options API`]: motrixsim.Options
