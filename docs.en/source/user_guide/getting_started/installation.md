@@ -1,39 +1,38 @@
-# 🛠️ 安装 Python SDK
+# 🛠️ Install Python SDK
 
-## 安装要求
+## Installation Requirements
 
--   **Python 版本**：{bdg-danger-line}`<3.14,>=3.10`
+-   **Python Version**: {bdg-danger-line}`<3.14,>=3.10`
 
-    | Python 版本  | 支持状态 |
-    | :----------: | :------: |
-    |    ≤ 3.9     |    ❌    |
-    | 3.10 ～ 3.13 |    ✅    |
-    |    ≥ 3.14    |    ❌    |
+    | Python Version | Support Status |
+    | :------------: | :------------: |
+    |     ≤ 3.9      |      ❌        |
+    |  3.10 ～ 3.13  |      ✅        |
+    |     ≥ 3.14     |      ❌        |
 
--   **包管理器**：{bdg-danger-line}`pip 23.0+`
-    （推荐使用 [uv](https://docs.astral.sh/uv/) / [pdm](https://pdm-project.org/en/latest/) / [poetry](https://python-poetry.org/)
-    等项目管理工具）
+-   **Package Manager**: {bdg-danger-line}`pip 23.0+`
+    (It is recommended to use project management tools such as [uv](https://docs.astral.sh/uv/), [pdm](https://pdm-project.org/en/latest/), or [poetry](https://python-poetry.org/))
 
--   **系统及架构**：
+-   **System & Architecture**:
 
     -   {bdg-danger-line}`Windows(x86_64)`
     -   {bdg-danger-line}`Linux(x86_64)`
 
     ```{note}
-    各平台支持的功能如下：
+    Supported features by platform:
 
-    | 操作系统 | CPU 仿真 | 交互式查看器 | GPU 仿真 |
-    | :------: | :------: | :----------: | :------: |
-    |  Linux   |    ✅    |      ✅      |    🛠️ 开发中    |
-    | Windows  |    ✅    |      ✅      |    🛠️ 开发中    |
+    | Operating System | CPU Simulation | Interactive Viewer | GPU Simulation |
+    | :--------------: | :------------: | :----------------: | :------------: |
+    |      Linux       |      ✅        |        ✅          |   🛠️ In Development   |
+    |     Windows      |      ✅        |        ✅          |   🛠️ In Development   |
     ```
 
-## 安装方法
+## Installation Methods
 
 ::::{tab-set}
 :sync-group: installation-mode
 
-:::{tab-item} 使用 pip
+:::{tab-item} Using pip
 :sync: pip
 
 ```bash
@@ -42,7 +41,7 @@ pip install motrixsim
 
 :::
 
-:::{tab-item} 使用 uv
+:::{tab-item} Using uv
 :sync: uv
 
 ```bash
@@ -51,7 +50,7 @@ uv add motrixsim
 
 :::
 
-:::{tab-item} 使用 pdm
+:::{tab-item} Using pdm
 :sync: pdm
 
 ```bash
@@ -60,7 +59,7 @@ pdm add motrixsim
 
 :::
 
-:::{tab-item} 使用 poetry
+:::{tab-item} Using poetry
 :sync: poetry
 
 ```bash
@@ -71,12 +70,12 @@ poetry add motrixsim
 
 ::::
 
-## 验证安装
+## Verify Installation
 
 ::::{tab-set}
 :sync-group: installation-mode
 
-:::{tab-item} 使用 pip
+:::{tab-item} Using pip
 :sync: pip
 
 ```bash
@@ -85,7 +84,7 @@ pip show motrixsim
 
 :::
 
-:::{tab-item} 使用 uv
+:::{tab-item} Using uv
 :sync: uv
 
 ```bash
@@ -94,7 +93,7 @@ uv pip list | grep motrixsim
 
 :::
 
-:::{tab-item} 使用 pdm
+:::{tab-item} Using pdm
 :sync: pdm
 
 ```bash
@@ -103,7 +102,7 @@ pdm list | grep motrixsim
 
 :::
 
-:::{tab-item} 使用 poetry
+:::{tab-item} Using poetry
 :sync: poetry
 
 ```bash
