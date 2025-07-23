@@ -1,31 +1,29 @@
-# 🔋 驱动器（Actuator）
+# 🔋 Actuators
 
-驱动器 (Actuator) 是控制机器人关节运动的核心组件，MotrixSim 支持多种类型的驱动器。
+Actuators are the core components responsible for controlling the motion of robot joints. MotrixSim supports multiple types of actuators.
 
-每个驱动器都可以配置不同的类型和参数，以适应不同的应用场景。
-驱动器可以是马达、位置控制器、速度控制器或通用控制器等。它们通过设置目标位置、速度或其他参数来实现对机器人的精确控制。
+Each actuator can be configured with different types and parameters to suit various application scenarios. Actuators can be motors, position controllers, velocity controllers, or general controllers. They enable precise control of the robot by setting target positions, velocities, or other parameters.
 
-现支持的驱动器类型有：
+The currently supported actuator types are:
 
-| 类型             | 解释                                               |
-| :--------------- | :------------------------------------------------- |
-| 马达（Motor）    | 用于驱动机器人的关节，提供基本的运动能力。         |
-| 位置（Position） | 精确控制关节的角度或位置。                         |
-| 速度（Velocity） | 控制关节的运动速度。                               |
-| 通用（General）  | 提供更灵活的控制方式，可以根据需要自定义控制策略。 |
+| Type             | Description                                                      |
+| :--------------- | :-------------------------------------------------------------- |
+| Motor            | Drives the robot's joints, providing basic actuation capability. |
+| Position         | Precisely controls the joint angle or position.                  |
+| Velocity         | Controls the joint's movement speed.                             |
+| General          | Provides more flexible control, allowing custom control policies.|
 
-设置可兼容 [MuJoCo actuator](https://mujoco.readthedocs.io/en/stable/XMLreference.html#actuator) 的参数。
+Parameter settings are compatible with [MuJoCo actuator](https://mujoco.readthedocs.io/en/stable/XMLreference.html#actuator) attributes.
 
-> General 部分属性未支持，参照 [支持列表](../getting_started/mjcf.md#actuator)。
+> Some attributes of the General actuator are not yet supported. Refer to the [support list](../getting_started/mjcf.md#actuator).
 
-## 驱动器示例
+## Actuator Example
 
-首先加载模型 [`model`] 并通过 [`model.get_actuator`] 方法获取指定的 [`Actuator`]，参数可以是驱动器的名称或索引。
-然后通过 [`actuator.set_ctrl`] 方法设置控制目标值。
+First, load the [`model`] and use the [`model.get_actuator`] method to obtain a specific [`Actuator`]. The argument can be the actuator's name or index. Then, set the control target value using the [`actuator.set_ctrl`] method.
 
-索引与文件中定义顺序一致，可通过 [`model.actuator_names`] 方法获取所有驱动器的名称列表。
+The index corresponds to the order defined in the file. You can retrieve all actuator names using the [`model.actuator_names`] method.
 
-以下是涵盖上述所有内容的完整代码脚本：
+Below is a complete code script covering all the above content:
 
 ```{literalinclude} ../../../../examples/actuator.py
 :language: python
