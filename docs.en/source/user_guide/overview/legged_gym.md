@@ -1,30 +1,30 @@
 # 🦿 Legged Gym
 
 :::{tip}
-模型和代码详见 [MotrixSim Docs](https://github.com/Motphys/motrixsim-docs) 仓库
+For models and code, see the [MotrixSim Docs](https://github.com/Motphys/motrixsim-docs) repository.
 
-在运行示例之前，请先参考 {doc}`../overview/environment_setup` 完成环境准备。
+Before running the examples, please refer to {doc}`../overview/environment_setup` to complete the environment setup.
 :::
 
-我们在使用范例里，提供了一个简易的、类似 legged gym 的框架，方便用户将 legged gym 里训练的策略 sim2sim 到 MotrixSim 中进行测试。
+In the usage examples, we provide a simple framework similar to legged gym, making it convenient for users to test policies trained in legged gym (sim2sim) within MotrixSim.
 
-关于 legged gym 训练框架，您可以点击 [这里](https://github.com/leggedrobotics/legged_gym) 了解更多信息。
+For more information about the legged gym training framework, click [here](https://github.com/leggedrobotics/legged_gym).
 
-在 MotrixSim 中附带了两个 legged gym sim2sim 的示例，分别是 Unitree Go1 和加速进化的 T1.
+MotrixSim includes two legged gym sim2sim examples: Unitree Go1 and the accelerated evolution T1.
 
-您可以通过
+You can run these inference examples with:
 
 ```bash
 pdm run legged_gym/scripts/go1_play.py
 ```
 
-以及
+and
 
 ```bash
 pdm run legged_gym/scripts/T1_play.py
 ```
 
-来分别运行这两个 Inference 示例，效果如下：
+The results are as follows:
 
 ::::{grid} 1 1 2 2
 
@@ -62,18 +62,18 @@ pdm run legged_gym/scripts/T1_play.py
 
 ## Custom Env
 
-我们提供的 legged gym sim2sim 框架，尽量在 Env 的设计上与 legged gym 保持一致，以减少您进行 sim2sim 时的理解成本。其目录结构如下：
+The legged gym sim2sim framework we provide is designed to be as consistent as possible with legged gym's Env design, minimizing the learning curve for sim2sim adaptation. The directory structure is as follows:
 
 -   legged_gym
-    -   envs: 自定的 Envs
-    -   policy: 策略文件
-    -   resources: mjcf 模型文件
-    -   scripts: play 脚本
-    -   utils: 工具函数
+    -   envs: Custom environments
+    -   policy: Policy files
+    -   resources: MJCF model files
+    -   scripts: Play scripts
+    -   utils: Utility functions
 
-以 T1 的 sim2sim 为例，我们在 envs 下创建了一个名为 T1 的文件夹，里面包含了两个文件：`T1.py` 和 `T1_config.py`，分别继承自 `legged_gym.envs.base.legged_robot.Legged_Robot` 和 `legged_gym.envs.base.legged_robot_config.LeggedRobotCfg` 。 您可以重载 config 或者 env 来实现自定义的 observations 以及 actions 计算。
+Taking T1 sim2sim as an example, we create a folder named T1 under envs, which contains two files: `T1.py` and `T1_config.py`, inheriting from `legged_gym.envs.base.legged_robot.Legged_Robot` and `legged_gym.envs.base.legged_robot_config.LeggedRobotCfg`, respectively. You can override the config or env to implement custom observation and action calculations.
 
-`legged_gym/scripts/T1_play.py` 中定义了 T1 的 play 脚本：
+The play script for T1 is defined in `legged_gym/scripts/T1_play.py`:
 
 ```{literalinclude} ../../../../legged_gym/scripts/T1_play.py
 :language: python
