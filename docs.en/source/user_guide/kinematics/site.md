@@ -1,20 +1,20 @@
-# 📍 参考点（Site）
+# 📍 Site
 
-## 概述
+## Overview
 
-`Site`（参考点）是 MotrixSim 中一个重要的概念，它代表模型中用户感兴趣的位置点。`Site` 本质上是虚拟的位置标记，用于标记模型框架内特定的位置和方向。
+A `Site` is an important concept in MotrixSim, representing a point of interest in the model. A `Site` is essentially a virtual marker used to indicate specific positions and orientations within the model framework.
 
-### 主要特点
+### Key Features
 
--   **虚拟参考点**：`Site` 是虚拟的位置标记，不参与碰撞检测或惯性属性计算
--   **参考位置**：用于指定传感器、端点等对象的空间属性
--   **轻量级**：相比物理几何体，`Site` 不参与物理计算，开销更小
+-   **Virtual Reference Point**: A `Site` is a virtual marker and does not participate in collision detection or inertia calculations
+-   **Reference Location**: Used to specify spatial properties for sensors, endpoints, and other objects
+-   **Lightweight**: Compared to physical geometries, a `Site` does not participate in physics calculations and has minimal overhead
 
-## 使用方法和示例
+## Usage and Examples
 
-### 使用方法
+### Usage
 
-通过 [`SceneModel`](../main_function/scene_model.md) 对象获取所有 `Site` 信息、通过名称获取特定 `Site` 等：
+You can access all `Site` information or retrieve a specific `Site` by name via the [`SceneModel`](../main_function/scene_model.md) object:
 
 ```{literalinclude} ../../../../examples/site_and_sensor.py
 :language: python
@@ -23,24 +23,24 @@
 :end-before:  "# end::site_access[]"
 ```
 
-完整示例代码参见 [`examples/site_and_sensor.py`](../../../../examples/site_and_sensor.py)。
+For a complete example, see [`examples/site_and_sensor.py`](../../../../examples/site_and_sensor.py).
 
-### 应用场景
+### Application Scenarios
 
-`Site` 有多种应用场景：
+`Site` can be used in various scenarios:
 
--   **传感器位置**：IMU、相机、激光雷达等传感器的安装位置
--   **参考点标记**：关键位置的标记，如关节中心、质心等
--   **调试辅助**：可视化重要位置点，帮助验证模型正确性
--   **路径规划**：作为路径规划中的关键点或目标点
+-   **Sensor Mounting**: Installation points for IMUs, cameras, LiDARs, etc.
+-   **Reference Markers**: Marking key locations such as joint centers, centers of mass, etc.
+-   **Debugging Aid**: Visualizing important points to help verify model correctness
+-   **Path Planning**: Used as waypoints or target points in path planning
 
-## 在 MJCF 中定义 Site
+## Defining Site in MJCF
 
-在 MJCF 文件中，`Site` 通过 `<site>` 标签定义。详细的标签属性和用法请参考 [MJCF 格式说明](https://mujoco.readthedocs.io/en/stable/XMLreference.html#body-site)。
+In MJCF files, a `Site` is defined using the `<site>` tag. For detailed tag attributes and usage, refer to the [MJCF Format Documentation](https://mujoco.readthedocs.io/en/stable/XMLreference.html#body-site).
 
-**注意**：MotrixSim 目前已支持 Site 的核心功能和常用属性，部分`<site>`属性尚在开发中，请参照 [支持列表](../getting_started/mjcf.md) 使用。
+**Note**: MotrixSim currently supports the core features and common attributes of Site. Some `<site>` attributes are still under development. Please refer to the [support list](../getting_started/mjcf.md) for details.
 
-以下是 `site_and_sensor.xml` 中的 `Site` 定义示例：
+Below is an example of a `Site` definition from `site_and_sensor.xml`:
 
 ```{literalinclude} ../../../../examples/assets/site_and_sensor.xml
 :language: xml
@@ -48,17 +48,17 @@
 :lines: 9-19
 ```
 
-完整的 XML 文件参见：[`examples/assets/site_and_sensor.xml`](../../../../examples/assets/site_and_sensor.xml)
+For the complete XML file, see: [`examples/assets/site_and_sensor.xml`](../../../../examples/assets/site_and_sensor.xml)
 
-## 注意事项
+## Notes
 
-1. **坐标系**：`Site` 的位置和方向是相对于其父链接的坐标系
-2. **命名唯一性**：每个 `Site` 在模型中应该有唯一的名称
-3. **可视化**：`Site` 可以在渲染中显示，有助于调试和验证位置
-4. **虚拟特性**：`Site` 是虚拟的，如需物理交互请使用 `<geom>` 标签
+1. **Coordinate System**: The position and orientation of a `Site` are relative to its parent link's coordinate frame
+2. **Unique Naming**: Each `Site` should have a unique name within the model
+3. **Visualization**: `Site` can be displayed in the renderer, which is helpful for debugging and verifying positions
+4. **Virtual Nature**: `Site` is virtual; use the `<geom>` tag if physical interaction is required
 
 ## API Reference
 
-更多与 Site 相关的 API，请参考 [`Site API`]
+For more APIs related to Site, see [`Site API`]
 
 [`Site API`]: motrixsim.Site
