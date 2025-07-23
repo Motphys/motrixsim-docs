@@ -1,19 +1,19 @@
-# 🎯 核心模块
+# 🎯 Core Module
 
-核心模块是 MotrixSim 的主要用户接口，提供了构建和运行物理仿真的基础功能。
+The core module is the primary user interface of MotrixSim, providing fundamental functions for building and running physical simulations.
 
-## 🔧 主要功能
+## 🔧 Main Features
 
--   **模型管理**：MJCF/URDF 模型加载与解析
--   **仿真控制**：时间步进、状态管理、运动学计算
--   **组件访问**：Body、Joint、Sensor 等组件的访问
+-   **Model Management**: Loading and parsing MJCF/URDF models
+-   **Simulation Control**: Time stepping, state management, kinematics computation
+-   **Component Access**: Access to components such as Body, Joint, Sensor, etc.
 
-## 🚀 应用场景
+## 🚀 Application Scenarios
 
--   **机器人控制**：机械臂轨迹规划、四足机器人步态控制、人形机器人运动控制等
--   **强化学习**：智能体训练、环境仿真、策略验证等
--   **物理仿真研究**：动力学分析、碰撞检测、多体系统建模等
--   **教育教学**：机器人学课程、物理实验仿真、虚拟现实等
+-   **Robotics Control**: Robotic arm trajectory planning, quadruped gait control, humanoid motion control, etc.
+-   **Reinforcement Learning**: Agent training, environment simulation, policy validation, etc.
+-   **Physics Simulation Research**: Dynamics analysis, collision detection, multibody system modeling, etc.
+-   **Education and Teaching**: Robotics courses, physics experiment simulation, virtual reality, etc.
 
 ```{toctree}
 motrixsim

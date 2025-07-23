@@ -1,16 +1,16 @@
-# 🎨 渲染模块
+# 🎨 Rendering Module
 
-可视化渲染模块提供了 MotrixSim 的图形渲染功能，支持实时渲染和调试可视化。
+The visualization rendering module provides MotrixSim's graphics rendering capabilities, supporting real-time rendering and interactive visualization.
 
-## 🖼️ 渲染功能
+## 🖼️ Rendering Features
 
--   **实时渲染**：高质量的 3D 场景实时显示
--   **摄像机系统**：灵活的视角控制
+-   **Real-time Rendering**: High-quality 3D scene real-time display
+-   **Camera System**: Flexible viewpoint control
 
-## 🎯 应用场景
+## 🎯 Application Scenarios
 
--   **交互式仿真**：实时观察仿真过程
--   **结果展示**：可视化仿真结果
+-   **Interactive Simulation**: Real-time observation of simulation processes
+-   **Result Presentation**: Visualization of simulation results
 
 ```{toctree}
 render
