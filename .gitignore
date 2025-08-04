@@ -5,3 +5,5 @@ __pycache__/
 .ruff_cache/
 .pdm-python
 .python-version
+
+docs/source/index.md

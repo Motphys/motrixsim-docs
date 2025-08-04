@@ -19,6 +19,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 import os
+import shutil
 import site
 import sys
 from pathlib import Path
@@ -61,6 +62,43 @@ copyright = "2025, Motphys"
 author = "Motphys"
 release = __version__
 version = __version__
+language = "zh_CN"
+
+LANGUAGE_EXCLUDE_MAP = {"en": ["zh_CN/**"], "zh_CN": ["en/**"]}
+
+
+def setup(app):
+    app.connect("builder-inited", copy_correct_index)
+    app.connect("config-inited", update_exclude_patterns)
+
+
+def copy_correct_index(app):
+    lang = app.config.language
+    index_files = {
+        "en": "index_en.md",
+        "zh_CN": "index_zh.md",
+    }
+    src_index = index_files.get(lang)
+    if not src_index:
+        raise ValueError(f"Unsupported language: {lang}")
+
+    src_path = os.path.join(app.srcdir, src_index)
+    dst_path = os.path.join(app.srcdir, "index.md")
+
+    if os.path.exists(src_path):
+        shutil.copyfile(src_path, dst_path)
+        print(f"Copied {src_index} to index.md for language: {lang}")
+    else:
+        raise FileNotFoundError(f"Index file {src_index} not found!")
+
+
+def update_exclude_patterns(app, config):
+    current_language = app.config.language
+    if current_language in LANGUAGE_EXCLUDE_MAP:
+        config.exclude_patterns.extend(LANGUAGE_EXCLUDE_MAP[current_language])
+    else:
+        print(f"[WARNING] No exclusion patterns defined for language: '{current_language}'")
+
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -111,7 +149,7 @@ templates_path = ["_templates"]
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ["index_*.md", "api_reference/low**"]
 
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 myst_enable_extensions = ["colon_fence", "dollarmath"]
