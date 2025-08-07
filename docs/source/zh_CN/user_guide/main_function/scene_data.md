@@ -12,20 +12,20 @@
 
 ### 基本创建
 
-```{literalinclude} ../../../../../examples/empty.py
+```{literalinclude} ../../../../examples/empty.py
 :language: python
 :dedent:
 :start-after: "# tag::create_data[]"
 :end-before:  "# end::create_data[]"
 ```
 
-完整的示例代码请参见 [`examples/empty.py`](../../../../../examples/empty.py)。
+完整的示例代码请参见 [`examples/empty.py`](../../../../examples/empty.py)。
 
 ### 多数据实例
 
 MotrixSim 支持基于同一个 `SceneModel` 创建多个独立的 `SceneData` 实例，适用于并行实验、状态备份、参数对比等场景。
 
-```{literalinclude} ../../../../../examples/model.py
+```{literalinclude} ../../../../examples/model.py
 :language: python
 :dedent:
 :start-after: "# tag::create_data[]"
@@ -34,7 +34,7 @@ MotrixSim 支持基于同一个 `SceneModel` 创建多个独立的 `SceneData` �
 
 各数据实例之间互不影响，可以独立进行状态更新。
 
-完整的示例代码请参见 [`examples/model.py`](../../../../../examples/model.py)。
+完整的示例代码请参见 [`examples/model.py`](../../../../examples/model.py)。
 
 ## 状态访问
 
@@ -53,14 +53,14 @@ vel = data.dof_vel_array
 
 结合 `SceneModel` 的 Named Access，可以通过组件对象来访问或设置特定的状态：
 
-```{literalinclude} ../../../../../examples/body.py
+```{literalinclude} ../../../../examples/body.py
 :language: python
 :dedent:
 :start-after: "# tag::access_body[]"
 :end-before:  "# end::access_body[]"
 ```
 
-完整的示例代码请参见 [`examples/body.py`](../../../../../examples/body.py)。
+完整的示例代码请参见 [`examples/body.py`](../../../../examples/body.py)。
 
 ## API Reference
 

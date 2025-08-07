@@ -64,40 +64,22 @@ release = __version__
 version = __version__
 language = "zh_CN"
 
-LANGUAGE_EXCLUDE_MAP = {"en": ["zh_CN/**"], "zh_CN": ["en/**"]}
-
 
 def setup(app):
-    app.connect("builder-inited", copy_correct_index)
-    app.connect("config-inited", update_exclude_patterns)
+    app.connect("builder-inited", copy_file_by_language)
 
 
-def copy_correct_index(app):
+def copy_file_by_language(app):
+    """根据语言配置复制语言目录"""
     lang = app.config.language
-    index_files = {
-        "en": "index_en.md",
-        "zh_CN": "index_zh.md",
-    }
-    src_index = index_files.get(lang)
-    if not src_index:
-        raise ValueError(f"Unsupported language: {lang}")
+    srcdir = Path(app.srcdir)
 
-    src_path = os.path.join(app.srcdir, src_index)
-    dst_path = os.path.join(app.srcdir, "index.md")
-
-    if os.path.exists(src_path):
-        shutil.copyfile(src_path, dst_path)
-        print(f"Copied {src_index} to index.md for language: {lang}")
+    lang_dir = srcdir / lang
+    if lang_dir.exists() and lang_dir.is_dir():
+        shutil.copytree(lang_dir, srcdir, dirs_exist_ok=True, copy_function=shutil.copy2)
+        print(f"Copied language directory: {lang_dir} -> {srcdir}")
     else:
-        raise FileNotFoundError(f"Index file {src_index} not found!")
-
-
-def update_exclude_patterns(app, config):
-    current_language = app.config.language
-    if current_language in LANGUAGE_EXCLUDE_MAP:
-        config.exclude_patterns.extend(LANGUAGE_EXCLUDE_MAP[current_language])
-    else:
-        print(f"[WARNING] No exclusion patterns defined for language: '{current_language}'")
+        print(f"[WARNING] Language directory not found: {lang_dir}")
 
 
 # -- General configuration ---------------------------------------------------
@@ -149,7 +131,7 @@ templates_path = ["_templates"]
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["index_*.md", "api_reference/low**"]
+exclude_patterns = ["index_*.md", "api_reference/low**", "zh_CN/**", "en/**"]
 
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 myst_enable_extensions = ["colon_fence", "dollarmath"]

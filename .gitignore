@@ -5,5 +5,8 @@ __pycache__/
 .ruff_cache/
 .pdm-python
 .python-version
+.egg-info/
 
 docs/source/index.md
+docs/source/api_reference
+docs/source/user_guide

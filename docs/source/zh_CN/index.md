@@ -111,11 +111,11 @@ MotrixSim 是一个高性能的物理仿真引擎，专为多体动力学和机�
 ```{toctree}
 :maxdepth: 1
 
-zh_CN/user_guide/index
+user_guide/index
 ```
 
 ```{toctree}
 :maxdepth: 1
 
-zh_CN/api_reference/index
+api_reference/index
 ```

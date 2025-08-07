@@ -19,33 +19,33 @@ MotrixSim 中的模型 `SceneModel` 和数据 `SceneData` 是构建仿真环境�
 
 最常用的方式是从 MJCF 或 URDF 文件创建模型：
 
-```{literalinclude} ../../../../../examples/empty.py
+```{literalinclude} ../../../../examples/empty.py
 :language: python
 :dedent:
 :start-after: "# tag::load_model_from_file[]"
 :end-before:  "# end::load_model_from_file[]"
 ```
 
-完整示例代码参见 [`examples/empty.py`](../../../../../examples/empty.py)。
+完整示例代码参见 [`examples/empty.py`](../../../../examples/empty.py)。
 
 ### 从字符串加载
 
 也可以直接从 MJCF 字符串创建模型：
 
-```{literalinclude} ../../../../../examples/load_from_str.py
+```{literalinclude} ../../../../examples/load_from_str.py
 :language: python
 :dedent:
 :start-after: "# tag::model_load_from_string[]"
 :end-before:  "# end::model_load_from_string[]"
 ```
 
-完整示例代码参见 [`examples/load_from_str.py`](../../../../../examples/load_from_str.py)。
+完整示例代码参见 [`examples/load_from_str.py`](../../../../examples/load_from_str.py)。
 
 ## 组件访问 (Named Access)
 
 创建模型后，我们通常需要访问模型中的组件来设置参数、获取信息或进行控制。MotrixSim 为模型组件提供了便捷的命名访问接口，支持通过**名称**或**索引**直接访问各种组件。
 
-下面通过 `joint` 的访问示例，展示如何通过名称和索引来进行访问。完整示例代码参见 [`examples/joint.py`](../../../../../examples/joint.py)。
+下面通过 `joint` 的访问示例，展示如何通过名称和索引来进行访问。完整示例代码参见 [`examples/joint.py`](../../../../examples/joint.py)。
 
 ### 基本访问方式
 
@@ -57,7 +57,7 @@ MotrixSim 中的模型 `SceneModel` 和数据 `SceneData` 是构建仿真环境�
 
 -   通过**索引**访问 （也提供了从名称到索引的接口）
 
-```{literalinclude} ../../../../../examples/joint.py
+```{literalinclude} ../../../../examples/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::joint_index[]"
@@ -68,7 +68,7 @@ MotrixSim 中的模型 `SceneModel` 和数据 `SceneData` 是构建仿真环境�
 
 除了单个组件访问，还可以批量获取组件对象或名称列表：
 
-```{literalinclude} ../../../../../examples/joint.py
+```{literalinclude} ../../../../examples/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::access_all[]"

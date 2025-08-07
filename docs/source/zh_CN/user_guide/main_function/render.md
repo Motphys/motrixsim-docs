@@ -21,14 +21,14 @@
 
 用户需要通过 [`render.opt.set_left_panel_vis(True)`] 来显示左侧面板，组件会按添加顺序显示在面板上。
 
-```{literalinclude} ../../../../../examples/custom_ui.py
+```{literalinclude} ../../../../examples/custom_ui.py
 :language: python
 :dedent:
 :start-after: "# tag::custom_ui[]"
 :end-before:  "# end::custom_ui[]"
 ```
 
-_完整代码见 [examples/custom_ui.py](../../../../../examples/custom_ui.py)_
+_完整代码见 [examples/custom_ui.py](../../../../examples/custom_ui.py)_
 
 ### Gizmos 绘制
 
@@ -38,14 +38,14 @@ Gizmos 采用即时模式，即使不需要更新，用户也需要在每次渲�
 
 目前支持球体 [`draw_sphere`] 与立方体 [`draw_cuboid`] 两种形状的 gizmos。
 
-```{literalinclude} ../../../../../examples/gizmos.py
+```{literalinclude} ../../../../examples/gizmos.py
 :language: python
 :dedent:
 :start-after: "# tag::draw_gizmos[]"
 :end-before:  "# end::draw_gizmos[]"
 ```
 
-_完整代码见 [examples/gizmos.py](../../../../../examples/gizmos.py)_
+_完整代码见 [examples/gizmos.py](../../../../examples/gizmos.py)_
 
 ### IO 输入事件
 
@@ -53,8 +53,8 @@ _完整代码见 [examples/gizmos.py](../../../../../examples/gizmos.py)_
 
 您可以通过以下的例子来了解更详细的用法：
 
--   [example/mouse_click.py](../../../../../examples/mouse_click.py)
--   [example/read_keyboard.py](../../../../../examples/read_keyboard.py)
+-   [example/mouse_click.py](../../../../examples/mouse_click.py)
+-   [example/read_keyboard.py](../../../../examples/read_keyboard.py)
 
 ## 摄像头控制
 
@@ -68,14 +68,14 @@ _完整代码见 [examples/gizmos.py](../../../../../examples/gizmos.py)_
 
 [`render.launch(model)`] 还有 repeat:int 与 render_offset:List[:3] 两个可选参数，在需要单个模型多实例渲染时，分别用于设置实例数与偏移位置。
 
-```{literalinclude} ../../../../../examples/model.py
+```{literalinclude} ../../../../examples/model.py
 :language: python
 :dedent:
 :start-after: "model = load_model(path)"
 :end-before:  "# Create the physics data of the model"
 ```
 
-_完整代码见 [examples/model.py](../../../../../examples/model.py)_
+_完整代码见 [examples/model.py](../../../../examples/model.py)_
 
 [`RenderApp`]: motrixsim.render.RenderApp
 [`load_model`]: motrixsim.load_model

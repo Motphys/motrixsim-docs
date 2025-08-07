@@ -12,20 +12,20 @@ State updates in `SceneData` require calling kinematic functions to update the s
 
 ### Basic Creation
 
-```{literalinclude} ../../../../../examples/empty.py
+```{literalinclude} ../../../../examples/empty.py
 :language: python
 :dedent:
 :start-after: "# tag::create_data[]"
 :end-before:  "# end::create_data[]"
 ```
 
-For the complete example, see [`examples/empty.py`](../../../../../examples/empty.py).
+For the complete example, see [`examples/empty.py`](../../../../examples/empty.py).
 
 ### Multiple Data Instances
 
 MotrixSim supports creating multiple independent `SceneData` instances from the same `SceneModel`, which is useful for parallel experiments, state backups, parameter comparisons, and more.
 
-```{literalinclude} ../../../../../examples/model.py
+```{literalinclude} ../../../../examples/model.py
 :language: python
 :dedent:
 :start-after: "# tag::create_data[]"
@@ -34,7 +34,7 @@ MotrixSim supports creating multiple independent `SceneData` instances from the 
 
 Each data instance is independent and can be updated separately.
 
-For the complete example, see [`examples/model.py`](../../../../../examples/model.py).
+For the complete example, see [`examples/model.py`](../../../../examples/model.py).
 
 ## State Access
 
@@ -53,14 +53,14 @@ For detailed `SceneData` attributes, see: [**API Quick Reference - SceneData**](
 
 Combined with the Named Access of `SceneModel`, you can access or set specific states through component objects:
 
-```{literalinclude} ../../../../../examples/body.py
+```{literalinclude} ../../../../examples/body.py
 :language: python
 :dedent:
 :start-after: "# tag::access_body[]"
 :end-before:  "# end::access_body[]"
 ```
 
-For the complete example, see [`examples/body.py`](../../../../../examples/body.py).
+For the complete example, see [`examples/body.py`](../../../../examples/body.py).
 
 ## API Reference
 

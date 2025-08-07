@@ -34,7 +34,7 @@ pdm run examples/link.py
 
 来运行一个简单的关于 link api 调用的例子。
 
-源码可以参考 [`examples/link.py`](../../../../../examples/link.py)。
+源码可以参考 [`examples/link.py`](../../../../examples/link.py)。
 
 ## API Reference
 

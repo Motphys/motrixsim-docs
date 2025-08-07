@@ -48,7 +48,7 @@
 
 可以发现，MotrixSim 的物理效果更为真实，而 MuJoCo 仿真的陀螺在场景中出现不规则跑动。
 
-MotrixSim 和 MuJoCo 使用同一份 mjcf 模型：[`gyroscope.xml`](../../../../../examples/assets/gyroscope.xml).
+MotrixSim 和 MuJoCo 使用同一份 mjcf 模型：[`gyroscope.xml`](../../../../examples/assets/gyroscope.xml).
 
 您可以通过
 
@@ -104,8 +104,8 @@ pdm run examples/mujoco/gyroscope.py
 
 在这个例子中，MotrixSim 和 MuJoCo 使用了两份不同的 MJCF 文件：
 
--   MotrixSim: [`newton_cradle_mt.xml`](../../../../../examples/assets/newton_cradle_mt.xml)
--   MuJoCo: [`newton_cradle_muj.xml`](../../../../../examples/assets/newton_cradle_mj.xml)
+-   MotrixSim: [`newton_cradle_mt.xml`](../../../../examples/assets/newton_cradle_mt.xml)
+-   MuJoCo: [`newton_cradle_muj.xml`](../../../../examples/assets/newton_cradle_mj.xml)
 
 因为 MuJoCo 只支持 Soft Contact， 而 MotrixSim 同时支持 Soft Contact 和 Hard Contact， 所以我们对 MJCF 作了一些扩展：
 
@@ -169,7 +169,7 @@ pdm run examples/mujoco/newton_cradle.py
 
 可以看到，MotrixSim 在大时间步长下仍然保持稳定，而 MuJoCo 则出现了明显的抖动和不稳定现象。
 
-该模型取自 mujoco menagerie 仓库，然后我们将 timestep 修改为 0.01s，模型文件：[`spot.xml`](../../../../../examples/assets/boston_dynamics_spot/spot.xml)。
+该模型取自 mujoco menagerie 仓库，然后我们将 timestep 修改为 0.01s，模型文件：[`spot.xml`](../../../../examples/assets/boston_dynamics_spot/spot.xml)。
 
 您可以通过
 

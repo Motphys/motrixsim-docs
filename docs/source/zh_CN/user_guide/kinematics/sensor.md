@@ -1,6 +1,6 @@
 # 🌡️ 传感器（Sensor）
 
-通过配置传感器，用户可以更方便的获取物理对象状态信息，如位置，旋转，速度，加速度等。传感器不会影响到物理仿真的结果，可以添加在不同的对象上，如刚体（Body），参考点（Site）等。传感器的配置示例可参考 [`examples/assets/site_and_sensor.xml`](../../../../../examples/assets/site_and_sensor.xml)
+通过配置传感器，用户可以更方便的获取物理对象状态信息，如位置，旋转，速度，加速度等。传感器不会影响到物理仿真的结果，可以添加在不同的对象上，如刚体（Body），参考点（Site）等。传感器的配置示例可参考 [`examples/assets/site_and_sensor.xml`](../../../../examples/assets/site_and_sensor.xml)
 
 ## 现在已经支持的传感器如下：
 
@@ -29,7 +29,7 @@
 
 获取某个指定的"sensor_name"的传感器数据
 
-```{literalinclude} ../../../../../examples/site_and_sensor.py
+```{literalinclude} ../../../../examples/site_and_sensor.py
 :language: python
 :dedent:
 :start-after: "# tag::get_sensor_value[]"
@@ -38,11 +38,11 @@
 
 获取模型中所有的传感器数据
 
-```{literalinclude} ../../../../../examples/site_and_sensor.py
+```{literalinclude} ../../../../examples/site_and_sensor.py
 :language: python
 :dedent:
 :start-after: "# tag::get_sensor_values[]"
 :end-before:  "# end::get_sensor_values[]"
 ```
 
-完整实例代码参见 [`examples/site_and_sensor.py`](../../../../../examples/site_and_sensor.py)
+完整实例代码参见 [`examples/site_and_sensor.py`](../../../../examples/site_and_sensor.py)

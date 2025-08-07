@@ -28,14 +28,14 @@
 
 可以通过 `SceneModel` 的 `options` 属性来获取和修改配置。
 
-```{literalinclude} ../../../../../examples/options.py
+```{literalinclude} ../../../../examples/options.py
 :language: python
 :dedent:
 :start-after: "# tag::options_code[]"
 :end-before:  "# end::options_code[]"
 ```
 
-完整示例代码参见 [`examples/options.py`](../../../../../examples/options.py)。
+完整示例代码参见 [`examples/options.py`](../../../../examples/options.py)。
 
 ## API Reference
 

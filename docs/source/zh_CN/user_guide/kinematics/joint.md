@@ -34,7 +34,7 @@
 
 ## 配置示例
 
-关节通过 MJCF 文件进行配置，可参考 [`examples/assets/joint.xml`](../../../../../examples/assets/joint.xml)
+关节通过 MJCF 文件进行配置，可参考 [`examples/assets/joint.xml`](../../../../examples/assets/joint.xml)
 
 [MJCF 关节相关标签说明](https://mujoco.readthedocs.io/en/stable/XMLreference.html#body-joint)
 
@@ -42,7 +42,7 @@
 
 在 MotrixSim 中加载 MJCF 文件创建场景和数据
 
-```{literalinclude} ../../../../../examples/joint.py
+```{literalinclude} ../../../../examples/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::init[]"
@@ -51,7 +51,7 @@
 
 获取场景中的所有关节
 
-```{literalinclude} ../../../../../examples/joint.py
+```{literalinclude} ../../../../examples/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::access_all[]"
@@ -60,7 +60,7 @@
 
 通过关节名称获取关节索引和访问
 
-```{literalinclude} ../../../../../examples/joint.py
+```{literalinclude} ../../../../examples/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::joint_index[]"
@@ -69,7 +69,7 @@
 
 获取关节对应自由度的值和速度
 
-```{literalinclude} ../../../../../examples/joint.py
+```{literalinclude} ../../../../examples/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::joint_dof_pos_vel[]"
@@ -78,7 +78,7 @@
 
 获取关节的限制
 
-```{literalinclude} ../../../../../examples/joint.py
+```{literalinclude} ../../../../examples/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::joint_limits[]"
@@ -87,14 +87,14 @@
 
 配置关节的位置和速度
 
-```{literalinclude} ../../../../../examples/joint.py
+```{literalinclude} ../../../../examples/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::set_pos_vel[]"
 :end-before:  "# end::set_pos_vel[]"
 ```
 
-完整代码见 [joint.py](../../../../../examples/joint.py)
+完整代码见 [joint.py](../../../../examples/joint.py)
 
 ## API Reference
 

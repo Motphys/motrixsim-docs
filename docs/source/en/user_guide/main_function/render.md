@@ -21,14 +21,14 @@ Currently, two types of components are supported: buttons ([`add_button`]) and t
 
 To display the left panel, call [`render.opt.set_left_panel_vis(True)`]. Components will be displayed in the order they are added.
 
-```{literalinclude} ../../../../../examples/custom_ui.py
+```{literalinclude} ../../../../examples/custom_ui.py
 :language: python
 :dedent:
 :start-after: "# tag::custom_ui[]"
 :end-before:  "# end::custom_ui[]"
 ```
 
-_See the complete code at [examples/custom_ui.py](../../../../../examples/custom_ui.py)_
+_See the complete code at [examples/custom_ui.py](../../../../examples/custom_ui.py)_
 
 ### Gizmo Drawing
 
@@ -38,14 +38,14 @@ Gizmos use immediate mode; even if no update is needed, users must add gizmos on
 
 Currently, two shapes are supported: spheres ([`draw_sphere`]) and cuboids ([`draw_cuboid`]).
 
-```{literalinclude} ../../../../../examples/gizmos.py
+```{literalinclude} ../../../../examples/gizmos.py
 :language: python
 :dedent:
 :start-after: "# tag::draw_gizmos[]"
 :end-before:  "# end::draw_gizmos[]"
 ```
 
-_See the complete code at [examples/gizmos.py](../../../../../examples/gizmos.py)_
+_See the complete code at [examples/gizmos.py](../../../../examples/gizmos.py)_
 
 ### IO Input Events
 
@@ -53,8 +53,8 @@ You can access the [`Input`] object via [`render.input`]. The Input object provi
 
 For more detailed usage, refer to the following examples:
 
--   [example/mouse_click.py](../../../../../examples/mouse_click.py)
--   [example/read_keyboard.py](../../../../../examples/read_keyboard.py)
+-   [example/mouse_click.py](../../../../examples/mouse_click.py)
+-   [example/read_keyboard.py](../../../../examples/read_keyboard.py)
 
 ## Camera Control
 
@@ -68,14 +68,14 @@ The renderer provides a free camera control system. Users can control the camera
 
 [`render.launch(model)`] also supports two optional parameters: repeat:int and render_offset:List[:3]. These are used to set the number of instances and the offset positions when rendering multiple instances of a single model.
 
-```{literalinclude} ../../../../../examples/model.py
+```{literalinclude} ../../../../examples/model.py
 :language: python
 :dedent:
 :start-after: "model = load_model(path)"
 :end-before:  "# Create the physics data of the model"
 ```
 
-_See the complete code at [examples/model.py](../../../../../examples/model.py)_
+_See the complete code at [examples/model.py](../../../../examples/model.py)_
 
 [`RenderApp`]: motrixsim.render.RenderApp
 [`load_model`]: motrixsim.load_model

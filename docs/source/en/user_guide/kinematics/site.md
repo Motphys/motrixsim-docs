@@ -16,14 +16,14 @@ A `Site` is an important concept in MotrixSim, representing a point of interest 
 
 You can access all `Site` information or retrieve a specific `Site` by name via the [`SceneModel`](../main_function/scene_model.md) object:
 
-```{literalinclude} ../../../../../examples/site_and_sensor.py
+```{literalinclude} ../../../../examples/site_and_sensor.py
 :language: python
 :dedent:
 :start-after: "# tag::site_access[]"
 :end-before:  "# end::site_access[]"
 ```
 
-For a complete example, see [`examples/site_and_sensor.py`](../../../../../examples/site_and_sensor.py).
+For a complete example, see [`examples/site_and_sensor.py`](../../../../examples/site_and_sensor.py).
 
 ### Application Scenarios
 
@@ -42,13 +42,13 @@ In MJCF files, a `Site` is defined using the `<site>` tag. For detailed tag attr
 
 Below is an example of a `Site` definition from `site_and_sensor.xml`:
 
-```{literalinclude} ../../../../../examples/assets/site_and_sensor.xml
+```{literalinclude} ../../../../examples/assets/site_and_sensor.xml
 :language: xml
 :dedent:
 :lines: 9-19
 ```
 
-For the complete XML file, see: [`examples/assets/site_and_sensor.xml`](../../../../../examples/assets/site_and_sensor.xml)
+For the complete XML file, see: [`examples/assets/site_and_sensor.xml`](../../../../examples/assets/site_and_sensor.xml)
 
 ## Notes
 

@@ -4,7 +4,7 @@
 
 This tutorial demonstrates a simple example—loading the Spot quadruped robot and running a physics simulation—to introduce the core steps and basic concepts for creating simulation experiments in MotrixSim:
 
-```{literalinclude} ../../../../../examples/hello_motrixsim.py
+```{literalinclude} ../../../../examples/hello_motrixsim.py
 :language: python
 :dedent:
 :start-after: "# tag::start"
@@ -81,8 +81,8 @@ With this, the entire example is complete. You can now try modifying parameters 
 [`load_model`]: motrixsim.load_model
 [`SceneModel`]: ../main_function/scene_model.md
 [`load_mjcf_str`]: motrixsim.load_mjcf_str
-[examples/assets/boston_dynamics_spot/scene.xml]: ../../../../../examples/assets/boston_dynamics_spot/scene.xml
-[examples/load_from_str.py]: ../../../../../examples/load_from_str.py
+[examples/assets/boston_dynamics_spot/scene.xml]: ../../../../examples/assets/boston_dynamics_spot/scene.xml
+[examples/load_from_str.py]: ../../../../examples/load_from_str.py
 [`RenderApp`]: ../main_function/render.md
 [`render.launch(model)`]: motrixsim.render.RenderApp.launch
 [`SceneData`]: ../main_function/scene_model.md

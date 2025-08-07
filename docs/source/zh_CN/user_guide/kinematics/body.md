@@ -12,14 +12,14 @@
 
 参考下面的例子：
 
-```{literalinclude} ../../../../../examples/assets/body.xml
+```{literalinclude} ../../../../examples/assets/body.xml
 :language: xml
 :dedent:
 ```
 
 这个 mjcf 文件中，`<worldbody>` 的一级目录下有三个 `<body>` 元素，因而在 motrxisim 中会被解析为三个 Body 。
 
-```{literalinclude} ../../../../../examples/body.py
+```{literalinclude} ../../../../examples/body.py
 :language: python
 :dedent:
 :start-after: "# tag::num_bodies"
@@ -28,7 +28,7 @@
 
 注意第三个 name 为 capsule 的 body，它拥有一个 child body， 并且通过 hinge joint 连接。因此在 MotrixSim 中，这个 body 会被解析为一个多体系统（Articulated Body），它包含了两个 link 和一个 joint。
 
-```{literalinclude} ../../../../../examples/body.py
+```{literalinclude} ../../../../examples/body.py
 :language: python
 :dedent:
 :start-after: "# tag::articulated_body"
@@ -45,7 +45,7 @@ mjcf 中的`<body>`标签，会被映射为 MotrixSim 中的`Link`对象， 关�
 
 如果 mjcf 中的`<body>` 元素下有 `<freejoint>` 元素，则 `Body` 对象会拥有 floatingbase 属性：
 
-```{literalinclude} ../../../../../examples/body.py
+```{literalinclude} ../../../../examples/body.py
 :language: python
 :dedent:
 :start-after: "# tag::floatingbase"

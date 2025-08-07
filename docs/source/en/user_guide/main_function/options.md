@@ -28,14 +28,14 @@ In MJCF files, you can use the `<option>` tag to configure parameters:
 
 You can access and modify the configuration via the `options` attribute of `SceneModel`.
 
-```{literalinclude} ../../../../../examples/options.py
+```{literalinclude} ../../../../examples/options.py
 :language: python
 :dedent:
 :start-after: "# tag::options_code[]"
 :end-before:  "# end::options_code[]"
 ```
 
-For a complete example, see [`examples/options.py`](../../../../../examples/options.py).
+For a complete example, see [`examples/options.py`](../../../../examples/options.py).
 
 ## API Reference
 

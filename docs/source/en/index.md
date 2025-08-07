@@ -110,10 +110,10 @@ MotrixSim is a high-performance physics simulation engine designed specifically 
 
 ```{toctree}
 :maxdepth: 1
-en/user_guide/index
+user_guide/index
 ```
 
 ```{toctree}
 :maxdepth: 1
-en/api_reference/index
+api_reference/index
 ```

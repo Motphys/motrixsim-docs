@@ -1,6 +1,6 @@
 # 🌡️ Sensor
 
-By configuring sensors, users can conveniently obtain the state information of physical objects, such as position, rotation, velocity, acceleration, and more. Sensors do not affect the results of the physical simulation and can be attached to different objects, such as bodies or sites. For configuration examples, see [`examples/assets/site_and_sensor.xml`](../../../../../examples/assets/site_and_sensor.xml).
+By configuring sensors, users can conveniently obtain the state information of physical objects, such as position, rotation, velocity, acceleration, and more. Sensors do not affect the results of the physical simulation and can be attached to different objects, such as bodies or sites. For configuration examples, see [`examples/assets/site_and_sensor.xml`](../../../../examples/assets/site_and_sensor.xml).
 
 ## Currently Supported Sensors
 
@@ -29,7 +29,7 @@ By configuring sensors, users can conveniently obtain the state information of p
 
 Get the sensor data for a specified "sensor_name":
 
-```{literalinclude} ../../../../../examples/site_and_sensor.py
+```{literalinclude} ../../../../examples/site_and_sensor.py
 :language: python
 :dedent:
 :start-after: "# tag::get_sensor_value[]"
@@ -38,11 +38,11 @@ Get the sensor data for a specified "sensor_name":
 
 Get all sensor data in the model:
 
-```{literalinclude} ../../../../../examples/site_and_sensor.py
+```{literalinclude} ../../../../examples/site_and_sensor.py
 :language: python
 :dedent:
 :start-after: "# tag::get_sensor_values[]"
 :end-before:  "# end::get_sensor_values[]"
 ```
 
-For the complete example code, see [`examples/site_and_sensor.py`](../../../../../examples/site_and_sensor.py)
+For the complete example code, see [`examples/site_and_sensor.py`](../../../../examples/site_and_sensor.py)

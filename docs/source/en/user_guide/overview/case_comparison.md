@@ -48,7 +48,7 @@ The precession and nutation simulation of a gravity gyroscope can evaluate the a
 
 It can be observed that MotrixSim produces more realistic physical effects, while the gyroscope simulated by MuJoCo exhibits irregular movement in the scene.
 
-MotrixSim and MuJoCo use the same MJCF model: [`gyroscope.xml`](../../../../../examples/assets/gyroscope.xml).
+MotrixSim and MuJoCo use the same MJCF model: [`gyroscope.xml`](../../../../examples/assets/gyroscope.xml).
 
 You can run these examples with:
 
@@ -102,8 +102,8 @@ Newton's cradle is a classic physics demonstration that shows the conservation o
 
 In this example, MotrixSim and MuJoCo use two different MJCF files:
 
--   MotrixSim: [`newton_cradle_mt.xml`](../../../../../examples/assets/newton_cradle_mt.xml)
--   MuJoCo: [`newton_cradle_muj.xml`](../../../../../examples/assets/newton_cradle_mj.xml)
+-   MotrixSim: [`newton_cradle_mt.xml`](../../../../examples/assets/newton_cradle_mt.xml)
+-   MuJoCo: [`newton_cradle_muj.xml`](../../../../examples/assets/newton_cradle_mj.xml)
 
 Since MuJoCo only supports soft contact, while MotrixSim supports both soft and hard contact, we made some extensions to the MJCF:
 
@@ -165,7 +165,7 @@ In this example, we test the stability of MotrixSim and MuJoCo under large time 
 
 It can be seen that MotrixSim remains stable under large time steps, while MuJoCo exhibits significant jitter and instability.
 
-The model is taken from the mujoco menagerie repository, with the timestep modified to 0.01s. Model file: [`spot.xml`](../../../../../examples/assets/boston_dynamics_spot/spot.xml).
+The model is taken from the mujoco menagerie repository, with the timestep modified to 0.01s. Model file: [`spot.xml`](../../../../examples/assets/boston_dynamics_spot/spot.xml).
 
 You can run these examples with:
 

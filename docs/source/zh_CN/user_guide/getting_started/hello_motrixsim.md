@@ -4,7 +4,7 @@
 
 本教程通过演示一个简单例子 - 加载 Spot 机器狗并进行物理仿真，介绍如何在 MotrixSim 中创建模拟实验的核心步骤和基本概念：
 
-```{literalinclude} ../../../../../examples/hello_motrixsim.py
+```{literalinclude} ../../../../examples/hello_motrixsim.py
 :language: python
 :dedent:
 :start-after: "# tag::start"
@@ -81,8 +81,8 @@ render.sync(data)
 [`load_model`]: motrixsim.load_model
 [`SceneModel`]: ../main_function/scene_model.md
 [`load_mjcf_str`]: motrixsim.load_mjcf_str
-[examples/assets/boston_dynamics_spot/scene.xml]: ../../../../../examples/assets/boston_dynamics_spot/scene.xml
-[examples/load_from_str.py]: ../../../../../examples/load_from_str.py
+[examples/assets/boston_dynamics_spot/scene.xml]: ../../../../examples/assets/boston_dynamics_spot/scene.xml
+[examples/load_from_str.py]: ../../../../examples/load_from_str.py
 [`RenderApp`]: ../main_function/render.md
 [`render.launch(model)`]: motrixsim.render.RenderApp.launch
 [`SceneData`]: ../main_function/scene_model.md

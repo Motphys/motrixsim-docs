@@ -27,7 +27,7 @@
 
 以下是涵盖上述所有内容的完整代码脚本：
 
-```{literalinclude} ../../../../../examples/actuator.py
+```{literalinclude} ../../../../examples/actuator.py
 :language: python
 :dedent:
 ```

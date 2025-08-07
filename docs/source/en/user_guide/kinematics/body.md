@@ -12,14 +12,14 @@ When you use MJCF for scene description, MotrixSim treats each top-level `<body>
 
 Consider the following example:
 
-```{literalinclude} ../../../../../examples/assets/body.xml
+```{literalinclude} ../../../../examples/assets/body.xml
 :language: xml
 :dedent:
 ```
 
 In this MJCF file, there are three `<body>` elements at the top level under `<worldbody>`, so MotrixSim parses them as three Bodies.
 
-```{literalinclude} ../../../../../examples/body.py
+```{literalinclude} ../../../../examples/body.py
 :language: python
 :dedent:
 :start-after: "# tag::num_bodies"
@@ -28,7 +28,7 @@ In this MJCF file, there are three `<body>` elements at the top level under `<wo
 
 Note the third body named "capsule". It has a child body and is connected via a hinge joint. Therefore, in MotrixSim, this body is parsed as an articulated body, which contains two links and one joint.
 
-```{literalinclude} ../../../../../examples/body.py
+```{literalinclude} ../../../../examples/body.py
 :language: python
 :dedent:
 :start-after: "# tag::articulated_body"
@@ -45,7 +45,7 @@ The `<body>` tag in MJCF is mapped to a `Link` object in MotrixSim. For more inf
 
 If a `<body>` element in MJCF contains a `<freejoint>` element, the corresponding `Body` object will have the floatingbase property:
 
-```{literalinclude} ../../../../../examples/body.py
+```{literalinclude} ../../../../examples/body.py
 :language: python
 :dedent:
 :start-after: "# tag::floatingbase"

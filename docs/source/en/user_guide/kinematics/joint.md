@@ -33,7 +33,7 @@ Unlike Mujoco, the `<freejoint>` element in an mjcf file is parsed as a [Floatin
 
 ## Configuration Example
 
-Joints are configured via MJCF files. See [`examples/assets/joint.xml`](../../../../../examples/assets/joint.xml) for reference.
+Joints are configured via MJCF files. See [`examples/assets/joint.xml`](../../../../examples/assets/joint.xml) for reference.
 
 [Explanation of MJCF joint-related tags](https://mujoco.readthedocs.io/en/stable/XMLreference.html#body-joint)
 
@@ -41,7 +41,7 @@ Joints are configured via MJCF files. See [`examples/assets/joint.xml`](../../..
 
 Load an MJCF file in MotrixSim to create a scene and data:
 
-```{literalinclude} ../../../../../examples/joint.py
+```{literalinclude} ../../../../examples/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::init[]"
@@ -50,7 +50,7 @@ Load an MJCF file in MotrixSim to create a scene and data:
 
 Access all joints in the scene:
 
-```{literalinclude} ../../../../../examples/joint.py
+```{literalinclude} ../../../../examples/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::access_all[]"
@@ -59,7 +59,7 @@ Access all joints in the scene:
 
 Get joint index and access by joint name:
 
-```{literalinclude} ../../../../../examples/joint.py
+```{literalinclude} ../../../../examples/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::joint_index[]"
@@ -68,7 +68,7 @@ Get joint index and access by joint name:
 
 Get the value and velocity of the DoF associated with a joint:
 
-```{literalinclude} ../../../../../examples/joint.py
+```{literalinclude} ../../../../examples/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::joint_dof_pos_vel[]"
@@ -77,7 +77,7 @@ Get the value and velocity of the DoF associated with a joint:
 
 Get joint limits:
 
-```{literalinclude} ../../../../../examples/joint.py
+```{literalinclude} ../../../../examples/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::joint_limits[]"
@@ -86,14 +86,14 @@ Get joint limits:
 
 Set joint position and velocity:
 
-```{literalinclude} ../../../../../examples/joint.py
+```{literalinclude} ../../../../examples/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::set_pos_vel[]"
 :end-before:  "# end::set_pos_vel[]"
 ```
 
-For the complete code, see [joint.py](../../../../../examples/joint.py)
+For the complete code, see [joint.py](../../../../examples/joint.py)
 
 ## API Reference
 

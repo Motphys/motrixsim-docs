@@ -25,7 +25,7 @@ The index corresponds to the order defined in the file. You can retrieve all act
 
 Below is a complete code script covering all the above content:
 
-```{literalinclude} ../../../../../examples/actuator.py
+```{literalinclude} ../../../../examples/actuator.py
 :language: python
 :dedent:
 ```

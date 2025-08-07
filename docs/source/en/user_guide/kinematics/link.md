@@ -32,7 +32,7 @@ You can run a simple example demonstrating link API usage with:
 pdm run examples/link.py
 ```
 
-See the source code at [`examples/link.py`](../../../../../examples/link.py).
+See the source code at [`examples/link.py`](../../../../examples/link.py).
 
 ## API Reference
 

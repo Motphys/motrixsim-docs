@@ -75,7 +75,7 @@ Taking T1 sim2sim as an example, we create a folder named T1 under envs, which c
 
 The play script for T1 is defined in `legged_gym/scripts/T1_play.py`:
 
-```{literalinclude} ../../../../../legged_gym/scripts/T1_play.py
+```{literalinclude} ../../../../legged_gym/scripts/T1_play.py
 :language: python
 :dedent:
 ```

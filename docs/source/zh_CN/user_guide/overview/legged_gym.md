@@ -75,7 +75,7 @@ pdm run legged_gym/scripts/T1_play.py
 
 `legged_gym/scripts/T1_play.py` 中定义了 T1 的 play 脚本：
 
-```{literalinclude} ../../../../../legged_gym/scripts/T1_play.py
+```{literalinclude} ../../../../legged_gym/scripts/T1_play.py
 :language: python
 :dedent:
 ```
