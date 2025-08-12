@@ -20,38 +20,37 @@ from motrixsim.render import RenderApp
 
 
 def main():
-    render = RenderApp()
+    with RenderApp() as render:
+        # The scene description file
+        path = "examples/assets/model.xml"
+        # Load the scene model
+        model = load_model(path)
+        data = SceneData(model)
 
-    # The scene description file
-    path = "examples/assets/model.xml"
-    # Load the scene model
-    model = load_model(path)
-    data = SceneData(model)
+        render.launch(model)
 
-    render.launch(model)
+        # tag::custom_ui[]
+        force = 10
 
-    # tag::custom_ui[]
-    force = 10
+        # button
+        def on_click():
+            nonlocal force
+            print("Button clicked!")
+            model.get_actuator("actuator_slider").set_ctrl(data, force)
+            force = -force
 
-    # button
-    def on_click():
-        nonlocal force
-        print("Button clicked!")
-        model.get_actuator("actuator_slider").set_ctrl(data, force)
-        force = -force
+        def on_toggle_changed(value: bool):
+            print("toggle value:", value)
 
-    def on_toggle_changed(value: bool):
-        print("toggle value:", value)
+        render.opt.set_left_panel_vis(True)
+        render.ui.add_button("Click Me", on_click)
+        render.ui.add_toggle("Some Toggle", False, on_toggle_changed)
+        # end::custom_ui[]
 
-    render.opt.set_left_panel_vis(True)
-    render.ui.add_button("Click Me", on_click)
-    render.ui.add_toggle("Some Toggle", False, on_toggle_changed)
-    # end::custom_ui[]
-
-    while True:
-        time.sleep(0.02)
-        step(model, data)
-        render.sync([data])
+        while True:
+            time.sleep(0.02)
+            step(model, data)
+            render.sync([data])
 
 
 if __name__ == "__main__":

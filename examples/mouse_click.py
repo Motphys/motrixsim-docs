@@ -44,52 +44,52 @@ def ray_plane_intersection(ray, normal):
 # - Double-click the left mouse button to calculate the target point
 def main():
     # Create render window for visualization
-    render = RenderApp()
-    # The scene description file
-    path = "examples/assets/mouse_click.xml"
-    # Load the scene model
-    model = load_model(path)
-    # Create the render instance of the model
-    render.launch(model)
-    # Create the physics data of the model
-    data = SceneData(model)
+    with RenderApp() as render:
+        # The scene description file
+        path = "examples/assets/mouse_click.xml"
+        # Load the scene model
+        model = load_model(path)
+        # Create the render instance of the model
+        render.launch(model)
+        # Create the physics data of the model
+        data = SceneData(model)
 
-    # The plane normal
-    normal = np.array([0.0, 0.0, 1.0])
-    # The world body floating base.
-    body_fb = model.get_body(model.get_body_index("sphere")).floatingbase
-    # Move speed
-    move_speed = 1.2
-    # Target position
-    target_position = np.array([0, 0])
-    while True:
-        # Control the step interval to prevent too fast simulation
-        time.sleep(0.002)
-        # Step the physics world
-        step(model, data)
-        # Sync render objects from physic world
-        render.sync(data)
-        # Get input from render
-        input = render.input
-        if input.is_mouse_just_pressed("left"):
-            # Get mouse ray from render input
-            ray = input.mouse_ray()
-            # Calculate the intersection point, which is target
-            target_position = ray_plane_intersection(ray, normal)
+        # The plane normal
+        normal = np.array([0.0, 0.0, 1.0])
+        # The world body floating base.
+        body_fb = model.get_body(model.get_body_index("sphere")).floatingbase
+        # Move speed
+        move_speed = 1.2
+        # Target position
+        target_position = np.array([0, 0])
+        while True:
+            # Control the step interval to prevent too fast simulation
+            time.sleep(0.002)
+            # Step the physics world
+            step(model, data)
+            # Sync render objects from physic world
+            render.sync(data)
+            # Get input from render
+            input = render.input
+            if input.is_mouse_just_pressed("left"):
+                # Get mouse ray from render input
+                ray = input.mouse_ray()
+                # Calculate the intersection point, which is target
+                target_position = ray_plane_intersection(ray, normal)
 
-        # Get current position of the body
-        current_pos = body_fb.get_translation(data)
-        # Calculate the direction
-        move_direction = target_position[:2] - current_pos[:2]
-        # Check if the body reaches the target
-        if np.linalg.norm(move_direction) < 0.1:
-            move_direction = np.array([0, 0])
+            # Get current position of the body
+            current_pos = body_fb.get_translation(data)
+            # Calculate the direction
+            move_direction = target_position[:2] - current_pos[:2]
+            # Check if the body reaches the target
+            if np.linalg.norm(move_direction) < 0.1:
+                move_direction = np.array([0, 0])
 
-        # Get and set velocity
-        linear_vel = body_fb.get_global_linear_velocity(data)
-        body_fb.set_global_linear_velocity(
-            data, np.array([move_direction[0] * move_speed, move_direction[1] * move_speed, linear_vel[2]])
-        )
+            # Get and set velocity
+            linear_vel = body_fb.get_global_linear_velocity(data)
+            body_fb.set_global_linear_velocity(
+                data, np.array([move_direction[0] * move_speed, move_direction[1] * move_speed, linear_vel[2]])
+            )
 
 
 if __name__ == "__main__":

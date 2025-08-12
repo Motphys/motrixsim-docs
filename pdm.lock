@@ -91,37 +91,35 @@ files = [
 
 [[package]]
 name = "certifi"
-version = "2025.7.14"
+version = "2025.8.3"
 requires_python = ">=3.7"
 summary = "Python package for providing Mozilla's CA Bundle."
 groups = ["docs"]
 files = [
-    {file = "certifi-2025.7.14-py3-none-any.whl", hash = "sha256:6b31f564a415d79ee77df69d757bb49a5bb53bd9f756cbbe24394ffd6fc1f4b2"},
-    {file = "certifi-2025.7.14.tar.gz", hash = "sha256:8ea99dbdfaaf2ba2f9bac77b9249ef62ec5218e7c2b2e903378ed5fccf765995"},
+    {file = "certifi-2025.8.3-py3-none-any.whl", hash = "sha256:f6c12493cfb1b06ba2ff328595af9350c65d6644968e5d3a2ffd78699af217a5"},
+    {file = "certifi-2025.8.3.tar.gz", hash = "sha256:e564105f78ded564e3ae7c923924435e1daa7463faeab5bb932bc53ffae63407"},
 ]
 
 [[package]]
 name = "charset-normalizer"
-version = "3.4.2"
+version = "3.4.3"
 requires_python = ">=3.7"
 summary = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
 groups = ["docs"]
 files = [
-    {file = "charset_normalizer-3.4.2-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:7c48ed483eb946e6c04ccbe02c6b4d1d48e51944b6db70f697e089c193404941"},
-    {file = "charset_normalizer-3.4.2-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b2d318c11350e10662026ad0eb71bb51c7812fc8590825304ae0bdd4ac283acd"},
-    {file = "charset_normalizer-3.4.2-cp310-cp310-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:9cbfacf36cb0ec2897ce0ebc5d08ca44213af24265bd56eca54bee7923c48fd6"},
-    {file = "charset_normalizer-3.4.2-cp310-cp310-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:18dd2e350387c87dabe711b86f83c9c78af772c748904d372ade190b5c7c9d4d"},
-    {file = "charset_normalizer-3.4.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8075c35cd58273fee266c58c0c9b670947c19df5fb98e7b66710e04ad4e9ff86"},
-    {file = "charset_normalizer-3.4.2-cp310-cp310-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:5bf4545e3b962767e5c06fe1738f951f77d27967cb2caa64c28be7c4563e162c"},
-    {file = "charset_normalizer-3.4.2-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:7a6ab32f7210554a96cd9e33abe3ddd86732beeafc7a28e9955cdf22ffadbab0"},
-    {file = "charset_normalizer-3.4.2-cp310-cp310-musllinux_1_2_i686.whl", hash = "sha256:b33de11b92e9f75a2b545d6e9b6f37e398d86c3e9e9653c4864eb7e89c5773ef"},
-    {file = "charset_normalizer-3.4.2-cp310-cp310-musllinux_1_2_ppc64le.whl", hash = "sha256:8755483f3c00d6c9a77f490c17e6ab0c8729e39e6390328e42521ef175380ae6"},
-    {file = "charset_normalizer-3.4.2-cp310-cp310-musllinux_1_2_s390x.whl", hash = "sha256:68a328e5f55ec37c57f19ebb1fdc56a248db2e3e9ad769919a58672958e8f366"},
-    {file = "charset_normalizer-3.4.2-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:21b2899062867b0e1fde9b724f8aecb1af14f2778d69aacd1a5a1853a597a5db"},
-    {file = "charset_normalizer-3.4.2-cp310-cp310-win32.whl", hash = "sha256:e8082b26888e2f8b36a042a58307d5b917ef2b1cacab921ad3323ef91901c71a"},
-    {file = "charset_normalizer-3.4.2-cp310-cp310-win_amd64.whl", hash = "sha256:f69a27e45c43520f5487f27627059b64aaf160415589230992cec34c5e18a509"},
-    {file = "charset_normalizer-3.4.2-py3-none-any.whl", hash = "sha256:7f56930ab0abd1c45cd15be65cc741c28b1c9a34876ce8c17a2fa107810c0af0"},
-    {file = "charset_normalizer-3.4.2.tar.gz", hash = "sha256:5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"},
+    {file = "charset_normalizer-3.4.3-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:fb7f67a1bfa6e40b438170ebdc8158b78dc465a5a67b6dde178a46987b244a72"},
+    {file = "charset_normalizer-3.4.3-cp310-cp310-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:cc9370a2da1ac13f0153780040f465839e6cccb4a1e44810124b4e22483c93fe"},
+    {file = "charset_normalizer-3.4.3-cp310-cp310-manylinux2014_ppc64le.manylinux_2_17_ppc64le.manylinux_2_28_ppc64le.whl", hash = "sha256:07a0eae9e2787b586e129fdcbe1af6997f8d0e5abaa0bc98c0e20e124d67e601"},
+    {file = "charset_normalizer-3.4.3-cp310-cp310-manylinux2014_s390x.manylinux_2_17_s390x.manylinux_2_28_s390x.whl", hash = "sha256:74d77e25adda8581ffc1c720f1c81ca082921329452eba58b16233ab1842141c"},
+    {file = "charset_normalizer-3.4.3-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:d0e909868420b7049dafd3a31d45125b31143eec59235311fc4c57ea26a4acd2"},
+    {file = "charset_normalizer-3.4.3-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:c6f162aabe9a91a309510d74eeb6507fab5fff92337a15acbe77753d88d9dcf0"},
+    {file = "charset_normalizer-3.4.3-cp310-cp310-musllinux_1_2_ppc64le.whl", hash = "sha256:4ca4c094de7771a98d7fbd67d9e5dbf1eb73efa4f744a730437d8a3a5cf994f0"},
+    {file = "charset_normalizer-3.4.3-cp310-cp310-musllinux_1_2_s390x.whl", hash = "sha256:02425242e96bcf29a49711b0ca9f37e451da7c70562bc10e8ed992a5a7a25cc0"},
+    {file = "charset_normalizer-3.4.3-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:78deba4d8f9590fe4dae384aeff04082510a709957e968753ff3c48399f6f92a"},
+    {file = "charset_normalizer-3.4.3-cp310-cp310-win32.whl", hash = "sha256:d79c198e27580c8e958906f803e63cddb77653731be08851c7df0b1a14a8fc0f"},
+    {file = "charset_normalizer-3.4.3-cp310-cp310-win_amd64.whl", hash = "sha256:c6e490913a46fa054e03699c70019ab869e990270597018cef1d8562132c2669"},
+    {file = "charset_normalizer-3.4.3-py3-none-any.whl", hash = "sha256:ce571ab16d890d23b5c278547ba694193a45011ff86a9162a71307ed9f86759a"},
+    {file = "charset_normalizer-3.4.3.tar.gz", hash = "sha256:6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"},
 ]
 
 [[package]]
@@ -163,24 +161,24 @@ files = [
 
 [[package]]
 name = "etils"
-version = "1.12.2"
+version = "1.13.0"
 requires_python = ">=3.10"
 summary = "Collection of common python utils"
 groups = ["examples"]
 files = [
-    {file = "etils-1.12.2-py3-none-any.whl", hash = "sha256:4600bec9de6cf5cb043a171e1856e38b5f273719cf3ecef90199f7091a6b3912"},
-    {file = "etils-1.12.2.tar.gz", hash = "sha256:c6b9e1f0ce66d1bbf54f99201b08a60ba396d3446d9eb18d4bc39b26a2e1a5ee"},
+    {file = "etils-1.13.0-py3-none-any.whl", hash = "sha256:d9cd4f40fbe77ad6613b7348a18132cc511237b6c076dbb89105c0b520a4c6bb"},
+    {file = "etils-1.13.0.tar.gz", hash = "sha256:a5b60c71f95bcd2d43d4e9fb3dc3879120c1f60472bb5ce19f7a860b1d44f607"},
 ]
 
 [[package]]
 name = "etils"
-version = "1.12.2"
+version = "1.13.0"
 extras = ["epath"]
 requires_python = ">=3.10"
 summary = "Collection of common python utils"
 groups = ["examples"]
 dependencies = [
-    "etils==1.12.2",
+    "etils==1.13.0",
     "etils[epy]",
     "fsspec",
     "importlib-resources",
@@ -188,24 +186,24 @@ dependencies = [
     "zipp",
 ]
 files = [
-    {file = "etils-1.12.2-py3-none-any.whl", hash = "sha256:4600bec9de6cf5cb043a171e1856e38b5f273719cf3ecef90199f7091a6b3912"},
-    {file = "etils-1.12.2.tar.gz", hash = "sha256:c6b9e1f0ce66d1bbf54f99201b08a60ba396d3446d9eb18d4bc39b26a2e1a5ee"},
+    {file = "etils-1.13.0-py3-none-any.whl", hash = "sha256:d9cd4f40fbe77ad6613b7348a18132cc511237b6c076dbb89105c0b520a4c6bb"},
+    {file = "etils-1.13.0.tar.gz", hash = "sha256:a5b60c71f95bcd2d43d4e9fb3dc3879120c1f60472bb5ce19f7a860b1d44f607"},
 ]
 
 [[package]]
 name = "etils"
-version = "1.12.2"
+version = "1.13.0"
 extras = ["epy"]
 requires_python = ">=3.10"
 summary = "Collection of common python utils"
 groups = ["examples"]
 dependencies = [
-    "etils==1.12.2",
+    "etils==1.13.0",
     "typing-extensions",
 ]
 files = [
-    {file = "etils-1.12.2-py3-none-any.whl", hash = "sha256:4600bec9de6cf5cb043a171e1856e38b5f273719cf3ecef90199f7091a6b3912"},
-    {file = "etils-1.12.2.tar.gz", hash = "sha256:c6b9e1f0ce66d1bbf54f99201b08a60ba396d3446d9eb18d4bc39b26a2e1a5ee"},
+    {file = "etils-1.13.0-py3-none-any.whl", hash = "sha256:d9cd4f40fbe77ad6613b7348a18132cc511237b6c076dbb89105c0b520a4c6bb"},
+    {file = "etils-1.13.0.tar.gz", hash = "sha256:a5b60c71f95bcd2d43d4e9fb3dc3879120c1f60472bb5ce19f7a860b1d44f607"},
 ]
 
 [[package]]
@@ -220,13 +218,13 @@ files = [
 
 [[package]]
 name = "fsspec"
-version = "2025.5.1"
+version = "2025.7.0"
 requires_python = ">=3.9"
 summary = "File-system specification"
 groups = ["examples"]
 files = [
-    {file = "fsspec-2025.5.1-py3-none-any.whl", hash = "sha256:24d3a2e663d5fc735ab256263c4075f374a174c3410c0b25e5bd1970bceaa462"},
-    {file = "fsspec-2025.5.1.tar.gz", hash = "sha256:2e55e47a540b91843b755e83ded97c6e897fa0942b11490113f09e9c443c2475"},
+    {file = "fsspec-2025.7.0-py3-none-any.whl", hash = "sha256:8b012e39f63c7d5f10474de957f3ab793b47b45ae7d39f2fb735f8bbe25c0e21"},
+    {file = "fsspec-2025.7.0.tar.gz", hash = "sha256:786120687ffa54b8283d942929540d8bc5ccfa820deb555a2b5d0ed2b737bf58"},
 ]
 
 [[package]]
@@ -348,16 +346,16 @@ files = [
 
 [[package]]
 name = "mdit-py-plugins"
-version = "0.4.2"
-requires_python = ">=3.8"
+version = "0.5.0"
+requires_python = ">=3.10"
 summary = "Collection of plugins for markdown-it-py"
 groups = ["docs"]
 dependencies = [
-    "markdown-it-py<4.0.0,>=1.0.0",
+    "markdown-it-py<5.0.0,>=2.0.0",
 ]
 files = [
-    {file = "mdit_py_plugins-0.4.2-py3-none-any.whl", hash = "sha256:0c673c3f889399a33b95e88d2f0d111b4447bdfea7f237dab2d488f459835636"},
-    {file = "mdit_py_plugins-0.4.2.tar.gz", hash = "sha256:5f2cd1fdb606ddf152d37ec30e46101a60512bc0e5fa1a7002c36647b09e26b5"},
+    {file = "mdit_py_plugins-0.5.0-py3-none-any.whl", hash = "sha256:07a08422fc1936a5d26d146759e9155ea466e842f5ab2f7d2266dd084c8dab1f"},
+    {file = "mdit_py_plugins-0.5.0.tar.gz", hash = "sha256:f4918cb50119f50446560513a8e311d574ff6aaed72606ddae6d35716fe809c6"},
 ]
 
 [[package]]
@@ -373,7 +371,7 @@ files = [
 
 [[package]]
 name = "motrixsim"
-version = "0.1.0b2"
+version = "0.2.0"
 requires_python = "<3.14,>=3.10"
 summary = "A high-performance physics simulation engine designed for multibody dynamics and robotics simulation."
 groups = ["default", "docs", "examples"]
@@ -382,38 +380,38 @@ dependencies = [
     "numpy",
 ]
 files = [
-    {file = "motrixsim-0.1.0b2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:73558fec3903b370a4138972bd06dca09c7d564b769e98b5038c961e0badd6b5"},
-    {file = "motrixsim-0.1.0b2-cp310-cp310-win_amd64.whl", hash = "sha256:85cfd68baa9bbafdf973a2dd2ba90d7382d356a9606ab9e0b44214412117f210"},
+    {file = "motrixsim-0.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:bf85ee0e35f6292a22fbb3363747708c2d8e226bb54750ba498bd7c4ee330317"},
+    {file = "motrixsim-0.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:17e170c687d9970a73cb51da5cd76dc5f22b398408f443f121d7b2806d6cf8cf"},
 ]
 
 [[package]]
 name = "motrixsim"
-version = "0.1.0b2"
+version = "0.2.0"
 extras = ["demo", "mujoco_demo"]
 requires_python = "<3.14,>=3.10"
 summary = "A high-performance physics simulation engine designed for multibody dynamics and robotics simulation."
 groups = ["examples"]
 dependencies = [
-    "motrixsim==0.1.0b2",
+    "motrixsim==0.2.0",
     "mujoco>=3.3.3",
     "numpy-quaternion>=2024.0.8",
     "onnxruntime>=1.22.0",
 ]
 files = [
-    {file = "motrixsim-0.1.0b2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:73558fec3903b370a4138972bd06dca09c7d564b769e98b5038c961e0badd6b5"},
-    {file = "motrixsim-0.1.0b2-cp310-cp310-win_amd64.whl", hash = "sha256:85cfd68baa9bbafdf973a2dd2ba90d7382d356a9606ab9e0b44214412117f210"},
+    {file = "motrixsim-0.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:bf85ee0e35f6292a22fbb3363747708c2d8e226bb54750ba498bd7c4ee330317"},
+    {file = "motrixsim-0.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:17e170c687d9970a73cb51da5cd76dc5f22b398408f443f121d7b2806d6cf8cf"},
 ]
 
 [[package]]
 name = "motrixsim"
-version = "0.1.0b2"
+version = "0.2.0"
 extras = ["docs"]
 requires_python = "<3.14,>=3.10"
 summary = "A high-performance physics simulation engine designed for multibody dynamics and robotics simulation."
 groups = ["docs"]
 dependencies = [
     "autodocsumm",
-    "motrixsim==0.1.0b2",
+    "motrixsim==0.2.0",
     "myst-parser",
     "pydata-sphinx-theme",
     "sphinx",
@@ -424,8 +422,8 @@ dependencies = [
     "sphinxcontrib-video",
 ]
 files = [
-    {file = "motrixsim-0.1.0b2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:73558fec3903b370a4138972bd06dca09c7d564b769e98b5038c961e0badd6b5"},
-    {file = "motrixsim-0.1.0b2-cp310-cp310-win_amd64.whl", hash = "sha256:85cfd68baa9bbafdf973a2dd2ba90d7382d356a9606ab9e0b44214412117f210"},
+    {file = "motrixsim-0.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:bf85ee0e35f6292a22fbb3363747708c2d8e226bb54750ba498bd7c4ee330317"},
+    {file = "motrixsim-0.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:17e170c687d9970a73cb51da5cd76dc5f22b398408f443f121d7b2806d6cf8cf"},
 ]
 
 [[package]]
@@ -440,7 +438,7 @@ files = [
 
 [[package]]
 name = "mujoco"
-version = "3.3.4"
+version = "3.3.5"
 requires_python = ">=3.9"
 summary = "MuJoCo Physics Simulator"
 groups = ["examples"]
@@ -452,12 +450,12 @@ dependencies = [
     "pyopengl",
 ]
 files = [
-    {file = "mujoco-3.3.4-cp310-cp310-macosx_10_16_x86_64.whl", hash = "sha256:1c789afbf05299f6dc3fabe8f777d412ee53c252733877b000cf961e9bee64d6"},
-    {file = "mujoco-3.3.4-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:3142ba00a5365b38ecc53ba9df90edb27bf72aec0258a958217025b275d8b164"},
-    {file = "mujoco-3.3.4-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b24bc558e55dbeb6a8938704e49196f877b0dff038d09d72d4e407abb2acbe73"},
-    {file = "mujoco-3.3.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:491c47d4bae524e36148f512033ebcff589ef5f7946f6d59f0cbe1c5d931ea3d"},
-    {file = "mujoco-3.3.4-cp310-cp310-win_amd64.whl", hash = "sha256:108ce6e1a07ae35313da9790eb37ade6fe79074cf668681885478957cee0860d"},
-    {file = "mujoco-3.3.4.tar.gz", hash = "sha256:73d764fe98e2ded9d2c75e64ef56b10d44c7883395166030995a4ac3efb9a36d"},
+    {file = "mujoco-3.3.5-cp310-cp310-macosx_10_16_x86_64.whl", hash = "sha256:e2b161d172a9aa41e53a837d52b756d41ca97d69ca694fdbb6fea090e387b79c"},
+    {file = "mujoco-3.3.5-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:26f2576c55e6a7eae9ac348beb9af310ae55e0f570e5a1bc4dff2c254c0c28e4"},
+    {file = "mujoco-3.3.5-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:e304f33404d0421a2e65651dd171846f7c2a8c8b8120272eedd727a6f53ed073"},
+    {file = "mujoco-3.3.5-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:9be402d36db82a7efef4b6b2553590b288e1ceed593d648fff58f75aa89a501a"},
+    {file = "mujoco-3.3.5-cp310-cp310-win_amd64.whl", hash = "sha256:f392b21655a8ae466e0677696bb311527847e4cbce5ebe1023e637b6d41e0acc"},
+    {file = "mujoco-3.3.5.tar.gz", hash = "sha256:f9fc6550fc9ed9768223db2d7b3cc32b5a02eb9e887282b40e451c266af16a46"},
 ]
 
 [[package]]

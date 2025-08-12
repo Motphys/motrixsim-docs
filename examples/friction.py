@@ -25,35 +25,35 @@ from motrixsim.render import RenderApp
 
 def main():
     # Create render window for visualization
-    render = RenderApp()
-    # The scene description file
-    path = "examples/assets/friction.xml"
-    # Load the scene model
-    model = load_model(path)
-    # Create the render instance of the model
-    render.launch(model)
-    # Create the physics data of the model
-    data = SceneData(model)
+    with RenderApp() as render:
+        # The scene description file
+        path = "examples/assets/friction.xml"
+        # Load the scene model
+        model = load_model(path)
+        # Create the render instance of the model
+        render.launch(model)
+        # Create the physics data of the model
+        data = SceneData(model)
 
-    motor_A = model.get_actuator("actuator_A")
-    motor_B = model.get_actuator("actuator_B")
-    # Make the balls spin.
-    motor_A.set_ctrl(data, 1.0)
-    motor_B.set_ctrl(data, 1.0)
+        motor_A = model.get_actuator("actuator_A")
+        motor_B = model.get_actuator("actuator_B")
+        # Make the balls spin.
+        motor_A.set_ctrl(data, 1.0)
+        motor_B.set_ctrl(data, 1.0)
 
-    start = time.time()
+        start = time.time()
 
-    while True:
-        # Control the step interval to prevent too fast simulation
-        time.sleep(0.02)
-        if time.time() - start > 1.5:
-            motor_A.set_ctrl(data, 0)
-            motor_B.set_ctrl(data, 0)
+        while True:
+            # Control the step interval to prevent too fast simulation
+            time.sleep(0.02)
+            if time.time() - start > 1.5:
+                motor_A.set_ctrl(data, 0)
+                motor_B.set_ctrl(data, 0)
 
-        # Physics world step
-        step(model, data)
-        # Sync render objects from physic world
-        render.sync(data)
+            # Physics world step
+            step(model, data)
+            # Sync render objects from physic world
+            render.sync(data)
 
 
 if __name__ == "__main__":

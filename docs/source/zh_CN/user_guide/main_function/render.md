@@ -56,6 +56,19 @@ _完整代码见 [examples/gizmos.py](../../../../examples/gizmos.py)_
 -   [example/mouse_click.py](../../../../examples/mouse_click.py)
 -   [example/read_keyboard.py](../../../../examples/read_keyboard.py)
 
+#### 合法键盘输入列表
+
+以下是支持的键盘按键输入列表：
+
+| 按键类型 |           示例按键            |
+| :------- | :---------------------------: |
+| 字母键   |      `A`, `B`, ..., `Z`       |
+| 功能键   |    `F1`, `F2`, ..., `F12`     |
+| 特殊键   |    `Enter`, `Esc`, `Space`    |
+| 方向键   | `Up`, `Down`, `Left`, `Right` |
+
+> 注意：以上均不区分大小写，表格内未提及的键位暂不支持。
+
 ## 摄像头控制
 
 渲染器提供了一个自由的摄像头控制系统，用户可以通过鼠标操作来控制摄像头的视角和焦点（始终位于屏幕中心）。

@@ -56,6 +56,19 @@ For more detailed usage, refer to the following examples:
 -   [example/mouse_click.py](../../../../examples/mouse_click.py)
 -   [example/read_keyboard.py](../../../../examples/read_keyboard.py)
 
+#### Supported Keyboard Keys Table
+
+The following keyboard key inputs are supported:
+
+| Key Type      | Example Keys                  |
+| ------------- | ----------------------------- |
+| Letter Keys   | `A`, `B`, ..., `Z`            |
+| Function Keys | `F1`, `F2`, ..., `F12`        |
+| Special Keys  | `Enter`, `Esc`, `Space`       |
+| Arrow Keys    | `Up`, `Down`, `Left`, `Right` |
+
+> Note: All key names are case-insensitive. Keys not listed above are currently unsupported.
+
 ## Camera Control
 
 The renderer provides a free camera control system. Users can control the camera's viewpoint and focus (always at the center of the screen) using the mouse:

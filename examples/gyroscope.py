@@ -28,31 +28,31 @@ from motrixsim.render import RenderApp
 # This is an interesting gyroscopic demo.
 def main():
     # Create render window for visualization
-    render = RenderApp()
-    # The scene description file
-    path = "examples/assets/gyroscope.xml"
-    # Load the scene model
-    model = load_model(path)
-    # Create the render instance of the model
-    render.launch(model)
-    # Create the physics data of the model
-    data = SceneData(model)
+    with RenderApp() as render:
+        # The scene description file
+        path = "examples/assets/gyroscope.xml"
+        # Load the scene model
+        model = load_model(path)
+        # Create the render instance of the model
+        render.launch(model)
+        # Create the physics data of the model
+        data = SceneData(model)
 
-    body_fb = model.get_body(model.get_body_index("gyro")).floatingbase
-    body_fb.set_local_angular_velocity(data, np.array([0, 0, 50]))
+        body_fb = model.get_body(model.get_body_index("gyro")).floatingbase
+        body_fb.set_local_angular_velocity(data, np.array([0, 0, 50]))
 
-    while True:
-        t = time.monotonic()
-        # Step the physics world
-        step(model, data)
-        # Sync render objects from physic world
-        render.sync(data)
+        while True:
+            t = time.monotonic()
+            # Step the physics world
+            step(model, data)
+            # Sync render objects from physic world
+            render.sync(data)
 
-        passed = time.monotonic() - t
+            passed = time.monotonic() - t
 
-        if passed < model.options.timestep:
-            # Sleep to maintain the desired timestep
-            time.sleep(model.options.timestep - passed)
+            if passed < model.options.timestep:
+                # Sleep to maintain the desired timestep
+                time.sleep(model.options.timestep - passed)
 
 
 if __name__ == "__main__":

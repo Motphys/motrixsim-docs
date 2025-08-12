@@ -23,22 +23,22 @@ from motrixsim.render import RenderApp
 # - Press and hold left button then drag to rotate the camera/view
 # - Press and hold right button then drag to pan/translate the view
 def main():
-    # Create render window for visualization
-    render = RenderApp()
     # The scene description file
     path = "examples/assets/newton_cradle_mt.xml"
     # Load the scene model
     model = load_model(path)
-    # Create the render instance of the model
-    render.launch(model)
-    # Create the physics data of the model
-    data = SceneData(model)
-    while True:
-        time.sleep(0.001)
-        # Physics world step
-        step(model, data)
-        # Sync render objects from physic world
-        render.sync(data)
+    # Create render window for visualization
+    with RenderApp() as render:
+        # Create the render instance of the model
+        render.launch(model)
+        # Create the physics data of the model
+        data = SceneData(model)
+        while True:
+            time.sleep(0.001)
+            # Physics world step
+            step(model, data)
+            # Sync render objects from physic world
+            render.sync(data)
 
 
 if __name__ == "__main__":

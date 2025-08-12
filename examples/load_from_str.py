@@ -38,21 +38,21 @@ mjcf = """<mujoco>
 
 def main():
     # Create render window for visualization
-    render = RenderApp()
-    # Load the scene model
-    model = load_mjcf_str(mjcf)
-    # end::model_load_from_string[]
-    # Create the render instance of the model
-    render.launch(model)
-    # Create the physics data of the model
-    data = SceneData(model)
+    with RenderApp() as render:
+        # Load the scene model
+        model = load_mjcf_str(mjcf)
+        # end::model_load_from_string[]
+        # Create the render instance of the model
+        render.launch(model)
+        # Create the physics data of the model
+        data = SceneData(model)
 
-    while True:
-        # Control the step interval to prevent too fast simulation
-        time.sleep(0.001)
-        # Step the physics world
-        step(model, data)
-        render.sync(data)
+        while True:
+            # Control the step interval to prevent too fast simulation
+            time.sleep(0.001)
+            # Step the physics world
+            step(model, data)
+            render.sync(data)
 
 
 if __name__ == "__main__":

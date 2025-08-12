@@ -10,55 +10,76 @@
 
 关于 legged gym 训练框架，您可以点击 [这里](https://github.com/leggedrobotics/legged_gym) 了解更多信息。
 
-在 MotrixSim 中附带了两个 legged gym sim2sim 的示例，分别是 Unitree Go1 和加速进化的 T1.
+在 MotrixSim 中附带了如下的 legged gym sim2sim 示例
 
-您可以通过
+````{list-table}
+:header-rows: 1
+:class: longtable
+:widths: 30 30 40
 
-```bash
-pdm run legged_gym/scripts/go1_play.py
-```
+* - **介绍**
+  - **命令**
+  - **效果**
+* - Go1的控制移动
+  - `pdm run legged_gym/scripts/go1_play.py`
+  -
+    ```{video} /_static/videos/go1.mp4
+    :poster: /_static/images/poster/go1.jpg
+    :caption: Go1
+    :nocontrols:
+    :autoplay:
+    :playsinline:
+    :muted:
+    :loop:
+    :width: 100%
+    ```
+* - T1的行走
+  - `pdm run legged_gym/scripts/T1_play.py`
+  -
+    ```{video} /_static/videos/t1.mp4
+    :poster: /_static/images/poster/t1.jpg
+    :caption: T1
+    :nocontrols:
+    :autoplay:
+    :playsinline:
+    :muted:
+    :loop:
+    :width: 100%
+    ```
+* - Berkeley Humanoid Lite 行走
+    ```{note}
+    行走策略来自 [Berkeley-Humanoid-Lite](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite/) 仓库。
+    ```
+  - `pdm run legged_gym/scripts/BHL_play.py`
+  -
+    ```{video} /_static/videos/bhl_play.mp4
+    :poster: /_static/images/poster/bhl_play.jpg
+    :caption: BHL
+    :nocontrols:
+    :autoplay:
+    :playsinline:
+    :muted:
+    :loop:
+    :width: 100%
+    ```
 
-以及
-
-```bash
-pdm run legged_gym/scripts/T1_play.py
-```
-
-来分别运行这两个 Inference 示例，效果如下：
-
-::::{grid} 1 1 2 2
-
-:::{grid-item}
-
-```{video} /_static/videos/go1.mp4
-:poster: /_static/images/poster/go1.jpg
-:caption: Go1
-:nocontrols:
-:autoplay:
-:playsinline:
-:muted:
-:loop:
-:width: 100%
-```
-
-:::
-
-:::{grid-item}
-
-```{video} /_static/videos/t1.mp4
-:poster: /_static/images/poster/t1.jpg
-:caption: T1
-:nocontrols:
-:autoplay:
-:playsinline:
-:muted:
-:loop:
-:width: 100%
-```
-
-:::
-
-::::
+* - 双臂Berkeley Humanoid Lite 行走
+    ```{note}
+    行走策略来自 [Berkeley-Humanoid-Lite](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite/) 仓库。
+    ```
+  - `pdm run legged_gym/scripts/BHA_play.py`
+  -
+    ```{video} /_static/videos/bha_play.mp4
+    :poster: /_static/images/poster/bha_play.jpg
+    :caption: BHL
+    :nocontrols:
+    :autoplay:
+    :playsinline:
+    :muted:
+    :loop:
+    :width: 100%
+    ```
+````
 
 ## Custom Env
 

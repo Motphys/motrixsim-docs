@@ -112,6 +112,9 @@ pdm run examples/{example_name}.py
 * - ![local_arm](/_static/images/examples/local_arm.png)
   - [`local_arm.py`](../../../../examples/local_arm.py)
   - 由简单几何形状和`joint`组成的机械臂。
+* - ![adhesion](/_static/images/examples/adhesion.png)
+  - [`adhesion.py`](../../../../examples/adhesion.py)
+  - 使用吸附功能的机械臂。
 ```
 
 ## 机器人应用

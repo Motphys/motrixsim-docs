@@ -22,22 +22,22 @@ from motrixsim.render import RenderApp
 # - Press and hold right button then drag to pan/translate the view
 def main():
     # Create render window for visualization
-    render = RenderApp()
-    # tag::create_data[]
-    # tag::load_model_from_file[]
-    # The scene description file
-    path = "examples/assets/empty.xml"
-    # Load the scene model
-    model = load_model(path)
-    # end::load_model_from_file[]
-    # Create the render instance of the model
-    render.launch(model)
-    # Create the physics data of the model
-    data = SceneData(model)
-    # end::create_data[]
-    while True:
-        # Step the physics world
-        step(model, data)
+    with RenderApp() as render:
+        # tag::create_data[]
+        # tag::load_model_from_file[]
+        # The scene description file
+        path = "examples/assets/empty.xml"
+        # Load the scene model
+        model = load_model(path)
+        # end::load_model_from_file[]
+        # Create the render instance of the model
+        render.launch(model)
+        # Create the physics data of the model
+        data = SceneData(model)
+        # end::create_data[]
+        while True:
+            # Step the physics world
+            step(model, data)
 
 
 if __name__ == "__main__":

@@ -105,6 +105,9 @@ pdm run examples/{example_name}.py
 * - ![local_arm](/_static/images/examples/local_arm.png)
   - [`local_arm.py`](../../../../examples/local_arm.py)
   - A robotic arm composed of simple geometries and `joints`.
+* - ![adhesion](/_static/images/examples/adhesion.png)
+  - [`adhesion.py`](../../../../examples/adhesion.py)
+  - A robotic arm with adhesion actuator.
 ```
 
 ## Robotics Applications

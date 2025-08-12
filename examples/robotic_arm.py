@@ -28,81 +28,81 @@ def lerp(a, b, t):
 # - Press and hold right button then drag to pan/translate the view
 def main():
     # Create render window for visualization
-    render = RenderApp()
-    # The scene description file
-    path = "examples/assets/stanford_tidybot/scene.xml"
-    # Load the scene model
-    model = load_model(path)
-    # Create the render instance of the model
-    render.launch(model)
-    # Create the physics data of the model
-    data = SceneData(model)
+    with RenderApp() as render:
+        # The scene description file
+        path = "examples/assets/stanford_tidybot/scene.xml"
+        # Load the scene model
+        model = load_model(path)
+        # Create the render instance of the model
+        render.launch(model)
+        # Create the physics data of the model
+        data = SceneData(model)
 
-    # Get actuator to control robot action
-    joint_x = model.get_actuator("joint_x")
-    joint_y = model.get_actuator("joint_y")
-    joint_2 = model.get_actuator("joint_2")
-    joint_4 = model.get_actuator("joint_4")
-    fingers_actuator = model.get_actuator("fingers_actuator")
-    joint_7 = model.get_actuator("joint_7")
-    move_x = 0.5
-    move_y = -0.3
-    move_2 = 1.5
-    move_4 = 1.5
-    move_7 = 1.0
-    fingers = 255
-    start = time.time()
-    action_index = 0
+        # Get actuator to control robot action
+        joint_x = model.get_actuator("joint_x")
+        joint_y = model.get_actuator("joint_y")
+        joint_2 = model.get_actuator("joint_2")
+        joint_4 = model.get_actuator("joint_4")
+        fingers_actuator = model.get_actuator("fingers_actuator")
+        joint_7 = model.get_actuator("joint_7")
+        move_x = 0.5
+        move_y = -0.3
+        move_2 = 1.5
+        move_4 = 1.5
+        move_7 = 1.0
+        fingers = 255
+        start = time.time()
+        action_index = 0
 
-    while True:
-        # Control the step interval to prevent too fast simulation
-        time.sleep(0.002)
+        while True:
+            # Control the step interval to prevent too fast simulation
+            time.sleep(0.002)
 
-        diff = time.time() - start
+            diff = time.time() - start
 
-        # Action by sequence
-        if diff < 1:
-            if action_index == 0:
-                lerp_value = lerp(0, move_x, diff)
-                joint_x.set_ctrl(data, lerp_value)
-            elif action_index == 1:
-                lerp_value = lerp(0, move_y, diff)
-                joint_y.set_ctrl(data, lerp_value)
-            elif action_index == 2:
-                lerp_value = lerp(0, move_2, diff)
-                joint_2.set_ctrl(data, lerp_value)
-            elif action_index == 3:
-                lerp_value = lerp(0, move_4, diff)
-                joint_4.set_ctrl(data, lerp_value)
-            elif action_index == 4:
-                lerp_value = lerp(move_y, 0.03, diff)
-                joint_y.set_ctrl(data, lerp_value)
-            elif action_index == 5:
-                lerp_value = lerp(0, fingers, diff)
-                fingers_actuator.set_ctrl(data, lerp_value)
-            elif action_index == 6:
-                lerp_value = lerp(move_2, 0, diff)
-                joint_2.set_ctrl(data, lerp_value)
-            elif action_index == 7:
-                lerp_value = lerp(0.03, 1.0, diff)
-                joint_y.set_ctrl(data, lerp_value)
-            elif action_index == 8:
-                lerp_value = lerp(0, move_7, diff)
-                joint_7.set_ctrl(data, lerp_value)
-            elif action_index == 9:
-                lerp_value = lerp(fingers, 0, diff)
-                fingers_actuator.set_ctrl(data, lerp_value)
-            elif action_index == 10:
-                lerp_value = lerp(move_4, 0, diff)
-                joint_4.set_ctrl(data, lerp_value)
-        else:
-            start = time.time()
-            action_index += 1
+            # Action by sequence
+            if diff < 1:
+                if action_index == 0:
+                    lerp_value = lerp(0, move_x, diff)
+                    joint_x.set_ctrl(data, lerp_value)
+                elif action_index == 1:
+                    lerp_value = lerp(0, move_y, diff)
+                    joint_y.set_ctrl(data, lerp_value)
+                elif action_index == 2:
+                    lerp_value = lerp(0, move_2, diff)
+                    joint_2.set_ctrl(data, lerp_value)
+                elif action_index == 3:
+                    lerp_value = lerp(0, move_4, diff)
+                    joint_4.set_ctrl(data, lerp_value)
+                elif action_index == 4:
+                    lerp_value = lerp(move_y, 0.03, diff)
+                    joint_y.set_ctrl(data, lerp_value)
+                elif action_index == 5:
+                    lerp_value = lerp(0, fingers, diff)
+                    fingers_actuator.set_ctrl(data, lerp_value)
+                elif action_index == 6:
+                    lerp_value = lerp(move_2, 0, diff)
+                    joint_2.set_ctrl(data, lerp_value)
+                elif action_index == 7:
+                    lerp_value = lerp(0.03, 1.0, diff)
+                    joint_y.set_ctrl(data, lerp_value)
+                elif action_index == 8:
+                    lerp_value = lerp(0, move_7, diff)
+                    joint_7.set_ctrl(data, lerp_value)
+                elif action_index == 9:
+                    lerp_value = lerp(fingers, 0, diff)
+                    fingers_actuator.set_ctrl(data, lerp_value)
+                elif action_index == 10:
+                    lerp_value = lerp(move_4, 0, diff)
+                    joint_4.set_ctrl(data, lerp_value)
+            else:
+                start = time.time()
+                action_index += 1
 
-        # Physics world step
-        step(model, data)
-        # Sync render objects from physic world
-        render.sync(data)
+            # Physics world step
+            step(model, data)
+            # Sync render objects from physic world
+            render.sync(data)
 
 
 if __name__ == "__main__":

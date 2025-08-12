@@ -28,25 +28,25 @@ from motrixsim.render import RenderApp
 # This is a unique phenomenon resulting from angular momentum conservation in microgravity.
 def main():
     # Create render window for visualization
-    render = RenderApp()
-    # The scene description file
-    path = "examples/assets/gyroscope_zero_gravity.xml"
-    # Load the scene model
-    model = load_model(path)
-    # Create the render instance of the model
-    render.launch(model)
-    # Create the physics data of the model
-    data = SceneData(model)
+    with RenderApp() as render:
+        # The scene description file
+        path = "examples/assets/gyroscope_zero_gravity.xml"
+        # Load the scene model
+        model = load_model(path)
+        # Create the render instance of the model
+        render.launch(model)
+        # Create the physics data of the model
+        data = SceneData(model)
 
-    body_fb = model.get_body(model.get_body_index("base")).floatingbase
-    body_fb.set_local_angular_velocity(data, np.array([10, 0, 5]))
-    while True:
-        # Control the step interval to prevent too fast simulation
-        time.sleep(0.002)
-        # Step the physics world
-        step(model, data)
-        # Sync render objects from physic world
-        render.sync(data)
+        body_fb = model.get_body(model.get_body_index("base")).floatingbase
+        body_fb.set_local_angular_velocity(data, np.array([10, 0, 5]))
+        while True:
+            # Control the step interval to prevent too fast simulation
+            time.sleep(0.002)
+            # Step the physics world
+            step(model, data)
+            # Sync render objects from physic world
+            render.sync(data)
 
 
 if __name__ == "__main__":

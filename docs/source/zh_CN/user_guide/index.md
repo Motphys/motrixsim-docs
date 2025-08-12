@@ -45,3 +45,11 @@ kinematics/sensor
 kinematics/site
 
 ```
+
+```{toctree}
+:caption: 渲染
+:maxdepth: 1
+
+render/camera
+
+```

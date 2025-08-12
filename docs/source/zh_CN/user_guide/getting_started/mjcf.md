@@ -62,8 +62,8 @@ MJCF 包含了丰富的标签和属性，本章节会罗列 MotrixSim 当前版�
   - content_type, smoothnormal, maxhullvert, inertia
   - \\
 * - hfield
-  - nrow, ncol, elevation, size
-  - content_type, file
+  - nrow, ncol, elevation, size, content_type,file
+  - \\
   - \\
 * - texture
   - type, file, builtin, rgb1, rgb2, width, height, colorspace
@@ -123,8 +123,8 @@ mesh 文件目前支持 stl、obj、dae 格式。
   - ellipsoid, sdf
   - \\
 * - site
-  - size, pos, orientation
-  - type, group, material, rgb, fromto
+  - size, pos, orientation, type, group
+  - material, rgb, fromto
   - \\
 * - contact/exclude
   - body1, body2
@@ -154,7 +154,7 @@ mesh 文件目前支持 stl、obj、dae 格式。
 
 计划支持的标签：
 
-`flexcomp`, `frame`, `attach`, `contact/pair`, `deformable`
+`flexcomp`, `attach`, `contact/pair`, `deformable`
 
 不支持的标签：
 
@@ -247,12 +247,15 @@ mesh 文件目前支持 stl、obj、dae 格式。
   - kv
   - \\
   - \\
-
+* - adhesion
+  - body,gain
+  - \\
+  - \\
 ```
 
 计划支持标签：
 
-`intvelocity`, `damper`, `cylinder`, `muscle`, `adhesion`
+`intvelocity`, `damper`, `cylinder`, `muscle`
 
 ### Sensors
 
@@ -320,18 +323,17 @@ mesh 文件目前支持 stl、obj、dae 格式。
   - file
   - \\
   - \\
+* - frame
+  - name, childclass, pos, orientation
+  - \\
+  - \\
 ```
 
 ```{note}
 请您注意，MotrixSim 目前在 meta 标签上处理与 mujoco 存在一些出入。主要包含以下方面：
 
 - `replicate`标签功能目前处于有限支持，如果 replicate 内包含了被 actuator 或者 sensor 引用的 body，将会导致引用错误。
-- 无论`include`标签出现在 xml 的什么位置，motroxsim 都会把它放在文件的开头进行处理。 这意味着，如果您在 mjcf 的末尾或中间使用了 include，可能会导致一些对象的遍历顺序发生变化。
 ```
-
-计划支持标签：
-
-`frame`
 
 ### Keyframe
 
@@ -354,11 +356,11 @@ mesh 文件目前支持 stl、obj、dae 格式。
 支持子标签：
 
 `mesh`,`material`,`joint`,`geom`,`site`,`camera`,`light`,`tendon`,`general`,`motor`,
-`position`,`velocity`,`equality`
+`position`,`velocity`,`equality`,`adhesion`
 
 计划支持：
 
-`pair`,,`intvelocity`,`damper`,`cylinder`,`muscle`,`adhesion`
+`pair`,,`intvelocity`,`damper`,`cylinder`,`muscle`
 
 ### Visual
 

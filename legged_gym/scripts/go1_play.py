@@ -21,7 +21,6 @@ from legged_gym.envs.go1.go1 import Go1_env
 from legged_gym.envs.go1.go1_config import Go1Cfg
 from legged_gym.utils import runner
 
-yaml_path = "/envs/go1/go1.yaml"
 policy_path = "/policy/go1/go1_policy.onnx"
 env = Go1_env(Go1Cfg)
 session = ort.InferenceSession(LEGGED_GYM_ENVS_DIR + policy_path, providers=["CPUExecutionProvider"])

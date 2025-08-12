@@ -23,45 +23,46 @@ from motrixsim.render import RenderApp
 # - Press and hold left button then drag to rotate the camera/view
 # - Press and hold right button then drag to pan/translate the view
 def main():
-    # Create render window for visualization
-    render = RenderApp()
     # The scene description file
     path = "examples/assets/keyboard_car.xml"
     # Load the scene model
     model = load_model(path)
-    # Create the render instance of the model
-    render.launch(model)
-    # Create the physics data of the model
-    data = SceneData(model)
-    # Get actuator for car controlling
-    forward = model.get_actuator("forward")
-    turn = model.get_actuator("turn")
-    forward_value = 0.0
-    turn_value = 0.0
-    print("==========================")
-    print("Press 'W' to move forward, 'S' to move backward, 'A' to turn left, 'D' to turn right.")
 
-    while True:
-        forward.set_ctrl(data, forward_value)
-        turn.set_ctrl(data, turn_value)
-        # Control the step interval to prevent too fast simulation
-        time.sleep(0.002)
-        # Step the physics world
-        step(model, data)
-        # Sync render objects from physic world
-        render.sync(data)
-        input = render.input
-        # Read keyboard from render app
+    # Create render window for visualization
+    with RenderApp() as render:
+        # Create the render instance of the model
+        render.launch(model)
+        # Create the physics data of the model
+        data = SceneData(model)
+        # Get actuator for car controlling
+        forward = model.get_actuator("forward")
+        turn = model.get_actuator("turn")
         forward_value = 0.0
         turn_value = 0.0
-        if input.is_key_pressed("a"):
-            turn_value = 1
-        if input.is_key_pressed("d"):
-            turn_value = -1
-        if input.is_key_pressed("s"):
-            forward_value = -1
-        if input.is_key_pressed("w"):
-            forward_value = 1
+        print("==========================")
+        print("Press 'W' to move forward, 'S' to move backward, 'A' to turn left, 'D' to turn right.")
+
+        while True:
+            forward.set_ctrl(data, forward_value)
+            turn.set_ctrl(data, turn_value)
+            # Control the step interval to prevent too fast simulation
+            time.sleep(0.002)
+            # Step the physics world
+            step(model, data)
+            # Sync render objects from physic world
+            render.sync(data)
+            input = render.input
+            # Read keyboard from render app
+            forward_value = 0.0
+            turn_value = 0.0
+            if input.is_key_pressed("A"):
+                turn_value = 1
+            if input.is_key_pressed("d"):
+                turn_value = -1
+            if input.is_key_pressed("S"):
+                forward_value = -1
+            if input.is_key_pressed("w"):
+                forward_value = 1
 
 
 if __name__ == "__main__":

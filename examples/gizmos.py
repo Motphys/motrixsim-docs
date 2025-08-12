@@ -23,40 +23,77 @@ from motrixsim.render import Color, RenderApp
 
 
 def main():
-    render = RenderApp()
-    path = "examples/assets/model.xml"
-    model = load_model(path)
-    data = SceneData(model)
+    with RenderApp() as render:
+        path = "examples/assets/model.xml"
+        model = load_model(path)
+        data = SceneData(model)
 
-    render.launch(model)
+        render.launch(model)
 
-    x = 0
-    dir = 1
+        x = 0
+        dir = 1
 
-    rot = Rotation.identity()
-    dr = Rotation.from_rotvec(0.01 * np.array([0, 0, 1]))
-    while True:
-        time.sleep(0.02)
-        step(model, data)
+        rot = Rotation.identity()
+        dr = Rotation.from_rotvec(0.01 * np.array([0, 0, 1]))
 
-        # tag::draw_gizmos[]
-        # gizmos is drawning in immediate mode. so you must call it every frame
-        render.gizmos.draw_sphere(0.1, np.array([x, 0, 1]), color=Color.rgb(1, 0, 0))
+        # set gizmos by api
+        render.gizmos.draw_collider = True
+        render.gizmos.draw_site = True
+        render.gizmos.draw_joint = True
+        render.gizmos.joint_size = 1.5
+        render.gizmos.line_width = 5
+        render.gizmos.collider_color = Color.rgb(0.5, 1, 0.5)
+        render.gizmos.joint_color = Color.rgb(1, 1, 0.5)
+        # end
 
-        render.gizmos.draw_cuboid(
-            size=np.array([0.2, 0.3, 0.4]), pos=np.array([1, 0, 1]), rot=rot.as_quat(), color=Color.rgb(0, 1, 0)
-        )
-        # end::draw_gizmos[]
+        # enable gizmos editor
+        render.opt.set_left_panel_vis(True)
+        # end
 
-        x += dir * 0.01
-        if x > 1:
-            dir = -1
-        elif x < -1:
-            dir = 1
+        while True:
+            time.sleep(0.02)
+            step(model, data)
 
-        rot = dr * rot
+            # tag::draw_gizmos[]
+            # gizmos is drawning in immediate mode. so you must call it every frame
+            render.gizmos.draw_sphere(0.1, np.array([x, 0, 1]), color=Color.rgb(1, 0, 0))
 
-        render.sync([data])
+            render.gizmos.draw_cuboid(
+                size=np.array([0.2, 0.3, 0.4]), pos=np.array([1, 0, 1]), rot=rot.as_quat(), color=Color.rgb(0, 1, 0)
+            )
+
+            render.gizmos.draw_cuboid(
+                size=np.array([0.1, 0.1, 1]), pos=np.array([3, 0, 1]), rot=rot.as_quat(), color=Color.rgb(0, 1, 0)
+            )
+
+            render.gizmos.draw_capsule(0.5, 0.5, pos=np.array([1, 1, 1]), rot=Rotation.identity().as_quat())
+            render.gizmos.draw_cylinder(0.5, 0.5, pos=np.array([2, 1, 1]), rot=Rotation.identity().as_quat())
+            render.gizmos.draw_arrow(start=np.array([3, 1, 1]), end=np.array([4, 2, 1]), color=Color.rgb(1, 1, 0))
+            render.gizmos.draw_line(start=np.array([3, 2, 1]), end=np.array([4, 3, 1]), color=Color.rgb(1, 1, 0))
+            render.gizmos.draw_ray(start=np.array([4, 1, 1]), vector=np.array([3, 0.2, 0]), color=Color.rgb(1, 1, 0.2))
+            render.gizmos.draw_grid(
+                pos=np.array([0, -2, 1]),
+                rot=rot.as_quat(),
+                color=Color.rgb(1, 0.5, 0.2),
+            )
+            render.gizmos.draw_rect(
+                pos=np.array([3, -2, 1]),
+                rot=Rotation.identity().as_quat(),
+                width=1.5,
+                height=3.5,
+                color=Color.rgb(0.5, 1, 0.2),
+            )
+            # end::draw_gizmos[]
+
+            x += dir * 0.01
+            if x > 1:
+                dir = -1
+            elif x < -1:
+                dir = 1
+
+            rot = dr * rot
+
+            render.sync([data])
 
 
 if __name__ == "__main__":

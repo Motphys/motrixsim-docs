@@ -37,3 +37,11 @@ kinematics/actuator
 kinematics/sensor
 kinematics/site
 ```
+
+```{toctree}
+:caption: Render
+:maxdepth: 1
+
+render/camera
+
+```

@@ -32,52 +32,52 @@ def simulate(render: RenderApp, model: SceneModel, data: SceneData):
 # - Press and hold right button then drag to pan/translate the view
 def main():
     # Create render window for visualization
-    render = RenderApp()
-    # The scene description file
-    path = "examples/assets/options.xml"
-    # Load the scene model
-    model = load_model(path)
-    # Create the render instance of the model
-    render.launch(model)
-    # Create the physics data of the model
-    data = SceneData(model)
-    # tag::options_code[]
+    with RenderApp() as render:
+        # The scene description file
+        path = "examples/assets/options.xml"
+        # Load the scene model
+        model = load_model(path)
+        # Create the render instance of the model
+        render.launch(model)
+        # Create the physics data of the model
+        data = SceneData(model)
+        # tag::options_code[]
 
-    # ---------Try to access options----------
-    options = model.options
-    print(f"model.options: {options}")
-    # Get gravity
-    gravity = options.gravity  # noqa: F841
-    # Get timestep
-    timestep = options.timestep  # noqa: F841
-    # Get max iterations
-    max_iterations = options.max_iterations  # noqa: F841
-    # Get solver tolerance
-    solver_tolerance = options.solver_tolerance  # noqa: F841
-    # Get simulation flags
-    disable_gravity = options.disable_gravity  # noqa: F841
-    disable_contacts = options.disable_contacts  # noqa: F841
-    disable_impedance = options.disable_impedance  # noqa: F841
-    # ----------End----------
+        # ---------Try to access options----------
+        options = model.options
+        print(f"model.options: {options}")
+        # Get gravity
+        gravity = options.gravity  # noqa: F841
+        # Get timestep
+        timestep = options.timestep  # noqa: F841
+        # Get max iterations
+        max_iterations = options.max_iterations  # noqa: F841
+        # Get solver tolerance
+        solver_tolerance = options.solver_tolerance  # noqa: F841
+        # Get simulation flags
+        disable_gravity = options.disable_gravity  # noqa: F841
+        disable_contacts = options.disable_contacts  # noqa: F841
+        disable_impedance = options.disable_impedance  # noqa: F841
+        # ----------End----------
 
-    # Set gravity
-    options.gravity = [0, 0, 9.8]
+        # Set gravity
+        options.gravity = [0, 0, 9.8]
 
-    for i in range(50):
-        simulate(render, model, data)
+        for i in range(50):
+            simulate(render, model, data)
 
-    # Set gravity
-    options.gravity = [0, 0, -9.8]
+        # Set gravity
+        options.gravity = [0, 0, -9.8]
 
-    for i in range(200):
-        simulate(render, model, data)
+        for i in range(200):
+            simulate(render, model, data)
 
-    # Set simulation flags
-    options.disable_contacts = True
-    options.disable_impedance = True
-    # end::options_code[]
-    while True:
-        simulate(render, model, data)
+        # Set simulation flags
+        options.disable_contacts = True
+        options.disable_impedance = True
+        # end::options_code[]
+        while True:
+            simulate(render, model, data)
 
 
 if __name__ == "__main__":

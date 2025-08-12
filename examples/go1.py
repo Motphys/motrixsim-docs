@@ -15,13 +15,14 @@
 
 import random
 import time
+from collections import deque
 
 import numpy as np
 import onnxruntime as ort
 from scipy.spatial.transform import Rotation
 
 from motrixsim import SceneData, SceneModel, load_model, step
-from motrixsim.render import RenderApp
+from motrixsim.render import CaptureTask, RenderApp
 
 default_joint_pos = np.array([0.1, 0.9, -1.8, -0.1, 0.9, -1.8, 0.1, 0.9, -1.8, -0.1, 0.9, -1.8])
 action_scale = 0.5
@@ -100,62 +101,111 @@ def is_fall(model: SceneModel, data: SceneData):
 # - Press and hold right button then drag to pan/translate the view
 def main():
     # Create render window for visualization
-    render = RenderApp()
-    render.opt.set_left_panel_vis(True)
-    # The scene description file
-    path = "examples/assets/go1/scene.xml"
-    # Load the scene model
-    model = load_model(path)
-    # Create the render instance of the model
-    render.launch(model)
-    # Create the physics data of the model
-    data = SceneData(model)
+    with RenderApp() as render:
+        render.opt.set_left_panel_vis(True)
+        # The scene description file
+        path = "examples/assets/go1/scene.xml"
+        # Load the scene model
+        model = load_model(path)
+        # tag: camera render target
+        cameras = model.cameras
+        cameras[0].set_render_target("image", 320, 240)  # let this camera render to a image with 320x240 resolution
+        # endtag
 
-    session = ort.InferenceSession("examples/assets/go1/go1_policy.onnx", providers=["CPUExecutionProvider"])
-    input_name = session.get_inputs()[0].name
-    output_name = session.get_outputs()[0].name
+        # tag: depth camera
+        cameras[1].set_render_target("image", 640, 480)
+        cameras[1].depth_only = True  # This is a depth only camera
+        cameras[1].set_near_far(0.1, 1)  # Set the near and far plane of the camera
+        # endtag
+        preview_cameras = [None, *cameras[2:]]
+        preview_camera_idx = 0
 
-    last_actions = [0] * 12
-    n_infer_interval = 10
-    n_set_tartget_interval = 750
-    go_back = False
-    nsteps = 0
-    target_action = [0.5, 0, 0]
+        # Create the render instance of the model
+        render.launch(model)
+        # Create the physics data of the model
+        data = SceneData(model)
 
-    while True:
-        # Control the step interval to prevent too fast simulation
-        time.sleep(0.002)
-        # Physics world step
-        step(model, data)
+        session = ort.InferenceSession("examples/assets/go1/go1_policy.onnx", providers=["CPUExecutionProvider"])
+        input_name = session.get_inputs()[0].name
+        output_name = session.get_outputs()[0].name
 
-        # If go1 falls, reset the scene
-        if is_fall(model, data):
-            data = SceneData(model)
+        last_actions = [0] * 12
+        n_infer_interval = 10
+        n_set_tartget_interval = 750
+        go_back = False
+        nsteps = 0
+        target_action = [0.5, 0, 0]
 
-        # Add step count
-        nsteps += 1
-        if nsteps % n_infer_interval == 0:
-            # Set random target
-            if nsteps % n_set_tartget_interval == 0:
-                body_pose = model.get_body(model.get_body_index("trunk")).get_pose(data)
-                target_action = update_target(go_back, body_pose[:3])
-                go_back = not go_back
-            # Get observation
-            obs = compute_observations(last_actions, target_action, model, data)
-            # Setup input data
-            input_data = np.array(obs).reshape(1, 48).astype(np.float32)
-            # Run neural network to get output
-            outputs = session.run([output_name], {input_name: input_data})
-            # Read actions from output
-            actions = outputs[0][0]
-            # Apply action to model
-            apply_actions(actions, model, data)
-            # Record action as the next step input
-            last_actions = actions
+        capture_tasks = deque()
+        capture_index = 0
+        while True:
+            # Control the step interval to prevent too fast simulation
+            time.sleep(0.02)
 
-        # Sync render objects from physic world
-        render.sync([data])
+            for _ in range(10):
+                # Physics world step
+                step(model, data)
 
+                # If go1 falls, reset the scene
+                if is_fall(model, data):
+                    data = SceneData(model)
+
+                # Add step count
+                nsteps += 1
+                if nsteps % n_infer_interval == 0:
+                    # Set random target
+                    if nsteps % n_set_tartget_interval == 0:
+                        body_pose = model.get_body(model.get_body_index("trunk")).get_pose(data)
+                        target_action = update_target(go_back, body_pose[:3])
+                        go_back = not go_back
+                    # Get observation
+                    obs = compute_observations(last_actions, target_action, model, data)
+                    # Setup input data
+                    input_data = np.array(obs).reshape(1, 48).astype(np.float32)
+                    # Run neural network to get output
+                    outputs = session.run([output_name], {input_name: input_data})
+                    # Read actions from output
+                    actions = outputs[0][0]
+                    # Apply action to model
+                    apply_actions(actions, model, data)
+                    # Record action as the next step input
+                    last_actions = actions
+            # tag: camera capture
+            # press space to capture the rcamera.
+            if render.input.is_key_just_pressed("space"):
+                rcam = render.get_camera(0)  # get render camera from index
+                capture_tasks.append((capture_index, rcam.capture()))
+                capture_index += 1
+
+            render.sync([data])
+
+            while len(capture_tasks) > 0:
+                task: CaptureTask
+                idx, task = capture_tasks[0]
+                if task.state != "pending":
+                    capture_tasks.popleft()
+                    img = task.take_image()
+                    if img is not None:
+                        import os
+
+                        os.makedirs("shot", exist_ok=True)
+                        img.save_to_disk(f"shot/capture_{idx}.png")
+                else:
+                    break
+            # endtag
+            # tag: switch camera
+            if render.input.is_key_just_pressed("right"):
+                # change to next camera
+                preview_camera_idx = (preview_camera_idx + 1) % len(preview_cameras)
+                render.set_main_camera(preview_cameras[preview_camera_idx])
+
+            if render.input.is_key_just_pressed("left"):
+                # change to previous camera
+                preview_camera_idx = (preview_camera_idx + len(preview_cameras) - 1) % len(preview_cameras)
+                render.set_main_camera(preview_cameras[preview_camera_idx])
+
+
+# endtag
 
 if __name__ == "__main__":
     main()

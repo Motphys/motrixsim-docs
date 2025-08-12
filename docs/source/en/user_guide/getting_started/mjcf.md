@@ -60,8 +60,8 @@ Supported tags:
   - content_type, smoothnormal, maxhullvert, inertia
   - \\
 * - hfield
-  - nrow, ncol, elevation, size
-  - content_type, file
+  - nrow, ncol, elevation, size,content_type, file
+  - \\
   - \\
 * - texture
   - type, file, builtin, rgb1, rgb2, width, height, colorspace
@@ -119,8 +119,8 @@ Supported tags:
   - ellipsoid, sdf
   - \\
 * - site
-  - size, pos, orientation
-  - type, group, material, rgb, fromto
+  - size, pos, orientation, type, group
+  - material, rgb, fromto
   - \\
 * - contact/exclude
   - body1, body2
@@ -242,11 +242,15 @@ Supported tags:
   - kv
   - \\
   - \\
+* - adhesion
+  - body,gain
+  - \\
+  - \\
 ```
 
 Planned tags:
 
-`intvelocity`, `damper`, `cylinder`, `muscle`, `adhesion`
+`intvelocity`, `damper`, `cylinder`, `muscle`
 
 ### Sensors
 
@@ -313,17 +317,16 @@ Supported tags:
   - file
   - \\
   - \\
+* - frame
+  - name, childclass, pos, orientation
+  - \\
+  - \\
 ```
 
 ```{note}
 Please note that MotrixSim currently handles meta tags differently from Mujoco. The main differences are as follows:
 - The `replicate` tag is currently only partially supported. If a body referenced by an actuator or sensor is included within replicate, it may cause reference errors.
-- Regardless of where the `include` tag appears in the XML, MotrixSim will process it at the beginning of the file. This means that if you use include at the end or in the middle of the MJCF, the traversal order of some objects may change.
 ```
-
-Planned tags:
-
-`frame`
 
 ### Keyframe
 
@@ -346,11 +349,11 @@ Planned tags:
 Supported sub tags:
 
 `mesh`,`material`,`joint`,`geom`,`site`,`camera`,`light`,`tendon`,`general`,`motor`,
-`position`,`velocity`,`equality`
+`position`,`velocity`,`equality`,`adhesion`
 
 Planned:
 
-`pair`,,`intvelocity`,`damper`,`cylinder`,`muscle`,`adhesion`
+`pair`,,`intvelocity`,`damper`,`cylinder`,`muscle`,
 
 ### Visual
 
