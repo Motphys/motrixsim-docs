@@ -47,7 +47,6 @@ Each component access method returns the corresponding component object, providi
 | API                                                                         | Type        | Description                                 |
 | --------------------------------------------------------------------------- | ----------- | ------------------------------------------- |
 | [`model.get_actuator_ctrls(data)`](motrixsim.SceneModel.get_actuator_ctrls) | ndarray     | Get all actuator control values             |
-| [`model.get_sensor_values(data)`](motrixsim.SceneModel.get_sensor_values)   | ndarray     | Get all sensor values                       |
 | [`model.get_link_poses(data)`](motrixsim.SceneModel.get_link_poses)         | ndarray     | Get positions and orientations of all links |
 | [`model.bodies`](motrixsim.SceneModel.bodies)                               | List[Body]  | List of all body objects                    |
 | [`model.links`](motrixsim.SceneModel.links)                                 | List[Link]  | List of all link objects                    |

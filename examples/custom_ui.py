@@ -50,7 +50,7 @@ def main():
         while True:
             time.sleep(0.02)
             step(model, data)
-            render.sync([data])
+            render.sync(data)
 
 
 if __name__ == "__main__":

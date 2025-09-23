@@ -18,9 +18,27 @@ import random
 import numpy as np
 from scipy.spatial.transform import Rotation
 
+from legged_gym.addr import LEGGED_GYM_ENVS_DIR
 from legged_gym.envs.base.legged_robot_config import LeggedRobotCfg
 from motrixsim import SceneData, load_model, step
-from motrixsim.render import RenderApp
+from motrixsim.render import Color, RenderApp
+
+
+def load_hfield_with_header(file_path):
+    """
+    读取包含行列头信息的高度场二进制文件
+    :param file_path: 文件路径
+    :return: (nrows, ncols, height_data)
+    """
+    with open(file_path, "rb") as f:
+        # 读取前8字节（nrows和ncols，每个占4字节）
+        nrows = np.fromfile(f, dtype=np.int32, count=1)[0]
+        ncols = np.fromfile(f, dtype=np.int32, count=1)[0]
+
+        # 读取剩余的高度数据（float32格式）
+        height_data = np.fromfile(f, dtype=np.float32).reshape(nrows, ncols)
+
+    return nrows, ncols, height_data
 
 
 class Legged_Robot:
@@ -28,7 +46,51 @@ class Legged_Robot:
         self.config = Cfg
         self.env_init()
         self.render_init()
+        self.render_draw_init()
         self.buffer_init()
+        self.reset()
+        if self.config.terrain.measure_heights:
+            self.nrows, self.ncols, self.height_data = load_hfield_with_header(
+                LEGGED_GYM_ENVS_DIR + self.config.terrain.hfield_path
+            )
+            min = np.min(self.height_data)
+            max = np.max(self.height_data)
+            self.height_data = self.height_data - min
+            self.height_data = self.height_data / (max - min)
+            measured_points_x = [
+                -0.8,
+                -0.7,
+                -0.6,
+                -0.5,
+                -0.4,
+                -0.3,
+                -0.2,
+                -0.1,
+                0.0,
+                0.1,
+                0.2,
+                0.3,
+                0.4,
+                0.5,
+                0.6,
+                0.7,
+                0.8,
+            ]  # 1mx1.6m rectangle (without center line)
+            measured_points_y = [-0.5, -0.4, -0.3, -0.2, -0.1, 0.0, 0.1, 0.2, 0.3, 0.4, 0.5]
+            gridx, gridy = np.meshgrid(measured_points_x, measured_points_y)
+            num_height_points = len(measured_points_x) * len(measured_points_y)
+            self.points = np.zeros([num_height_points, 3])
+            self.points[:, 0] = gridx.flatten()
+            self.points[:, 1] = gridy.flatten()
+
+    def render_draw_init(self):
+        self._render.gizmos.draw_collider = False
+        self._render.gizmos.draw_site = False
+        self._render.gizmos.draw_joint = False
+        self._render.gizmos.joint_size = 1.5
+        self._render.gizmos.line_width = 5
+        self._render.gizmos.collider_color = Color.rgb(0.5, 1, 0.5)
+        self._render.gizmos.joint_color = Color.rgb(1, 1, 0.5)
 
     def buffer_init(self):
         # init buffers
@@ -38,6 +100,7 @@ class Legged_Robot:
         self.obs = np.zeros(self.config.env.num_observations, dtype=np.float32)
         self.kps = np.ones(self.config.env.num_actions, dtype=np.float32)
         self.kds = np.ones(self.config.env.num_actions, dtype=np.float32)
+        self.e_angle = np.ones(self.config.env.num_actions)
         if type(self.config.control.stiffness) is int:
             self.kps = self.kps * self.config.control.stiffness
             unified_stiffness = True
@@ -77,12 +140,12 @@ class Legged_Robot:
             if not unified_damping:
                 self.kds[actuator_index] = self.config.control.damping[actuator_name]
 
-        # print("default_angles = ",self.default_angles)
         self.episode_length_buf = 0
         self.common_step_counter = 0
         self.last_actions = np.zeros(self.config.env.num_actions, dtype=np.float16)
         self.commands = self.resample_commands()
         self.torque_limits = self.config.control.torque_limits
+        self.dt = self.config.sim.dt * self.config.control.decimation
         self._sync_dof_data()
 
     def render_init(self):
@@ -153,6 +216,8 @@ class Legged_Robot:
         self.terminated = self.is_fall()
         self.timed_out = self.episode_length_buf > self.max_episode_length
         self.reset_buf = self.terminated | self.timed_out
+        # result = self.cquery.is_colliding([[self.ground, self.rr], [self.ground, self.rr1], [self.ground, self.rr2]])
+        # print(result)
 
     def is_fall(self):
         rotation = Rotation.from_quat(self.pose[3:7])  # xyzw

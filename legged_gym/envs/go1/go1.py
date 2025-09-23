@@ -16,6 +16,7 @@
 import numpy as np
 
 from legged_gym.envs.base.legged_robot import Legged_Robot
+from motrixsim import step
 
 
 class Go1_env(Legged_Robot):
@@ -31,3 +32,26 @@ class Go1_env(Legged_Robot):
         obs[45:48] = self.commands
         self.last_actions = self.actions
         return obs
+
+    def step(self, actions):
+        # Apply actuations, simulate, call self.post_physics_step()
+
+        self.actions = actions
+        for _ in range(self.config.control.decimation):
+            self.torques = self._compute_torques(self.actions)
+            self.e_angle = self.dof_estimate()
+            self.data.actuator_ctrls = self.torques
+            step(self.model, self.data)
+
+        self.post_physics_step()
+        self.obs = self.compute_obs()
+
+    def env_reset(self):
+        super().env_reset()
+
+    def dof_estimate(self):  ####分析传递函数
+        k = 2
+        actions_scaled = self.actions * self.config.control.action_scale
+        d_angle = k * (actions_scaled - self.dof_pos) * self.config.sim.dt
+        estimate_angle = self.dof_pos + d_angle
+        return estimate_angle

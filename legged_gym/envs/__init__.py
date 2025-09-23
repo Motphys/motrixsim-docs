@@ -21,9 +21,3 @@ from legged_gym.envs.go1.go1 import Go1_env
 from legged_gym.envs.go1.go1_config import Go1Cfg
 from legged_gym.envs.T1.T1 import T1_env
 from legged_gym.envs.T1.T1_config import T1Cfg
-from legged_gym.utils.task_registry import task_registry
-
-task_registry.register("go1", Go1_env, Go1Cfg)
-task_registry.register("T1", T1_env, T1Cfg)
-task_registry.register("BHL", BH_env, BHCfg)
-task_registry.register("BHA", BHA_env, BHACfg)

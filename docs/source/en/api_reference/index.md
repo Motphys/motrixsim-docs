@@ -14,6 +14,7 @@ The MotrixSim API is designed with a layered architecture to meet the needs of d
 | ------------- | ---------------------------------------- | ----------------------------------- | ------------------------------------------------ |
 | **Core**      | [`motrixsim`](core/index.md)             | Simple, user-friendly API           | Robot control, reinforcement learning            |
 | **Rendering** | [`motrixsim.render`](rendering/index.md) | Real-time rendering, interactive UI | Simulation visualization, debugging and analysis |
+| **IK Module** | [`motrixsim.ik`](ik/index.md)            | Efficient solving, easy to use      | Inverse kinematics solving                       |
 
 ## 📚 Detailed Module Documentation
 
@@ -22,4 +23,5 @@ The MotrixSim API is designed with a layered architecture to meet the needs of d
 api_quick_reference
 core/index
 rendering/index
+ik/index
 ```

@@ -23,18 +23,9 @@ For the complete example, see [`examples/empty.py`](../../../../examples/empty.p
 
 ### Multiple Data Instances
 
-MotrixSim supports creating multiple independent `SceneData` instances from the same `SceneModel`, which is useful for parallel experiments, state backups, parameter comparisons, and more.
+MotrixSim supports creating multiple independent data instances based on the same `SceneModel`. Each data instance is isolated and can be updated independently, making it suitable for scenarios such as parallel simulation in multiple environments.
 
-```{literalinclude} ../../../../examples/model.py
-:language: python
-:dedent:
-:start-after: "# tag::create_data[]"
-:end-before:  "# end::create_data[]"
-```
-
-Each data instance is independent and can be updated separately.
-
-For the complete example, see [`examples/model.py`](../../../../examples/model.py).
+For more details, see the [`Parallel Simulation`](./parallel.md) section.
 
 ## State Access
 

@@ -23,6 +23,8 @@ overview/legged_gym
 main_function/scene_model
 main_function/scene_data
 main_function/options
+main_function/parallel
+main_function/ik
 main_function/render
 ```
 
@@ -33,6 +35,7 @@ kinematics/body
 kinematics/floating_base
 kinematics/joint
 kinematics/link
+kinematics/geometry
 kinematics/actuator
 kinematics/sensor
 kinematics/site

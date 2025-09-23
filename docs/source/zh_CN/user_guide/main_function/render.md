@@ -79,7 +79,7 @@ _完整代码见 [examples/gizmos.py](../../../../examples/gizmos.py)_
 
 ## 单模型多实例渲染
 
-[`render.launch(model)`] 还有 repeat:int 与 render_offset:List[:3] 两个可选参数，在需要单个模型多实例渲染时，分别用于设置实例数与偏移位置。
+[`render.launch(model)`] 还有 batch:int 与 render_offset:List[:3] 两个可选参数，在需要单个模型多实例渲染时，分别用于设置实例数与偏移位置。
 
 ```{literalinclude} ../../../../examples/model.py
 :language: python

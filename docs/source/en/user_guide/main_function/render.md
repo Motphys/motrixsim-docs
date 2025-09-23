@@ -79,7 +79,7 @@ The renderer provides a free camera control system. Users can control the camera
 
 ## Multi-Instance Rendering of a Single Model
 
-[`render.launch(model)`] also supports two optional parameters: repeat:int and render_offset:List[:3]. These are used to set the number of instances and the offset positions when rendering multiple instances of a single model.
+[`render.launch(model)`] also supports two optional parameters: batch:int and render_offset:List[:3]. These are used to set the number of instances and the offset positions when rendering multiple instances of a single model.
 
 ```{literalinclude} ../../../../examples/model.py
 :language: python

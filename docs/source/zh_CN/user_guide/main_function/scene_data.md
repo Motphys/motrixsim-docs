@@ -23,18 +23,9 @@
 
 ### 多数据实例
 
-MotrixSim 支持基于同一个 `SceneModel` 创建多个独立的 `SceneData` 实例，适用于并行实验、状态备份、参数对比等场景。
+MotrixSim 支持基于同一个 `SceneModel` 创建多个独立的实例数据，各数据实例之间互不影响，可以独立进行状态更新。 适用于多环境并行仿真等场景。
 
-```{literalinclude} ../../../../examples/model.py
-:language: python
-:dedent:
-:start-after: "# tag::create_data[]"
-:end-before:  "# end::create_data[]"
-```
-
-各数据实例之间互不影响，可以独立进行状态更新。
-
-完整的示例代码请参见 [`examples/model.py`](../../../../examples/model.py)。
+您可以阅读[`并行仿真`](./parallel.md)章节了解更多细节信息.
 
 ## 状态访问
 

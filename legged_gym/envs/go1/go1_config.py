@@ -24,6 +24,9 @@ class Go1Cfg(LeggedRobotCfg):
         action_scale = 0.5
         decimation = 10
 
+    class terrain(LeggedRobotCfg.terrain):
+        measure_heights = False
+
     class init_state(LeggedRobotCfg.init_state):
         default_joint_angles = {  # = target angles [rad] when action = 0.0
             "FL_hip_joint": 0.1,  # [rad]

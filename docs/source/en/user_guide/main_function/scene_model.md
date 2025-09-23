@@ -8,10 +8,10 @@ In MotrixSim, the model `SceneModel` and the data `SceneData` are essential comp
 
 `SceneModel` mainly contains the following:
 
-| Category              | Description                                                                                                                                                                                                                                                          |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Components            | Joints [`Joint`](../kinematics/joint.md), Bodies [`Body`](../kinematics/body.md), Links [`Link`](../kinematics/link.md), Sensors [`Sensor`](../kinematics/sensor.md), Actuators [`Actuator`](../kinematics/actuator.md), Sites [`Site`](../kinematics/site.md), etc. |
-| Simulation Parameters | [`Options`](options.md) (including `timestep`, `gravity`, etc.)                                                                                                                                                                                                      |
+| Category              | Description                                                                                                                                                                                                                                                                                                             |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Components            | Joints [`Joint`](../kinematics/joint.md), Bodies [`Body`](../kinematics/body.md), Links [`Link`](../kinematics/link.md), Geomtries [`Geometry`](../kinematics/geometry.md), Sensors [`Sensor`](../kinematics/sensor.md), Actuators [`Actuator`](../kinematics/actuator.md), Sites [`Site`](../kinematics/site.md), etc. |
+| Simulation Parameters | [`Options`](options.md) (including `timestep`, `gravity`, etc.)                                                                                                                                                                                                                                                         |
 
 ## Creating a Model
 

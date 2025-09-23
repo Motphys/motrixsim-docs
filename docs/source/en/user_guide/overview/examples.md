@@ -62,6 +62,12 @@ pdm run examples/{example_name}.py
 * - ![friction](/_static/images/examples/friction.png)
   - [`friction.py`](../../../../examples/friction.py)
   - Scene demonstrating friction configuration.
+* - ![parallelsim](/_static/images/examples/parallelsim.png)
+  - [`parallelsim.py`](../../../../examples/parallelsim.py)
+  - Multi-environment parallel simulation.
+* - ![inverse kinematics](/_static/images/examples/ik.jpg)
+  - [`ik.py`](../../../../examples/ik.py)
+  - Demonstrates how to use the built-in IK module in MotrixSim for inverse kinematics solving.
 ```
 
 ## Interactive Control

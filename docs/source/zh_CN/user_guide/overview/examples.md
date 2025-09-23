@@ -66,6 +66,12 @@ pdm run examples/{example_name}.py
 * - ![friction](/_static/images/examples/friction.png)
   - [`friction.py`](../../../../examples/friction.py)
   - 摩擦力配置的场景。
+* - ![parallelsim](/_static/images/examples/parallelsim.png)
+  - [`parallelsim.py`](../../../../examples/parallelsim.py)
+  - 多环境并行仿真。
+* - ![inverse kinematics](/_static/images/examples/ik.jpg)
+  - [`ik.py`](../../../../examples/ik.py)
+  - 展示如何使用 MotrixSim 内置的 IK 模块进行逆运动学求解。
 ```
 
 ## 交互控制

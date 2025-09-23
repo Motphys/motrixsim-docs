@@ -97,12 +97,6 @@ def main():
 
             print("-----------------------------------------")
 
-            # tag::get_sensor_values[]
-            sensor_values = model.get_sensor_values(data)
-            print(f"all sensor values are : {sensor_values}")
-            # end::get_sensor_values[]
-            print("-----------------------------------------")
-
             # Sync render objects from physic world
             render.sync(data)
 

@@ -36,13 +36,4 @@ Get the sensor data for a specified "sensor_name":
 :end-before:  "# end::get_sensor_value[]"
 ```
 
-Get all sensor data in the model:
-
-```{literalinclude} ../../../../examples/site_and_sensor.py
-:language: python
-:dedent:
-:start-after: "# tag::get_sensor_values[]"
-:end-before:  "# end::get_sensor_values[]"
-```
-
 For the complete example code, see [`examples/site_and_sensor.py`](../../../../examples/site_and_sensor.py)

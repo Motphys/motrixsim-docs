@@ -18,7 +18,7 @@ from legged_gym.addr import LEGGED_GYM_ENVS_DIR
 
 class LeggedRobotCfg:
     class sim:
-        max_episode_length = 1000
+        max_episode_length = 5000
         dt = 0.004
 
     class env:
@@ -44,6 +44,11 @@ class LeggedRobotCfg:
             "FR_calf": -1.5,
             "RR_calf": -1.5,
         }
+
+    class terrain:
+        measure_heights = False
+        type = "plane"
+        hfield_path = "/resources/robots/G1/heightmap.hfield"
 
     class commands:
         resampling_interval = 200  # dt

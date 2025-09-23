@@ -93,7 +93,7 @@ def main():
 
             rot = dr * rot
 
-            render.sync([data])
+            render.sync(data)
 
 
 if __name__ == "__main__":

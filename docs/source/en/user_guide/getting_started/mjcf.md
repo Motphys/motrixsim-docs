@@ -139,8 +139,8 @@ Supported tags:
   - active, bulbradius, intensity, range, attenuation, exponent, ambient, specular, texture
   - \\
 * - light.type
-  - spot, directional
-  - point, image
+  - spot, directional, point
+  - image
   - \\
 * - light.mode
   - fixed, track, targetbody
@@ -380,8 +380,8 @@ Supported tags:
   - stiffness, stiffnessrot, force, torque, alpha, haze, shadowclip, shadowscale, actuatortendon
   - \\
 * - rgba
-  - fog
-  - haze, force, inertia, joint, actuator, actuatornegative, actuatorpositive, com, camera, light, selectpoint, connect, contactpoint, contactforce, contactfriction, contacttorque, contactgap, rangefinder, constraint, slidercrank, crankbroken, frustum, bv, bvactive
+  - fog, haze, joint, bv, contactforce
+  - force, inertia, actuator, actuatornegative, actuatorpositive, com, camera, light, selectpoint, connect, contactpoint, contactfriction, contacttorque, contactgap, rangefinder, constraint, slidercrank, crankbroken, frustum, bvactive
   - \\
 ```
 

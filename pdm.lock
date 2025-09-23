@@ -76,7 +76,7 @@ files = [
 
 [[package]]
 name = "beautifulsoup4"
-version = "4.13.4"
+version = "4.13.5"
 requires_python = ">=3.7.0"
 summary = "Screen-scraping library"
 groups = ["docs"]
@@ -85,8 +85,8 @@ dependencies = [
     "typing-extensions>=4.0.0",
 ]
 files = [
-    {file = "beautifulsoup4-4.13.4-py3-none-any.whl", hash = "sha256:9bbbb14bfde9d79f38b8cd5f8c7c85f4b8f2523190ebed90e950a8dea4cb1c4b"},
-    {file = "beautifulsoup4-4.13.4.tar.gz", hash = "sha256:dbb3c4e1ceae6aefebdaf2423247260cd062430a410e38c66f2baa50a8437195"},
+    {file = "beautifulsoup4-4.13.5-py3-none-any.whl", hash = "sha256:642085eaa22233aceadff9c69651bc51e8bf3f874fb6d7104ece2beb24b47c4a"},
+    {file = "beautifulsoup4-4.13.5.tar.gz", hash = "sha256:5e70131382930e7c3de33450a2f54a63d5e4b19386eab43a5b34d594268f3695"},
 ]
 
 [[package]]
@@ -218,30 +218,30 @@ files = [
 
 [[package]]
 name = "fsspec"
-version = "2025.7.0"
+version = "2025.9.0"
 requires_python = ">=3.9"
 summary = "File-system specification"
 groups = ["examples"]
 files = [
-    {file = "fsspec-2025.7.0-py3-none-any.whl", hash = "sha256:8b012e39f63c7d5f10474de957f3ab793b47b45ae7d39f2fb735f8bbe25c0e21"},
-    {file = "fsspec-2025.7.0.tar.gz", hash = "sha256:786120687ffa54b8283d942929540d8bc5ccfa820deb555a2b5d0ed2b737bf58"},
+    {file = "fsspec-2025.9.0-py3-none-any.whl", hash = "sha256:530dc2a2af60a414a832059574df4a6e10cce927f6f4a78209390fe38955cfb7"},
+    {file = "fsspec-2025.9.0.tar.gz", hash = "sha256:19fd429483d25d28b65ec68f9f4adc16c17ea2c7c7bf54ec61360d478fb19c19"},
 ]
 
 [[package]]
 name = "glfw"
-version = "2.9.0"
+version = "2.10.0"
 summary = "A ctypes-based wrapper for GLFW3."
 groups = ["examples"]
 files = [
-    {file = "glfw-2.9.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.p39.p310.p311.p312.p313-none-macosx_10_6_intel.whl", hash = "sha256:183da99152f63469e9263146db2eb1b6cc4ee0c4082b280743e57bd1b0a3bd70"},
-    {file = "glfw-2.9.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.p39.p310.p311.p312.p313-none-macosx_11_0_arm64.whl", hash = "sha256:aef5b555673b9555216e4cd7bc0bdbbb9983f66c620a85ba7310cfcfda5cd38c"},
-    {file = "glfw-2.9.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.p39.p310.p311.p312.p313-none-manylinux2014_aarch64.whl", hash = "sha256:fcc430cb21984afba74945b7df38a5e1a02b36c0b4a2a2bab42b4a26d7cc51d6"},
-    {file = "glfw-2.9.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.p39.p310.p311.p312.p313-none-manylinux2014_x86_64.whl", hash = "sha256:7f85b58546880466ac445fc564c5c831ca93c8a99795ab8eaf0a2d521af293d7"},
-    {file = "glfw-2.9.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.p39.p310.p311.p312.p313-none-manylinux_2_28_aarch64.whl", hash = "sha256:2123716c8086b80b797e849a534fc6f21aebca300519e57c80618a65ca8135dc"},
-    {file = "glfw-2.9.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.p39.p310.p311.p312.p313-none-manylinux_2_28_x86_64.whl", hash = "sha256:4e11271e49eb9bc53431ade022e284d5a59abeace81fe3b178db1bf3ccc0c449"},
-    {file = "glfw-2.9.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.p39.p310.p311.p312.p313-none-win32.whl", hash = "sha256:8e4fbff88e4e953bb969b6813195d5de4641f886530cc8083897e56b00bf2c8e"},
-    {file = "glfw-2.9.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.p39.p310.p311.p312.p313-none-win_amd64.whl", hash = "sha256:9aa3ae51601601c53838315bd2a03efb1e6bebecd072b2f64ddbd0b2556d511a"},
-    {file = "glfw-2.9.0.tar.gz", hash = "sha256:077111a150ff09bc302c5e4ae265a5eb6aeaff0c8b01f727f7fb34e3764bb8e2"},
+    {file = "glfw-2.10.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.p39.p310.p311.p312.p313-none-macosx_10_6_intel.whl", hash = "sha256:5f365a8c94bcea71ec91327e7c16e7cf739128479a18b8c1241b004b40acc412"},
+    {file = "glfw-2.10.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.p39.p310.p311.p312.p313-none-macosx_11_0_arm64.whl", hash = "sha256:5328db1a92d07abd988730517ec02aa8390d3e6ef7ce98c8b57ecba2f43a39ba"},
+    {file = "glfw-2.10.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.p39.p310.p311.p312.p313-none-manylinux2014_aarch64.whl", hash = "sha256:312c4c1dd5509613ed6bc1e95a8dbb75a36b6dcc4120f50dc3892b40172e9053"},
+    {file = "glfw-2.10.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.p39.p310.p311.p312.p313-none-manylinux2014_x86_64.whl", hash = "sha256:59c53387dc08c62e8bed86bbe3a8d53ab1b27161281ffa0e7f27b64284e2627c"},
+    {file = "glfw-2.10.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.p39.p310.p311.p312.p313-none-manylinux_2_28_aarch64.whl", hash = "sha256:c6f292fdaf3f9a99e598ede6582d21c523a6f51f8f5e66213849101a6bcdc699"},
+    {file = "glfw-2.10.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.p39.p310.p311.p312.p313-none-manylinux_2_28_x86_64.whl", hash = "sha256:7916034efa867927892635733a3b6af8cd95ceb10566fd7f1e0d2763c2ee8b12"},
+    {file = "glfw-2.10.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.p39.p310.p311.p312.p313-none-win32.whl", hash = "sha256:6c9549da71b93e367b4d71438798daae1da2592039fd14204a80a1a2348ae127"},
+    {file = "glfw-2.10.0-py2.py27.py3.py30.py31.py32.py33.py34.py35.py36.py37.py38.p39.p310.p311.p312.p313-none-win_amd64.whl", hash = "sha256:6292d5d6634d668cd23d337e6089491d3945a9aa4ac6e1667b0003520d7caa51"},
+    {file = "glfw-2.10.0.tar.gz", hash = "sha256:801e55d8581b34df9aa2cfea43feb06ff617576e2a8cc5dac23ee75b26d10abe"},
 ]
 
 [[package]]
@@ -371,7 +371,7 @@ files = [
 
 [[package]]
 name = "motrixsim"
-version = "0.2.0"
+version = "0.3.0"
 requires_python = "<3.14,>=3.10"
 summary = "A high-performance physics simulation engine designed for multibody dynamics and robotics simulation."
 groups = ["default", "docs", "examples"]
@@ -380,38 +380,38 @@ dependencies = [
     "numpy",
 ]
 files = [
-    {file = "motrixsim-0.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:bf85ee0e35f6292a22fbb3363747708c2d8e226bb54750ba498bd7c4ee330317"},
-    {file = "motrixsim-0.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:17e170c687d9970a73cb51da5cd76dc5f22b398408f443f121d7b2806d6cf8cf"},
+    {file = "motrixsim-0.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ab13d03cb64ae619d18c4d2b2514759dd4d8367335e8d2f9a7a4c2a35948b414"},
+    {file = "motrixsim-0.3.0-cp310-cp310-win_amd64.whl", hash = "sha256:3fe723bd06838c8894c4afd8eda4583d15cb5acb3fecda24fcab847bb4e7ff7c"},
 ]
 
 [[package]]
 name = "motrixsim"
-version = "0.2.0"
+version = "0.3.0"
 extras = ["demo", "mujoco_demo"]
 requires_python = "<3.14,>=3.10"
 summary = "A high-performance physics simulation engine designed for multibody dynamics and robotics simulation."
 groups = ["examples"]
 dependencies = [
-    "motrixsim==0.2.0",
+    "motrixsim==0.3.0",
     "mujoco>=3.3.3",
     "numpy-quaternion>=2024.0.8",
     "onnxruntime>=1.22.0",
 ]
 files = [
-    {file = "motrixsim-0.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:bf85ee0e35f6292a22fbb3363747708c2d8e226bb54750ba498bd7c4ee330317"},
-    {file = "motrixsim-0.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:17e170c687d9970a73cb51da5cd76dc5f22b398408f443f121d7b2806d6cf8cf"},
+    {file = "motrixsim-0.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ab13d03cb64ae619d18c4d2b2514759dd4d8367335e8d2f9a7a4c2a35948b414"},
+    {file = "motrixsim-0.3.0-cp310-cp310-win_amd64.whl", hash = "sha256:3fe723bd06838c8894c4afd8eda4583d15cb5acb3fecda24fcab847bb4e7ff7c"},
 ]
 
 [[package]]
 name = "motrixsim"
-version = "0.2.0"
+version = "0.3.0"
 extras = ["docs"]
 requires_python = "<3.14,>=3.10"
 summary = "A high-performance physics simulation engine designed for multibody dynamics and robotics simulation."
 groups = ["docs"]
 dependencies = [
     "autodocsumm",
-    "motrixsim==0.2.0",
+    "motrixsim==0.3.0",
     "myst-parser",
     "pydata-sphinx-theme",
     "sphinx",
@@ -422,8 +422,8 @@ dependencies = [
     "sphinxcontrib-video",
 ]
 files = [
-    {file = "motrixsim-0.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:bf85ee0e35f6292a22fbb3363747708c2d8e226bb54750ba498bd7c4ee330317"},
-    {file = "motrixsim-0.2.0-cp310-cp310-win_amd64.whl", hash = "sha256:17e170c687d9970a73cb51da5cd76dc5f22b398408f443f121d7b2806d6cf8cf"},
+    {file = "motrixsim-0.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ab13d03cb64ae619d18c4d2b2514759dd4d8367335e8d2f9a7a4c2a35948b414"},
+    {file = "motrixsim-0.3.0-cp310-cp310-win_amd64.whl", hash = "sha256:3fe723bd06838c8894c4afd8eda4583d15cb5acb3fecda24fcab847bb4e7ff7c"},
 ]
 
 [[package]]
@@ -438,7 +438,7 @@ files = [
 
 [[package]]
 name = "mujoco"
-version = "3.3.5"
+version = "3.3.6"
 requires_python = ">=3.9"
 summary = "MuJoCo Physics Simulator"
 groups = ["examples"]
@@ -450,12 +450,12 @@ dependencies = [
     "pyopengl",
 ]
 files = [
-    {file = "mujoco-3.3.5-cp310-cp310-macosx_10_16_x86_64.whl", hash = "sha256:e2b161d172a9aa41e53a837d52b756d41ca97d69ca694fdbb6fea090e387b79c"},
-    {file = "mujoco-3.3.5-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:26f2576c55e6a7eae9ac348beb9af310ae55e0f570e5a1bc4dff2c254c0c28e4"},
-    {file = "mujoco-3.3.5-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:e304f33404d0421a2e65651dd171846f7c2a8c8b8120272eedd727a6f53ed073"},
-    {file = "mujoco-3.3.5-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:9be402d36db82a7efef4b6b2553590b288e1ceed593d648fff58f75aa89a501a"},
-    {file = "mujoco-3.3.5-cp310-cp310-win_amd64.whl", hash = "sha256:f392b21655a8ae466e0677696bb311527847e4cbce5ebe1023e637b6d41e0acc"},
-    {file = "mujoco-3.3.5.tar.gz", hash = "sha256:f9fc6550fc9ed9768223db2d7b3cc32b5a02eb9e887282b40e451c266af16a46"},
+    {file = "mujoco-3.3.6-cp310-cp310-macosx_10_16_x86_64.whl", hash = "sha256:47ddd367a7985b2d6317571ad70186de4bfcc3c0129f4646c2cd125472d08155"},
+    {file = "mujoco-3.3.6-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:475e09031c591690f63ef26e468caef3a37737da7ad1e816dd4f225d3bb78045"},
+    {file = "mujoco-3.3.6-cp310-cp310-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:fe2692b30d9b49e4655ff99c9c620554d2bfe3869f860d3cb30c24e66babcd8c"},
+    {file = "mujoco-3.3.6-cp310-cp310-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:7640bc40229fce2611be76999b04cc6e8fadd315a40165ddeab48764ac5c2878"},
+    {file = "mujoco-3.3.6-cp310-cp310-win_amd64.whl", hash = "sha256:ce5bb10df5bce61f1d8e48733d1d87f018259b779922658ae1c2b05d0271d9a7"},
+    {file = "mujoco-3.3.6.tar.gz", hash = "sha256:126bfb0db442eb6407776dc4f98c7c022954947931e03c395ec45fa58463fb5e"},
 ]
 
 [[package]]
@@ -503,7 +503,7 @@ files = [
 
 [[package]]
 name = "numpy-quaternion"
-version = "2024.0.10"
+version = "2024.0.12"
 requires_python = "<3.14,>=3.10"
 summary = "Add a quaternion dtype to NumPy"
 groups = ["examples"]
@@ -512,13 +512,13 @@ dependencies = [
     "scipy<2,>=1.5",
 ]
 files = [
-    {file = "numpy_quaternion-2024.0.10-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:32674b7c27c845f5652471578b0680ffb10361a3e91b2fb4db9db727f23facbd"},
-    {file = "numpy_quaternion-2024.0.10-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:5da407ea9cc441b2d48f39ed60f2b3363829008cdb8b80bd848fadfdadc84d47"},
-    {file = "numpy_quaternion-2024.0.10-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:3b18181102aadd88bcdab9af7e213bf82bd893179622b06ee50b256720c9862f"},
-    {file = "numpy_quaternion-2024.0.10-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:288a3747d8f86dad921d4e0c548e4c5c9a43567d5ba76beade73aea15a48c8e2"},
-    {file = "numpy_quaternion-2024.0.10-cp310-cp310-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:170a149d0da4866d26e529348753e5130ca05120c407a0fdf72d0a85a039c427"},
-    {file = "numpy_quaternion-2024.0.10-cp310-cp310-win_amd64.whl", hash = "sha256:8aff19e0f806aa542638ecc3d8456125adb30d214d605ef8392f95abc293d259"},
-    {file = "numpy_quaternion-2024.0.10.tar.gz", hash = "sha256:248f9c94021253a702ef19ccbd839be9949a061de1cb91eb4ee30420a3699555"},
+    {file = "numpy_quaternion-2024.0.12-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:606b0fb2d58a0b15419432a3714020b8c60fc6a829d9d1e962ae21c769e95dad"},
+    {file = "numpy_quaternion-2024.0.12-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:27d8ffaa871ba67ca599008692926bb45b964f1eedd83021699a137a0d510a7f"},
+    {file = "numpy_quaternion-2024.0.12-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:c48c61c0feb952347486816a0fe5d2712a1f57a427ed28cf845c570135d592c3"},
+    {file = "numpy_quaternion-2024.0.12-cp310-cp310-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl", hash = "sha256:536f8448c26d9af2747fc10f7ed8f9b308c840afbae14c617a1af9e02e5eb3ed"},
+    {file = "numpy_quaternion-2024.0.12-cp310-cp310-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:76de6b14aaf5a2578bc03d7d2118235b8c668cc3aeab4fdc48fda1f189f31f1c"},
+    {file = "numpy_quaternion-2024.0.12-cp310-cp310-win_amd64.whl", hash = "sha256:f862f0a1a9ad60966fdc37ee61c233da105e6776da70da81c010adc082743798"},
+    {file = "numpy_quaternion-2024.0.12.tar.gz", hash = "sha256:5ecb4e310e732bc21687474c1bc6cd6187d5c22da78d342379fe81f12f46037f"},
 ]
 
 [[package]]
@@ -555,18 +555,18 @@ files = [
 
 [[package]]
 name = "protobuf"
-version = "6.31.1"
+version = "6.32.1"
 requires_python = ">=3.9"
 summary = ""
 groups = ["examples"]
 files = [
-    {file = "protobuf-6.31.1-cp310-abi3-win32.whl", hash = "sha256:7fa17d5a29c2e04b7d90e5e32388b8bfd0e7107cd8e616feef7ed3fa6bdab5c9"},
-    {file = "protobuf-6.31.1-cp310-abi3-win_amd64.whl", hash = "sha256:426f59d2964864a1a366254fa703b8632dcec0790d8862d30034d8245e1cd447"},
-    {file = "protobuf-6.31.1-cp39-abi3-macosx_10_9_universal2.whl", hash = "sha256:6f1227473dc43d44ed644425268eb7c2e488ae245d51c6866d19fe158e207402"},
-    {file = "protobuf-6.31.1-cp39-abi3-manylinux2014_aarch64.whl", hash = "sha256:a40fc12b84c154884d7d4c4ebd675d5b3b5283e155f324049ae396b95ddebc39"},
-    {file = "protobuf-6.31.1-cp39-abi3-manylinux2014_x86_64.whl", hash = "sha256:4ee898bf66f7a8b0bd21bce523814e6fbd8c6add948045ce958b73af7e8878c6"},
-    {file = "protobuf-6.31.1-py3-none-any.whl", hash = "sha256:720a6c7e6b77288b85063569baae8536671b39f15cc22037ec7045658d80489e"},
-    {file = "protobuf-6.31.1.tar.gz", hash = "sha256:d8cac4c982f0b957a4dc73a80e2ea24fab08e679c0de9deb835f4a12d69aca9a"},
+    {file = "protobuf-6.32.1-cp310-abi3-win32.whl", hash = "sha256:a8a32a84bc9f2aad712041b8b366190f71dde248926da517bde9e832e4412085"},
+    {file = "protobuf-6.32.1-cp310-abi3-win_amd64.whl", hash = "sha256:b00a7d8c25fa471f16bc8153d0e53d6c9e827f0953f3c09aaa4331c718cae5e1"},
+    {file = "protobuf-6.32.1-cp39-abi3-macosx_10_9_universal2.whl", hash = "sha256:d8c7e6eb619ffdf105ee4ab76af5a68b60a9d0f66da3ea12d1640e6d8dab7281"},
+    {file = "protobuf-6.32.1-cp39-abi3-manylinux2014_aarch64.whl", hash = "sha256:2f5b80a49e1eb7b86d85fcd23fe92df154b9730a725c3b38c4e43b9d77018bf4"},
+    {file = "protobuf-6.32.1-cp39-abi3-manylinux2014_x86_64.whl", hash = "sha256:b1864818300c297265c83a4982fd3169f97122c299f56a56e2445c3698d34710"},
+    {file = "protobuf-6.32.1-py3-none-any.whl", hash = "sha256:2601b779fc7d32a866c6b4404f9d42a3f67c5b9f3f15b4db3cccabe06b95c346"},
+    {file = "protobuf-6.32.1.tar.gz", hash = "sha256:ee2469e4a021474ab9baafea6cd070e5bf27c7d29433504ddea1a4ee5850f68d"},
 ]
 
 [[package]]
@@ -602,12 +602,12 @@ files = [
 
 [[package]]
 name = "pyopengl"
-version = "3.1.9"
+version = "3.1.10"
 summary = "Standard OpenGL bindings for Python"
 groups = ["examples"]
 files = [
-    {file = "PyOpenGL-3.1.9-py3-none-any.whl", hash = "sha256:15995fd3b0deb991376805da36137a4ae5aba6ddbb5e29ac1f35462d130a3f77"},
-    {file = "pyopengl-3.1.9.tar.gz", hash = "sha256:28ebd82c5f4491a418aeca9672dffb3adbe7d33b39eada4548a5b4e8c03f60c8"},
+    {file = "pyopengl-3.1.10-py3-none-any.whl", hash = "sha256:794a943daced39300879e4e47bd94525280685f42dbb5a998d336cfff151d74f"},
+    {file = "pyopengl-3.1.10.tar.gz", hash = "sha256:c4a02d6866b54eb119c8e9b3fb04fa835a95ab802dd96607ab4cdb0012df8335"},
 ]
 
 [[package]]
@@ -643,8 +643,8 @@ files = [
 
 [[package]]
 name = "requests"
-version = "2.32.4"
-requires_python = ">=3.8"
+version = "2.32.5"
+requires_python = ">=3.9"
 summary = "Python HTTP for Humans."
 groups = ["docs"]
 dependencies = [
@@ -654,8 +654,8 @@ dependencies = [
     "urllib3<3,>=1.21.1",
 ]
 files = [
-    {file = "requests-2.32.4-py3-none-any.whl", hash = "sha256:27babd3cda2a6d50b30443204ee89830707d396671944c998b5975b031ac2b2c"},
-    {file = "requests-2.32.4.tar.gz", hash = "sha256:27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"},
+    {file = "requests-2.32.5-py3-none-any.whl", hash = "sha256:2462f94637a34fd532264295e186976db0f5d453d1cdd31473c85a6a161affb6"},
+    {file = "requests-2.32.5.tar.gz", hash = "sha256:dbba0bac56e100853db0ea71b82b4dfd5fe2bf6d3754a8893c3af500cec7d7cf"},
 ]
 
 [[package]]
@@ -704,13 +704,13 @@ files = [
 
 [[package]]
 name = "soupsieve"
-version = "2.7"
-requires_python = ">=3.8"
+version = "2.8"
+requires_python = ">=3.9"
 summary = "A modern CSS selector implementation for Beautiful Soup."
 groups = ["docs"]
 files = [
-    {file = "soupsieve-2.7-py3-none-any.whl", hash = "sha256:6e60cc5c1ffaf1cebcc12e8188320b72071e922c2e897f737cadce79ad5d30c4"},
-    {file = "soupsieve-2.7.tar.gz", hash = "sha256:ad282f9b6926286d2ead4750552c8a6142bc4c783fd66b0293547c8fe6ae126a"},
+    {file = "soupsieve-2.8-py3-none-any.whl", hash = "sha256:0cc76456a30e20f5d7f2e14a98a4ae2ee4e5abdc7c5ea0aafe795f344bc7984c"},
+    {file = "soupsieve-2.8.tar.gz", hash = "sha256:e2dd4a40a628cb5f28f6d4b0db8800b8f581b65bb380b97de22ba5ca8d72572f"},
 ]
 
 [[package]]
@@ -909,13 +909,13 @@ files = [
 
 [[package]]
 name = "typing-extensions"
-version = "4.14.1"
+version = "4.15.0"
 requires_python = ">=3.9"
 summary = "Backported and Experimental Type Hints for Python 3.9+"
 groups = ["docs", "examples"]
 files = [
-    {file = "typing_extensions-4.14.1-py3-none-any.whl", hash = "sha256:d1e1e3b58374dc93031d6eda2420a48ea44a36c2b4766a4fdeb3710755731d76"},
-    {file = "typing_extensions-4.14.1.tar.gz", hash = "sha256:38b39f4aeeab64884ce9f74c94263ef78f3c22467c8724005483154c26648d36"},
+    {file = "typing_extensions-4.15.0-py3-none-any.whl", hash = "sha256:f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548"},
+    {file = "typing_extensions-4.15.0.tar.gz", hash = "sha256:0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466"},
 ]
 
 [[package]]

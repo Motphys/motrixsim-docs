@@ -36,13 +36,4 @@
 :end-before:  "# end::get_sensor_value[]"
 ```
 
-获取模型中所有的传感器数据
-
-```{literalinclude} ../../../../examples/site_and_sensor.py
-:language: python
-:dedent:
-:start-after: "# tag::get_sensor_values[]"
-:end-before:  "# end::get_sensor_values[]"
-```
-
 完整实例代码参见 [`examples/site_and_sensor.py`](../../../../examples/site_and_sensor.py)

@@ -177,7 +177,7 @@ def main():
                 capture_tasks.append((capture_index, rcam.capture()))
                 capture_index += 1
 
-            render.sync([data])
+            render.sync(data)
 
             while len(capture_tasks) > 0:
                 task: CaptureTask

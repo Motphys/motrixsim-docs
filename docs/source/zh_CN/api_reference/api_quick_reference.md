@@ -47,7 +47,6 @@ MotrixSim 的 Named Access 支持两种访问方式：
 | API                                                                         | 类型        | 说明                     |
 | --------------------------------------------------------------------------- | ----------- | ------------------------ |
 | [`model.get_actuator_ctrls(data)`](motrixsim.SceneModel.get_actuator_ctrls) | ndarray     | 获取所有执行器控制值     |
-| [`model.get_sensor_values(data)`](motrixsim.SceneModel.get_sensor_values)   | ndarray     | 获取所有传感器值         |
 | [`model.get_link_poses(data)`](motrixsim.SceneModel.get_link_poses)         | ndarray     | 获取所有连杆的位置和旋转 |
 | [`model.bodies`](motrixsim.SceneModel.bodies)                               | List[Body]  | 所有刚体对象列表         |
 | [`model.links`](motrixsim.SceneModel.links)                                 | List[Link]  | 所有连杆对象列表         |

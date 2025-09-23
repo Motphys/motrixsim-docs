@@ -62,8 +62,8 @@ MotrixSim 是一个高性能的物理仿真引擎，专为多体动力学和机�
 
 :::{grid-item}
 
-```{video} _static/videos/gyro_no_gravity.mp4
-:poster: _static/images/poster/gyro_no_gravity.jpg
+```{video} _static/videos/g1_terrian.mp4
+:poster: _static/images/poster/g1_terrian.jpg
 :nocontrols:
 :autoplay:
 :playsinline:
