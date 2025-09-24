@@ -208,12 +208,12 @@ files = [
 
 [[package]]
 name = "flatbuffers"
-version = "25.2.10"
+version = "25.9.23"
 summary = "The FlatBuffers serialization format for Python"
 groups = ["examples"]
 files = [
-    {file = "flatbuffers-25.2.10-py2.py3-none-any.whl", hash = "sha256:ebba5f4d5ea615af3f7fd70fc310636fbb2bbd1f566ac0a23d98dd412de50051"},
-    {file = "flatbuffers-25.2.10.tar.gz", hash = "sha256:97e451377a41262f8d9bd4295cc836133415cc03d8cb966410a4af92eb00d26e"},
+    {file = "flatbuffers-25.9.23-py2.py3-none-any.whl", hash = "sha256:255538574d6cb6d0a79a17ec8bc0d30985913b87513a01cce8bcdb6b4c44d0e2"},
+    {file = "flatbuffers-25.9.23.tar.gz", hash = "sha256:676f9fa62750bb50cf531b42a0a2a118ad8f7f797a511eda12881c016f093b12"},
 ]
 
 [[package]]
@@ -371,7 +371,7 @@ files = [
 
 [[package]]
 name = "motrixsim"
-version = "0.3.0"
+version = "0.3.1"
 requires_python = "<3.14,>=3.10"
 summary = "A high-performance physics simulation engine designed for multibody dynamics and robotics simulation."
 groups = ["default", "docs", "examples"]
@@ -380,38 +380,38 @@ dependencies = [
     "numpy",
 ]
 files = [
-    {file = "motrixsim-0.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ab13d03cb64ae619d18c4d2b2514759dd4d8367335e8d2f9a7a4c2a35948b414"},
-    {file = "motrixsim-0.3.0-cp310-cp310-win_amd64.whl", hash = "sha256:3fe723bd06838c8894c4afd8eda4583d15cb5acb3fecda24fcab847bb4e7ff7c"},
+    {file = "motrixsim-0.3.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e09c0e9c078ebbf0f190299ee29098ff5dee118947c63842a321de48f6577fad"},
+    {file = "motrixsim-0.3.1-cp310-cp310-win_amd64.whl", hash = "sha256:16f5423571980dc5c8eafb191f94f451182c8e3ba81c104c74bbf9bab127f6f4"},
 ]
 
 [[package]]
 name = "motrixsim"
-version = "0.3.0"
+version = "0.3.1"
 extras = ["demo", "mujoco_demo"]
 requires_python = "<3.14,>=3.10"
 summary = "A high-performance physics simulation engine designed for multibody dynamics and robotics simulation."
 groups = ["examples"]
 dependencies = [
-    "motrixsim==0.3.0",
+    "motrixsim==0.3.1",
     "mujoco>=3.3.3",
     "numpy-quaternion>=2024.0.8",
     "onnxruntime>=1.22.0",
 ]
 files = [
-    {file = "motrixsim-0.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ab13d03cb64ae619d18c4d2b2514759dd4d8367335e8d2f9a7a4c2a35948b414"},
-    {file = "motrixsim-0.3.0-cp310-cp310-win_amd64.whl", hash = "sha256:3fe723bd06838c8894c4afd8eda4583d15cb5acb3fecda24fcab847bb4e7ff7c"},
+    {file = "motrixsim-0.3.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e09c0e9c078ebbf0f190299ee29098ff5dee118947c63842a321de48f6577fad"},
+    {file = "motrixsim-0.3.1-cp310-cp310-win_amd64.whl", hash = "sha256:16f5423571980dc5c8eafb191f94f451182c8e3ba81c104c74bbf9bab127f6f4"},
 ]
 
 [[package]]
 name = "motrixsim"
-version = "0.3.0"
+version = "0.3.1"
 extras = ["docs"]
 requires_python = "<3.14,>=3.10"
 summary = "A high-performance physics simulation engine designed for multibody dynamics and robotics simulation."
 groups = ["docs"]
 dependencies = [
     "autodocsumm",
-    "motrixsim==0.3.0",
+    "motrixsim==0.3.1",
     "myst-parser",
     "pydata-sphinx-theme",
     "sphinx",
@@ -422,8 +422,8 @@ dependencies = [
     "sphinxcontrib-video",
 ]
 files = [
-    {file = "motrixsim-0.3.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ab13d03cb64ae619d18c4d2b2514759dd4d8367335e8d2f9a7a4c2a35948b414"},
-    {file = "motrixsim-0.3.0-cp310-cp310-win_amd64.whl", hash = "sha256:3fe723bd06838c8894c4afd8eda4583d15cb5acb3fecda24fcab847bb4e7ff7c"},
+    {file = "motrixsim-0.3.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e09c0e9c078ebbf0f190299ee29098ff5dee118947c63842a321de48f6577fad"},
+    {file = "motrixsim-0.3.1-cp310-cp310-win_amd64.whl", hash = "sha256:16f5423571980dc5c8eafb191f94f451182c8e3ba81c104c74bbf9bab127f6f4"},
 ]
 
 [[package]]
