@@ -29,7 +29,7 @@ MJCF 中的`<worldbody>`不会被视作一个 Link 对象。
 您可以通过
 
 ```bash
-pdm run examples/link.py
+uv run examples/link.py
 ```
 
 来运行一个简单的关于 link api 调用的例子。

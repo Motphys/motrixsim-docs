@@ -9,7 +9,7 @@ Before running the examples, please refer to {doc}`../overview/environment_setup
 We provide a series of example programs to help you master the use of MotrixSim from scratch. You can run any example of interest with:
 
 ```bash
-pdm run examples/{example_name}.py
+uv run examples/{example_name}.py
 ```
 
 ## Getting Started

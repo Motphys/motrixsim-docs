@@ -36,7 +36,7 @@ main_function/render
 
 ```{toctree}
 :caption: 动力学
-:maxdepth: 1
+:maxdepth: 2
 
 kinematics/body
 kinematics/floating_base

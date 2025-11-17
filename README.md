@@ -29,9 +29,9 @@
 
 ## 🚀 快速开始
 
-> 以下示例使用了 Python 项目管理工具：[PDM](https://pdm-project.org/)
+> 以下示例使用了 Python 项目管理工具：[UV](https://docs.astral.sh/uv/)
 > 
-> 在开始之前，请先[安装](https://pdm-project.org/en/latest/#installation)该工具。
+> 在开始之前，请先[安装](https://docs.astral.sh/uv/getting-started/installation/)该工具。
 
 ### 1. 克隆仓库:
 
@@ -43,23 +43,17 @@ cd motrixsim-docs
 git lfs pull
 ```
 
-### 2. 创建虚拟环境
-
-```bash
-pdm use 3.10
-```
-
-### 3. 安装依赖
+### 2. 安装依赖
 
 ```
 # 检查更新并安装依赖
-pdm install -G examples -v
+uv sync --extra examples --upgrade
 
 # 不检查更新，直接安装依赖
-pdm sync -G examples -v
+uv sync --extra examples
 ```
 
-### 4. 执行对比与示例
+### 3. 执行对比与示例
 
 > 参考 [文档](https://motrixsim.readthedocs.io) 中的说明
 

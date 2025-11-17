@@ -9,7 +9,7 @@
 我们提供了一系列示例程序帮助您从零开始掌握 MotrixSim 的使用方法。您可以通过
 
 ```bash
-pdm run examples/{example_name}.py
+uv run examples/{example_name}.py
 ```
 
 来运行您感兴趣的示例

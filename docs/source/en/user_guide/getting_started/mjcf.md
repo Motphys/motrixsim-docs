@@ -28,8 +28,8 @@ MJCF contains a rich set of tags and attributes. This section lists the current 
   - **Planned Attributes**
   - **Unsupported Attributes**
 * - option
-  - timestep, gravity, iterations, tolerance
-  - apirate, wind, magnetic, density, viscosity, o_margin, o_solref, o_solimp, o_friction, actuatorgroupdisable
+  - timestep, gravity, iterations, tolerance, o_margin, o_solref, o_solimp, o_friction
+  - apirate, wind, magnetic, density, viscosity, actuatorgroupdisable
   - impratio, integrator, cone, jacobian, solver, ls_iterations, ls_tolerance, noslip_iterations, noslip_tolerance, ccd_iterations, ccd_tolerance, sdf_iterations,  sdf_initpoints
 * - compiler
   - autolimits, angle, eulerseq, meshdir, texturedir, assetdir

@@ -18,10 +18,10 @@ The following legged gym sim2sim examples are included in MotrixSim:
 :widths: 30 30 40
 
 * - **Description**
-    - **Command**
-    - **Effect**
+  - **Command**
+  - **Effect**
 * - G1 Terrain Walking
-  - `pdm run legged_gym/scripts/G1_play.py`
+  - `uv run legged_gym/scripts/G1_play.py`
   -
     ```{video} /_static/videos/g1_terrian.mp4
     :poster: /_static/images/poster/g1_terrian.jpg
@@ -34,7 +34,7 @@ The following legged gym sim2sim examples are included in MotrixSim:
     :width: 100%
     ```
 * - Go1 controlled movement
-  - `pdm run legged_gym/scripts/go1_play.py`
+  - `uv run legged_gym/scripts/go1_play.py`
   -
     ```{video} /_static/videos/go1.mp4
     :poster: /_static/images/poster/go1.jpg
@@ -47,51 +47,52 @@ The following legged gym sim2sim examples are included in MotrixSim:
     :width: 100%
     ```
 * - T1 Walking
-    - `pdm run legged_gym/scripts/T1_play.py`
-    -
-        ```{video} /_static/videos/t1.mp4
-        :poster: /_static/images/poster/t1.jpg
-        :caption: T1
-        :nocontrols:
-        :autoplay:
-        :playsinline:
-        :muted:
-        :loop:
-        :width: 100%
-        ```
+  - `uv run legged_gym/scripts/T1_play.py`
+  -
+    ```{video} /_static/videos/t1.mp4
+    :poster: /_static/images/poster/t1.jpg
+    :caption: T1
+    :nocontrols:
+    :autoplay:
+    :playsinline:
+    :muted:
+    :loop:
+    :width: 100%
+    ```
 * - Berkeley Humanoid Lite Walking
-        ```{note}
-        The walking policy is from the [Berkeley-Humanoid-Lite](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite/) repository.
-        ```
-    - `pdm run legged_gym/scripts/BHL_play.py`
-    -
-        ```{video} /_static/videos/bhl_play.mp4
-        :poster: /_static/images/poster/bhl_play.jpg
-        :caption: BHL
-        :nocontrols:
-        :autoplay:
-        :playsinline:
-        :muted:
-        :loop:
-        :width: 100%
-        ```
+    ```{note}
+    The walking policy is from the [Berkeley-Humanoid-Lite](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite/) repository.
+    ```
+  - `uv run legged_gym/scripts/BHL_play.py`
+  -
+    ```{video} /_static/videos/bhl_play.mp4
+    :poster: /_static/images/poster/bhl_play.jpg
+    :caption: BHL
+    :nocontrols:
+    :autoplay:
+    :playsinline:
+    :muted:
+    :loop:
+    :width: 100%
+    ```
 
 * - Dual-arm Berkeley Humanoid Lite Walking
-        ```{note}
-        The walking policy is from the [Berkeley-Humanoid-Lite](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite/) repository.
-        ```
-    - `pdm run legged_gym/scripts/BHA_play.py`
-    -
-        ```{video} /_static/videos/bha_play.mp4
-        :poster: /_static/images/poster/bha_play.jpg
-        :caption: BHL
-        :nocontrols:
-        :autoplay:
-        :playsinline:
-        :muted:
-        :loop:
-        :width: 100%
-        ```
+    ```{note}
+    The walking policy is from the [Berkeley-Humanoid-Lite](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite/) repository.
+    ```
+  - `uv run legged_gym/scripts/BHA_play.py`
+  -
+    ```{video} /_static/videos/bha_play.mp4
+    :poster: /_static/images/poster/bha_play.jpg
+    :caption: BHL
+    :nocontrols:
+    :autoplay:
+    :playsinline:
+    :muted:
+    :loop:
+    :width: 100%
+    ```
+````
 
 ## Custom Env
 
@@ -112,4 +113,3 @@ The play script for T1 is defined in `legged_gym/scripts/T1_play.py`:
 :language: python
 :dedent:
 ```
-````

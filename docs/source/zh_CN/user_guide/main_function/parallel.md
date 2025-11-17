@@ -29,7 +29,7 @@ MotrixSim 并行仿真 900 个 tidybot 实例的可视化效果
 您也可以通过如下命令来运行上述的例子:
 
 ```sh
-pdm run examples/parallelsim.py
+uv run examples/parallelsim.py
 ```
 
 ## 访问多实例数据
@@ -79,7 +79,7 @@ SceneData 也支持通过`NDArray[bool]`进行索引，返回新的 SceneData �
 在 examples 目录下，我们提供了一个简单的脚本`parallel_bench.py`， 用于测试 MotrixSim 在多实例并行仿真下的性能表现。您可以通过下面的命令来运行这个脚本:
 
 ```bash
-pdm run examples/parallel_bench.py --file examples/assets/go1/scene.xml
+uv run examples/parallel_bench.py --file examples/assets/go1/scene.xml
 ```
 
 会得到类似下面的输出:

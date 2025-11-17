@@ -21,7 +21,7 @@
   - **命令**
   - **效果**
 * - G1地形行走
-  - `pdm run legged_gym/scripts/G1_play.py`
+  - `uv run legged_gym/scripts/G1_play.py`
   -
     ```{video} /_static/videos/g1_terrian.mp4
     :poster: /_static/images/poster/g1_terrian.jpg
@@ -34,7 +34,7 @@
     :width: 100%
     ```
 * - Go1的控制移动
-  - `pdm run legged_gym/scripts/go1_play.py`
+  - `uv run legged_gym/scripts/go1_play.py`
   -
     ```{video} /_static/videos/go1.mp4
     :poster: /_static/images/poster/go1.jpg
@@ -47,7 +47,7 @@
     :width: 100%
     ```
 * - T1的行走
-  - `pdm run legged_gym/scripts/T1_play.py`
+  - `uv run legged_gym/scripts/T1_play.py`
   -
     ```{video} /_static/videos/t1.mp4
     :poster: /_static/images/poster/t1.jpg
@@ -63,7 +63,7 @@
     ```{note}
     行走策略来自 [Berkeley-Humanoid-Lite](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite/) 仓库。
     ```
-  - `pdm run legged_gym/scripts/BHL_play.py`
+  - `uv run legged_gym/scripts/BHL_play.py`
   -
     ```{video} /_static/videos/bhl_play.mp4
     :poster: /_static/images/poster/bhl_play.jpg
@@ -80,7 +80,7 @@
     ```{note}
     行走策略来自 [Berkeley-Humanoid-Lite](https://github.com/HybridRobotics/Berkeley-Humanoid-Lite/) 仓库。
     ```
-  - `pdm run legged_gym/scripts/BHA_play.py`
+  - `uv run legged_gym/scripts/BHA_play.py`
   -
     ```{video} /_static/videos/bha_play.mp4
     :poster: /_static/images/poster/bha_play.jpg

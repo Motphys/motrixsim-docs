@@ -29,7 +29,7 @@ Once you have a Link object, you can manipulate it using a variety of properties
 You can run a simple example demonstrating link API usage with:
 
 ```bash
-pdm run examples/link.py
+uv run examples/link.py
 ```
 
 See the source code at [`examples/link.py`](../../../../examples/link.py).

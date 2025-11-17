@@ -56,7 +56,7 @@ This is the documentation project for MotrixSim, a high-performance physics simu
   - sphinx-design (design components)
   - sphinx_copybutton (code copy functionality)
 - **Language Support**: Chinese (zh_CN) and English with automatic content copying
-- **Autodoc**: Automatic API documentation generation from Python docstrings
+- **Autodoc**: Automatic API documentation generation
 
 ### Dependencies
 Documentation dependencies are managed in the parent `pyproject.toml`:
@@ -81,6 +81,15 @@ docs = [
 - **Format**: Markdown (.md) files using MyST parser
 - **Code Examples**: Include practical code examples with proper syntax highlighting
 - **API Documentation**: Use NumPy/Google style docstrings for autodoc generation
+
+### Important: Document Structure
+**Critical**: The documentation has a specific structure that must be followed:
+
+- **`source/user_guide/`**: This directory is **auto-generated** during build. **DO NOT** edit files here directly.
+- **`source/zh_CN/`**: This directory contains the **manually written** Chinese documentation. All edits should be made here.
+- **`source/en/`**: This directory contains the **manually written** English documentation.
+
+The build system automatically copies content from language-specific directories (`zh_CN/`, `en/`) to the main structure during compilation. Always edit the source files in the appropriate language directory, not the auto-generated files.
 
 ### Media and Assets
 - **Videos**: Embedded using sphinxcontrib-video extension
@@ -112,12 +121,6 @@ docs = [
 2. Check for broken links: `make linkcheck`
 3. Verify multilingual content works correctly
 4. Test all embedded media and interactive elements
-
-## File Naming Conventions
-- Use lowercase with underscores for file names
-- Index files should be named `index.md`
-- API documentation files should match module names
-- Media files should be descriptive and use appropriate extensions
 
 ## Integration Notes
 - This documentation project is part of the larger motrixsim-py package

@@ -3,9 +3,9 @@ __pycache__/
 .mypy_cache/
 .pytest_cache/
 .ruff_cache/
-.pdm-python
 .python-version
-.egg-info/
+*.egg-info/
+.venv
 
 docs/source/index.md
 docs/source/api_reference

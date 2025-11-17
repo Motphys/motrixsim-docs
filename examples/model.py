@@ -38,7 +38,15 @@ def main():
         render_offset_1 = [0, 0, 0]
         render_offset_2 = [0, 1, 0]
         render_offset_3 = [0, -1, 0]
-        render.launch(model, batch, [render_offset_1, render_offset_2, render_offset_3])
+        render.launch(
+            model,
+            batch,
+            [
+                render_offset_1,
+                render_offset_2,
+                render_offset_3,
+            ],
+        )
         # Create the physics data of the model
         data = SceneData(model, batch=(3,))  # Create 3 independent data instances
         # end::create_data[]

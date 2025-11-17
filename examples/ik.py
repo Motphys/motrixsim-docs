@@ -43,11 +43,26 @@ def main():
         # end::create_ik_chain
 
         # tag::create_ik_solver
-        solver = ik.GaussNewtonSolver(
+
+        # Damped Least Squares (DLS) solver with robust numerical stability
+        solver = ik.DlsSolver(
             max_iter=100,
             step_size=0.5,
             tolerance=1e-3,
+            damping=1e-3,  # Key parameter for DLS - start with 1e-3 for most applications
         )
+
+        # Alternative: use Gauss-Newton solver (faster but less stable near singularities)
+        # solver = ik.GaussNewtonSolver(
+        #     max_iter=100,
+        #     step_size=0.5,
+        #     tolerance=1e-3,
+        # )
+
+        # DLS Damping parameter tuning guide:
+        # - damping=1e-5: Near Gauss-Newton behavior, fast convergence when well-conditioned
+        # - damping=1e-3: Good balance for most applications (default)
+        # - damping=1e-1: Very stable but slower, useful near singular configurations
         # end::create_ik_solver
 
         step(model, data)
@@ -105,6 +120,8 @@ def main():
             residual = result[1]
             # the remaining elements are the desired dof_pos
             desired_dof_pos = result[2:]
+
+            # Check convergence: residual < tolerance means successful convergence
             if residual < 1e-3:
                 # in stanford_tidybot model, the first 3 actuators are for the mobile base,
                 # we only need to control the arm dof_pos.
@@ -112,7 +129,13 @@ def main():
                 ctrls[3:10] = desired_dof_pos
                 data.actuator_ctrls = ctrls
             else:
-                print("IK not converged, err=", result[1])
+                # DLS typically provides better convergence than Gauss-Newton,
+                # but if you still see convergence issues, try:
+                # 1. Increasing damping parameter (e.g., 1e-2)
+                # 2. Breaking down large movements into smaller steps
+                # 3. Checking if target is within robot workspace
+                print(f"IK not converged: iterations={num_iter:.0f}, residual={residual:.2e}")
+                print("Tips: increase damping, use smaller steps, or check workspace limits")
 
             # end::solve_ik
 

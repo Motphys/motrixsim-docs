@@ -30,7 +30,7 @@
 您可以通过
 
 ```bash
-pdm run examples/geom.py
+uv run examples/geom.py
 ```
 
 来运行一个简单的关于 geom api 调用的例子。
@@ -41,3 +41,9 @@ pdm run examples/geom.py
 [`model.geoms`]: motrixsim.SceneModel.geoms
 [`model.get_geom(key)`]: motrixsim.SceneModel.get_geom
 [`Geom API`]: motrixsim.Geom
+
+```{toctree}
+:maxdepth: 1
+geometry/hfield
+
+```

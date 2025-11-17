@@ -29,7 +29,7 @@ The render_offset parameter of the renderer only affects the visualization offse
 You can also run the above example with the following command:
 
 ```sh
-pdm run examples/parallelsim.py
+uv run examples/parallelsim.py
 ```
 
 ## Accessing Multi-Instance Data
@@ -79,7 +79,7 @@ SceneData also supports indexing with `NDArray[bool]`, returning a new SceneData
 In the examples directory, we provide a simple script `parallel_bench.py` to test MotrixSim's performance in multi-instance parallel simulation. You can run this script with:
 
 ```bash
-pdm run examples/parallel_bench.py --file examples/assets/go1/scene.xml
+uv run examples/parallel_bench.py --file examples/assets/go1/scene.xml
 ```
 
 You will get output similar to:

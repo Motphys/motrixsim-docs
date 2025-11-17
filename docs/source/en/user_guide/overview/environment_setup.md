@@ -4,9 +4,9 @@ Before running MotrixSim example programs, you need to prepare the example envir
 
 ## Environment Setup Steps
 
-> The following examples use the Python project management tool: [PDM](https://pdm-project.org/)
+> The following examples use the Python project management tool: [UV](https://docs.astral.sh/uv/)
 >
-> Please [install](https://pdm-project.org/en/latest/#installation) this tool before you begin.
+> Please [install](https://docs.astral.sh/uv/getting-started/installation/) this tool before you begin.
 
 ### Step 1: Clone the Repository
 
@@ -16,13 +16,7 @@ cd motrixsim-docs
 git lfs pull
 ```
 
-### Step 2: Create a Virtual Environment
-
-```bash
-pdm use 3.10
-```
-
-### Step 3: Install Dependencies
+### Step 2: Install Dependencies
 
 You can choose either of the following methods to install dependencies:
 
@@ -31,7 +25,7 @@ You can choose either of the following methods to install dependencies:
 :::{tab-item} Check for Updates and Install
 
 ```bash
-pdm install -G examples -v
+uv sync --extra examples --upgrade
 ```
 
 :::
@@ -39,7 +33,7 @@ pdm install -G examples -v
 :::{tab-item} Direct Install
 
 ```bash
-pdm sync -G examples -v
+uv sync --extra examples
 ```
 
 :::
@@ -51,7 +45,7 @@ pdm sync -G examples -v
 Run a simple example to verify that the environment is configured correctly:
 
 ```bash
-pdm run examples/empty.py
+uv run examples/empty.py
 ```
 
 If the simulation window opens successfully, the environment setup is complete!
@@ -59,7 +53,7 @@ If the simulation window opens successfully, the environment setup is complete!
 ## Frequently Asked Questions
 
 :::{card}
-**Q1: Can I use something other than PDM?**
+**Q1: Can I use something other than UV?**
 ^^^
 A1: Absolutely! The example repository supports various Python package management tools. You just need to ensure that motrixsim and the required dependencies are installed.
 :::
@@ -70,7 +64,7 @@ A1: Absolutely! The example repository supports various Python package managemen
 A2: Please make sure that:
 
 -   The current working directory is the root of `motrixsim-docs`
--   All dependencies are correctly installed (you can check with `pdm list`)
+-   All dependencies are correctly installed (you can check with `uv pip list`)
 -   The model file paths are correct
     :::
 

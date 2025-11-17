@@ -30,7 +30,7 @@ Once you obtain a Geom object, you can read information such as its position, or
 You can run a simple example of Geom API usage with:
 
 ```bash
-pdm run examples/geom.py
+uv run examples/geom.py
 ```
 
 See the source code at [`examples/geom.py`](../../../../examples/geom.py)。
@@ -39,3 +39,9 @@ See the source code at [`examples/geom.py`](../../../../examples/geom.py)。
 [`model.geoms`]: motrixsim.SceneModel.geoms
 [`model.get_geom(key)`]: motrixsim.SceneModel.get_geom
 [`Geom API`]: motrixsim.Geom
+
+```{toctree}
+:maxdepth: 1
+geometry/hfield
+
+```

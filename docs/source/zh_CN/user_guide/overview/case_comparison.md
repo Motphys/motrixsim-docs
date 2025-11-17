@@ -53,13 +53,13 @@ MotrixSim 和 MuJoCo 使用同一份 mjcf 模型：[`gyroscope.xml`](../../../..
 您可以通过
 
 ```bash
-pdm run examples/gyroscope.py
+uv run examples/gyroscope.py
 ```
 
 以及
 
 ```bash
-pdm run examples/mujoco/gyroscope.py
+uv run examples/mujoco/gyroscope.py
 ```
 
 来运行这两个示例。
@@ -118,13 +118,13 @@ pdm run examples/mujoco/gyroscope.py
 您可以通过
 
 ```bash
-pdm run examples/newton_cradle.py
+uv run examples/newton_cradle.py
 ```
 
 以及
 
 ```bash
-pdm run examples/mujoco/newton_cradle.py
+uv run examples/mujoco/newton_cradle.py
 ```
 
 来运行这两个示例。
@@ -174,13 +174,13 @@ pdm run examples/mujoco/newton_cradle.py
 您可以通过
 
 ```bash
-pdm run python -m motrixsim.run --file examples/assets/boston_dynamics_spot/scene.xml
+uv run python -m motrixsim.run --file examples/assets/boston_dynamics_spot/scene.xml
 ```
 
 以及
 
 ```bash
-pdm run python -m mujoco.viewer --mjcf=examples/assets/boston_dynamics_spot/scene.xml
+uv run python -m mujoco.viewer --mjcf=examples/assets/boston_dynamics_spot/scene.xml
 ```
 
 来运行这两个示例。
@@ -228,13 +228,13 @@ MotrixSim 在处理大量物体接触时表现稳定，而 MuJoCo 在这个场�
 您可以通过
 
 ```bash
-pdm run python -m motrixsim.run --file examples/assets/store/scene.xml
+uv run python -m motrixsim.run --file examples/assets/store/scene.xml
 ```
 
 以及
 
 ```bash
-pdm run python -m mujoco.viewer --mjcf=examples/assets/store/scene.xml
+uv run python -m mujoco.viewer --mjcf=examples/assets/store/scene.xml
 ```
 
 来运行这两个示例。

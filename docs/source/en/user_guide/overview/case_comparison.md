@@ -53,13 +53,13 @@ MotrixSim and MuJoCo use the same MJCF model: [`gyroscope.xml`](../../../../exam
 You can run these examples with:
 
 ```bash
-pdm run examples/gyroscope.py
+uv run examples/gyroscope.py
 ```
 
 and
 
 ```bash
-pdm run examples/mujoco/gyroscope.py
+uv run examples/mujoco/gyroscope.py
 ```
 
 ## Newton's Cradle
@@ -116,13 +116,13 @@ Here, `hard=true` indicates a hard contact geometry. In this case, `solref=(boun
 You can run these examples with:
 
 ```bash
-pdm run examples/newton_cradle.py
+uv run examples/newton_cradle.py
 ```
 
 and
 
 ```bash
-pdm run examples/mujoco/newton_cradle.py
+uv run examples/mujoco/newton_cradle.py
 ```
 
 ## Boston Dynamics Spot
@@ -170,13 +170,13 @@ The model is taken from the mujoco menagerie repository, with the timestep modif
 You can run these examples with:
 
 ```bash
-pdm run python -m motrixsim.run --file examples/assets/boston_dynamics_spot/scene.xml
+uv run python -m motrixsim.run --file examples/assets/boston_dynamics_spot/scene.xml
 ```
 
 and
 
 ```bash
-pdm run python -m mujoco.viewer --mjcf=examples/assets/boston_dynamics_spot/scene.xml
+uv run python -m mujoco.viewer --mjcf=examples/assets/boston_dynamics_spot/scene.xml
 ```
 
 ## Store Shelf
@@ -222,11 +222,11 @@ MotrixSim remains stable when handling a large number of object contacts, while 
 You can run these examples with:
 
 ```bash
-pdm run python -m motrixsim.run --file examples/assets/store/scene.xml
+uv run python -m motrixsim.run --file examples/assets/store/scene.xml
 ```
 
 and
 
 ```bash
-pdm run python -m mujoco.viewer --mjcf=examples/assets/store/scene.xml
+uv run python -m mujoco.viewer --mjcf=examples/assets/store/scene.xml
 ```

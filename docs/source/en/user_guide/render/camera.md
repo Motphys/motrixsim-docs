@@ -28,6 +28,14 @@ The system camera supports partial configurations from [mjcf/visual/global](http
 -   azimuth: Initial azimuth angle (rotation around z-axis) of system camera
 -   elevation: Initial elevation angle (pitch) of system camera
 
+The system camera can be enabled/disabled.
+
+```
+system_camera = render.system_camera # get system camera
+system_camera.active = True # enable camera
+system_camera.active = False # disable camera
+```
+
 ## Scene Camera
 
 In addition to the system camera, you can configure additional Camera tags in MJCF files. We refer to these as scene cameras. Scene cameras can provide additional viewing angles for visualization.
@@ -46,6 +54,15 @@ Taking [go1.xml](../../../../examples/assets/go1/go1_mjx_fullcollisions.xml) as 
 ```
 
 This means we've defined 4 additional cameras on the go1's trunk. The camera position and orientation are specified by pos and xyaxes, while mode specifies the camera's movement mode.
+
+Similarly, the scene camera can also be enabled/disabled.
+
+```
+camera_index = 0 # The first scene camera index
+scene_camera = render.get_camera(camera_index) # get scene camera
+scene_camera.active = True # enable camera
+scene_camera.active = False # disable camera
+```
 
 ### Switching Scene Main Camera
 

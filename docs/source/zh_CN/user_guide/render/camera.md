@@ -28,6 +28,14 @@
 -   azimuth： 初始化下，系统相机绕 z 轴的方位角
 -   elevation： 初始化下，系统相机的俯仰角
 
+系统相机可以被开启/关闭：
+
+```
+system_camera = render.system_camera # 获取系统相机
+system_camera.active = True # 开启相机
+system_camera.active = False # 关闭相机
+```
+
 ## 场景相机
 
 除了系统相机之外，您可以在 MJCF 文件中配置额外的 Camera 标签。 我们把这种相机称为场景相机。场景相机可以为可视化提供额外的视角
@@ -46,6 +54,15 @@
 ```
 
 这意味着我们在 go1 的 trunk 上定义了 4 个额外的相机。 相机的位置和朝向由 pos 和 xyaxes 指定，mode 指定了相机的运动模式。
+
+同样的，场景相机也可以开启/关闭：
+
+```
+camera_index = 0 # 第一个场景相机的索引
+scene_camera = render.get_camera(camera_index) # 获取场景相机
+scene_camera.active = True # 开启相机
+scene_camera.active = False # 关闭相机
+```
 
 ### 切换场景主相机
 

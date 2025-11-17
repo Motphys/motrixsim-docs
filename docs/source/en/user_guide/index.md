@@ -30,7 +30,7 @@ main_function/render
 
 ```{toctree}
 :caption: Kinematics
-:maxdepth: 1
+:maxdepth: 2
 kinematics/body
 kinematics/floating_base
 kinematics/joint
