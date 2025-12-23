@@ -13,11 +13,10 @@
 # limitations under the License.
 # ==============================================================================
 
-import time
 
 import numpy as np
 
-from motrixsim import SceneData, load_model, step
+from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import RenderApp
 
 # Mouse controls:
@@ -40,13 +39,7 @@ def main():
 
         body_fb = model.get_body(model.get_body_index("base")).floatingbase
         body_fb.set_local_angular_velocity(data, np.array([10, 0, 5]))
-        while True:
-            # Control the step interval to prevent too fast simulation
-            time.sleep(0.002)
-            # Step the physics world
-            step(model, data)
-            # Sync render objects from physic world
-            render.sync(data)
+        run.render_loop(model.options.timestep, 60, lambda: step(model, data), lambda: render.sync(data))
 
 
 if __name__ == "__main__":

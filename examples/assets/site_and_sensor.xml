@@ -1,3 +1,45 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:91fad2c6e40257c55214213e8c0467cc8ceabe0e0ea9891179d1df77a8de6a25
-size 1806
+<mujoco>
+  <option timestep="0.01"/>
+  <statistic center="0 0 0" extent="1.5"/>
+
+  <worldbody>
+    <light name="light" pos="0 0 3" directional = "true"/>
+    <camera name="fixed" pos="0 -3 3" xyaxes="1 0 0 0 1 1"/>
+    <geom name="floor" type="plane" size="5 5 0.1" pos="0 0 -0.26" rgba="0.4 0.4 0.4 1"/>
+
+    <body name="car" pos = "0 0 0">
+      <joint name="slider" type="slide" axis="1 0 0" limited="true" range = "-2 2"/>
+      <geom name = "box" type="box" size="0.25 0.25 0.25" pos = "0 0 0 " rgba="1 0 0 1"/>
+      <site name="car_imu" type="sphere" size="0.03" rgba="0 1 0 1" pos="0 0 0"/>
+
+      <body name="bar" pos = "0 0 0.35">
+          <joint name="hinge" type="hinge" limited="false" axis = "0 0 1"/>
+          <geom type="box" size="0.1 1 0.1" pos = "0 0 0 " rgba="0 0.1 1 1"/>
+          <site name="imu_0" type="sphere" size="0.03" rgba="0 1 0 1" pos="0 0 0"/>
+          <site name="imu_1" type="sphere" size="0.03" rgba="0 1 0 1" pos="0 0.5 0"/>
+          <site name="imu_2" type="sphere" size="0.03" rgba="0 1 0 1" pos="0 1.0 0"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <motor name="actuator_slider" joint="slider" gear="500"/>
+    <motor name="actuator_hinge" joint="hinge" gear="500"/>
+  </actuator>
+
+  <sensor>
+    <accelerometer name="acc_0" site="imu_0"/>
+    <accelerometer name="acc_1" site="imu_1"/>
+    <accelerometer name="acc_2" site="imu_2"/>
+    <velocimeter name="vel_0" site="imu_0"/>
+    <velocimeter name="vel_1" site="imu_1"/>
+    <velocimeter name="vel_2" site="imu_2"/>
+    <gyro name="gyro_0" site="imu_0"/>
+    <gyro name="gyro_1" site="imu_1"/>
+    <gyro name="gyro_2" site="imu_2"/>
+
+    <accelerometer name="acc_3" site="car_imu"/>
+    <velocimeter name="vel_3" site="car_imu"/>
+    <gyro name="gyro_3" site="car_imu"/>
+  </sensor>
+</mujoco>

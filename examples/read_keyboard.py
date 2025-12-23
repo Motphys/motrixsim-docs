@@ -13,9 +13,8 @@
 # limitations under the License.
 # ==============================================================================
 
-import time
 
-from motrixsim import SceneData, load_model, step
+from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import RenderApp
 
 
@@ -42,14 +41,14 @@ def main():
         print("==========================")
         print("Press 'W' to move forward, 'S' to move backward, 'A' to turn left, 'D' to turn right.")
 
-        while True:
+        def phys_step():
+            nonlocal forward_value, turn_value
             forward.set_ctrl(data, forward_value)
             turn.set_ctrl(data, turn_value)
-            # Control the step interval to prevent too fast simulation
-            time.sleep(0.002)
-            # Step the physics world
             step(model, data)
-            # Sync render objects from physic world
+
+        def render_step():
+            nonlocal forward_value, turn_value
             render.sync(data)
             input = render.input
             # Read keyboard from render app
@@ -63,6 +62,8 @@ def main():
                 forward_value = -1
             if input.is_key_pressed("w"):
                 forward_value = 1
+
+        run.render_loop(model.options.timestep, 60, phys_step, render_step)
 
 
 if __name__ == "__main__":

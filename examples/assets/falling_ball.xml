@@ -1,3 +1,17 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e58d119d7f23d993ce1bd0144f5098e4cd5829a6e534754b0cd4b2ab6b522f07
-size 555
+<mujoco>
+  <option timestep="0.02" iterations="4" solver="PGS"/>
+    <worldbody>
+    <light name="light" pos="0 0 3" directional = "true"/>
+    <geom type="plane" size="5 5 .1"  rgba = "0.7 0.7 0.7 1"/>
+    <body pos="0 0 5">
+      <freejoint/>
+      <geom priority="1" type="sphere" size="0.5" rgba = "1 1 1 1"/>
+      <inertial pos="0 0 0"  mass="10"
+      diaginertia="1 1 1"/>
+    </body>
+  </worldbody>
+    <asset>
+      <texture type="skybox" builtin="gradient" rgb1=".4 .5 .6" rgb2="0 0 0"
+        width="100" height="100"/>
+    </asset>
+</mujoco>

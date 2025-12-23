@@ -26,11 +26,9 @@ Includes the following features:
 
 """
 
-import time
-
 import numpy as np
 
-from motrixsim import SceneData, load_model, step
+from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import Color, RenderApp
 
 
@@ -66,9 +64,8 @@ def main():
         # Run simulation and get touch sensor data
         step_count = 0
 
-        while True:
-            # Control simulation step interval
-            time.sleep(0.02)
+        def control_and_step():
+            nonlocal step_count
 
             # Physics world step
             step(model, data)
@@ -87,6 +84,7 @@ def main():
 
             arm_act.set_ctrl(data, arm_control)
 
+        def render_and_display():
             # Get all touch sensor data
             force_data = model.get_sensor_value("touch sensor", data)
             # Handle single environment simulation data (shape is (1,))
@@ -114,6 +112,8 @@ def main():
 
             # Sync render objects
             render.sync(data)
+
+        run.render_loop(model.options.timestep, 60, control_and_step, render_and_display)
 
 
 if __name__ == "__main__":

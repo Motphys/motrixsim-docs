@@ -15,7 +15,7 @@
 
 import time
 
-from motrixsim import SceneData, load_model, step
+from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import RenderApp
 
 # Mouse controls:
@@ -43,17 +43,15 @@ def main():
 
         start = time.time()
 
-        while True:
-            # Control the step interval to prevent too fast simulation
-            time.sleep(0.02)
+        def phys_step():
+            nonlocal start
+            # Stop the motors after 1.5 seconds.
             if time.time() - start > 1.5:
                 motor_A.set_ctrl(data, 0)
                 motor_B.set_ctrl(data, 0)
-
-            # Physics world step
             step(model, data)
-            # Sync render objects from physic world
-            render.sync(data)
+
+        run.render_loop(model.options.timestep, 60, phys_step, lambda: render.sync(data))
 
 
 if __name__ == "__main__":

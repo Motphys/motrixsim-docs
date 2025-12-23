@@ -13,11 +13,9 @@
 # limitations under the License.
 # ==============================================================================
 
-import time
-
 import numpy as np
 
-from motrixsim import SceneData, load_model, step
+from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import RenderApp
 
 
@@ -74,11 +72,9 @@ def main():
 
         print_count = 0
 
-        while True:
-            # Control the step interval to prevent too fast simulation
-            time.sleep(0.02)
-            # Physics world step
-            step(model, data)
+        def render_and_display():
+            nonlocal print_count
+
             # Sync render objects from physic world
             render.sync(data)
 
@@ -92,6 +88,8 @@ def main():
                 print(f" arm_B_link_pose : {arm_B_link_pose}, arm_B_link_angular_vel : {arm_B_link_angular_vel}")
 
                 print_count += 1
+
+        run.render_loop(model.options.timestep, 60, lambda: step(model, data), render_and_display)
 
 
 if __name__ == "__main__":

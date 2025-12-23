@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ce5e7913734270e5dc160653c1dcab7aab33da3f1d818678b1f1f6f885173562
-size 364
+/* Custom CSS for MotrixSim Documentation */
+
+/* Logo adjustments for PyData Sphinx Theme */
+.navbar-brand img {
+    max-height: 130px !important;
+    height: 130px !important;
+    width: auto !important;
+}
+
+.bd-main .bd-content .bd-article-container {
+    max-width: 80em; /* default is 60em */
+}
+
+.bd-page-width {
+    max-width: 100rem; /* default is 88rem */
+}

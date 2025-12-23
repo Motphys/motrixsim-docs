@@ -77,11 +77,15 @@ MJCF 包含了丰富的标签和属性，本章节会罗列 MotrixSim 当前版�
   - texture, role
   - \\
   - \\
+* - model
+  - name, file
+  - \\
+  - content_type
 ```
 
 计划支持标签：
 
-`skin`, `model`，`mesh/plugin`
+`skin`, `mesh/plugin`
 
 ```{note}
 mesh 文件目前支持 stl、obj、dae 格式。
@@ -150,11 +154,15 @@ mesh 文件目前支持 stl、obj、dae 格式。
   - fixed, track, targetbody
   - trackcom, targetbodycom
   - \\
+* - attach
+  - model, body, prefix
+  - \\
+  - \\
 ```
 
 计划支持的标签：
 
-`flexcomp`, `attach`, `contact/pair`, `deformable`
+`flexcomp`, `contact/pair`, `deformable`
 
 不支持的标签：
 

@@ -1,3 +1,64 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:bfba913d89686387b94f2563f78d0220a1ed9da5ee705304c05a6a9a076304f0
-size 2324
+<mujoco>
+  <option gravity="0 0 -9.81"/>
+
+  <default>
+    <joint damping=".3"/>
+  </default>
+
+  <worldbody>
+
+    <light name="light" pos="0 0 3"/>
+    <geom name="floor" type="plane" size="5 5 0.1" pos="0 0 0" rgba="0.8 0.9 0.8 1"/>
+
+    <body name="base" pos="0 0 0">
+      <geom type="cylinder" size="0.02 0.1" pos = "0 0 0.1" rgba="0.5 0.5 0.5 1"/>
+      <body name = "Bar" pos = "0 0 0">
+        <geom type="sphere" size="0.02" pos = "0 0.04 0.04" rgba="0.8 0.5 0.5 1"/>
+        <joint name="up_down" type="slide" axis="0 0 1" range="-0.02 0.2" damping="10.0"/>
+        <body name = "ele" pos = "0 0.04 0.02">
+          <joint name="arm_joint" type="hinge" axis="0 0 1" range="-45 45"/>
+          <body name="arm" pos="0 0.12 0.02">
+          <geom type="box" size="0.02 0.1 0.02" rgba="0.8 0.8 0.8 1"/>
+
+            <body name="gripper" pos="0 0.13 0">
+              <geom type="box" size="0.08 0.01 0.01" pos = "0 -0.03 0" rgba="1 0 0 1"/>
+ 
+              <body name="left_finger" pos="-0.05 0 0">
+                <joint name="left_joint" type="slide" axis="1 0 0" range="0 0.05" damping="0.2"/>
+                <geom type="box" size="0.01 0.03 0.02" rgba="1 0 0 1"/>
+              </body>
+       
+              <body name="right_finger" pos="0.05 0 0">
+                <joint name="right_joint" type="slide" axis="-1 0 0" range="0 0.05" damping="0.2"/>
+                <geom type="box" size="0.01 0.03 0.02" rgba="0 0 1 1"/>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    
+    <body name="target" pos="0.19 0.23 0.03">
+      <freejoint/>
+      <geom type="sphere" size="0.03" rgba="0 1 0 1" mass="0.1"/>
+    </body>
+  </worldbody>
+
+  <tendon>
+    <fixed name="split">
+      <joint joint="left_joint" coef="0.5"/>
+      <joint joint="right_joint" coef="0.5"/>
+    </fixed>
+  </tendon>
+  <equality>
+    <joint joint1="left_joint" joint2="right_joint" solimp="0.95 0.99 0.001" solref="0.005 1"/>
+  </equality>
+
+
+  <actuator>
+    <position name="rotate" joint="arm_joint" kp="500"  kv="20" ctrlrange="-1 1"/> 
+    <position name="up_down" joint="up_down"  kp="500"  kv="20" ctrlrange="0 0.2"/>  
+    <general name="fingers_actuator" tendon="split" forcerange="-5 5" ctrlrange="-10 10"
+      gainprm="0.3137255 0 0" biasprm="0 -100 -10"/>
+  </actuator>
+</mujoco>

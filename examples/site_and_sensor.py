@@ -13,11 +13,9 @@
 # limitations under the License.
 # ==============================================================================
 
-import time
-
 import numpy as np
 
-from motrixsim import SceneData, load_model, step
+from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import RenderApp
 
 
@@ -68,37 +66,32 @@ def main():
         hinge = model.get_joint("hinge")
         hinge.set_dof_vel(data, np.array([15]))
 
-        while True:
-            # Control the step interval to prevent too fast simulation
-            time.sleep(0.02)
-            # Physics world step
-            step(model, data)
-
+        def render_step():
             # tag::get_sensor_value[]
             # Get sensor value directly
-            v0 = model.get_sensor_value("vel_0", data)
-            v1 = model.get_sensor_value("vel_1", data)
-            v2 = model.get_sensor_value("vel_2", data)
-            v3 = model.get_sensor_value("vel_3", data)
-            print(f"velocimeter values are : {v0}, {v1}, {v2}, {v3}")
+            v0 = (model.get_sensor_value("vel_0", data),)
+            v1 = (model.get_sensor_value("vel_1", data),)
+            v2 = (model.get_sensor_value("vel_2", data),)
+            v3 = (model.get_sensor_value("vel_3", data),)
+            (print(f"velocimeter values are : {v0}, {v1}, {v2}, {v3}"),)
 
-            acc_0 = model.get_sensor_value("acc_0", data)
-            acc_1 = model.get_sensor_value("acc_1", data)
-            acc_2 = model.get_sensor_value("acc_2", data)
-            acc_3 = model.get_sensor_value("acc_3", data)
-            print(f"accelerometer values are : {acc_0}, {acc_1}, {acc_2}, {acc_3}")
+            acc_0 = (model.get_sensor_value("acc_0", data),)
+            acc_1 = (model.get_sensor_value("acc_1", data),)
+            acc_2 = (model.get_sensor_value("acc_2", data),)
+            acc_3 = (model.get_sensor_value("acc_3", data),)
+            (print(f"accelerometer values are : {acc_0}, {acc_1}, {acc_2}, {acc_3}"),)
 
-            gyro_0 = model.get_sensor_value("gyro_0", data)
-            gyro_1 = model.get_sensor_value("gyro_1", data)
-            gyro_2 = model.get_sensor_value("gyro_2", data)
-            gyro_3 = model.get_sensor_value("gyro_3", data)
-            print(f"gyro values are : {gyro_0}, {gyro_1}, {gyro_2}, {gyro_3}")
+            gyro_0 = (model.get_sensor_value("gyro_0", data),)
+            gyro_1 = (model.get_sensor_value("gyro_1", data),)
+            gyro_2 = (model.get_sensor_value("gyro_2", data),)
+            gyro_3 = (model.get_sensor_value("gyro_3", data),)
+            (print(f"gyro values are : {gyro_0}, {gyro_1}, {gyro_2}, {gyro_3}"),)
             # end::get_sensor_value[]
 
-            print("-----------------------------------------")
-
-            # Sync render objects from physic world
+            (print("-----------------------------------------"),)
             render.sync(data)
+
+        run.render_loop(model.options.timestep, 60, lambda: step(model, data), render_step)
 
 
 if __name__ == "__main__":

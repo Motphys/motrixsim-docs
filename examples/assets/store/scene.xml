@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b6d855cb43269ee5cbfccf63fd2f8f75249fd023bf0c607adca4295c8e460a03
-size 518
+<mujoco>
+  <include file="store.xml"/>
+  <option  gravity="0 0 -9.8" timestep="0.01"/>
+
+  <asset>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.4314 0.5294 0.6431" rgb2="0.8157 0.8549 0.9059"
+      markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="1 1" reflectance="0.2"/>
+  </asset>
+
+
+  <worldbody>
+    <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
+  </worldbody>
+</mujoco>

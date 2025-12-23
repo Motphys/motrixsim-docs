@@ -13,12 +13,11 @@
 # limitations under the License.
 # ==============================================================================
 
-import time
 
 import numpy as np
 from scipy.spatial.transform import Rotation
 
-from motrixsim import SceneData, load_model, step
+from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import Color, RenderApp
 
 
@@ -50,33 +49,35 @@ def main():
         render.opt.set_left_panel_vis(True)
         # end
 
-        while True:
-            time.sleep(0.02)
+        def phys_step():
             step(model, data)
 
+        def render_step():
             # tag::draw_gizmos[]
+            nonlocal rot, dir, x
             # gizmos is drawning in immediate mode. so you must call it every frame
-            render.gizmos.draw_sphere(0.1, np.array([x, 0, 1]), color=Color.rgb(1, 0, 0))
+            gizmos = render.gizmos
+            gizmos.draw_sphere(0.1, np.array([x, 0, 1]), color=Color.rgb(1, 0, 0))
 
-            render.gizmos.draw_cuboid(
+            gizmos.draw_cuboid(
                 size=np.array([0.2, 0.3, 0.4]), pos=np.array([1, 0, 1]), rot=rot.as_quat(), color=Color.rgb(0, 1, 0)
             )
 
-            render.gizmos.draw_cuboid(
+            gizmos.draw_cuboid(
                 size=np.array([0.1, 0.1, 1]), pos=np.array([3, 0, 1]), rot=rot.as_quat(), color=Color.rgb(0, 1, 0)
             )
 
-            render.gizmos.draw_capsule(0.5, 0.5, pos=np.array([1, 1, 1]), rot=Rotation.identity().as_quat())
-            render.gizmos.draw_cylinder(0.5, 0.5, pos=np.array([2, 1, 1]), rot=Rotation.identity().as_quat())
-            render.gizmos.draw_arrow(start=np.array([3, 1, 1]), end=np.array([4, 2, 1]), color=Color.rgb(1, 1, 0))
-            render.gizmos.draw_line(start=np.array([3, 2, 1]), end=np.array([4, 3, 1]), color=Color.rgb(1, 1, 0))
-            render.gizmos.draw_ray(start=np.array([4, 1, 1]), vector=np.array([3, 0.2, 0]), color=Color.rgb(1, 1, 0.2))
-            render.gizmos.draw_grid(
+            gizmos.draw_capsule(0.5, 0.5, pos=np.array([1, 1, 1]), rot=Rotation.identity().as_quat())
+            gizmos.draw_cylinder(0.5, 0.5, pos=np.array([2, 1, 1]), rot=Rotation.identity().as_quat())
+            gizmos.draw_arrow(start=np.array([3, 1, 1]), end=np.array([4, 2, 1]), color=Color.rgb(1, 1, 0))
+            gizmos.draw_line(start=np.array([3, 2, 1]), end=np.array([4, 3, 1]), color=Color.rgb(1, 1, 0))
+            gizmos.draw_ray(start=np.array([4, 1, 1]), vector=np.array([3, 0.2, 0]), color=Color.rgb(1, 1, 0.2))
+            gizmos.draw_grid(
                 pos=np.array([0, -2, 1]),
                 rot=rot.as_quat(),
                 color=Color.rgb(1, 0.5, 0.2),
             )
-            render.gizmos.draw_rect(
+            gizmos.draw_rect(
                 pos=np.array([3, -2, 1]),
                 rot=Rotation.identity().as_quat(),
                 width=1.5,
@@ -92,8 +93,9 @@ def main():
                 dir = 1
 
             rot = dr * rot
-
             render.sync(data)
+
+        run.render_loop(model.options.timestep, 60, phys_step, render_step)
 
 
 if __name__ == "__main__":

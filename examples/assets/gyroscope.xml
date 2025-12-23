@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:48c20a69b744d7078fb6c9a37e201843201a093e646b3169a11f31aab35559d5
-size 1632
+<mujoco>
+    <option  gravity="0 0 -9.8" />
+    <compiler autolimits="true"/>
+    <statistic center="0 0 -0.6" extent="0.8"/>
+
+    <asset>
+        <texture type="2d" name="checker" builtin="checker" mark="edge" rgb1="0.050 0.247 0.403" rgb2="0.117 0.890 0.811"
+        markrgb="0.8 0.8 0.8" width="64" height="64"/>
+        <texture type="2d" name="plane" builtin="checker" mark="edge" rgb1="0.3 0.3 0.3" rgb2="0.7 0.7 0.7"
+        markrgb="0.8 0.8 0.8" width="64" height="64"/>
+        <texture type="skybox" builtin="gradient" rgb1="0.3 0.4 0.5" rgb2="0.027 0.023 0.049"
+        width="100" height="100"/>
+
+        <material name="checker_mat" texture="checker" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
+        <material name="plane_mat" texture="plane" texuniform="true" texrepeat="0.4 0.4" reflectance="0.2"/>
+    </asset>
+
+    <default>
+        <geom friction="0.25 0.01" condim="4"/>
+    </default>
+
+    <worldbody>
+        <light pos="0 0 3" directional="true"/>
+        <!-- ground plane -->
+        <geom type="plane" size="10 10 0.01" pos="0 0 0" material="plane_mat"/> 
+        <!-- gyroscopic -->
+        <body name = "gyro" pos="0 0 0.01" euler="0 18 0">
+            <freejoint  name="ball_1"/>
+            <geom type="sphere" size="0.01" rgba = "0.117 0.890 0.811 1"/>
+            <body pos="0 0 0.51">
+                <geom type="cylinder" size="0.01 0.5" rgba = "0.7 0.8 0.9 1"/>
+                <body pos="0 0 0">
+                    <geom type="cylinder" pos="0 0 -0.2" size="0.4 0.05"  material="checker_mat"/>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+  </mujoco>

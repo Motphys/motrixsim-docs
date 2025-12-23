@@ -14,7 +14,6 @@
 # ==============================================================================
 
 # tag::start
-import time
 
 import motrixsim as mx
 
@@ -22,9 +21,7 @@ model = mx.load_model("examples/assets/boston_dynamics_spot/scene.xml")
 with mx.render.RenderApp("warn") as render:
     render.launch(model)
     data = mx.SceneData(model)
-
     while True:
-        time.sleep(model.options.timestep)
-        mx.step(model, data)
+        model.step(data)
         render.sync(data)
 # tag::end

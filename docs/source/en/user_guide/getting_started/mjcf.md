@@ -75,11 +75,15 @@ Supported tags:
   - texture, role
   - \\
   - \\
+* - model
+  - name, file
+  - \\
+  - content_type
 ```
 
 Planned tags:
 
-`skin`, `model`，`mesh/plugin`
+`skin`, `mesh/plugin`
 
 ```{note}
 Currently, mesh files support stl, obj, and dae formats.
@@ -146,11 +150,15 @@ Supported tags:
   - fixed, track, targetbody
   - trackcom, targetbodycom
   - \\
+* - attach
+  - model, body, prefix
+  - \\
+  - \\
 ```
 
 Planned tags:
 
-`flexcomp`, `frame`, `attach`, `contact/pair`, `deformable`
+`flexcomp`, `frame`, `contact/pair`, `deformable`
 
 Unsupported tags:
 

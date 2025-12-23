@@ -13,17 +13,15 @@
 # limitations under the License.
 # ==============================================================================
 
-import time
-
-from motrixsim import SceneData, load_model, step
+from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import RenderApp
-
-# Mouse controls:
-# - Press and hold left button then drag to rotate the camera/view
-# - Press and hold right button then drag to pan/translate the view
 
 
 def main():
+    print("Press 'A' to disable the system camera.")
+    print("Press 'D' to enable the system camera.")
+    print("Press 'Q' to disable the scene camera.")
+    print("Press 'E' to enable the scene camera.")
     # Create render window for visualization
     with RenderApp() as render:
         render.opt.set_left_panel_vis(True)
@@ -41,19 +39,12 @@ def main():
         # Create the physics data of the model
         data = SceneData(model)
 
-        while True:
-            # Control the step interval to prevent too fast simulation
-            time.sleep(0.001)
-            # Physics world step
-            step(model, data)
-            # Sync render objects from physic world
-            render.sync(data)
-
+        def render_step():
             system_camera = render.system_camera
             # Disable the system camera.
             if render.input.is_key_just_pressed("a"):
                 system_camera.active = False
-            # Enable the masystemin camera.
+            # Enable the system camera.
             if render.input.is_key_just_pressed("d"):
                 system_camera.active = True
 
@@ -64,6 +55,9 @@ def main():
             # Enable the main camera.
             if render.input.is_key_just_pressed("e"):
                 scene_camera.active = True
+            render.sync(data)
+
+        run.render_loop(model.options.timestep, 60, lambda: step(model, data), render_step)
 
 
 if __name__ == "__main__":

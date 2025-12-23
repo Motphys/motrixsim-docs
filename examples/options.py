@@ -13,14 +13,11 @@
 # limitations under the License.
 # ==============================================================================
 
-import time
-
-from motrixsim import SceneData, SceneModel, load_model, step
+from motrixsim import SceneData, SceneModel, load_model, run, step
 from motrixsim.render import RenderApp
 
 
 def simulate(render: RenderApp, model: SceneModel, data: SceneData):
-    time.sleep(0.02)
     # Step the physics world
     step(model, data)
     # Sync render objects from physic world
@@ -64,20 +61,22 @@ def main():
         options.gravity = [0, 0, 9.8]
 
         for i in range(50):
-            simulate(render, model, data)
+            step(model, data)
+            render.sync(data)
 
         # Set gravity
         options.gravity = [0, 0, -9.8]
 
         for i in range(200):
-            simulate(render, model, data)
+            step(model, data)
+            render.sync(data)
 
         # Set simulation flags
         options.disable_contacts = True
         options.disable_impedance = True
         # end::options_code[]
-        while True:
-            simulate(render, model, data)
+
+        run.render_loop(model.options.timestep, 60, lambda: step(model, data), lambda: render.sync(data))
 
 
 if __name__ == "__main__":

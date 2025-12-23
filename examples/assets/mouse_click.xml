@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:34b7954d448f78b89c764b2f6cb1d21061b0b28bc6786607999a6ed367298d71
-size 830
+<mujoco>
+  <option  gravity="0 0 -9.8"/>
+  <compiler autolimits="true"/>
+
+  <asset>
+    <texture name="grid" type="2d" builtin="checker" width="512" height="512" mark="edge" rgb1="0.4314 0.5294 0.6431" rgb2="0.8157 0.8549 0.9059"
+      markrgb="0.8 0.8 0.8"/>
+    <texture name="sphere" type="2d" builtin="checker" width="128" height="128"  rgb1="0.75 0.15 0.15" rgb2="0.15 0.15 0.20"/>
+
+    <material name="grid" texture="grid" texrepeat="1 1" texuniform="true" reflectance=".2"/>
+    <material name="sphere" texture="sphere" />
+  </asset>
+
+  <worldbody>
+    <light name="light" pos="0 0 3" directional = "true"/>
+    <geom type="plane" size="10 10 .1" material="grid"/>
+    <body name="sphere" pos="0 0 0.5">
+      <freejoint/>
+      <geom type="sphere" size = "0.05" material = "sphere"/>
+    </body>
+  </worldbody>
+
+</mujoco>

@@ -1,3 +1,54 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:2131ec408ce9a9c1de4ceab40fe3f10e5f9a6145bfd3c00d9b2022ea3085d408
-size 2048
+<mujoco>
+  <option timestep="0.02" iterations="4" solver="PGS"/>
+  <asset>
+    <texture name="tex_0" type="2d" builtin="checker" width="128" height="128" rgb1="0.3 0.4 0.5" rgb2="0.6 0.5 0.4"/>
+    <material name="mat_0" texture="tex_0" texrepeat="5 5" texuniform="true"/>
+
+    <texture name="tex_1" type="2d" builtin="checker" width="128" height="128" rgb1="0.5 0.2 0.2" rgb2="0.6 0.5 0.4"/>
+    <material name="mat_1" texture="tex_1" texrepeat="5 5" texuniform="true"/>
+  </asset>
+
+  <worldbody>
+    <light name="light" pos="0 0 3" directional = "true"/>
+    <geom type="plane" size="25 25 .1"  rgba = "0.7 0.7 0.7 1"/>
+    <body pos="0 0 5">
+      <freejoint name = "ball_A"/>
+      <geom priority="1" type="sphere" size="0.5" condim = "4" friction = "0 0.02 0" material = "mat_0"/>
+      <inertial pos="0 0 0"  mass="10"
+      diaginertia="1 1 1"/>
+    </body>
+
+    <body pos="0 2 5">
+      <freejoint name = "ball_B"/>
+      <geom priority="1" type="sphere" size="0.5" condim = "4" friction = "0 0.005 0" material = "mat_0"/>
+      <inertial pos="0 0 0"  mass="10"
+      diaginertia="1 1 1"/>
+    </body>
+
+    <body pos="-3 -3 7">
+      <freejoint name = "ball_C"/>
+      <geom priority="1" type="sphere" size="0.5" condim = "6" friction = "0.08 0 0.2" material = "mat_1"/>
+      <inertial pos="0 0 0"  mass="10"
+      diaginertia="1 1 1"/>
+    </body>
+
+    <body pos="-3 -5 7">
+      <freejoint name = "ball_D"/>
+      <geom priority="1" type="sphere" size="0.5" condim = "6" friction = "0.08 0 0.1" material = "mat_1"/>
+      <inertial pos="0 0 0"  mass="10"
+      diaginertia="1 1 1"/>
+    </body>
+
+    <geom priority="1" type="box" size="5 2 2" pos = "-5 -4 0" quat = "0 0.174 0 0.985" rgba = "0.7 0.8 0.9 1"/>
+
+  </worldbody>
+    <asset>
+      <texture type="skybox" builtin="gradient" rgb1=".4 .5 .6" rgb2="0 0 0"
+        width="100" height="100"/>
+    </asset>
+
+    <actuator>
+      <motor name="actuator_A" joint="ball_A" gear="0 0 0 0 0 5"/>
+      <motor name="actuator_B" joint="ball_B" gear="0 0 0 0 0 5"/>
+    </actuator>
+</mujoco>

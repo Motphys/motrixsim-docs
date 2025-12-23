@@ -13,9 +13,8 @@
 # limitations under the License.
 # ==============================================================================
 
-import time
 
-from motrixsim import SceneData, load_mjcf_str, step
+from motrixsim import SceneData, load_mjcf_str, run, step
 from motrixsim.render import RenderApp
 
 # tag::model_load_from_string[]
@@ -47,12 +46,12 @@ def main():
         # Create the physics data of the model
         data = SceneData(model)
 
-        while True:
-            # Control the step interval to prevent too fast simulation
-            time.sleep(0.001)
-            # Step the physics world
-            step(model, data)
-            render.sync(data)
+        run.render_loop(
+            model.options.timestep,
+            60,
+            lambda: step(model, data),
+            lambda: render.sync(data),
+        )
 
 
 if __name__ == "__main__":

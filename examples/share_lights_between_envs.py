@@ -48,17 +48,11 @@ def main(argv):
         render_settings.share_lights_between_envs = _ShareLights.value
         render.launch(model, batch=batch_size, render_offset=render_offset, render_settings=render_settings)
 
-        def physics_step():
-            model.step(data)
-
-        def render_step():
-            render.sync(data)
-
         run.render_loop(
             model.options.timestep,
             60.0,
-            physics_step,
-            render_step,
+            lambda: model.step(data),
+            lambda: render.sync(data),
         )
 
 

@@ -17,11 +17,10 @@
 # and controls the movement of a ball by setting its velocity.
 # It involves functionalities related to `WorldBody` and `FloatingBase`.
 
-import time
 
 import numpy as np
 
-from motrixsim import SceneData, load_model, step
+from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import RenderApp
 
 
@@ -62,11 +61,9 @@ def main():
         move_speed = 1.2
         # Target position
         target_position = np.array([0, 0])
-        while True:
-            # Control the step interval to prevent too fast simulation
-            time.sleep(0.002)
-            # Step the physics world
-            step(model, data)
+
+        def render_step():
+            nonlocal target_position
             # Sync render objects from physic world
             render.sync(data)
             # Get input from render
@@ -90,6 +87,8 @@ def main():
             body_fb.set_global_linear_velocity(
                 data, np.array([move_direction[0] * move_speed, move_direction[1] * move_speed, linear_vel[2]])
             )
+
+        run.render_loop(model.options.timestep, 60, lambda: step(model, data), render_step)
 
 
 if __name__ == "__main__":

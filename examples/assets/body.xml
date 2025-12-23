@@ -1,3 +1,27 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:ffba070c193585d81e0b737b5c48cc4bb613ec60d6c7edbd14458d8da37a2e70
-size 911
+<mujoco>
+  <option timestep="0.01"/>
+  <worldbody>
+    <light name="light" pos="0 0 3" directional = "true"/>
+    <camera name="fixed" pos="0 -3 3" xyaxes="1 0 0 0 1 1"/>
+    <geom name="floor" type="plane" size="5 5 0.1" pos="0 0 0" rgba="0.8 0.9 0.8 1"/>
+
+    <body name="free_cube" pos="0 0 1.5">
+        <freejoint/>
+        <geom name="cube" type="box" size="0.25 0.25 0.25" pos="0 0 0" rgba="1 0 0 1"/>
+    </body>
+
+    <body name="sphere" pos="2 0 1.5">
+        <geom name="shpere" type="sphere" size="0.25" pos="0 0 0" rgba="0 1 0 1"/>
+    </body>
+
+    <body name="capsule" pos="0 2 3">
+        <joint type="hinge" axis="0 1 0"/>
+        <geom  type="sphere" size="0.25" rgba="0 0 1 1"/>
+        <body pos="0.75 0 0" euler="0 90 0">
+            <joint type="hinge" axis="1 0 0" />
+            <geom  type="capsule" size="0.25 0.25"  rgba="1 1 0 1"/>
+        </body>
+    </body>
+
+  </worldbody>
+</mujoco>

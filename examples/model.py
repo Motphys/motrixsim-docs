@@ -17,7 +17,7 @@ import time
 
 import numpy as np
 
-from motrixsim import SceneData, load_model, step
+from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import RenderApp
 
 
@@ -74,23 +74,21 @@ def main():
         # Get slide joint dof vel by data
         slide_joint_index = model.get_joint_index("slider")
         slide_joint_dof_vel_addr = model.joint_dof_vel_indices[slide_joint_index]
-        slide_joint_dof_vel = data[1].dof_vel[slide_joint_dof_vel_addr]
 
         # Wait for creating render world
         start = time.time()
 
-        while True:
-            # Control the step interval to prevent too fast simulation
-            time.sleep(0.02)
+        def control_and_step():
+            nonlocal start, ctrl_value
             current_time = time.time()
             if current_time - start > 3.0:
                 ctrl_value *= -1
                 slide_actuator.set_ctrl(data, np.array([ctrl_value, ctrl_value * 0.5, ctrl_value * -0.8]))
                 start = current_time
-
             # Physics world step
             step(model, data)
 
+        def render_and_display():
             link_pose = model.get_link_poses(data[1])
             print(f"link_pose : {link_pose}")
 
@@ -99,6 +97,8 @@ def main():
 
             # Sync render objects from physic world
             render.sync(data)
+
+        run.render_loop(model.options.timestep, 60, control_and_step, render_and_display)
 
 
 if __name__ == "__main__":

@@ -14,7 +14,6 @@
 # ==============================================================================
 
 import random
-import time
 from collections import deque
 
 import numpy as np
@@ -138,11 +137,9 @@ def main():
 
         capture_tasks = deque()
         capture_index = 0
-        while True:
-            # Control the step interval to prevent too fast simulation
-            time.sleep(0.02)
 
-            for _ in range(10):
+        while True:
+            for _ in range(4):
                 # Physics world step
                 step(model, data)
 
@@ -185,11 +182,11 @@ def main():
                 if task.state != "pending":
                     capture_tasks.popleft()
                     img = task.take_image()
-                    if img is not None:
-                        import os
+                    assert img is not None
+                    import os
 
-                        os.makedirs("shot", exist_ok=True)
-                        img.save_to_disk(f"shot/capture_{idx}.png")
+                    os.makedirs("shot", exist_ok=True)
+                    img.save_to_disk(f"shot/capture_{idx}.png")
                 else:
                     break
             # endtag

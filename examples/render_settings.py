@@ -13,9 +13,8 @@
 # limitations under the License.
 # ==============================================================================
 
-import time
 
-from motrixsim import SceneData, load_model, step
+from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import RenderApp, RenderSettings
 
 # Mouse controls:
@@ -43,13 +42,7 @@ def main():
         # Create the physics data of the model
         data = SceneData(model)
 
-        while True:
-            # Control the step interval to prevent too fast simulation
-            time.sleep(0.02)
-            # Physics world step
-            step(model, data)
-            # Sync render objects from physic world
-            render.sync(data)
+        run.render_loop(model.options.timestep, 60, lambda: step(model, data), lambda: render.sync(data))
 
 
 if __name__ == "__main__":

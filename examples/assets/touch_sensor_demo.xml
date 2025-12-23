@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:849fd9ce727bc4c48c33419cf8853f0f2f195bc971dabd756ad7c07e2511d69a
-size 1168
+<mujoco>
+  <compiler />
+  <option gravity="0 0 -9.8" timestep="0.01"/>
+  <statistic center="0 0 0.5" extent="2"/>
+
+  <worldbody>
+    <light name="light" pos="0 0 3" directional="true"/>
+    <camera name="fixed" pos="2 -2 1.5" xyaxes="1 0 0 0 0.5 1"/>
+    <geom name="ground" type="plane" size="5 5 0.1" rgba="0.6 0.6 0.6 1"/>
+ 
+    <body name="arm" pos="0 0 0.15">
+      <joint name="arm_joint" type="slide" axis="1 0 0" limited="true" range="-1.57 1.57"/>
+      <geom name="arm_geom" type="cylinder" size="0.05 0.3" rgba="0.8 0.3 0.3 1" euler="0 90 0"/>
+
+      <body name="end_effector" pos="0.35 0 0">
+        <joint name="wrist_joint" type="hinge" axis="1 0 0" limited="true" range="-1.57 1.57"/>
+        <geom name="hand_geom" type="sphere" size="0.08" rgba="0.3 0.8 0.3 1"/>
+
+        <site name="end" type="sphere" size="0.02" rgba="1 0 0 0.8" pos="0.08 0 0"/>
+      </body>
+    </body>
+
+    <geom name="wall" type="box" size="0.1 2 1" pos="1.2 0 0.5" rgba="0.5 0.5 0.5 1"/>
+  </worldbody>
+
+  <actuator>
+    <position name="arm_act" joint="arm_joint" kp="1000" kv="100"/>
+  </actuator>
+
+  <sensor>
+    <touch name="touch sensor" site="end"/>
+  </sensor>
+</mujoco>

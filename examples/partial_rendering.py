@@ -13,9 +13,8 @@
 # limitations under the License.
 # ==============================================================================
 
-import time
 
-from motrixsim import SceneData, load_model, step
+from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import RenderApp
 
 
@@ -42,12 +41,8 @@ def main():
         data = SceneData(model, batch=(batch,))
 
         target_scene_indices = [1, 3, 5, 7, 9]
-        while True:
-            # Control the step interval to prevent too fast simulation
-            time.sleep(0.02)
 
-            # Physics world step
-            step(model, data)
+        def render_step():
             if render.input.is_key_just_pressed("a"):
                 render.set_scene_vis(target_scene_indices, False)
 
@@ -61,6 +56,8 @@ def main():
                 render.set_all_scene_vis(True)
 
             render.sync(data)
+
+        run.render_loop(model.options.timestep, 60, lambda: step(model, data), render_step)
 
 
 # endtag

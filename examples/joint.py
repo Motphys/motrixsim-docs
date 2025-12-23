@@ -18,7 +18,7 @@ import time
 
 import numpy as np
 
-from motrixsim import SceneData, load_model, step
+from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import RenderApp
 
 # Mouse controls:
@@ -141,11 +141,8 @@ def main():
         print_count = 0
         set_vel = False
 
-        while True:
-            # Control the step interval to prevent too fast simulation
-            time.sleep(0.02)
-            # Physics world step
-            step(model, data)
+        def control_and_phys_step():
+            nonlocal start, flip, print_count, set_vel
 
             if time.time() - start > 2.0:
                 vel = forward_vel if flip else backward_vel
@@ -160,6 +157,12 @@ def main():
                 flip = not flip
                 set_vel = True
 
+            # Physics world step
+            step(model, data)
+
+        def render_step():
+            nonlocal print_count
+
             if set_vel and print_count < 25:
                 joint_A_pos = joint_A.get_dof_pos(data)
                 joint_A_vel = joint_A.get_dof_vel(data)
@@ -173,6 +176,8 @@ def main():
 
             # Sync render objects from physic world
             render.sync(data)
+
+        run.render_loop(model.options.timestep, 60, control_and_phys_step, render_step)
 
 
 if __name__ == "__main__":

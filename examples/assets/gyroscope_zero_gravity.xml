@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b0e2a5d4cad40aee48d012c06595818fd1910e8c685eb58048c612f2fd737339
-size 1229
+<mujoco>
+    <option  gravity="0 0 0"/>
+    <compiler autolimits="true"/>
+    <statistic center="0 0 0" extent="0.8"/>
+
+    <asset>
+      <texture type="skybox" builtin="gradient" rgb1="0.003 0.207 0.298" rgb2="0.027 0.023 0.149"
+        width="100" height="100"/>
+    </asset>
+
+    <worldbody>
+        <light name="light" pos="0 0 3" directional = "true"/>
+        <!-- ground plane -->
+        <geom type="plane" size="10 10 0.01" friction="2" pos="0 0 -2"/> 
+        
+        <!-- gyroscopic -->
+        <body name = "base" pos="0 0 0.02" euler="0 50 0">
+            <freejoint  name="ball_1"/>
+            <geom type="cylinder" size="0.1 0.5" friction="2" rgba = "0.623 0.815 0.898 1"/>
+            <body pos="0.2 0 0" euler="0 90 0">
+                <geom type="cylinder" size="0.07 0.1" friction="2" rgba = "0.650 0.721 0.913 1"/> 
+            </body>
+        </body>
+    </worldbody>
+    <actuator>
+      <motor name = "ctrl_0" joint="ball_1" gear="0 0 0 10 0 0" ctrllimited="false" forcelimited="false" forcerange="-100 100" ctrlrange="-1 1"/>
+      <motor name = "ctrl_1" joint="ball_1" gear="0 0 0 0 0 1" ctrllimited="false" forcelimited="false" forcerange="-100 100" ctrlrange="-0.1 0.1"/>
+    </actuator>
+  </mujoco>

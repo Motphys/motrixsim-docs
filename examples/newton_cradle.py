@@ -13,9 +13,8 @@
 # limitations under the License.
 # ==============================================================================
 
-import time
 
-from motrixsim import SceneData, load_model, step
+from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import RenderApp
 
 
@@ -33,12 +32,7 @@ def main():
         render.launch(model)
         # Create the physics data of the model
         data = SceneData(model)
-        while True:
-            time.sleep(0.001)
-            # Physics world step
-            step(model, data)
-            # Sync render objects from physic world
-            render.sync(data)
+        run.render_loop(model.options.timestep, 60, lambda: step(model, data), lambda: render.sync(data))
 
 
 if __name__ == "__main__":

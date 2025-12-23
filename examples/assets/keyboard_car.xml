@@ -1,3 +1,80 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:8db95560278cba1a3cec54641976eb5e2dd81c9a0480cd075b24f37d4cc5274a
-size 2690
+<mujoco>
+  <compiler autolimits="true"/>
+  <statistic center="0 0 0" extent="0.5"/>
+
+  <asset>
+    <texture name="grid" type="2d" builtin="checker" width="512" height="512" mark="edge" rgb1="0.4314 0.5294 0.6431" rgb2="0.8157 0.8549 0.9059"
+      markrgb="0.8 0.8 0.8"/>
+
+    <texture name="wheel" type="2d" builtin="checker" width="128" height="128"  rgb1="0.75 0.15 0.15" rgb2="0.15 0.15 0.20"/>
+
+    <material name="grid" texture="grid" texrepeat="1 1" texuniform="true" reflectance=".2"/>
+    <material name="wheel" texture="wheel"/>
+
+    <mesh name="chasis" scale=".01 .006 .0015"
+      vertex=" 9   2   0
+              -10  10  10
+               9  -2   0
+               10  3  -10
+               10 -3  -10
+              -8   10 -10
+              -10 -10  10
+              -8  -10 -10
+              -5   0   20"/>
+  </asset>
+
+  <default>
+    <joint damping=".03" actuatorfrcrange="-0.5 0.5"/>
+    <default class="wheel">
+      <geom type="cylinder" size=".03 .01" material = "wheel"/>
+    </default>
+    <default class="decor">
+      <site type="box" rgba=".5 1 .5 1"/>
+    </default>
+  </default>
+
+  <worldbody>
+    <geom type="plane" size="3 3 .01" material="grid"/>
+    <body name="car" pos="0 0 .03">
+      <freejoint/>
+      <light name="top light" pos="0 0 2" mode="trackcom" diffuse=".4 .4 .4"/>
+      <!-- <geom name="chasis" type="box" size = "0.065 0.015 0.015"/> -->
+      <geom name="chasis" type="mesh" mesh="chasis" rgba = "0.15 0.15 0.15 1.0"/>
+      <geom name="front wheel" pos=".08 0 -.015" type="sphere" size=".015" condim="1" priority="1"/>
+      <light name="front light" pos=".1 0 .02" dir="2 0 -1" diffuse="1 1 1"/>
+      <body name="left wheel" pos="-.07 .06 0" zaxis="0 1 0">
+        <joint name="left"/>
+        <geom class="wheel"/>
+        <site class="decor" size=".006 .025 .012"/>
+        <site class="decor" size=".025 .006 .012"/>
+      </body>
+      <body name="right wheel" pos="-.07 -.06 0" zaxis="0 1 0">
+        <joint name="right"/>
+        <geom class="wheel"/>
+        <site class="decor" size=".006 .025 .012"/>
+        <site class="decor" size=".025 .006 .012"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <tendon>
+    <fixed name="forward">
+      <joint joint="left" coef=".5"/>
+      <joint joint="right" coef=".5"/>
+    </fixed>
+    <fixed name="turn">
+      <joint joint="left" coef="-.5"/>
+      <joint joint="right" coef=".5"/>
+    </fixed>
+  </tendon>
+
+  <actuator>
+    <motor name="forward" tendon="forward" ctrlrange="-1 1"/>
+    <motor name="turn" tendon="turn" ctrlrange="-1 1"/>
+  </actuator>
+
+  <sensor>
+    <jointactuatorfrc name="right" joint="right"/>
+    <jointactuatorfrc name="left" joint="left"/>
+  </sensor>
+</mujoco>

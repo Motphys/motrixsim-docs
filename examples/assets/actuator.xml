@@ -1,3 +1,33 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:90211a26af24a295d0c70bcc3eba1c9f8a236c3e0c1ba69a39c2c12ecdf6a756
-size 1271
+<mujoco>
+  <option timestep="0.01"/>
+  
+  <worldbody>
+
+    <light name="light" pos="0 0 3"/>
+    <camera name="fixed" pos="0 -3 3" xyaxes="1 0 0 0 1 1"/>
+    <geom name="floor" type="plane" size="5 5 0.1" pos="0 0 0" rgba="0.4 0.4 0.4 1"/>
+
+    <body name="base" pos="0 0 0.5">
+      <body name="arm_A" pos="0 0 0"> 
+        <joint name="joint_A" type="hinge" axis="0 0 1" limited="true" range = "-90 90"/>
+        <geom name="cube_A" type="box" size="0.2 0.2 0.5" pos="0 0 0" rgba="1 0 0 1"/>
+        
+        <body name="arm_B" pos="0 0 0.65">  
+          <joint name="joint_B" type="hinge" axis="0 1 0" limited="true" range = "-30 30"/> 
+          <geom name="sphere" type="sphere" size="0.15" pos="0 0 0" rgba="0 0 1 1"/>
+
+          <body name="arm_C" pos="0 0 0">  
+            <joint name="joint_C" type="hinge" axis="0 1 0" limited="true" range = "-10 10"/> 
+            <geom name="cube_C" type="box" size="0.15 0.15 0.4" pos="0 0 0.4" rgba="1 1 0 1"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <motor name="actuator_A" joint="joint_A" gear="100"/>
+    <motor name="actuator_B" joint="joint_B" gear="100"/>
+    <motor name="actuator_C" joint="joint_C" gear="1000" ctrlrange = "-0.5 0.5"/>
+  </actuator>
+</mujoco>

@@ -15,7 +15,7 @@
 
 import time
 
-from motrixsim import SceneData, load_model, step
+from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import RenderApp
 
 
@@ -50,9 +50,8 @@ def main():
         start = time.time()
         action_index = 0
 
-        while True:
-            # Control the step interval to prevent too fast simulation
-            time.sleep(0.002)
+        def control_and_step():
+            nonlocal start, action_index
 
             diff = time.time() - start
 
@@ -85,8 +84,8 @@ def main():
 
             # Physics world step
             step(model, data)
-            # Sync render objects from physic world
-            render.sync(data)
+
+        run.render_loop(model.options.timestep, 60, control_and_step, lambda: render.sync(data))
 
 
 if __name__ == "__main__":

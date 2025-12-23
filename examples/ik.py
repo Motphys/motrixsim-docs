@@ -13,12 +13,10 @@
 # limitations under the License.
 # ==============================================================================
 
-import time
-
 import numpy as np
 from scipy.spatial.transform import Rotation
 
-from motrixsim import SceneData, ik, load_model, step
+from motrixsim import SceneData, ik, load_model, run, step
 from motrixsim.render import RenderApp
 
 
@@ -40,6 +38,7 @@ def main():
         chain = ik.IkChain(
             model, end_link="base", start_link="gen3/base_link", end_effector_offset=[0.0, 0.0, 0.15, 0, 0, 0, 1]
         )
+        assert chain.num_dof_vel == 7, f"Expected 7 DoF for the Stanford TidyBot arm, got {chain.num_dof_vel}"
         # end::create_ik_chain
 
         # tag::create_ik_solver
@@ -82,10 +81,37 @@ def main():
         print("Press e to rotate target -yaw")
 
         render.launch(model)
-        while True:
-            time.sleep(model.options.timestep)
+
+        def ik_control_and_step():
             step(model, data)
-            render.sync(data)
+
+            # tag::solve_ik
+            result = solver.solve(chain, data, target_pose)
+            # the first element is actual iteration number used, which may be less than max_iter
+            num_iter = result[0]  # noqa: F841
+            # the second element is the final residual after iteration end.
+            residual = result[1]
+            # the remaining elements are the desired dof_pos
+            desired_dof_pos = result[2:]
+
+            # Check convergence: residual < tolerance means successful convergence
+            if residual < 1e-3:
+                # in stanford_tidybot model, the first 3 actuators are for the mobile base,
+                # we only need to control the arm dof_pos.
+                ctrls = data.actuator_ctrls
+                ctrls[3:10] = desired_dof_pos
+                data.actuator_ctrls = ctrls
+            else:
+                # DLS typically provides better convergence than Gauss-Newton,
+                # but if you still see convergence issues, try:
+                # 1. Increasing damping parameter (e.g., 1e-2)
+                # 2. Breaking down large movements into smaller steps
+                # 3. Checking if target is within robot workspace
+                print(f"IK not converged: iterations={num_iter:.0f}, residual={residual:.2e}")
+                print("Tips: increase damping, use smaller steps, or check workspace limits")
+            # end::solve_ik
+
+        def render_step():
             if input.is_key_pressed("left"):
                 target_pose[0] -= 0.002
             if input.is_key_pressed("right"):
@@ -112,32 +138,9 @@ def main():
             gizmos.draw_cuboid(np.array([0.07, 0.07, 0.07]), target_pose[0:3], rot=target_pose[3:7])
             gizmos.draw_axes(target_pose[0:3], target_pose[3:7], length=0.1)
 
-            # tag::solve_ik
-            result = solver.solve(chain, data, target_pose)
-            # the first element is actual iteration number used, which may be less than max_iter
-            num_iter = result[0]  # noqa: F841
-            # the second element is the final residual after iteration end.
-            residual = result[1]
-            # the remaining elements are the desired dof_pos
-            desired_dof_pos = result[2:]
+            render.sync(data)
 
-            # Check convergence: residual < tolerance means successful convergence
-            if residual < 1e-3:
-                # in stanford_tidybot model, the first 3 actuators are for the mobile base,
-                # we only need to control the arm dof_pos.
-                ctrls = data.actuator_ctrls
-                ctrls[3:10] = desired_dof_pos
-                data.actuator_ctrls = ctrls
-            else:
-                # DLS typically provides better convergence than Gauss-Newton,
-                # but if you still see convergence issues, try:
-                # 1. Increasing damping parameter (e.g., 1e-2)
-                # 2. Breaking down large movements into smaller steps
-                # 3. Checking if target is within robot workspace
-                print(f"IK not converged: iterations={num_iter:.0f}, residual={residual:.2e}")
-                print("Tips: increase damping, use smaller steps, or check workspace limits")
-
-            # end::solve_ik
+        run.render_loop(model.options.timestep, 60, ik_control_and_step, render_step)
 
 
 if __name__ == "__main__":

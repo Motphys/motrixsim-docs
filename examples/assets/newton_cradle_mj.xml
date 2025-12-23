@@ -1,3 +1,46 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:56f3f1faaab1f0de2225d0f1e201179893af7fa5fa9904d602f8cd356a12e110
-size 1644
+<mujoco>
+  <option  gravity="0 0 -9.8" timestep="0.001"/>
+  <default>
+    <default class="link">
+      <geom type="sphere" pos="0 0 -4" quat="0 0 0 1" size=".5" rgba=".2 .2 .2 1" solref="-1000 0" condim="1"/>
+      <joint type="hinge" axis="0 1 0" />
+    </default>
+    <default class="line">
+      <geom type="box" mass="0" pos="0 0 -2" contype="0" conaffinity="0" size="0.01 0.01 2" rgba="1 0 0 1"/>
+    </default>
+  </default>
+
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="-130" elevation="-20"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.4314 0.5294 0.6431" rgb2="0.8157 0.8549 0.9059"
+      markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="1 1" reflectance="0.2"/>
+  </asset>
+
+
+  <worldbody>
+    <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
+    <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
+    <geom name="top" size="2.5 0.3 0.3" pos="2 0 7.3" type="box"/>
+
+    <body pos="0 0 7" euler="0 90 0" childclass="link">
+      <joint name="ball"/>
+      <site pos="0 0 -4" name="A"/>
+      <geom />
+      <geom class="line"/>
+    </body>
+    <replicate count="4" offset="1 0 0">
+      <body pos="1 0 7" childclass="link">
+        <joint name="ball"/>
+        <geom />
+        <geom class="line"/>
+      </body>    
+    </replicate>
+  </worldbody>
+</mujoco>

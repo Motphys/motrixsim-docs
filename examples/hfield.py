@@ -13,11 +13,10 @@
 # limitations under the License.
 # ==============================================================================
 
-import time
 
 import numpy as np
 
-from motrixsim import SceneData, load_model, step
+from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import RenderApp
 
 
@@ -85,35 +84,29 @@ def demonstrate_hfield_api(model):
 
 def main():
     # Create render window for visualization
-    render = RenderApp()
-    # The scene description file
-    path = "examples/assets/hfield.xml"
-    # Load the scene model
-    model = load_model(path)
+    with RenderApp() as render:
+        # The scene description file
+        path = "examples/assets/hfield.xml"
+        # Load the scene model
+        model = load_model(path)
 
-    # Demonstrate height field API
-    demonstrate_hfield_api(model)
+        # Demonstrate height field API
+        demonstrate_hfield_api(model)
 
-    # Create the render instance of the model
-    render.launch(model)
-    # Create the physics data of the model
-    data = SceneData(model)
+        # Create the render instance of the model
+        render.launch(model)
+        # Create the physics data of the model
+        data = SceneData(model)
 
-    # Add object to demonstrate collision with height field
-    # Add a test object below existing sphere
-    print("Starting simulation demo...")
-    print("Spheres will collide with height field and roll along terrain")
-    print("Use mouse to control view:")
-    print("  - Left click drag: Rotate view")
-    print("  - Right click drag: Pan view")
+        # Add object to demonstrate collision with height field
+        # Add a test object below existing sphere
+        print("Starting simulation demo...")
+        print("Spheres will collide with height field and roll along terrain")
+        print("Use mouse to control view:")
+        print("  - Left click drag: Rotate view")
+        print("  - Right click drag: Pan view")
 
-    while True:
-        # Control the step interval to prevent too fast simulation
-        time.sleep(0.02)
-        # Physics world step
-        step(model, data)
-        # Sync render objects from physic world
-        render.sync(data)
+        run.render_loop(model.options.timestep, 60, lambda: step(model, data), lambda: render.sync(data))
 
 
 if __name__ == "__main__":
