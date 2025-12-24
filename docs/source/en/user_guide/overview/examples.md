@@ -128,6 +128,12 @@ uv run examples/{example_name}.py
 * - ![go1](/_static/images/examples/go1.png)
   - [`go1.py`](../../../../examples/go1.py)
   - Random motion of the Go1 quadruped robot, demonstrating how to integrate a neural network and use `.onnx` files.
+* - ![go2](/_static/images/examples/go2.png)
+  - [`go2_keyboard_control.py`](../../../../examples/go2_keyboard_control.py)
+  - Go2 quadruped keyboard control example: arrow keys and WASD control walking and turning.
+* - ![g1](/_static/images/examples/g1.png)
+  - [`g1_keyboard_control.py`](../../../../examples/g1_keyboard_control.py)
+  - G1 humanoid keyboard control example: arrow keys and WASD control walking and turning.
 * - ![robotic_arm](/_static/images/examples/robotic_arm.png)
   - [`robotic_arm.py`](../../../../examples/robotic_arm.py)
   - The Stanford robotic arm uses a sequence of movement commands to pick and place a ball.

@@ -230,3 +230,70 @@ and
 ```bash
 uv run python -m mujoco.viewer --mjcf=examples/assets/store/scene.xml
 ```
+
+## Robotic Arm Grasp Stability
+
+This example compares MotrixSim and MuJoCo on the stability of a Franka robotic arm grasp under random perturbations. We apply randomized shaking to the gripper to simulate realistic disturbance sources. MotrixSim is able to maintain a stable grasp and prevent relative slip under these perturbations, while MuJoCo shows noticeable slipping in the same conditions — and setting `<option noslip_iterations="1"/>` in MuJoCo does not fully eliminate the slip.
+
+::::{grid} 1 1 3 3
+
+:::{grid-item}
+
+```{video} /_static/videos/grasp_shake_ball_motrix.mp4
+:poster: /_static/images/poster/grasp_shake_ball_motrix.jpg
+:caption: MotrixSim
+:nocontrols:
+:autoplay:
+:playsinline:
+:muted:
+:loop:
+:width: 100%
+```
+
+:::
+
+:::{grid-item}
+
+```{video} /_static/videos/grasp_shake_ball_mujoco.mp4
+:poster: /_static/images/poster/grasp_shake_ball_mujoco.jpg
+:caption: MuJoCo
+:nocontrols:
+:autoplay:
+:playsinline:
+:muted:
+:loop:
+:width: 100%
+```
+
+:::
+
+:::{grid-item}
+
+```{video} /_static/videos/grasp_shake_ball_mujoco_noslip_iterations=1.mp4
+:poster: /_static/images/poster/grasp_shake_ball_mujoco_noslip_iterations=1.jpg
+:caption: MuJoCo (`noslip_iterations=1`)
+:nocontrols:
+:autoplay:
+:playsinline:
+:muted:
+:loop:
+:width: 100%
+```
+
+:::
+
+::::
+
+Run the comparison examples with:
+
+```bash
+uv run examples/grasp_shaking_test.py
+```
+
+and
+
+```bash
+uv run examples/mujoco/grasp_shaking_test.py
+```
+
+This example provides a clear, visual comparison of how the two simulators handle contact and friction during manipulation tasks.

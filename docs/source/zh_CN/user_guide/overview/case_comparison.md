@@ -238,3 +238,69 @@ uv run python -m mujoco.viewer --mjcf=examples/assets/store/scene.xml
 ```
 
 来运行这两个示例。
+
+## 机械臂抓取稳定性
+该用例比较 MotrixSim 与 MuJoCo 在 Franka 机械臂抓取小球时的接触稳定性。在测试中，给抓取器施加随机晃动扰动以模拟现实环境中的扰动源。结果显示 MotrixSim 在扰动下仍能保持稳固夹持，抑制相对滑移；而 MuJoCo 在相同条件下容易发生滑动，即使在模型中设置了 `<option noslip_iterations="1"/>`，仍无法完全消除滑移现象。
+
+::::{grid} 1 1 3 3
+
+:::{grid-item}
+
+```{video} /_static/videos/grasp_shake_ball_motrix.mp4
+:poster: /_static/images/poster/grasp_shake_ball_motrix.jpg
+:caption: MotrixSim
+:nocontrols:
+:autoplay:
+:playsinline:
+:muted:
+:loop:
+:width: 100%
+```
+
+:::
+
+:::{grid-item}
+
+```{video} /_static/videos/grasp_shake_ball_mujoco.mp4
+:poster: /_static/images/poster/grasp_shake_ball_mujoco.jpg
+:caption: MuJoCo
+:nocontrols:
+:autoplay:
+:playsinline:
+:muted:
+:loop:
+:width: 100%
+```
+
+:::
+
+:::{grid-item}
+
+```{video} /_static/videos/grasp_shake_ball_mujoco_noslip_iterations=1.mp4
+:poster: /_static/images/poster/grasp_shake_ball_mujoco_noslip_iterations=1.jpg
+:caption: MuJoCo (`noslip_iterations=1`)
+:nocontrols:
+:autoplay:
+:playsinline:
+:muted:
+:loop:
+:width: 100%
+```
+
+:::
+
+::::
+
+要运行该对比示例，请分别执行：
+
+```bash
+uv run examples/grasp_shaking_test.py
+```
+
+以及
+
+```bash
+uv run examples/mujoco/grasp_shaking_test.py
+```
+
+该用例直观展示了两套仿真器在接触建模与摩擦处理上的差异，便于开发者评估在抓取与操纵任务中的稳定性表现。

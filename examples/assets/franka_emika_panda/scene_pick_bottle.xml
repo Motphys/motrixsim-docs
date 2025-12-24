@@ -1,0 +1,61 @@
+<mujoco model="panda scene pick bottle">
+  <include file="mjx_panda.xml"/>
+
+  <statistic center="0.3 0 0.4" extent="1"/>
+
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="120" elevation="-20"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3"
+      markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
+
+    <material name="bottle_material_0" rgba="0.113725 0.113725 0.113725 1" />
+    <material name="bottle_material_1" rgba="0.8 0.639216 0.156863 1" />
+    <mesh name="bottle_0" file="../bottle/bottle_0.obj" />
+    <mesh name="bottle_1" file="../bottle/bottle_1.obj" />
+    <mesh name="bottle_part_0" file="../bottle/part_0.obj" />
+    <mesh name="bottle_part_1" file="../bottle/part_1.obj" />
+    <mesh name="bottle_part_2" file="../bottle/part_2.obj" />
+    <mesh name="bottle_part_3" file="../bottle/part_3.obj" />
+  </asset>
+
+  <worldbody>
+    <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
+    <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
+    <camera name="front_cam" pos="1.155 0.016 0.526" xyaxes="0.000 1.000 -0.000 -0.513 0.000 0.858"/>
+    <body name="bottle" pos="0.65 0 0.036" quat="0.707107 0 0 0.707107">
+      <freejoint/>
+      <geom type="mesh" mesh="bottle_0" mass="0" class="visual" material="bottle_material_0" />
+      <geom type="mesh" mesh="bottle_1" mass="0" class="visual" material="bottle_material_1" />
+      <geom type="mesh" mesh="bottle_part_0" group="3" density="100"/>
+      <geom type="mesh" mesh="bottle_part_1" group="3" density="100"/>
+      <geom type="mesh" mesh="bottle_part_2" group="3" density="100"/>
+      <geom type="mesh" mesh="bottle_part_3" group="3" density="100"/>
+    </body>
+  </worldbody>
+
+  <keyframe>
+    <key name="home" 
+      qpos="
+        0 0 0 -1.57079 0 1.57079 -0.7853 0.04 0.04
+        0.65 0 0.036 0.707107 0 0 0.707107"
+      ctrl="0 0 0 -1.57079 0 1.57079 -0.7853 0.04"/>
+    <key name="grasp" 
+      qpos="
+        -1.0104 1.5623 1.3601 -1.6840 -1.5863 1.7810 1.4598 0.04 0.04
+        0.65 0 0.036 0.707107 0 0 0.707107"
+      ctrl="-1.0104 1.5623 1.3601 -1.6840 -1.5863 1.7810 1.4598 0.04"/>
+    <key name="lift" 
+      qpos="
+        -1.0426 1.4028 1.5634 -1.7114 -1.4055 1.6015 1.4510 0. 0.
+        0.65 0 0.036 0.707107 0 0 0.707107"
+      ctrl="-1.0426 1.4028 1.5634 -1.7114 -1.4055 1.6015 1.4510 0."/>
+  </keyframe>
+
+</mujoco>
