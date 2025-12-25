@@ -136,6 +136,12 @@ uv run examples/{example_name}.py
 * - ![go1](/_static/images/examples/go1.png)
   - [`go1.py`](../../../../examples/go1.py)
   - go1 机械狗的随机运动，展示如何引入神经网络和使用`.onnx`文件。
+* - ![go2](/_static/images/examples/go2.png)
+  - [`go2_keyboard_control.py`](../../../../examples/go2_keyboard_control.py)
+  - go2 机械狗的键盘控制示例，方向键和wasd控制机械狗行走与转向。
+* - ![g1](/_static/images/examples/g1.png)
+  - [`g1_keyboard_control.py`](../../../../examples/g1_keyboard_control.py)
+  - g1 人形机器人的键盘控制示例，方向键和wasd控制机器人行走与转向。
 * - ![robotic_arm](/_static/images/examples/robotic_arm.png)
   - [`robotic_arm.py`](../../../../examples/robotic_arm.py)
   - 斯坦福机械臂使用移动命令序列进行小球的抓取与摆放。
