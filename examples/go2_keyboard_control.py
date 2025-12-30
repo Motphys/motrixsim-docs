@@ -21,8 +21,9 @@ from motrixsim.render import RenderApp
 
 default_joint_pos = np.array([0.1, 0.9, -1.8, -0.1, 0.9, -1.8, 0.1, 0.9, -1.8, -0.1, 0.9, -1.8])
 action_scale = 0.5
-lin_vel_scale = 2.
+lin_vel_scale = 2.0
 ang_vel_scale = 3.0
+
 
 class OnnxController:
     def __init__(
@@ -44,7 +45,7 @@ class OnnxController:
         self.command = np.zeros(3, dtype=np.float32)
         self._action_scale = action_scale
         self._default_angles = default_angles.copy()
-        self._last_action = np.zeros_like(default_angles, dtype=np.float32)        
+        self._last_action = np.zeros_like(default_angles, dtype=np.float32)
 
         self._counter = 0
         self._n_substeps = int(round(ctrl_dt / self._model.options.timestep))
@@ -70,15 +71,9 @@ class OnnxController:
 
         dof_pos = body.get_joint_dof_pos(data)
         dof_vel = body.get_joint_dof_vel(data)
-        obs = np.hstack([
-            linear_vel,
-            gyro,
-            gravity,
-            dof_pos - self._default_angles,
-            dof_vel,
-            self._last_action,
-            command
-        ])
+        obs = np.hstack(
+            [linear_vel, gyro, gravity, dof_pos - self._default_angles, dof_vel, self._last_action, command]
+        )
         return obs.astype(np.float32)
 
     # Apply actions to actuators from the neural network
@@ -89,7 +84,7 @@ class OnnxController:
             ctrl = act * self._action_scale + self._default_angles[index]
             actuator = model.get_actuator(actuator_index)
             actuator.set_ctrl(data, ctrl)
-    
+
     def get_control(self):
         self._counter += 1
         step(self._model, self._data)
@@ -117,6 +112,7 @@ class OnnxController:
         dot = np.dot(rotated_z_axis, np.array([0.0, 0.0, 1.0]))
         return dot < thr
 
+
 def main():
     # Create render window for visualization
     with RenderApp() as render:
@@ -138,30 +134,31 @@ def main():
         )
 
         input = render.input
+
         def render_step():
             if input.is_key_pressed("up") or input.is_key_pressed("w"):
-                policy.command[0] = 1. * lin_vel_scale
+                policy.command[0] = 1.0 * lin_vel_scale
             elif input.is_key_pressed("down") or input.is_key_pressed("s"):
-                policy.command[0] = -1. * lin_vel_scale
+                policy.command[0] = -1.0 * lin_vel_scale
             else:
-                policy.command[0] = 0.
+                policy.command[0] = 0.0
 
             if input.is_key_pressed("left"):
                 policy.command[1] = 0.5 * lin_vel_scale
             elif input.is_key_pressed("right"):
                 policy.command[1] = -0.5 * lin_vel_scale
             else:
-                policy.command[1] = 0.
+                policy.command[1] = 0.0
 
             if input.is_key_pressed("a"):
-                policy.command[2] = 2. * ang_vel_scale
+                policy.command[2] = 2.0 * ang_vel_scale
             elif input.is_key_pressed("d"):
-                policy.command[2] = -2. * ang_vel_scale
+                policy.command[2] = -2.0 * ang_vel_scale
             else:
-                policy.command[2] = 0.
+                policy.command[2] = 0.0
 
             render.sync(policy.data)
-        
+
         print("Keyboard Controls:")
         print("- Press W / Up Arrow to move forward")
         print("- Press S / Down Arrow to move backward")
@@ -171,6 +168,8 @@ def main():
         print("- Press D to rotate right")
 
         run.render_loop(model.options.timestep, 60, policy.get_control, render_step)
+
+
 # endtag
 
 if __name__ == "__main__":

@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-import time
 import random
+import time
 from collections import deque
 
 import numpy as np
@@ -25,8 +25,9 @@ from motrixsim.render import CaptureTask, RenderApp
 
 default_joint_pos = np.array([0.1, 0.9, -1.8, -0.1, 0.9, -1.8, 0.1, 0.9, -1.8, -0.1, 0.9, -1.8])
 action_scale = 0.5
-lin_vel_scale = 1.
+lin_vel_scale = 1.0
 ang_vel_scale = 1.5
+
 
 # Read data from the world as input parameters for the neural network
 def compute_observations(last_actions, target_action, model: SceneModel, data: SceneData):
@@ -45,15 +46,7 @@ def compute_observations(last_actions, target_action, model: SceneModel, data: S
 
     dof_pos = body.get_joint_dof_pos(data)
     dof_vel = body.get_joint_dof_vel(data)
-    obs = np.hstack([
-        linear_vel,
-        gyro,
-        gravity,
-        dof_pos - default_joint_pos,
-        dof_vel,
-        last_actions,
-        target_action
-    ])
+    obs = np.hstack([linear_vel, gyro, gravity, dof_pos - default_joint_pos, dof_vel, last_actions, target_action])
     return obs
 
 
@@ -174,7 +167,7 @@ def main():
                 capture_index += 1
 
             render.sync(data)
-            time.sleep(1/60.)
+            time.sleep(1 / 60.0)
 
             while len(capture_tasks) > 0:
                 task: CaptureTask
@@ -200,6 +193,8 @@ def main():
                 # change to previous camera
                 preview_camera_idx = (preview_camera_idx + len(preview_cameras) - 1) % len(preview_cameras)
                 render.set_main_camera(preview_cameras[preview_camera_idx])
+
+
 # endtag
 
 if __name__ == "__main__":

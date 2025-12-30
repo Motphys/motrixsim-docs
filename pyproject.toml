@@ -19,3 +19,6 @@ docs = [
 examples = [
     "motrixsim[demo,mujoco_demo]",
 ]
+
+[tool.uv]
+prerelease = "allow"

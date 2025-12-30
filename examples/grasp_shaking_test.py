@@ -12,24 +12,27 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-import numpy as np
 from collections import deque
+
+import numpy as np
+from absl import app, flags
 
 from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import CaptureTask, RenderApp
-
-from absl import app, flags
 
 _Obj = flags.DEFINE_string("object", "cube", "object to grasp, Choices: [cube, ball, bottle]")
 _Shake = flags.DEFINE_boolean("shake", False, "whether to shake the arm after grasping, Choices: [True, False]")
 _Record = flags.DEFINE_boolean("record", True, "whether to record the simulation, Choices: [True, False]")
 
+
 def lerp(a, b, t):
     return a + t * (b - a)
 
-init_qpos = np.array([ 0.,  0.,  0., -1.5708,  0.,  1.5708, -0.7853,  0.04, 0.04])
-grasp_qpos = np.array([-1.0104,  1.5623,  1.3601, -1.6840, -1.5863,  1.7810,  1.4598,  0.04, 0.04])
-lift_qpos = np.array([-1.0426,  1.4028,  1.5634, -1.7114, -1.4055,  1.6015,  1.4510,  0., 0.])
+
+init_qpos = np.array([0.0, 0.0, 0.0, -1.5708, 0.0, 1.5708, -0.7853, 0.04, 0.04])
+grasp_qpos = np.array([-1.0104, 1.5623, 1.3601, -1.6840, -1.5863, 1.7810, 1.4598, 0.04, 0.04])
+lift_qpos = np.array([-1.0426, 1.4028, 1.5634, -1.7114, -1.4055, 1.6015, 1.4510, 0.0, 0.0])
+
 
 # Mouse controls:
 # - Press and hold left button then drag to rotate the camera/view
@@ -59,7 +62,7 @@ def main(argv):
         panda_index = model.get_body_index("link0")
         panda = model.get_body(panda_index)
         panda.set_dof_pos(data, init_qpos)
-        
+
         object_index = model.get_body_index(_Obj.value)
         obj = model.get_body(object_index)
 
@@ -69,6 +72,7 @@ def main(argv):
                 actuator_index = start_actuator_index + index
                 actuator = model.get_actuator(actuator_index)
                 actuator.set_ctrl(data, ctrl)
+
         def set_gripper_ctrl(target_gripper):
             actuator_index = model.get_actuator_index("actuator8")
             actuator = model.get_actuator(actuator_index)
@@ -79,6 +83,7 @@ def main(argv):
 
         task = "shaking-grasp" if _Shake.value else "slip-grasp"
         step_cnt = 0
+
         def phys_step():
             nonlocal step_cnt, capture_index
             step_cnt += 1
@@ -102,13 +107,25 @@ def main(argv):
                     print(f"❌ The {task}-{_Obj.value}-test failed.")
                     if _Record.value:
                         import imageio
-                        imageio.mimwrite(f'motrix_grasp_{"shake" if _Shake.value else "slip"}_{_Obj.value}.mp4', frames, fps=30, quality=8)
+
+                        imageio.mimwrite(
+                            f"motrix_grasp_{'shake' if _Shake.value else 'slip'}_{_Obj.value}.mp4",
+                            frames,
+                            fps=30,
+                            quality=8,
+                        )
                     exit(0)
             elif step_cnt > 10000:
                 print(f"✅ The {task}-{_Obj.value}-test passed.")
                 if _Record.value:
                     import imageio
-                    imageio.mimwrite(f'motrix_grasp_{"shake" if _Shake.value else "slip"}_{_Obj.value}.mp4', frames, fps=30, quality=8)
+
+                    imageio.mimwrite(
+                        f"motrix_grasp_{'shake' if _Shake.value else 'slip'}_{_Obj.value}.mp4",
+                        frames,
+                        fps=30,
+                        quality=8,
+                    )
                 exit(0)
 
             # Physics world step
@@ -118,7 +135,7 @@ def main(argv):
                 rcam = render.get_camera(0)
                 capture_tasks.append((capture_index, rcam.capture()))
                 capture_index += 1
-        
+
         def render_func():
             render.sync(data)
             if _Record.value:
@@ -136,6 +153,7 @@ def main(argv):
                         break
 
         run.render_loop(model.options.timestep, 60, phys_step, render_func)
+
 
 if __name__ == "__main__":
     app.run(main)

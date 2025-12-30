@@ -288,15 +288,15 @@ wheels = [
 
 [[package]]
 name = "motrixsim"
-version = "0.5.0b1"
+version = "0.5.0b2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "absl-py" },
     { name = "numpy" },
 ]
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/38/01/365a54ee031a24769a6fa921bec86db82e143fcb94fd136b30245b489649/motrixsim-0.5.0b1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:545b251974ba8aa8f645d98757671dd0a54fc8e7c42c58094bef1b00046d5ff5", size = 47345006 },
-    { url = "https://files.pythonhosted.org/packages/67/a4/9cede4261576307ddcdb8bf6c66495468e63891976a581b3ad04d46edd81/motrixsim-0.5.0b1-cp310-cp310-win_amd64.whl", hash = "sha256:1c42125a5cb6cbb963d2a238d2e16af8deb22f7381f33f171e64d57c3169c3d9", size = 34568719 },
+    { url = "https://files.pythonhosted.org/packages/cd/0e/6ce2ca49d32f3c3c2ac146940e0084aa0397c61031bf08ea3d84bd2b00a7/motrixsim-0.5.0b2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6734852e6e9befea2a9de27586b2ee1394e0ee03807de4eb06b23a679b08c55a", size = 47375822 },
+    { url = "https://files.pythonhosted.org/packages/f6/f1/f6ac422ae13914ef9640ac42367bc03bf4442e03be3cde7f8419ac9fca0a/motrixsim-0.5.0b2-cp310-cp310-win_amd64.whl", hash = "sha256:520773045d96eebd00e1adbf5fe4e19fb8eddc03337fbf22b7ca88069f6bf667", size = 34577555 },
 ]
 
 [package.optional-dependencies]

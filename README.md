@@ -39,8 +39,6 @@
 git clone https://github.com/Motphys/motrixsim-docs
 
 cd motrixsim-docs
-
-git lfs pull
 ```
 
 ### 2. 安装依赖

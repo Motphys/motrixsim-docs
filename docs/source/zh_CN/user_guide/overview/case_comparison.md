@@ -240,6 +240,7 @@ uv run python -m mujoco.viewer --mjcf=examples/assets/store/scene.xml
 来运行这两个示例。
 
 ## 机械臂抓取稳定性
+
 该用例比较 MotrixSim 与 MuJoCo 在 Franka 机械臂抓取小球时的接触稳定性。在测试中，给抓取器施加随机晃动扰动以模拟现实环境中的扰动源。结果显示 MotrixSim 在扰动下仍能保持稳固夹持，抑制相对滑移；而 MuJoCo 在相同条件下容易发生滑动，即使在模型中设置了 `<option noslip_iterations="1"/>`，仍无法完全消除滑移现象。
 
 ::::{grid} 1 1 3 3

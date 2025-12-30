@@ -14,19 +14,20 @@
 # ==============================================================================
 
 import time
-import numpy as np
 
 import mujoco
 import mujoco.viewer
-
+import numpy as np
 from absl import app, flags
 
 _Obj = flags.DEFINE_string("object", "cube", "object to grasp, Choices: [cube, ball, bottle]")
 _Shake = flags.DEFINE_boolean("shake", True, "whether to shake the arm after grasping, Choices: [True, False]")
 _Record = flags.DEFINE_boolean("record", True, "whether to record the simulation, Choices: [True, False]")
 
+
 def lerp(a, b, t):
     return a + t * (b - a)
+
 
 def main(argv):
     path = f"examples/assets/franka_emika_panda/scene_pick_{_Obj.value}.xml"
@@ -86,15 +87,21 @@ def main(argv):
             time_until_next_step = model.opt.timestep - (time.time() - step_start)
             if time_until_next_step > 0:
                 time.sleep(time_until_next_step)
-            
+
             if _Record.value and len(frames) < data.time * 30:
                 renderer.update_scene(data, 0)
                 frames.append(renderer.render().copy())
 
     if _Record.value:
         import imageio
-        imageio.mimwrite(f'mujoco_grasp_{"shake" if _Shake.value else "slip"}_{_Obj.value}_noslip_iterations=1.mp4',
-                         frames, fps=30, quality=8)
+
+        imageio.mimwrite(
+            f"mujoco_grasp_{'shake' if _Shake.value else 'slip'}_{_Obj.value}_noslip_iterations=1.mp4",
+            frames,
+            fps=30,
+            quality=8,
+        )
+
 
 if __name__ == "__main__":
     app.run(main)
