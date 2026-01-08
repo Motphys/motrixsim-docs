@@ -4,23 +4,24 @@
 
 ## 📋 传感器概览表
 
-| 传感器类型             | 测量对象        | 坐标系     | 返回维度 | 主要应用                   |
-| ---------------------- | --------------- | ---------- | -------- | -------------------------- |
-| accelerometer          | site 线性加速度 | site 局部  | 3        | 运动感知、跌倒检测         |
-| velocimeter            | site 线性速度   | site 局部  | 3        | 速度监测、运动控制         |
-| gyro                   | site 角速度     | site 局部  | 3        | 姿态控制、运动估计         |
-| jointpos               | 关节位置/角度   | 关节轴     | 1        | 位置控制、限位监测         |
-| jointvel               | 关节速度        | 关节轴     | 1        | 速度控制、运动监控         |
-| framepos               | 对象位置        | 指定参考系 | 3        | 相对定位、路径跟踪         |
-| framequat              | 对象姿态        | 指定参考系 | 4        | 姿态控制、方向监测         |
-| framexaxis/yaxis/zaxis | 对象轴向        | 指定参考系 | 3        | 方向分析、对准控制         |
-| framelinvel            | 对象线速度      | 指定参考系 | 3        | 速度跟踪、运动分析         |
-| frameangvel            | 对象角速度      | 指定参考系 | 3        | 角速度控制、旋转监测       |
-| framelinacc            | 对象线加速度    | 指定参考系 | 3        | 加速度监测、动态分析       |
-| subtreecom             | 子树质心        | 全局       | 3        | 稳定性分析、质心跟踪       |
-| subtreelinvel          | 子树质心速度    | 全局       | 3        | 动量分析、运动监测         |
-| subtreeangmom          | 子树角动量      | 全局       | 3        | 动量守恒、旋转分析         |
-| touch                  | site 接触法向力 | site 局部  | 1        | 触觉感知、碰撞检测、力反馈 |
+| 传感器类型             | 测量对象         | 坐标系     | 返回维度 | 主要应用                       |
+| ---------------------- | ---------------- | ---------- | -------- | ------------------------------ |
+| accelerometer          | site 线性加速度  | site 局部  | 3        | 运动感知、跌倒检测             |
+| velocimeter            | site 线性速度    | site 局部  | 3        | 速度监测、运动控制             |
+| gyro                   | site 角速度      | site 局部  | 3        | 姿态控制、运动估计             |
+| jointpos               | 关节位置/角度    | 关节轴     | 1        | 位置控制、限位监测             |
+| jointvel               | 关节速度         | 关节轴     | 1        | 速度控制、运动监控             |
+| framepos               | 对象位置         | 指定参考系 | 3        | 相对定位、路径跟踪             |
+| framequat              | 对象姿态         | 指定参考系 | 4        | 姿态控制、方向监测             |
+| framexaxis/yaxis/zaxis | 对象轴向         | 指定参考系 | 3        | 方向分析、对准控制             |
+| framelinvel            | 对象线速度       | 指定参考系 | 3        | 速度跟踪、运动分析             |
+| frameangvel            | 对象角速度       | 指定参考系 | 3        | 角速度控制、旋转监测           |
+| framelinacc            | 对象线加速度     | 指定参考系 | 3        | 加速度监测、动态分析           |
+| subtreecom             | 子树质心         | 全局       | 3        | 稳定性分析、质心跟踪           |
+| subtreelinvel          | 子树质心速度     | 全局       | 3        | 动量分析、运动监测             |
+| subtreeangmom          | 子树角动量       | 全局       | 3        | 动量守恒、旋转分析             |
+| touch                  | site 接触法向力  | site 局部  | 1        | 触觉感知、碰撞检测、力反馈     |
+| contact                | 几何体间接触信息 | 局部接触系 | 变长     | 触地检测、抓取力反馈、碰撞分析 |
 
 ## 🚀 快速开始
 
@@ -47,6 +48,10 @@
 
     <!-- 接触传感器 -->
     <touch name="palm_touch" site="palm_site"/>
+
+    <!-- 接触传感器（详细） -->
+    <contact name="box_floor_contact" geom1="bar" geom2="freebox"
+             data="found force pos normal tangent" num="4" reduce="none"/>
 </sensor>
 ```
 
@@ -76,4 +81,5 @@ sensor/joint
 sensor/frame
 sensor/subtree
 sensor/touch
+sensor/contact
 ```

@@ -80,7 +80,7 @@ uv run examples/{example_name}.py
   - **File**
   - **Description**
 * - ![read_keyboard](/_static/images/examples/read_keyboard.png)
-  - [`read_keyboard.py`](../../../../examples/read_keyboard.py)
+  - [`keyboard_car.py`](../../../../examples/keyboard_car.py)
   - Control a cart using the keyboard; demonstrates keyboard event handling. Use W to move forward, S to move backward. Turning: A to turn left, D to turn right.
 * - ![mouse_click](/_static/images/examples/mouse_click.png)
   - [`mouse_click.py`](../../../../examples/mouse_click.py)
@@ -125,13 +125,13 @@ uv run examples/{example_name}.py
 * - **Preview**
   - **File**
   - **Description**
-* - ![go1](/_static/images/examples/go1.png)
+* - ![go1](/_static/images/poster/go1.jpg)
   - [`go1.py`](../../../../examples/go1.py)
   - Random motion of the Go1 quadruped robot, demonstrating how to integrate a neural network and use `.onnx` files.
-* - ![go2](/_static/images/examples/go2.png)
+* - ![go2](/_static/images/poster/go2_keyboard_control.jpg)
   - [`go2_keyboard_control.py`](../../../../examples/go2_keyboard_control.py)
   - Go2 quadruped keyboard control example: arrow keys and WASD control walking and turning.
-* - ![g1](/_static/images/examples/g1.png)
+* - ![g1](/_static/images/poster/g1_keyboard_control.jpg)
   - [`g1_keyboard_control.py`](../../../../examples/g1_keyboard_control.py)
   - G1 humanoid keyboard control example: arrow keys and WASD control walking and turning.
 * - ![robotic_arm](/_static/images/examples/robotic_arm.png)

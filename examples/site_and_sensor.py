@@ -16,7 +16,7 @@
 import numpy as np
 
 from motrixsim import SceneData, load_model, run, step
-from motrixsim.render import RenderApp
+from motrixsim.render import Color, RenderApp
 
 
 # Mouse controls:
@@ -64,7 +64,7 @@ def main():
 
         # Set hinge joint velocity
         hinge = model.get_joint("hinge")
-        hinge.set_dof_vel(data, np.array([15]))
+        hinge.set_dof_vel(data, np.array([3]))
 
         def render_step():
             # tag::get_sensor_value[]
@@ -88,10 +88,63 @@ def main():
             (print(f"gyro values are : {gyro_0}, {gyro_1}, {gyro_2}, {gyro_3}"),)
             # end::get_sensor_value[]
 
+            # tag::contact_sensor_gizmos[]
+            # Get contact sensor data: [found, then 12 values per contact point]
+            contact_data = model.get_sensor_value("box_floor_contact", data)
+            num_contacts = int(contact_data[0])
+
+            # Process each contact point
+            for i in range(num_contacts):
+                # Each contact has 12 values
+                offset = 1 + i * 12
+
+                # Extract force components (scalars, not vectors!)
+                force_normal_mag = contact_data[offset + 0]  # Normal force magnitude
+                force_tangent0_mag = contact_data[offset + 1]  # Tangent 0 force magnitude
+                force_tangent1_mag = contact_data[offset + 2]  # Tangent 1 force magnitude
+
+                # Extract contact position
+                contact_pos = contact_data[offset + 3 : offset + 6]
+
+                # Extract normal vector
+                normal = contact_data[offset + 6 : offset + 9]
+
+                # Extract first tangent vector
+                tangent0 = contact_data[offset + 9 : offset + 12]
+
+                # Compute second tangent vector: tangent1 = tangent0 × normal
+                tangent1 = np.cross(tangent0, normal)
+
+                # Scale force magnitudes for visualization
+                force_scale = 0.01
+
+                # Compute force vectors for visualization
+                # Normal force vector (green arrow)
+                normal_force_end = contact_pos + normal * force_normal_mag * force_scale
+
+                # Tangent 0 force vector (red arrow)
+                tangent0_force_end = contact_pos + tangent0 * force_tangent0_mag * force_scale
+
+                # Tangent 1 force vector (blue arrow)
+                tangent1_force_end = contact_pos + tangent1 * force_tangent1_mag * force_scale
+
+                # Draw contact point (small white sphere)
+                render.gizmos.draw_sphere(0.02, contact_pos, color=Color.rgb(1, 1, 1))
+
+                # Draw normal force arrow (green - perpendicular to surface)
+                render.gizmos.draw_arrow(contact_pos, normal_force_end, color=Color.rgb(0, 1, 0))
+
+                # Draw tangent 0 force arrow (red - friction direction 0)
+                render.gizmos.draw_arrow(contact_pos + normal * 0.01, tangent0_force_end, color=Color.rgb(1, 0, 0))
+
+                # Draw tangent 1 force arrow (blue - friction direction 1)
+                render.gizmos.draw_arrow(contact_pos + normal * 0.01, tangent1_force_end, color=Color.rgb(0, 0, 1))
+            # end::contact_sensor_gizmos[]
+
             (print("-----------------------------------------"),)
             render.sync(data)
 
-        run.render_loop(model.options.timestep, 60, lambda: step(model, data), render_step)
+        run.render_loop(model.options.timestep, 30, lambda: step(model, data), render_step)
 
 
 if __name__ == "__main__":

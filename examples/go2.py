@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+
 import random
 import time
 from collections import deque
@@ -174,12 +175,16 @@ def main():
                 idx, task = capture_tasks[0]
                 if task.state != "pending":
                     capture_tasks.popleft()
-                    img = task.take_image()
-                    assert img is not None
-                    import os
+                    try:
+                        img = task.take_image()
+                        assert img is not None
+                        import os
 
-                    os.makedirs("shot", exist_ok=True)
-                    img.save_to_disk(f"shot/capture_{idx}.png")
+                        os.makedirs("shot", exist_ok=True)
+                        img.save_to_disk(f"shot/capture_{idx}.png")
+                        print(f"Captured image: shot/capture_{idx}.png")
+                    except Exception as e:
+                        print(f"Error saving image: {e}")
                 else:
                     break
             # endtag

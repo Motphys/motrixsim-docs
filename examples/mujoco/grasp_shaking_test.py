@@ -22,7 +22,7 @@ from absl import app, flags
 
 _Obj = flags.DEFINE_string("object", "cube", "object to grasp, Choices: [cube, ball, bottle]")
 _Shake = flags.DEFINE_boolean("shake", True, "whether to shake the arm after grasping, Choices: [True, False]")
-_Record = flags.DEFINE_boolean("record", True, "whether to record the simulation, Choices: [True, False]")
+_Record = flags.DEFINE_boolean("record", False, "whether to record the simulation, Choices: [True, False]")
 
 
 def lerp(a, b, t):

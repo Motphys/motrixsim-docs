@@ -5,10 +5,6 @@
         <flag eulerdamp="disable"/>
     </option>
     <asset>
-        <texture type="skybox" builtin="gradient" rgb1="0.4314 0.5294 0.6431" rgb2="0 0 0" width="512" height="512"/>
-        <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.4314 0.5294 0.6431" rgb2="0.8157 0.8549 0.9059"
-        markrgb="0.8 0.8 0.8" width="300" height="300"/>
-        <material name="groundplane" reflectance="0.3" texture="groundplane" texrepeat="1 1" texuniform="true"/>
         <mesh name="Trunk" file="Trunk.STL" />
         <mesh name="H1" file="H1.STL" />
         <mesh name="H2" file="H2.STL" />
@@ -35,9 +31,6 @@
         <mesh name="right_foot_link" file="right_foot_link.STL" />
     </asset>
     <worldbody>
-        <light directional="true" diffuse=".4 .4 .4" specular="0.1 0.1 0.1" pos="0 0 5.0" dir="0 0 -1" castshadow="false" />
-        <light directional="true" diffuse=".6 .6 .6" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1" />
-        <geom name="ground" type="plane" pos="0 0 0" size="0 0 1" material="groundplane" condim="1"/>
         <body name="Trunk" pos="0 0 0.7">
             <inertial pos="0.054281 8.47449e-06 0.0893932" quat="0.999999 -0.000254757 -0.00132228 -0.000215148" mass="19.4304" diaginertia="0.502019 0.3531 0.207324" />
             <site name='imu' size='0.01' pos='0.0 0.0 0.0' />

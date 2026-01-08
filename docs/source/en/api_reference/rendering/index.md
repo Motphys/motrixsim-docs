@@ -14,4 +14,6 @@ The visualization rendering module provides MotrixSim's graphics rendering capab
 
 ```{toctree}
 render
+viewer
+widgets
 ```

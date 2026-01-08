@@ -14,4 +14,6 @@
 
 ```{toctree}
 render
+viewer
+widgets
 ```

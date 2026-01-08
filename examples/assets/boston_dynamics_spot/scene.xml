@@ -1,6 +1,6 @@
 <mujoco model="spot scene">
   <include file="spot.xml"/>
-
+   
   <statistic center="0.15 0.1 0.38" extent=".8" meansize="0.05"/>
 
   <visual>
@@ -12,12 +12,13 @@
 
   <asset>
     <texture type="skybox" builtin="gradient" rgb1="0.4314 0.5294 0.6431" rgb2="0 0 0" width="512" height="512"/>
-    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.4314 0.5294 0.6431" rgb2="0.8157 0.8549 0.9059"
-      markrgb="0.8 0.8 0.8" width="300" height="300"/>
-    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="1 1" reflectance="0.2"/>
+    <!-- mujoco can not resolve asset path when include common/materials.xml, so we add material directly for this case-->
+    <texture name="motphys-ground" type="2d" file="../common/motphys-ground.png" />
+    <material name="motphys-ground" texture="motphys-ground" texuniform="true"
+      texrepeat="0.4 0.4" />
   </asset>
 
   <worldbody>
-    <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
+    <geom name="floor" size="0 0 0.05" type="plane" material="motphys-ground"/>
   </worldbody>
 </mujoco>

@@ -93,7 +93,7 @@ _完整代码见 [examples/gizmos.py](../../../../examples/gizmos.py)_
 您可以通过以下的例子来了解更详细的用法：
 
 -   [example/mouse_click.py](../../../../examples/mouse_click.py)
--   [example/read_keyboard.py](../../../../examples/read_keyboard.py)
+-   [example/keyboard_car.py](../../../../examples/keyboard_car.py)
 
 #### 合法键盘输入列表
 

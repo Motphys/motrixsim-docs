@@ -1,0 +1,12 @@
+<!--
+Common textures, colors and materials to be used throughout this suite. Some
+materials such as xxx_highlight are activated on occurence of certain events,
+for example receiving a positive reward.
+-->
+<mujoco>
+  <asset>
+    <texture name="motphys-ground" type="2d" file="motphys-ground.png" />
+    <material name="motphys-ground" texture="motphys-ground" texuniform="true"
+      texrepeat="0.4 0.4" />
+  </asset>
+</mujoco>

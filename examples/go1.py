@@ -21,7 +21,7 @@ import onnxruntime as ort
 from scipy.spatial.transform import Rotation
 
 from motrixsim import SceneData, SceneModel, load_model, step
-from motrixsim.render import CaptureTask, RenderApp
+from motrixsim.render import CaptureTask, Layout, RenderApp
 
 default_joint_pos = np.array([0.1, 0.9, -1.8, -0.1, 0.9, -1.8, 0.1, 0.9, -1.8, -0.1, 0.9, -1.8])
 action_scale = 0.5
@@ -118,6 +118,8 @@ def main():
         # endtag
         preview_cameras = [None, *cameras[2:]]
         preview_camera_idx = 0
+        render.widgets.create_camera_viewport(camera=cameras[0], layout=Layout(right=0, top=0, width=160, height=120))
+        render.widgets.create_camera_viewport(camera=cameras[1], layout=Layout(right=0, top=120, width=160, height=120))
 
         # Create the render instance of the model
         render.launch(model)
@@ -181,12 +183,16 @@ def main():
                 idx, task = capture_tasks[0]
                 if task.state != "pending":
                     capture_tasks.popleft()
-                    img = task.take_image()
-                    assert img is not None
-                    import os
+                    try:
+                        img = task.take_image()
+                        assert img is not None
+                        import os
 
-                    os.makedirs("shot", exist_ok=True)
-                    img.save_to_disk(f"shot/capture_{idx}.png")
+                        os.makedirs("shot", exist_ok=True)
+                        img.save_to_disk(f"shot/capture_{idx}.png")
+                        print(f"Captured image: shot/capture_{idx}.png")
+                    except Exception as e:
+                        print(f"Error saving image: {e}")
                 else:
                     break
             # endtag

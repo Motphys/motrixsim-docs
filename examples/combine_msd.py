@@ -26,6 +26,7 @@ the Scene.attach() method. The new API allows you to:
 5. Build the final combined model for simulation
 """
 
+# tag::combine_msd_example[]
 import time
 
 import motrixsim as mx
@@ -41,7 +42,7 @@ msd_dog.attach(
     msd_arm,
     self_link_name="hl_hip",
     other_link_name="bracelet_link",  # Extract subtree from arm
-    other_translation=[0, 0, 0.1],
+    other_rotation=[-0.71, 0, 0, 0.71],  # Rotate 90 degrees around X axis
     other_prefix="arm_",
 )
 
@@ -62,3 +63,4 @@ with mx.render.RenderApp("warn") as render:
         time.sleep(model.options.timestep)
         mx.step(model, data)
         render.sync(data)
+# end::combine_msd_example[]

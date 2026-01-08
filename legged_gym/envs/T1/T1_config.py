@@ -74,7 +74,7 @@ class T1Cfg(LeggedRobotCfg):
             dof_vel = 0.1
 
     class asset(LeggedRobotCfg.asset):
-        file = LEGGED_GYM_ENVS_DIR + "/resources/robots/T1/T1_locomotion.xml"
+        file = LEGGED_GYM_ENVS_DIR + "/resources/robots/T1/scene.xml"
         body_name = "Trunk"
 
     class commands(LeggedRobotCfg.commands):

@@ -85,7 +85,7 @@ uv run examples/{example_name}.py
   - **文件**
   - **简介**
 * - ![read_keyboard](/_static/images/examples/read_keyboard.png)
-  - [`read_keyboard.py`](../../../../examples/read_keyboard.py)
+  - [`keyboard_car.py`](../../../../examples/keyboard_car.py)
   - 使用键盘操控小车移动，展示键盘事件的使用。使用 W 键向前移动，S 键向后移动。
 转向：使用 A 键向左转，D 键向右转
 * - ![mouse_click](/_static/images/examples/mouse_click.png)
@@ -133,13 +133,13 @@ uv run examples/{example_name}.py
 * - **展示**
   - **文件**
   - **简介**
-* - ![go1](/_static/images/examples/go1.png)
+* - ![go1](/_static/images/poster/go1.jpg)
   - [`go1.py`](../../../../examples/go1.py)
   - go1 机械狗的随机运动，展示如何引入神经网络和使用`.onnx`文件。
-* - ![go2](/_static/images/examples/go2.png)
+* - ![go2](/_static/images/poster/go2_keyboard_control.jpg)
   - [`go2_keyboard_control.py`](../../../../examples/go2_keyboard_control.py)
   - go2 机械狗的键盘控制示例，方向键和wasd控制机械狗行走与转向。
-* - ![g1](/_static/images/examples/g1.png)
+* - ![g1](/_static/images/poster/g1_keyboard_control.jpg)
   - [`g1_keyboard_control.py`](../../../../examples/g1_keyboard_control.py)
   - g1 人形机器人的键盘控制示例，方向键和wasd控制机器人行走与转向。
 * - ![robotic_arm](/_static/images/examples/robotic_arm.png)

@@ -67,6 +67,16 @@ Each component access method returns the corresponding component object, providi
 
 ---
 
+## 🔨 Model Building Module - [`motrixsim.msd`](msd/index.md)
+
+| Function/Method                                          | Description                                    |
+| -------------------------------------------------------- | ---------------------------------------------- |
+| [`msd.from_file(path)`](motrixsim.msd.from_file)         | Load model file for combining and building     |
+| [`scene.attach(other, ...)`](motrixsim.msd.Scene.attach) | Attach another model with transform and prefix |
+| [`scene.build()`](motrixsim.msd.Scene.build)             | Build the final `SceneModel` for simulation    |
+
+---
+
 ## 🎨 Rendering Module - [`motrixsim.render`](rendering/render.md)
 
 | Object/Class                                    | Category       | Main Functionality                   |

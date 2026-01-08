@@ -13,7 +13,6 @@
 # limitations under the License.
 # ==============================================================================
 
-import time
 
 from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import RenderApp
@@ -51,55 +50,56 @@ def main():
         move_4 = 1.5
         move_7 = 1.0
         fingers = 255
-        start = time.time()
         action_index = 0
+        phys_time = 0
+        phys_dt = model.options.timestep
 
         def phys_step():
-            nonlocal start, action_index
-            diff = time.time() - start
+            nonlocal phys_time, action_index
+            phys_time += phys_dt
             # Action by sequence
-            if diff < 1:
+            if phys_time < 1:
                 if action_index == 0:
-                    lerp_value = lerp(0, move_x, diff)
+                    lerp_value = lerp(0, move_x, phys_time)
                     joint_x.set_ctrl(data, lerp_value)
                 elif action_index == 1:
-                    lerp_value = lerp(0, move_y, diff)
+                    lerp_value = lerp(0, move_y, phys_time)
                     joint_y.set_ctrl(data, lerp_value)
                 elif action_index == 2:
-                    lerp_value = lerp(0, move_2, diff)
+                    lerp_value = lerp(0, move_2, phys_time)
                     joint_2.set_ctrl(data, lerp_value)
                 elif action_index == 3:
-                    lerp_value = lerp(0, move_4, diff)
+                    lerp_value = lerp(0, move_4, phys_time)
                     joint_4.set_ctrl(data, lerp_value)
                 elif action_index == 4:
-                    lerp_value = lerp(move_y, 0.03, diff)
+                    lerp_value = lerp(move_y, 0.03, phys_time)
                     joint_y.set_ctrl(data, lerp_value)
                 elif action_index == 5:
-                    lerp_value = lerp(0, fingers, diff)
+                    lerp_value = lerp(0, fingers, phys_time)
                     fingers_actuator.set_ctrl(data, lerp_value)
                 elif action_index == 6:
-                    lerp_value = lerp(move_2, 0, diff)
+                    lerp_value = lerp(move_2, 0, phys_time)
                     joint_2.set_ctrl(data, lerp_value)
                 elif action_index == 7:
-                    lerp_value = lerp(0.03, 1.0, diff)
+                    lerp_value = lerp(0.03, 1.0, phys_time)
                     joint_y.set_ctrl(data, lerp_value)
                 elif action_index == 8:
-                    lerp_value = lerp(0, move_7, diff)
+                    lerp_value = lerp(0, move_7, phys_time)
                     joint_7.set_ctrl(data, lerp_value)
                 elif action_index == 9:
-                    lerp_value = lerp(fingers, 0, diff)
+                    lerp_value = lerp(fingers, 0, phys_time)
                     fingers_actuator.set_ctrl(data, lerp_value)
                 elif action_index == 10:
-                    lerp_value = lerp(move_4, 0, diff)
+                    lerp_value = lerp(move_4, 0, phys_time)
                     joint_4.set_ctrl(data, lerp_value)
             else:
-                start = time.time()
+                phys_time = 0
                 action_index += 1
 
             # Physics world step
             step(model, data)
 
-        run.render_loop(model.options.timestep, 60, phys_step, lambda: render.sync(data))
+        run.render_loop(phys_dt, 60, phys_step, lambda: render.sync(data))
 
 
 if __name__ == "__main__":

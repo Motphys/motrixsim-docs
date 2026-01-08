@@ -6,13 +6,16 @@
     <asset>
         <texture type="2d" name="checker" builtin="checker" mark="edge" rgb1="0.050 0.247 0.403" rgb2="0.117 0.890 0.811"
         markrgb="0.8 0.8 0.8" width="64" height="64"/>
-        <texture type="2d" name="plane" builtin="checker" mark="edge" rgb1="0.3 0.3 0.3" rgb2="0.7 0.7 0.7"
-        markrgb="0.8 0.8 0.8" width="64" height="64"/>
+       
         <texture type="skybox" builtin="gradient" rgb1="0.3 0.4 0.5" rgb2="0.027 0.023 0.049"
         width="100" height="100"/>
 
         <material name="checker_mat" texture="checker" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
-        <material name="plane_mat" texture="plane" texuniform="true" texrepeat="0.4 0.4" reflectance="0.2"/>
+
+        <!-- mujoco can not resolve asset path when include common/materials.xml, so we add material directly for this case-->
+        <texture name="motphys-ground" type="2d" file="common/motphys-ground.png" />
+        <material name="motphys-ground" texture="motphys-ground" texuniform="true"
+        texrepeat="0.4 0.4" />
     </asset>
 
     <default>
@@ -22,7 +25,7 @@
     <worldbody>
         <light pos="0 0 3" directional="true"/>
         <!-- ground plane -->
-        <geom type="plane" size="10 10 0.01" pos="0 0 0" material="plane_mat"/> 
+        <geom type="plane" size="10 10 0.01" pos="0 0 0" material="motphys-ground"/> 
         <!-- gyroscopic -->
         <body name = "gyro" pos="0 0 0.01" euler="0 18 0">
             <freejoint  name="ball_1"/>

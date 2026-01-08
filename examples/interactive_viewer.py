@@ -29,7 +29,9 @@ from motrixsim import SceneData, step, viewer
 # viewer.launch(model, data)
 
 # Use custom model with physics data
-model = mx.load_model("examples/assets/body.xml")
+# This example uses the Boston Dynamics Spot robot with arm to demonstrate
+# the interactive viewer with a model that includes actuators
+model = mx.load_model("examples/assets/boston_dynamics_spot/scene_arm.xml")
 data = SceneData(model)
 for _ in range(20):
     # Physics world step

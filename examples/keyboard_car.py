@@ -26,9 +26,14 @@ def main():
     path = "examples/assets/keyboard_car.xml"
     # Load the scene model
     model = load_model(path)
+    camera = model.cameras[0]
+    camera.position_track = "free"
+    camera.rotation_track = "look_at_link"
+    camera.track_target_link = model.get_link("car")
 
     # Create render window for visualization
     with RenderApp() as render:
+        render.set_main_camera(camera)
         # Create the render instance of the model
         render.launch(model)
         # Create the physics data of the model

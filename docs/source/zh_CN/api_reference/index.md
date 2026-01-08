@@ -10,11 +10,12 @@ MotrixSim 是一个高性能的物理仿真引擎，提供了丰富的 Python AP
 
 MotrixSim 的 API 设计采用分层架构，满足不同用户的使用需求：
 
-| 层级         | 模块                                     | 特点               | 适用场景             |
-| ------------ | ---------------------------------------- | ------------------ | -------------------- |
-| **核心模块** | [`motrixsim`](core/index.md)             | 简单易用、接口友好 | 机器人控制、强化学习 |
-| **渲染模块** | [`motrixsim.render`](rendering/index.md) | 实时渲染、交互界面 | 仿真可视化、调试分析 |
-| **IK 模块**  | [`motrixsim.ik`](ik/index.md)            | 高效求解、易用     | 逆运动学求解         |
+| 层级         | 模块                                     | 特点               | 适用场景               |
+| ------------ | ---------------------------------------- | ------------------ | ---------------------- |
+| **核心模块** | [`motrixsim`](core/index.md)             | 简单易用、接口友好 | 机器人控制、强化学习   |
+| **模型构建** | [`motrixsim.msd`](msd/index.md)          | 程序化模型组合     | 多机器人场景、动态组装 |
+| **渲染模块** | [`motrixsim.render`](rendering/index.md) | 实时渲染、交互界面 | 仿真可视化、调试分析   |
+| **IK 模块**  | [`motrixsim.ik`](ik/index.md)            | 高效求解、易用     | 逆运动学求解           |
 
 ## 📚 详细模块文档
 
@@ -23,6 +24,8 @@ MotrixSim 的 API 设计采用分层架构，满足不同用户的使用需求�
 
 api_quick_reference
 core/index
+msd/index
 rendering/index
+rendering/widgets
 ik/index
 ```

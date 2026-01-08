@@ -1,4 +1,5 @@
 <mujoco>
+  <include file="common/materials.xml"/>
   <compiler autolimits="true"/>
   <statistic center="0 0 0" extent="0.5"/>
 
@@ -34,11 +35,11 @@
   </default>
 
   <worldbody>
-    <geom type="plane" size="3 3 .01" material="grid"/>
-    <body name="car" pos="0 0 .03">
+    <geom type="plane" size="0 0 .01" material="motphys-ground"/>
+    <camera name="camera" pos="0 -1 1.5"  fovy="45" />
+    <body name="car" pos="0 0 .03" euler="0 0 90">
       <freejoint/>
       <light name="top light" pos="0 0 2" mode="trackcom" diffuse=".4 .4 .4"/>
-      <!-- <geom name="chasis" type="box" size = "0.065 0.015 0.015"/> -->
       <geom name="chasis" type="mesh" mesh="chasis" rgba = "0.15 0.15 0.15 1.0"/>
       <geom name="front wheel" pos=".08 0 -.015" type="sphere" size=".015" condim="1" priority="1"/>
       <light name="front light" pos=".1 0 .02" dir="2 0 -1" diffuse="1 1 1"/>

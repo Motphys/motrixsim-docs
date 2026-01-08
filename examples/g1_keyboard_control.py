@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+
 import numpy as np
 import onnxruntime as ort
 from scipy.spatial.transform import Rotation
@@ -157,11 +158,16 @@ class OnnxController:
 def main():
     # Create render window for visualization
     with RenderApp() as render:
-        render.opt.set_left_panel_vis(True)
         # The scene description file
         path = "examples/assets/g1/scene_flat.xml"
         # Load the scene model
         model = load_model(path)
+
+        # config camera to look at g1
+        camera = model.cameras[0]
+        camera.rotation_track = "look_at_link"
+        camera.track_target_link = model.get_link("pelvis")
+        render.set_main_camera(camera)
 
         # Create the render instance of the model
         render.launch(model)

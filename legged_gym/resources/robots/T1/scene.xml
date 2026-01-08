@@ -1,0 +1,13 @@
+<mujoco model="T1-scene">
+  <include file="T1_locomotion.xml"/>
+  <include file="../../common/materials.xml"/>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.4314 0.5294 0.6431" rgb2="0 0 0" width="512" height="512"/>
+  </asset>
+
+  <worldbody>
+    <light pos="0 0 1.5" dir="0 1 -1" directional="true"/>
+    <geom name="floor" size="0 0 0.01" type="plane"  material="motphys-ground"/>
+  </worldbody>
+</mujoco>

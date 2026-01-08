@@ -3,11 +3,10 @@
 MotrixSim is a high-performance physics simulation engine designed specifically for multibody dynamics and robotics simulation. It provides an efficient and stable physics simulation platform, supporting a wide range of application scenarios, including robot control, reinforcement learning, industrial simulation, and more.
 
 ::::{grid} 1 2 3 3
-
 :::{grid-item}
 
-```{video} _static/videos/t1.mp4
-:poster: _static/images/poster/t1.jpg
+```{video} _static/videos/g1_keyboard_control.mp4
+:poster: _static/images/poster/g1_keyboard_control.jpg
 :nocontrols:
 :autoplay:
 :playsinline:
@@ -34,8 +33,8 @@ MotrixSim is a high-performance physics simulation engine designed specifically 
 
 :::{grid-item}
 
-```{video} _static/videos/go1.mp4
-:poster: _static/images/poster/go1.jpg
+```{video} _static/videos/go2_keyboard_control.mp4
+:poster: _static/images/poster/go2_keyboard_control.jpg
 :nocontrols:
 :autoplay:
 :playsinline:

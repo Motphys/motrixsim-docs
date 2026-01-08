@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+
 from collections import deque
 
 import numpy as np
@@ -21,8 +22,8 @@ from motrixsim import SceneData, load_model, run, step
 from motrixsim.render import CaptureTask, RenderApp
 
 _Obj = flags.DEFINE_string("object", "cube", "object to grasp, Choices: [cube, ball, bottle]")
-_Shake = flags.DEFINE_boolean("shake", False, "whether to shake the arm after grasping, Choices: [True, False]")
-_Record = flags.DEFINE_boolean("record", True, "whether to record the simulation, Choices: [True, False]")
+_Shake = flags.DEFINE_boolean("shake", True, "whether to shake the arm after grasping, Choices: [True, False]")
+_Record = flags.DEFINE_boolean("record", False, "whether to record the simulation, Choices: [True, False]")
 
 
 def lerp(a, b, t):
@@ -131,12 +132,13 @@ def main(argv):
             # Physics world step
             step(model, data)
 
+        def render_func():
+            nonlocal capture_index
             if _Record.value and capture_index < step_cnt * model.options.timestep * 30:
                 rcam = render.get_camera(0)
                 capture_tasks.append((capture_index, rcam.capture()))
                 capture_index += 1
 
-        def render_func():
             render.sync(data)
             if _Record.value:
                 while len(capture_tasks) > 0:
@@ -148,7 +150,6 @@ def main(argv):
                         # assert img is not None
                         if img is not None and img.pixels.max() > 0:
                             frames.append(img.pixels)
-                            print
                     else:
                         break
 

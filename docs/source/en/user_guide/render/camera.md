@@ -125,7 +125,7 @@ view_z = camera.near_plane / depth
 The real-time effects of the RGBD camera will be displayed in the Camera panel on the left:
 
 ```{video} /_static/videos/rgbd_camera.mp4
-:caption: Left panel displays real-time RGB and depth camera effects
+:caption: The top-right corner displays real-time RGB and depth camera effects
 :nocontrols:
 :autoplay:
 :playsinline:

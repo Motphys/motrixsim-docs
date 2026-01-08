@@ -94,7 +94,7 @@ You can get the [`Input`] object through [`render.input`]. The Input object prov
 You can understand more detailed usage through the following examples:
 
 -   [example/mouse_click.py](../../../../examples/mouse_click.py)
--   [example/read_keyboard.py](../../../../examples/read_keyboard.py)
+-   [example/keyboard_car.py](../../../../examples/keyboard_car.py)
 
 #### Valid Keyboard Input List
 

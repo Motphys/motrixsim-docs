@@ -22,10 +22,12 @@ overview/legged_gym
 :maxdepth: 1
 main_function/scene_model
 main_function/scene_data
+main_function/model_building
 main_function/options
 main_function/parallel
 main_function/ik
 main_function/render
+main_function/managed_viewer
 ```
 
 ```{toctree}
@@ -46,5 +48,6 @@ kinematics/site
 :maxdepth: 1
 
 render/camera
+render/widgets
 
 ```

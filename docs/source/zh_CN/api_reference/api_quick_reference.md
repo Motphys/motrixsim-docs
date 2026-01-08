@@ -67,6 +67,16 @@ MotrixSim 的 Named Access 支持两种访问方式：
 
 ---
 
+## 🔨 模型构建模块 - [`motrixsim.msd`](msd/index.md)
+
+| 函数/方法                                                | 说明                            |
+| -------------------------------------------------------- | ------------------------------- |
+| [`msd.from_file(path)`](motrixsim.msd.from_file)         | 加载模型文件用于组合和构建      |
+| [`scene.attach(other, ...)`](motrixsim.msd.Scene.attach) | 附加另一个模型并设置变换和前缀  |
+| [`scene.build()`](motrixsim.msd.Scene.build)             | 构建用于仿真的最终 `SceneModel` |
+
+---
+
 ## 🎨 渲染模块 - [`motrixsim.render`](rendering/render.md)
 
 | 对象/类                                         | 类别     | 主要功能             |

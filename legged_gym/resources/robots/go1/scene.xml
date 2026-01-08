@@ -1,5 +1,6 @@
 <mujoco model="go1 feetonly flat terrain scene">
   <include file="go1_mjx_fullcollisions.xml"/>
+  <include file="../../common/materials.xml"/>
   <statistic center="0 0 0.1" extent="0.8" meansize="0.04"/>
 
   <visual>
@@ -13,14 +14,11 @@
 
   <asset>
     <texture type="skybox" builtin="gradient" rgb1="0.4314 0.5294 0.6431" rgb2="0 0 0" width="512" height="512"/>
-    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.4314 0.5294 0.6431" rgb2="0.8157 0.8549 0.9059"
-      markrgb="0.8 0.8 0.8" width="300" height="300"/>
-    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="1 1" reflectance="0.2"/>
   </asset>
 
   <worldbody>
       <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
-      <geom name="floor" size="0 0 0.01" type="plane" material="groundplane" contype="1" conaffinity="0" priority="1"
+      <geom name="floor" size="0 0 0.01" type="plane" material="motphys-ground" contype="1" conaffinity="0" priority="1"
         friction="0.6" condim="3"/>
   </worldbody>
   

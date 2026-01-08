@@ -125,7 +125,7 @@ view_z = camera.near_plane / depth
 RGBD 相机的实时效果会在左侧的 Camera 面板中显示：
 
 ```{video} /_static/videos/rgbd_camera.mp4
-:caption: 左侧面板展示RGB相机和深度相机实时效果
+:caption: 右上角展示RGB相机和深度相机实时效果
 :nocontrols:
 :autoplay:
 :playsinline:

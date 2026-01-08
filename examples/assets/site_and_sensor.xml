@@ -5,7 +5,12 @@
   <worldbody>
     <light name="light" pos="0 0 3" directional = "true"/>
     <camera name="fixed" pos="0 -3 3" xyaxes="1 0 0 0 1 1"/>
-    <geom name="floor" type="plane" size="5 5 0.1" pos="0 0 -0.26" rgba="0.4 0.4 0.4 1"/>
+    <geom name="floor" type="plane" size="5 5 0.1" pos="0 0 -0.245" rgba="0.4 0.4 0.4 1"/>
+
+    <body>
+      <freejoint/>
+      <geom name="freebox" type="box" size="0.1 0.1 0.1" pos="0.8 0 1" rgba="1 0 1 1"/>
+    </body>
 
     <body name="car" pos = "0 0 0">
       <joint name="slider" type="slide" axis="1 0 0" limited="true" range = "-2 2"/>
@@ -14,7 +19,7 @@
 
       <body name="bar" pos = "0 0 0.35">
           <joint name="hinge" type="hinge" limited="false" axis = "0 0 1"/>
-          <geom type="box" size="0.1 1 0.1" pos = "0 0 0 " rgba="0 0.1 1 1"/>
+          <geom name="bar" type="cylinder" size="1.5 0.1" pos = "0 0 0 " rgba="1 1 0 1"/>
           <site name="imu_0" type="sphere" size="0.03" rgba="0 1 0 1" pos="0 0 0"/>
           <site name="imu_1" type="sphere" size="0.03" rgba="0 1 0 1" pos="0 0.5 0"/>
           <site name="imu_2" type="sphere" size="0.03" rgba="0 1 0 1" pos="0 1.0 0"/>
@@ -41,5 +46,8 @@
     <accelerometer name="acc_3" site="car_imu"/>
     <velocimeter name="vel_3" site="car_imu"/>
     <gyro name="gyro_3" site="car_imu"/>
+
+    <contact name="box_floor_contact" geom1="bar" geom2="freebox"
+             data="found force pos normal tangent" num="4" reduce="none"/>
   </sensor>
 </mujoco>
