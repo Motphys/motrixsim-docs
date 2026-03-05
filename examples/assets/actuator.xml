@@ -1,11 +1,11 @@
 <mujoco>
   <option timestep="0.01"/>
-  
+  <include file="./common/materials.xml"/>
   <worldbody>
 
     <light name="light" pos="0 0 3"/>
     <camera name="fixed" pos="0 -3 3" xyaxes="1 0 0 0 1 1"/>
-    <geom name="floor" type="plane" size="5 5 0.1" pos="0 0 0" rgba="0.4 0.4 0.4 1"/>
+    <geom name="floor" type="plane" size="5 5 0.1" pos="0 0 0" rgba="0.4 0.4 0.4 1" material="motphys-ground"/>
 
     <body name="base" pos="0 0 0.5">
       <body name="arm_A" pos="0 0 0"> 

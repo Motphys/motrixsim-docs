@@ -1,4 +1,5 @@
 <mujoco>
+    <include file="./common/materials.xml"/>
     <option  gravity="0 0 0"/>
     <compiler autolimits="true"/>
     <statistic center="0 0 0" extent="0.8"/>
@@ -11,7 +12,7 @@
     <worldbody>
         <light name="light" pos="0 0 3" directional = "true"/>
         <!-- ground plane -->
-        <geom type="plane" size="10 10 0.01" friction="2" pos="0 0 -2"/> 
+        <geom type="plane" size="10 10 0.01" friction="2" pos="0 0 -2" material="motphys-ground"/> 
         
         <!-- gyroscopic -->
         <body name = "base" pos="0 0 0.02" euler="0 50 0">

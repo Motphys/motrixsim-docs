@@ -9,16 +9,23 @@ This is the documentation project for MotrixSim, a high-performance physics simu
 ## Key Commands
 
 ### Building Documentation
-- **Build HTML**: `make html` or `sphinx-build -b html source build/html`
-- **Clean build**: `make clean` followed by `make html`
+**IMPORTANT**: Always use `uv run` to execute make commands in the docs directory.
+- **Build HTML**: `uv run make html` or `uv run sphinx-build -b html source build/html`
+- **Clean build**: `uv run make clean` followed by `uv run make html`
 - **Serve locally**: `python -m http.server 8000 -d build/html`
 - **Watch mode**: Use `sphinx-autobuild source build/html --host 0.0.0.0 --port 8000`
 
+**Working Directory**: Always run commands from the `docs/` directory:
+```bash
+cd /path/to/motrixsim-oni/motrixsim-py/docs
+uv run make html
+```
+
 ### Development Tools
-- **Check links**: `make linkcheck`
-- **Build PDF**: `make latexpdf` (requires LaTeX)
-- **Build single HTML**: `make singlehtml`
-- **Build EPUB**: `make epub`
+- **Check links**: `uv run make linkcheck`
+- **Build PDF**: `uv run make latexpdf` (requires LaTeX)
+- **Build single HTML**: `uv run make singlehtml`
+- **Build EPUB**: `uv run make epub`
 
 ## Documentation Structure
 
@@ -117,8 +124,8 @@ The build system automatically copies content from language-specific directories
 4. Include examples and usage notes
 
 ### Building and Testing
-1. Always build locally before committing: `make html`
-2. Check for broken links: `make linkcheck`
+1. Always build locally before committing: `uv run make html`
+2. Check for broken links: `uv run make linkcheck`
 3. Verify multilingual content works correctly
 4. Test all embedded media and interactive elements
 

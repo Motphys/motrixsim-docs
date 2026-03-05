@@ -1,5 +1,5 @@
-
 <mujoco>
+    <include file="./common/materials.xml"/>
     <option timestep="0.02" iterations="4" solver="PGS"/>
     <asset>
         <texture name="plane" type="2d" builtin="checker" width="128" height="128" rgb1="0.3 0.4 0.5" rgb2="0.6 0.5 0.4"/>
@@ -14,7 +14,7 @@
     <light name="top" pos="0 0 4" directional="true"/>
     <body  pos="0.0 2.0 4">
         <joint type="free"/>
-        <geom name="red_sphere"  size="0.6 .2 .2" rgba="1 0 0 1"/>
+        <geom name="red_sphere"  size="0.6 .2 .2" rgba="1 0 0 1" />
     </body>
     <body pos="0.0 0.0 3">
         <joint type="free"/>
@@ -27,5 +27,6 @@
     </body>
     <geom name="heightfield2" type="hfield" hfield="terrain1" material = "plane"/>
     <geom pos = "15 0 0" name="heightfield_test" type="hfield" hfield="file_terrain" material = "file_plane"/>
+    <geom name="floor" size="0 0 0.01" type="plane" material="motphys-ground"/>
   </worldbody>
 </mujoco>

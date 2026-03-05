@@ -211,8 +211,8 @@ mesh 文件目前支持 stl、obj、dae 格式。
   - **计划支持属性**
   - **不支持属性**
 * - fixed
-  - limited, range, solreflimit, solimplimit, springlength, stiffness, damping
-  - solreffriction, solimpfriction, frictionloss
+  - limited, range, solreflimit, solimplimit, springlength, stiffness, damping, frictionloss
+  - solreffriction, solimpfriction
   - \\
 
 ```

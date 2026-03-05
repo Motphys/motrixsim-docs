@@ -26,6 +26,7 @@ main_function/model_building
 main_function/options
 main_function/parallel
 main_function/ik
+main_function/osc
 main_function/render
 main_function/managed_viewer
 ```

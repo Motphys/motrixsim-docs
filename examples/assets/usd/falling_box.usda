@@ -1,0 +1,38 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "World"
+{
+    def Xform "Box" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsCollisionAPI", "PhysicsMassAPI"]
+    )
+    {
+        double3 xformOp:translate = (0, 0, 2)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        bool physics:collisionEnabled = true
+        float physics:mass = 1.0
+
+        def Cube "Cube" (
+            prepend apiSchemas = ["PhysicsCollisionAPI"]
+        )
+        {
+            double size = 0.5
+            bool physics:collisionEnabled = true
+        }
+    }
+
+    def Plane "Ground" (
+        prepend apiSchemas = ["PhysicsCollisionAPI"]
+    )
+    {
+        uniform token axis = "Z"
+        double length = 20
+        double width = 20
+        bool physics:collisionEnabled = true
+    }
+}

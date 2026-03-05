@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "motrixsim-docs"
 description = "A high-performance physics simulation engine designed for multibody dynamics and robotics simulation."
@@ -11,6 +15,10 @@ requires-python = "==3.10.*"
 readme = "README.md"
 license = "Apache-2.0"
 dynamic = ["version"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["legged_gym*"]
 
 [project.optional-dependencies]
 docs = [

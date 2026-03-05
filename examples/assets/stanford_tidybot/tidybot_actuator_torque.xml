@@ -1,0 +1,28 @@
+<!-- Torque control actuators for tidybot (for OSC) -->
+<mujoco>
+  <actuator>
+    <!-- Mobile base: keep position control -->
+    <position name="joint_x" joint="joint_x" kp="1000000" kv="50000"/>
+    <position name="joint_y" joint="joint_y" kp="1000000" kv="50000"/>
+    <position name="joint_th" joint="joint_th" kp="50000" kv="1000"/>
+    <!-- Arm joints: torque control for OSC (use forcerange from class, gear=1 for direct torque) -->
+    <motor name="joint_1" joint="joint_1" gear="1" forcerange="-105 105"/>
+    <motor name="joint_2" joint="joint_2" gear="1" forcerange="-105 105"/>
+    <motor name="joint_3" joint="joint_3" gear="1" forcerange="-105 105"/>
+    <motor name="joint_4" joint="joint_4" gear="1" forcerange="-105 105"/>
+    <motor name="joint_5" joint="joint_5" gear="1" forcerange="-52 52"/>
+    <motor name="joint_6" joint="joint_6" gear="1" forcerange="-52 52"/>
+    <motor name="joint_7" joint="joint_7" gear="1" forcerange="-52 52"/>
+    <!-- Gripper -->
+    <general class="2f85" name="fingers_actuator" tendon="split" forcerange="-5 5" ctrlrange="0 255"
+      gainprm="0.3137255 0 0" biasprm="0 -100 -10"/>
+  </actuator>
+
+  <keyframe>
+    <!-- ctrl: [base_x, base_y, base_th, arm_1-7 torques (0), gripper] -->
+    <key name="home" qpos="0 0 0 1 0 0 0 0 0 0 0 0.26179939 3.14159265 -2.26892803 0 0.95993109 1.57079633 0 0 0 0 0 0 0 0"
+      ctrl="0 0 0 0 0 0 0 0 0 0 0"/>
+    <key name="retract" qpos="0 0 0 1 0 0 0 0 0 0 0 -0.34906585 3.14159265 -2.54818071 0 -0.87266463 1.57079633 0 0 0 0 0 0 0 0"
+      ctrl="0 0 0 0 0 0 0 0 0 0 0"/>
+  </keyframe>
+</mujoco>

@@ -1,6 +1,6 @@
 <mujoco model="panda scene pick bottle">
   <include file="mjx_panda.xml"/>
-
+  <include file="../common/materials.xml"/>
   <statistic center="0.3 0 0.4" extent="1"/>
 
   <visual>
@@ -27,7 +27,7 @@
 
   <worldbody>
     <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
-    <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
+    <geom name="floor" size="0 0 0.05" type="plane" material="motphys-ground"/>
     <camera name="front_cam" pos="1.155 0.016 0.526" xyaxes="0.000 1.000 -0.000 -0.513 0.000 0.858"/>
     <body name="bottle" pos="0.65 0 0.036" quat="0.707107 0 0 0.707107">
       <freejoint/>

@@ -207,8 +207,8 @@ Supported tags:
   - **Planned Attributes**
   - **Unsupported Attributes**
 * - fixed
-  - limited, range, solreflimit, solimplimit, springlength, stiffness, damping
-  - solreffriction, solimpfriction, frictionloss
+  - limited, range, solreflimit, solimplimit, springlength, stiffness, damping, frictionloss
+  - solreffriction, solimpfriction
   - \\
 ```
 

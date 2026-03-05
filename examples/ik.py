@@ -31,7 +31,7 @@ from motrixsim.render import RenderApp
 def main():
     # Create render window for visualization
     with RenderApp() as render:
-        path = "examples/assets/stanford_tidybot/scene.xml"
+        path = "examples/assets/stanford_tidybot/scene_position.xml"
         model = load_model(path)
         data = SceneData(model)
         # tag::create_ik_chain

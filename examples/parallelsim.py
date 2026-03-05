@@ -26,7 +26,7 @@ def main():
         # tag::init batch data
         size = 10
         batch_size = size * size
-        path = "examples/assets/stanford_tidybot/scene.xml"
+        path = "examples/assets/stanford_tidybot/scene_position.xml"
 
         model = load_model(path)
         data = SceneData(model, batch=(batch_size,))

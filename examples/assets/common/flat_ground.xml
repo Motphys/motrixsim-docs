@@ -1,0 +1,11 @@
+<mujoco model="flat ground">
+  <asset>
+    <texture name="motphys-ground" type="2d" file="motphys-ground.png" />
+    <material name="motphys-ground" texture="motphys-ground" texuniform="true"
+      texrepeat="0.4 0.4" />
+  </asset>
+  <worldbody>
+      <geom name="floor" size="0 0 0.01" type="plane" material="motphys-ground"  priority="1"
+        friction="0.6" condim="3"/>
+  </worldbody>
+</mujoco>

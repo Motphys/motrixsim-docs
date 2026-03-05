@@ -1,0 +1,8 @@
+CHANGELOG.md
+node_modules
+.venv
+/README.md
+examples/assets/**/*.md
+docs/build/
+docs/CLAUDE.md
+.readthedocs.yaml

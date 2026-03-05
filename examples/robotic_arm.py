@@ -29,7 +29,7 @@ def main():
     # Create render window for visualization
     with RenderApp() as render:
         # The scene description file
-        path = "examples/assets/stanford_tidybot/scene.xml"
+        path = "examples/assets/stanford_tidybot/scene_position.xml"
         # Load the scene model
         model = load_model(path)
         # Create the render instance of the model

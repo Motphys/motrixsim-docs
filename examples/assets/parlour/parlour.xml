@@ -1,0 +1,1459 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+  <visual>
+    <!-- <ssao active="true"/> -->
+    <tonemapping method="aces"/>
+  </visual>
+  <asset>
+
+    <!-- Textures -->
+    <texture type="2d" colorspace="sRGB" name="342dbda6268f75c9b5a2ca21ea02dbb6" file="342dbda6268f75c9b5a2ca21ea02dbb6.png"/>
+    <texture type="2d" colorspace="sRGB" name="T_02_ZS_BX_04_01" file="T_02_ZS_BX_04_01.png"/>
+    <texture type="2d" colorspace="linear" name="T_02_ZS_BX_04_03" file="T_02_ZS_BX_04_03.png"/>
+    <texture type="2d" colorspace="sRGB" name="4a71adde5feb7a68a887f63e83b66412" file="4a71adde5feb7a68a887f63e83b66412.png"/>
+    <texture type="2d" colorspace="sRGB" name="70a5ce32d150f6309e75fb7d85a07eda" file="70a5ce32d150f6309e75fb7d85a07eda.png"/>
+    <texture type="2d" colorspace="sRGB" name="T_02_ZS_BX_05_04" file="T_02_ZS_BX_05_04.png"/>
+    <texture type="2d" colorspace="linear" name="T_02_ZS_BX_05_05" file="T_02_ZS_BX_05_05.png"/>
+    <texture type="2d" colorspace="sRGB" name="2d440f29648430cf633ba9141d350007" file="2d440f29648430cf633ba9141d350007.png"/>
+    <texture type="2d" colorspace="sRGB" name="024132e0c58801b87e67843c8b98a38b" file="024132e0c58801b87e67843c8b98a38b.png"/>
+    <texture type="2d" colorspace="sRGB" name="e665515175473bb1b186eaaa9df67489" file="e665515175473bb1b186eaaa9df67489.png"/>
+    <texture type="2d" colorspace="sRGB" name="997b0ef8c50beee3787857242b84b01a" file="997b0ef8c50beee3787857242b84b01a.png"/>
+    <texture type="2d" colorspace="sRGB" name="9f089bc9c03d7bc250d6648eec5e0d0a" file="9f089bc9c03d7bc250d6648eec5e0d0a.png"/>
+    <texture type="2d" colorspace="sRGB" name="dae60a53aa59e8e355383e2ef7d269cf" file="dae60a53aa59e8e355383e2ef7d269cf.png"/>
+    <texture type="2d" colorspace="sRGB" name="5da83112d0a42a674ad2a57d512a6912" file="5da83112d0a42a674ad2a57d512a6912.png"/>
+    <texture type="2d" colorspace="sRGB" name="daa9b13c485f6352da093235bff97ee3" file="daa9b13c485f6352da093235bff97ee3.png"/>
+    <texture type="2d" colorspace="sRGB" name="af648c759ae2dc741b699d8f3af20e69" file="af648c759ae2dc741b699d8f3af20e69.png"/>
+    <texture type="2d" colorspace="sRGB" name="3b082332acb0e3ebf755cab969513bcc" file="3b082332acb0e3ebf755cab969513bcc.png"/>
+    <texture type="2d" colorspace="sRGB" name="ef4df2df7ca2b21868d75a9630774cb3" file="ef4df2df7ca2b21868d75a9630774cb3.png"/>
+    <texture type="2d" colorspace="sRGB" name="cd33cb7aceb26b08be997e59bf572ce5" file="cd33cb7aceb26b08be997e59bf572ce5.png"/>
+    <texture type="2d" colorspace="sRGB" name="9ed13a225ff37e93286113e4d5937bb9" file="9ed13a225ff37e93286113e4d5937bb9.png"/>
+    <texture type="2d" colorspace="sRGB" name="f5d074d26c2a54f62dc37ccadf3188e9" file="f5d074d26c2a54f62dc37ccadf3188e9.png"/>
+    <texture type="2d" colorspace="sRGB" name="cd5bc466fcc85473fb52ce218716ff7f" file="cd5bc466fcc85473fb52ce218716ff7f.png"/>
+    <texture type="2d" colorspace="sRGB" name="0435e1496dcaad26034f649c4f65abbb" file="0435e1496dcaad26034f649c4f65abbb.png"/>
+    <texture type="2d" colorspace="sRGB" name="cf3472da40947958461c00502e28a7f6" file="cf3472da40947958461c00502e28a7f6.png"/>
+    <texture type="2d" colorspace="sRGB" name="e37d992cafc6e1999e4e905bbf30ad80" file="e37d992cafc6e1999e4e905bbf30ad80.png"/>
+    <texture type="2d" colorspace="sRGB" name="3bb23ac398fd6ee91727e94752ad0269" file="3bb23ac398fd6ee91727e94752ad0269.png"/>
+    <texture type="2d" colorspace="sRGB" name="9e8f4affe6de406056a211f8095a77a2" file="9e8f4affe6de406056a211f8095a77a2.png"/>
+    <texture type="2d" colorspace="sRGB" name="bd688bfd08aabcc1ceaec42dda1a40f0" file="bd688bfd08aabcc1ceaec42dda1a40f0.png"/>
+    <texture type="2d" colorspace="sRGB" name="6d7caa1042f542ff7c68054637d22bb5" file="6d7caa1042f542ff7c68054637d22bb5.png"/>
+    <texture type="2d" colorspace="sRGB" name="624740c4c8dd40937e50274214767d7e" file="624740c4c8dd40937e50274214767d7e.png"/>
+    <texture type="2d" colorspace="sRGB" name="ab934adced4e3e633dcbb4828445ef8f" file="ab934adced4e3e633dcbb4828445ef8f.png"/>
+    <texture type="2d" colorspace="sRGB" name="dc826344ef6ac101f1aadd2fb8948071" file="dc826344ef6ac101f1aadd2fb8948071.png"/>
+    <texture type="2d" colorspace="sRGB" name="296c697442bcfde5b054e3e82c15c77d" file="296c697442bcfde5b054e3e82c15c77d.png"/>
+    <texture type="2d" colorspace="sRGB" name="ca27e58cfd3f73f2c272b1687442fb81" file="ca27e58cfd3f73f2c272b1687442fb81.png"/>
+    <texture type="2d" colorspace="sRGB" name="ca61980e37f497908190543131d995c7" file="ca61980e37f497908190543131d995c7.png"/>
+    <texture type="2d" colorspace="sRGB" name="b1b7e8f84aabc50644f2eefc9a715b7d" file="b1b7e8f84aabc50644f2eefc9a715b7d.png"/>
+    <texture type="2d" colorspace="sRGB" name="6d486e2c335bb078c1c21e3192111710" file="6d486e2c335bb078c1c21e3192111710.png"/>
+    <texture type="2d" colorspace="sRGB" name="37a4063dce8b4bafedf9573fbe6eb420" file="37a4063dce8b4bafedf9573fbe6eb420.png"/>
+    <texture type="2d" colorspace="sRGB" name="1ded8ec0359984ca45dc1c933b271c40" file="1ded8ec0359984ca45dc1c933b271c40.png"/>
+    <texture type="2d" colorspace="sRGB" name="067de916b77910cb8fd6f497da030e47" file="067de916b77910cb8fd6f497da030e47.png"/>
+    <texture type="2d" colorspace="sRGB" name="1db53a9f0e0993b9843d8bb9c8dbf1d8" file="1db53a9f0e0993b9843d8bb9c8dbf1d8.png"/>
+    <texture type="2d" colorspace="sRGB" name="1f072207cdb1bde2aab539cd9bf5be43" file="1f072207cdb1bde2aab539cd9bf5be43.png"/>
+
+    <!-- Materials -->
+    <material name="Ground" rgba="0.800000011920929 0.800000011920929 0.800000011920929 1.0" reflectance="0.5" metallic="0.0" roughness="0.5"/>
+    <material name="mat_71" rgba="0.9882352948188782 0.9882352948188782 0.9882352948188782 1.0" reflectance="0.5" metallic="0.0" roughness="0.10999999940395355"/>
+    <material name="mat_76" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="1.0" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="342dbda6268f75c9b5a2ca21ea02dbb6" role="rgb"/>
+    </material>
+    <material name="MI_02_ZS_BX_04_01" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.5">
+      <layer texture="T_02_ZS_BX_04_01" role="rgb"/>
+      <layer texture="T_02_ZS_BX_04_03" role="normal"/>
+    </material>
+    <material name="mat_591" rgba="1 1 1 1" reflectance="0.5" metallic="0.23999999463558197" roughness="0.32999998331069946" texrepeat="1.0 1.0" texuniform="true">
+      <layer texture="4a71adde5feb7a68a887f63e83b66412" role="rgb"/>
+    </material>
+    <material name="mat_65" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.5" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="70a5ce32d150f6309e75fb7d85a07eda" role="rgb"/>
+    </material>
+    <material name="SM_02_ZS_BX_05_01" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.30000001192092896">
+      <layer texture="T_02_ZS_BX_05_04" role="rgb"/>
+      <layer texture="T_02_ZS_BX_05_05" role="normal"/>
+    </material>
+    <material name="mat_50304F94B0643138" rgba="0.3409999907016754 0.37400001287460327 0.37599998712539673 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
+    <material name="mat_43F828562E521817" rgba="1.0 0.9215686321258545 0.800000011920929 1.0" reflectance="0.5" metallic="0.0" roughness="0.10000000149011612" emission="1.0 1.0 1.0 1.0" emissionintensity="10.0"/>
+    <material name="mat_2784D6E2065B3E4B" rgba="0.5803921818733215 0.6509804129600525 0.7215686440467834 1.0" reflectance="0.5" metallic="0.0" roughness="0.44999998807907104"/>
+    <material name="mat_73496A3838D8D09E" rgba="0.4191201329231262 0.512275755405426 0.5313531160354614 1.0" reflectance="0.5" metallic="0.5399999618530273" roughness="0.2199999988079071"/>
+    <material name="mat_80755" rgba="0.8196078538894653 0.8156862854957581 0.8117647171020508 1.0" reflectance="0.5" metallic="0.0" roughness="0.0"/>
+    <material name="mat_148968" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="0.5" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="2d440f29648430cf633ba9141d350007" role="rgb"/>
+    </material>
+    <material name="mat_0" rgba="0.9725490212440491 0.9843137264251709 1.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
+    <material name="mat_148970" rgba="0.1764705926179886 0.1764705926179886 0.1764705926179886 1.0" reflectance="0.5" metallic="1.0" roughness="0.14000000059604645"/>
+    <material name="mat_148971" rgba="0.6196078658103943 0.4941176474094391 0.32156863808631897 1.0" reflectance="0.5" metallic="1.0" roughness="0.11999999731779099"/>
+    <material name="mat_83" rgba="0.47843137383461 0.4313725531101227 0.4000000059604645 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
+    <material name="mat_88" rgba="0.019607843831181526 0.0117647061124444 0.007843137718737125 1.0" reflectance="0.5" metallic="0.12999999523162842" roughness="0.09999999403953552"/>
+    <material name="mat_909054" rgba="0.6000000238418579 0.4941176474094391 0.3450980484485626 1.0" reflectance="0.5" metallic="0.11999999731779099" roughness="0.11999999731779099"/>
+    <material name="mat_150326" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.14999999105930328" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="024132e0c58801b87e67843c8b98a38b" role="rgb"/>
+    </material>
+    <material name="mat_792108" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="0.5" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="e665515175473bb1b186eaaa9df67489" role="rgb"/>
+    </material>
+    <material name="mat_792104" rgba="1 1 1 1" reflectance="0.5" metallic="0.14000000059604645" roughness="0.14000000059604645" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="997b0ef8c50beee3787857242b84b01a" role="rgb"/>
+    </material>
+    <material name="mat_792110" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="0.5" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="9f089bc9c03d7bc250d6648eec5e0d0a" role="rgb"/>
+    </material>
+    <material name="mat_21454" rgba="0.4274509847164154 0.3960784375667572 0.19607843458652496 1.0" reflectance="0.5" metallic="0.0" roughness="0.09999999403953552"/>
+    <material name="mat_21455" rgba="1.0 1.0 0.9411764740943909 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
+    <material name="mat_42400" rgba="1 1 1 1" reflectance="0.5" metallic="0.11999999731779099" roughness="0.08999999612569809" texrepeat="3.3333332538604736 3.3333332538604736" texuniform="true">
+      <layer texture="dae60a53aa59e8e355383e2ef7d269cf" role="rgb"/>
+    </material>
+    <material name="mat_21456" rgba="0.22745098173618317 0.22745098173618317 0.22745098173618317 1.0" reflectance="0.5" metallic="0.0" roughness="0.07000000029802322"/>
+    <material name="mat_21457" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.11999999731779099">
+      <layer texture="5da83112d0a42a674ad2a57d512a6912" role="rgb"/>
+    </material>
+    <material name="mat_60" rgba="1.0 0.9882352948188782 0.8980392217636108 1.0" reflectance="0.5" metallic="0.0" roughness="0.10999999940395355"/>
+    <material name="mat_792103" rgba="0.6470588445663452 0.6117647290229797 0.5490196347236633 1.0" reflectance="0.5" metallic="0.17999999225139618" roughness="0.12999999523162842"/>
+    <material name="mat_62043" rgba="0.21176470816135406 0.2235294133424759 0.25882354378700256 1.0" reflectance="0.5" metallic="0.0" roughness="0.14999999105930328"/>
+    <material name="mat_21459" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.10999999940395355">
+      <layer texture="daa9b13c485f6352da093235bff97ee3" role="rgb"/>
+    </material>
+    <material name="Clear_Glass" rgba="1.0 1.0 1.0 0.1" reflectance="0.5" metallic="0.0" roughness="0.0"/>
+    <material name="mat_62035" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.09999999403953552" texrepeat="0.9594369530677795 0.971505343914032" texuniform="false">
+      <layer texture="af648c759ae2dc741b699d8f3af20e69" role="rgb"/>
+    </material>
+    <material name="Tinted_Glass_R02_01" rgba="0.10000000149011612 0.10000000149011612 0.10000000149011612 1.0" reflectance="0.5" metallic="0.0" roughness="1.0"/>
+    <material name="mat_38619" rgba="0.47058823704719543 0.47058823704719543 0.47058823704719543 1.0" reflectance="0.5" metallic="0.0" roughness="0.5"/>
+    <material name="mat_5188AE9D9AEFEA48" rgba="0.9607843160629272 0.9607843160629272 0.9607843160629272 1.0" reflectance="0.5" metallic="0.0" roughness="0.17999999225139618"/>
+    <material name="mat_738B63C3F0EB49E4" rgba="0.026402652263641357 0.026054102927446365 0.026054102927446365 1.0" reflectance="0.5" metallic="0.3100000023841858" roughness="0.17000000178813934"/>
+    <material name="mat_22672001CBED8985" rgba="0.9843137264251709 0.9843137264251709 0.9843137264251709 1.0" reflectance="0.5" metallic="0.11999999731779099" roughness="0.14000000059604645"/>
+    <material name="mat_42403" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" metallic="0.17000000178813934" roughness="0.09999999403953552"/>
+    <material name="mat_17118" rgba="1 1 1 1" reflectance="0.5" metallic="0.14000000059604645" roughness="0.12999999523162842" texrepeat="0.6410256028175354 0.4273504316806793" texuniform="false">
+      <layer texture="3b082332acb0e3ebf755cab969513bcc" role="rgb"/>
+    </material>
+    <material name="mat_17111" rgba="0.95686274766922 0.95686274766922 0.95686274766922 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
+    <material name="mat_816195" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="0.5" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="ef4df2df7ca2b21868d75a9630774cb3" role="rgb"/>
+    </material>
+    <material name="mat_113" rgba="1 1 1 1" reflectance="0.5" metallic="0.14999999105930328" roughness="0.14000000059604645" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="cd33cb7aceb26b08be997e59bf572ce5" role="rgb"/>
+    </material>
+    <material name="mat_816191" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="0.5" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="9ed13a225ff37e93286113e4d5937bb9" role="rgb"/>
+    </material>
+    <material name="mat_70" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.12999999523162842" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="f5d074d26c2a54f62dc37ccadf3188e9" role="rgb"/>
+    </material>
+    <material name="mat_865820" rgba="0.6784313917160034 0.5803921818733215 0.43921568989753723 1.0" reflectance="0.5" metallic="0.0" roughness="0.05999999865889549"/>
+    <material name="mat_150344" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.1899999976158142">
+      <layer texture="cd5bc466fcc85473fb52ce218716ff7f" role="rgb"/>
+    </material>
+    <material name="mat_816193" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.09999999403953552" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="0435e1496dcaad26034f649c4f65abbb" role="rgb"/>
+    </material>
+    <material name="mat_78" rgba="0.0 0.0 0.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
+    <material name="mat_CC75C949BEC6B8FE" rgba="0.0117647061124444 0.0117647061124444 0.0117647061124444 1.0" reflectance="0.5" metallic="0.8799999952316284" roughness="0.07999999821186066"/>
+    <material name="mat_38616" rgba="0.7843137383460999 0.7843137383460999 0.7843137383460999 1.0" reflectance="0.5" metallic="0.14999999105930328" roughness="0.12999999523162842"/>
+    <material name="mat_865819" rgba="0.8196078538894653 0.8156862854957581 0.8117647171020508 1.0" reflectance="0.5" metallic="0.0" roughness="0.10999999940395355"/>
+    <material name="mat_4594" rgba="0.95686274766922 0.95686274766922 0.95686274766922 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
+    <material name="mat_62039" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.5" texrepeat="8.513216972351074 4.256608486175537" texuniform="false">
+      <layer texture="cf3472da40947958461c00502e28a7f6" role="rgb"/>
+    </material>
+    <material name="mat_6200524" rgba="0.9490196108818054 0.9490196108818054 0.9490196108818054 1.0" reflectance="0.5" metallic="0.0" roughness="0.5"/>
+    <material name="mat_17114" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="0.5" texrepeat="0.3333333432674408 3.846153974533081" texuniform="false">
+      <layer texture="e37d992cafc6e1999e4e905bbf30ad80" role="rgb"/>
+    </material>
+    <material name="mat_42402" rgba="1.0 0.9016316533088684 0.5115511417388916 1.0" reflectance="0.5" metallic="0.10999999940395355" roughness="0.08999999612569809"/>
+    <material name="mat_600780DB2B1AA2AF" rgba="0.6392157077789307 0.5215686559677124 0.1764705926179886 1.0" reflectance="0.5" metallic="1.0" roughness="0.25999999046325684"/>
+    <material name="mat_4B8219087698A8CB" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="1.0" texrepeat="1.6404199600219727 1.6404199600219727" texuniform="true">
+      <layer texture="3bb23ac398fd6ee91727e94752ad0269" role="rgb"/>
+    </material>
+    <material name="mat_816189" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.10999999940395355" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="9e8f4affe6de406056a211f8095a77a2" role="rgb"/>
+    </material>
+    <material name="mat_61" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="0.5">
+      <layer texture="bd688bfd08aabcc1ceaec42dda1a40f0" role="rgb"/>
+    </material>
+    <material name="mat_E358529B5F9DA6C1" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.5" texrepeat="0.5555253028869629 0.8024254441261292" texuniform="false">
+      <layer texture="6d7caa1042f542ff7c68054637d22bb5" role="rgb"/>
+    </material>
+    <material name="mat_D033E7AF68B3AE04" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.5" texrepeat="0.2734033167362213 0.2734033167362213" texuniform="true">
+      <layer texture="624740c4c8dd40937e50274214767d7e" role="rgb"/>
+    </material>
+    <material name="mat_29424" rgba="0.95686274766922 0.95686274766922 0.95686274766922 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
+    <material name="mat_6200527" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.12999999523162842" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="ab934adced4e3e633dcbb4828445ef8f" role="rgb"/>
+    </material>
+    <material name="mat_148964" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.11999999731779099" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="dc826344ef6ac101f1aadd2fb8948071" role="rgb"/>
+    </material>
+    <material name="mat_25582" rgba="0.95686274766922 0.95686274766922 0.95686274766922 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
+    <material name="mat_58" rgba="1.0 0.9882352948188782 0.9764705896377563 1.0" reflectance="0.5" metallic="0.0" roughness="0.12999999523162842"/>
+    <material name="mat_6200525" rgba="1 1 1 1" reflectance="0.5" metallic="0.17000000178813934" roughness="0.11999999731779099" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="296c697442bcfde5b054e3e82c15c77d" role="rgb"/>
+    </material>
+    <material name="mat_73" rgba="0.0 0.0 0.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
+    <material name="mat_6200533" rgba="0.0 0.0 0.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
+    <material name="mat_150356" rgba="0.3069307208061218 0.2632333040237427 0.028363239020109177 1.0" reflectance="0.5" metallic="0.0" roughness="0.12999999523162842"/>
+    <material name="mat_792107" rgba="0.1764705926179886 0.1764705926179886 0.1764705926179886 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
+    <material name="mat_6200532" rgba="0.9450980424880981 0.9372549057006836 0.9372549057006836 1.0" reflectance="0.5" metallic="0.1899999976158142" roughness="0.14999999105930328"/>
+    <material name="mat_AB2965A62A122711" rgba="0.6392157077789307 0.5215686559677124 0.1764705926179886 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
+    <material name="mat_12863" rgba="0.95686274766922 0.95686274766922 0.95686274766922 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
+    <material name="mat_67" rgba="1 1 1 1" reflectance="0.5" metallic="0.11999999731779099" roughness="0.10999999940395355" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="ca27e58cfd3f73f2c272b1687442fb81" role="rgb"/>
+    </material>
+    <material name="mat_6200522" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.12999999523162842" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="ca61980e37f497908190543131d995c7" role="rgb"/>
+    </material>
+    <material name="mat_148966" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="0.5" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="b1b7e8f84aabc50644f2eefc9a715b7d" role="rgb"/>
+    </material>
+    <material name="mat_62041" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.5" texrepeat="6.5819597244262695 6.16405725479126" texuniform="false">
+      <layer texture="6d486e2c335bb078c1c21e3192111710" role="rgb"/>
+    </material>
+    <material name="mat_38617" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.5" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="37a4063dce8b4bafedf9573fbe6eb420" role="rgb"/>
+    </material>
+    <material name="mat_816199" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.05999999865889549" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="1ded8ec0359984ca45dc1c933b271c40" role="rgb"/>
+    </material>
+    <material name="mat_816197" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.11999999731779099" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="067de916b77910cb8fd6f497da030e47" role="rgb"/>
+    </material>
+    <material name="mat_93" rgba="1 1 1 1" reflectance="0.5" metallic="0.11999999731779099" roughness="0.10999999940395355">
+      <layer texture="1db53a9f0e0993b9843d8bb9c8dbf1d8" role="rgb"/>
+    </material>
+    <material name="mat_38620" rgba="0.1764705926179886 0.1764705926179886 0.1764705926179886 1.0" reflectance="0.5" metallic="0.14000000059604645" roughness="0.08999999612569809"/>
+    <material name="mat_792106" rgba="0.11764705926179886 0.11764705926179886 0.11764705926179886 1.0" reflectance="0.5" metallic="0.11999999731779099" roughness="0.11999999731779099"/>
+    <material name="mat_6200530" rgba="1 1 1 1" reflectance="0.5" metallic="0.17999999225139618" roughness="0.12999999523162842" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+      <layer texture="1f072207cdb1bde2aab539cd9bf5be43" role="rgb"/>
+    </material>
+    <material name="OmniPBR" rgba="0.292023628950119 0.9273927211761475 0.07345682382583618 1.0" reflectance="0.5" metallic="0.0" roughness="1.0"/>
+    <material name="OmniPBR_01" rgba="0.1441035121679306 0.8910890817642212 0.8243938684463501 1.0" reflectance="0.5" metallic="0.0" roughness="1.0"/>
+    <material name="mat_6200529" rgba="1.0 0.8313725590705872 0.7098039388656616 1.0" reflectance="0.5" metallic="0.1599999964237213" roughness="0.09999999403953552"/>
+    <material name="mat_59" rgba="0.16078431904315948 0.2980392277240753 0.20392157137393951 1.0" reflectance="0.5" metallic="0.0" roughness="0.11999999731779099"/>
+
+    <!-- Visual meshes -->
+    <mesh class="visual" name="E_Pot" file="E_Pot.obj"/>
+    <mesh class="visual" name="E_PotMud" file="E_PotMud.obj"/>
+    <mesh class="visual" name="P_LPad" file="P_LPad.obj"/>
+    <mesh class="visual" name="P_Leaves" file="P_Leaves.obj"/>
+    <mesh class="visual" name="P_Pad" file="P_Pad.obj"/>
+    <mesh class="visual" name="P_Pillow" file="P_Pillow.obj"/>
+    <mesh class="visual" name="P_Stalk" file="P_Stalk.obj"/>
+    <mesh class="visual" name="P_WLDesk_0" file="P_WLDesk_0.obj"/>
+    <mesh class="visual" name="P_WLSofa_0" file="P_WLSofa_0.obj"/>
+    <mesh class="visual" name="P_WSDesk_0" file="P_WSDesk_0.obj"/>
+    <mesh class="visual" name="P_WSofa_0" file="P_WSofa_0.obj"/>
+    <mesh class="visual" name="E_50x100_5437449" file="E_50x100_5437449.obj"/>
+    <mesh class="visual" name="E_50x100_5437450" file="E_50x100_5437450.obj"/>
+    <mesh class="visual" name="E_50x100_5437451" file="E_50x100_5437451.obj"/>
+    <mesh class="visual" name="E_50x100_5437452" file="E_50x100_5437452.obj"/>
+    <mesh class="visual" name="E_50x100_5437460" file="E_50x100_5437460.obj"/>
+    <mesh class="visual" name="E_50x100_5437461" file="E_50x100_5437461.obj"/>
+    <mesh class="visual" name="E_50x100_5437462" file="E_50x100_5437462.obj"/>
+    <mesh class="visual" name="E_50x100_5437463" file="E_50x100_5437463.obj"/>
+    <mesh class="visual" name="E_50x100_5437471" file="E_50x100_5437471.obj"/>
+    <mesh class="visual" name="E_50x100_5437472" file="E_50x100_5437472.obj"/>
+    <mesh class="visual" name="E_50x100_5437473" file="E_50x100_5437473.obj"/>
+    <mesh class="visual" name="E_50x100_5437474" file="E_50x100_5437474.obj"/>
+    <mesh class="visual" name="E_600x600mmM4MMM_5439137" file="E_600x600mmM4MMM_5439137.obj"/>
+    <mesh class="visual" name="E_600x600mmM4MMM_5439138" file="E_600x600mmM4MMM_5439138.obj"/>
+    <mesh class="visual" name="E_600x600mmM4MMM_5439139" file="E_600x600mmM4MMM_5439139.obj"/>
+    <mesh class="visual" name="E_600x600mmM4MMM_5439140" file="E_600x600mmM4MMM_5439140.obj"/>
+    <mesh class="visual" name="E_600x600mmM4MMM_5439141" file="E_600x600mmM4MMM_5439141.obj"/>
+    <mesh class="visual" name="E_600x600mmM4MMM_5439142" file="E_600x600mmM4MMM_5439142.obj"/>
+    <mesh class="visual" name="E_70x130_5437453" file="E_70x130_5437453.obj"/>
+    <mesh class="visual" name="E_70x130_5437454" file="E_70x130_5437454.obj"/>
+    <mesh class="visual" name="E_70x130_5437455" file="E_70x130_5437455.obj"/>
+    <mesh class="visual" name="E_70x130_5437464" file="E_70x130_5437464.obj"/>
+    <mesh class="visual" name="E_70x130_5437465" file="E_70x130_5437465.obj"/>
+    <mesh class="visual" name="E_70x130_5437466" file="E_70x130_5437466.obj"/>
+    <mesh class="visual" name="E_70x130_5437475" file="E_70x130_5437475.obj"/>
+    <mesh class="visual" name="E_70x130_5437476" file="E_70x130_5437476.obj"/>
+    <mesh class="visual" name="E_70x130_5437477" file="E_70x130_5437477.obj"/>
+    <mesh class="visual" name="E_70x130_5438954" file="E_70x130_5438954.obj"/>
+    <mesh class="visual" name="E_70x130_5438955" file="E_70x130_5438955.obj"/>
+    <mesh class="visual" name="E_70x130_5438956" file="E_70x130_5438956.obj"/>
+    <mesh class="visual" name="E_70x130_5438960" file="E_70x130_5438960.obj"/>
+    <mesh class="visual" name="E_70x130_5438961" file="E_70x130_5438961.obj"/>
+    <mesh class="visual" name="E_70x130_5438962" file="E_70x130_5438962.obj"/>
+    <mesh class="visual" name="E_70x130_5438966" file="E_70x130_5438966.obj"/>
+    <mesh class="visual" name="E_70x130_5438967" file="E_70x130_5438967.obj"/>
+    <mesh class="visual" name="E_70x130_5438968" file="E_70x130_5438968.obj"/>
+    <mesh class="visual" name="E_70x130_5439329" file="E_70x130_5439329.obj"/>
+    <mesh class="visual" name="E_70x130_5439331" file="E_70x130_5439331.obj"/>
+    <mesh class="visual" name="E_70x130_5439333" file="E_70x130_5439333.obj"/>
+    <mesh class="visual" name="E_70x130_5443492" file="E_70x130_5443492.obj"/>
+    <mesh class="visual" name="E_70x130_5443493" file="E_70x130_5443493.obj"/>
+    <mesh class="visual" name="E_70x130_5443494" file="E_70x130_5443494.obj"/>
+    <mesh class="visual" name="E_A_MMMM_60_5442263" file="E_A_MMMM_60_5442263.obj"/>
+    <mesh class="visual" name="E_A_MM_200M70_5437350" file="E_A_MM_200M70_5437350.obj"/>
+    <mesh class="visual" name="E_A_MM_200M70_5437381" file="E_A_MM_200M70_5437381.obj"/>
+    <mesh class="visual" name="E_A_MM_200M70_5442858" file="E_A_MM_200M70_5442858.obj"/>
+    <mesh class="visual" name="E_Component119_1" file="E_Component119_1.obj"/>
+    <mesh class="visual" name="E_Component120_8" file="E_Component120_8.obj"/>
+    <mesh class="visual" name="E_Component122_9" file="E_Component122_9.obj"/>
+    <mesh class="visual" name="E_Component182_6" file="E_Component182_6.obj"/>
+    <mesh class="visual" name="E_Component184_10" file="E_Component184_10.obj"/>
+    <mesh class="visual" name="E_Component28_2_005" file="E_Component28_2_005.obj"/>
+    <mesh class="visual" name="E_Component30_3" file="E_Component30_3.obj"/>
+    <mesh class="visual" name="E_Component42_2" file="E_Component42_2.obj"/>
+    <mesh class="visual" name="E_Component44_3" file="E_Component44_3.obj"/>
+    <mesh class="visual" name="E_Component69_22" file="E_Component69_22.obj"/>
+    <mesh class="visual" name="E_Component75_5" file="E_Component75_5.obj"/>
+    <mesh class="visual" name="E_Component76_6" file="E_Component76_6.obj"/>
+    <mesh class="visual" name="E_Component77_7" file="E_Component77_7.obj"/>
+    <mesh class="visual" name="E_Group_10" file="E_Group_10.obj"/>
+    <mesh class="visual" name="E_Group_15" file="E_Group_15.obj"/>
+    <mesh class="visual" name="E_Group_16" file="E_Group_16.obj"/>
+    <mesh class="visual" name="E_Group_17" file="E_Group_17.obj"/>
+    <mesh class="visual" name="E_Group_18" file="E_Group_18.obj"/>
+    <mesh class="visual" name="E_Group_19" file="E_Group_19.obj"/>
+    <mesh class="visual" name="E_Group_20" file="E_Group_20.obj"/>
+    <mesh class="visual" name="E_Group_21" file="E_Group_21.obj"/>
+    <mesh class="visual" name="E_Group_22" file="E_Group_22.obj"/>
+    <mesh class="visual" name="E_Group_2_002" file="E_Group_2_002.obj"/>
+    <mesh class="visual" name="E_Group_3" file="E_Group_3.obj"/>
+    <mesh class="visual" name="E_Group_30" file="E_Group_30.obj"/>
+    <mesh class="visual" name="E_Group_31" file="E_Group_31.obj"/>
+    <mesh class="visual" name="E_Group_34" file="E_Group_34.obj"/>
+    <mesh class="visual" name="E_Group_3_001" file="E_Group_3_001.obj"/>
+    <mesh class="visual" name="E_Group_3_002" file="E_Group_3_002.obj"/>
+    <mesh class="visual" name="E_Group_3_004" file="E_Group_3_004.obj"/>
+    <mesh class="visual" name="E_Group_6" file="E_Group_6.obj"/>
+    <mesh class="visual" name="E_Group_7" file="E_Group_7.obj"/>
+    <mesh class="visual" name="E_Group_72" file="E_Group_72.obj"/>
+    <mesh class="visual" name="E_Group_72_001" file="E_Group_72_001.obj"/>
+    <mesh class="visual" name="E_Group_8" file="E_Group_8.obj"/>
+    <mesh class="visual" name="E_Group_9" file="E_Group_9.obj"/>
+    <mesh class="visual" name="E_MMM4_2" file="E_MMM4_2.obj"/>
+    <mesh class="visual" name="E_MMM4_24" file="E_MMM4_24.obj"/>
+    <mesh class="visual" name="E_MMM4_25" file="E_MMM4_25.obj"/>
+    <mesh class="visual" name="E_MMM4_26" file="E_MMM4_26.obj"/>
+    <mesh class="visual" name="E_MMM4_27" file="E_MMM4_27.obj"/>
+    <mesh class="visual" name="E_MMM4_28" file="E_MMM4_28.obj"/>
+    <mesh class="visual" name="E_MMM4_33" file="E_MMM4_33.obj"/>
+    <mesh class="visual" name="E_MMMM1_5437978" file="E_MMMM1_5437978.obj"/>
+    <mesh class="visual" name="E_MM_5437446" file="E_MM_5437446.obj"/>
+    <mesh class="visual" name="E_MM_5437457" file="E_MM_5437457.obj"/>
+    <mesh class="visual" name="E_MM_5437468" file="E_MM_5437468.obj"/>
+    <mesh class="visual" name="E_MM_5438952" file="E_MM_5438952.obj"/>
+    <mesh class="visual" name="E_MM_5438958" file="E_MM_5438958.obj"/>
+    <mesh class="visual" name="E_MM_5438964" file="E_MM_5438964.obj"/>
+    <mesh class="visual" name="E_MM_5443479" file="E_MM_5443479.obj"/>
+    <mesh class="visual" name="E_MM_5443480" file="E_MM_5443480.obj"/>
+    <mesh class="visual" name="E_MM_5443482" file="E_MM_5443482.obj"/>
+    <mesh class="visual" name="E_MM_5443483" file="E_MM_5443483.obj"/>
+    <mesh class="visual" name="E_MM_5443485" file="E_MM_5443485.obj"/>
+    <mesh class="visual" name="E_MM_5443486" file="E_MM_5443486.obj"/>
+    <mesh class="visual" name="E_leaf_10_001" file="E_leaf_10_001.obj"/>
+    <mesh class="visual" name="E_leaf_10_002" file="E_leaf_10_002.obj"/>
+    <mesh class="visual" name="E_leaf_12_001" file="E_leaf_12_001.obj"/>
+    <mesh class="visual" name="E_leaf_12_002" file="E_leaf_12_002.obj"/>
+    <mesh class="visual" name="E_leaf_13_001" file="E_leaf_13_001.obj"/>
+    <mesh class="visual" name="E_leaf_13_002" file="E_leaf_13_002.obj"/>
+    <mesh class="visual" name="E_leaf_5_001" file="E_leaf_5_001.obj"/>
+    <mesh class="visual" name="E_leaf_5_002" file="E_leaf_5_002.obj"/>
+    <mesh class="visual" name="E_leaf_6_001" file="E_leaf_6_001.obj"/>
+    <mesh class="visual" name="E_leaf_6_002" file="E_leaf_6_002.obj"/>
+    <mesh class="visual" name="E_leaf_7_001" file="E_leaf_7_001.obj"/>
+    <mesh class="visual" name="E_leaf_7_002" file="E_leaf_7_002.obj"/>
+    <mesh class="visual" name="E_leaf_8_001" file="E_leaf_8_001.obj"/>
+    <mesh class="visual" name="E_leaf_8_002" file="E_leaf_8_002.obj"/>
+    <mesh class="visual" name="E_screen_2" file="E_screen_2.obj"/>
+    <mesh class="visual" name="P_10e5b21942d8d600" file="P_10e5b21942d8d600.obj"/>
+    <mesh class="visual" name="P_10e5b21942d8d600_001" file="P_10e5b21942d8d600_001.obj"/>
+    <mesh class="visual" name="P_10e5b21942d8d600_002" file="P_10e5b21942d8d600_002.obj"/>
+    <mesh class="visual" name="P_10e5b21942d8d600_003" file="P_10e5b21942d8d600_003.obj"/>
+    <mesh class="visual" name="P_10e5b21942d8d600_004" file="P_10e5b21942d8d600_004.obj"/>
+    <mesh class="visual" name="P_10e5b21942d8d600_005" file="P_10e5b21942d8d600_005.obj"/>
+    <mesh class="visual" name="P_135fc2c6a1d32168" file="P_135fc2c6a1d32168.obj"/>
+    <mesh class="visual" name="P_144999ee7b1070b5" file="P_144999ee7b1070b5.obj"/>
+    <mesh class="visual" name="P_163a991c602607c4" file="P_163a991c602607c4.obj"/>
+    <mesh class="visual" name="P_18622deb9da8510" file="P_18622deb9da8510.obj"/>
+    <mesh class="visual" name="P_18622deb9da8510_001" file="P_18622deb9da8510_001.obj"/>
+    <mesh class="visual" name="P_19115da72a1b469a" file="P_19115da72a1b469a.obj"/>
+    <mesh class="visual" name="P_19115da72a1b469a_001" file="P_19115da72a1b469a_001.obj"/>
+    <mesh class="visual" name="P_1a0d55c272520918" file="P_1a0d55c272520918.obj"/>
+    <mesh class="visual" name="P_1fe489598ee054ff" file="P_1fe489598ee054ff.obj"/>
+    <mesh class="visual" name="P_1fe489598ee054ff_001" file="P_1fe489598ee054ff_001.obj"/>
+    <mesh class="visual" name="P_1fe489598ee054ff_002" file="P_1fe489598ee054ff_002.obj"/>
+    <mesh class="visual" name="P_1fe489598ee054ff_003" file="P_1fe489598ee054ff_003.obj"/>
+    <mesh class="visual" name="P_1fe489598ee054ff_004" file="P_1fe489598ee054ff_004.obj"/>
+    <mesh class="visual" name="P_1fe489598ee054ff_005" file="P_1fe489598ee054ff_005.obj"/>
+    <mesh class="visual" name="P_1fe489598ee054ff_006" file="P_1fe489598ee054ff_006.obj"/>
+    <mesh class="visual" name="P_211eb969caa45a77" file="P_211eb969caa45a77.obj"/>
+    <mesh class="visual" name="P_22ca4aa1a7297878" file="P_22ca4aa1a7297878.obj"/>
+    <mesh class="visual" name="P_247f5f3dddd9da77" file="P_247f5f3dddd9da77.obj"/>
+    <mesh class="visual" name="P_2490f099689054ff" file="P_2490f099689054ff.obj"/>
+    <mesh class="visual" name="P_2490f099689054ff_001" file="P_2490f099689054ff_001.obj"/>
+    <mesh class="visual" name="P_2490f099689054ff_002" file="P_2490f099689054ff_002.obj"/>
+    <mesh class="visual" name="P_2490f099689054ff_003" file="P_2490f099689054ff_003.obj"/>
+    <mesh class="visual" name="P_2490f099689054ff_004" file="P_2490f099689054ff_004.obj"/>
+    <mesh class="visual" name="P_2490f099689054ff_005" file="P_2490f099689054ff_005.obj"/>
+    <mesh class="visual" name="P_2490f099689054ff_006" file="P_2490f099689054ff_006.obj"/>
+    <mesh class="visual" name="P_25327406216897d3" file="P_25327406216897d3.obj"/>
+    <mesh class="visual" name="P_28ce243e26a46677" file="P_28ce243e26a46677.obj"/>
+    <mesh class="visual" name="P_2c4049e439093895" file="P_2c4049e439093895.obj"/>
+    <mesh class="visual" name="P_2f13cd0097cfa7d7" file="P_2f13cd0097cfa7d7.obj"/>
+    <mesh class="visual" name="P_2f13cd0097cfa7d7_001" file="P_2f13cd0097cfa7d7_001.obj"/>
+    <mesh class="visual" name="P_2f13cd0097cfa7d7_002" file="P_2f13cd0097cfa7d7_002.obj"/>
+    <mesh class="visual" name="P_2f13cd0097cfa7d7_003" file="P_2f13cd0097cfa7d7_003.obj"/>
+    <mesh class="visual" name="P_2f13cd0097cfa7d7_004" file="P_2f13cd0097cfa7d7_004.obj"/>
+    <mesh class="visual" name="P_2f13cd0097cfa7d7_005" file="P_2f13cd0097cfa7d7_005.obj"/>
+    <mesh class="visual" name="P_2f13cd0097cfa7d7_006" file="P_2f13cd0097cfa7d7_006.obj"/>
+    <mesh class="visual" name="P_2f9dfb9a0ed67fcc" file="P_2f9dfb9a0ed67fcc.obj"/>
+    <mesh class="visual" name="P_3654aab318b8a8d8" file="P_3654aab318b8a8d8.obj"/>
+    <mesh class="visual" name="P_38db29e39645da77" file="P_38db29e39645da77.obj"/>
+    <mesh class="visual" name="P_3964f6e15682b910" file="P_3964f6e15682b910.obj"/>
+    <mesh class="visual" name="P_3b84301382da4ff7" file="P_3b84301382da4ff7.obj"/>
+    <mesh class="visual" name="P_3c45aa762b709ef3" file="P_3c45aa762b709ef3.obj"/>
+    <mesh class="visual" name="P_3d485577fa0afdc" file="P_3d485577fa0afdc.obj"/>
+    <mesh class="visual" name="P_3d485577fa0afdc_001" file="P_3d485577fa0afdc_001.obj"/>
+    <mesh class="visual" name="P_3d537f85773273f4" file="P_3d537f85773273f4.obj"/>
+    <mesh class="visual" name="P_3e2bbf1a08062dd1" file="P_3e2bbf1a08062dd1.obj"/>
+    <mesh class="visual" name="P_442f8b53ea253710" file="P_442f8b53ea253710.obj"/>
+    <mesh class="visual" name="P_4569830c281ce600" file="P_4569830c281ce600.obj"/>
+    <mesh class="visual" name="P_4569830c281ce600_001" file="P_4569830c281ce600_001.obj"/>
+    <mesh class="visual" name="P_4569830c281ce600_002" file="P_4569830c281ce600_002.obj"/>
+    <mesh class="visual" name="P_4569830c281ce600_003" file="P_4569830c281ce600_003.obj"/>
+    <mesh class="visual" name="P_4569830c281ce600_004" file="P_4569830c281ce600_004.obj"/>
+    <mesh class="visual" name="P_4569830c281ce600_005" file="P_4569830c281ce600_005.obj"/>
+    <mesh class="visual" name="P_46dfaf272c4cdd69" file="P_46dfaf272c4cdd69.obj"/>
+    <mesh class="visual" name="P_47abdb57ac2f769a" file="P_47abdb57ac2f769a.obj"/>
+    <mesh class="visual" name="P_48b6c6eb959fafdc" file="P_48b6c6eb959fafdc.obj"/>
+    <mesh class="visual" name="P_48b6c6eb959fafdc_001" file="P_48b6c6eb959fafdc_001.obj"/>
+    <mesh class="visual" name="P_48fc76713ee054ff" file="P_48fc76713ee054ff.obj"/>
+    <mesh class="visual" name="P_48fc76713ee054ff_001" file="P_48fc76713ee054ff_001.obj"/>
+    <mesh class="visual" name="P_48fc76713ee054ff_002" file="P_48fc76713ee054ff_002.obj"/>
+    <mesh class="visual" name="P_48fc76713ee054ff_003" file="P_48fc76713ee054ff_003.obj"/>
+    <mesh class="visual" name="P_48fc76713ee054ff_004" file="P_48fc76713ee054ff_004.obj"/>
+    <mesh class="visual" name="P_48fc76713ee054ff_005" file="P_48fc76713ee054ff_005.obj"/>
+    <mesh class="visual" name="P_48fc76713ee054ff_006" file="P_48fc76713ee054ff_006.obj"/>
+    <mesh class="visual" name="P_4d5f0e56e59aa68d" file="P_4d5f0e56e59aa68d.obj"/>
+    <mesh class="visual" name="P_4d5f0e56e59aa68d_001" file="P_4d5f0e56e59aa68d_001.obj"/>
+    <mesh class="visual" name="P_4d5f0e56e59aa68d_002" file="P_4d5f0e56e59aa68d_002.obj"/>
+    <mesh class="visual" name="P_4fa634369a278918" file="P_4fa634369a278918.obj"/>
+    <mesh class="visual" name="P_51a99156b4f21411" file="P_51a99156b4f21411.obj"/>
+    <mesh class="visual" name="P_52408e7d54c9d625" file="P_52408e7d54c9d625.obj"/>
+    <mesh class="visual" name="P_5a73e85295125ce0" file="P_5a73e85295125ce0.obj"/>
+    <mesh class="visual" name="P_5cd95e6be50354ff" file="P_5cd95e6be50354ff.obj"/>
+    <mesh class="visual" name="P_5cd95e6be50354ff_001" file="P_5cd95e6be50354ff_001.obj"/>
+    <mesh class="visual" name="P_5cd95e6be50354ff_002" file="P_5cd95e6be50354ff_002.obj"/>
+    <mesh class="visual" name="P_5cd95e6be50354ff_003" file="P_5cd95e6be50354ff_003.obj"/>
+    <mesh class="visual" name="P_5cd95e6be50354ff_004" file="P_5cd95e6be50354ff_004.obj"/>
+    <mesh class="visual" name="P_5cd95e6be50354ff_005" file="P_5cd95e6be50354ff_005.obj"/>
+    <mesh class="visual" name="P_5cd95e6be50354ff_006" file="P_5cd95e6be50354ff_006.obj"/>
+    <mesh class="visual" name="P_5cfc9b28f2729871" file="P_5cfc9b28f2729871.obj"/>
+    <mesh class="visual" name="P_5f4f22aaa83f4d97" file="P_5f4f22aaa83f4d97.obj"/>
+    <mesh class="visual" name="P_5f4f22aaa83f4d97_001" file="P_5f4f22aaa83f4d97_001.obj"/>
+    <mesh class="visual" name="P_609c1fe09588769a" file="P_609c1fe09588769a.obj"/>
+    <mesh class="visual" name="P_619f3ea4d10c148a" file="P_619f3ea4d10c148a.obj"/>
+    <mesh class="visual" name="P_65ceaf2f04bd8918" file="P_65ceaf2f04bd8918.obj"/>
+    <mesh class="visual" name="P_66f824960417cf4a" file="P_66f824960417cf4a.obj"/>
+    <mesh class="visual" name="P_6aaa45541a96ba10" file="P_6aaa45541a96ba10.obj"/>
+    <mesh class="visual" name="P_6aaa45541a96ba10_001" file="P_6aaa45541a96ba10_001.obj"/>
+    <mesh class="visual" name="P_6aaa45541a96ba10_002" file="P_6aaa45541a96ba10_002.obj"/>
+    <mesh class="visual" name="P_6afc4ffb579c94ff" file="P_6afc4ffb579c94ff.obj"/>
+    <mesh class="visual" name="P_6afc4ffb579c94ff_001" file="P_6afc4ffb579c94ff_001.obj"/>
+    <mesh class="visual" name="P_6afc4ffb579c94ff_002" file="P_6afc4ffb579c94ff_002.obj"/>
+    <mesh class="visual" name="P_6afc4ffb579c94ff_003" file="P_6afc4ffb579c94ff_003.obj"/>
+    <mesh class="visual" name="P_6afc4ffb579c94ff_004" file="P_6afc4ffb579c94ff_004.obj"/>
+    <mesh class="visual" name="P_6afc4ffb579c94ff_005" file="P_6afc4ffb579c94ff_005.obj"/>
+    <mesh class="visual" name="P_6afc4ffb579c94ff_006" file="P_6afc4ffb579c94ff_006.obj"/>
+    <mesh class="visual" name="P_6d6f095d1fd77001" file="P_6d6f095d1fd77001.obj"/>
+    <mesh class="visual" name="P_6df3acda262ecfd3" file="P_6df3acda262ecfd3.obj"/>
+    <mesh class="visual" name="P_6f0c68c400928510" file="P_6f0c68c400928510.obj"/>
+    <mesh class="visual" name="P_6f39479f81f2e1a0" file="P_6f39479f81f2e1a0.obj"/>
+    <mesh class="visual" name="P_6f6c17c41ed6adb4" file="P_6f6c17c41ed6adb4.obj"/>
+    <mesh class="visual" name="P_6f917447d21c54ff" file="P_6f917447d21c54ff.obj"/>
+    <mesh class="visual" name="P_6f917447d21c54ff_001" file="P_6f917447d21c54ff_001.obj"/>
+    <mesh class="visual" name="P_6f917447d21c54ff_002" file="P_6f917447d21c54ff_002.obj"/>
+    <mesh class="visual" name="P_6f917447d21c54ff_003" file="P_6f917447d21c54ff_003.obj"/>
+    <mesh class="visual" name="P_6f917447d21c54ff_004" file="P_6f917447d21c54ff_004.obj"/>
+    <mesh class="visual" name="P_6f917447d21c54ff_005" file="P_6f917447d21c54ff_005.obj"/>
+    <mesh class="visual" name="P_6f917447d21c54ff_006" file="P_6f917447d21c54ff_006.obj"/>
+    <mesh class="visual" name="P_6f92f537ea4e368d" file="P_6f92f537ea4e368d.obj"/>
+    <mesh class="visual" name="P_6f92f537ea4e368d_001" file="P_6f92f537ea4e368d_001.obj"/>
+    <mesh class="visual" name="P_6f92f537ea4e368d_002" file="P_6f92f537ea4e368d_002.obj"/>
+    <mesh class="visual" name="P_71ae495621fb2560" file="P_71ae495621fb2560.obj"/>
+    <mesh class="visual" name="P_736b1cbae573a8ff" file="P_736b1cbae573a8ff.obj"/>
+    <mesh class="visual" name="P_736b1cbae573a8ff_001" file="P_736b1cbae573a8ff_001.obj"/>
+    <mesh class="visual" name="P_736b1cbae573a8ff_002" file="P_736b1cbae573a8ff_002.obj"/>
+    <mesh class="visual" name="P_736b1cbae573a8ff_003" file="P_736b1cbae573a8ff_003.obj"/>
+    <mesh class="visual" name="P_736b1cbae573a8ff_004" file="P_736b1cbae573a8ff_004.obj"/>
+    <mesh class="visual" name="P_736b1cbae573a8ff_005" file="P_736b1cbae573a8ff_005.obj"/>
+    <mesh class="visual" name="P_736b1cbae573a8ff_006" file="P_736b1cbae573a8ff_006.obj"/>
+    <mesh class="visual" name="P_73ca5865d961da77" file="P_73ca5865d961da77.obj"/>
+    <mesh class="visual" name="P_7575919afe37e31a" file="P_7575919afe37e31a.obj"/>
+    <mesh class="visual" name="P_763cffc187a493f4" file="P_763cffc187a493f4.obj"/>
+    <mesh class="visual" name="P_78a9614756a5cdc1" file="P_78a9614756a5cdc1.obj"/>
+    <mesh class="visual" name="P_796cd31dff3b6cb9" file="P_796cd31dff3b6cb9.obj"/>
+    <mesh class="visual" name="P_79ed1916a2d46b7e" file="P_79ed1916a2d46b7e.obj"/>
+    <mesh class="visual" name="P_7d1a97792dcae34d" file="P_7d1a97792dcae34d.obj"/>
+    <mesh class="visual" name="P_8288a5934058e439" file="P_8288a5934058e439.obj"/>
+    <mesh class="visual" name="P_830d66f620b1cb8d" file="P_830d66f620b1cb8d.obj"/>
+    <mesh class="visual" name="P_830d66f620b1cb8d_001" file="P_830d66f620b1cb8d_001.obj"/>
+    <mesh class="visual" name="P_830d66f620b1cb8d_002" file="P_830d66f620b1cb8d_002.obj"/>
+    <mesh class="visual" name="P_84ed12fe070f3c30" file="P_84ed12fe070f3c30.obj"/>
+    <mesh class="visual" name="P_84fe085578e2454" file="P_84fe085578e2454.obj"/>
+    <mesh class="visual" name="P_86425c34153b029a" file="P_86425c34153b029a.obj"/>
+    <mesh class="visual" name="P_86425c34153b029a_001" file="P_86425c34153b029a_001.obj"/>
+    <mesh class="visual" name="P_874846a2e7a17dd7" file="P_874846a2e7a17dd7.obj"/>
+    <mesh class="visual" name="P_874846a2e7a17dd7_001" file="P_874846a2e7a17dd7_001.obj"/>
+    <mesh class="visual" name="P_874846a2e7a17dd7_002" file="P_874846a2e7a17dd7_002.obj"/>
+    <mesh class="visual" name="P_874846a2e7a17dd7_003" file="P_874846a2e7a17dd7_003.obj"/>
+    <mesh class="visual" name="P_874846a2e7a17dd7_004" file="P_874846a2e7a17dd7_004.obj"/>
+    <mesh class="visual" name="P_874846a2e7a17dd7_005" file="P_874846a2e7a17dd7_005.obj"/>
+    <mesh class="visual" name="P_874846a2e7a17dd7_006" file="P_874846a2e7a17dd7_006.obj"/>
+    <mesh class="visual" name="P_8796a5cd4476bd29" file="P_8796a5cd4476bd29.obj"/>
+    <mesh class="visual" name="P_88cfc0efa3afe61f" file="P_88cfc0efa3afe61f.obj"/>
+    <mesh class="visual" name="P_88cfc0efa3afe61f_001" file="P_88cfc0efa3afe61f_001.obj"/>
+    <mesh class="visual" name="P_8904cecb0f6aba10" file="P_8904cecb0f6aba10.obj"/>
+    <mesh class="visual" name="P_8904cecb0f6aba10_001" file="P_8904cecb0f6aba10_001.obj"/>
+    <mesh class="visual" name="P_8904cecb0f6aba10_002" file="P_8904cecb0f6aba10_002.obj"/>
+    <mesh class="visual" name="P_8b106da0e9002dd7" file="P_8b106da0e9002dd7.obj"/>
+    <mesh class="visual" name="P_8b106da0e9002dd7_001" file="P_8b106da0e9002dd7_001.obj"/>
+    <mesh class="visual" name="P_8b106da0e9002dd7_002" file="P_8b106da0e9002dd7_002.obj"/>
+    <mesh class="visual" name="P_8b106da0e9002dd7_003" file="P_8b106da0e9002dd7_003.obj"/>
+    <mesh class="visual" name="P_8b106da0e9002dd7_004" file="P_8b106da0e9002dd7_004.obj"/>
+    <mesh class="visual" name="P_8b106da0e9002dd7_005" file="P_8b106da0e9002dd7_005.obj"/>
+    <mesh class="visual" name="P_8b106da0e9002dd7_006" file="P_8b106da0e9002dd7_006.obj"/>
+    <mesh class="visual" name="P_8c6c34a7a49c13f4" file="P_8c6c34a7a49c13f4.obj"/>
+    <mesh class="visual" name="P_8e00f4d961f4e86f" file="P_8e00f4d961f4e86f.obj"/>
+    <mesh class="visual" name="P_8f529831e3bebfc6" file="P_8f529831e3bebfc6.obj"/>
+    <mesh class="visual" name="P_9067f6b03f0faf3b" file="P_9067f6b03f0faf3b.obj"/>
+    <mesh class="visual" name="P_9126ac7ee6cfd4ff" file="P_9126ac7ee6cfd4ff.obj"/>
+    <mesh class="visual" name="P_9126ac7ee6cfd4ff_001" file="P_9126ac7ee6cfd4ff_001.obj"/>
+    <mesh class="visual" name="P_9126ac7ee6cfd4ff_002" file="P_9126ac7ee6cfd4ff_002.obj"/>
+    <mesh class="visual" name="P_9126ac7ee6cfd4ff_003" file="P_9126ac7ee6cfd4ff_003.obj"/>
+    <mesh class="visual" name="P_9126ac7ee6cfd4ff_004" file="P_9126ac7ee6cfd4ff_004.obj"/>
+    <mesh class="visual" name="P_9126ac7ee6cfd4ff_005" file="P_9126ac7ee6cfd4ff_005.obj"/>
+    <mesh class="visual" name="P_9126ac7ee6cfd4ff_006" file="P_9126ac7ee6cfd4ff_006.obj"/>
+    <mesh class="visual" name="P_91a567fba239259a" file="P_91a567fba239259a.obj"/>
+    <mesh class="visual" name="P_9290448b9fdaf510" file="P_9290448b9fdaf510.obj"/>
+    <mesh class="visual" name="P_929def6f7e60369a" file="P_929def6f7e60369a.obj"/>
+    <mesh class="visual" name="P_95ee02e6460ab021" file="P_95ee02e6460ab021.obj"/>
+    <mesh class="visual" name="P_99470453f0db268d" file="P_99470453f0db268d.obj"/>
+    <mesh class="visual" name="P_99470453f0db268d_001" file="P_99470453f0db268d_001.obj"/>
+    <mesh class="visual" name="P_99470453f0db268d_002" file="P_99470453f0db268d_002.obj"/>
+    <mesh class="visual" name="P_9a0f4de813d6d18a" file="P_9a0f4de813d6d18a.obj"/>
+    <mesh class="visual" name="P_9a57d10944070c94" file="P_9a57d10944070c94.obj"/>
+    <mesh class="visual" name="P_9a6e2412769062d2" file="P_9a6e2412769062d2.obj"/>
+    <mesh class="visual" name="P_9d9b6060904f0f5a" file="P_9d9b6060904f0f5a.obj"/>
+    <mesh class="visual" name="P_9dc327eb9d50769a" file="P_9dc327eb9d50769a.obj"/>
+    <mesh class="visual" name="P_9fd68635f033637e" file="P_9fd68635f033637e.obj"/>
+    <mesh class="visual" name="P_a18a818861cef410" file="P_a18a818861cef410.obj"/>
+    <mesh class="visual" name="P_a18a818861cef410_001" file="P_a18a818861cef410_001.obj"/>
+    <mesh class="visual" name="P_a18a818861cef410_002" file="P_a18a818861cef410_002.obj"/>
+    <mesh class="visual" name="P_a35aeec99ef293f4" file="P_a35aeec99ef293f4.obj"/>
+    <mesh class="visual" name="P_a3cbb2d9954c1871" file="P_a3cbb2d9954c1871.obj"/>
+    <mesh class="visual" name="P_a3e60165072b37d3" file="P_a3e60165072b37d3.obj"/>
+    <mesh class="visual" name="P_a458760f39c713f4" file="P_a458760f39c713f4.obj"/>
+    <mesh class="visual" name="P_a5eaf3e4dcdda454" file="P_a5eaf3e4dcdda454.obj"/>
+    <mesh class="visual" name="P_a81b7de7605d1310" file="P_a81b7de7605d1310.obj"/>
+    <mesh class="visual" name="P_aa469314d5512026" file="P_aa469314d5512026.obj"/>
+    <mesh class="visual" name="P_aee59aa2d3d7884a" file="P_aee59aa2d3d7884a.obj"/>
+    <mesh class="visual" name="P_af2d2850acf983f4" file="P_af2d2850acf983f4.obj"/>
+    <mesh class="visual" name="P_b0248d2df51ea68d" file="P_b0248d2df51ea68d.obj"/>
+    <mesh class="visual" name="P_b0248d2df51ea68d_001" file="P_b0248d2df51ea68d_001.obj"/>
+    <mesh class="visual" name="P_b0248d2df51ea68d_002" file="P_b0248d2df51ea68d_002.obj"/>
+    <mesh class="visual" name="P_b22a2bdc85c5211d" file="P_b22a2bdc85c5211d.obj"/>
+    <mesh class="visual" name="P_b9b245152d268918" file="P_b9b245152d268918.obj"/>
+    <mesh class="visual" name="P_b9c5fc554894454" file="P_b9c5fc554894454.obj"/>
+    <mesh class="visual" name="P_bb8bd97fce74c717" file="P_bb8bd97fce74c717.obj"/>
+    <mesh class="visual" name="P_be43c47b4576350a" file="P_be43c47b4576350a.obj"/>
+    <mesh class="visual" name="P_be5f3c5b45e454ff" file="P_be5f3c5b45e454ff.obj"/>
+    <mesh class="visual" name="P_be5f3c5b45e454ff_001" file="P_be5f3c5b45e454ff_001.obj"/>
+    <mesh class="visual" name="P_be5f3c5b45e454ff_002" file="P_be5f3c5b45e454ff_002.obj"/>
+    <mesh class="visual" name="P_be5f3c5b45e454ff_003" file="P_be5f3c5b45e454ff_003.obj"/>
+    <mesh class="visual" name="P_be5f3c5b45e454ff_004" file="P_be5f3c5b45e454ff_004.obj"/>
+    <mesh class="visual" name="P_be5f3c5b45e454ff_005" file="P_be5f3c5b45e454ff_005.obj"/>
+    <mesh class="visual" name="P_be5f3c5b45e454ff_006" file="P_be5f3c5b45e454ff_006.obj"/>
+    <mesh class="visual" name="P_be6e55d1f2089480" file="P_be6e55d1f2089480.obj"/>
+    <mesh class="visual" name="P_bea0134ecb8f615b" file="P_bea0134ecb8f615b.obj"/>
+    <mesh class="visual" name="P_bf71ade5a931f001" file="P_bf71ade5a931f001.obj"/>
+    <mesh class="visual" name="P_c20c1b29052bafdc" file="P_c20c1b29052bafdc.obj"/>
+    <mesh class="visual" name="P_c20c1b29052bafdc_001" file="P_c20c1b29052bafdc_001.obj"/>
+    <mesh class="visual" name="P_c27c6bd11a12bec8" file="P_c27c6bd11a12bec8.obj"/>
+    <mesh class="visual" name="P_c2b69ce109f96d80" file="P_c2b69ce109f96d80.obj"/>
+    <mesh class="visual" name="P_c32de6d8ead9da0" file="P_c32de6d8ead9da0.obj"/>
+    <mesh class="visual" name="P_c370c26d7b0ebd29" file="P_c370c26d7b0ebd29.obj"/>
+    <mesh class="visual" name="P_c3d3efb4027717d3" file="P_c3d3efb4027717d3.obj"/>
+    <mesh class="visual" name="P_c48c2798f53497d3" file="P_c48c2798f53497d3.obj"/>
+    <mesh class="visual" name="P_c5b32a68e3db7910" file="P_c5b32a68e3db7910.obj"/>
+    <mesh class="visual" name="P_c8955babe0d15600" file="P_c8955babe0d15600.obj"/>
+    <mesh class="visual" name="P_c8955babe0d15600_001" file="P_c8955babe0d15600_001.obj"/>
+    <mesh class="visual" name="P_c8955babe0d15600_002" file="P_c8955babe0d15600_002.obj"/>
+    <mesh class="visual" name="P_c8955babe0d15600_003" file="P_c8955babe0d15600_003.obj"/>
+    <mesh class="visual" name="P_c8955babe0d15600_004" file="P_c8955babe0d15600_004.obj"/>
+    <mesh class="visual" name="P_c8955babe0d15600_005" file="P_c8955babe0d15600_005.obj"/>
+    <mesh class="visual" name="P_c9db59f01d4cba77" file="P_c9db59f01d4cba77.obj"/>
+    <mesh class="visual" name="P_cb05c163e9ffc200" file="P_cb05c163e9ffc200.obj"/>
+    <mesh class="visual" name="P_cb05c163e9ffc200_001" file="P_cb05c163e9ffc200_001.obj"/>
+    <mesh class="visual" name="P_cb05c163e9ffc200_002" file="P_cb05c163e9ffc200_002.obj"/>
+    <mesh class="visual" name="P_cb05c163e9ffc200_003" file="P_cb05c163e9ffc200_003.obj"/>
+    <mesh class="visual" name="P_cb05c163e9ffc200_004" file="P_cb05c163e9ffc200_004.obj"/>
+    <mesh class="visual" name="P_cb05c163e9ffc200_005" file="P_cb05c163e9ffc200_005.obj"/>
+    <mesh class="visual" name="P_cc1c78a1f87a8510" file="P_cc1c78a1f87a8510.obj"/>
+    <mesh class="visual" name="P_ccd7a62236a2d08d" file="P_ccd7a62236a2d08d.obj"/>
+    <mesh class="visual" name="P_cd7d5166b46d1a77" file="P_cd7d5166b46d1a77.obj"/>
+    <mesh class="visual" name="P_cf9676225ec940fe" file="P_cf9676225ec940fe.obj"/>
+    <mesh class="visual" name="P_d01073da8e447001" file="P_d01073da8e447001.obj"/>
+    <mesh class="visual" name="P_d46bd8447eb297b4" file="P_d46bd8447eb297b4.obj"/>
+    <mesh class="visual" name="P_d5f61d5f565413f4" file="P_d5f61d5f565413f4.obj"/>
+    <mesh class="visual" name="P_d704713c125e015b" file="P_d704713c125e015b.obj"/>
+    <mesh class="visual" name="P_d9a0243d0841d48e" file="P_d9a0243d0841d48e.obj"/>
+    <mesh class="visual" name="P_d9ae2ed2fe32b600" file="P_d9ae2ed2fe32b600.obj"/>
+    <mesh class="visual" name="P_d9ae2ed2fe32b600_001" file="P_d9ae2ed2fe32b600_001.obj"/>
+    <mesh class="visual" name="P_d9ae2ed2fe32b600_002" file="P_d9ae2ed2fe32b600_002.obj"/>
+    <mesh class="visual" name="P_d9ae2ed2fe32b600_003" file="P_d9ae2ed2fe32b600_003.obj"/>
+    <mesh class="visual" name="P_d9ae2ed2fe32b600_004" file="P_d9ae2ed2fe32b600_004.obj"/>
+    <mesh class="visual" name="P_d9ae2ed2fe32b600_005" file="P_d9ae2ed2fe32b600_005.obj"/>
+    <mesh class="visual" name="P_dd8858c1522ca4ff" file="P_dd8858c1522ca4ff.obj"/>
+    <mesh class="visual" name="P_dd8858c1522ca4ff_001" file="P_dd8858c1522ca4ff_001.obj"/>
+    <mesh class="visual" name="P_dd8858c1522ca4ff_002" file="P_dd8858c1522ca4ff_002.obj"/>
+    <mesh class="visual" name="P_dd8858c1522ca4ff_003" file="P_dd8858c1522ca4ff_003.obj"/>
+    <mesh class="visual" name="P_dd8858c1522ca4ff_004" file="P_dd8858c1522ca4ff_004.obj"/>
+    <mesh class="visual" name="P_dd8858c1522ca4ff_005" file="P_dd8858c1522ca4ff_005.obj"/>
+    <mesh class="visual" name="P_dd8858c1522ca4ff_006" file="P_dd8858c1522ca4ff_006.obj"/>
+    <mesh class="visual" name="P_e0cc270bd313cf5f" file="P_e0cc270bd313cf5f.obj"/>
+    <mesh class="visual" name="P_e26bd4c9aff02dd7" file="P_e26bd4c9aff02dd7.obj"/>
+    <mesh class="visual" name="P_e26bd4c9aff02dd7_001" file="P_e26bd4c9aff02dd7_001.obj"/>
+    <mesh class="visual" name="P_e26bd4c9aff02dd7_002" file="P_e26bd4c9aff02dd7_002.obj"/>
+    <mesh class="visual" name="P_e26bd4c9aff02dd7_003" file="P_e26bd4c9aff02dd7_003.obj"/>
+    <mesh class="visual" name="P_e26bd4c9aff02dd7_004" file="P_e26bd4c9aff02dd7_004.obj"/>
+    <mesh class="visual" name="P_e26bd4c9aff02dd7_005" file="P_e26bd4c9aff02dd7_005.obj"/>
+    <mesh class="visual" name="P_e26bd4c9aff02dd7_006" file="P_e26bd4c9aff02dd7_006.obj"/>
+    <mesh class="visual" name="P_e419692093f6892" file="P_e419692093f6892.obj"/>
+    <mesh class="visual" name="P_e71b95777e3fda10" file="P_e71b95777e3fda10.obj"/>
+    <mesh class="visual" name="P_e71b95777e3fda10_001" file="P_e71b95777e3fda10_001.obj"/>
+    <mesh class="visual" name="P_ec2605adfa841f5d" file="P_ec2605adfa841f5d.obj"/>
+    <mesh class="visual" name="P_ec2605adfa841f5d_01" file="P_ec2605adfa841f5d_01.obj"/>
+    <mesh class="visual" name="P_ec2605adfa841f5d_02" file="P_ec2605adfa841f5d_02.obj"/>
+    <mesh class="visual" name="P_ec2605adfa841f5d_03" file="P_ec2605adfa841f5d_03.obj"/>
+    <mesh class="visual" name="P_ec2605adfa841f5f" file="P_ec2605adfa841f5f.obj"/>
+    <mesh class="visual" name="P_ef2ae3813c71ffcc" file="P_ef2ae3813c71ffcc.obj"/>
+    <mesh class="visual" name="P_f18a2c6edec36144" file="P_f18a2c6edec36144.obj"/>
+    <mesh class="visual" name="P_f18a2c6edec36144_001" file="P_f18a2c6edec36144_001.obj"/>
+    <mesh class="visual" name="P_f1cc6e853e55b61f" file="P_f1cc6e853e55b61f.obj"/>
+    <mesh class="visual" name="P_f1cc6e853e55b61f_001" file="P_f1cc6e853e55b61f_001.obj"/>
+    <mesh class="visual" name="P_f3cfc54dcd882264" file="P_f3cfc54dcd882264.obj"/>
+    <mesh class="visual" name="P_f6e806475c8d87f4" file="P_f6e806475c8d87f4.obj"/>
+    <mesh class="visual" name="P_f75a5d3c6f41a454" file="P_f75a5d3c6f41a454.obj"/>
+    <mesh class="visual" name="P_f9b4694eeef3f6b4" file="P_f9b4694eeef3f6b4.obj"/>
+    <mesh class="visual" name="P_fe3c77ebaeb4448e" file="P_fe3c77ebaeb4448e.obj"/>
+
+    <!-- Collision meshes -->
+    <mesh class="collision" name="C_P_LPad_0" file="C_P_LPad_0.stl"/>
+    <mesh class="collision" name="C_P_Pad_0" file="C_P_Pad_0.stl"/>
+    <mesh class="collision" name="C_P_Pillow_0" file="C_P_Pillow_0.stl"/>
+    <mesh class="collision" name="C_Fla_0_001" file="C_Fla_0_001.stl"/>
+    <mesh class="collision" name="C_Fla_0_002" file="C_Fla_0_002.stl"/>
+    <mesh class="collision" name="C_Fla_0_003" file="C_Fla_0_003.stl"/>
+    <mesh class="collision" name="C_Fla_0_004" file="C_Fla_0_004.stl"/>
+    <mesh class="collision" name="C_Fla_0_005" file="C_Fla_0_005.stl"/>
+    <mesh class="collision" name="C_Fla_1_001" file="C_Fla_1_001.stl"/>
+    <mesh class="collision" name="C_Fla_1_002" file="C_Fla_1_002.stl"/>
+    <mesh class="collision" name="C_Fla_1_003" file="C_Fla_1_003.stl"/>
+    <mesh class="collision" name="C_Fla_2_002" file="C_Fla_2_002.stl"/>
+    <mesh class="collision" name="C_Fla_3_001" file="C_Fla_3_001.stl"/>
+  </asset>
+
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+      <default class="collision">
+        <geom type="mesh" rgba="1 1 1 1" group="3" contype="1" conaffinity="1"/>
+          <default class="C_P_LPad_0">
+            <geom type="mesh" rgba="1 1 1 1" mesh="C_P_LPad_0" quat="1.0 0.0 0.0 0.0" pos="0.0 0.0 0.0" density="1000.0"/>
+          </default>
+          <default class="C_P_Pad_0">
+            <geom type="mesh" rgba="1 1 1 1" mesh="C_P_Pad_0" quat="1.0 0.0 0.0 0.0" pos="0.0 0.0 0.0" density="1000.0"/>
+          </default>
+          <default class="C_P_Pillow_0">
+            <geom type="mesh" rgba="1 1 1 1" mesh="C_P_Pillow_0" quat="1.0 0.0 0.0 0.0" pos="0.0 0.0 0.0" density="1000.0"/>
+          </default>
+          <default class="C_P_WLDesk_0_001">
+            <geom type="box" rgba="1 1 1 1" size="0.3756999373435974 0.6884498596191406 0.06440003216266632" quat="1.0 0.0 0.0 0.0" pos="0.00040475279092788696 0.0013518333435058594 0.058293551206588745" density="1000.0"/>
+          </default>
+          <default class="C_P_WLDesk_0_002">
+            <geom type="box" rgba="1 1 1 1" size="0.03084995225071907 0.02914983220398426 0.18559996783733368" quat="1.0 0.0 0.0 0.0" pos="-0.34444522857666016 0.6606518626213074 -0.19170644879341125" density="1000.0"/>
+          </default>
+          <default class="C_P_WLDesk_0_003">
+            <geom type="box" rgba="1 1 1 1" size="0.03084995225071907 0.02914983220398426 0.18559996783733368" quat="1.0 0.0 0.0 0.0" pos="-0.34444525837898254 -0.6579481959342957 -0.19170638918876648" density="1000.0"/>
+          </default>
+          <default class="C_P_WLDesk_0_004">
+            <geom type="box" rgba="1 1 1 1" size="0.03084995225071907 0.02914983220398426 0.18559996783733368" quat="1.0 0.0 0.0 0.0" pos="0.34525471925735474 -0.6579481959342957 -0.19170644879341125" density="1000.0"/>
+          </default>
+          <default class="C_P_WLDesk_0_005">
+            <geom type="box" rgba="1 1 1 1" size="0.03084995225071907 0.02914983220398426 0.18559996783733368" quat="1.0 0.0 0.0 0.0" pos="0.34525471925735474 0.6606518626213074 -0.19170644879341125" density="1000.0"/>
+          </default>
+          <default class="C_P_WLDesk_0_006">
+            <geom type="box" rgba="1 1 1 1" size="0.030689487233757973 0.6297999620437622 0.015800056979060173" quat="1.0 0.0 0.0 0.0" pos="-0.3442847728729248 0.0010014921426773071 -0.3282063603401184" density="1000.0"/>
+          </default>
+          <default class="C_P_WLDesk_0_007">
+            <geom type="box" rgba="1 1 1 1" size="0.030689487233757973 0.6297999620437622 0.015800056979060173" quat="1.0 0.0 0.0 0.0" pos="0.3454152047634125 0.0013517141342163086 -0.32820647954940796" density="1000.0"/>
+          </default>
+          <default class="C_P_WLDesk_0_008">
+            <geom type="box" rgba="1 1 1 1" size="0.3139999806880951 0.029500076547265053 0.015800176188349724" quat="1.0 0.0 0.0 0.0" pos="0.00040472298860549927 -0.6575979590415955 -0.3282065987586975" density="1000.0"/>
+          </default>
+          <default class="C_P_WLDesk_0_009">
+            <geom type="box" rgba="1 1 1 1" size="0.3139999806880951 0.029500076547265053 0.015800176188349724" quat="1.0 0.0 0.0 0.0" pos="0.00040472298860549927 0.6603015065193176 -0.3282065987586975" density="1000.0"/>
+          </default>
+          <default class="C_P_WLSofa_0_001">
+            <geom type="box" rgba="1 1 1 1" size="1.0010783672332764 0.31511908769607544 0.051996149122714996" quat="1.0 0.0 0.0 0.0" pos="0.00045090634375810623 0.07692072540521622 -0.17929238080978394" density="1000.0"/>
+          </default>
+          <default class="C_P_WLSofa_0_002">
+            <geom type="box" rgba="1 1 1 1" size="0.034979939460754395 0.03787912428379059 0.1498401165008545" quat="1.0 0.0 0.0 0.0" pos="-0.965630829334259 0.3541572690010071 -0.38112860918045044" density="1000.0"/>
+          </default>
+          <default class="C_P_WLSofa_0_003">
+            <geom type="box" rgba="1 1 1 1" size="0.034979939460754395 0.0361320897936821 0.1498401165008545" quat="1.0 0.0 0.0 0.0" pos="-0.9656475782394409 -0.2020663172006607 -0.3811286985874176" density="1000.0"/>
+          </default>
+          <default class="C_P_WLSofa_0_004">
+            <geom type="box" rgba="1 1 1 1" size="0.03498467803001404 0.0361320897936821 0.1498401165008545" quat="1.0 0.0 0.0 0.0" pos="0.966544508934021 -0.2020663321018219 -0.3811286687850952" density="1000.0"/>
+          </default>
+          <default class="C_P_WLSofa_0_005">
+            <geom type="box" rgba="1 1 1 1" size="0.03498467803001404 0.03787912428379059 0.1498401165008545" quat="1.0 0.0 0.0 0.0" pos="0.9665446281433105 0.35416072607040405 -0.3811286389827728" density="1000.0"/>
+          </default>
+          <default class="C_P_WLSofa_0_006">
+            <geom type="box" rgba="1 1 1 1" size="0.034979939460754395 0.24090510606765747 0.013249990530312061" quat="1.0 0.0 0.0 0.0" pos="-0.9656475186347961 0.07537355273962021 -0.48981866240501404" density="1000.0"/>
+          </default>
+          <default class="C_P_WLSofa_0_007">
+            <geom type="box" rgba="1 1 1 1" size="0.03498467803001404 0.24090510606765747 0.013249990530312061" quat="1.0 0.0 0.0 0.0" pos="0.9665446281433105 0.07537365704774857 -0.4898186922073364" density="1000.0"/>
+          </default>
+          <default class="C_P_WLSofa_0_008">
+            <geom type="box" rgba="1 1 1 1" size="0.931045651435852 0.036333583295345306 0.013249990530312061" quat="1.0 0.0 0.0 0.0" pos="0.00039600953459739685 -0.20186492800712585 -0.4898187220096588" density="1000.0"/>
+          </default>
+          <default class="C_P_WLSofa_0_009">
+            <geom type="box" rgba="1 1 1 1" size="0.931045651435852 0.038080617785453796 0.013249990530312061" quat="1.0 0.0 0.0 0.0" pos="0.00039586564525961876 0.35425901412963867 -0.48981866240501404" density="1000.0"/>
+          </default>
+          <default class="C_P_WLSofa_0_010">
+            <geom type="box" rgba="1 1 1 1" size="0.022649943828582764 0.2623003423213959 0.14461377263069153" quat="1.0 0.0 0.0 0.0" pos="-0.9569531679153442 0.09123930335044861 0.01731756329536438" density="1000.0"/>
+          </default>
+          <default class="C_P_WLSofa_0_011">
+            <geom type="box" rgba="1 1 1 1" size="0.022649943828582764 0.2623003423213959 0.14461377263069153" quat="1.0 0.0 0.0 0.0" pos="0.9521567821502686 0.09123941510915756 0.01731756329536438" density="1000.0"/>
+          </default>
+          <default class="C_P_WLSofa_0_012">
+            <geom type="box" rgba="1 1 1 1" size="0.13344231247901917 0.022804269567131996 0.14461377263069153" quat="1.0 0.0 0.0 0.0" pos="0.8413646221160889 -0.19386526942253113 0.017317533493041992" density="1000.0"/>
+          </default>
+          <default class="C_P_WLSofa_0_013">
+            <geom type="box" rgba="1 1 1 1" size="0.13509601354599 0.022804269567131996 0.14461377263069153" quat="1.0 0.0 0.0 0.0" pos="-0.8445068597793579 -0.19386520981788635 0.017317533493041992" density="1000.0"/>
+          </default>
+          <default class="C_P_WLSofa_0_014">
+            <geom type="box" rgba="1 1 1 1" size="0.7096168994903564 0.022804269567131996 0.21441379189491272" quat="1.0 0.0 0.0 0.0" pos="-0.0016942601650953293 -0.19386526942253113 0.08711755275726318" density="1000.0"/>
+          </default>
+          <default class="C_P_WLSofa_0_015">
+            <geom type="box" rgba="1 1 1 1" size="0.019337713718414307 0.24090510606765747 0.013249990530312061" quat="1.0 0.0 0.0 0.0" pos="-0.3099181056022644 0.07537355273962021 -0.48981866240501404" density="1000.0"/>
+          </default>
+          <default class="C_P_WLSofa_0_016">
+            <geom type="box" rgba="1 1 1 1" size="0.019337713718414307 0.24090510606765747 0.013249990530312061" quat="1.0 0.0 0.0 0.0" pos="0.3156159520149231 0.07537355273962021 -0.48981866240501404" density="1000.0"/>
+          </default>
+          <default class="C_P_WSDesk_0_001">
+            <geom type="box" rgba="1 1 1 1" size="0.26099997758865356 0.26099997758865356 0.05809997022151947" quat="1.0 0.0 0.0 0.0" pos="8.958578109741211e-05 9.128451347351074e-05 0.071213498711586" density="1000.0"/>
+          </default>
+          <default class="C_P_WSDesk_0_002">
+            <geom type="box" rgba="1 1 1 1" size="0.03129996731877327 0.03130000829696655 0.24379998445510864" quat="1.0 0.0 0.0 0.0" pos="-0.22961042821407318 0.22979125380516052 -0.23068645596504211" density="1000.0"/>
+          </default>
+          <default class="C_P_WSDesk_0_003">
+            <geom type="box" rgba="1 1 1 1" size="0.03129996731877327 0.03130000829696655 0.24379998445510864" quat="1.0 0.0 0.0 0.0" pos="-0.22961042821407318 -0.2296086698770523 -0.23068645596504211" density="1000.0"/>
+          </default>
+          <default class="C_P_WSDesk_0_004">
+            <geom type="box" rgba="1 1 1 1" size="0.03129996731877327 0.03130000829696655 0.24379998445510864" quat="1.0 0.0 0.0 0.0" pos="0.22978954017162323 -0.2296087145805359 -0.2306865155696869" density="1000.0"/>
+          </default>
+          <default class="C_P_WSDesk_0_005">
+            <geom type="box" rgba="1 1 1 1" size="0.03129996731877327 0.03130000829696655 0.24379998445510864" quat="1.0 0.0 0.0 0.0" pos="0.229789599776268 0.22979125380516052 -0.23068645596504211" density="1000.0"/>
+          </default>
+          <default class="C_P_WSDesk_0_006">
+            <geom type="box" rgba="1 1 1 1" size="0.030941402539610863 0.19839996099472046 0.01849999651312828" quat="1.0 0.0 0.0 0.0" pos="-0.22925184667110443 9.119510650634766e-05 -0.43098652362823486" density="1000.0"/>
+          </default>
+          <default class="C_P_WSDesk_0_007">
+            <geom type="box" rgba="1 1 1 1" size="0.030941402539610863 0.19839996099472046 0.01849999651312828" quat="1.0 0.0 0.0 0.0" pos="0.22943095862865448 9.122863411903381e-05 -0.4309866428375244" density="1000.0"/>
+          </default>
+          <default class="C_P_WSDesk_0_008">
+            <geom type="box" rgba="1 1 1 1" size="0.19840000569820404 0.03129999339580536 0.01849999651312828" quat="1.0 0.0 0.0 0.0" pos="8.956342935562134e-05 -0.22960878908634186 -0.4309866428375244" density="1000.0"/>
+          </default>
+          <default class="C_P_WSDesk_0_009">
+            <geom type="box" rgba="1 1 1 1" size="0.19840000569820404 0.03129999339580536 0.01849999651312828" quat="1.0 0.0 0.0 0.0" pos="8.955970406532288e-05 0.22979119420051575 -0.4309866428375244" density="1000.0"/>
+          </default>
+          <default class="C_P_WSofa_0_001">
+            <geom type="box" rgba="1 1 1 1" size="0.44680002331733704 0.31660011410713196 0.05385001748800278" quat="1.0 0.0 0.0 0.0" pos="-0.006998780183494091 0.04161262512207031 -0.046687718480825424" density="1000.0"/>
+          </default>
+          <default class="C_P_WSofa_0_002">
+            <geom type="box" rgba="1 1 1 1" size="0.030941402539610863 0.027048496529459953 0.14680001139640808" quat="1.0 0.0 0.0 0.0" pos="-0.42284056544303894 0.33116084337234497 -0.2473377138376236" density="1000.0"/>
+          </default>
+          <default class="C_P_WSofa_0_003">
+            <geom type="box" rgba="1 1 1 1" size="0.030941402539610863 0.027048496529459953 0.14680001139640808" quat="1.0 0.0 0.0 0.0" pos="-0.4228573441505432 -0.24793903529644012 -0.24733780324459076" density="1000.0"/>
+          </default>
+          <default class="C_P_WSofa_0_004">
+            <geom type="box" rgba="1 1 1 1" size="0.030941402539610863 0.027048496529459953 0.14680001139640808" quat="1.0 0.0 0.0 0.0" pos="0.4088596701622009 -0.24793905019760132 -0.24733777344226837" density="1000.0"/>
+          </default>
+          <default class="C_P_WSofa_0_005">
+            <geom type="box" rgba="1 1 1 1" size="0.030941402539610863 0.027048496529459953 0.14680001139640808" quat="1.0 0.0 0.0 0.0" pos="0.4088597595691681 0.33116430044174194 -0.2473377287387848" density="1000.0"/>
+          </default>
+          <default class="C_P_WSofa_0_006">
+            <geom type="box" rgba="1 1 1 1" size="0.030941402539610863 0.2623003423213959 0.013249990530312061" quat="1.0 0.0 0.0 0.0" pos="-0.42285728454589844 0.041812486946582794 -0.3529876470565796" density="1000.0"/>
+          </default>
+          <default class="C_P_WSofa_0_007">
+            <geom type="box" rgba="1 1 1 1" size="0.030941402539610863 0.2623003423213959 0.013249990530312061" quat="1.0 0.0 0.0 0.0" pos="0.4088597297668457 0.04181259125471115 -0.352987676858902" density="1000.0"/>
+          </default>
+          <default class="C_P_WSofa_0_008">
+            <geom type="box" rgba="1 1 1 1" size="0.3848489820957184 0.02724999189376831 0.013249990530312061" quat="1.0 0.0 0.0 0.0" pos="-0.007048908621072769 -0.24773764610290527 -0.35298770666122437" density="1000.0"/>
+          </default>
+          <default class="C_P_WSofa_0_009">
+            <geom type="box" rgba="1 1 1 1" size="0.3848489820957184 0.02724999189376831 0.013249990530312061" quat="1.0 0.0 0.0 0.0" pos="-0.007049052510410547 0.33126258850097656 -0.3529876470565796" density="1000.0"/>
+          </default>
+          <default class="C_P_WSofa_0_010">
+            <geom type="box" rgba="1 1 1 1" size="0.022649940103292465 0.2623003423213959 0.14580002427101135" quat="1.0 0.0 0.0 0.0" pos="-0.41254922747612 0.05741221457719803 0.152962327003479" density="1000.0"/>
+          </default>
+          <default class="C_P_WSofa_0_011">
+            <geom type="box" rgba="1 1 1 1" size="0.022649940103292465 0.2623003423213959 0.14580002427101135" quat="1.0 0.0 0.0 0.0" pos="0.3984513580799103 0.057412322610616684 0.1529623419046402" density="1000.0"/>
+          </default>
+          <default class="C_P_WSofa_0_012">
+            <geom type="box" rgba="1 1 1 1" size="0.05545039102435112 0.025550009682774544 0.14580002427101135" quat="1.0 0.0 0.0 0.0" pos="0.36565110087394714 -0.22623759508132935 0.15296229720115662" density="1000.0"/>
+          </default>
+          <default class="C_P_WSofa_0_013">
+            <geom type="box" rgba="1 1 1 1" size="0.05545039102435112 0.025550009682774544 0.14580002427101135" quat="1.0 0.0 0.0 0.0" pos="-0.3797486126422882 -0.23043805360794067 0.15296229720115662" density="1000.0"/>
+          </default>
+          <default class="C_P_WSofa_0_014">
+            <geom type="box" rgba="1 1 1 1" size="0.3181997537612915 0.025550009682774544 0.21560002863407135" quat="1.0 0.0 0.0 0.0" pos="-0.007998732849955559 -0.23043811321258545 0.2227623164653778" density="1000.0"/>
+          </default>
+          <default class="C_Fla_0_001">
+            <geom type="mesh" rgba="1 1 1 1" mesh="C_Fla_0_001" quat="0.6683681011199951 -0.6683682203292847 0.23083321750164032 -0.23083321750164032" pos="0.0011839866638183594 0.004237651824951172 -0.012108385562896729" density="10.0"/>
+          </default>
+          <default class="C_Fla_0_002">
+            <geom type="mesh" rgba="1 1 1 1" mesh="C_Fla_0_002" quat="0.6683681011199951 -0.6683682203292847 0.23083321750164032 -0.23083321750164032" pos="0.0 0.0 0.0" density="1000.0"/>
+          </default>
+          <default class="C_Fla_0_003">
+            <geom type="mesh" rgba="1 1 1 1" mesh="C_Fla_0_003" quat="0.6683681011199951 -0.6683682203292847 0.23083321750164032 -0.23083321750164032" pos="0.0011839866638183594 0.004237651824951172 -0.012108385562896729" density="10.0"/>
+          </default>
+          <default class="C_Fla_0_004">
+            <geom type="mesh" rgba="1 1 1 1" mesh="C_Fla_0_004" quat="0.6683681011199951 -0.6683682203292847 0.23083321750164032 -0.23083321750164032" pos="0.0011839866638183594 0.004237651824951172 -0.012108385562896729" density="10.0"/>
+          </default>
+          <default class="C_Fla_0_005">
+            <geom type="mesh" rgba="1 1 1 1" mesh="C_Fla_0_005" quat="0.6683681011199951 -0.6683682203292847 0.23083321750164032 -0.23083321750164032" pos="0.0011839866638183594 0.004237651824951172 -0.012108385562896729" density="10.0"/>
+          </default>
+          <default class="C_Fla_1_001">
+            <geom type="mesh" rgba="1 1 1 1" mesh="C_Fla_1_001" quat="0.6683681011199951 -0.6683682203292847 0.23083321750164032 -0.23083321750164032" pos="-0.0044748783111572266 0.005075931549072266 0.06579458713531494" density="10.0"/>
+          </default>
+          <default class="C_Fla_1_002">
+            <geom type="mesh" rgba="1 1 1 1" mesh="C_Fla_1_002" quat="0.6683681011199951 -0.6683682203292847 0.23083321750164032 -0.23083321750164032" pos="-0.0044748783111572266 0.005075931549072266 0.06579458713531494" density="10.0"/>
+          </default>
+          <default class="C_Fla_1_003">
+            <geom type="mesh" rgba="1 1 1 1" mesh="C_Fla_1_003" quat="0.6683681011199951 -0.6683682203292847 0.23083321750164032 -0.23083321750164032" pos="0.0 0.0 0.0" density="1000.0"/>
+          </default>
+          <default class="C_Fla_2_001">
+            <geom type="cylinder" rgba="1 1 1 1" size="0.06209913641214371 0.12939980626106262" quat="1.0 0.0 0.0 0.0" pos="0.0 0.0 -5.960464477539063e-08" density="1000.0"/>
+          </default>
+          <default class="C_Fla_2_002">
+            <geom type="mesh" rgba="1 1 1 1" mesh="C_Fla_2_002" quat="0.3852649927139282 -0.23741191625595093 0.5810670256614685 -0.6764374375343323" pos="-0.028467178344726562 -0.012578725814819336 0.26307082176208496" density="100.0"/>
+          </default>
+          <default class="C_Fla_3_001">
+            <geom type="mesh" rgba="1 1 1 1" mesh="C_Fla_3_001" quat="0.3852649927139282 -0.23741191625595093 0.5810670256614685 -0.6764374375343323" pos="-0.028467178344726562 -0.012578964233398438 0.26307082176208496" density="100.0"/>
+          </default>
+          <default class="C_Fla_3_002">
+            <geom type="cylinder" rgba="1 1 1 1" size="0.06209913641214371 0.12939980626106262" quat="1.0 0.0 0.0 0.0" pos="0.0 0.0 -5.960464477539063e-08" density="1000.0"/>
+          </default>
+      </default>
+  </default>
+
+  <worldbody>
+    <camera name="EC_Camera" pos="3.5040948390960693 -7.551347732543945 2.8190855979919434" quat="0.7372774481773376 0.6755900979042053 0.0 0.0" orthographic="false" fovy="37.84928837995056"/>
+    <light name="EL_RectLight" pos="1.2837363481521606 5.262497901916504 3.359999656677246" diffuse="1.0 1.0 1.0"  type="spot" cutoff="85" innerangle="80" castshadow="true" range="16.0" intensity="12000.0" nearz="0.2"/>
+    <light name="EL_RectLight.001" pos="1.2837363481521606 8.419463157653809 4.760629653930664" diffuse="1.0 1.0 1.0"  type="spot" cutoff="85" innerangle="80" castshadow="true" range="16.0" intensity="12000.0" nearz="0.2"/>
+    <light name="EL_RectLight_01" pos="3.359043836593628 5.262497901916504 3.359999656677246" diffuse="1.0 1.0 1.0"  type="spot" cutoff="85" innerangle="80" castshadow="true" range="16.0" intensity="12000.0" nearz="0.2"/>
+    <light name="EL_RectLight_01.001" pos="3.359043836593628 8.419463157653809 4.760629653930664" diffuse="1.0 1.0 1.0"  type="spot" cutoff="85" innerangle="80" castshadow="true" range="16.0" intensity="12000.0" nearz="0.2"/>
+    <light name="EL_RectLight_02" pos="3.359043836593628 2.2552077770233154 3.3600001335144043" diffuse="1.0 1.0 1.0"  type="spot" cutoff="85" innerangle="80" castshadow="true" range="16.0" intensity="12000.0" nearz="0.2"/>
+    <light name="EL_RectLight_03" pos="5.482787609100342 2.2552077770233154 3.3600001335144043" diffuse="1.0 1.0 1.0"  type="spot" cutoff="85" innerangle="80" castshadow="true" range="16.0" intensity="12000.0" nearz="0.2"/>
+    <light name="EL_RectLight_04" pos="5.482787609100342 5.266224384307861 3.359999656677246" diffuse="1.0 1.0 1.0"  type="spot" cutoff="85" innerangle="80" castshadow="true" range="16.0" intensity="12000.0" nearz="0.2"/>
+    <light name="EL_RectLight_04.001" pos="5.482787609100342 8.423190116882324 4.760629653930664" diffuse="1.0 1.0 1.0"  type="spot" cutoff="85" innerangle="80" castshadow="true" range="16.0" intensity="12000.0" nearz="0.2"/>
+    <light name="EL_RectLight_05" pos="1.2837363481521606 2.2746546268463135 3.3600001335144043" diffuse="1.0 1.0 1.0"  type="spot" cutoff="85" innerangle="80" castshadow="true" range="16.0" intensity="12000.0" nearz="0.2"/>
+    <geom name="floor" size="0 0 0.01" type="plane" pos="0.0 0.0 -.01" quat="1.0 0.0 0.0 0.0" material="Ground"/>
+
+    <geom class="visual" mesh="E_50x100_5437449" pos="1.4083809852600098 7.066305160522461 4.169999599456787" quat="0.5 0.5000001788139343 -0.4999998211860657 0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_50x100_5437450" pos="0.5433809757232666 7.066305160522461 4.169999599456787" quat="0.5 0.5000001788139343 -0.4999998211860657 0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_50x100_5437451" pos="-0.25161898136138916 7.066304683685303 -0.05000096559524536" quat="0.5 0.5000001788139343 0.4999998211860657 -0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_50x100_5437452" pos="0.613381028175354 7.066304683685303 -0.05000096559524536" quat="0.5 0.5000001788139343 0.4999998211860657 -0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_50x100_5437460" pos="4.108381271362305 7.066305160522461 4.169999599456787" quat="0.5 0.5000001788139343 -0.4999998211860657 0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_50x100_5437461" pos="3.2433810234069824 7.066305160522461 4.169999599456787" quat="0.5 0.5000001788139343 -0.4999998211860657 0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_50x100_5437462" pos="2.448380947113037 7.066304683685303 -0.05000096559524536" quat="0.5 0.5000001788139343 0.4999998211860657 -0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_50x100_5437463" pos="3.3133809566497803 7.066304683685303 -0.05000096559524536" quat="0.5 0.5000001788139343 0.4999998211860657 -0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_50x100_5437471" pos="6.808381080627441 7.066305160522461 4.169999599456787" quat="0.5 0.5000001788139343 -0.4999998211860657 0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_50x100_5437472" pos="5.943380832672119 7.066305160522461 4.169999599456787" quat="0.5 0.5000001788139343 -0.4999998211860657 0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_50x100_5437473" pos="5.148381233215332 7.066304683685303 -0.05000096559524536" quat="0.5 0.5000001788139343 0.4999998211860657 -0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_50x100_5437474" pos="6.013381004333496 7.066304683685303 -0.05000096559524536" quat="0.5 0.5000001788139343 0.4999998211860657 -0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_600x600mmM4MMM_5439137" pos="1.2913810014724731 5.3203043937683105 0.941599428653717" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_43F828562E521817"/>
+    <geom class="visual" mesh="E_600x600mmM4MMM_5439138" pos="3.391381025314331 5.3203043937683105 0.941599428653717" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_43F828562E521817"/>
+    <geom class="visual" mesh="E_600x600mmM4MMM_5439139" pos="5.4913811683654785 5.3203043937683105 0.941599428653717" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_43F828562E521817"/>
+    <geom class="visual" mesh="E_600x600mmM4MMM_5439140" pos="1.2913810014724731 2.3203043937683105 0.9415998458862305" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_43F828562E521817"/>
+    <geom class="visual" mesh="E_600x600mmM4MMM_5439141" pos="3.391381025314331 2.3203043937683105 0.9415998458862305" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_43F828562E521817"/>
+    <geom class="visual" mesh="E_600x600mmM4MMM_5439142" pos="5.4913811683654785 2.3203043937683105 0.9415998458862305" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_43F828562E521817"/>
+    <geom class="visual" mesh="E_70x130_5437453" pos="1.4783810377120972 7.066304683685303 -0.05000096559524536" quat="0.7071069478988647 0.7071065902709961 0.0 0.0" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5437454" pos="-0.3216189742088318 7.066305160522461 4.169999599456787" quat="5.338508302088485e-08 -5.3385068810030134e-08 0.7071066498756409 -0.70710688829422" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5437455" pos="0.5783810615539551 7.066304683685303 -0.05000096559524536" quat="0.7071069478988647 0.7071065902709961 0.0 0.0" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5437464" pos="4.178380966186523 7.066304683685303 -0.05000096559524536" quat="0.7071069478988647 0.7071065902709961 0.0 0.0" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5437465" pos="2.3783810138702393 7.066305160522461 4.169999599456787" quat="5.338508302088485e-08 -5.3385068810030134e-08 0.7071066498756409 -0.70710688829422" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5437466" pos="3.278381109237671 7.066304683685303 -0.05000096559524536" quat="0.7071069478988647 0.7071065902709961 0.0 0.0" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5437475" pos="6.878381252288818 7.066304683685303 -0.05000096559524536" quat="0.7071069478988647 0.7071065902709961 0.0 0.0" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5437476" pos="5.078381061553955 7.066305160522461 4.169999599456787" quat="5.338508302088485e-08 -5.3385068810030134e-08 0.7071066498756409 -0.70710688829422" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5437477" pos="5.978381156921387 7.066304683685303 -0.05000096559524536" quat="0.7071069478988647 0.7071065902709961 0.0 0.0" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5438954" pos="6.878381252288818 7.066304683685303 1.1499991416931152" quat="0.7071069478988647 0.7071065902709961 0.0 0.0" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5438955" pos="5.078381061553955 7.066304683685303 1.1499991416931152" quat="5.338508302088485e-08 -5.3385068810030134e-08 0.7071066498756409 -0.70710688829422" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5438956" pos="5.978381156921387 7.066304683685303 1.1499991416931152" quat="0.7071069478988647 0.7071065902709961 0.0 0.0" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5438960" pos="4.178380966186523 7.066304683685303 1.1499991416931152" quat="0.7071069478988647 0.7071065902709961 0.0 0.0" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5438961" pos="2.3783810138702393 7.066304683685303 1.1499991416931152" quat="5.338508302088485e-08 -5.3385068810030134e-08 0.7071066498756409 -0.70710688829422" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5438962" pos="3.278381109237671 7.066304683685303 1.1499991416931152" quat="0.7071069478988647 0.7071065902709961 0.0 0.0" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5438966" pos="1.4783810377120972 7.066304683685303 1.1499991416931152" quat="0.7071069478988647 0.7071065902709961 0.0 0.0" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5438967" pos="-0.3216189742088318 7.066304683685303 1.1499991416931152" quat="5.338508302088485e-08 -5.3385068810030134e-08 0.7071066498756409 -0.70710688829422" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5438968" pos="0.5783810615539551 7.066304683685303 1.1499991416931152" quat="0.7071069478988647 0.7071065902709961 0.0 0.0" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5439329" pos="0.5433809757232666 7.066304683685303 1.1499991416931152" quat="0.5 0.5000001788139343 -0.4999998211860657 0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5439331" pos="3.2433810234069824 7.066304683685303 1.1499991416931152" quat="0.5 0.5000001788139343 -0.4999998211860657 0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5439333" pos="5.943380832672119 7.066304683685303 1.1499991416931152" quat="0.5 0.5000001788139343 -0.4999998211860657 0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5443492" pos="1.4083809852600098 7.066304683685303 1.1499991416931152" quat="0.5 0.5000001788139343 -0.4999998211860657 0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5443493" pos="4.108381271362305 7.066304683685303 1.1499991416931152" quat="0.5 0.5000001788139343 -0.4999998211860657 0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_70x130_5443494" pos="6.808381080627441 7.066304683685303 1.1499991416931152" quat="0.5 0.5000001788139343 -0.4999998211860657 0.5" material="mat_50304F94B0643138"/>
+    <geom class="visual" mesh="E_A_MMMM_60_5442263" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_2784D6E2065B3E4B"/>
+    <geom class="visual" mesh="E_A_MM_200M70_5437350" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_73496A3838D8D09E"/>
+    <geom class="visual" mesh="E_A_MM_200M70_5437381" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_73496A3838D8D09E"/>
+    <geom class="visual" mesh="E_A_MM_200M70_5442858" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_73496A3838D8D09E"/>
+    <geom class="visual" mesh="E_Component119_1" pos="7.068438529968262 3.1628732681274414 1.7188327312469482" quat="0.3799290657043457 0.37992775440216064 -0.5963671207427979 -0.5963682532310486" material="mat_80755"/>
+    <geom class="visual" mesh="E_Component120_8" pos="7.243488311767578 2.6948912143707275 1.818284273147583" quat="0.7071067094802856 1.499426893758482e-08 -8.360918002381368e-08 -0.7071068286895752" material="mat_148968"/>
+    <geom class="visual" mesh="E_Component122_9" pos="7.243488311767578 2.6948912143707275 1.818284273147583" quat="0.7071067094802856 1.499426893758482e-08 -8.360918002381368e-08 -0.7071068286895752" material="mat_0"/>
+    <geom class="visual" mesh="E_Component182_6" pos="7.067166805267334 2.690182685852051 1.7197831869125366" quat="7.549795100203482e-08 1.0 1.1994197848252952e-06 -4.4703980961458e-08" material="mat_148970"/>
+    <geom class="visual" mesh="E_Component184_10" pos="7.104653835296631 2.7851762771606445 1.7689579725265503" quat="7.391646050791678e-08 -6.629319670992118e-08 -0.9997076988220215 -0.02418145164847374" material="mat_148971"/>
+    <geom class="visual" mesh="E_Component28_2_005" pos="7.004601955413818 4.381727695465088 1.5337185859680176" quat="0.5001233220100403 0.5001259446144104 -0.4998749792575836 -0.4998758137226105" material="mat_83"/>
+    <geom class="visual" mesh="E_Component30_3" pos="7.245336055755615 4.563571929931641 1.6081995964050293" quat="4.948567493556766e-07 -0.7072820663452148 0.706931471824646 3.883054944253672e-07" material="mat_88"/>
+    <geom class="visual" mesh="E_Component42_2" pos="7.063088417053223 3.133282423019409 0.753450334072113" quat="5.566330951722875e-09 0.7071066498756409 -0.70710688829422 1.0120383109324393e-07" material="mat_909054"/>
+    <geom class="visual" mesh="E_Component44_3" pos="7.0909247398376465 3.0723073482513428 0.7998335361480713" quat="5.566330951722875e-09 0.7071066498756409 -0.70710688829422 1.0120383109324393e-07" material="mat_909054"/>
+    <geom class="visual" mesh="E_Component69_22" pos="1.0000000116860974e-07 0.0 0.014991600066423416" quat="1.0 0.0 0.0 0.0" material="mat_150326"/>
+    <geom class="visual" mesh="E_Component75_5" pos="7.055316925048828 3.089416265487671 1.1767668724060059" quat="0.5549263954162598 -0.5549263954162598 0.43824276328086853 -0.43824273347854614" material="mat_792108"/>
+    <geom class="visual" mesh="E_Component76_6" pos="7.0546393394470215 3.112562417984009 1.1345089673995972" quat="0.7022784948348999 0.7022748589515686 0.08250735700130463 0.08250747621059418" material="mat_792104"/>
+    <geom class="visual" mesh="E_Component77_7" pos="7.064621925354004 3.119833469390869 1.1782695055007935" quat="0.5910099148750305 -0.5910100936889648 0.3882102966308594 -0.38821014761924744" material="mat_792110"/>
+    <geom class="visual" mesh="E_Group_10" pos="6.957327365875244 4.25904655456543 1.320267677307129" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21454"/>
+    <geom class="visual" mesh="E_Group_15" pos="7.121963024139404 3.9676496982574463 0.9946667551994324" quat="0.6630183458328247 -0.6782352328300476 0.22150158882141113 -0.22658491134643555" material="mat_21454"/>
+    <geom class="visual" mesh="E_Group_16" pos="7.131175518035889 3.990689754486084 0.9997204542160034" quat="0.29839009046554565 -0.33905306458473206 -0.589432954788208 0.6697575449943542" material="mat_21454"/>
+    <geom class="visual" mesh="E_Group_17" pos="7.1424384117126465 4.0030131340026855 1.006813645362854" quat="0.18769612908363342 -0.13737304508686066 -0.7848279476165771 0.5744074583053589" material="mat_21454"/>
+    <geom class="visual" mesh="E_Group_18" pos="7.1336750984191895 3.9596967697143555 0.9982615113258362" quat="0.4781690537929535 -0.5209168195724487 0.47816917300224304 -0.520916759967804" material="mat_21454"/>
+    <geom class="visual" mesh="E_Group_19" pos="7.133893013000488 3.999011993408203 1.0028409957885742" quat="0.525481641292572 -0.47314736247062683 0.5254825949668884 -0.4731476902961731" material="mat_21454"/>
+    <geom class="visual" mesh="E_Group_20" pos="7.098948955535889 3.975334405899048 0.9919993281364441" quat="0.6071251630783081 -0.7286941409111023 0.20282892882823944 -0.2434425801038742" material="mat_21454"/>
+    <geom class="visual" mesh="E_Group_21" pos="7.1424384117126465 3.9418742656707764 1.0086332559585571" quat="0.1377279907464981 -0.18743576109409332 -0.5758918523788452 0.7837393879890442" material="mat_21454"/>
+    <geom class="visual" mesh="E_Group_22" pos="7.0907745361328125 4.015330791473389 0.8847270607948303" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21455"/>
+    <geom class="visual" mesh="E_Group_3" pos="7.092726707458496 3.8910417556762695 0.8947270512580872" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21456"/>
+    <geom class="visual" mesh="E_Group_30" pos="7.091556549072266 3.7214620113372803 0.885215163230896" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21457"/>
+    <geom class="visual" mesh="E_Group_31" pos="7.061790943145752 3.751227617263794 1.0072933435440063" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21456"/>
+    <geom class="visual" mesh="E_Group_34" pos="6.974255084991455 3.816446304321289 0.8947270512580872" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21456"/>
+    <geom class="visual" mesh="E_Group_3_004" pos="7.05518102645874 3.1077702045440674 1.1720935106277466" quat="0.0825076773762703 -0.0825076773762703 0.7022765874862671 -0.7022767066955566" material="mat_792103"/>
+    <geom class="visual" mesh="E_Group_6" pos="7.006785869598389 4.182007312774658 1.1076048612594604" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21454"/>
+    <geom class="visual" mesh="E_Group_7" pos="6.949621677398682 4.2710490226745605 1.4243425130844116" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21454"/>
+    <geom class="visual" mesh="E_Group_72" pos="0.6307423710823059 5.130853176116943 -1.8456431405411422e-07" quat="0.49999988079071045 0.4999999403953552 -0.5000001788139343 -0.5" material="mat_62043"/>
+    <geom class="visual" mesh="E_Group_72_001" pos="0.8595374226570129 2.4422264099121094 1.7667649387931306e-07" quat="0.49999988079071045 0.4999999403953552 0.5000001788139343 0.5" material="mat_62043"/>
+    <geom class="visual" mesh="E_Group_8" pos="7.0172343254089355 4.165731906890869 1.2105467319488525" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21454"/>
+    <geom class="visual" mesh="E_Group_9" pos="7.06646728515625 4.089043617248535 1.2163598537445068" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21454"/>
+    <geom class="visual" mesh="E_MMM4_2" pos="7.08272647857666 3.9010417461395264 0.8947270512580872" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21459"/>
+    <geom class="visual" mesh="E_MMM4_24" pos="7.065516471862793 3.707296133041382 1.037569284439087" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21459"/>
+    <geom class="visual" mesh="E_MMM4_25" pos="7.10551643371582 3.6722960472106934 1.037569284439087" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21459"/>
+    <geom class="visual" mesh="E_MMM4_26" pos="7.10551643371582 3.707296133041382 1.0775692462921143" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21459"/>
+    <geom class="visual" mesh="E_MMM4_27" pos="7.10551643371582 3.742295980453491 1.037569284439087" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21459"/>
+    <geom class="visual" mesh="E_MMM4_28" pos="7.145516395568848 3.707296133041382 1.037569284439087" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21459"/>
+    <geom class="visual" mesh="E_MMM4_33" pos="6.964254856109619 3.826446294784546 0.8947270512580872" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21459"/>
+    <geom class="visual" mesh="E_MMMM1_5437978" pos="-16.97161865234375 -17.80369758605957 2.3837392291170545e-06" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_2784D6E2065B3E4B"/>
+    <geom class="visual" mesh="E_MM_5437446" pos="0.1458810269832611 7.066304683685303 -9.577656783221755e-07" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="Clear_Glass"/>
+    <geom class="visual" mesh="E_MM_5437457" pos="2.845381021499634 7.066304683685303 -9.577656783221755e-07" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="Clear_Glass"/>
+    <geom class="visual" mesh="E_MM_5437468" pos="5.54538106918335 7.066304683685303 -9.577656783221755e-07" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="Clear_Glass"/>
+    <geom class="visual" mesh="E_MM_5438952" pos="5.54538106918335 7.066304683685303 1.1849991083145142" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="Clear_Glass"/>
+    <geom class="visual" mesh="E_MM_5438958" pos="2.845381021499634 7.066304683685303 1.1849991083145142" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="Clear_Glass"/>
+    <geom class="visual" mesh="E_MM_5438964" pos="0.1458810269832611 7.066304683685303 1.1849991083145142" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="Clear_Glass"/>
+    <geom class="visual" mesh="E_MM_5443479" pos="1.0103809833526611 7.066304683685303 -9.577656783221755e-07" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="Clear_Glass"/>
+    <geom class="visual" mesh="E_MM_5443480" pos="1.0103809833526611 7.066304683685303 1.1849991083145142" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="Clear_Glass"/>
+    <geom class="visual" mesh="E_MM_5443482" pos="3.710381031036377 7.066304683685303 -9.577656783221755e-07" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="Clear_Glass"/>
+    <geom class="visual" mesh="E_MM_5443483" pos="3.710381031036377 7.066304683685303 1.1849991083145142" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="Clear_Glass"/>
+    <geom class="visual" mesh="E_MM_5443485" pos="6.410380840301514 7.066304683685303 -9.577656783221755e-07" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="Clear_Glass"/>
+    <geom class="visual" mesh="E_MM_5443486" pos="6.410380840301514 7.066304683685303 1.1849991083145142" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="Clear_Glass"/>
+    <geom class="visual" mesh="E_leaf_10_001" pos="0.7351210713386536 2.3113114833831787 0.618449330329895" quat="0.21339969336986542 0.20766745507717133 -0.3512036204338074 -0.8876884579658508" material="mat_62035"/>
+    <geom class="visual" mesh="E_leaf_10_002" pos="0.7310175895690918 5.235337257385254 0.618449330329895" quat="0.1042628288269043 -0.07450056076049805 0.4011475145816803 0.9070058465003967" material="mat_62035"/>
+    <geom class="visual" mesh="E_leaf_12_001" pos="0.7486786246299744 2.30566668510437 0.618449330329895" quat="0.9287069439888 0.3475953936576843 0.08736500889062881 0.09512200206518173" material="mat_62035"/>
+    <geom class="visual" mesh="E_leaf_12_002" pos="0.7377407550811768 5.222280979156494 0.618449330329895" quat="0.904933512210846 0.3564649820327759 -0.03725441172719002 -0.22943449020385742" material="mat_62035"/>
+    <geom class="visual" mesh="E_leaf_13_001" pos="0.7351210713386536 2.3384265899658203 0.618449330329895" quat="0.9294651746749878 0.3357371985912323 -0.14849622547626495 -0.03638550266623497" material="mat_62035"/>
+    <geom class="visual" mesh="E_leaf_13_002" pos="0.7485012412071228 5.256062984466553 0.618449330329895" quat="0.8605061173439026 0.26436811685562134 -0.2547152638435364 -0.3532122075557709" material="mat_62035"/>
+    <geom class="visual" mesh="E_leaf_5_001" pos="0.7622866630554199 2.3113114833831787 0.618449330329895" quat="0.5200331211090088 0.18575148284435272 -0.18556064367294312 -0.8127909898757935" material="mat_62035"/>
+    <geom class="visual" mesh="E_leaf_5_002" pos="0.7517819404602051 5.21782112121582 0.618449330329895" quat="0.20944929122924805 0.11077280342578888 -0.23804567754268646 -0.9419100880622864" material="mat_62035"/>
+    <geom class="visual" mesh="E_leaf_6_001" pos="0.7459300756454468 2.3386363983154297 0.6228370070457458" quat="0.6203441619873047 0.23710553348064423 0.30108630657196045 0.6843252778053284" material="mat_62035"/>
+    <geom class="visual" mesh="E_leaf_6_002" pos="0.7568985223770142 5.24925422668457 0.6228370070457458" quat="0.8175482153892517 0.3260475695133209 0.20140798389911652 0.4298170506954193" material="mat_62035"/>
+    <geom class="visual" mesh="E_leaf_7_001" pos="0.7678810358047485 2.324869155883789 0.618449330329895" quat="0.41725993156433105 0.24711602926254272 0.36506736278533936 0.794703483581543" material="mat_62035"/>
+    <geom class="visual" mesh="E_leaf_7_002" pos="0.7648000121116638 5.2245774269104 0.618449330329895" quat="0.6646894216537476 0.35741135478019714 0.25806573033332825 0.603197455406189" material="mat_62035"/>
+    <geom class="visual" mesh="E_leaf_8_001" pos="0.7622866630554199 2.3384265899658203 0.618449330329895" quat="0.053553685545921326 -0.10550684481859207 -0.3936416804790497 -0.9116175174713135" material="mat_62035"/>
+    <geom class="visual" mesh="E_leaf_8_002" pos="0.7692655920982361 5.238547325134277 0.618449330329895" quat="0.2626110911369324 0.23421353101730347 0.3335109055042267 0.8746141791343689" material="mat_62035"/>
+    <geom class="visual" mesh="E_screen_2" pos="0.6729863286018372 3.8068394660949707 1.078420639038086" quat="0.49649643898010254 -0.503478467464447 -0.5034787654876709 0.4964976906776428" material="Tinted_Glass_R02_01"/>
+    <geom class="visual" mesh="P_10e5b21942d8d600" pos="0.7302595376968384 4.566878795623779 0.0533195361495018" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38619"/>
+    <geom class="visual" mesh="P_10e5b21942d8d600_001" pos="0.7302595376968384 3.2874834537506104 0.05331970751285553" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38619"/>
+    <geom class="visual" mesh="P_10e5b21942d8d600_002" pos="7.0722975730896 5.000969886779785 1.3443224430084229" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38619"/>
+    <geom class="visual" mesh="P_10e5b21942d8d600_003" pos="7.0722975730896 5.24762487411499 1.3443224430084229" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38619"/>
+    <geom class="visual" mesh="P_10e5b21942d8d600_004" pos="7.113203525543213 5.313679218292236 0.8687126636505127" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38619"/>
+    <geom class="visual" mesh="P_10e5b21942d8d600_005" pos="7.113203525543213 5.083869934082031 0.8687127232551575" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38619"/>
+    <geom class="visual" mesh="P_135fc2c6a1d32168" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_5188AE9D9AEFEA48"/>
+    <geom class="visual" mesh="P_144999ee7b1070b5" pos="5.4913811683654785 2.3203043937683105 0.9415998458862305" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_738B63C3F0EB49E4"/>
+    <geom class="visual" mesh="P_163a991c602607c4" pos="1.2913810014724731 2.3203043937683105 0.9415998458862305" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_22672001CBED8985"/>
+    <geom class="visual" mesh="P_19115da72a1b469a" pos="7.005202770233154 2.472520351409912 1.6584254503250122" quat="7.549790126404332e-08 1.0 -6.717942113709796e-08 3.898733414017461e-15" material="mat_17118"/>
+    <geom class="visual" mesh="P_19115da72a1b469a_001" pos="7.030672073364258 4.791297435760498 0.4599993824958801" quat="7.549790126404332e-08 1.0 -6.717942113709796e-08 3.898733414017461e-15" material="mat_17118"/>
+    <geom class="visual" mesh="P_1a0d55c272520918" pos="7.019774436950684 5.654068946838379 1.5672537088394165" quat="0.6832737922668457 -0.7301622629165649 -1.1140993017022538e-08 1.429092577609481e-08" material="mat_17111"/>
+    <geom class="visual" mesh="P_1fe489598ee054ff" pos="7.121175289154053 2.819960117340088 1.227238655090332" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_1fe489598ee054ff_001" pos="7.126530647277832 3.1349897384643555 0.26223787665367126" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_1fe489598ee054ff_002" pos="7.126530647277832 5.2519001960754395 0.2746371626853943" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_1fe489598ee054ff_003" pos="7.126530647277832 2.484750509262085 0.2622379660606384" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_1fe489598ee054ff_004" pos="7.143929958343506 4.5543365478515625 0.27463728189468384" quat="0.4999999403953552 -0.5 -0.5 0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_1fe489598ee054ff_005" pos="7.121175289154053 2.5518245697021484 1.227238655090332" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_1fe489598ee054ff_006" pos="0.795299232006073 3.9044711589813232 0.3237113356590271" quat="0.49999988079071045 -0.5 -0.5000001192092896 0.5" material="mat_76"/>
+    <geom class="visual" mesh="P_211eb969caa45a77" pos="7.056412696838379 4.566588401794434 0.7243544459342957" quat="0.49868959188461304 -0.49868983030319214 0.5013068318367004 -0.5013068914413452" material="mat_816195"/>
+    <geom class="visual" mesh="P_22ca4aa1a7297878" pos="7.019774436950684 5.671365261077881 1.6213995218276978" quat="0.7071066498756409 -0.70710688829422 4.462470199852612e-28 5.989422257704953e-22" material="mat_17118"/>
+    <geom class="visual" mesh="P_247f5f3dddd9da77" pos="7.056423187255859 4.5684309005737305 0.7372266054153442" quat="0.49868959188461304 -0.49868983030319214 0.5013068318367004 -0.5013068914413452" material="mat_816195"/>
+    <geom class="visual" mesh="P_2490f099689054ff" pos="7.121175289154053 2.866999387741089 1.227238655090332" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_2490f099689054ff_001" pos="7.126530647277832 3.1994335651397705 0.2622378468513489" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_2490f099689054ff_002" pos="7.126530647277832 5.316344261169434 0.2746371328830719" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_2490f099689054ff_003" pos="7.126530647277832 2.5491943359375 0.26223793625831604" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_2490f099689054ff_004" pos="7.143929958343506 4.489892482757568 0.27463728189468384" quat="0.4999999403953552 -0.5 -0.5 0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_2490f099689054ff_005" pos="7.121175289154053 2.5988638401031494 1.227238655090332" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_2490f099689054ff_006" pos="0.795299232006073 3.845348358154297 0.3237113654613495" quat="0.49999988079071045 -0.5 -0.5000001192092896 0.5" material="mat_113"/>
+    <geom class="visual" mesh="P_25327406216897d3" pos="6.966156482696533 7.776830673217773 0.9215024709701538" quat="0.7654831409454346 -0.6434559226036072 2.2406881683423308e-08 -3.0604677903056654e-08" material="mat_17118"/>
+    <geom class="visual" mesh="P_28ce243e26a46677" pos="7.082046031951904 4.571035385131836 0.7494039535522461" quat="0.6899421811103821 -0.6899427175521851 0.1548529416322708 -0.154852956533432" material="mat_816191"/>
+    <geom class="visual" mesh="P_2c4049e439093895" pos="0.9184504747390747 3.989980459213257 0.11775051802396774" quat="0.4999999403953552 -0.5 -0.5 0.5000000596046448" material="SM_02_ZS_BX_05_01"/>
+    <geom class="visual" mesh="P_2f13cd0097cfa7d7" pos="7.121418476104736 2.7318506240844727 1.2210561037063599" quat="0.4255477488040924 -0.5647202730178833 0.4255480468273163 -0.5647202730178833" material="mat_70"/>
+    <geom class="visual" mesh="P_2f13cd0097cfa7d7_001" pos="7.126863479614258 3.014280080795288 0.25376778841018677" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_70"/>
+    <geom class="visual" mesh="P_2f13cd0097cfa7d7_002" pos="7.126863479614258 5.131190776824951 0.2661670744419098" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_70"/>
+    <geom class="visual" mesh="P_2f13cd0097cfa7d7_003" pos="7.126863479614258 2.3640408515930176 0.25376787781715393" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_70"/>
+    <geom class="visual" mesh="P_2f13cd0097cfa7d7_004" pos="7.14359712600708 4.675045967102051 0.26616716384887695" quat="0.5647202134132385 -0.4255477786064148 -0.5647204518318176 0.42554789781570435" material="mat_70"/>
+    <geom class="visual" mesh="P_2f13cd0097cfa7d7_005" pos="7.121418476104736 2.463715076446533 1.2210561037063599" quat="0.4255477488040924 -0.5647202730178833 0.4255480468273163 -0.5647202730178833" material="mat_70"/>
+    <geom class="visual" mesh="P_2f13cd0097cfa7d7_006" pos="0.7949938178062439 4.015213966369629 0.3169119656085968" quat="0.5801599621772766 -0.4203958809375763 -0.5500543713569641 0.4290943145751953" material="mat_70"/>
+    <geom class="visual" mesh="P_2f9dfb9a0ed67fcc" pos="7.0907745361328125 4.015330791473389 0.8847270607948303" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21457"/>
+    <geom class="visual" mesh="P_3654aab318b8a8d8" pos="7.068962574005127 4.572277545928955 1.2352794408798218" quat="0.7071067094802856 -2.863848481277076e-13 -9.500605102630288e-08 -0.7071068286895752" material="mat_865820"/>
+    <geom class="visual" mesh="P_38db29e39645da77" pos="7.064260005950928 4.5625481605529785 0.7502022981643677" quat="0.49868959188461304 -0.49868983030319214 0.5013068318367004 -0.5013068914413452" material="mat_816195"/>
+    <geom class="visual" mesh="P_3964f6e15682b910" pos="7.299776554107666 3.809370756149292 1.7054270505905151" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_150344"/>
+    <geom class="visual" mesh="P_3b84301382da4ff7" pos="7.056412696838379 4.566588401794434 0.7243544459342957" quat="0.49868959188461304 -0.49868983030319214 0.5013068318367004 -0.5013068914413452" material="mat_816193"/>
+    <geom class="visual" mesh="P_3c45aa762b709ef3" pos="6.990932941436768 2.891979217529297 0.493399977684021" quat="0.7071066498756409 -0.70710688829422 4.462470199852612e-28 5.989422257704953e-22" material="mat_17118"/>
+    <geom class="visual" mesh="P_3d485577fa0afdc" pos="0.667424738407135 5.159582614898682 0.3852798044681549" quat="0.5 0.4999999403953552 -0.5000000596046448 -0.5" material="mat_0"/>
+    <geom class="visual" mesh="P_3d485577fa0afdc_001" pos="0.8228549957275391 2.4134974479675293 0.38528013229370117" quat="0.5 0.4999999403953552 0.5000000596046448 0.5" material="mat_0"/>
+    <geom class="visual" mesh="P_3d537f85773273f4" pos="7.100315093994141 4.603968143463135 1.7228144407272339" quat="0.5417881608009338 -0.5415615439414978 -0.45465368032455444 -0.4543860852718353" material="mat_78"/>
+    <geom class="visual" mesh="P_3e2bbf1a08062dd1" pos="0.6795416474342346 3.8068394660949707 0.4816685616970062" quat="0.49649643898010254 -0.503478467464447 -0.5034787654876709 0.4964976906776428" material="mat_CC75C949BEC6B8FE"/>
+    <geom class="visual" mesh="P_442f8b53ea253710" pos="7.299776554107666 3.809370756149292 1.7054270505905151" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_150326"/>
+    <geom class="visual" mesh="P_4569830c281ce600" pos="0.7302595376968384 4.566878795623779 0.0533195361495018" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38616"/>
+    <geom class="visual" mesh="P_4569830c281ce600_001" pos="0.7302595376968384 3.2874834537506104 0.05331970751285553" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38616"/>
+    <geom class="visual" mesh="P_4569830c281ce600_002" pos="7.0722975730896 5.000969886779785 1.3443224430084229" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38616"/>
+    <geom class="visual" mesh="P_4569830c281ce600_003" pos="7.0722975730896 5.24762487411499 1.3443224430084229" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38616"/>
+    <geom class="visual" mesh="P_4569830c281ce600_004" pos="7.113203525543213 5.313679218292236 0.8687126636505127" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38616"/>
+    <geom class="visual" mesh="P_4569830c281ce600_005" pos="7.113203525543213 5.083869934082031 0.8687127232551575" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38616"/>
+    <geom class="visual" mesh="P_46dfaf272c4cdd69" pos="7.068962574005127 4.572277545928955 1.2352794408798218" quat="0.7071067094802856 -2.863848481277076e-13 -9.500605102630288e-08 -0.7071068286895752" material="mat_865819"/>
+    <geom class="visual" mesh="P_47abdb57ac2f769a" pos="6.990932941436768 2.891979217529297 0.493399977684021" quat="0.7071066498756409 -0.70710688829422 4.462470199852612e-28 5.989422257704953e-22" material="mat_4594"/>
+    <geom class="visual" mesh="P_48b6c6eb959fafdc" pos="0.667424738407135 5.159582614898682 0.3852798044681549" quat="0.5 0.4999999403953552 -0.5000000596046448 -0.5" material="mat_62039"/>
+    <geom class="visual" mesh="P_48b6c6eb959fafdc_001" pos="0.8228549957275391 2.4134974479675293 0.38528013229370117" quat="0.5 0.4999999403953552 0.5000000596046448 0.5" material="mat_62039"/>
+    <geom class="visual" mesh="P_48fc76713ee054ff" pos="7.121175289154053 2.843479633331299 1.227238655090332" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_48fc76713ee054ff_001" pos="7.126530647277832 3.1672115325927734 0.26223787665367126" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_48fc76713ee054ff_002" pos="7.126530647277832 5.284121990203857 0.2746371626853943" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_48fc76713ee054ff_003" pos="7.126530647277832 2.516972303390503 0.2622379660606384" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_48fc76713ee054ff_004" pos="7.143929958343506 4.5221147537231445 0.27463728189468384" quat="0.4999999403953552 -0.5 -0.5 0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_48fc76713ee054ff_005" pos="7.121175289154053 2.5753440856933594 1.227238655090332" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_48fc76713ee054ff_006" pos="0.795299232006073 3.8749098777770996 0.3237113654613495" quat="0.49999988079071045 -0.5 -0.5000001192092896 0.5" material="mat_113"/>
+    <geom class="visual" mesh="P_4d5f0e56e59aa68d" pos="7.101676940917969 2.6673853397369385 0.8886684775352478" quat="7.907536314633035e-07 -5.768907622655597e-14 6.71794140316706e-08 1.0" material="mat_6200524"/>
+    <geom class="visual" mesh="P_4d5f0e56e59aa68d_001" pos="7.101676940917969 2.751276731491089 0.15929219126701355" quat="7.907536314633035e-07 -5.768907622655597e-14 6.71794140316706e-08 1.0" material="mat_6200524"/>
+    <geom class="visual" mesh="P_4d5f0e56e59aa68d_002" pos="7.057621002197266 4.976313591003418 1.1571027040481567" quat="7.907536314633035e-07 -5.768907622655597e-14 6.71794140316706e-08 1.0" material="mat_6200524"/>
+    <geom class="visual" mesh="P_4fa634369a278918" pos="7.019774436950684 5.654068946838379 1.5672537088394165" quat="0.6832737922668457 -0.7301622629165649 -1.1140993017022538e-08 1.429092577609481e-08" material="mat_17118"/>
+    <geom class="visual" mesh="P_51a99156b4f21411" pos="5.4913811683654785 5.3203043937683105 0.941599428653717" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_738B63C3F0EB49E4"/>
+    <geom class="visual" mesh="P_52408e7d54c9d625" pos="6.9311604499816895 5.371420383453369 0.2928793132305145" quat="0.7071066498756409 -0.70710688829422 3.513777713237687e-08 -3.5137812659513656e-08" material="SM_02_ZS_BX_05_01"/>
+    <geom class="visual" mesh="P_5a73e85295125ce0" pos="1.2913810014724731 5.3203043937683105 0.941599428653717" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_22672001CBED8985"/>
+    <geom class="visual" mesh="P_5cd95e6be50354ff" pos="7.120460510253906 2.7530317306518555 1.221059799194336" quat="0.4255477488040924 -0.5647202730178833 0.4255480468273163 -0.5647202730178833" material="mat_70"/>
+    <geom class="visual" mesh="P_5cd95e6be50354ff_001" pos="7.125551223754883 3.0432984828948975 0.25377294421195984" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_70"/>
+    <geom class="visual" mesh="P_5cd95e6be50354ff_002" pos="7.125551223754883 5.160208702087402 0.26617223024368286" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_70"/>
+    <geom class="visual" mesh="P_5cd95e6be50354ff_003" pos="7.125551223754883 2.393059253692627 0.253773033618927" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_70"/>
+    <geom class="visual" mesh="P_5cd95e6be50354ff_004" pos="7.144909381866455 4.6460280418396 0.26617231965065" quat="0.5647202134132385 -0.4255477786064148 -0.5647204518318176 0.42554789781570435" material="mat_70"/>
+    <geom class="visual" mesh="P_5cd95e6be50354ff_005" pos="7.120460510253906 2.484896183013916 1.221059799194336" quat="0.4255477488040924 -0.5647202730178833 0.4255480468273163 -0.5647202730178833" material="mat_70"/>
+    <geom class="visual" mesh="P_5cd95e6be50354ff_006" pos="0.7961977124214172 3.9885916709899902 0.3169160783290863" quat="0.5801599621772766 -0.4203958809375763 -0.5500543713569641 0.4290943145751953" material="mat_70"/>
+    <geom class="visual" mesh="P_5cfc9b28f2729871" pos="0.70238196849823 3.78476881980896 0.2393350601196289" quat="0.4999999403953552 -0.5 -0.5 0.5000000596046448" material="SM_02_ZS_BX_05_01"/>
+    <geom class="visual" mesh="P_5f4f22aaa83f4d97" pos="7.005202770233154 2.472520351409912 1.6584254503250122" quat="7.549790126404332e-08 1.0 -6.717942113709796e-08 3.898733414017461e-15" material="mat_17114"/>
+    <geom class="visual" mesh="P_5f4f22aaa83f4d97_001" pos="7.030672073364258 4.791297435760498 0.4599993824958801" quat="7.549790126404332e-08 1.0 -6.717942113709796e-08 3.898733414017461e-15" material="mat_17114"/>
+    <geom class="visual" mesh="P_609c1fe09588769a" pos="6.990932941436768 2.859982490539551 0.45160797238349915" quat="0.6636770963668823 -0.748019278049469 1.6873595854980204e-29 5.6618488396627585e-22" material="mat_4594"/>
+    <geom class="visual" mesh="P_619f3ea4d10c148a" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_2784D6E2065B3E4B"/>
+    <geom class="visual" mesh="P_65ceaf2f04bd8918" pos="7.019774436950684 5.671365261077881 1.6213995218276978" quat="0.7071066498756409 -0.70710688829422 4.462470199852612e-28 5.989422257704953e-22" material="mat_17114"/>
+    <geom class="visual" mesh="P_66f824960417cf4a" pos="6.9300618171691895 4.571295261383057 0.5742695331573486" quat="0.7071066498756409 -0.70710688829422 3.533247650011617e-08 -3.533249071097089e-08" material="SM_02_ZS_BX_05_01"/>
+    <geom class="visual" mesh="P_6aaa45541a96ba10" pos="7.101676940917969 2.657884359359741 0.9081712961196899" quat="7.907536314633035e-07 -5.2185594848251984e-14 6.717942113709796e-08 1.0" material="mat_6200524"/>
+    <geom class="visual" mesh="P_6aaa45541a96ba10_001" pos="7.101676940917969 2.7417757511138916 0.1787949949502945" quat="7.907536314633035e-07 -5.2185594848251984e-14 6.717942113709796e-08 1.0" material="mat_6200524"/>
+    <geom class="visual" mesh="P_6aaa45541a96ba10_002" pos="7.057621002197266 4.966812610626221 1.176605463027954" quat="7.907536314633035e-07 -5.2185594848251984e-14 6.717942113709796e-08 1.0" material="mat_6200524"/>
+    <geom class="visual" mesh="P_6afc4ffb579c94ff" pos="7.120460510253906 2.7530317306518555 1.221059799194336" quat="0.4255477488040924 -0.5647202730178833 0.4255480468273163 -0.5647202730178833" material="mat_76"/>
+    <geom class="visual" mesh="P_6afc4ffb579c94ff_001" pos="7.125551223754883 3.0432984828948975 0.25377294421195984" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_76"/>
+    <geom class="visual" mesh="P_6afc4ffb579c94ff_002" pos="7.125551223754883 5.160208702087402 0.26617223024368286" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_76"/>
+    <geom class="visual" mesh="P_6afc4ffb579c94ff_003" pos="7.125551223754883 2.393059253692627 0.253773033618927" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_76"/>
+    <geom class="visual" mesh="P_6afc4ffb579c94ff_004" pos="7.144909381866455 4.6460280418396 0.26617231965065" quat="0.5647202134132385 -0.4255477786064148 -0.5647204518318176 0.42554789781570435" material="mat_76"/>
+    <geom class="visual" mesh="P_6afc4ffb579c94ff_005" pos="7.120460510253906 2.484896183013916 1.221059799194336" quat="0.4255477488040924 -0.5647202730178833 0.4255480468273163 -0.5647202730178833" material="mat_76"/>
+    <geom class="visual" mesh="P_6afc4ffb579c94ff_006" pos="0.7961977124214172 3.9885916709899902 0.3169160783290863" quat="0.5801599621772766 -0.4203958809375763 -0.5500543713569641 0.4290943145751953" material="mat_76"/>
+    <geom class="visual" mesh="P_6d6f095d1fd77001" pos="6.966156005859375 6.7118306159973145 0.49339917302131653" quat="0.7071066498756409 -0.70710688829422 4.462470199852612e-28 5.989422257704953e-22" material="mat_17114"/>
+    <geom class="visual" mesh="P_6df3acda262ecfd3" pos="6.966156482696533 7.773830890655518 0.4933990240097046" quat="0.7071066498756409 -0.70710688829422 4.462470199852612e-28 5.989422257704953e-22" material="mat_17114"/>
+    <geom class="visual" mesh="P_6f39479f81f2e1a0" pos="6.923655033111572 2.7651538848876953 0.30362191796302795" quat="0.7071066498756409 -0.70710688829422 3.57317091470577e-08 -3.573173401605345e-08" material="mat_600780DB2B1AA2AF"/>
+    <geom class="visual" mesh="P_6f6c17c41ed6adb4" pos="7.10181999206543 3.8343393802642822 -6.969121386646293e-07" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="SM_02_ZS_BX_05_01"/>
+    <geom class="visual" mesh="P_6f917447d21c54ff" pos="7.121175289154053 2.843479633331299 1.227238655090332" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_6f917447d21c54ff_001" pos="7.126530647277832 3.1672115325927734 0.26223787665367126" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_6f917447d21c54ff_002" pos="7.126530647277832 5.284121990203857 0.2746371626853943" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_6f917447d21c54ff_003" pos="7.126530647277832 2.516972303390503 0.2622379660606384" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_6f917447d21c54ff_004" pos="7.143929958343506 4.5221147537231445 0.27463728189468384" quat="0.4999999403953552 -0.5 -0.5 0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_6f917447d21c54ff_005" pos="7.121175289154053 2.5753440856933594 1.227238655090332" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_6f917447d21c54ff_006" pos="0.795299232006073 3.8749098777770996 0.3237113654613495" quat="0.49999988079071045 -0.5 -0.5000001192092896 0.5" material="mat_76"/>
+    <geom class="visual" mesh="P_6f92f537ea4e368d" pos="7.101676940917969 2.662163496017456 0.8689897656440735" quat="7.907536314633035e-07 -5.459512575638377e-14 6.717942113709796e-08 1.0" material="mat_6200524"/>
+    <geom class="visual" mesh="P_6f92f537ea4e368d_001" pos="7.101676940917969 2.7460548877716064 0.13961349427700043" quat="7.907536314633035e-07 -5.459512575638377e-14 6.717942113709796e-08 1.0" material="mat_6200524"/>
+    <geom class="visual" mesh="P_6f92f537ea4e368d_002" pos="7.057621002197266 4.9710917472839355 1.1374239921569824" quat="7.907536314633035e-07 -5.459512575638377e-14 6.717942113709796e-08 1.0" material="mat_6200524"/>
+    <geom class="visual" mesh="P_71ae495621fb2560" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_4B8219087698A8CB"/>
+    <geom class="visual" mesh="P_736b1cbae573a8ff" pos="7.121175289154053 2.890519142150879 1.2272387742996216" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_736b1cbae573a8ff_001" pos="7.126530647277832 3.2316555976867676 0.2622380256652832" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_736b1cbae573a8ff_002" pos="7.126530647277832 5.348566055297852 0.2746373116970062" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_736b1cbae573a8ff_003" pos="7.126530647277832 2.581416130065918 0.26223811507225037" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_736b1cbae573a8ff_004" pos="7.143929958343506 4.45767068862915 0.27463746070861816" quat="0.4999999403953552 -0.5 -0.5 0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_736b1cbae573a8ff_005" pos="7.121175289154053 2.6223835945129395 1.2272387742996216" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_736b1cbae573a8ff_006" pos="0.795299232006073 3.8157870769500732 0.3237115144729614" quat="0.49999988079071045 -0.5 -0.5000001192092896 0.5" material="mat_113"/>
+    <geom class="visual" mesh="P_73ca5865d961da77" pos="7.082046031951904 4.571035385131836 0.7494039535522461" quat="0.6899421811103821 -0.6899427175521851 0.1548529416322708 -0.154852956533432" material="mat_816189"/>
+    <geom class="visual" mesh="P_7575919afe37e31a" pos="3.391381025314331 5.3203043937683105 0.941599428653717" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_22672001CBED8985"/>
+    <geom class="visual" mesh="P_763cffc187a493f4" pos="7.100315093994141 4.603968143463135 1.7228144407272339" quat="0.5417881608009338 -0.5415615439414978 -0.45465368032455444 -0.4543860852718353" material="mat_61"/>
+    <geom class="visual" mesh="P_78a9614756a5cdc1" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_5188AE9D9AEFEA48"/>
+    <geom class="visual" mesh="P_796cd31dff3b6cb9" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_E358529B5F9DA6C1"/>
+    <geom class="visual" mesh="P_79ed1916a2d46b7e" pos="6.921559810638428 3.1131675243377686 0.5742701292037964" quat="0.7071066498756409 -0.70710688829422 3.57317091470577e-08 -3.573173401605345e-08" material="SM_02_ZS_BX_05_01"/>
+    <geom class="visual" mesh="P_7d1a97792dcae34d" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_D033E7AF68B3AE04"/>
+    <geom class="visual" mesh="P_8288a5934058e439" pos="0.8860676288604736 3.7324321269989014 0.4557110667228699" quat="7.807794588643446e-08 -0.04361933097243309 -0.9990482330322266 5.744539066654397e-08" material="mat_29424"/>
+    <geom class="visual" mesh="P_830d66f620b1cb8d" pos="7.101676940917969 2.662163496017456 0.8689897656440735" quat="7.907536314633035e-07 -5.459512575638377e-14 6.717942113709796e-08 1.0" material="mat_6200527"/>
+    <geom class="visual" mesh="P_830d66f620b1cb8d_001" pos="7.101676940917969 2.7460548877716064 0.13961349427700043" quat="7.907536314633035e-07 -5.459512575638377e-14 6.717942113709796e-08 1.0" material="mat_6200527"/>
+    <geom class="visual" mesh="P_830d66f620b1cb8d_002" pos="7.057621002197266 4.9710917472839355 1.1374239921569824" quat="7.907536314633035e-07 -5.459512575638377e-14 6.717942113709796e-08 1.0" material="mat_6200527"/>
+    <geom class="visual" mesh="P_84ed12fe070f3c30" pos="1.2913810014724731 5.3203043937683105 0.941599428653717" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_738B63C3F0EB49E4"/>
+    <geom class="visual" mesh="P_84fe085578e2454" pos="7.028676986694336 2.6564855575561523 1.6252446174621582" quat="7.549790126404332e-08 -1.5350337645957113e-14 -6.717939982081589e-08 -1.0" material="mat_148964"/>
+    <geom class="visual" mesh="P_86425c34153b029a" pos="7.005202770233154 2.472520351409912 1.6584254503250122" quat="7.549790126404332e-08 1.0 -6.717942113709796e-08 3.898733414017461e-15" material="mat_25582"/>
+    <geom class="visual" mesh="P_86425c34153b029a_001" pos="7.030672073364258 4.791297435760498 0.4599993824958801" quat="7.549790126404332e-08 1.0 -6.717942113709796e-08 3.898733414017461e-15" material="mat_25582"/>
+    <geom class="visual" mesh="P_874846a2e7a17dd7" pos="7.120556354522705 2.7742557525634766 1.2210419178009033" quat="0.4255477488040924 -0.5647202730178833 0.4255480468273163 -0.5647202730178833" material="mat_76"/>
+    <geom class="visual" mesh="P_874846a2e7a17dd7_001" pos="7.125682353973389 3.0723752975463867 0.25374841690063477" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_76"/>
+    <geom class="visual" mesh="P_874846a2e7a17dd7_002" pos="7.125682353973389 5.189285755157471 0.2661477327346802" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_76"/>
+    <geom class="visual" mesh="P_874846a2e7a17dd7_003" pos="7.125682353973389 2.422136068344116 0.2537485361099243" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_76"/>
+    <geom class="visual" mesh="P_874846a2e7a17dd7_004" pos="7.144778251647949 4.616950988769531 0.26614782214164734" quat="0.5647202134132385 -0.4255477786064148 -0.5647204518318176 0.42554789781570435" material="mat_76"/>
+    <geom class="visual" mesh="P_874846a2e7a17dd7_005" pos="7.120556354522705 2.506120204925537 1.2210419178009033" quat="0.4255477488040924 -0.5647202730178833 0.4255480468273163 -0.5647202730178833" material="mat_76"/>
+    <geom class="visual" mesh="P_874846a2e7a17dd7_006" pos="0.7960773706436157 3.9619157314300537 0.3168964087963104" quat="0.5801599621772766 -0.4203958809375763 -0.5500543713569641 0.4290943145751953" material="mat_76"/>
+    <geom class="visual" mesh="P_8796a5cd4476bd29" pos="0.8860676288604736 3.7324321269989014 0.4557110667228699" quat="7.807794588643446e-08 -0.04361933097243309 -0.9990482330322266 5.744539066654397e-08" material="mat_17114"/>
+    <geom class="visual" mesh="P_8904cecb0f6aba10" pos="7.101676940917969 2.657884359359741 0.9081712961196899" quat="7.907536314633035e-07 -5.2185594848251984e-14 6.717942113709796e-08 1.0" material="mat_6200525"/>
+    <geom class="visual" mesh="P_8904cecb0f6aba10_001" pos="7.101676940917969 2.7417757511138916 0.1787949949502945" quat="7.907536314633035e-07 -5.2185594848251984e-14 6.717942113709796e-08 1.0" material="mat_6200525"/>
+    <geom class="visual" mesh="P_8904cecb0f6aba10_002" pos="7.057621002197266 4.966812610626221 1.176605463027954" quat="7.907536314633035e-07 -5.2185594848251984e-14 6.717942113709796e-08 1.0" material="mat_6200525"/>
+    <geom class="visual" mesh="P_8b106da0e9002dd7" pos="7.121418476104736 2.7318506240844727 1.2210561037063599" quat="0.4255477488040924 -0.5647202730178833 0.4255480468273163 -0.5647202730178833" material="mat_76"/>
+    <geom class="visual" mesh="P_8b106da0e9002dd7_001" pos="7.126863479614258 3.014280080795288 0.25376778841018677" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_76"/>
+    <geom class="visual" mesh="P_8b106da0e9002dd7_002" pos="7.126863479614258 5.131190776824951 0.2661670744419098" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_76"/>
+    <geom class="visual" mesh="P_8b106da0e9002dd7_003" pos="7.126863479614258 2.3640408515930176 0.25376787781715393" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_76"/>
+    <geom class="visual" mesh="P_8b106da0e9002dd7_004" pos="7.14359712600708 4.675045967102051 0.26616716384887695" quat="0.5647202134132385 -0.4255477786064148 -0.5647204518318176 0.42554789781570435" material="mat_76"/>
+    <geom class="visual" mesh="P_8b106da0e9002dd7_005" pos="7.121418476104736 2.463715076446533 1.2210561037063599" quat="0.4255477488040924 -0.5647202730178833 0.4255480468273163 -0.5647202730178833" material="mat_76"/>
+    <geom class="visual" mesh="P_8b106da0e9002dd7_006" pos="0.7949938178062439 4.015213966369629 0.3169119656085968" quat="0.5801599621772766 -0.4203958809375763 -0.5500543713569641 0.4290943145751953" material="mat_76"/>
+    <geom class="visual" mesh="P_8c6c34a7a49c13f4" pos="7.100315093994141 4.603968143463135 1.7228144407272339" quat="0.5417881608009338 -0.5415615439414978 -0.45465368032455444 -0.4543860852718353" material="mat_73"/>
+    <geom class="visual" mesh="P_8e00f4d961f4e86f" pos="3.391381025314331 2.3203043937683105 0.9415998458862305" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_738B63C3F0EB49E4"/>
+    <geom class="visual" mesh="P_8f529831e3bebfc6" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_5188AE9D9AEFEA48"/>
+    <geom class="visual" mesh="P_9067f6b03f0faf3b" pos="6.932157039642334 4.918161392211914 0.3036212921142578" quat="0.7071066498756409 -0.70710688829422 3.513777713237687e-08 -3.5137812659513656e-08" material="mat_600780DB2B1AA2AF"/>
+    <geom class="visual" mesh="P_9126ac7ee6cfd4ff" pos="7.121175289154053 2.890519142150879 1.2272387742996216" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_9126ac7ee6cfd4ff_001" pos="7.126530647277832 3.2316555976867676 0.2622380256652832" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_9126ac7ee6cfd4ff_002" pos="7.126530647277832 5.348566055297852 0.2746373116970062" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_9126ac7ee6cfd4ff_003" pos="7.126530647277832 2.581416130065918 0.26223811507225037" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_9126ac7ee6cfd4ff_004" pos="7.143929958343506 4.45767068862915 0.27463746070861816" quat="0.4999999403953552 -0.5 -0.5 0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_9126ac7ee6cfd4ff_005" pos="7.121175289154053 2.6223835945129395 1.2272387742996216" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_9126ac7ee6cfd4ff_006" pos="0.795299232006073 3.8157870769500732 0.3237115144729614" quat="0.49999988079071045 -0.5 -0.5000001192092896 0.5" material="mat_76"/>
+    <geom class="visual" mesh="P_91a567fba239259a" pos="6.990932941436768 2.891979217529297 0.493399977684021" quat="0.7071066498756409 -0.70710688829422 4.462470199852612e-28 5.989422257704953e-22" material="mat_17114"/>
+    <geom class="visual" mesh="P_929def6f7e60369a" pos="6.990932941436768 2.859982490539551 0.45160797238349915" quat="0.6636770963668823 -0.748019278049469 1.6873595854980204e-29 5.6618488396627585e-22" material="mat_17118"/>
+    <geom class="visual" mesh="P_95ee02e6460ab021" pos="7.019774436950684 5.654068946838379 1.5672537088394165" quat="0.6832737922668457 -0.7301622629165649 -1.1140993017022538e-08 1.429092577609481e-08" material="mat_17114"/>
+    <geom class="visual" mesh="P_99470453f0db268d" pos="7.137914657592773 2.735926866531372 0.9242944717407227" quat="0.4999983608722687 -0.5000000596046448 0.5000016689300537 -0.5000001192092896" material="mat_6200533"/>
+    <geom class="visual" mesh="P_99470453f0db268d_001" pos="7.137914657592773 2.8198182582855225 0.1949181854724884" quat="0.4999983608722687 -0.5000000596046448 0.5000016689300537 -0.5000001192092896" material="mat_6200533"/>
+    <geom class="visual" mesh="P_99470453f0db268d_002" pos="7.09385871887207 5.044855117797852 1.1927287578582764" quat="0.4999983608722687 -0.5000000596046448 0.5000016689300537 -0.5000001192092896" material="mat_6200533"/>
+    <geom class="visual" mesh="P_9a0f4de813d6d18a" pos="6.935373306274414 4.429708003997803 0.29287922382354736" quat="0.7071066498756409 -0.70710688829422 3.513780200137262e-08 -3.513780200137262e-08" material="SM_02_ZS_BX_05_01"/>
+    <geom class="visual" mesh="P_9a57d10944070c94" pos="7.265317916870117 3.811769962310791 1.8713752031326294" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_150356"/>
+    <geom class="visual" mesh="P_9a6e2412769062d2" pos="7.044905662536621 3.094407796859741 1.1794650554656982" quat="0.6073808670043945 -0.6073808073997498 0.3620615601539612 -0.36206144094467163" material="mat_792107"/>
+    <geom class="visual" mesh="P_9d9b6060904f0f5a" pos="5.4913811683654785 2.3203043937683105 0.9415998458862305" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_22672001CBED8985"/>
+    <geom class="visual" mesh="P_9dc327eb9d50769a" pos="6.990932941436768 2.859982490539551 0.45160797238349915" quat="0.6636770963668823 -0.748019278049469 1.6873595854980204e-29 5.6618488396627585e-22" material="mat_17114"/>
+    <geom class="visual" mesh="P_9fd68635f033637e" pos="5.4913811683654785 5.3203043937683105 0.941599428653717" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_22672001CBED8985"/>
+    <geom class="visual" mesh="P_a18a818861cef410" pos="7.137914657592773 2.735926866531372 0.9242944717407227" quat="0.4999983608722687 -0.5000000596046448 0.5000016689300537 -0.5000001192092896" material="mat_6200532"/>
+    <geom class="visual" mesh="P_a18a818861cef410_001" pos="7.137914657592773 2.8198182582855225 0.1949181854724884" quat="0.4999983608722687 -0.5000000596046448 0.5000016689300537 -0.5000001192092896" material="mat_6200532"/>
+    <geom class="visual" mesh="P_a18a818861cef410_002" pos="7.09385871887207 5.044855117797852 1.1927287578582764" quat="0.4999983608722687 -0.5000000596046448 0.5000016689300537 -0.5000001192092896" material="mat_6200532"/>
+    <geom class="visual" mesh="P_a35aeec99ef293f4" pos="7.072408676147461 4.5497212409973145 1.701443076133728" quat="0.6707372069358826 -0.058201368898153305 0.06391782313585281 -0.7366401553153992" material="mat_78"/>
+    <geom class="visual" mesh="P_a3cbb2d9954c1871" pos="0.9125534892082214 3.581089496612549 0.11775027960538864" quat="0.4999999403953552 -0.5 -0.5 0.5000000596046448" material="mat_AB2965A62A122711"/>
+    <geom class="visual" mesh="P_a3e60165072b37d3" pos="6.966156482696533 7.773830890655518 0.4933990240097046" quat="0.7071066498756409 -0.70710688829422 4.462470199852612e-28 5.989422257704953e-22" material="mat_12863"/>
+    <geom class="visual" mesh="P_a458760f39c713f4" pos="7.100315093994141 4.603968143463135 1.7228144407272339" quat="0.5417881608009338 -0.5415615439414978 -0.45465368032455444 -0.4543860852718353" material="mat_67"/>
+    <geom class="visual" mesh="P_a5eaf3e4dcdda454" pos="7.031585216522217 2.659926652908325 1.6559793949127197" quat="7.549790126404332e-08 -1.5350341034088902e-14 -6.717939982081589e-08 -1.0" material="mat_148964"/>
+    <geom class="visual" mesh="P_aa469314d5512026" pos="3.391381025314331 2.3203043937683105 0.9415998458862305" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_22672001CBED8985"/>
+    <geom class="visual" mesh="P_aee59aa2d3d7884a" pos="6.931424617767334 4.879973888397217 0.3036212623119354" quat="0.7071066498756409 -0.70710688829422 3.513780200137262e-08 -3.513780200137262e-08" material="mat_600780DB2B1AA2AF"/>
+    <geom class="visual" mesh="P_af2d2850acf983f4" pos="7.072408676147461 4.5497212409973145 1.701443076133728" quat="0.6707372069358826 -0.058201368898153305 0.06391782313585281 -0.7366401553153992" material="mat_73"/>
+    <geom class="visual" mesh="P_b0248d2df51ea68d" pos="7.101676940917969 2.6673853397369385 0.8886684775352478" quat="7.907536314633035e-07 -5.768907622655597e-14 6.71794140316706e-08 1.0" material="mat_6200522"/>
+    <geom class="visual" mesh="P_b0248d2df51ea68d_001" pos="7.101676940917969 2.751276731491089 0.15929219126701355" quat="7.907536314633035e-07 -5.768907622655597e-14 6.71794140316706e-08 1.0" material="mat_6200522"/>
+    <geom class="visual" mesh="P_b0248d2df51ea68d_002" pos="7.057621002197266 4.976313591003418 1.1571027040481567" quat="7.907536314633035e-07 -5.768907622655597e-14 6.71794140316706e-08 1.0" material="mat_6200522"/>
+    <geom class="visual" mesh="P_b22a2bdc85c5211d" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_2784D6E2065B3E4B"/>
+    <geom class="visual" mesh="P_b9b245152d268918" pos="7.019774436950684 5.671365261077881 1.6213995218276978" quat="0.7071066498756409 -0.70710688829422 4.462470199852612e-28 5.989422257704953e-22" material="mat_17111"/>
+    <geom class="visual" mesh="P_b9c5fc554894454" pos="7.028676986694336 2.6564855575561523 1.6252446174621582" quat="7.549790126404332e-08 -1.5350337645957113e-14 -6.717939982081589e-08 -1.0" material="mat_148966"/>
+    <geom class="visual" mesh="P_bb8bd97fce74c717" pos="1.2913810014724731 2.3203043937683105 0.9415998458862305" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_738B63C3F0EB49E4"/>
+    <geom class="visual" mesh="P_be43c47b4576350a" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_5188AE9D9AEFEA48"/>
+    <geom class="visual" mesh="P_be5f3c5b45e454ff" pos="7.121175289154053 2.866999387741089 1.227238655090332" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_be5f3c5b45e454ff_001" pos="7.126530647277832 3.1994335651397705 0.2622378468513489" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_be5f3c5b45e454ff_002" pos="7.126530647277832 5.316344261169434 0.2746371328830719" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_be5f3c5b45e454ff_003" pos="7.126530647277832 2.5491943359375 0.26223793625831604" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_be5f3c5b45e454ff_004" pos="7.143929958343506 4.489892482757568 0.27463728189468384" quat="0.4999999403953552 -0.5 -0.5 0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_be5f3c5b45e454ff_005" pos="7.121175289154053 2.5988638401031494 1.227238655090332" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_76"/>
+    <geom class="visual" mesh="P_be5f3c5b45e454ff_006" pos="0.795299232006073 3.845348358154297 0.3237113654613495" quat="0.49999988079071045 -0.5 -0.5000001192092896 0.5" material="mat_76"/>
+    <geom class="visual" mesh="P_be6e55d1f2089480" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_73496A3838D8D09E"/>
+    <geom class="visual" mesh="P_bea0134ecb8f615b" pos="7.1093878746032715 4.901987552642822 -6.653704076597933e-07" quat="0.7071066498756409 -0.70710688829422 3.57317091470577e-08 -3.573173401605345e-08" material="SM_02_ZS_BX_05_01"/>
+    <geom class="visual" mesh="P_bf71ade5a931f001" pos="6.966156005859375 6.7118306159973145 0.49339917302131653" quat="0.7071066498756409 -0.70710688829422 4.462470199852612e-28 5.989422257704953e-22" material="mat_17118"/>
+    <geom class="visual" mesh="P_c20c1b29052bafdc" pos="0.667424738407135 5.159582614898682 0.3852798044681549" quat="0.5 0.4999999403953552 -0.5000000596046448 -0.5" material="mat_62041"/>
+    <geom class="visual" mesh="P_c20c1b29052bafdc_001" pos="0.8228549957275391 2.4134974479675293 0.38528013229370117" quat="0.5 0.4999999403953552 0.5000000596046448 0.5" material="mat_62041"/>
+    <geom class="visual" mesh="P_c27c6bd11a12bec8" pos="6.966156482696533 7.776830673217773 0.9215024709701538" quat="0.7654831409454346 -0.6434559226036072 2.2406881683423308e-08 -3.0604677903056654e-08" material="mat_17114"/>
+    <geom class="visual" mesh="P_c2b69ce109f96d80" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_73496A3838D8D09E"/>
+    <geom class="visual" mesh="P_c32de6d8ead9da0" pos="6.922658443450928 2.313042402267456 0.2928800880908966" quat="0.7071066498756409 -0.70710688829422 3.57317091470577e-08 -3.573173401605345e-08" material="SM_02_ZS_BX_05_01"/>
+    <geom class="visual" mesh="P_c370c26d7b0ebd29" pos="0.8860676288604736 3.7324321269989014 0.4557110667228699" quat="7.807794588643446e-08 -0.04361933097243309 -0.9990482330322266 5.744539066654397e-08" material="mat_17118"/>
+    <geom class="visual" mesh="P_c3d3efb4027717d3" pos="6.966156482696533 7.773830890655518 0.4933990240097046" quat="0.7071066498756409 -0.70710688829422 4.462470199852612e-28 5.989422257704953e-22" material="mat_17118"/>
+    <geom class="visual" mesh="P_c48c2798f53497d3" pos="6.966156482696533 7.776830673217773 0.9215024709701538" quat="0.7654831409454346 -0.6434559226036072 2.2406881683423308e-08 -3.0604677903056654e-08" material="mat_12863"/>
+    <geom class="visual" mesh="P_c5b32a68e3db7910" pos="7.265317916870117 3.811769962310791 1.8713752031326294" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_150356"/>
+    <geom class="visual" mesh="P_c8955babe0d15600" pos="0.7302595376968384 4.566878795623779 0.0533195361495018" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38617"/>
+    <geom class="visual" mesh="P_c8955babe0d15600_001" pos="0.7302595376968384 3.2874834537506104 0.05331970751285553" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38617"/>
+    <geom class="visual" mesh="P_c8955babe0d15600_002" pos="7.0722975730896 5.000969886779785 1.3443224430084229" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38617"/>
+    <geom class="visual" mesh="P_c8955babe0d15600_003" pos="7.0722975730896 5.24762487411499 1.3443224430084229" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38617"/>
+    <geom class="visual" mesh="P_c8955babe0d15600_004" pos="7.113203525543213 5.313679218292236 0.8687126636505127" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38617"/>
+    <geom class="visual" mesh="P_c8955babe0d15600_005" pos="7.113203525543213 5.083869934082031 0.8687127232551575" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38617"/>
+    <geom class="visual" mesh="P_c9db59f01d4cba77" pos="7.064260005950928 4.5625481605529785 0.7502022981643677" quat="0.49868959188461304 -0.49868983030319214 0.5013068318367004 -0.5013068914413452" material="mat_816199"/>
+    <geom class="visual" mesh="P_cb05c163e9ffc200" pos="0.7302595376968384 4.566878795623779 0.05331968516111374" quat="0.4999997913837433 -0.5 0.5000001788139343 -0.5" material="mat_38616"/>
+    <geom class="visual" mesh="P_cb05c163e9ffc200_001" pos="0.7302595376968384 3.2874834537506104 0.05331985652446747" quat="0.4999997913837433 -0.5 0.5000001788139343 -0.5" material="mat_38616"/>
+    <geom class="visual" mesh="P_cb05c163e9ffc200_002" pos="7.0722975730896 5.000969886779785 1.3443225622177124" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38616"/>
+    <geom class="visual" mesh="P_cb05c163e9ffc200_003" pos="7.0722975730896 5.24762487411499 1.3443225622177124" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38616"/>
+    <geom class="visual" mesh="P_cb05c163e9ffc200_004" pos="7.113203525543213 5.313679218292236 0.8687127828598022" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38616"/>
+    <geom class="visual" mesh="P_cb05c163e9ffc200_005" pos="7.113203525543213 5.083869934082031 0.868712842464447" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38616"/>
+    <geom class="visual" mesh="P_ccd7a62236a2d08d" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_5188AE9D9AEFEA48"/>
+    <geom class="visual" mesh="P_cd7d5166b46d1a77" pos="7.056423187255859 4.5684309005737305 0.7372266054153442" quat="0.49868959188461304 -0.49868983030319214 0.5013068318367004 -0.5013068914413452" material="mat_816197"/>
+    <geom class="visual" mesh="P_cf9676225ec940fe" pos="-0.40161898732185364 0.5463038682937622 -8.17459522295394e-08" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_5188AE9D9AEFEA48"/>
+    <geom class="visual" mesh="P_d01073da8e447001" pos="6.966156005859375 6.7118306159973145 0.49339917302131653" quat="0.7071066498756409 -0.70710688829422 4.462470199852612e-28 5.989422257704953e-22" material="mat_12863"/>
+    <geom class="visual" mesh="P_d46bd8447eb297b4" pos="6.926871299743652 3.2547547817230225 0.29287976026535034" quat="0.7071066498756409 -0.70710688829422 3.4993899333812806e-08 -3.4993899333812806e-08" material="SM_02_ZS_BX_05_01"/>
+    <geom class="visual" mesh="P_d5f61d5f565413f4" pos="7.072408676147461 4.5497212409973145 1.701443076133728" quat="0.6707372069358826 -0.058201368898153305 0.06391782313585281 -0.7366401553153992" material="mat_93"/>
+    <geom class="visual" mesh="P_d704713c125e015b" pos="6.932157039642334 4.5703229904174805 0.5816909074783325" quat="0.7071066498756409 -0.70710688829422 3.533247650011617e-08 -3.533249071097089e-08" material="mat_600780DB2B1AA2AF"/>
+    <geom class="visual" mesh="P_d9a0243d0841d48e" pos="6.923655033111572 3.1121952533721924 0.5816915035247803" quat="0.7071066498756409 -0.70710688829422 3.57317091470577e-08 -3.573173401605345e-08" material="mat_600780DB2B1AA2AF"/>
+    <geom class="visual" mesh="P_d9ae2ed2fe32b600" pos="0.7302595376968384 4.566878795623779 0.05331968516111374" quat="0.4999997913837433 -0.5 0.5000001788139343 -0.5" material="mat_38620"/>
+    <geom class="visual" mesh="P_d9ae2ed2fe32b600_001" pos="0.7302595376968384 3.2874834537506104 0.05331985652446747" quat="0.4999997913837433 -0.5 0.5000001788139343 -0.5" material="mat_38620"/>
+    <geom class="visual" mesh="P_d9ae2ed2fe32b600_002" pos="7.0722975730896 5.000969886779785 1.3443225622177124" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38620"/>
+    <geom class="visual" mesh="P_d9ae2ed2fe32b600_003" pos="7.0722975730896 5.24762487411499 1.3443225622177124" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38620"/>
+    <geom class="visual" mesh="P_d9ae2ed2fe32b600_004" pos="7.113203525543213 5.313679218292236 0.8687127828598022" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38620"/>
+    <geom class="visual" mesh="P_d9ae2ed2fe32b600_005" pos="7.113203525543213 5.083869934082031 0.868712842464447" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_38620"/>
+    <geom class="visual" mesh="P_dd8858c1522ca4ff" pos="7.121175289154053 2.819960117340088 1.227238655090332" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_dd8858c1522ca4ff_001" pos="7.126530647277832 3.1349897384643555 0.26223787665367126" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_dd8858c1522ca4ff_002" pos="7.126530647277832 5.2519001960754395 0.2746371626853943" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_dd8858c1522ca4ff_003" pos="7.126530647277832 2.484750509262085 0.2622379660606384" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_dd8858c1522ca4ff_004" pos="7.143929958343506 4.5543365478515625 0.27463728189468384" quat="0.4999999403953552 -0.5 -0.5 0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_dd8858c1522ca4ff_005" pos="7.121175289154053 2.5518245697021484 1.227238655090332" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_113"/>
+    <geom class="visual" mesh="P_dd8858c1522ca4ff_006" pos="0.795299232006073 3.9044711589813232 0.3237113356590271" quat="0.49999988079071045 -0.5 -0.5000001192092896 0.5" material="mat_113"/>
+    <geom class="visual" mesh="P_e0cc270bd313cf5f" pos="0.9173224568367004 3.99202036857605 0.13153302669525146" quat="0.4999999403953552 -0.5 -0.5 0.5000000596046448" material="mat_AB2965A62A122711"/>
+    <geom class="visual" mesh="P_e26bd4c9aff02dd7" pos="7.120556354522705 2.7742557525634766 1.2210419178009033" quat="0.4255477488040924 -0.5647202730178833 0.4255480468273163 -0.5647202730178833" material="mat_70"/>
+    <geom class="visual" mesh="P_e26bd4c9aff02dd7_001" pos="7.125682353973389 3.0723752975463867 0.25374841690063477" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_70"/>
+    <geom class="visual" mesh="P_e26bd4c9aff02dd7_002" pos="7.125682353973389 5.189285755157471 0.2661477327346802" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_70"/>
+    <geom class="visual" mesh="P_e26bd4c9aff02dd7_003" pos="7.125682353973389 2.422136068344116 0.2537485361099243" quat="0.4255474805831909 -0.5647202730178833 0.4255479872226715 -0.5647205114364624" material="mat_70"/>
+    <geom class="visual" mesh="P_e26bd4c9aff02dd7_004" pos="7.144778251647949 4.616950988769531 0.26614782214164734" quat="0.5647202134132385 -0.4255477786064148 -0.5647204518318176 0.42554789781570435" material="mat_70"/>
+    <geom class="visual" mesh="P_e26bd4c9aff02dd7_005" pos="7.120556354522705 2.506120204925537 1.2210419178009033" quat="0.4255477488040924 -0.5647202730178833 0.4255480468273163 -0.5647202730178833" material="mat_70"/>
+    <geom class="visual" mesh="P_e26bd4c9aff02dd7_006" pos="0.7960773706436157 3.9619157314300537 0.3168964087963104" quat="0.5801599621772766 -0.4203958809375763 -0.5500543713569641 0.4290943145751953" material="mat_70"/>
+    <geom class="visual" mesh="P_e419692093f6892" pos="7.044905662536621 3.094407796859741 1.1794650554656982" quat="0.6073808670043945 -0.6073808073997498 0.3620615601539612 -0.36206144094467163" material="mat_792106"/>
+    <geom class="visual" mesh="P_e71b95777e3fda10" pos="7.108490467071533 2.58170747756958 1.0374138355255127" quat="0.6963641047477722 -0.6963641047477722 0.1227886751294136 -0.12278854846954346" material="mat_6200530"/>
+    <geom class="visual" mesh="P_e71b95777e3fda10_001" pos="7.108490467071533 2.6655988693237305 0.3080376386642456" quat="0.6963641047477722 -0.6963641047477722 0.1227886751294136 -0.12278854846954346" material="mat_6200530"/>
+    <geom class="visual" mesh="P_ec2605adfa841f5d" pos="0.6906357407569885 3.608025312423706 0.09028059989213943" quat="0.4999999403953552 -0.5 -0.5 0.5000000596046448" material="OmniPBR"/>
+    <geom class="visual" mesh="P_ec2605adfa841f5d_01" pos="0.6906357407569885 3.608025312423706 0.10538505017757416" quat="0.5979833602905273 -0.5979833006858826 -0.3773804306983948 0.37738028168678284" material="OmniPBR_01"/>
+    <geom class="visual" mesh="P_ec2605adfa841f5d_02" pos="0.6906356811523438 4.012860298156738 0.08912882208824158" quat="0.5979833602905273 -0.5979833006858826 -0.3773804306983948 0.37738028168678284" material="OmniPBR_01"/>
+    <geom class="visual" mesh="P_ec2605adfa841f5d_03" pos="0.6906356811523438 4.012860298156738 0.09844104200601578" quat="0.4999999403953552 -0.5 -0.5 0.5000000596046448" material="OmniPBR"/>
+    <geom class="visual" mesh="P_ec2605adfa841f5f" pos="0.9170817136764526 3.5810887813568115 0.11775057762861252" quat="0.4999999403953552 -0.5 -0.5 0.5000000596046448" material="SM_02_ZS_BX_05_01"/>
+    <geom class="visual" mesh="P_ef2ae3813c71ffcc" pos="7.063271999359131 3.9848084449768066 1.282546043395996" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_21454"/>
+    <geom class="visual" mesh="P_f18a2c6edec36144" pos="7.108490467071533 2.58170747756958 1.0374138355255127" quat="0.6963641047477722 -0.6963641047477722 0.1227886751294136 -0.12278854846954346" material="mat_6200529"/>
+    <geom class="visual" mesh="P_f18a2c6edec36144_001" pos="7.108490467071533 2.6655988693237305 0.3080376386642456" quat="0.6963641047477722 -0.6963641047477722 0.1227886751294136 -0.12278854846954346" material="mat_6200529"/>
+    <geom class="visual" mesh="P_f3cfc54dcd882264" pos="3.391381025314331 5.3203043937683105 0.941599428653717" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_738B63C3F0EB49E4"/>
+    <geom class="visual" mesh="P_f6e806475c8d87f4" pos="7.072408676147461 4.5497212409973145 1.701443076133728" quat="0.6707372069358826 -0.058201368898153305 0.06391782313585281 -0.7366401553153992" material="mat_67"/>
+    <geom class="visual" mesh="P_f75a5d3c6f41a454" pos="7.031585216522217 2.659926652908325 1.6559793949127197" quat="7.549790126404332e-08 -1.5350341034088902e-14 -6.717939982081589e-08 -1.0" material="mat_148966"/>
+    <geom class="visual" mesh="P_f9b4694eeef3f6b4" pos="6.922922611236572 2.8081979751586914 0.30362191796302795" quat="0.7071066498756409 -0.70710688829422 3.4993899333812806e-08 -3.4993899333812806e-08" material="mat_600780DB2B1AA2AF"/>
+    <geom class="visual" mesh="P_fe3c77ebaeb4448e" pos="7.10088586807251 2.782475233078003 -1.7385275441483827e-08" quat="0.7071066498756409 -0.70710688829422 3.57317091470577e-08 -3.573173401605345e-08" material="SM_02_ZS_BX_05_01"/>
+    <geom class="visual" mesh="E_PotMud" pos="0.17862923443317413 6.688251495361328 0.0005510151386260986" quat="0.7071065902709961 -0.7071070671081543 0.0 0.0" material="mat_76"/>
+    <geom class="visual" mesh="E_PotMud" pos="1.0786292552947998 6.688251495361328 0.0005510151386260986" quat="0.7071065902709961 -0.7071070671081543 0.0 0.0" material="mat_76"/>
+    <geom class="visual" mesh="E_PotMud" pos="2.8286292552948 6.688251495361328 0.0005510151386260986" quat="0.7071065902709961 -0.7071070671081543 0.0 0.0" material="mat_76"/>
+    <geom class="visual" mesh="E_PotMud" pos="3.7286293506622314 6.688251495361328 0.0005510151386260986" quat="0.7071065902709961 -0.7071070671081543 0.0 0.0" material="mat_76"/>
+    <geom class="visual" mesh="E_PotMud" pos="5.528629302978516 6.688251495361328 0.0005510151386260986" quat="0.7071065902709961 -0.7071070671081543 0.0 0.0" material="mat_76"/>
+    <geom class="visual" mesh="E_PotMud" pos="6.428629398345947 6.688251495361328 0.0005510151386260986" quat="0.7071065902709961 -0.7071070671081543 0.0 0.0" material="mat_76"/>
+    <geom class="visual" mesh="E_Pot" pos="0.17862924933433533 6.6882524490356445 0.000551017583347857" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_71"/>
+    <geom class="visual" mesh="E_Pot" pos="1.0786292552947998 6.6882524490356445 0.000551017583347857" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_71"/>
+    <geom class="visual" mesh="E_Pot" pos="2.8286292552948 6.6882524490356445 0.000551017583347857" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_71"/>
+    <geom class="visual" mesh="E_Pot" pos="3.7286293506622314 6.6882524490356445 0.000551017583347857" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_71"/>
+    <geom class="visual" mesh="E_Pot" pos="5.528629302978516 6.6882524490356445 0.000551017583347857" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_71"/>
+    <geom class="visual" mesh="E_Pot" pos="6.428629398345947 6.6882524490356445 0.000551017583347857" quat="0.7071066498756409 -0.70710688829422 0.0 0.0" material="mat_71"/>
+    <body name="P_50f2f2b03c36755" pos="5.269693851470947 5.427311420440674 0.4744858741760254" quat="1.0 0.0 0.0 0.0">
+      <joint type="free"/>
+      <geom class="visual" mesh="P_WSDesk_0" material="SM_02_ZS_BX_05_01"/>
+      <geom class="C_P_WSDesk_0_001"/>
+      <geom class="C_P_WSDesk_0_002"/>
+      <geom class="C_P_WSDesk_0_003"/>
+      <geom class="C_P_WSDesk_0_004"/>
+      <geom class="C_P_WSDesk_0_005"/>
+      <geom class="C_P_WSDesk_0_006"/>
+      <geom class="C_P_WSDesk_0_007"/>
+      <geom class="C_P_WSDesk_0_008"/>
+      <geom class="C_P_WSDesk_0_009"/>
+    </body>
+    <body name="P_50f2f2b03c36755_001" pos="5.269693851470947 2.1943960189819336 0.4744863212108612" quat="1.0 0.0 0.0 0.0">
+      <joint type="free"/>
+      <geom class="visual" mesh="P_WSDesk_0" material="SM_02_ZS_BX_05_01"/>
+      <geom class="C_P_WSDesk_0_001"/>
+      <geom class="C_P_WSDesk_0_002"/>
+      <geom class="C_P_WSDesk_0_003"/>
+      <geom class="C_P_WSDesk_0_004"/>
+      <geom class="C_P_WSDesk_0_005"/>
+      <geom class="C_P_WSDesk_0_006"/>
+      <geom class="C_P_WSDesk_0_007"/>
+      <geom class="C_P_WSDesk_0_008"/>
+      <geom class="C_P_WSDesk_0_009"/>
+    </body>
+    <body name="P_69aba0608a1656c4" pos="3.6821110248565674 5.3656744956970215 0.39413803815841675" quat="7.549790126404332e-08 0.0 0.0 -1.0">
+      <joint type="free"/>
+      <geom class="visual" mesh="P_WSofa_0" material="SM_02_ZS_BX_05_01"/>
+      <geom class="C_P_WSofa_0_001"/>
+      <geom class="C_P_WSofa_0_002"/>
+      <geom class="C_P_WSofa_0_003"/>
+      <geom class="C_P_WSofa_0_004"/>
+      <geom class="C_P_WSofa_0_005"/>
+      <geom class="C_P_WSofa_0_006"/>
+      <geom class="C_P_WSofa_0_007"/>
+      <geom class="C_P_WSofa_0_008"/>
+      <geom class="C_P_WSofa_0_009"/>
+      <geom class="C_P_WSofa_0_010"/>
+      <geom class="C_P_WSofa_0_011"/>
+      <geom class="C_P_WSofa_0_012"/>
+      <geom class="C_P_WSofa_0_013"/>
+      <geom class="C_P_WSofa_0_014"/>
+    </body>
+    <body name="P_69aba0608a1656c4_001" pos="3.696150064468384 2.1516313552856445 0.3941384553909302" quat="1.0 0.0 0.0 0.0">
+      <joint type="free"/>
+      <geom class="visual" mesh="P_WSofa_0" material="SM_02_ZS_BX_05_01"/>
+      <geom class="C_P_WSofa_0_001"/>
+      <geom class="C_P_WSofa_0_002"/>
+      <geom class="C_P_WSofa_0_003"/>
+      <geom class="C_P_WSofa_0_004"/>
+      <geom class="C_P_WSofa_0_005"/>
+      <geom class="C_P_WSofa_0_006"/>
+      <geom class="C_P_WSofa_0_007"/>
+      <geom class="C_P_WSofa_0_008"/>
+      <geom class="C_P_WSofa_0_009"/>
+      <geom class="C_P_WSofa_0_010"/>
+      <geom class="C_P_WSofa_0_011"/>
+      <geom class="C_P_WSofa_0_012"/>
+      <geom class="C_P_WSofa_0_013"/>
+      <geom class="C_P_WSofa_0_014"/>
+    </body>
+    <body name="P_6d3b8fe58eeb0fd1" pos="3.6856837272644043 5.282843589782715 0.4213069677352905" quat="1.9470718370939721e-07 0.0 0.0 -1.0">
+      <joint type="free"/>
+      <geom class="visual" mesh="P_Pad" material="MI_02_ZS_BX_04_01"/>
+      <geom class="C_P_Pad_0"/>
+    </body>
+    <body name="P_6d3b8fe58eeb0fd1_001" pos="3.692577362060547 2.234462261199951 0.42130738496780396" quat="1.0 0.0 0.0 0.0">
+      <joint type="free"/>
+      <geom class="visual" mesh="P_Pad" material="MI_02_ZS_BX_04_01"/>
+      <geom class="C_P_Pad_0"/>
+    </body>
+    <geom class="visual" mesh="P_Leaves" pos="0.1786293387413025 6.688251495361328 0.00055093684932217" quat="0.471881240606308 -0.5197860598564148 0.7068758010864258 -0.08647078275680542" material="mat_591"/>
+    <geom class="visual" mesh="P_Leaves" pos="1.0786293745040894 6.688251495361328 0.00055093684932217" quat="0.471881240606308 -0.5197860598564148 0.7068758010864258 -0.08647078275680542" material="mat_591"/>
+    <geom class="visual" mesh="P_Leaves" pos="2.828629493713379 6.688251495361328 0.00055093684932217" quat="0.471881240606308 -0.5197860598564148 0.7068758010864258 -0.08647078275680542" material="mat_591"/>
+    <geom class="visual" mesh="P_Leaves" pos="3.7286295890808105 6.688251495361328 0.00055093684932217" quat="0.471881240606308 -0.5197860598564148 0.7068758010864258 -0.08647078275680542" material="mat_591"/>
+    <geom class="visual" mesh="P_Leaves" pos="5.528629302978516 6.688251495361328 0.00055093684932217" quat="0.471881240606308 -0.5197860598564148 0.7068758010864258 -0.08647078275680542" material="mat_591"/>
+    <geom class="visual" mesh="P_Leaves" pos="6.4286298751831055 6.688251495361328 0.00055093684932217" quat="0.471881240606308 -0.5197860598564148 0.7068758010864258 -0.08647078275680542" material="mat_591"/>
+    <geom class="visual" mesh="P_Stalk" pos="0.17862924933433533 6.68825101852417 0.0005511342897079885" quat="0.06194959953427315 0.020434590056538582 0.9138075709342957 -0.4008745551109314" material="mat_65"/>
+    <geom class="visual" mesh="P_Stalk" pos="1.0786292552947998 6.68825101852417 0.0005511342897079885" quat="0.06194959953427315 0.020434590056538582 0.9138075709342957 -0.4008745551109314" material="mat_65"/>
+    <geom class="visual" mesh="P_Stalk" pos="2.8286292552948 6.68825101852417 0.0005511342897079885" quat="0.06194959953427315 0.020434590056538582 0.9138075709342957 -0.4008745551109314" material="mat_65"/>
+    <geom class="visual" mesh="P_Stalk" pos="3.7286293506622314 6.68825101852417 0.0005511342897079885" quat="0.06194959953427315 0.020434590056538582 0.9138075709342957 -0.4008745551109314" material="mat_65"/>
+    <geom class="visual" mesh="P_Stalk" pos="5.528629302978516 6.68825101852417 0.0005511342897079885" quat="0.06194959953427315 0.020434590056538582 0.9138075709342957 -0.4008745551109314" material="mat_65"/>
+    <geom class="visual" mesh="P_Stalk" pos="6.428629398345947 6.68825101852417 0.0005511342897079885" quat="0.06194959953427315 0.020434590056538582 0.9138075709342957 -0.4008745551109314" material="mat_65"/>
+    <body name="P_b7dd469517f349cc" pos="3.6870598793029785 3.84599232673645 0.37730610370635986" quat="1.0 0.0 0.0 0.0">
+      <joint type="free"/>
+      <geom class="visual" mesh="P_WLDesk_0" material="SM_02_ZS_BX_05_01"/>
+      <geom class="C_P_WLDesk_0_001"/>
+      <geom class="C_P_WLDesk_0_002"/>
+      <geom class="C_P_WLDesk_0_003"/>
+      <geom class="C_P_WLDesk_0_004"/>
+      <geom class="C_P_WLDesk_0_005"/>
+      <geom class="C_P_WLDesk_0_006"/>
+      <geom class="C_P_WLDesk_0_007"/>
+      <geom class="C_P_WLDesk_0_008"/>
+      <geom class="C_P_WLDesk_0_009"/>
+    </body>
+    <body name="P_be3c1eecf6a367d1" pos="3.6733357906341553 5.469297409057617 0.6877696514129639" quat="1.9470718370939721e-07 0.0 0.0 -1.0">
+      <joint type="free"/>
+      <geom class="visual" mesh="P_Pillow" material="MI_02_ZS_BX_04_01"/>
+      <geom class="C_P_Pillow_0"/>
+    </body>
+    <body name="P_be3c1eecf6a367d1_001" pos="3.704925298690796 2.048008441925049 0.6877700686454773" quat="1.0 0.0 0.0 0.0">
+      <joint type="free"/>
+      <geom class="visual" mesh="P_Pillow" material="MI_02_ZS_BX_04_01"/>
+      <geom class="C_P_Pillow_0"/>
+    </body>
+    <body name="Pillows" pos="5.395193576812744 4.386748790740967 0.6877688765525818" quat="0.7071067094802856 0.0 0.0 0.7071068286895752">
+      <joint type="free"/>
+      <geom class="visual" mesh="P_Pillow" material="MI_02_ZS_BX_04_01"/>
+      <geom class="C_P_Pillow_0"/>
+    </body>
+    <body name="Pillows002" pos="5.416100978851318 3.660067319869995 0.6877688765525818" quat="0.7071067094802856 0.0 0.0 0.7071068286895752">
+      <joint type="free"/>
+      <geom class="visual" mesh="P_Pillow" material="MI_02_ZS_BX_04_01"/>
+      <geom class="C_P_Pillow_0"/>
+    </body>
+    <body name="Pillows003" pos="5.387885093688965 3.238112688064575 0.6877691149711609" quat="0.7071067094802856 0.0 0.0 0.7071068286895752">
+      <joint type="free"/>
+      <geom class="visual" mesh="P_Pillow" material="MI_02_ZS_BX_04_01"/>
+      <geom class="C_P_Pillow_0"/>
+    </body>
+    <body name="Pillows004_001" pos="5.204646110534668 3.798060894012451 0.42118439078330994" quat="0.7071067094802856 0.0 0.0 0.7071068286895752">
+      <joint type="free"/>
+      <geom class="visual" mesh="P_LPad" material="MI_02_ZS_BX_04_01"/>
+      <geom class="C_P_LPad_0"/>
+    </body>
+    <body name="body_021" pos="5.323007106781006 3.8015148639678955 0.5309678316116333" quat="0.7071067094802856 0.0 0.0 0.7071068286895752">
+      <joint type="free"/>
+      <geom class="visual" mesh="P_WLSofa_0" material="SM_02_ZS_BX_05_01"/>
+      <geom class="C_P_WLSofa_0_001"/>
+      <geom class="C_P_WLSofa_0_002"/>
+      <geom class="C_P_WLSofa_0_003"/>
+      <geom class="C_P_WLSofa_0_004"/>
+      <geom class="C_P_WLSofa_0_005"/>
+      <geom class="C_P_WLSofa_0_006"/>
+      <geom class="C_P_WLSofa_0_007"/>
+      <geom class="C_P_WLSofa_0_008"/>
+      <geom class="C_P_WLSofa_0_009"/>
+      <geom class="C_P_WLSofa_0_010"/>
+      <geom class="C_P_WLSofa_0_011"/>
+      <geom class="C_P_WLSofa_0_012"/>
+      <geom class="C_P_WLSofa_0_013"/>
+      <geom class="C_P_WLSofa_0_014"/>
+      <geom class="C_P_WLSofa_0_015"/>
+      <geom class="C_P_WLSofa_0_016"/>
+    </body>
+    <body name="Fla_0" pos="3.6548964977264404 4.050047874450684 0.7078603506088257" quat="1.0 0.0 0.0 0.0">
+      <joint type="free"/>
+      <geom class="C_Fla_0_001"/>
+      <geom class="C_Fla_0_002"/>
+      <geom class="C_Fla_0_003"/>
+      <geom class="C_Fla_0_004"/>
+      <geom class="C_Fla_0_005"/>
+      <geom class="visual" mesh="E_Group_2_002" pos="0.0011839866638183594 0.004237651824951172 -0.012108385562896729" quat="0.6683681011199951 -0.6683682203292847 0.23083321750164032 -0.23083321750164032" material="mat_42400"/>
+      <geom class="visual" mesh="P_18622deb9da8510" pos="0.0 0.0 0.0" quat="0.6683681011199951 -0.6683682203292847 0.23083321750164032 -0.23083321750164032" material="mat_42403"/>
+      <geom class="visual" mesh="P_6f0c68c400928510" pos="0.001184225082397461 0.004237651824951172 -0.012108325958251953" quat="0.6683681011199951 -0.6683682203292847 0.23083321750164032 -0.23083321750164032" material="mat_42402"/>
+      <geom class="visual" mesh="P_9290448b9fdaf510" pos="0.0011837482452392578 0.004237651824951172 -0.012108385562896729" quat="0.6683681011199951 -0.6683682203292847 0.23083321750164032 -0.23083321750164032" material="mat_42402"/>
+    </body>
+    <body name="Fla_1" pos="3.7690682411193848 4.001172065734863 0.6465500593185425" quat="1.0 0.0 0.0 0.0">
+      <joint type="free"/>
+      <geom class="C_Fla_1_001"/>
+      <geom class="C_Fla_1_002"/>
+      <geom class="C_Fla_1_003"/>
+      <geom class="visual" mesh="P_18622deb9da8510_001" pos="0.0 0.0 0.0" quat="0.6683681011199951 -0.6683682203292847 0.23083321750164032 -0.23083321750164032" material="mat_42403"/>
+      <geom class="visual" mesh="P_a81b7de7605d1310" pos="-0.004475116729736328 0.0050754547119140625 0.06579464673995972" quat="0.6683681011199951 -0.6683682203292847 0.23083321750164032 -0.23083321750164032" material="mat_42402"/>
+      <geom class="visual" mesh="P_cc1c78a1f87a8510" pos="-0.0044748783111572266 0.005075931549072266 0.06579458713531494" quat="0.6683681011199951 -0.6683682203292847 0.23083321750164032 -0.23083321750164032" material="mat_42400"/>
+    </body>
+    <body name="Fla_2" pos="5.261312484741211 2.1869139671325684 0.751045823097229" quat="1.0 0.0 0.0 0.0">
+      <joint type="free"/>
+      <geom class="C_Fla_2_001"/>
+      <geom class="C_Fla_2_002"/>
+      <geom class="visual" mesh="E_Group_3_002" pos="-0.05867767333984375 0.2926342487335205 -0.013310551643371582" quat="0.3852649927139282 -0.23741193115711212 0.5810670256614685 -0.6764374375343323" material="mat_60"/>
+      <geom class="visual" mesh="P_88cfc0efa3afe61f_001" pos="0.0 0.0 0.0" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_58"/>
+      <geom class="visual" mesh="P_f1cc6e853e55b61f_001" pos="-0.05867767333984375 0.2926342487335205 -0.013310551643371582" quat="0.3852649927139282 -0.23741193115711212 0.5810670256614685 -0.6764374375343323" material="mat_59"/>
+    </body>
+    <body name="Fla_3" pos="5.263877868652344 5.429280757904053 0.7510454654693604" quat="1.0 0.0 0.0 0.0">
+      <joint type="free"/>
+      <geom class="C_Fla_3_001"/>
+      <geom class="C_Fla_3_002"/>
+      <geom class="visual" mesh="E_Group_3_001" pos="-0.05867767333984375 0.2926340103149414 -0.013310611248016357" quat="0.3852649927139282 -0.23741193115711212 0.5810670256614685 -0.6764374375343323" material="mat_60"/>
+      <geom class="visual" mesh="P_88cfc0efa3afe61f" pos="0.0 0.0 0.0" quat="0.4999999403953552 -0.5 0.5 -0.5000000596046448" material="mat_58"/>
+      <geom class="visual" mesh="P_f1cc6e853e55b61f" pos="-0.05867767333984375 0.2926340103149414 -0.013310611248016357" quat="0.3852649927139282 -0.23741193115711212 0.5810670256614685 -0.6764374375343323" material="mat_59"/>
+    </body>
+  </worldbody>
+  <contact>
+  </contact>
+  <equality>
+  </equality>
+  <tendon>
+  </tendon>
+  <actuator>
+  </actuator>
+</mujoco>

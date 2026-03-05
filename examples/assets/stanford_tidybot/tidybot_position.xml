@@ -1,0 +1,4 @@
+<mujoco model="tidybot">
+  <include file="tidybot_base.xml"/>
+  <include file="tidybot_actuator_position.xml"/>
+</mujoco>

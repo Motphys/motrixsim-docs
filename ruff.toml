@@ -1,0 +1,23 @@
+# https://docs.astral.sh/ruff/settings/
+line-length = 120
+output-format = "concise"
+exclude = ["assets"]
+
+[lint]
+# Enable isort (I), Pyflakes (`F`) and pycodestyle (E, W)
+select = ["I", "E", "F", "W"]
+# E741: Ambiguous variable name
+# https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+ignore = ["E111", "E114", "E117", "E741"]
+
+[lint.isort]
+# Explicitly specify first-party packages to avoid conflicts between extension and pdm automatic project_root detection
+known-first-party = ["motrixsim", "legged_gym"]
+
+[lint.per-file-ignores]
+# Ignore `F401` (imported but unused) in all `__init__.py` files`.
+"__init__.py" = ["F401", "F403"]
+
+[format]
+# Enable reformatting of code snippets in docstrings.
+docstring-code-format = true

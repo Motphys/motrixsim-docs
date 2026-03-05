@@ -1,0 +1,19 @@
+<mujoco>
+    <include file="common/materials.xml" />
+    <option timestep="0.02" solver="PGS" />
+    <worldbody>
+        <light pos="0 0 1.5" dir="0 0 -1" directional="true" />
+        <geom name="floor" size="0 0 0.01" type="plane" material="motphys-ground" contype="1"
+            conaffinity="0" priority="1"
+            friction="0.6" condim="3" />
+        <body name="ball" pos="0 0 5">
+            <freejoint />
+            <geom priority="1" type="sphere" size="0.2" rgba="1 1 1 1" />
+        </body>
+
+        <body name="box" pos="0 0 4">
+            <geom type="box" size="0.5 0.5 0.1" rgba="0 1 0 1" />
+            <joint type="slide" axis="0 0 1" springdamper="0.3 1" springref="0" />
+        </body>
+    </worldbody>
+</mujoco>

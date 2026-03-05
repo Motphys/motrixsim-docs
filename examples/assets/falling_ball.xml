@@ -1,8 +1,9 @@
 <mujoco>
+  <include file="./common/materials.xml"/>
   <option timestep="0.02" iterations="4" solver="PGS"/>
     <worldbody>
     <light name="light" pos="0 0 3" directional = "true"/>
-    <geom type="plane" size="5 5 .1"  rgba = "0.7 0.7 0.7 1"/>
+    <geom type="plane" size="5 5 .1"  rgba = "0.7 0.7 0.7 1" material="motphys-ground"/>
     <body pos="0 0 5">
       <freejoint/>
       <geom priority="1" type="sphere" size="0.5" rgba = "1 1 1 1"/>

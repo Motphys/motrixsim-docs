@@ -1,90 +1,137 @@
 # 🚀 快速入门：Hello MotrixSim
 
-![hello_motrixsim](/_static/images/hello_motrixsim.png)
+本教程将通过一个完整的实战示例 - 加载 Spot 机器狗并进行物理仿真，带你从零开始体验 MotrixSim。你将学会如何创建项目、编写代码并运行你的第一个物理仿真程序。
 
-本教程通过演示一个简单例子 - 加载 Spot 机器狗并进行物理仿真，介绍如何在 MotrixSim 中创建模拟实验的核心步骤和基本概念：
+## 创建你的第一个 MotrixSim 项目
 
-```{literalinclude} ../../../../examples/hello_motrixsim.py
-:language: python
-:dedent:
-:start-after: "# tag::start"
-:end-before:  "# tag::end"
+让我们从零开始，创建一个完整的 MotrixSim 项目。
+
+### 步骤 1：创建项目目录
+
+首先，创建一个新的目录来存放你的项目：
+
+```bash
+mkdir motrixsim-examples
+cd motrixsim-examples
 ```
 
-上面就是完整代码了！10 行代码就完成了所有 MotrixSim 模拟实验的必需步骤。
+### 步骤 2：初始化 Python 项目
 
-你现在可以开始探索 MotrixSim，或者继续阅读下文详细了解每个步骤：
+使用 `uv` 初始化一个新的 Python 项目：
 
-## 加载模型
+```bash
+uv init
+```
+
+这会创建一个基本的项目结构，包括 `pyproject.toml` 和 `.python-version` 文件。
+
+### 步骤 3：安装 MotrixSim
+
+使用 `uv` 安装 MotrixSim：
+
+```bash
+uv add motrixsim
+```
+
+如果你还没有安装 `uv`，可以参考 [安装指南](installation.md) 中的说明。
+
+### 步骤 4：准备模型文件
+
+准备一个 MJCF 格式的模型文件。你可以使用任意 MJCF 模型，如果没有，可以从我们的仓库下载示例模型：
+
+**方法 1：下载仓库 ZIP 文件**
+
+1. 访问 <https://github.com/Motphys/motrixsim-docs>
+2. 点击绿色的 `Code` 按钮，选择 `Download ZIP`
+3. 解压下载的文件
+4. 将 `motrixsim-docs-main/examples/assets/boston_dynamics_spot` 文件夹复制到你的项目的 `assets/` 目录下：
+
+```bash
+# 在项目根目录下
+mkdir -p assets
+# 将下载解压后的 boston_dynamics_spot 文件夹复制到 assets/ 目录
+```
+
+**方法 2：使用 git 克隆**
+
+```bash
+# 克隆文档仓库（使用 --depth 1 只下载最新版本，速度更快）
+git clone --depth 1 https://github.com/Motphys/motrixsim-docs.git temp-docs
+
+# 复制模型文件到项目
+mkdir -p assets
+cp -r temp-docs/examples/assets/boston_dynamics_spot assets/
+
+# 清理临时文件
+rm -rf temp-docs
+```
+
+下载完成后，确保目录结构如下：
+
+```
+motrixsim-examples/
+├── assets/
+│   └── boston_dynamics_spot/
+│       └── scene.xml
+├── hello_motrixsim.py
+├── pyproject.toml
+└── ...
+```
+
+### 步骤 5：创建你的第一个仿真程序
+
+创建一个名为 `hello_motrixsim.py` 的文件：
 
 ```python
-model = mx.load_model("examples/assets/boston_dynamics_spot/scene.xml")
+# 导入 MotrixSim 库
+import motrixsim as mx
+
+# 加载模型文件（包含物理和渲染数据）
+model = mx.load_model("assets/boston_dynamics_spot/scene.xml")
+
+# 创建渲染器（"warn" 表示日志级别）
+with mx.render.RenderApp("warn") as render:
+    render.launch(model)          # 渲染器加载模型
+    data = mx.SceneData(model)    # 创建物理数据对象
+    while True:                   # 无限循环运行仿真
+        model.step(data)          # 执行一步物理仿真
+        render.sync(data)         # 同步数据到渲染器
 ```
 
-首先，我们调用 [`load_model`] 加载一个模型文件，模型包括物理与渲染数据，详见 [`SceneModel`] 中。
-MotrixSim 支持多种模型格式，包括 MJCF、URDF（OpenUSD 开发中）。这里我们使用 MJCF 格式的 Go1 机器狗模型，你可以在 [examples/assets/boston_dynamics_spot/scene.xml] 找到它。
-你也可以用 [`load_mjcf_str`] 从 mjcf 的字符串格式直接加载模型，示例见 [examples/load_from_str.py]。
+这就是完整的代码！几行代码就完成了所有 MotrixSim 模拟实验的必需步骤。
 
-## 启动渲染器
+### 步骤 6：运行你的第一个仿真
 
-```python
-with mx.render.RenderApp() as render:
+现在，运行你的程序：
+
+**在 Linux 或 Windows 平台：**
+
+```bash
+uv run hello_motrixsim.py
 ```
 
-接下来，我们创建一个渲染器实例 [`RenderApp`]，它负责渲染模型的可视化效果。
+**在 MacOS (aarch64-apple-darwin) 平台：**
 
-## 渲染器加载模型
-
-```python
-render.launch(model)
+```bash
+uv run mxpython hello_motrixsim.py
 ```
-
-渲染器需要加载模型数据才能进行渲染。我们调用 [`render.launch(model)`] 来启动渲染器并加载模型。
-
-## 创建物理数据 (SceneData)
-
-```python
-data = mx.SceneData(model)
-```
-
-物理模拟需要一个数据结构来存储模型的状态信息。我们通过 [`SceneData`] 来创建一个与模型关联的物理数据对象，它可以理解为一个 model 的实例对象，用同一个 model 可以创建多个实例。
-
-## 物理模拟
-
-```python
-mx.step(model, data)
-```
-
-物理模拟的核心是调用 [`step`] 函数，它会更新模型的状态。每次调用都会进行一次物理仿真步进。
-在这个例子中，我们在一个循环中调用 [`step`] 函数 1000 次，每次调用之间暂停 2 毫秒（go1 模型的默认时间步长），以模拟时间的流逝。
-
-## 同步渲染器
-
-```python
-render.sync(data)
-```
-
-每次物理模拟后，我们需要将模型的状态同步到渲染器，以便更新可视化效果。我们调用 [`sync`] 来完成这个操作。
 
 ```{note}
-[`step`] 与 [`sync`] 可以不是 1：1 的调用关系，用户可以根据实际需求调整调用频率。
+由于本示例使用了 {doc}`../main_function/render`，在 MacOS ARM64 平台上需要使用 `uv run mxpython` 来确保正确加载渲染相关的依赖和执行环境。
+
+如果你的代码不使用 RenderApp（仅进行物理仿真计算），则使用 `uv run` 即可，与 Windows 和 Linux 平台一致。
 ```
 
-至此我们完成了整个示例，接下来可以尝试修改参数，观察不同设置下的物理效果。
+### 预期结果
+
+运行后，你应该看到类似下图的仿真窗口，Spot 四足机器人在重力作用下自然站立并保持平衡：
+
+![hello_motrixsim](/_static/images/hello_motrixsim.png)
+
+**恭喜！** 你已经成功运行了你的第一个 MotrixSim 仿真程序。
 
 ## 下一步
 
 -   查看 [mjcf](mjcf.md) 已支持的功能
 -   了解 [主要功能](../main_function/scene_model.md) 的使用方法
 -   查看更多 [示例程序](../overview/examples.md)
-
-[`load_model`]: motrixsim.load_model
-[`SceneModel`]: ../main_function/scene_model.md
-[`load_mjcf_str`]: motrixsim.load_mjcf_str
-[examples/assets/boston_dynamics_spot/scene.xml]: ../../../../examples/assets/boston_dynamics_spot/scene.xml
-[examples/load_from_str.py]: ../../../../examples/load_from_str.py
-[`RenderApp`]: ../main_function/render.md
-[`render.launch(model)`]: motrixsim.render.RenderApp.launch
-[`SceneData`]: ../main_function/scene_model.md
-[`step`]: motrixsim.step
-[`sync`]: motrixsim.render.RenderApp.sync

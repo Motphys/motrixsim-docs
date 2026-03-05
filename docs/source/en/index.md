@@ -5,8 +5,8 @@ MotrixSim is a high-performance physics simulation engine designed specifically 
 ::::{grid} 1 2 3 3
 :::{grid-item}
 
-```{video} _static/videos/g1_keyboard_control.mp4
-:poster: _static/images/poster/g1_keyboard_control.jpg
+```{video} _static/videos/g1_parlour.mp4
+:poster: _static/images/poster/g1_parlour.jpg
 :nocontrols:
 :autoplay:
 :playsinline:

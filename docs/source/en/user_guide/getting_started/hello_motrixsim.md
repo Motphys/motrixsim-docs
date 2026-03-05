@@ -1,90 +1,137 @@
 # 🚀 Quick Start: Hello MotrixSim
 
-![hello_motrixsim](/_static/images/hello_motrixsim.png)
+This tutorial demonstrates a complete hands-on example—loading the Spot quadruped robot and running a physics simulation—to guide you through your first MotrixSim experience from scratch. You will learn how to create a project, write code, and run your first physics simulation program.
 
-This tutorial demonstrates a simple example—loading the Spot quadruped robot and running a physics simulation—to introduce the core steps and basic concepts for creating simulation experiments in MotrixSim:
+## Create Your First MotrixSim Project
 
-```{literalinclude} ../../../../examples/hello_motrixsim.py
-:language: python
-:dedent:
-:start-after: "# tag::start"
-:end-before:  "# tag::end"
+Let's create a complete MotrixSim project from scratch.
+
+### Step 1: Create Project Directory
+
+First, create a new directory for your project:
+
+```bash
+mkdir motrixsim-examples
+cd motrixsim-examples
 ```
 
-That's the complete code! With just 10 lines, you accomplish all the essential steps for a MotrixSim simulation experiment.
+### Step 2: Initialize Python Project
 
-You can now start exploring MotrixSim, or continue reading below for a detailed explanation of each step:
+Initialize a new Python project using `uv`:
 
-## Load the Model
+```bash
+uv init
+```
+
+This creates a basic project structure, including `pyproject.toml` and `.python-version` files.
+
+### Step 3: Install MotrixSim
+
+Install MotrixSim using `uv`:
+
+```bash
+uv add motrixsim
+```
+
+If you haven't installed `uv` yet, please refer to the [Installation Guide](installation.md).
+
+### Step 4: Prepare Model Files
+
+Prepare an MJCF format model file. You can use any MJCF model, or if you don't have one, download sample models from our repository:
+
+**Method 1: Download Repository ZIP**
+
+1. Visit <https://github.com/Motphys/motrixsim-docs>
+2. Click the green `Code` button and select `Download ZIP`
+3. Extract the downloaded file
+4. Copy the `motrixsim-docs-main/examples/assets/boston_dynamics_spot` folder to your project's `assets/` directory:
+
+```bash
+# In project root directory
+mkdir -p assets
+# Copy the extracted boston_dynamics_spot folder to assets/ directory
+```
+
+**Method 2: Using git clone**
+
+```bash
+# Clone documentation repository (use --depth 1 for latest version only, faster)
+git clone --depth 1 https://github.com/Motphys/motrixsim-docs.git temp-docs
+
+# Copy model files to project
+mkdir -p assets
+cp -r temp-docs/examples/assets/boston_dynamics_spot assets/
+
+# Clean up temporary files
+rm -rf temp-docs
+```
+
+After downloading, ensure your directory structure looks like this:
+
+```
+motrixsim-examples/
+├── assets/
+│   └── boston_dynamics_spot/
+│       └── scene.xml
+├── hello_motrixsim.py
+├── pyproject.toml
+└── ...
+```
+
+### Step 5: Create Your First Simulation Program
+
+Create a file named `hello_motrixsim.py`:
 
 ```python
-model = mx.load_model("examples/assets/boston_dynamics_spot/scene.xml")
+# Import MotrixSim library
+import motrixsim as mx
+
+# Load model file (contains physics and rendering data)
+model = mx.load_model("assets/boston_dynamics_spot/scene.xml")
+
+# Create renderer ("warn" indicates log level)
+with mx.render.RenderApp("warn") as render:
+    render.launch(model)          # Load model into renderer
+    data = mx.SceneData(model)    # Create physics data object
+    while True:                   # Infinite loop for simulation
+        model.step(data)          # Execute one physics simulation step
+        render.sync(data)         # Sync data to renderer
 ```
 
-First, we call [`load_model`] to load a model file, which includes both physical and rendering data (see [`SceneModel`] for details).
-MotrixSim supports multiple model formats, including MJCF and URDF (OpenUSD is under development). Here, we use the MJCF format for the Go1 quadruped robot model, which you can find at [examples/assets/boston_dynamics_spot/scene.xml].
-You can also use [`load_mjcf_str`] to load a model directly from an MJCF string; see [examples/load_from_str.py] for an example.
+That's the complete code! With just a few lines, you accomplish all the essential steps for a MotrixSim simulation experiment.
 
-## Launch the Renderer
+### Step 6: Run Your First Simulation
 
-```python
-render = mx.render.RenderApp()
+Now, run your program:
+
+**On Linux or Windows platforms:**
+
+```bash
+uv run hello_motrixsim.py
 ```
 
-Next, we create a renderer instance [`RenderApp`], which is responsible for visualizing the model.
+**On MacOS (aarch64-apple-darwin) platform:**
 
-## Load the Model into the Renderer
-
-```python
-render.launch(model)
+```bash
+uv run mxpython hello_motrixsim.py
 ```
-
-The renderer needs to load the model data before rendering. We call [`render.launch(model)`] to start the renderer and load the model.
-
-## Create Physics Data (SceneData)
-
-```python
-data = mx.SceneData(model)
-```
-
-Physical simulation requires a data structure to store the model's state. We use [`SceneData`] to create a physics data object associated with the model. This can be considered an instance of the model, and you can create multiple instances from the same model.
-
-## Physics Simulation
-
-```python
-mx.step(model, data)
-```
-
-The core of the simulation is the [`step`] function, which updates the model's state. Each call performs a single simulation time step.
-In this example, we call [`step`] 1000 times in a loop, pausing for 2 milliseconds between each call (the default time step for the go1 model) to simulate the passage of time.
-
-## Synchronize the Renderer
-
-```python
-render.sync(data)
-```
-
-After each simulation step, we need to synchronize the model state with the renderer to update the visualization. We call [`sync`] to perform this operation.
 
 ```{note}
-The call frequency between [`step`] and [`sync`] does not have to be 1:1. You can adjust the frequency as needed for your application.
+Since this example uses {doc}`../main_function/render`, on macOS ARM64 platform you need to use `uv run mxpython` to ensure correct loading of rendering-related dependencies and execution environment.
+
+If your code does not use RenderApp (physics simulation only), use `uv run` which is consistent with Windows and Linux platforms.
 ```
 
-With this, the entire example is complete. You can now try modifying parameters to observe the physical effects under different settings.
+### Expected Results
+
+After running, you should see a simulation window similar to the image below, with the Spot quadruped robot naturally standing and maintaining balance under gravity:
+
+![hello_motrixsim](/_static/images/hello_motrixsim.png)
+
+**Congratulations!** You have successfully run your first MotrixSim simulation program.
 
 ## Next Steps
 
 -   See [mjcf](mjcf.md) for supported features
 -   Learn how to use the [main features](../main_function/scene_model.md)
 -   Explore more [example programs](../overview/examples.md)
-
-[`load_model`]: motrixsim.load_model
-[`SceneModel`]: ../main_function/scene_model.md
-[`load_mjcf_str`]: motrixsim.load_mjcf_str
-[examples/assets/boston_dynamics_spot/scene.xml]: ../../../../examples/assets/boston_dynamics_spot/scene.xml
-[examples/load_from_str.py]: ../../../../examples/load_from_str.py
-[`RenderApp`]: ../main_function/render.md
-[`render.launch(model)`]: motrixsim.render.RenderApp.launch
-[`SceneData`]: ../main_function/scene_model.md
-[`step`]: motrixsim.step
-[`sync`]: motrixsim.render.RenderApp.sync

@@ -19,6 +19,7 @@
 
     -   {bdg-danger-line}`Windows(x86_64)`
     -   {bdg-danger-line}`Linux(x86_64)`
+    -   {bdg-danger-line}`MacOS(aarch64)`
 
     ```{note}
     Supported features by platform:
@@ -26,7 +27,23 @@
     | :--------------: | :------------: | :----------------: | :------------: |
     |      Linux       |      ✅        |        ✅          |   🛠️ In Development   |
     |     Windows      |      ✅        |        ✅          |   🛠️ In Development   |
+    |      MacOS       |      ✅        |        ✅          |   🛠️ In Development   |
     ```
+
+    ````{note}
+    On MacOS (aarch64-apple-darwin) platform, when using {doc}`../main_function/render` related features, you need to use the following command format:
+
+    ```bash
+    uv run mxpython your_script.py
+    ```
+
+    This is required due to the specificity of RenderApp on MacOS ARM64 platform. Using `uv run mxpython` ensures correct loading of rendering-related dependencies and execution environment.
+
+    **Important Notes**:
+    - If your code uses {doc}`../main_function/render`, you need to use `uv run mxpython`
+    - If your code **does not use** RenderApp (e.g., physics simulation only without a rendering window), use `uv run` which is consistent with Windows and Linux platforms
+
+    ````
 
 ## Installation Methods
 

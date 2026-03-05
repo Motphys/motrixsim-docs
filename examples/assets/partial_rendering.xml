@@ -1,4 +1,5 @@
 <mujoco>
+  <include file="./common/materials.xml"/>
   <option timestep="0.02" iterations="4" solver="PGS"/>
   <asset>
     <texture type="skybox" builtin="gradient" rgb1=".4 .5 .6" rgb2="0 0 0"
@@ -9,7 +10,7 @@
   </asset>
   <worldbody>
     <light name="light" pos="0 0 3" directional = "true"/>
-    <geom type="plane" size="2 2 .1" material = "groundplane" />
+    <geom type="plane" size="2 2 .1" material = "motphys-ground" />
     <body pos="0 0 5">
       <freejoint/>
       <geom priority="1" type="sphere" size="0.5" rgba = "0.2 0.5 0.1 1.0"/>
