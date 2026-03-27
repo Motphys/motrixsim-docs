@@ -95,7 +95,7 @@ _完整代码见 [examples/gizmos.py](../../../../examples/gizmos.py)_
 -   [example/mouse_click.py](../../../../examples/mouse_click.py)
 -   [example/keyboard_car.py](../../../../examples/keyboard_car.py)
 
-#### 合法键盘输入列表
+### 合法键盘输入列表
 
 以下是支持的键盘按键输入列表：
 

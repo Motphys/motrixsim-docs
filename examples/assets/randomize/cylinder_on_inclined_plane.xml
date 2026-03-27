@@ -1,5 +1,5 @@
 <mujoco>
-    <include file="common/materials.xml" />
+    <include file="../common/materials.xml" />
     <option timestep="0.01" iterations="100" />
 
     <visual>

@@ -1,5 +1,5 @@
 <mujoco>
-    <include file="common/materials.xml" />
+    <include file="../common/materials.xml" />
     <option timestep="0.02" solver="PGS" />
     <worldbody>
         <light pos="0 0 1.5" dir="0 0 -1" directional="true" />

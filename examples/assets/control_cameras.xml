@@ -3,7 +3,7 @@
   <option  gravity="0 0 -9.8" timestep="0.001"/>
   <default>
     <default class="link">
-      <geom type="sphere" pos="0 0 -4" quat="0 0 0 1" size=".5" rgba=".2 .2 .2 1" solref="1 0" hard="true" condim="1"/>
+      <geom type="sphere" pos="0 0 -4" quat="0 0 0 1" size=".5" rgba=".2 .2 .2 1"  _hard="true" _bounciness="1" _erp = "0" condim="1"/>
       <joint type="hinge" axis="0 1 0" />
     </default>
     <default class="line">

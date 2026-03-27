@@ -38,7 +38,7 @@
 
 在 MJCF 文件中，`Site` 通过 `<site>` 标签定义。详细的标签属性和用法请参考 [MJCF 格式说明](https://mujoco.readthedocs.io/en/stable/XMLreference.html#body-site)。
 
-**注意**：MotrixSim 目前已支持 Site 的核心功能和常用属性，部分`<site>`属性尚在开发中，请参照 [支持列表](../getting_started/mjcf.md) 使用。
+**注意**：MotrixSim 目前已支持 Site 的核心功能和常用属性，部分`<site>`属性尚在开发中，请参照 [支持列表](../getting_started/mjcf_reference.md) 使用。
 
 以下是 `site_and_sensor.xml` 中的 `Site` 定义示例：
 

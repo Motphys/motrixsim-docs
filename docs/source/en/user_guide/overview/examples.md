@@ -178,7 +178,7 @@ Most examples requiring visual rendering (such as robotic arm control, robot loc
   - [`robotic_arm.py`](../../../../examples/robotic_arm.py)
   - The Stanford robotic arm uses a sequence of movement commands to pick and place a ball.
 * - ![grasp_shaking_test](/_static/images/examples/grasp_shaking_test.jpg)
-  - [`grasp_shaking_test.py`](../../../../examples/grasp_shaking_test.py)
+  - [`grasp_mx.py`](../../../../examples/bench/grasp/grasp_mx.py)
   - Grasping and shaking test for the Franka Panda robotic arm, demonstrating how the arm grasps objects and maintains stability. Supports `--object` parameter to select object type (cube/ball/bottle), `--shake` parameter to control shaking, and `--record` parameter to record video.
 ```
 

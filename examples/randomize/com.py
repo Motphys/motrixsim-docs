@@ -83,7 +83,7 @@ def main():
     # Create render window for visualization
     with RenderApp() as render:
         # The scene description file
-        path = "examples/assets/cylinder_on_inclined_plane.xml"
+        path = "examples/assets/randomize/cylinder_on_inclined_plane.xml"
         # Load the scene model
         model = load_model(path)
 

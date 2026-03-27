@@ -8,7 +8,7 @@
 
 当您使用 MJCF 来描述多体系统时，MotrixSim 会将所有的 `<body>` 元素映射为 `Link` 对象。
 
-关于 MotrixSim 目前对 MJCF 中 `<body>` 标签属性的支持情况，您可以参考 [MJCF 支持情况](../getting_started/mjcf.md#scene)。
+关于 MotrixSim 目前对 MJCF 中 `<body>` 标签属性的支持情况，您可以参考 [MJCF 支持情况](../getting_started/mjcf_reference.md)。
 
 ```{note}
 MJCF 中的`<worldbody>`不会被视作一个 Link 对象。

@@ -74,6 +74,13 @@ def copy_file_by_language(app):
     lang = app.config.language
     srcdir = Path(app.srcdir)
 
+    # Copy shared (language-neutral) content first
+    shared_dir = srcdir / "_shared"
+    if shared_dir.exists() and shared_dir.is_dir():
+        shutil.copytree(shared_dir, srcdir, dirs_exist_ok=True, copy_function=shutil.copy2)
+        print(f"Copied shared directory: {shared_dir} -> {srcdir}")
+
+    # Then copy language-specific content (can override shared files)
     lang_dir = srcdir / lang
     if lang_dir.exists() and lang_dir.is_dir():
         shutil.copytree(lang_dir, srcdir, dirs_exist_ok=True, copy_function=shutil.copy2)
@@ -131,7 +138,7 @@ templates_path = ["_templates"]
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["index_*.md", "api_reference/low**", "zh_CN/**", "en/**"]
+exclude_patterns = ["index_*.md", "api_reference/low**", "zh_CN/**", "en/**", "_shared/**"]
 
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 myst_enable_extensions = ["colon_fence", "dollarmath"]
@@ -152,6 +159,7 @@ html_last_updated_fmt = ""  # to reveal the build date in the pages meta
 html_theme_options = {
     # https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/navigation.html
     "show_nav_level": 2,
+    "show_toc_level": 5,
     # https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/source-buttons.html#add-an-edit-button
     "use_edit_page_button": False,
     # https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/indices.html#add-indices-links

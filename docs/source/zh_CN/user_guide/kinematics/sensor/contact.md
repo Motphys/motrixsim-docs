@@ -103,7 +103,7 @@ contact_data = model.get_sensor_value("contact_sensor_name", data)
 ### 数组长度计算公式
 
 ```python
-total_size = 1 + max_num_contacts × values_per_contact
+total_size = 1 + max_num_contacts * values_per_contact
 ```
 
 -   **1**: `found` 字段，表示实际接触点数量

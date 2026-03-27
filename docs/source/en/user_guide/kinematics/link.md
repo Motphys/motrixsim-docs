@@ -8,7 +8,7 @@ We refer to the rigid components in a multibody system as links. In MotrixSim, a
 
 When you use MJCF to describe a multibody system, MotrixSim maps all `<body>` elements to `Link` objects.
 
-For the current support status of `<body>` tag attributes in MJCF, see [MJCF Support Status](../getting_started/mjcf.md#scene).
+For the current support status of `<body>` tag attributes in MJCF, see [MJCF Support Status](../getting_started/mjcf_reference.md).
 
 ```{note}
 The `<worldbody>` element in MJCF is not treated as a Link object.

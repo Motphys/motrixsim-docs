@@ -132,6 +132,6 @@ After running, you should see a simulation window similar to the image below, wi
 
 ## Next Steps
 
--   See [mjcf](mjcf.md) for supported features
+-   See [mjcf](mjcf_reference.md) for supported features
 -   Learn how to use the [main features](../main_function/scene_model.md)
 -   Explore more [example programs](../overview/examples.md)

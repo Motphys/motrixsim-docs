@@ -1,0 +1,30 @@
+<mujoco>
+    <include file="../common/materials.xml" />
+    <option timestep="0.005" />
+    <worldbody>
+        <light pos="0 0 3" dir="0 0 -1" directional="true" />
+        <geom name="floor" size="0 0 0.01" type="plane" material="motphys-ground" />
+        <!-- Support column (static) -->
+        <body name="support" pos="0 0 0.5">
+            <geom type="cylinder" size="0.05 0.5" rgba="0.4 0.4 0.4 1" />
+        </body>
+        <!-- Rotor: arm rotates in the horizontal plane around the vertical Z axis.
+             Gravity is parallel to the hinge axis and creates no torque, so the
+             torsion spring alone drives the oscillation. This makes armature's
+             effect on oscillation frequency clean and unambiguous.
+             The arm starts along +X (qpos=0), displaced 90 degrees from the
+             spring equilibrium at qpos=+90 deg (+Y direction). -->
+        <body name="rotor" pos="0 0 1">
+            <joint name="rotor_joint" type="hinge" axis="0 0 1"
+                   stiffness="2.5" damping="0.1" springref="90" />
+            <!-- Hub at hinge center -->
+            <geom type="cylinder" size="0.07 0.05" rgba="0.5 0.5 0.5 1" />
+            <!-- Arm: capsule extending in the +X direction of the body frame.
+                 Default capsule axis is Z; euler="0 90 0" rotates it to align with X. -->
+            <geom type="capsule" size="0.03 0.3" euler="0 90 0" pos="0.3 0 0"
+                  rgba="0.3 0.6 0.9 1" />
+            <!-- Tip sphere: makes the arm endpoint clearly visible -->
+            <geom type="sphere" size="0.06" pos="0.6 0 0" rgba="0.9 0.3 0.2 1" />
+        </body>
+    </worldbody>
+</mujoco>

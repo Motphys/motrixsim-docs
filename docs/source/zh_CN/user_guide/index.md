@@ -6,7 +6,8 @@
 
 getting_started/installation
 getting_started/hello_motrixsim
-getting_started/mjcf
+getting_started/motrixsim_web
+getting_started/mjcf_reference
 
 ```
 

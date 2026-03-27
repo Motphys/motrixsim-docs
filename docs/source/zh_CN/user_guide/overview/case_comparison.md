@@ -295,13 +295,13 @@ uv run python -m mujoco.viewer --mjcf=examples/assets/store/scene.xml
 要运行该对比示例，请分别执行：
 
 ```bash
-uv run examples/grasp_shaking_test.py
+uv run examples/bench/grasp/grasp_mx.py
 ```
 
 以及
 
 ```bash
-uv run examples/mujoco/grasp_shaking_test.py
+uv run examples/bench/grasp/grasp_mj.py
 ```
 
 该用例直观展示了两套仿真器在接触建模与摩擦处理上的差异，便于开发者评估在抓取与操纵任务中的稳定性表现。

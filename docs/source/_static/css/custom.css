@@ -14,3 +14,173 @@
 .bd-page-width {
     max-width: 100rem; /* default is 88rem */
 }
+
+/* Custom styles for MJCF XML Reference */
+
+/* Attributes Table Style - compatible with Sphinx/PyData theme */
+.attr-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: 0.9em;
+}
+
+.attr-table th,
+.attr-table td {
+    padding: 10px 12px;
+    border: 1px solid var(--pst-color-border);
+    line-height: 1.4;
+}
+
+.attr-table th {
+    background-color: var(--pst-color-surface);
+    text-align: left;
+    font-weight: 600;
+}
+
+.attr-desc {
+    color: var(--pst-color-text-secondary);
+}
+
+/* Badge styles for types - mimicking MuJoCo/VitePress style in Sphinx */
+.badge {
+    display: inline-block;
+    padding: 0 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 600;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin: 2px 4px 2px 0;
+    border: 1px solid transparent;
+}
+
+.badge.string {
+    background-color: rgba(0, 112, 243, 0.1);
+    color: #0070f3;
+    border-color: rgba(0, 112, 243, 0.2);
+}
+.badge.real {
+    background-color: rgba(235, 47, 150, 0.1);
+    color: #eb2f96;
+    border-color: rgba(235, 47, 150, 0.2);
+}
+.badge.int {
+    background-color: rgba(82, 196, 26, 0.1);
+    color: #52c41a;
+    border-color: rgba(82, 196, 26, 0.2);
+}
+.badge.bool {
+    background-color: rgba(250, 140, 22, 0.1);
+    color: #fa8c16;
+    border-color: rgba(250, 140, 22, 0.2);
+}
+.badge.array {
+    background-color: rgba(114, 46, 209, 0.1);
+    color: #722ed1;
+    border-color: rgba(114, 46, 209, 0.2);
+}
+.badge.optional {
+    background-color: transparent;
+    color: var(--pst-color-text-muted);
+    border: 1px solid var(--pst-color-border);
+}
+.badge.required {
+    background-color: rgba(245, 34, 45, 0.1);
+    color: #f5222d;
+    border-color: rgba(245, 34, 45, 0.2);
+}
+.badge.custom {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--pst-color-text-base);
+    border-color: var(--pst-color-border);
+}
+
+.badge.motphys {
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    box-shadow: 0 2px 4px rgba(99, 102, 241, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 800;
+}
+
+.badge.mpex {
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    font-size: 0.55em;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+}
+
+/* Grouped Motphys extension block */
+.motphys-extension-block {
+    background-color: rgba(99, 102, 241, 0.03) !important;
+    border: 1px dashed rgba(99, 102, 241, 0.2) !important;
+    border-left: 4px solid #6366f1 !important;
+    padding: 16px 20px !important;
+    margin: 24px 0 !important;
+    border-radius: 4px !important;
+    position: relative !important;
+}
+
+/* Tiny Motphys Extension label */
+.motphys-extension-label {
+    position: absolute !important;
+    top: -11px !important;
+    left: 15px !important;
+    background-color: #6366f1 !important;
+    color: white !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    padding: 2px 10px !important;
+    border-radius: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2) !important;
+    z-index: 1 !important;
+}
+
+/* Highlight field names inside extension blocks */
+.motphys-extension-block strong code {
+    color: #4f46e5 !important;
+}
+
+/* Dark mode overrides for Motphys extension blocks */
+html[data-theme="dark"] .motphys-extension-block {
+    background-color: rgba(129, 140, 248, 0.08) !important;
+    border-color: rgba(129, 140, 248, 0.3) !important;
+    border-left-color: #818cf8 !important;
+}
+
+html[data-theme="dark"] .motphys-extension-block strong code {
+    color: #a5b4fc !important;
+}
+
+html[data-theme="dark"] .motphys-extension-label {
+    background-color: #818cf8 !important;
+    box-shadow: 0 2px 4px rgba(129, 140, 248, 0.3) !important;
+}
+
+html[data-theme="dark"] .badge.mpex,
+html[data-theme="dark"] .badge.motphys {
+    background-color: #818cf8 !important;
+    box-shadow: 0 2px 4px rgba(129, 140, 248, 0.4) !important;
+}
+
+/* Ensure MyST anchors look good */
+.headerlink {
+    visibility: hidden;
+}
+h2:hover > .headerlink,
+h3:hover > .headerlink {
+    visibility: visible;
+}

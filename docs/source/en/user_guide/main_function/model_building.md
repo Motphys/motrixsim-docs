@@ -159,7 +159,7 @@ MotrixSim also supports the MJCF `<attach>` element for combining models in XML:
 </mujoco>
 ```
 
-For MJCF support details, see [MJCF Files](../getting_started/mjcf.md).
+For MJCF support details, see [MJCF Files](../getting_started/mjcf_reference.md).
 
 ## API Reference
 

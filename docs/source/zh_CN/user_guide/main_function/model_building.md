@@ -159,7 +159,7 @@ MotrixSim 还支持 MJCF 的 `<attach>` 元素，用于在 XML 中组合模型�
 </mujoco>
 ```
 
-有关 MJCF 支持的详细信息，请参阅 [MJCF 文件](../getting_started/mjcf.md)。
+有关 MJCF 支持的详细信息，请参阅 [MJCF 文件](../getting_started/mjcf_reference.md)。
 
 ## API 参考
 

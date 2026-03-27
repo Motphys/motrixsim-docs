@@ -28,7 +28,7 @@ def main():
     # Create render window for visualization
     with RenderApp() as render:
         # The scene description file
-        path = "examples/assets/randomization.xml"
+        path = "examples/assets/randomize/ball_on_box.xml"
         # Load the scene model
         model = load_model(path)
         # Create the render instance of the model

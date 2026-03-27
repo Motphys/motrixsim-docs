@@ -54,7 +54,6 @@ def main():
         # Get simulation flags
         disable_gravity = options.disable_gravity  # noqa: F841
         disable_contacts = options.disable_contacts  # noqa: F841
-        disable_impedance = options.disable_impedance  # noqa: F841
         # ----------End----------
 
         # Set gravity
@@ -73,7 +72,6 @@ def main():
 
         # Set simulation flags
         options.disable_contacts = True
-        options.disable_impedance = True
         # end::options_code[]
 
         run.render_loop(model.options.timestep, 60, lambda: step(model, data), lambda: render.sync(data))

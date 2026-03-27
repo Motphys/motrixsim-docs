@@ -186,7 +186,7 @@ uv run examples/{example_name}.py
   - [`robotic_arm.py`](../../../../examples/robotic_arm.py)
   - 斯坦福机械臂使用移动命令序列进行小球的抓取与摆放。
 * - ![grasp_shaking_test](/_static/images/examples/grasp_shaking_test.jpg)
-  - [`grasp_shaking_test.py`](../../../../examples/grasp_shaking_test.py)
+  - [`grasp_mx.py`](../../../../examples/bench/grasp/grasp_mx.py)
   - Franka Panda 机械臂的抓取与抖动测试，展示机械臂如何抓取物体并保持稳定。支持 `--object` 参数选择物体类型（cube/ball/bottle），`--shake` 参数控制是否抖动，`--record` 参数录制视频。
 ```
 

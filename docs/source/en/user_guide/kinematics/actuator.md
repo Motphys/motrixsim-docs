@@ -15,7 +15,7 @@ The currently supported actuator types are:
 
 Parameter settings are compatible with [MuJoCo actuator](https://mujoco.readthedocs.io/en/stable/XMLreference.html#actuator) attributes.
 
-> Some attributes of the General actuator are not yet supported. Refer to the [support list](../getting_started/mjcf.md#actuator).
+> Some attributes of the General actuator are not yet supported. Refer to the [support list](../getting_started/mjcf_reference.md).
 
 ## Actuator Example
 

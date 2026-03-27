@@ -8,6 +8,8 @@
 `MotrixSim` 是一个高性能的物理仿真引擎，专为多体动力学和机器人仿真设计。它提供了一个高效、稳定的物理仿真平台，支持广泛的应用场景，包括机器人控制、强化学习、工业仿真等。
 
 > 文档地址：https://motrixsim.readthedocs.io
+> 
+> 线上体验地址：https://motrix.motphys.com
 
 ## 主要特性
 

@@ -38,7 +38,7 @@ For a complete example, see [`examples/site_and_sensor.py`](../../../../examples
 
 In MJCF files, a `Site` is defined using the `<site>` tag. For detailed tag attributes and usage, refer to the [MJCF Format Documentation](https://mujoco.readthedocs.io/en/stable/XMLreference.html#body-site).
 
-**Note**: MotrixSim currently supports the core features and common attributes of Site. Some `<site>` attributes are still under development. Please refer to the [support list](../getting_started/mjcf.md) for details.
+**Note**: MotrixSim currently supports the core features and common attributes of Site. Some `<site>` attributes are still under development. Please refer to the [support list](../getting_started/mjcf_reference.md) for details.
 
 Below is an example of a `Site` definition from `site_and_sensor.xml`:
 

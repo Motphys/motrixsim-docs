@@ -16,7 +16,7 @@
 
 设置可兼容 [MuJoCo actuator](https://mujoco.readthedocs.io/en/stable/XMLreference.html#actuator) 的参数。
 
-> General 部分属性未支持，参照 [支持列表](../getting_started/mjcf.md#actuator)。
+> General 部分属性未支持，参照 [支持列表](../getting_started/mjcf_reference.md)。
 
 ## 驱动器示例
 

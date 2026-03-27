@@ -287,13 +287,13 @@ This example compares MotrixSim and MuJoCo on the stability of a Franka robotic 
 Run the comparison examples with:
 
 ```bash
-uv run examples/grasp_shaking_test.py
+uv run examples/bench/grasp/grasp_mx.py
 ```
 
 and
 
 ```bash
-uv run examples/mujoco/grasp_shaking_test.py
+uv run examples/bench/grasp/grasp_mj.py
 ```
 
 This example provides a clear, visual comparison of how the two simulators handle contact and friction during manipulation tasks.

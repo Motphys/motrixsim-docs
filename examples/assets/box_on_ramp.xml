@@ -1,0 +1,26 @@
+<mujoco>
+  <include file="./common/materials.xml"/>
+  <option timestep="0.005"/>
+  <compiler autolimits="true"/>
+
+  <worldbody>
+    <light name="light" pos="0 0 5" directional="true"/>
+    <camera name="fixed" pos="4 -6 4" xyaxes="1 0 0 0 0.6 1"/>
+
+    <!-- Ramp: tilted 30 degrees. tan(30)=0.577, so friction < 0.577 slides. -->
+    <geom name="ramp" type="box" size="4 2 0.05"
+          pos="0 0 1.8" euler="0 30 0"
+          rgba="0.8 0.9 0.8 1" material="motphys-ground"
+          friction="0 0 0"/>
+
+    <!-- Floor below the ramp -->
+    <geom name="floor" type="plane" material="motphys-ground" size="0 0 0.1" />
+
+    <!-- Box on the upper part of the ramp -->
+    <body name="box" pos="-1.5 0 3.0">
+      <freejoint/>
+      <geom name="box_geom" type="box" size="0.3 0.3 0.08" rgba="1 0.2 0.2 1"
+            friction="0 0 0"/>
+    </body>
+  </worldbody>
+</mujoco>

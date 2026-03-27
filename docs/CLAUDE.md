@@ -123,6 +123,35 @@ The build system automatically copies content from language-specific directories
 3. Organize API docs by functional modules
 4. Include examples and usage notes
 
+### RST Formatting Rules for Docstrings
+**Critical**: When writing docstrings that will be processed by Sphinx/RST, follow these formatting rules to avoid warnings:
+
+1. **Use double backticks for inline code with special characters**: When the code contains asterisks (`*`) or underscores (`_`), use double backticks (`` `` ``) instead of single backticks.
+   - **Correct**: ``Shape: ``(*data.shape, 3)`` ``
+   - **Incorrect**: `Shape: `(*data.shape, 3)``
+   - **Reason**: In RST, single backticks create inline literals, and `*` is interpreted as emphasis markup. Double backticks create interpreted text which properly escapes special characters.
+
+2. **Add blank lines after bullet/numbered lists**: Always add a blank line before continuing text after a list.
+   - **Correct**:
+     ```rst
+     Note:
+         - Item 1
+         - Item 2
+
+         Additional paragraph.
+     ```
+   - **Incorrect**:
+     ```rst
+     Note:
+         - Item 1
+         - Item 2
+         Additional paragraph.
+     ```
+
+3. **Avoid code block directives in Rust docstrings**: Code blocks (using `::` or `.. code::`) do not render properly in .pyi files generated from Rust. For detailed examples, reference users to .md documentation files instead.
+
+4. **Type names without backticks**: When referring to Python types in type annotations (e.g., `Camera:`, `Link:`), don't use backticks unless referencing a specific API symbol.
+
 ### Building and Testing
 1. Always build locally before committing: `uv run make html`
 2. Check for broken links: `uv run make linkcheck`

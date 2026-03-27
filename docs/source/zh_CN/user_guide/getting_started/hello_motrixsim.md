@@ -132,6 +132,6 @@ uv run mxpython hello_motrixsim.py
 
 ## 下一步
 
--   查看 [mjcf](mjcf.md) 已支持的功能
+-   查看 [mjcf](mjcf_reference.md) 已支持的功能
 -   了解 [主要功能](../main_function/scene_model.md) 的使用方法
 -   查看更多 [示例程序](../overview/examples.md)
