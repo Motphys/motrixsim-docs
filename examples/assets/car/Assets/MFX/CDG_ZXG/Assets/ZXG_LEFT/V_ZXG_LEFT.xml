@@ -1,0 +1,30 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <asset>
+
+    <!-- Textures -->
+
+    <!-- Materials -->
+    <material name="Opaque(210,210,255).006" rgba="0.8235294222831726 0.8235294222831726 1.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+
+    <!-- Visual meshes -->
+    <mesh class="visual" name="V_ZXG_LEFT" file="V_ZXG_LEFT.obj"/>
+
+  </asset>
+
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+  </default>
+
+  <worldbody>
+
+    <body name="B_ZXG_LEFT" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+      <geom class="visual" mesh="V_ZXG_LEFT" pos="-0.203811377286911 -0.027452895417809486 -0.31290119886398315" quat="0.6761013269424438 -0.7323395013809204 -0.0006821827264502645 0.08102721720933914" material="Opaque(210,210,255).006"/>
+      <site name="L_ZXG_site" pos="-0.001721 0.010107 0.368019" size="0.02" rgba="0 1 0 1"/>
+    </body>
+  </worldbody>
+
+</mujoco>

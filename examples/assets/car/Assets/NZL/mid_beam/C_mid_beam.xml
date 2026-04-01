@@ -1,0 +1,43 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <default>
+      <default class="collision">
+        <geom type="mesh" rgba="1 1 1 1" group="3" contype="1" conaffinity="1"/>
+          <default class="C_L1">
+            <geom type="box"  size="0.0590 0.0129 0.0340" quat="0.9859 -0.0065 0.0398 0.1620" pos="0.1063 -0.5330 -0.0100" density="1000.0"/>
+          </default>
+          <default class="C_L2">
+            <geom type="cylinder"  size="0.0362 0.1302" quat="0.6142 -0.2509 -0.7166 -0.2151" pos="0.2790 -0.6191 0.0130" density="1000.0"/>
+          </default>
+          <default class="C_L3">
+            <geom type="cylinder"  size="0.0375 0.0278" quat="0.6915 0.6915 0.1480 0.1480" pos="0.0109 -0.5670 0.0002" density="1000.0"/>
+          </default>
+          <default class="C_mid">
+            <geom type="cylinder"  size="0.0324 0.5042" quat="0.7071 0.7071 0.0000 0.0000" pos="0.1940 -0.0010 -0.0129" density="1000.0"/>
+          </default>
+          <default class="C_R1">
+            <geom type="box"  size="0.0590 0.0129 0.0340" quat="0.9860 0.0065 0.0398 -0.1620" pos="0.1064 0.5331 -0.0101" density="1000.0"/>
+          </default>
+          <default class="C_R2">
+            <geom type="cylinder"  size="0.0362 0.1302" quat="0.6142 0.2509 -0.7166 0.2151" pos="0.2790 0.6191 0.0130" density="1000.0"/>
+          </default>
+          <default class="C_R3">
+            <geom type="cylinder"  size="0.0375 0.0278" quat="0.6915 0.6915 -0.1480 -0.1480" pos="0.0109 0.5670 0.0002" density="1000.0"/>
+          </default>
+      </default>
+  </default>
+
+  <worldbody>
+    <body name="body" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+      <geom class="C_L1"/>
+      <geom class="C_L2"/>
+      <geom class="C_L3"/>
+      <geom class="C_mid"/>
+      <geom class="C_R1"/>
+      <geom class="C_R2"/>
+      <geom class="C_R3"/>
+    </body>
+  </worldbody>
+
+</mujoco>

@@ -1,0 +1,39 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <asset>
+
+    <!-- Textures -->
+
+    <!-- Materials -->
+    <material name="Opaque(210,210,255).001" rgba="0.8235294222831726 0.8235294222831726 1.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+
+    <!-- Visual meshes -->
+    <mesh class="visual" name="V_FL_ZX_ZC" file="V_FL_ZX_ZC.obj"/>
+
+  </asset>
+
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+  </default>
+
+  <worldbody>
+
+    <body name="B_FL_ZX_ZC" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+
+      <!-- MUJOCO -->
+        <!-- 添加惯性元，定义质量和惯性矩 -->
+        <inertial mass="0.5" 
+                  pos="0 0 0"
+                  diaginertia="0.001 0.001 0.001"/>
+
+      <geom class="visual" mesh="V_FL_ZX_ZC" pos="0.013260999694466591 0.06347700208425522 0.12126299738883972" quat="0.23548810184001923 -0.006151997018605471 -0.18733510375022888 -0.9536315202713013" material="Opaque(210,210,255).001"/>
+      <!-- <site name="JZG_site" pos="0.123555 0.036425 0.088904" size="0.02" rgba="0 1 0 1"/>     -->
+      <site name="WDG_site" pos="0.049225 0.010322 0.373214" size="0.02" rgba="0 1 0 1"/>    
+      <site name="ZXG_site" pos="-0.118762 -0.049872 0.088905" size="0.02" rgba="0 1 0 1"/>    
+    </body>
+  </worldbody>
+
+</mujoco>

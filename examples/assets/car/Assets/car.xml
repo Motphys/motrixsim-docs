@@ -1,0 +1,70 @@
+
+<mujoco model="CAR_CHA">
+  <compiler angle="radian" autolimits="true"/>
+  <asset>
+    <model name="ZhiDong" file="fixed/ZhiDong/ZD_GUDING.xml"/><!-- 制动系统(不可动) -->
+    <model name="GongJi" file="fixed/GongJi/GJXT.xml"/><!-- 供给系统(不可动) -->
+    <model name="LiHe" file="fixed/LiHe/LHXT.xml"/><!-- 离合系统(不可动) -->
+    <model name="PaiQi" file="fixed/PaiQi/PQXT.xml"/><!-- 排气系统(不可动) -->
+    <model name="HuanDang" file="fixed/HuanDang/HDXT.xml"/><!-- 换挡系统(不可动) -->
+    <model name="LengQue" file="fixed/LengQue/LQXT.xml"/><!-- 冷却系统(不可动) -->
+    <model name="MFX_GD" file="fixed/XuanJia/MFX_GD.xml"/><!-- 麦弗逊固定部件 -->
+    <model name="MFX" file="MFX/MFX.xml"/><!-- 麦弗逊悬架 -->
+    <model name="NZL" file="NZL/NZL.xml"/><!-- 扭转梁悬架 -->
+    <model name="JZTH" file="MFX/JZTH/JZTH.xml"/><!-- 减震弹簧 -->
+    <model name="Shell" file="fixed/Shell/FT.xml"/><!-- 汽车外壳 -->
+  </asset>
+
+  <worldbody>
+    <body name="CAR_CHA" pos="0 0 0">
+      <!-- 自由关节 -->
+      <joint name="CAR__free_joint" type="free"/>
+
+      <!-- 主体 -->
+      <body name="CAR_BODY">
+        <attach model="ZhiDong" prefix="ZD_"/>
+        <attach model="GongJi" prefix="GJ_"/>
+        <attach model="LiHe" prefix="LH_"/>
+        <attach model="PaiQi" prefix="PQ_"/>
+        <attach model="HuanDang" prefix="HD_"/>
+        <attach model="LengQue" prefix="LQ_"/>
+        <attach model="MFX_GD" prefix="XJ1_"/>
+        <attach model="MFX" prefix="MFX_"/>
+        <attach model="NZL" prefix="NZL_"/>
+        <attach model="JZTH" prefix="JZTH_"/>
+        <attach model="Shell" prefix="Shell_"/>
+      </body>
+
+    <site name="BLU_site" pos="2.67642 -0.546174 0.457811" size="0.02" rgba="0 1 0 1"/>
+    <site name="BRU_site" pos="2.67642 0.546174 0.457811" size="0.02" rgba="0 1 0 1"/>   
+
+
+    </body>
+  </worldbody>
+  <equality>
+    <!-- 连接左减震杆上的 L_JZG_site 与减震弹簧上的 L_JZTH_site -->
+    <connect name="LJZG"
+              site1="MFX_L_JZG_v_L_JZG_site"
+              site2="JZTH_v_L_JZTH_site"
+              stiffness="1" damping="1"/>
+
+    <!-- 连接右减震杆上的 R_JZG_site 与减震弹簧上的 R_JZTH_site -->
+    <connect name="RJZG"
+              site1="MFX_R_JZG_v_R_JZG_site"
+              site2="JZTH_v_R_JZTH_site"
+              stiffness="1" damping="1"/>
+
+    <!-- 连接左避震杆上的 BLU_site 与固定结构上的 BLU_site -->
+    <connect name="BLU"
+              site1="NZL_Left_Beam_Up_BLU_site"
+              site2="BLU_site"
+              stiffness="1" damping="1"/>
+
+    <!-- 连接右避震杆上的 BRU_site 与固定结构上的 BRU_site -->
+    <connect name="BRU"
+              site1="NZL_Right_Beam_Up_BRU_site"
+              site2="BRU_site"
+              stiffness="1" damping="1"/>
+
+  </equality>
+</mujoco>

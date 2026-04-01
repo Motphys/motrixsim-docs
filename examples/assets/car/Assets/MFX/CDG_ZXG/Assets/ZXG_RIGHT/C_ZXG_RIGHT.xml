@@ -1,0 +1,31 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+      <default class="collision">
+        <geom type="mesh" group="3" contype="1" conaffinity="1"/>
+          <default class="C_ZXG_RIGHT_1">
+            <geom type="box" size="0.010827641934156418 0.03083021007478237 0.011709288693964481" quat="0.614677369594574 0.6095215082168579 0.3599940538406372 0.3479361832141876" pos="-0.009643027558922768 -0.016870638355612755 0.29039570689201355" density="1000.0"/>
+          </default>
+          <default class="C_ZXG_RIGHT_2">
+            <geom type="cylinder" size="0.006414027884602547 0.09926070272922516" quat="0.00030014777439646423 -0.8656308650970459 -0.5006826519966125 -7.826437467883807e-06" pos="1.5846935639274307e-05 -2.8953416403965093e-05 0.1217038631439209" density="1000.0"/>
+          </default>
+          <default class="C_ZXG_RIGHT_3">
+            <geom type="box" size="0.011059993878006935 0.02443826198577881 0.011695973575115204" quat="0.5084294080734253 0.6809371709823608 0.19778954982757568 0.4885728061199188" pos="-0.003494018455967307 -0.005899297539144754 0.24271869659423828" density="1000.0"/>
+          </default>
+      </default>
+  </default>
+
+  <worldbody>
+
+    <body name="B_ZXG_RIGHT" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+      <geom class="C_ZXG_RIGHT_1"/>
+      <geom class="C_ZXG_RIGHT_2"/>
+      <geom class="C_ZXG_RIGHT_3"/>
+    </body>
+  </worldbody>
+
+</mujoco>

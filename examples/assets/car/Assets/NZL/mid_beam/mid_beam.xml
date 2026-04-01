@@ -1,0 +1,26 @@
+
+<mujoco model="mid_beam">
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <!-- 加载视觉和碰撞模型作为资源 -->
+  <asset>
+    <model name="visual_mid_beam" file="V_mid_beam.xml"/>
+    <model name="collision_mid_beam" file="C_mid_beam.xml"/>
+  </asset>
+
+  <worldbody>
+    <body name="mid_beam" pos="0 0 0">
+      <!-- 自由关节 -->
+
+      <!-- 附加碰撞模型 -->
+      <body name="collision_anchor">
+        <attach model="collision_mid_beam" prefix="collision_"/>
+      </body>
+
+      <!-- 附加视觉模型 -->
+      <body name="visual_anchor">
+        <attach model="visual_mid_beam" prefix="visual_"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

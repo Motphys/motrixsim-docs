@@ -1,0 +1,40 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <asset>
+
+    <!-- Textures -->
+
+    <!-- Materials -->
+    <material name="Opaque(210,210,255).001" rgba="0.8235294222831726 0.8235294222831726 1.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+    <material name="Opaque(128,64,64)" rgba="0.501960813999176 0.250980406999588 0.250980406999588 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+    <material name="Opaque(210,210,255)" rgba="0.8235294222831726 0.8235294222831726 1.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+    <material name="Opaque(210,210,255).002" rgba="0.8235294222831726 0.8235294222831726 1.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+
+    <!-- Visual meshes -->
+    <mesh class="visual" name="V_FL_SCP" file="V_FL_SCP.obj"/>
+    <mesh class="visual" name="V_FL_wheel01" file="V_FL_wheel01.obj"/>
+    <mesh class="visual" name="V_FL_wheel02" file="V_FL_wheel02.obj"/>
+    <mesh class="visual" name="V_L_QDZZ" file="V_L_QDZZ.obj"/>
+
+  </asset>
+
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+
+  </default>
+
+  <worldbody>
+
+    <body name="B_FL_Wheel" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+      <geom class="visual" mesh="V_FL_SCP" pos="-0.0011619157157838345 0.0002420568052912131 0.038472115993499756" quat="0.5020566582679749 -0.49808913469314575 0.4994901120662689 -0.5003558993339539" material="Opaque(210,210,255).001"/>
+      <geom class="visual" mesh="V_FL_wheel01" pos="-9.89262480288744e-05 6.617698090849444e-05 0.0209426898509264" quat="0.5020567178726196 -0.4980897307395935 0.49948951601982117 -0.5003558397293091" material="Opaque(128,64,64)"/>
+      <geom class="visual" mesh="V_FL_wheel02" pos="0.0002104130107909441 0.0005542172002606094 0.07199204713106155" quat="0.5020567178726196 -0.4980897307395935 0.49948951601982117 -0.5003558397293091" material="Opaque(210,210,255)"/>
+      <geom class="visual" mesh="V_L_QDZZ" pos="0.003742506727576256 0.002380691934376955 -0.7390716075897217" quat="0.5020570755004883 -0.49808990955352783 0.49948927760124207 -0.50035560131073" material="Opaque(210,210,255).002"/>
+      <site name="L_QDZZ_site" pos="0.000042 0.000387 -0.051304" size="0.02" rgba="0 1 0 1"/>
+    </body>
+  </worldbody>
+
+</mujoco>

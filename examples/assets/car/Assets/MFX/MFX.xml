@@ -1,0 +1,137 @@
+
+<!-- 麦弗逊悬架 -->
+<mujoco model="MFX">
+  <compiler angle="radian" autolimits="true"/>
+
+  <asset>
+    <model name="L_XCB" file="L_XCB/L_XCB.xml"/><!-- 左下叉臂 -->
+    <model name="R_XCB" file="R_XCB/R_XCB.xml"/><!-- 右下叉臂 -->
+    <model name="L_ZDZC" file="L_ZDZC/L_ZDZC.xml"/><!-- 左转动轴承(父级：L_XCB) -->
+    <model name="R_ZDZC" file="R_ZDZC/R_ZDZC.xml"/><!-- 右转动轴承(父级：R_XCB) -->
+    <model name="L_JZG" file="L_JZG/L_JZG.xml"/><!-- 左减震杆(父级：L_ZDZC) -->
+    <model name="R_JZG" file="R_JZG/R_JZG.xml"/><!-- 右减震杆(父级：L_ZDZC) -->
+    <model name="L_Wheel" file="L_Wheel/L_Wheel.xml"/><!-- 左轮胎(父级：L_ZDZC) -->
+    <model name="R_Wheel" file="R_Wheel/R_Wheel.xml"/><!-- 右轮胎(父级：L_ZDZC) -->
+    <model name="CDG_ZXG" file="CDG_ZXG/CDG_ZXG.xml"/><!-- 传动杆+转向杆 -->
+    <model name="WDG" file="WDG/WDG.xml"/><!-- 稳定杆 -->
+  </asset>
+
+  <worldbody>
+    <frame pos="0 0 0" euler="0 0 0">
+        <attach model="CDG_ZXG" prefix="CDG_ZXG_"/>
+        <attach model="WDG" prefix="WDG_"/>
+    </frame>    
+
+    <!-- 左下叉臂 -->
+    <body name="L_XCB" pos="-0.0241 -0.3294 -0.0933" quat="0.4713 0.4908 -0.5361 -0.4996">
+      <joint name="Left_Root" type="hinge" axis="0 0 1" damping="20" stiffness="200" springref="0.2" limited="true" range="-0.5 0.5"/>
+      <attach model="L_XCB" prefix="L_XCB_"/>
+      
+      <!-- 左转动轴承 -->
+      <!-- pos="-0.010353 -0.716187 -0.099413" quat="0.235488 0.006152 0.187335 0.953631"原坐标 -->
+      <!-- pos="0.384575 -0.014228 -0.041594" quat="-0.462857 0.304969 0.685648 0.471851"换算坐标 -->
+      <body name="L_ZDZC" pos="0.384575 -0.014228 -0.041594" quat="-0.462857 0.304969 0.685648 0.471851">
+        <joint name="Left_ZDZC_joint" type="ball" range="0 0.6"/>
+        <attach model="L_ZDZC" prefix="L_ZDZC_"/>
+        <!-- 左减震杆 -->
+        <!-- pos="0.0146 -0.5822 0.1301" quat="0.0414 0.6546 -0.7542 -0.0330"原坐标 -->
+        <!-- pos="0.252548 0.216063 -0.069636" quat="0.761552 0.647258 -0.022417 0.024359"父级左下叉臂换算 -->
+        <!-- pos="0.020747 -0.038203 0.263366" quat="-0.158972 -0.559117 -0.809762 0.080014"父级左转动轴承换算 -->
+        <body name="L_JZG" pos="0.020747 -0.038203 0.263366" quat="-0.158972 -0.559117 -0.809762 0.080014">
+            <joint name="left_JZG_joint" type="slide" axis="0 0 1" range="-0.05 0.05"/>
+            <attach model="L_JZG" prefix="L_JZG_"/>
+        </body>
+        <!-- 左轮胎 -->
+        <!-- pos="0.000088 -0.739085 -0.00017" quat="0.50205 0.498097 -0.499482 0.500363"原坐标 -->
+        <!-- pos="0.408116 0.083831 -0.059277" quat="0.498870 0.506130 0.528167 0.464758"父级右下叉臂换算 -->
+        <!-- pos="-0.027212 0.049832 0.085198" quat="0.504882 -0.455850 -0.683597 -0.264557"父级右转动轴承换算 -->
+        <body name="L_Wheel" pos="-0.027212 0.049832 0.085198" quat="0.504882 -0.455850 -0.683597 -0.264557">
+            <joint name="Left_Wheel_joint" type="hinge" axis="0 0 1"/>
+            <attach model="L_Wheel" prefix="L_Wheel_"/>
+        </body>
+      </body> 
+
+    </body>
+
+    <!-- 右下叉臂 -->
+    <body name="R_XCB" pos="-0.0241 0.3294 -0.0933" quat="0.5062 0.5292 -0.4982 -0.4643">
+      <joint name="Right_Root" type="hinge" axis="0 0 1" damping="20" stiffness="200" springref="0.2" limited="true" range="-0.5 0.5"/>
+      <attach model="R_XCB" prefix="R_XCB_"/>
+      
+      <!-- 右转动轴承 -->
+      <!-- pos="-0.010356 0.7162 -0.099408" quat="0.977389 0.174429 0.068604 -0.097873"原坐标 -->
+      <!-- pos="-0.384832 -0.003475 -0.041627" quat="0.598305 -0.509534 0.550836 0.281043"换算坐标 -->
+      <body name="R_ZDZC" pos="-0.384832 -0.003475 -0.041627" quat="0.598305 -0.509534 0.550836 0.281043">
+        <joint name="Right_ZDZC_joint" type="ball" range="0 0.6"/>
+        <attach model="R_ZDZC" prefix="R_ZDZC_"/>
+        <!-- 右减震杆 -->
+        <!-- pos="0.0146 0.5822 0.1301" quat="0.052566 0.070432 -0.996113 -0.005967"原坐标 -->
+        <!-- pos="-0.246412 0.223038 -0.069630" quat="0.562896 0.467341 -0.448485 0.513422"父级右下叉臂换算 -->
+        <!-- pos="0.008058 -0.042734 0.263365" quat="-0.004091 0.157572 -0.971343 0.177895"父级右转动轴承换算 -->
+        <body name="R_JZG" pos="0.008058 -0.042734 0.263365" quat="-0.004091 0.157572 -0.971343 0.177895">
+            <joint name="Right_JZG_joint" type="slide" axis="0 0 1" range="-0.05 0.05"/>
+            <attach model="R_JZG" prefix="R_JZG_"/>
+        </body>
+        <!-- 右轮胎 -->
+        <!-- pos="0.000088 0.739085 -0.00017" quat="0.705394 0.708813 0.001712 0.00048"原坐标 -->
+        <!-- pos="-0.405611 0.095200 -0.059300" quat="0.731073 -0.015049 0.681626 -0.026278"父级右下叉臂换算 -->
+        <!-- pos="-0.010382 0.055806 0.085198" quat="0.813152 0.569544 0.022738 0.117837"父级右转动轴承换算 -->
+        <body name="R_Wheel" pos="-0.010382 0.055806 0.085198" quat="0.813152 0.569544 0.022738 0.117837">
+            <joint name="Right_Wheel_joint" type="hinge" axis="0 0 1"/>
+            <attach model="R_Wheel" prefix="R_Wheel_"/>
+        </body>
+      </body> 
+    </body>
+    
+  </worldbody>
+  <equality>
+    <!-- 连接左稳定杆上的 L_WDG_site2 与左转动轴承上的 L_ZDZC_site -->
+    <connect name="LWDG"
+              site1="WDG_L_WDG_L_WDG_site2"
+              site2="L_ZDZC_WDG_site"
+              stiffness="100" damping="1"/>
+
+    <!-- 连接右稳定杆上的 R_WDG_site2 与右转动轴承上的 R_ZDZC_site -->
+    <connect name="RWDG"
+              site1="WDG_R_WDG_R_WDG_site2"
+              site2="R_ZDZC_WDG_site"
+              stiffness="100" damping="1"/>
+
+    <!-- 连接左转向杆上的 L_ZXG_site 与左转动轴承上的 ZXG_site -->
+    <connect name="LZXG"
+              site1="CDG_ZXG_ZXGL_v_L_ZXG_site"
+              site2="L_ZDZC_ZXG_site"
+              stiffness="100" damping="1"
+              active="true"           
+              solref="0.01 1"      
+              solimp="0.8 0.9 0.01"/>
+
+    <!-- 连接右转向杆上的 R_ZXG_site 与右转动轴承上的 ZXG_site -->
+    <connect name="RZXG"
+              site1="CDG_ZXG_ZXGR_v_R_ZXG_site"
+              site2="R_ZDZC_ZXG_site"
+              stiffness="100" damping="1"
+              active="true"           
+              solref="0.01 1"      
+              solimp="0.8 0.9 0.01"/>
+
+      <!-- 连接左传动杆上的 L_CDG_site 与左驱动转轴上的 L_QDZZ_site -->
+    <connect name="LCDG"
+              site1="CDG_ZXG_CDGL_v_L_CDG_site"
+              site2="L_Wheel_v_L_QDZZ_site"
+              stiffness="100" damping="1"
+              active="true"           
+              solref="0.1 1"      
+              solimp="0.9 0.9 0.01"/>
+
+      <!-- 连接右传动杆上的 R_CDG_site 与右驱动转轴上的 R_QDZZ_site -->
+    <connect name="RCDG"
+              site1="CDG_ZXG_CDGR_v_R_CDG_site"
+              site2="R_Wheel_v_R_QDZZ_site"
+              stiffness="100" damping="1"
+              active="true"           
+              solref="0.1 1"      
+              solimp="0.9 0.9 0.01"/>
+
+  </equality>
+</mujoco>

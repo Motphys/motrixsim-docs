@@ -1,0 +1,51 @@
+<!-- world.xml -->
+<!-- carDEMO的入口文件 -->
+<mujoco>
+    <visual>
+        <!-- 可视距离 -->
+        <map zfar="50"/>
+        <!-- azimuth是初始视角绕Z旋转，elevation是仰角 -->
+        <global azimuth="90" elevation="45"/>
+    </visual>
+    <asset>
+        <model name="ground" file="Assets/ground/baseground.xml"/>
+
+        <model name="car" file="Assets/car.xml"/>
+
+    </asset>
+
+  <tendon>
+    <fixed name="differential">
+      <joint joint="car_MFX_Left_Wheel_joint" coef="0.5"/>
+      <joint joint="car_MFX_Right_Wheel_joint" coef="0.5"/>
+    </fixed>
+  </tendon>
+
+  <actuator>
+    <motor name="forward" tendon="differential" ctrlrange="-500 500"/>
+    <position
+      name="steering"
+      joint="car_MFX_CDG_ZXG_ZXG_MIDDLE_joint"
+      ctrlrange="-0.5 0.5"
+      kp="24000"
+      kv="2400"/>
+  </actuator>
+
+  <worldbody>
+    <light name="sun" directional="true"
+    diffuse="0.9 0.85 0.8" specular="0.6 0.6 0.6"
+    pos="0 0 10" dir="-1 0.5 -1" castshadow="true"/>
+
+
+    <attach model="ground" prefix="a0"/>
+
+    <!-- 车架 -->
+    <frame pos="0 0 1" euler="0 0 0">
+        <attach model="car" prefix="car_"/>
+    </frame>
+
+  </worldbody>
+
+    <!-- 重力设为标准9.81m/s² -->
+    <option gravity="0 0 -9.81"/>
+</mujoco>

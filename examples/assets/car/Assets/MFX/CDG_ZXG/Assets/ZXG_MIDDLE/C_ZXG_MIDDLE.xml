@@ -1,0 +1,22 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+      <default class="collision">
+        <geom type="mesh" group="3" contype="1" conaffinity="1"/>
+          <default class="C_ZXG_MIDDLE">
+            <geom type="cylinder" size="0.013043259270489216 0.3095692992210388" quat="0.1421966403722763 1.5084191545611247e-05 2.6131452614208683e-05 0.9898385405540466" pos="-1.308884279189608e-18 -6.661337088959755e-16 3.5978331425212673e-07" density="1000.0"/>
+          </default>
+      </default>
+  </default>
+
+  <worldbody>
+
+    <body name="B_ZXG_MIDDLE" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+      <geom class="C_ZXG_MIDDLE"/>
+    </body>
+  </worldbody>
+
+</mujoco>

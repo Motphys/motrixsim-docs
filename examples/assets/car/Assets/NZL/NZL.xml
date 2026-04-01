@@ -1,0 +1,58 @@
+
+<mujoco model="car_frame_all">
+  <compiler angle="radian" autolimits="true"/>
+
+  <asset>
+    <model name="a_mid_beam" file="mid_beam/mid_beam.xml"/><!-- 中间主扭转梁（根父级） -->
+
+    <model name="a_L_wheel" file="L_wheel/L_wheel.xml"/>  <!-- 左车轮（父级：MID_BEAM） -->
+    <model name="a_BLD_BZ" file="BLD_BZ/V_BLD_BZ.xml"/>    <!-- 左梁下（父级：MID_BEAM） -->
+    <model name="a_BLU_BZ" file="BLU_BZ/V_BLU_BZ.xml"/>    <!-- 左梁上（父级：BLD_BZ） -->
+
+    <model name="a_R_wheel" file="R_wheel/R_wheel.xml"/>  <!-- 右车轮（父级：MID_BEAM） -->
+    <model name="a_BRD_BZ" file="BRD_BZ/V_BRD_BZ.xml"/>    <!-- 右梁下（父级：MID_BEAM） -->
+    <model name="a_BRU_BZ" file="BRU_BZ/V_BRU_BZ.xml"/>    <!-- 右梁上（父级：BRD_BZ） -->
+  </asset>
+
+  <worldbody>
+
+    <!-- 中间主扭转梁 -->
+    <body name="Mid_Beam_Root" pos="2.1862 0 -0.021172" quat="1 0 0 0">
+      <joint name="Mid_Root_z_joint" type="hinge" axis="0 1 0" damping="10" stiffness="800" springref="0" limited="true" range="-0.15 0.15" />
+      <joint name="Mid_Root_x_joint" type="hinge" axis="1 0 0" damping="10" stiffness="800" springref="0" limited="true" range="-0.03 0.03" />
+      <attach model="a_mid_beam" prefix="Mid_Beam_Root_"/>
+      
+      <!-- 左车轮 -->
+      <body name="Left_Wheel" pos="0.4116 -0.7238 0.0580" quat="0.3572 -0.3572 0.6102 0.6102">
+        <joint name="Left_Wheel_joint" type="hinge" axis="0 0 1" />
+        <attach model="a_L_wheel" prefix="Left_Wheel_"/>
+      </body> 
+       <!-- 左梁下 -->
+      <body name="Left_Beam_Down" pos="0.4683 -0.5974 -0.0548" quat="0.2465 -0.2675 0.6902 0.6255">
+        <joint name="Left_Beam_Down_joint" type="ball" range="0 5" />
+        <attach model="a_BLD_BZ" prefix="Left_Beam_Down_"/>
+        <!-- 左梁上 -->
+        <body name="Left_Beam_Up" pos="0.0 0.0 0.00" quat="0.7010 -0.5610 -0.4304 0.0922">
+          <attach model="a_BLU_BZ" prefix="Left_Beam_Up_"/>
+          <joint name="Left_Beam_Up_joint" type="slide" axis="0 0 1" range="-0.1 0.1" damping="20" stiffness="800" springref="0" limited="true"/>
+        </body>
+      </body>
+
+      <!-- 右车轮 -->
+      <body name="Right_Wheel" pos="0.4116 0.7238 0.0580" quat="0.6987 0.7153 0.0 0.0">
+        <joint name="Right_Wheel_joint" type="hinge" axis="0 0 1" />
+        <attach model="a_R_wheel" prefix="Right_Wheel_"/>
+      </body> 
+      <!-- 右梁下 -->
+      <body name="Right_Beam_Down" pos="0.4683 0.5974 -0.0548" quat="-0.6255 -0.6901 0.2675 -0.2465">
+        <joint name="Right_Beam_Down_joint" type="ball" range="0 5" />
+        <attach model="a_BRD_BZ" prefix="Right_Beam_Down_"/>
+        <!-- 右梁上 -->
+        <body name="Right_Beam_Up" pos="0.0 0.0 0.0" quat="-0.7010 0.5609 -0.4304 0.0922">
+          <attach model="a_BRU_BZ" prefix="Right_Beam_Up_"/>
+          <joint name="Right_Beam_Up_joint" type="slide" axis="0 0 1" range="-0.1 0.1" damping="20" stiffness="800" springref="0" limited="true"/>
+        </body>
+      </body>
+    </body> 
+  </worldbody>
+</mujoco>

@@ -1,0 +1,25 @@
+
+<mujoco model="CDG_RIGHT">
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <!-- 加载视觉和碰撞模型作为资源 -->
+  <asset>
+    <model name="visual_CDG_RIGHT" file="V_CDG_RIGHT.xml"/>
+    <model name="collision_CDG_RIGHT" file="C_CDG_RIGHT.xml"/>
+  </asset>
+
+  <worldbody>
+    <body name="CDG_RIGHT" pos="0 0 0">
+
+      <!-- 附加碰撞模型 -->
+      <body name="collision_anchor">
+        <attach model="collision_CDG_RIGHT" prefix="c_"/>
+      </body>
+
+      <!-- 附加视觉模型 -->
+      <body name="visual_anchor">
+        <attach model="visual_CDG_RIGHT" prefix="v_"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

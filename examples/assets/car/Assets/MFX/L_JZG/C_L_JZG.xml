@@ -1,0 +1,20 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <default>
+      <default class="collision">
+        <geom type="mesh" group="3" contype="1" conaffinity="1"/>
+          <default class="C_L_JZG">
+            <geom type="sphere" size="0.01999998837709427" quat="1.0 0.0 0.0 0.0" pos="6.280606612563133e-08 -7.260860002133995e-08 -0.39566001296043396" density="1000.0"/>
+          </default>
+      </default>
+  </default>
+
+  <worldbody>
+
+    <body name="B_C_L_JZG" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+      <geom class="C_L_JZG"/>
+    </body>
+
+  </worldbody>
+</mujoco>

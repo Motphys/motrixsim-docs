@@ -1,0 +1,19 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <default>
+      <default class="collision">
+        <geom type="mesh" group="3" contype="1" conaffinity="1"/>
+          <default class="C_FR_Wheel">
+            <geom type="cylinder" size="0.31700000166893005 0.07144401967525482" quat="1.0 0.0 0.0 0.0" pos="-9.89262480288744e-05 6.617698090849444e-05 -0.02995871752500534" density="1000.0"/>
+          </default>
+      </default>
+  </default>
+
+  <worldbody>
+
+    <body name="B_C_FR_Wheel" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+      <geom class="C_FR_Wheel"/>
+    </body>
+  </worldbody>
+</mujoco>

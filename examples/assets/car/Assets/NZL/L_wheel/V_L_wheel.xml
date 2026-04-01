@@ -1,0 +1,34 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <asset>
+
+    <!-- Textures -->
+
+    <!-- Materials -->
+    <material name="Opaque(210,210,255).003" rgba="0.8235294222831726 0.8235294222831726 1.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+    <material name="Opaque(128,64,64).003" rgba="0.501960813999176 0.250980406999588 0.250980406999588 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+    <material name="Opaque(210,210,255).005" rgba="0.8235294222831726 0.8235294222831726 1.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+
+    <!-- Visual meshes -->
+    <mesh class="visual" name="V_BL_SCP" file="V_BL_SCP.obj"/>
+    <mesh class="visual" name="V_BL_wheel01" file="V_BL_wheel01.obj"/>
+    <mesh class="visual" name="V_BL_wheel02" file="V_BL_wheel02.obj"/>
+
+  </asset>
+
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+  </default>
+
+  <worldbody>
+    <body name="B_L_wheel" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+      <geom class="visual" mesh="V_BL_SCP" pos="0.0005 0.0001 -0.0605" quat="0.9567 0.0000 0.0000 0.2911" material="Opaque(210,210,255).003"/>
+      <geom class="visual" mesh="V_BL_wheel01" pos="0.0001 0.0001 -0.0262" quat="0.6302 0.6439 -0.3118 -0.3017" material="Opaque(128,64,64).003"/>
+      <geom class="visual" mesh="V_BL_wheel02" pos="-0.0004 0.0004 -0.0779" quat="0.6302 0.6439 -0.3118 -0.3017" material="Opaque(210,210,255).005"/>
+    </body>
+  </worldbody>
+
+</mujoco>

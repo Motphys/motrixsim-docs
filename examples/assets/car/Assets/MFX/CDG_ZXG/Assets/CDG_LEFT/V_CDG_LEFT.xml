@@ -1,0 +1,29 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <asset>
+
+    <!-- Textures -->
+
+    <!-- Materials -->
+    <material name="Opaque(210,210,255).001" rgba="0.8235294222831726 0.8235294222831726 1.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+
+    <!-- Visual meshes -->
+    <mesh class="visual" name="V_CDG_LEFT" file="V_CDG_LEFT.obj"/>
+
+  </asset>
+
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+  </default>
+
+  <worldbody>
+
+    <body name="B_CDG_LEFT" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+      <geom class="visual" mesh="V_CDG_LEFT" pos="-7.998945511644706e-05 -3.2152962376130745e-05 -0.003091365098953247" quat="0.9617947340011597 0.0007959270151332021 -0.00036712342989630997 0.2737703323364258" material="Opaque(210,210,255).001"/>
+      <site name="L_CDG_site" pos="0.000482 -0.000679 0.374226" size="0.02" rgba="0 1 0 1"/>
+    </body>
+  </worldbody>
+</mujoco>

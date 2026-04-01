@@ -1,0 +1,31 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+      <default class="collision">
+        <geom type="mesh" group="3" contype="1" conaffinity="1"/>
+          <default class="C_CDG_MIDDLE_1">
+            <geom type="cylinder" size="0.022993849590420723 0.10676223784685135" quat="0.7071067094802856 0.70710688829422 0.0 0.0" pos="-0.02980000339448452 -0.14637333154678345 0.01680001989006996" density="1000.0"/>
+          </default>
+          <default class="C_CDG_MIDDLE_2">
+            <geom type="cylinder" size="0.03997577354311943 0.01790251024067402" quat="0.7071067094802856 0.70710688829422 0.0 0.0" pos="-0.02980000339448452 -0.026373334228992462 0.01680001989006996" density="1000.0"/>
+          </default>
+          <default class="C_CDG_MIDDLE_3">
+            <geom type="cylinder" size="0.03997577354311943 0.014056703075766563" quat="0.7071067094802856 0.70710688829422 0.0 0.0" pos="-0.02980000339448452 -0.26443207263946533 0.01680001989006996" density="1000.0"/>
+          </default>
+      </default>
+  </default>
+
+  <worldbody>
+
+    <body name="B_CDG_MIDDLE" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+      <geom class="C_CDG_MIDDLE_1"/>
+      <geom class="C_CDG_MIDDLE_2"/>
+      <geom class="C_CDG_MIDDLE_3"/>
+    </body>
+  </worldbody>
+
+</mujoco>

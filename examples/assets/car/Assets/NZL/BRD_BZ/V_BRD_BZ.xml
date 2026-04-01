@@ -1,0 +1,35 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <asset>
+
+    <!-- Textures -->
+
+    <!-- Materials -->
+    <material name="Opaque(210,210,255).002" rgba="0.8235 0.8235 1.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527"/>
+
+    <!-- Visual meshes -->
+    <mesh class="visual" name="V_BRD_BZ" file="V_BRD_BZ.obj"/>
+
+  </asset>
+
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+  </default>
+
+  <worldbody>
+    <body name="B_BRD_BZ" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+
+      <!-- MUJOCO -->
+        <!-- 添加惯性元，定义质量和惯性矩 -->
+        <inertial mass="0.5" 
+                  pos="0 0 0"
+                  diaginertia="0.001 0.001 0.001"/>
+
+      <geom class="visual" mesh="V_BRD_BZ" pos="0.2141 0.2139 0.0" quat="0.6255 -0.6901 0.2675 -0.2465" material="Opaque(210,210,255).002"/>
+    </body>
+  </worldbody>
+
+</mujoco>

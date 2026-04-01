@@ -1,0 +1,35 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <asset>
+
+    <!-- Textures -->
+
+    <!-- Materials -->
+    <material name="Opaque(128,64,64)" rgba="0.501960813999176 0.250980406999588 0.250980406999588 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+    <material name="Opaque(153,153,153)" rgba="0.6000000238418579 0.6000000238418579 0.6000000238418579 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+    <material name="Opaque(210,210,255)" rgba="0.8235294222831726 0.8235294222831726 1.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+
+    <!-- Visual meshes -->
+    <mesh class="visual" name="V_GJ_B_GUAN" file="V_GJ_B_GUAN.obj"/>
+    <mesh class="visual" name="V_GJ_F" file="V_GJ_F.obj"/>
+    <mesh class="visual" name="V_GJ_M_GUAN" file="V_GJ_M_GUAN.obj"/>
+    <mesh class="visual" name="V_GJ_XIANG" file="V_GJ_XIANG.obj"/>
+  </asset>
+
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+  </default>
+
+  <worldbody>
+
+    <body name="B_GJXT" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+      <geom class="visual" mesh="V_GJ_B_GUAN" pos="2.6421661376953125 -0.48238223791122437 0.34063732624053955" quat="1.0 0.0 0.0 0.0" material="Opaque(128,64,64)"/>
+      <geom class="visual" mesh="V_GJ_F" pos="-0.22520719468593597 -0.3448239862918854 0.4392305910587311" quat="1.0 0.0 0.0 0.0" material="Opaque(153,153,153)"/>
+      <geom class="visual" mesh="V_GJ_M_GUAN" pos="0.6798020005226135 -0.2680891454219818 0.17441101372241974" quat="1.0 0.0 0.0 0.0" material="Opaque(128,64,64)"/>
+      <geom class="visual" mesh="V_GJ_XIANG" pos="2.1163432598114014 -0.0483686737716198 0.06064818799495697" quat="1.0 0.0 0.0 0.0" material="Opaque(210,210,255)"/>
+    </body>
+  </worldbody>
+</mujoco>

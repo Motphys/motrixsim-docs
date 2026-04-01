@@ -1,0 +1,30 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <asset>
+
+    <!-- Textures -->
+
+    <!-- Materials -->
+    <material name="Opaque(210,210,255).004" rgba="0.8235294222831726 0.8235294222831726 1.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+
+    <!-- Visual meshes -->
+    <mesh class="visual" name="V_R_JZG" file="V_R_JZG.obj"/>
+
+  </asset>
+
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+  </default>
+
+  <worldbody>
+
+    <body name="R_JZG" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+      <geom class="visual" mesh="V_R_JZG" pos="-0.0007138606742955744 -0.00029873850871808827 -0.3827906548976898" quat="0.0525665245950222 -0.0704321339726448 0.9961127042770386 0.005966744851320982" material="Opaque(210,210,255).004"/>
+      <site name="R_JZG_site" pos="0 0 -0.39666" size="0.02" rgba="0 1 0 1"/>
+    </body>
+  </worldbody>
+
+</mujoco>

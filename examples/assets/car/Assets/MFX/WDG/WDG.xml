@@ -1,0 +1,35 @@
+
+<!-- 麦弗逊悬架 -->
+<mujoco model="MFX">
+  <compiler angle="radian" autolimits="true"/>
+
+  <asset>
+    <model name="L_WDG" file="Assets/L_WDG/L_WDG.xml"/><!-- 左稳定杆 -->
+    <model name="R_WDG" file="Assets/R_WDG/R_WDG.xml"/><!-- 右稳定杆 -->
+    <model name="M_WDG" file="Assets/M_WDG/M_WDG.xml"/><!-- 中稳定杆 -->
+  </asset>
+
+  <worldbody>  
+    <!-- 中稳定杆 -->
+    <body name="M_WDG" pos="0.1415 -0 -0.1102" quat="1 0 0 0">
+      <joint name="Mid_WDG_joint" type="hinge" axis="0 1 0" damping="1" stiffness="80" springref="0.1" limited="true" range="-0.3 0.3"/>
+      <joint name="Mid_Root_x_joint" type="hinge" axis="1 0 0" damping="1" stiffness="80" springref="0.1" limited="true" range="-0.08 0.08" />
+      <attach model="M_WDG" prefix="M_WDG_"/>
+      <!-- 左稳定杆 -->
+      <!-- pos="-0.118929 -0.504737 -0.096169" quat="0.061828 -0.0053 0.689626 0.721502"原坐标 -->
+      <!-- pos="-0.260429 -0.504737 0.014031" quat="0.061828 -0.005300 0.689626 0.721502"父级：中稳定杆 -->      
+      <body name="L_WDG" pos="-0.260429 -0.504737 0.014031" quat="0.061828 -0.005300 0.689626 0.721502">
+        <joint name="Left_WDG_joint" type="ball" range="0 0.4"/>
+        <attach model="L_WDG" prefix="L_WDG_"/>
+      </body>
+      <!-- 右稳定杆 -->
+      <!-- pos="-0.118929 0.504737 -0.096169" quat="0.721502 0.689626 -0.0053 0.061828"原坐标 -->
+      <!-- pos="-0.260429 0.504737 0.014031" quat="0.721502 0.689626 -0.005300 0.061828"父级：中稳定杆 -->
+      <body name="R_WDG" pos="-0.260429 0.504737 0.014031" quat="0.721502 0.689626 -0.005300 0.061828">
+        <joint name="Right_WDG_joint" type="ball" range="0 0.4"/>
+        <attach model="R_WDG" prefix="R_WDG_"/>
+      </body>
+    </body>
+    
+  </worldbody>
+</mujoco>

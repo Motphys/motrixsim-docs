@@ -1,0 +1,38 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <asset>
+
+    <!-- Textures -->
+
+    <!-- Materials -->
+    <material name="Opaque(210,210,255).004" rgba="0.8235294222831726 0.8235294222831726 1.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+
+    <!-- Visual meshes -->
+    <mesh class="visual" name="V_R_WDG" file="V_R_WDG.obj"/>
+
+  </asset>
+
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+  </default>
+
+  <worldbody>
+
+    <body name="R_WDG" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+
+      <!-- MUJOCO -->
+        <!-- 添加惯性元，定义质量和惯性矩 -->
+        <inertial mass="0.5" 
+                  pos="0 0 0"
+                  diaginertia="0.001 0.001 0.001"/>
+
+      <geom class="visual" mesh="V_R_WDG" pos="0.06813903152942657 0.1664656698703766 -0.012338697910308838" quat="0.7215016484260559 -0.6896264553070068 0.005299669224768877 -0.061827581375837326" material="Opaque(210,210,255).004"/>
+      <site name="R_WDG_site1" pos="0 0 0" size="0.02" rgba="0 1 0 1"/>
+      <site name="R_WDG_site2" pos="0.136397 0.333161 -0.024801" size="0.02" rgba="0 1 0 1"/>
+    </body>
+  </worldbody>
+
+</mujoco>

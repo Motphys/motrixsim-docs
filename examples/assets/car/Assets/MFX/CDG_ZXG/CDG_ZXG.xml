@@ -1,0 +1,58 @@
+<!-- CDG_ZXG.xml -->
+<!-- 传动杆和转向杆文件 -->
+
+<mujoco>
+
+    <asset>
+        <!-- 传动杆 -->
+
+        <model name="CDG_LEFT" file="Assets/CDG_LEFT/CDG_LEFT.xml"/>
+        <model name="CDG_MIDDLE" file="Assets/CDG_MIDDLE/CDG_MIDDLE.xml"/>
+        <model name="CDG_RIGHT" file="Assets/CDG_RIGHT/CDG_RIGHT.xml"/>
+
+        <!-- 转向杆 -->
+        <model name="ZXG_LEFT" file="Assets/ZXG_LEFT/ZXG_LEFT.xml"/>
+        <model name="ZXG_MIDDLE" file="Assets/ZXG_MIDDLE/ZXG_MIDDLE.xml"/>
+        <model name="ZXG_RIGHT" file="Assets/ZXG_RIGHT/ZXG_RIGHT.xml"/>
+    </asset>
+
+    <worldbody>
+        
+
+        <body name="CDG_MIDDLE" pos="0 0 0" quat="1 0 0 0">
+            <attach model="CDG_MIDDLE" prefix="CDGM_"/>
+
+            <body name="CDG_LEFT" pos="-0.028927 -0.314058 0.0163" quat="0.671876 0.686692 0.224009 -0.163879">
+                <attach model="CDG_LEFT" prefix="CDGL_"/>
+                <joint name="CDG_LEFT_joint_X" type="ball" damping="20" stiffness="2000" springref="0" limited="true" range="0 15"/>
+                <!-- <joint name="CDG_LEFT_joint_Y" type="hinge" axis="0 1 0" range="-10 10"/> -->
+            </body>    
+
+            <body name="CDG_RIGHT" pos="-0.029291 0.030754 0.016509" quat="0.182045 -0.21715 -0.682286 -0.673937">
+                <attach model="CDG_RIGHT" prefix="CDGR_"/>
+                <joint name="CDG_RIGHT_joint_X" type="ball" damping="20" stiffness="2000" springref="0" limited="true" range="0 15"/>
+                <!-- <joint name="CDG_RIGHT_joint_Y" type="hinge" axis="0 1 0" range="-10 10"/> -->
+            </body>
+        </body>
+
+        <body name="ZXG_MIDDLE" pos="0.1672 -0.000017 -0.02" quat="0.100559 0.100538 0.699903 -0.69994">
+            <attach model="ZXG_MIDDLE" prefix="z1_"/>
+            <joint name="ZXG_MIDDLE_joint" type="slide" axis="0 0 1" damping="1" stiffness="10" springref="0" limited="true" range="-0.13 0.13"/>
+
+            <body name="ZXG_LEFT" pos="-0.000128 -0.000023 0.334356" quat="0.198807 0.061903 0.031311 0.977580">
+                <attach model="ZXG_LEFT" prefix="ZXGL_"/>
+                <joint name="ZXG_LEFT_joint_X" type="ball" range="0 15"/>
+                <!-- <joint name="ZXG_LEFT_joint_Y" type="hinge" axis="0 1 0" range="-3 3"/> -->
+            </body>
+
+            <body name="ZXG_RIGHT" pos="-0.000095 -0.000039 -0.334823" quat="-0.068886 0.369634 -0.926588 0.007779">
+                <attach model="ZXG_RIGHT" prefix="ZXGR_"/>
+                <joint name="ZXG_RIGHT_joint_X" type="ball" range="0 15"/>
+                <!-- <joint name="ZXG_RIGHT_joint_Y" type="hinge" axis="0 1 0" range="-3 3"/> -->
+            </body>
+        </body>
+
+
+    </worldbody>
+    
+</mujoco>

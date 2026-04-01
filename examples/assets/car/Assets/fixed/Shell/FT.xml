@@ -1,0 +1,33 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <asset>
+
+    <!-- Textures -->
+
+    <!-- Materials -->
+    <material name="Material" rgba="0.800000011920929 0.800000011920929 0.800000011920929 0.4" reflectance="0.5" metallic="0.0" roughness="0.5"/>
+
+    <!-- Visual meshes -->
+    <mesh class="visual" name="CAR_001" file="CAR_001.obj"/>
+    <mesh class="visual" name="CAR_002" file="CAR_002.obj"/>
+    <mesh class="visual" name="CAR_003" file="CAR_003.obj"/>
+
+    <!-- Collision meshes -->
+  </asset>
+
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+  </default>
+
+  <worldbody>
+
+    <body name="B_FT" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+      <geom class="visual" mesh="CAR_001" pos="2.589956521987915 0.0 0.0" quat="1.9470718370939721e-07 0.0 0.0 -1.0" material="Material"/>
+      <geom class="visual" mesh="CAR_002" pos="2.589956521987915 0.0 0.0" quat="1.9470718370939721e-07 0.0 0.0 -1.0" material="Material"/>
+      <geom class="visual" mesh="CAR_003" pos="2.589956521987915 0.0 0.0" quat="1.6292068494294654e-07 0.0 0.0 -1.0" material="Material"/>
+    </body>
+  </worldbody>
+</mujoco>

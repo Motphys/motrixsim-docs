@@ -1,0 +1,25 @@
+
+<mujoco model="ZXG_LEFT">
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <!-- 加载视觉和碰撞模型作为资源 -->
+  <asset>
+    <model name="visual_ZXG_LEFT" file="V_ZXG_LEFT.xml"/>
+    <model name="collision_ZXG_LEFT" file="C_ZXG_LEFT.xml"/>
+  </asset>
+
+  <worldbody>
+    <body name="ZXG_LEFT" pos="0 0 0">
+
+      <!-- 附加碰撞模型 -->
+      <body name="collision_anchor">
+        <attach model="collision_ZXG_LEFT" prefix="c_"/>
+      </body>
+
+      <!-- 附加视觉模型 -->
+      <body name="visual_anchor">
+        <attach model="visual_ZXG_LEFT" prefix="v_"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

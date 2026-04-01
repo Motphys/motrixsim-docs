@@ -1,0 +1,25 @@
+
+<mujoco model="R_Wheel">
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <!-- 加载视觉和碰撞模型作为资源 -->
+  <asset>
+    <model name="visual_R_Wheel" file="V_R_Wheel.xml"/>
+    <model name="collision_R_Wheel" file="C_R_Wheel.xml"/>
+  </asset>
+
+  <worldbody>
+    <body name="R_Wheel" pos="0 0 0">
+
+      <!-- 附加碰撞模型 -->
+      <body name="collision_anchor">
+        <attach model="collision_R_Wheel" prefix="c_"/>
+      </body>
+
+      <!-- 附加视觉模型 -->
+      <body name="visual_anchor">
+        <attach model="visual_R_Wheel" prefix="v_"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

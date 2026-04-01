@@ -1,0 +1,25 @@
+
+<mujoco model="R_JZG">
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <!-- 加载视觉和碰撞模型作为资源 -->
+  <asset>
+    <model name="visual_R_JZG" file="V_R_JZG.xml"/>
+    <model name="collision_R_JZG" file="C_R_JZG.xml"/>
+  </asset>
+
+  <worldbody>
+    <body name="R_JZG" pos="0 0 0">
+
+      <!-- 附加碰撞模型 -->
+      <body name="collision_anchor">
+        <attach model="collision_R_JZG" prefix="c_"/>
+      </body>
+
+      <!-- 附加视觉模型 -->
+      <body name="visual_anchor">
+        <attach model="visual_R_JZG" prefix="v_"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

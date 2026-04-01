@@ -1,0 +1,34 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <asset>
+
+    <!-- Textures -->
+
+    <!-- Materials -->
+    <material name="Opaque(210,210,255).004" rgba="0.8235294222831726 0.8235294222831726 1.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+
+    <!-- Visual meshes -->
+    <mesh class="visual" name="V_FR_XCB" file="V_FR_XCB.obj"/>
+  </asset>
+
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+  </default>
+
+  <worldbody>
+
+    <body name="B_FR_XCB" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+
+      <!-- MUJOCO -->
+        <!-- 添加惯性元，定义质量和惯性矩 -->
+        <inertial mass="0.5" 
+                  pos="0 0 0"
+                  diaginertia="0.001 0.001 0.001"/>
+
+      <geom class="visual" mesh="V_FR_XCB" pos="-0.1580953747034073 -0.016042113304138184 -0.1373119205236435" quat="0.5061794519424438 -0.5291787385940552 0.4981995224952698 0.4642731249332428" material="Opaque(210,210,255).004"/>
+    </body>
+  </worldbody>
+</mujoco>

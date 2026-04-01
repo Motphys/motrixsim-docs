@@ -1,0 +1,40 @@
+<mujoco>
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <asset>
+
+    <!-- Textures -->
+
+    <!-- Materials -->
+    <material name="Opaque(210,210,255).004" rgba="0.8235294222831726 0.8235294222831726 1.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5527864098548889"/>
+
+    <!-- Visual meshes -->
+    <mesh class="visual" name="V_CDG_MIDDLE" file="V_CDG_MIDDLE.obj"/>
+
+    <!-- Collision meshes -->
+  </asset>
+
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+      <default class="collision">
+        <geom type="mesh" rgba="1 1 1 1" group="3" contype="1" conaffinity="1"/>
+      </default>
+  </default>
+
+  <worldbody>
+
+    <body name="B_CDG_MIDDLE" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0">
+      <geom class="visual" mesh="V_CDG_MIDDLE" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" material="Opaque(210,210,255).004"/>
+    </body>
+  </worldbody>
+  <contact>
+  </contact>
+  <equality>
+  </equality>
+  <tendon>
+  </tendon>
+  <actuator>
+  </actuator>
+</mujoco>

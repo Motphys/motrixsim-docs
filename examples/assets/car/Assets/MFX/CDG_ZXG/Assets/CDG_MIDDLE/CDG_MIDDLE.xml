@@ -1,0 +1,25 @@
+
+<mujoco model="CDG_MIDDLE">
+  <compiler angle="radian" assetdir="assets" autolimits="true"/>
+
+  <!-- 加载视觉和碰撞模型作为资源 -->
+  <asset>
+    <model name="visual_CDG_MIDDLE" file="V_CDG_MIDDLE.xml"/>
+    <model name="collision_CDG_MIDDLE" file="C_CDG_MIDDLE.xml"/>
+  </asset>
+
+  <worldbody>
+    <body name="CDG_MIDDLE" pos="0 0 0">
+
+      <!-- 附加碰撞模型 -->
+      <body name="collision_anchor">
+        <attach model="collision_CDG_MIDDLE" prefix="collision_"/>
+      </body>
+
+      <!-- 附加视觉模型 -->
+      <body name="visual_anchor">
+        <attach model="visual_CDG_MIDDLE" prefix="visual_"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>
