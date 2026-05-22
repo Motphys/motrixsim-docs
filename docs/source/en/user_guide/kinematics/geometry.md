@@ -30,10 +30,10 @@ Once you obtain a Geom object, you can read information such as its position, or
 You can run a simple example of Geom API usage with:
 
 ```bash
-uv run examples/geom.py
+uv run examples/physics/geom.py
 ```
 
-See the source code at [`examples/geom.py`](../../../../examples/geom.py)。
+See the source code at [`examples/physics/geom.py`](../../../../examples/physics/geom.py)。
 
 [`model.num_geoms`]: motrixsim.SceneModel.num_geoms
 [`model.geoms`]: motrixsim.SceneModel.geoms

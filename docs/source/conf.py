@@ -21,14 +21,16 @@
 import os
 import shutil
 import site
+import subprocess
 import sys
 from pathlib import Path
 
 project_root = Path(__file__).parents[2].resolve()
+workspace_root = project_root.parent
 motrixsim_path = None
 
 # 优先检查项目目录中的包
-pkg_candidate = project_root / "motrixsim"
+pkg_candidate = workspace_root / "motrixsim-core" / "motrixsim"
 if (pkg_candidate / "__init__.py").exists():
     motrixsim_path = pkg_candidate
 else:
@@ -66,7 +68,18 @@ language = "zh_CN"
 
 
 def setup(app):
+    app.connect("builder-inited", maybe_generate_agent_api_docs)
     app.connect("builder-inited", copy_file_by_language)
+
+
+def maybe_generate_agent_api_docs(app):
+    """Optionally generate agent API docs during Sphinx build."""
+    if os.environ.get("MOTRIXSIM_BUILD_AGENT_API_DOCS") != "1":
+        return
+
+    script = project_root / "scripts" / "gen_agent_api_docs.py"
+    print(f"Generating agent API docs via {script}")
+    subprocess.run([sys.executable, str(script)], cwd=project_root, check=True)
 
 
 def copy_file_by_language(app):
@@ -158,7 +171,7 @@ html_last_updated_fmt = ""  # to reveal the build date in the pages meta
 
 html_theme_options = {
     # https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/navigation.html
-    "show_nav_level": 2,
+    "show_nav_level": 1,
     "show_toc_level": 5,
     # https://pydata-sphinx-theme.readthedocs.io/en/stable/user_guide/source-buttons.html#add-an-edit-button
     "use_edit_page_button": False,

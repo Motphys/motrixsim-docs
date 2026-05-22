@@ -1,4 +1,4 @@
-# 🛸 浮动基（FloatingBase）
+# 🛸 浮动基
 
 在 [Body](body.md) 中，我们介绍了 Body 与 World 有三种连接方式，分别是：
 

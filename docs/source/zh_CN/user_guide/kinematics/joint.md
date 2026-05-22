@@ -1,4 +1,4 @@
-# 🔩 关节（Joint）
+# 🔩 关节
 
 关节用来定义它所在的刚体 ([Body](body.md)) 与父刚体之间的运动自由度。每个刚体可以定义多个关节，组合多种自由度。如果一个刚体没有定义关节，该刚体与父刚体刚性连接。世界刚体 (world body) 中不能定义关节。关节的状态数据（位置、速度）保存在 [SceneData](../main_function/scene_data.md) 中，由于关节定义的自由度不同，状态数据的长度也有所不同。
 
@@ -42,7 +42,7 @@
 
 在 MotrixSim 中加载 MJCF 文件创建场景和数据
 
-```{literalinclude} ../../../../examples/joint.py
+```{literalinclude} ../../../../examples/physics/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::init[]"
@@ -51,7 +51,7 @@
 
 获取场景中的所有关节
 
-```{literalinclude} ../../../../examples/joint.py
+```{literalinclude} ../../../../examples/physics/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::access_all[]"
@@ -60,7 +60,7 @@
 
 通过关节名称获取关节索引和访问
 
-```{literalinclude} ../../../../examples/joint.py
+```{literalinclude} ../../../../examples/physics/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::joint_index[]"
@@ -69,7 +69,7 @@
 
 获取关节对应自由度的值和速度
 
-```{literalinclude} ../../../../examples/joint.py
+```{literalinclude} ../../../../examples/physics/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::joint_dof_pos_vel[]"
@@ -78,7 +78,7 @@
 
 获取关节的限制
 
-```{literalinclude} ../../../../examples/joint.py
+```{literalinclude} ../../../../examples/physics/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::joint_limits[]"
@@ -87,14 +87,14 @@
 
 配置关节的位置和速度
 
-```{literalinclude} ../../../../examples/joint.py
+```{literalinclude} ../../../../examples/physics/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::set_pos_vel[]"
 :end-before:  "# end::set_pos_vel[]"
 ```
 
-完整代码见 [joint.py](../../../../examples/joint.py)
+完整代码见 [joint.py](../../../../examples/physics/joint.py)
 
 ## API Reference
 

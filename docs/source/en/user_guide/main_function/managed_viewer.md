@@ -129,7 +129,7 @@ Uses the provided [`SceneData`] instance as the initial state for the simulation
 
 Run some physics steps before launching the viewer to stabilize the initial state:
 
-```{literalinclude} ../../../../examples/interactive_viewer.py
+```{literalinclude} ../../../../examples/viewer/interactive_viewer.py
 :language: python
 :dedent:
 :start-after: "# Use custom model with physics data"
@@ -146,7 +146,7 @@ This pre-simulation approach is particularly useful for:
 
 Here's a complete example demonstrating the interactive viewer with the Boston Dynamics Spot robot:
 
-```{literalinclude} ../../../../examples/interactive_viewer.py
+```{literalinclude} ../../../../examples/viewer/interactive_viewer.py
 :language: python
 :dedent:
 :start-after: "# Copyright (C)"

@@ -13,7 +13,7 @@ Visualization of 900 tidybot instances in parallel simulation with MotrixSim
 
 In MotrixSim, creating multiple instances is simple. You just need to pass a `batch` parameter when constructing `SceneData`:
 
-```{literalinclude} ../../../../examples/parallelsim.py
+```{literalinclude} ../../../../examples/parallel/parallelsim.py
 :language: python
 :dedent:
 :start-after: "# tag::init batch data"
@@ -29,7 +29,7 @@ The render_offset parameter of the renderer only affects the visualization offse
 You can also run the above example with the following command:
 
 ```sh
-uv run examples/parallelsim.py
+uv run examples/parallel/parallelsim.py
 ```
 
 ## Accessing Multi-Instance Data
@@ -44,7 +44,7 @@ assert data.dof_vel.shape == (*batch, model.num_dof_vel)
 
 Similarly, data setting interfaces also require an added batch dimension:
 
-```{literalinclude} ../../../../examples/parallelsim.py
+```{literalinclude} ../../../../examples/parallel/parallelsim.py
 :dedent:
 :start-after: "# tag:: set actuator ctrl in batch"
 :end-before:  "# end:: set actuator ctrl in batch"
@@ -56,7 +56,7 @@ When SceneData is in batch mode, you can access subsets of instance data in seve
 
 ### 1. Accessing a Single Instance
 
-```{literalinclude} ../../../../examples/parallelsim.py
+```{literalinclude} ../../../../examples/parallel/parallelsim.py
 :dedent:
 :start-after: "# tag:: set actuator ctrl in single"
 :end-before:  "# end:: set actuator ctrl in single"
@@ -68,7 +68,7 @@ In the code above, we access the data of the first instance via `data[0]`. The r
 
 SceneData also supports indexing with `NDArray[bool]`, returning a new SceneData containing only the instances where the mask index is True.
 
-```{literalinclude} ../../../../examples/parallelsim.py
+```{literalinclude} ../../../../examples/parallel/parallelsim.py
 :dedent:
 :start-after: "# tag:: set actuator ctrl in mask"
 :end-before:  "# end:: set actuator ctrl in mask"
@@ -79,7 +79,7 @@ SceneData also supports indexing with `NDArray[bool]`, returning a new SceneData
 In the examples directory, we provide a simple script `parallel_bench.py` to test MotrixSim's performance in multi-instance parallel simulation. You can run this script with:
 
 ```bash
-uv run examples/parallel_bench.py --file examples/assets/go1/scene.xml
+uv run examples/parallel/parallel_bench.py --file examples/assets/go1/scene.xml
 ```
 
 You will get output similar to:

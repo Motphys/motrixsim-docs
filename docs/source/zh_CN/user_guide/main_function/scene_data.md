@@ -1,4 +1,4 @@
-# 💾 数据（SceneData）
+# 💾 数据
 
 在上一章节中，我们了解了 [`SceneModel`](scene_model.md) 用于描述静态的物理模型。本章节将重点介绍 `SceneData`的创建和使用方法。
 
@@ -12,14 +12,14 @@
 
 ### 基本创建
 
-```{literalinclude} ../../../../examples/empty.py
+```{literalinclude} ../../../../examples/getting_started/empty.py
 :language: python
 :dedent:
 :start-after: "# tag::create_data[]"
 :end-before:  "# end::create_data[]"
 ```
 
-完整的示例代码请参见 [`examples/empty.py`](../../../../examples/empty.py)。
+完整的示例代码请参见 [`examples/getting_started/empty.py`](../../../../examples/getting_started/empty.py)。
 
 ### 多数据实例
 
@@ -44,14 +44,14 @@ vel = data.dof_vel_array
 
 结合 `SceneModel` 的 Named Access，可以通过组件对象来访问或设置特定的状态：
 
-```{literalinclude} ../../../../examples/body.py
+```{literalinclude} ../../../../examples/physics/body.py
 :language: python
 :dedent:
 :start-after: "# tag::access_body[]"
 :end-before:  "# end::access_body[]"
 ```
 
-完整的示例代码请参见 [`examples/body.py`](../../../../examples/body.py)。
+完整的示例代码请参见 [`examples/physics/body.py`](../../../../examples/physics/body.py)。
 
 ## API Reference
 

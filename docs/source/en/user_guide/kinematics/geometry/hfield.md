@@ -164,7 +164,7 @@ height = hfield.get(row=5, col=10)    # Get elevation at specified row and colum
 
 ### Basic Height Field Operations
 
-```{literalinclude} ../../../../../examples/hfield.py
+```{literalinclude} ../../../../../examples/physics/hfield.py
 :language: python
 :dedent:
 :start-after: "# tag::basic_access"
@@ -173,7 +173,7 @@ height = hfield.get(row=5, col=10)    # Get elevation at specified row and colum
 
 ### Elevation Data Analysis
 
-```{literalinclude} ../../../../../examples/hfield.py
+```{literalinclude} ../../../../../examples/physics/hfield.py
 :language: python
 :dedent:
 :start-after: "# tag::height_analysis"
@@ -182,7 +182,7 @@ height = hfield.get(row=5, col=10)    # Get elevation at specified row and colum
 
 ### Complete Simulation Example
 
-```{literalinclude} ../../../../../examples/hfield.py
+```{literalinclude} ../../../../../examples/physics/hfield.py
 :language: python
 :dedent:
 ```
@@ -190,7 +190,7 @@ height = hfield.get(row=5, col=10)    # Get elevation at specified row and colum
 Run the height field simulation example:
 
 ```bash
-uv run examples/hfield.py
+uv run examples/physics/hfield.py
 ```
 
 ## File Format

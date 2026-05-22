@@ -1,0 +1,198 @@
+<mujoco model="cabinet_sektion">
+  <compiler angle="radian" assetdir="assets" />
+  <default>
+    <default class="robot">
+      <default class="visual_cabinet">
+        <geom material="visualgeom" contype="0" conaffinity="0" group="2" />
+      </default>
+      <default class="collision_cabinet">
+        <geom condim="3" contype="1" conaffinity="1"
+          priority="1" group="3" solref="0.02 1"
+          solimp="0.95 0.99 0.0001" friction="1 0.01 0.01" />
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" colorspace="sRGB" name="wood_table_worn_alb_1k"
+      file="wood_table_worn_alb_1k.png" />
+    <texture type="2d" colorspace="linear" name="wood_table_worn_nor_gl_1k"
+      file="wood_table_worn_nor_gl_1k.png" />
+    <texture type="2d" colorspace="linear" name="wood_table_worn_arm_1k"
+      file="wood_table_worn_arm_1k.png" />
+
+    <material name="wood" rgba="0.8 0.8 0.8 1" reflectance="0.5" metallic="0.0" roughness="1.0">
+      <layer texture="wood_table_worn_alb_1k" role="rgb" />
+      <layer texture="wood_table_worn_nor_gl_1k" role="normal" />
+      <layer texture="wood_table_worn_arm_1k" role="orm" />
+    </material>
+    <material name="chrome" rgba="0.8 0.8 0.8 1" reflectance="0.5" metallic="1.0"
+      roughness="0.44999998807907104" />
+    <material name="White" rgba="0.85 0.85 0.85 1.0" />
+    <material name="Grey" rgba="0.6 0.6 0.6 1.0" />
+    <material name="Green" rgba="0 1 0 1" />
+    <material name="Black" rgba="0 0 0 1" />
+    <material name="Front" rgba="0.4 0.4 0.4 1.0" />
+    <material name="default_material" rgba="0.7 0.7 0.7 1" />
+    <material name="collision_material" rgba="1.0 0.28 0.1 0.9" />
+    <mesh name="cabinet.obj" file="cabinet.obj" />
+    <mesh name="sektion_convexdecomposition0.obj" file="sektion_convexdecomposition0.obj" />
+    <mesh name="sektion_convexdecomposition1.obj" file="sektion_convexdecomposition1.obj" />
+    <mesh name="sektion_convexdecomposition2.obj" file="sektion_convexdecomposition2.obj" />
+    <mesh name="sektion_convexdecomposition3.obj" file="sektion_convexdecomposition3.obj" />
+    <mesh name="sektion_convexdecomposition4.obj" file="sektion_convexdecomposition4.obj" />
+    <mesh name="sektion_convexdecomposition5.obj" file="sektion_convexdecomposition5.obj" />
+    <mesh name="sektion_convexdecomposition6.obj" file="sektion_convexdecomposition6.obj" />
+    <mesh name="door_right.stl" file="door_right.stl" />
+    <mesh name="door_right.obj" file="door_right.obj" />
+    <mesh name="door_right_nob.stl" file="door_right_nob.stl" />
+    <mesh name="door_right_nob.obj" file="door_right_nob.obj" />
+    <mesh name="door_left.stl" file="door_left.stl" />
+    <mesh name="door_left.obj" file="door_left.obj" />
+    <mesh name="door_left_nob.stl" file="door_left_nob.stl" />
+    <mesh name="door_left_nob.obj" file="door_left_nob.obj" />
+    <mesh name="drawer_convexdecomposition0.obj" file="drawer_convexdecomposition0.obj" />
+    <mesh name="drawer_convexdecomposition1.obj" file="drawer_convexdecomposition1.obj" />
+    <mesh name="drawer_convexdecomposition2.obj" file="drawer_convexdecomposition2.obj" />
+    <mesh name="drawer_convexdecomposition3.obj" file="drawer_convexdecomposition3.obj" />
+    <mesh name="drawer_convexdecomposition4.obj" file="drawer_convexdecomposition4.obj" />
+    <mesh name="drawer_convexdecomposition5.obj" file="drawer_convexdecomposition5.obj" />
+    <mesh name="drawer_convexdecomposition6.obj" file="drawer_convexdecomposition6.obj" />
+    <mesh name="drawer.obj" file="drawer.obj" />
+    <mesh name="drawer_handle_convexdecomposition.obj" file="drawer_handle_convexdecomposition.obj" />
+    <mesh name="drawer_handle.obj" file="drawer_handle.obj" />
+    <mesh name="drawer_convexdecomposition.obj" file="drawer_convexdecomposition.obj" />
+  </asset>
+
+  <worldbody>
+    <body name="sektion" pos="0 0 0.4" quat="1 0 0 0" childclass="robot">
+      <geom name="cabinet" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="cabinet.obj"
+        material="wood" class="visual_cabinet" />
+      <geom name="sektion_collision_0" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+        mesh="sektion_convexdecomposition0.obj" class="collision_cabinet" />
+      <geom name="sektion_collision_1" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+        mesh="sektion_convexdecomposition1.obj" class="collision_cabinet" />
+      <geom name="sektion_collision_2" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+        mesh="sektion_convexdecomposition2.obj" class="collision_cabinet" />
+      <geom name="sektion_collision_3" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+        mesh="sektion_convexdecomposition3.obj" class="collision_cabinet" />
+      <geom name="sektion_collision_4" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+        mesh="sektion_convexdecomposition4.obj" class="collision_cabinet" />
+      <geom name="sektion_collision_5" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+        mesh="sektion_convexdecomposition5.obj" class="collision_cabinet" />
+      <geom name="sektion_collision_6" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+        mesh="sektion_convexdecomposition6.obj" class="collision_cabinet" />
+      <body name="door_right_link" pos="0.3162 0.3757 -0.12973" quat="1.0 0.0 0.0 0.0">
+        <joint name="door_right_joint" type="hinge" ref="0.0" range="0 1.57"
+          axis="0 0 1" />
+        <geom name="door_right_link_collision" pos="0  -0.184706  0" quat="1.0 0.0 0.0 0.0"
+          type="mesh" mesh="door_right.stl" class="collision_cabinet" />
+        <geom name="door_right_link_visual" pos="0  -0.184706  0" quat="1.0 0.0 0.0 0.0"
+          material="wood" type="mesh" mesh="door_right.obj" class="visual_cabinet" />
+        <body name="door_right_nob_link" pos="0 0 0" quat="1.0 0.0 0.0 0.0">
+          <geom name="door_right_nob_link_collision" pos="0  -0.184706  0" quat="1.0 0.0 0.0 0.0"
+            type="mesh" mesh="door_right_nob.stl" class="collision_cabinet" />
+          <geom name="door_right_nob_link_visual" pos="0  -0.184706  0" quat="1.0 0.0 0.0 0.0"
+            material="chrome" type="mesh" mesh="door_right_nob.obj" class="visual_cabinet" />
+        </body>
+      </body>
+      <body name="door_left_link" pos="0.3162 -0.3757 -0.12973" quat="1.0 0.0 0.0 0.0">
+        <joint name="door_left_joint" type="hinge" ref="0.0" range="-1.57 0."
+          axis="0 0 1" />
+        <geom name="door_left_link_collision" pos="0  0.184706  0" quat="1.0 0.0 0.0 0.0"
+          type="mesh" mesh="door_left.stl" class="collision_cabinet" />
+        <geom name="door_left_link_visual" pos="0  0.184706  0" quat="1.0 0.0 0.0 0.0"
+          material="wood" type="mesh" mesh="door_left.obj" class="visual_cabinet" />
+        <body name="door_left_nob_link" pos="0 0 0" quat="1.0 0.0 0.0 0.0">
+          <geom name="door_left_nob_link_collision" pos="0  0.184706  0" quat="1.0 0.0 0.0 0.0"
+            type="mesh" mesh="door_left_nob.stl" class="collision_cabinet" />
+          <geom name="door_left_nob_link_visual" pos="0  0.184706  0" quat="1.0 0.0 0.0 0.0"
+            material="chrome" type="mesh" mesh="door_left_nob.obj" class="visual_cabinet" />
+        </body>
+      </body>
+      <body name="drawer_top" pos="0.0515 0 0.3172" quat="1.0 0.0 0.0 0.0">
+        <site name="drawer_top_handle" pos="0.305 0.0 0.01" quat="0 0.7071068 0 -0.7071068"
+          type="sphere" size="0.01" rgba="1 0 0 1" />
+        <geom name="drawer_top_handle_zline" type="capsule"
+          fromto="0.305 -0.2 0.01 0.305 0.2 0.01" size="0.002"
+          rgba="1 0 0 0.6" contype="0" conaffinity="0" mass="0" />
+        <joint name="drawer_top_joint" type="slide" ref="0.0" range="0.0 0.4"
+          axis="1 0 0" damping="8.0" frictionloss="2.0" />
+        <geom name="drawer_top_collision_0" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+          mesh="drawer_convexdecomposition0.obj" class="collision_cabinet" />
+        <geom name="drawer_top_collision_1" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+          mesh="drawer_convexdecomposition1.obj" class="collision_cabinet" />
+        <geom name="drawer_top_collision_2" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+          mesh="drawer_convexdecomposition2.obj" class="collision_cabinet" />
+        <geom name="drawer_top_collision_3" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+          mesh="drawer_convexdecomposition3.obj" class="collision_cabinet" />
+        <geom name="drawer_top_collision_4" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+          mesh="drawer_convexdecomposition4.obj" class="collision_cabinet" />
+        <geom name="drawer_top_collision_5" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+          mesh="drawer_convexdecomposition5.obj" class="collision_cabinet" />
+        <geom name="drawer_top_collision_6" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+          mesh="drawer_convexdecomposition6.obj" class="collision_cabinet" />
+        <geom name="drawer_top_visual" pos="0  0  0" quat="1.0 0.0 0.0 0.0" material="wood"
+          type="mesh" mesh="drawer.obj" class="visual_cabinet" />
+        <body name="drawer_handle_top" pos="0 0 0" quat="1.0 0.0 0.0 0.0">
+          <geom name="drawer_handle_top_collision" type="capsule" size="0.0110 0.07"
+            pos="0.305 0.0 0.01" quat="0.7071 0.7071 0.0 0.0" class="collision_cabinet" />
+          <geom name="drawer_handle_top_visual" pos="0  0  0" quat="1.0 0.0 0.0 0.0"
+            material="chrome" type="mesh" mesh="drawer_handle.obj" class="visual_cabinet" />
+        </body>
+      </body>
+      <body name="drawer_bottom" pos="0.0515 0 0.18795" quat="1.0 0.0 0.0 0.0">
+      <!-- <body name="drawer_bottom" pos="0.0515 0 0.07095" quat="1.0 0.0 0.0 0.0"> -->
+        <site name="drawer_bottom_handle" pos="0.305 0.0 0.01" quat="0 0.7071068 0 -0.7071068"
+          type="sphere" size="0.01" rgba="1 0 0 1" />
+        <joint name="drawer_bottom_joint" type="slide" ref="0.0" range="0.0 0.4"
+          axis="1 0 0" damping="8.0" frictionloss="2.0" />
+        <geom name="drawer_bottom_collision_0" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+          mesh="drawer_convexdecomposition0.obj" class="collision_cabinet" />
+        <geom name="drawer_bottom_collision_1" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+          mesh="drawer_convexdecomposition1.obj" class="collision_cabinet" />
+        <geom name="drawer_bottom_collision_2" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+          mesh="drawer_convexdecomposition2.obj" class="collision_cabinet" />
+        <geom name="drawer_bottom_collision_3" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+          mesh="drawer_convexdecomposition3.obj" class="collision_cabinet" />
+        <geom name="drawer_bottom_collision_4" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+          mesh="drawer_convexdecomposition4.obj" class="collision_cabinet" />
+        <geom name="drawer_bottom_collision_5" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+          mesh="drawer_convexdecomposition5.obj" class="collision_cabinet" />
+        <geom name="drawer_bottom_collision_6" pos="0  0  0" quat="1.0 0.0 0.0 0.0" type="mesh"
+          mesh="drawer_convexdecomposition6.obj" class="collision_cabinet" />
+        <geom name="drawer_bottom_visual" pos="0  0  0" quat="1.0 0.0 0.0 0.0" material="wood"
+          type="mesh" mesh="drawer.obj" class="visual_cabinet" />
+        <body name="drawer_handle_bottom" pos="0 0 0" quat="1.0 0.0 0.0 0.0">
+          <geom name="drawer_handle_bottom_collision" type="capsule" size="0.0110 0.07"
+            pos="0.305 0.0 0.01" quat="0.7071 0.7071 0.0 0.0" class="collision_cabinet" />
+          <geom name="drawer_handle_bottom_visual" pos="0  0  0" quat="1.0 0.0 0.0 0.0"
+            material="chrome" type="mesh" mesh="drawer_handle.obj" class="visual_cabinet" />
+        </body>
+      </body>
+      <site name="sektion_site" pos="0 0 0" quat="1 0 0 0" />
+    </body>
+    <body name="sektion1" pos="0 0 0.4" quat="1 0 0 0" childclass="robot" />
+    <body name="sektion2" pos="0 0 0.4" quat="1 0 0 0" childclass="robot" />
+    <body name="sektion3" pos="0 0 0.4" quat="1 0 0 0" childclass="robot" />
+  </worldbody>
+
+  <contact>
+    <exclude body1="sektion" body2="door_right_link" />
+    <exclude body1="door_right_link" body2="door_right_nob_link" />
+    <exclude body1="sektion" body2="door_left_link" />
+    <exclude body1="door_left_link" body2="door_left_nob_link" />
+    <exclude body1="sektion" body2="drawer_top" />
+    <exclude body1="drawer_top" body2="drawer_handle_top" />
+    <exclude body1="sektion" body2="drawer_bottom" />
+    <exclude body1="drawer_bottom" body2="drawer_handle_bottom" />
+    <exclude body1="drawer_bottom" body2="door_right_link" />
+    <exclude body1="drawer_bottom" body2="door_right_nob_link" />
+    <exclude body1="drawer_bottom" body2="door_left_link" />
+    <exclude body1="drawer_bottom" body2="door_left_nob_link" />
+    <exclude body1="drawer_handle_bottom" body2="door_right_link" />
+    <exclude body1="drawer_handle_bottom" body2="door_right_nob_link" />
+    <exclude body1="drawer_handle_bottom" body2="door_left_link" />
+    <exclude body1="drawer_handle_bottom" body2="door_left_nob_link" />
+  </contact>
+</mujoco>

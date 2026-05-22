@@ -1,4 +1,4 @@
-# ⚙️ 全局设置（Options）
+# ⚙️ 全局设置
 
 `Options` 是 MotrixSim 中的全局配置对象，用于设置物理仿真的各项参数。这些参数会影响仿真的精度、稳定性和性能。
 
@@ -28,14 +28,14 @@
 
 可以通过 `SceneModel` 的 `options` 属性来获取和修改配置。
 
-```{literalinclude} ../../../../examples/options.py
+```{literalinclude} ../../../../examples/physics/options.py
 :language: python
 :dedent:
 :start-after: "# tag::options_code[]"
 :end-before:  "# end::options_code[]"
 ```
 
-完整示例代码参见 [`examples/options.py`](../../../../examples/options.py)。
+完整示例代码参见 [`examples/physics/options.py`](../../../../examples/physics/options.py)。
 
 ## API Reference
 

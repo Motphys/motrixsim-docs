@@ -27,7 +27,6 @@ api_quick_reference
 core/index
 msd/index
 rendering/index
-rendering/widgets
 ik/index
 osc/index
 ```

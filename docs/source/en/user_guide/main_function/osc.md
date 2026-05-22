@@ -14,7 +14,7 @@ OSC reuses the same [`IkChain`] from `motrixsim.ik` to define the kinematic chai
 
 In MotrixSim, you can create an IK chain model as follows:
 
-```{literalinclude} ../../../../examples/osc.py
+```{literalinclude} ../../../../examples/control/osc.py
 :language: python
 :dedent:
 :start-after: "# tag::create_osc_solver"
@@ -41,7 +41,7 @@ After defining the IK chain, create an [`OscSolver`] to perform the actual torqu
 
 Then, compute joint torques by calling the `solve` method:
 
-```{literalinclude} ../../../../examples/osc.py
+```{literalinclude} ../../../../examples/control/osc.py
 :language: python
 :dedent:
 :start-after: "# tag::solve_osc"
@@ -96,7 +96,7 @@ When using the OSC Solver, you may encounter instability or poor tracking. Possi
 - The solver computes torques for the chain's DOF only — map them to the correct indices in `data.actuator_ctrls` (see the example).
 ```
 
-_See the complete code in [examples/osc.py](../../../../examples/osc.py)_
+_See the complete code in [examples/control/osc.py](../../../../examples/control/osc.py)_
 
 [`OscSolver`]: motrixsim.osc.OscSolver
 [`IkChain`]: motrixsim.ik.IkChain

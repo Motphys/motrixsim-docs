@@ -20,19 +20,6 @@
 * - **介绍**
   - **命令**
   - **效果**
-* - G1地形行走
-  - `uv run legged_gym/scripts/G1_play.py`
-  -
-    ```{video} /_static/videos/g1_terrian.mp4
-    :poster: /_static/images/poster/g1_terrian.jpg
-    :caption: G1-Terrain
-    :nocontrols:
-    :autoplay:
-    :playsinline:
-    :muted:
-    :loop:
-    :width: 100%
-    ```
 * - Go1的控制移动
   - `uv run legged_gym/scripts/go1_play.py`
   -

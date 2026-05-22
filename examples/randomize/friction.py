@@ -54,6 +54,7 @@ def main():
                 render_offset.append([-i * 8.0, j * 8.0, 0])
 
         render.launch(model, batch=16, render_offset=render_offset)
+        render.system_camera.set_view(lookat=[-12, 12, 1.0], distance=40.0, elevation=-35, azimuth=90)
         data = SceneData(model, batch=(16,))
 
         # Override box geom friction per batch

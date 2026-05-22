@@ -20,19 +20,6 @@ The following legged gym sim2sim examples are included in MotrixSim:
 * - **Description**
   - **Command**
   - **Effect**
-* - G1 Terrain Walking
-  - `uv run legged_gym/scripts/G1_play.py`
-  -
-    ```{video} /_static/videos/g1_terrian.mp4
-    :poster: /_static/images/poster/g1_terrian.jpg
-    :caption: G1-Terrain
-    :nocontrols:
-    :autoplay:
-    :playsinline:
-    :muted:
-    :loop:
-    :width: 100%
-    ```
 * - Go1 controlled movement
   - `uv run legged_gym/scripts/go1_play.py`
   -

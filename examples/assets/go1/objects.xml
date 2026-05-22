@@ -1,0 +1,26 @@
+<mujoco model="go1 scene objects">
+  <include file="slope.xml"/>
+
+  <worldbody>
+      <body name="plate" pos="0 4 0.34729">
+        <joint name="seesaw_joint" pos="0 0 0" axis="1 0 0" range="-10 10"/>
+        <geom type="box" pos="0 -0.025 0" size="0.5 2 0.02" rgba="0.8588 0.6941 0.302 1"/>
+      </body>
+      <geom name="pillar1" type="box" size="0.03 0.03 0.4" pos="0.53 4 0" rgba="0.2941 0.2118 0.051 1"/>
+      <geom name="pillar2" type="box" size="0.03 0.03 0.4" pos="-0.53 4 0" rgba="0.2941 0.2118 0.051 1"/>
+
+      <geom name="bump1" type="box" size="0.1 1 0.05" pos="1 0 0" rgba="0.2 0.8 0.8 1"/>
+      <geom name="bump2" type="box" size="0.1 1 0.05" pos="2 0 0" rgba="0.2 0.8 0.8 1"/>
+      <geom name="bump3" type="box" size="0.1 1 0.05" pos="3 0 0" rgba="0.2 0.8 0.8 1"/>
+      <geom name="bump4" type="box" size="0.1 1 0.05" pos="4 0 0" rgba="0.2 0.8 0.8 1"/>
+      <geom name="bump5" type="box" size="0.1 1 0.05" pos="5 0 0" rgba="0.2 0.8 0.8 1"/>
+  </worldbody>
+
+  <actuator>
+    <velocity name="h1" joint="hammer1" ctrlrange="-15 15" kv="10000"/>
+    <velocity name="h2" joint="hammer2" ctrlrange="-15 15" kv="10000"/>
+    <velocity name="h3" joint="hammer3" ctrlrange="-15 15" kv="10000"/>
+    <velocity name="s1" joint="stick1" ctrlrange="-15 15" kv="100"/>
+    <velocity name="s2" joint="stick2" ctrlrange="-15 15" kv="100"/>
+  </actuator>
+</mujoco>

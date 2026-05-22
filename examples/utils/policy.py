@@ -22,7 +22,7 @@ from scipy.spatial.transform import Rotation
 from motrixsim import SceneData
 
 if TYPE_CHECKING:
-    from utils.robot import G1Robot, Go1Robot, Go2Robot
+    from utils.robot import G1Robot, G1Robot12Dof, Go1Robot, Go2Robot
 
 
 class Go2LocomotionPolicy:
@@ -217,7 +217,7 @@ class Go1LocomotionPolicy:
 
     # Default joint positions (12D: FL, FR, RL, RR legs, 3 joints per leg)
     _DEFAULT_ANGLES = np.array([0.1, 0.9, -1.8, -0.1, 0.9, -1.8, 0.1, 0.9, -1.8, -0.1, 0.9, -1.8])
-    onnx_path = "examples/assets/go1/go1_policy.onnx"
+    onnx_path = "examples/assets/go1/policies/go1_policy.onnx"
 
     def __init__(
         self,
@@ -373,6 +373,122 @@ class Go1LocomotionPolicy:
         thr = 0.3
         dot = np.dot(rotated_z_axis, np.array([0.0, 0.0, 1.0]))
         return dot < thr
+
+
+class G1Policy12Dof:
+    """12DoF G1 policy with ONNX inference and torque-level PD control."""
+
+    _DEFAULT_ANGLES = np.array(
+        [
+            -0.1,
+            0.0,
+            0.0,
+            0.3,
+            -0.2,
+            0.0,
+            -0.1,
+            0.0,
+            0.0,
+            0.3,
+            -0.2,
+            0.0,
+        ],
+        dtype=np.float32,
+    )
+    _KP = np.array([100.0, 100.0, 100.0, 150.0, 40.0, 40.0] * 2, dtype=np.float32)
+    _KD = np.array([2.0, 2.0, 2.0, 4.0, 2.0, 2.0] * 2, dtype=np.float32)
+    _COMMAND_SCALE = np.array([2.0, 2.0, 0.25], dtype=np.float32)
+
+    onnx_path = "examples/assets/g1/g1_12dof_policy.onnx"
+
+    def __init__(
+        self,
+        robot: "G1Robot12Dof",
+        action_scale: float = 0.25,
+        dof_vel_scale: float = 0.05,
+        torque_limit: float = 139.0,
+        ctrl_dt: float = 0.02,
+    ):
+        """Initialize the 12DoF G1 playback policy."""
+        self._robot = robot
+        self.default_angles = self._DEFAULT_ANGLES.copy()
+        self.kps = self._KP.copy()
+        self.kds = self._KD.copy()
+        self.action_scale = action_scale
+        self.dof_vel_scale = dof_vel_scale
+        self.torque_limit = torque_limit
+        self.ctrl_dt = ctrl_dt
+        self._period = 0.8
+        self._episode_step = 0
+        self.last_action = np.zeros_like(self.default_angles, dtype=np.float32)
+
+        if robot.num_actuators != self.default_angles.size:
+            raise ValueError(f"legged-gym G1 expects 12 actuators, got {robot.num_actuators}")
+
+        self._policy_session = ort.InferenceSession(G1Policy12Dof.onnx_path, providers=["CPUExecutionProvider"])
+        self._input_name = self._policy_session.get_inputs()[0].name
+        self._output_name = self._policy_session.get_outputs()[0].name
+
+    def reset(self) -> None:
+        """Reset policy-side recurrent state after an environment reset."""
+        self._episode_step = 0
+        self.last_action.fill(0.0)
+
+    def scale_command(self, raw_command: np.ndarray) -> np.ndarray:
+        """Apply the legged-gym G1 command scaling."""
+        return raw_command * self._COMMAND_SCALE
+
+    def get_phase(self) -> tuple[float, float]:
+        """Get the legged-gym gait phase features."""
+        phase = (self._episode_step * self.ctrl_dt) % self._period / self._period
+        phase_angle = 2.0 * np.pi * phase
+        return np.sin(phase_angle), np.cos(phase_angle)
+
+    def get_observation(self, data: SceneData, command: np.ndarray) -> np.ndarray:
+        """Compute the 47D observation vector used by the legged-gym G1 policy."""
+        dof_pos = self._robot.dof_pos(data)
+        dof_vel = self._robot.dof_vel(data)
+        sin_phase, cos_phase = self.get_phase()
+        obs = np.zeros(47, dtype=np.float32)
+        obs[0:3] = self._robot.gyro(data) * 0.25
+        obs[3:6] = self._robot.gravity(data)
+        obs[6:9] = command
+        obs[9:21] = dof_pos - self.default_angles
+        obs[21:33] = dof_vel * self.dof_vel_scale
+        obs[33:45] = self.last_action
+        obs[45] = sin_phase
+        obs[46] = cos_phase
+        return obs
+
+    def compute_action(self, observation: np.ndarray) -> np.ndarray:
+        """Compute a 12D action from the legged-gym ONNX policy."""
+        outputs = self._policy_session.run([self._output_name], {self._input_name: observation.reshape(1, -1)})
+        return outputs[0][0]
+
+    def step(self, data: SceneData, command: np.ndarray) -> bool:
+        """Update the policy action at the control rate."""
+        scaled_command = self.scale_command(command)
+        obs = self.get_observation(data, scaled_command)
+        self.last_action = self.compute_action(obs).astype(np.float32)
+        self._episode_step += 1
+        return self.is_fallen(data)
+
+    def pre_physics_step(self, data: SceneData) -> None:
+        """Refresh PD torques before each physics step."""
+        dof_pos = self._robot.dof_pos(data)
+        dof_vel = self._robot.dof_vel(data)
+        target_pos = self.last_action * self.action_scale + self.default_angles
+        torques = self.kps * (target_pos - dof_pos) - self.kds * dof_vel
+        torques = np.clip(torques, -self.torque_limit, self.torque_limit)
+        self._robot.set_actuator_ctrls(data, torques.astype(np.float32))
+
+    def is_fallen(self, data: SceneData) -> bool:
+        """Detect whether the robot has fallen using the base up-vector."""
+        pose = self._robot.base_pose(data)
+        rotation = Rotation.from_quat(pose[3:7])
+        rotated_z_axis = rotation.apply(np.array([0.0, 0.0, 1.0]))
+        dot = np.dot(rotated_z_axis, np.array([0.0, 0.0, 1.0]))
+        return dot < 0.3
 
 
 class G1LocomotionPolicy:

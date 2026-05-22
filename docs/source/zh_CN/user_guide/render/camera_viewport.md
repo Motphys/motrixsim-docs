@@ -44,7 +44,7 @@ viewport = render.widgets.create_camera_viewport(
 
 您可以在同一窗口中创建多个 viewport，每个显示不同相机的画面：
 
-```{literalinclude} ../../../../examples/render/camera_viewport.py
+```{literalinclude} ../../../../examples/viewer/camera_viewport.py
 :language: python
 :dedent:
 :start-after: "# Viewport 1: Top-left with pixel-based layout"
@@ -107,7 +107,7 @@ viewport.update(
 
 ### 切换相机
 
-```{literalinclude} ../../../../examples/render/camera_viewport.py
+```{literalinclude} ../../../../examples/viewer/camera_viewport.py
 :language: python
 :dedent:
 :start-after: "# Switch vp1 camera"
@@ -118,7 +118,7 @@ viewport.update(
 
 ### 移动 Viewport 位置
 
-```{literalinclude} ../../../../examples/render/camera_viewport.py
+```{literalinclude} ../../../../examples/viewer/camera_viewport.py
 :language: python
 :dedent:
 :start-after: "# Move vp1 viewport"
@@ -129,7 +129,7 @@ viewport.update(
 
 ### 调整 Viewport 大小
 
-```{literalinclude} ../../../../examples/render/camera_viewport.py
+```{literalinclude} ../../../../examples/viewer/camera_viewport.py
 :language: python
 :dedent:
 :start-after: "# Resize vp1 viewport"
@@ -152,7 +152,7 @@ viewport.remove()
 
 以下示例展示了如何通过按键交互来移除 viewport：
 
-```{literalinclude} ../../../../examples/render/camera_viewport.py
+```{literalinclude} ../../../../examples/viewer/camera_viewport.py
 :language: python
 :dedent:
 :start-after: "# Remove vp3 from screen"
@@ -165,7 +165,7 @@ viewport.remove()
 
 以下是一个完整的交互式 CameraViewport widget 系统，包含创建、更新、交互控制等功能：
 
-```{literalinclude} ../../../../examples/render/camera_viewport.py
+```{literalinclude} ../../../../examples/viewer/camera_viewport.py
 :language: python
 :dedent:
 :start-after: "# Copyright (C)"

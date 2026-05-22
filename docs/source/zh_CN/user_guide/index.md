@@ -16,8 +16,8 @@ getting_started/mjcf_reference
 :maxdepth: 1
 
 overview/environment_setup
-overview/case_comparison
 overview/examples
+overview/case_comparison
 overview/legged_gym
 
 ```
@@ -31,25 +31,11 @@ main_function/scene_data
 main_function/model_building
 main_function/options
 main_function/parallel
+main_function/randomization
 main_function/ik
 main_function/osc
 main_function/render
 main_function/managed_viewer
-
-```
-
-```{toctree}
-:caption: 动力学
-:maxdepth: 2
-
-kinematics/body
-kinematics/floating_base
-kinematics/joint
-kinematics/link
-kinematics/geometry
-kinematics/actuator
-kinematics/sensor
-kinematics/site
 
 ```
 

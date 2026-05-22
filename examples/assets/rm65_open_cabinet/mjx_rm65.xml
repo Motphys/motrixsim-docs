@@ -1,0 +1,165 @@
+<mujoco model="rm65_with_gripper">
+  <compiler angle="radian" autolimits="true" assetdir="assets" />
+  <default>
+    <default class="rm65">
+      <joint armature="0.1" damping="1" frictionloss="0.1" />
+      <position forcerange="-100 100" />
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0" />
+      </default>
+      <default class="collision">
+        <geom type="mesh" contype="1" conaffinity="1" group="3" density="0"
+          condim="3" solref="0.01 1" solimp="0.95 0.99 0.001" friction="1 0.005 0.0001" />
+      </default>
+      <default class="pad_collision">
+        <geom type="box" contype="1" conaffinity="1" group="3" density="0"
+          condim="3" friction="0.9 0.03 0.03" solref="0.01 1" solimp="0.9 0.98 0.001"
+          margin="0.001" />
+      </default>
+    </default>
+  </default>
+  <statistic meansize="0.0980194" extent="1.14673" center="6.44278e-06 0.00158282 0.518866" />
+  <asset>
+    <mesh name="rm65_base_link" file="rm65/meshes/base_link.STL" />
+    <mesh name="rm65_link_1" file="rm65/meshes/link_1.STL" />
+    <mesh name="rm65_link_2" file="rm65/meshes/link_2.STL" />
+    <mesh name="rm65_link_3" file="rm65/meshes/link_3.STL" />
+    <mesh name="rm65_link_4" file="rm65/meshes/link_4.STL" />
+    <mesh name="rm65_link_5" file="rm65/meshes/link_5.STL" />
+    <mesh name="rm65_link_6" file="rm65/meshes/link_6.STL" />
+    <mesh name="rm65_camera_rolink" file="rm65/meshes/camera_rolink.STL" />
+    <mesh name="rm65_camera_link" file="rm65/meshes/camera_link.STL" />
+    <mesh name="gripper_base_link" file="gripper/meshes/base_link.STL" />
+    <mesh name="gripper_Left_1_Link" file="gripper/meshes/Left_1_Link.STL" />
+    <mesh name="gripper_Left_Support_Link" file="gripper/meshes/Left_Support_Link.STL" />
+    <mesh name="gripper_Left_2_Link" file="gripper/meshes/Left_2_Link.STL" />
+    <mesh name="gripper_Right_2_Link" file="gripper/meshes/Right_2_Link.STL" />
+    <mesh name="gripper_Right_1_Link" file="gripper/meshes/Right_1_Link.STL" />
+    <mesh name="gripper_Right_Support_Link" file="gripper/meshes/Right_Support_Link.STL" />
+  </asset>
+  <worldbody>
+    <body name="base_link" childclass="rm65" pos="1.03 0 0.011">
+      <geom class="visual" rgba="1 1 1 1" mesh="rm65_base_link" />
+      <geom class="collision" mesh="rm65_base_link" />
+      <body name="link_1" pos="0 0 0.2405">
+        <inertial pos="0.000941 0.007803 -0.10744" quat="0.997511 -0.0583785 0.00606547 -0.0390687" mass="1.51" diaginertia="0.00266445 0.00233888 0.00165429" />
+        <joint name="joint_1" pos="0 0 0" axis="0 0 1" range="-3.106 3.106" damping="40" />
+        <geom class="visual" rgba="1 1 1 1" mesh="rm65_link_1" />
+        <body name="link_2" quat="0.499998 0.5 -0.5 0.500002">
+          <inertial pos="0.183722 0.000103 -0.001665" quat="0.457963 0.540039 0.527633 0.469288" mass="1.653" diaginertia="0.0147139 0.0144956 0.00145099" />
+          <joint name="joint_2" pos="0 0 0" axis="0 0 1" range="-2.2689 2.2689" damping="40" />
+          <geom class="visual" rgba="1 1 1 1" mesh="rm65_link_2" />
+          <body name="link_3" pos="0.256 0 0" quat="0.707105 0 0 0.707108">
+            <inertial pos="2.9e-05 -0.090105 0.004039" quat="0.440332 0.546035 -0.554361 0.447925" mass="0.726" diaginertia="0.00137906 0.00135087 0.000312565" />
+            <joint name="joint_3" pos="0 0 0" axis="0 0 1" range="-2.356 2.356" damping="40" />
+            <geom class="visual" rgba="1 1 1 1" mesh="rm65_link_3" />
+            <body name="link_4" pos="0 -0.21 0" quat="0.707105 0.707108 0 0">
+              <inertial pos="7e-06 -0.009486 -0.008041" quat="0.997996 0.0631732 0.00130193 -0.00341789" mass="0.671" diaginertia="0.000690229 0.000554914 0.000423747" />
+              <joint name="joint_4" pos="0 0 0" axis="0 0 1" range="-3.106 3.106" damping="40" />
+              <geom class="visual" rgba="1 1 1 1" mesh="rm65_link_4" />
+              <body name="link_5" quat="0.707105 -0.707108 0 0">
+                <inertial pos="3.2e-05 -0.083769 0.002326" quat="0.438163 0.534713 -0.558183 0.458833" mass="0.647" diaginertia="0.000843948 0.000834034 0.000259551" />
+                <joint name="joint_5" pos="0 0 0" axis="0 0 1" range="-2.234 2.234" damping="2" />
+                <geom class="visual" rgba="1 1 1 1" mesh="rm65_link_5" />
+                <body name="link_6" pos="0 -0.16748 0" quat="0.707105 0.707108 0 0">
+                  <inertial pos="-7.14704e-05 -2.1091e-07 0.0467148" quat="0.707168 0.00173116 0.00062923 0.707044" mass="1.0978" diaginertia="0.00245561 0.00235209 0.000930685" />
+                  <joint name="joint_6" pos="0 0 0" axis="0 0 1" range="-6.28 6.28" damping="2" />
+                  <geom class="visual" rgba="0.75294 0.75294 0.75294 1" mesh="rm65_link_6" />
+                  <geom class="collision" mesh="rm65_link_6" />
+                  <body name="camera_rolink" pos="-0.033 -0.0085 -0.03688" quat="-0.499604 0.500398 0.499602 0.500396">
+                    <inertial pos="0.0144087 -0.0815692 0.00850187" quat="0.706451 0.706345 0.032301 0.0309801" mass="0.058845" diaginertia="6.72703e-05 6.30696e-05 1.06982e-05" />
+                    <geom class="visual" rgba="0.75294 0.75294 0.75294 1" mesh="rm65_camera_rolink" />
+                    <geom pos="0.029031 -0.10022 -0.0005" quat="0.707105 0 0.707108 0" class="visual"
+                      rgba="0.79216 0.81961 0.93333 1" mesh="rm65_camera_link" />
+                  </body>
+                  <body name="gripper_mount" quat="0.7071068 0 0 0.7071068">
+                    <geom class="visual" rgba="0.615686 0.639216 0.67451 1" mesh="gripper_base_link" />
+                    <body name="gripper_Left_1_Link" pos="0.030141 0 0.10415" quat="0.707105 0.707108 0 0">
+                    <inertial pos="0.0202604 0.0187578 0" quat="-0.257975 0.658368 0.257975 0.658368" mass="0.0309053" diaginertia="9.19223e-06 8.92299e-06 3.59913e-07" />
+                    <joint name="gripper_Left_1_Joint" pos="0 0 0" axis="0 0 -1" range="-0.91 0" damping="10" />
+                    <geom class="visual" rgba="0.615686 0.639216 0.67451 1" mesh="gripper_Left_1_Link" />
+                  <body name="gripper_Left_Support_Link" pos="0.040359 0.037365 0">
+                    <inertial pos="-0.0177926 0.0354309 -3.45319e-05" quat="0.699435 0.699435 0.10388 0.10388" mass="0.0828693" diaginertia="2.95349e-05 2.83129e-05 4.20884e-06" />
+                    <joint name="gripper_Left_Support_Joint" pos="0 0 0" axis="0 0 -1" damping="10" />
+                    <geom class="visual" rgba="0.615686 0.639216 0.67451 1" mesh="gripper_Left_Support_Link" />
+                    <geom class="collision" mesh="gripper_Left_Support_Link" />
+                    <geom name="left_finger_pad_z_axis" type="capsule" fromto="-0.021275 0.04375 -0.06 -0.021275 0.04375 0.06"
+                      size="0.003" rgba="0 1 0 1" contype="0" conaffinity="0" density="0" group="2"/>
+                    <site name="left_finger_pad" pos="-0.021275 0.04375 0" size="0.004" rgba="0 1 0 1" />
+                  </body>
+                </body>
+                <body name="gripper_Left_2_Link" pos="0.016 0 0.121" quat="0.707105 0.707108 0 0">
+                  <inertial pos="0.0202604 0.0187578 0" quat="-0.257975 0.658368 0.257975 0.658368" mass="0.0309053" diaginertia="9.19223e-06 8.92299e-06 3.59913e-07" />
+                  <joint name="gripper_Left_2_Joint" pos="0 0 0" axis="0 0 -1" damping="10" />
+                  <geom class="visual" rgba="0.615686 0.639216 0.67451 1" mesh="gripper_Left_2_Link" />
+                </body>
+                <body name="gripper_Right_2_Link" pos="-0.016 0 0.121" quat="-2.59734e-06 -2.59735e-06 0.707108 0.707105">
+                  <inertial pos="0.0202604 0.0187578 0" quat="-0.257975 0.658368 0.257975 0.658368" mass="0.0309053" diaginertia="9.19223e-06 8.92299e-06 3.59913e-07" />
+                  <joint name="gripper_Right_2_Joint" pos="0 0 0" axis="0 0 1" damping="10" />
+                  <geom class="visual" rgba="0.615686 0.639216 0.67451 1" mesh="gripper_Right_2_Link" />
+                </body>
+                <body name="gripper_Right_1_Link" pos="-0.030141 0 0.10415" quat="-2.59734e-06 -2.59735e-06 0.707108 0.707105">
+                  <inertial pos="0.0202604 0.0187578 0" quat="-0.257975 0.658368 0.257975 0.658368" mass="0.0309053" diaginertia="9.19223e-06 8.92299e-06 3.59913e-07" />
+                    <joint name="gripper_Right_1_Joint" pos="0 0 0" axis="0 0 1" damping="10" />
+                    <geom class="visual" rgba="0.615686 0.639216 0.67451 1" mesh="gripper_Right_1_Link" />
+                  <body name="gripper_Right_Support_Link" pos="0.040359 0.037365 0">
+                    <inertial pos="-0.0177926 0.0354309 -2.81888e-08" quat="0.699435 0.699435 0.10388 0.10388" mass="0.0828694" diaginertia="2.95349e-05 2.83129e-05 4.20884e-06" />
+                    <joint name="gripper_Right_Support_Joint" pos="0 0 0" axis="0 0 -1" damping="10" />
+                    <geom class="visual" rgba="0.615686 0.639216 0.67451 1" mesh="gripper_Right_Support_Link" />
+                    <geom class="collision" mesh="gripper_Right_Support_Link" />
+                    <geom name="right_finger_pad_z_axis" type="capsule" fromto="-0.021275 0.04375 -0.06 -0.021275 0.04375 0.06"
+                      size="0.003" rgba="0 0.6 1 1" contype="0" conaffinity="0" density="0" group="2"/>
+                    <site name="right_finger_pad" pos="-0.021275 0.04375 0" size="0.004" rgba="0 1 0 1" />
+                  </body>
+                </body>
+                    <site name="gripper" pos="0 0 0.20881" type="sphere" size="0.01" rgba="1 0 0 1" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <equality>
+    <joint joint1="gripper_Left_Support_Joint" joint2="gripper_Left_1_Joint" polycoef="0 -1 0 0 0"
+      solref="0.005 1" solimp="0.95 0.99 0.001" />
+    <joint joint1="gripper_Left_2_Joint" joint2="gripper_Left_1_Joint" polycoef="0 1 0 0 0"
+      solref="0.005 1" solimp="0.95 0.99 0.001" />
+    <joint joint1="gripper_Right_2_Joint" joint2="gripper_Left_1_Joint" polycoef="0 -1 0 0 0"
+      solref="0.005 1" solimp="0.95 0.99 0.001" />
+    <joint joint1="gripper_Right_1_Joint" joint2="gripper_Left_1_Joint" polycoef="0 -1 0 0 0"
+      solref="0.005 1" solimp="0.95 0.99 0.001" />
+    <joint joint1="gripper_Right_Support_Joint" joint2="gripper_Left_1_Joint" polycoef="0 -1 0 0 0"
+      solref="0.005 1" solimp="0.95 0.99 0.001" />
+  </equality>
+  <actuator>
+    <position name="actuator1" joint="joint_1" kp="1000" kv="20" ctrlrange="-3.106 3.106" forcerange="-60 60" />
+    <position name="actuator2" joint="joint_2" kp="1000" kv="20" ctrlrange="-2.2689 2.2689" forcerange="-60 60" />
+    <position name="actuator3" joint="joint_3" kp="750" kv="4" ctrlrange="-2.356 2.356" forcerange="-30 30" />
+    <position name="actuator4" joint="joint_4" kp="750" kv="4" ctrlrange="-3.106 3.106" forcerange="-10 10" />
+    <position name="actuator5" joint="joint_5" kp="300" kv="2" ctrlrange="-2.234 2.234" forcerange="-10 10" />
+    <position name="actuator6" joint="joint_6" kp="300" kv="2" ctrlrange="-6.28 6.28" forcerange="-10 10" />
+    <position name="actuator7" joint="gripper_Left_1_Joint" kp="100" kv="1" ctrlrange="-0.91 0" forcerange="-20 20" />
+  </actuator>
+  <contact>
+    <exclude body1="base_link" body2="link_1" />
+    <exclude body1="link_1" body2="link_2" />
+    <exclude body1="link_2" body2="link_3" />
+    <exclude body1="link_3" body2="link_4" />
+    <exclude body1="link_4" body2="link_5" />
+    <exclude body1="link_5" body2="link_6" />
+    <exclude body1="link_6" body2="camera_rolink" />
+    <exclude body1="link_6" body2="gripper_Left_1_Link" />
+    <exclude body1="link_6" body2="gripper_Left_2_Link" />
+    <exclude body1="link_6" body2="gripper_Right_1_Link" />
+    <exclude body1="link_6" body2="gripper_Right_2_Link" />
+    <exclude body1="gripper_Left_1_Link" body2="gripper_Left_Support_Link" />
+    <exclude body1="gripper_Right_1_Link" body2="gripper_Right_Support_Link" />
+    <exclude body1="gripper_Left_1_Link" body2="gripper_Left_2_Link" />
+    <exclude body1="gripper_Right_1_Link" body2="gripper_Right_2_Link" />
+    <exclude body1="gripper_Left_1_Link" body2="gripper_Right_1_Link" />
+    <exclude body1="gripper_Left_2_Link" body2="gripper_Right_2_Link" />
+  </contact>
+</mujoco>

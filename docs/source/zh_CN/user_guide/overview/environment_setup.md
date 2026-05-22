@@ -25,7 +25,7 @@ git lfs pull
 :::{tab-item} 检查更新并安装
 
 ```bash
-uv sync --extra examples --upgrade
+uv sync --upgrade
 ```
 
 :::
@@ -33,7 +33,7 @@ uv sync --extra examples --upgrade
 :::{tab-item} 直接安装
 
 ```bash
-uv sync --extra examples
+uv sync
 ```
 
 :::
@@ -45,7 +45,7 @@ uv sync --extra examples
 运行一个简单的示例来验证环境配置是否成功：
 
 ```bash
-uv run examples/empty.py
+uv run examples/getting_started/empty.py
 ```
 
 如果能够正常打开仿真窗口，说明环境配置成功！

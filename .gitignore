@@ -3,7 +3,6 @@ __pycache__/
 .mypy_cache/
 .pytest_cache/
 .ruff_cache/
-.python-version
 *.egg-info/
 .venv
 node_modules
@@ -13,3 +12,6 @@ package-lock.json
 docs/source/index.md
 docs/source/api_reference
 docs/source/user_guide
+
+# Benchmark results
+examples/bench/grasp/.result/

@@ -1,4 +1,4 @@
-# 📍 参考点（Site）
+# 📍 参考点
 
 ## 概述
 
@@ -16,14 +16,14 @@
 
 通过 [`SceneModel`](../main_function/scene_model.md) 对象获取所有 `Site` 信息、通过名称获取特定 `Site` 等：
 
-```{literalinclude} ../../../../examples/site_and_sensor.py
+```{literalinclude} ../../../../examples/physics/site_and_sensor.py
 :language: python
 :dedent:
 :start-after: "# tag::site_access[]"
 :end-before:  "# end::site_access[]"
 ```
 
-完整示例代码参见 [`examples/site_and_sensor.py`](../../../../examples/site_and_sensor.py)。
+完整示例代码参见 [`examples/physics/site_and_sensor.py`](../../../../examples/physics/site_and_sensor.py)。
 
 ### 应用场景
 

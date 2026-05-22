@@ -1,0 +1,12 @@
+{
+  "env": "rm65-open-cabinet",
+  "rllib": "skrl",
+  "train_backend": "torch",
+  "policy": "runs/rm65-open-cabinet/skrl/26-04-13_11-05-41-005648_PPO/checkpoints/best_agent.pt",
+  "onnx": "exports/rm65_open_cabinet.onnx",
+  "obs_dim": 84,
+  "action_dim": 7,
+  "state_preprocessor_included": true,
+  "output": "deterministic_mean_actions",
+  "opset": 17
+}

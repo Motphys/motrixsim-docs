@@ -1,0 +1,48 @@
+<mujoco model="slope bridge">
+    <worldbody>
+        <geom name="slope1" type="box" size="2.6 1 0.5" pos="-3.88 0 -0.187" euler="0 0.12 0" rgba="0.2 0.5 0.8 1"/>
+        <geom name="slope1_1" type="box" size="0.1 1 0.62" pos="-6.5 0 0" rgba="0.2 0.5 0.8 1"/>
+        <geom name="bridge" type="box" size="4.4 1 0.08" pos="-11 0 0.54" rgba="0.2 0.8 0.8 1"/>
+        <geom name="slope2_1" type="box" size="0.1 1 0.62" pos="-15.5 0 0" rgba="0.2 0.5 0.8 1"/>
+        <geom name="slope2" type="box" size="2.6 1 0.5" pos="-18.12 0 -0.187" euler="0 -0.12 0" rgba="0.2 0.5 0.8 1"/>
+
+        <body name="stick1" pos="-7 -1 0.78">
+            <joint name="stick1" pos="0 0 0" axis="0 0 1"/>
+            <geom type="box" size="0.05 0.28 0.05" pos="0 -1.12 0" rgba="0.2 0.2 0.2 1"/>
+            <geom type="box" size="0.05 0.28 0.05" pos="0 -0.56 0" rgba="0.9 0.9 0.0 1"/>
+            <geom type="box" size="0.05 0.28 0.05" rgba="0.2 0.2 0.2 1"/>
+            <geom type="box" size="0.05 0.28 0.05" pos="0 0.56 0" rgba="0.9 0.9 0.0 1"/>
+            <geom type="box" size="0.05 0.28 0.05" pos="0 1.12 0" rgba="0.2 0.2 0.2 1"/>
+        </body>
+
+        <body name="stick2" pos="-15 1 0.78">
+            <joint name="stick2" pos="0 0 0" axis="0 0 1"/>
+            <geom type="box" size="0.05 0.28 0.05" pos="0 -1.12 0" rgba="0.2 0.2 0.2 1"/>
+            <geom type="box" size="0.05 0.28 0.05" pos="0 -0.56 0" rgba="0.9 0.9 0.0 1"/>
+            <geom type="box" size="0.05 0.28 0.05" rgba="0.2 0.2 0.2 1"/>
+            <geom type="box" size="0.05 0.28 0.05" pos="0 0.56 0" rgba="0.9 0.9 0.0 1"/>
+            <geom type="box" size="0.05 0.28 0.05" pos="0 1.12 0" rgba="0.2 0.2 0.2 1"/>
+        </body>
+
+        <body name="hammer1" pos="-9 0 1.6">
+            <joint name="hammer1" pos="0 0 0" axis="1 0 0"/>
+            <geom type="box" size="0.05 0.05 0.8" rgba="0.2 0.2 0.2 1"/>
+            <geom type="cylinder" pos="0 0 -0.75" euler="1.57 0 0" size="0.2 0.2" rgba="0.2 0.2 0.2 1"/>
+            <geom type="cylinder" pos="0 0 0.75" euler="1.57 0 0" size="0.2 0.2" rgba="0.2 0.2 0.2 1"/>
+        </body>
+
+        <body name="hammer2" pos="-11 0 1.6">
+            <joint name="hammer2" pos="0 0 0" axis="1 0 0"/>
+            <geom type="box" size="0.05 0.05 0.8" rgba="0.2 0.2 0.2 1"/>
+            <geom type="cylinder" pos="0 0 -0.75" euler="1.57 0 0" size="0.2 0.2" rgba="0.2 0.2 0.2 1"/>
+            <geom type="cylinder" pos="0 0 0.75" euler="1.57 0 0" size="0.2 0.2" rgba="0.2 0.2 0.2 1"/>
+        </body>
+
+        <body name="hammer3" pos="-13 0 1.6">
+            <joint name="hammer3" pos="0 0 0" axis="1 0 0"/>
+            <geom type="box" size="0.05 0.05 0.8" rgba="0.2 0.2 0.2 1"/>
+            <geom type="cylinder" pos="0 0 -0.75" euler="1.57 0 0" size="0.2 0.2" rgba="0.2 0.2 0.2 1"/>
+            <geom type="cylinder" pos="0 0 0.75" euler="1.57 0 0" size="0.2 0.2" rgba="0.2 0.2 0.2 1"/>
+        </body>
+    </worldbody>
+</mujoco>

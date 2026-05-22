@@ -1,0 +1,101 @@
+<mujoco>
+  <compiler autolimits="true" angle="degree" assetdir="assets"/>
+  <asset>
+    <texture type="2d" colorspace="sRGB" name="Tex_plate_Steel_01_alb" file="Tex_plate_Steel_01_alb.png"/>
+    <texture type="2d" colorspace="linear" name="Tex_plate_Steel_01_nrm" file="Tex_plate_Steel_01_nrm.png"/>
+    <texture type="2d" colorspace="linear" name="Tex_plate_Steel_01_arm" file="Tex_plate_Steel_01_arm.png"/>
+    <material name="Material.002" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.75" metallic="1" texuniform="true" texrepeat="8.0 8.0">
+      <layer texture="Tex_plate_Steel_01_alb" role="rgb"/>
+      <layer texture="Tex_plate_Steel_01_nrm" role="normal"/>
+      <layer texture="Tex_plate_Steel_01_arm" role="orm"/>
+    </material>
+    <material name="Material" rgba="0.9999999999999999 0.18240525842282557 0.0 1.0" reflectance="0.5" roughness="0.5" metallic="0.0"/>
+    <material name="Material_001" rgba="0.041371124037652356 0.9999999999999999 0.09855203906057627 1.0" reflectance="0.5" roughness="0.20000000298023224" metallic="0.0"/>
+    <material name="Material.001" rgba="0.9063317593127924 0.9063317593127924 0.9063317593127924 1.0" reflectance="0.5" roughness="0.5" metallic="0.0"/>
+    <material name="Material.003" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.3499999940395355" metallic="1.0"/>
+    <mesh name="Mesh_Geometry" file="Mesh_Geometry.obj"/>
+  </asset>
+  <worldbody>
+    <camera name="CAM_Camera" pos="10.191129684448242 -11.551356315612793 6.343680381774902" quat="0.7435349822044373 0.6107521057128906 0.1728261262178421 0.21040144562721252" fovy="39.597755335771296" mode="fixed"/>
+    <light name="LIT_Sun" pos="10.0 -10.0 14.0" dir="-0.4330127239227295 0.5 -0.75" type="directional" diffuse="1.0 1.0 1.0" intensity="6830.0" directional="true" castshadow="true" mode="fixed"/>
+    <geom name="GEO_Plane" pos="0.024265289306640625 0.00038909912109375 -0.25" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="Mesh_Geometry" material="Material.002"/>
+    <geom name="GEO_Geom_001" pos="-9.72573471069336 0.00038909912109375 3.0" quat="1.0 0.0 0.0 0.0" type="box" size="0.25 10.0 3.0" material="Material"/>
+    <geom name="GEO_Geom_002_001" pos="9.77426528930664 4.000389099121094 2.0" quat="1.0 0.0 0.0 0.0" type="box" size="0.25 6.0 2.0" material="Material_001"/>
+    <geom name="GEO_Geom_003_001" pos="0.024265289306640625 9.750389099121094 3.0" quat="1.0 0.0 0.0 0.0" type="box" size="9.5 0.25 3.0" material="Material.001"/>
+    <geom name="GEO_Geom_004_001" pos="-2.0 0.00038909912109375 6.25" quat="1.0 0.0 0.0 0.0" type="box" size="4.5 10.0 0.25" material="Material.001"/>
+    <geom name="GEO_Geom_005_001_001" pos="-3.4757347106933594 -9.749610900878906 2.0" quat="1.0 0.0 0.0 0.0" type="box" size="6.0 0.25 2.0" material="Material.003"/>
+    <geom name="GEO_Geom_006" pos="-2.5 -9.749610900878906 5.0" quat="1.0 0.0 0.0 0.0" type="box" size="2.0 0.25 1.0" material="Material.001"/>
+    <body name="LNK_Empty" pos="0.0 -6.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Cube_001" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="box" size="0.125 0.125 0.5" material="Material.001" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_001" pos="-4.0 4.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.001" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Cube_001_001" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="box" size="0.125 0.125 0.5" material="Material.001" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_002" pos="0.0 7.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.002" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Cube_001_002" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="box" size="0.125 0.125 0.5" material="Material.001" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_003" pos="-4.0 7.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.003" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Cube_001_003" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="box" size="0.125 0.125 0.5" material="Material.001" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_004" pos="-4.0 -6.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.004" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Cube_001_004" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="box" size="0.125 0.125 0.5" material="Material.001" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_005" pos="-7.0 4.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.005" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Cube_001_005" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="box" size="0.125 0.125 0.5" material="Material.001" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_006" pos="-7.0 7.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.006" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Cube_001_006" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="box" size="0.125 0.125 0.5" material="Material.001" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_007" pos="-7.0 -6.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.007" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Cube_001_007" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="box" size="0.125 0.125 0.5" material="Material.001" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_008" pos="-7.0 0.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.008" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Cube_001_008" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="box" size="0.125 0.125 0.5" material="Material.001" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_009" pos="6.0 4.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.009" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Cube_001_009" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="box" size="0.125 0.125 0.5" material="Material.001" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_010" pos="6.0 7.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.010" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Cube_001_010" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="box" size="0.125 0.125 0.5" material="Material.001" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_012" pos="6.0 0.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.012" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Cube_001_012" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="box" size="0.125 0.125 0.5" material="Material.001" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_011" pos="0.0 4.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.011" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Geom_005_001" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="sphere" size="0.5" material="Material.003" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_013" pos="0.0 -3.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.013" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Geom_005" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="sphere" size="0.5" material="Material" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_014" pos="-4.0 0.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.014" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Geom_004" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="sphere" size="0.5" material="Material" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_015" pos="0.0 2.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.015" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Geom_002" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="capsule" size="0.25 0.25" material="Material_001" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_016" pos="-4.0 -3.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.016" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Geom_003" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="capsule" size="0.25 0.25" material="Material_001" density="100.0"/>
+    </body>
+    <body name="LNK_Empty_017" pos="6.0 -4.0 0.5" quat="1.0 0.0 0.0 0.0">
+      <joint name="JNT_Joint.017" pos="0.0 0.0 0.0" axis="0.0 0.0 1.0" type="free"/>
+      <geom name="GEO_Geom" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" type="capsule" size="0.25 0.25" material="Material_001" density="100.0"/>
+    </body>
+  </worldbody>
+</mujoco>

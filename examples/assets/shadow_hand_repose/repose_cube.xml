@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="shadow_hand_cube_repose">
+    <include file="right_hand.xml" />
+
+    <compiler angle="radian" meshdir="assets" />
+
+    <option timestep="0.01" iterations="30" tolerance="1e-6"
+        cone="pyramidal" impratio="10" integrator="implicitfast">
+        <flag warmstart="enable" />
+    </option>
+
+    <size nconmax="800" njmax="2000" />
+
+    <statistic extent="0.4" center="0.3 0 0.15" />
+
+    <visual>
+        <rgba haze="0.15 0.25 0.35 1" />
+        <quality shadowsize="4096" />
+        <global azimuth="220" elevation="-30" />
+    </visual>
+
+    <default>
+        <default class="cube_contact">
+            <geom solimp="0.95 0.99 1e-3 0.5 2" solref="0.02 1"
+                friction="1.2 0.005 0.0001" condim="3" margin="0.003" />
+        </default>
+    </default>
+
+    <asset>
+        <texture type="2d" colorspace="sRGB" name="Cube_Side_Tex" file="assets/Cube_Side.png" />
+        <material name="cube" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="1.0">
+            <layer texture="Cube_Side_Tex" role="rgb" />
+        </material>
+        <material name="cube_target" rgba="1 1 1 0.7" reflectance="0.5" metallic="0.0" roughness="1.0">
+            <layer texture="Cube_Side_Tex" role="rgb" />
+        </material>
+        <mesh name="cube_vis_mesh" file="Cube_Side.obj" scale="0.8333 0.8333 0.8333" />
+        <texture name="motphys-ground" type="2d" file="../common/plane.png" />
+        <material name="motphys-ground" texture="motphys-ground" texuniform="true" texrepeat="0.4 0.4" />
+    </asset>
+
+    <worldbody>
+        <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
+        <geom type="plane" size="0 0 .01" material="motphys-ground"/>
+
+        <body name="cube" pos="0.30 0.00 0.35">
+            <freejoint name="cube_joint" />
+            
+            <geom name="cube_vis" mesh="cube_vis_mesh" type="mesh" size="0.025 0.025 0.025"
+                class="cube_contact" material="cube" contype="0" conaffinity="0" 
+                group="1" />
+            
+            <geom type="box" size="0.025 0.025 0.025" 
+                group="3" 
+                density="225"
+                rgba="0.8 0.2 0.2 0.5" /> 
+        </body>
+
+        <body name="target" pos="0.45 -0.20 0.22" mocap="true">
+            <geom name="target_cube" mesh="cube_vis_mesh" type="mesh" size="0.025 0.025 0.025"
+                contype="0" conaffinity="0"
+                material="cube_target" />
+        </body>
+    </worldbody>
+
+</mujoco>

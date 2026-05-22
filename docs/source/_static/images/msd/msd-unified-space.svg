@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540" role="img" aria-labelledby="title desc">
+  <title id="title">Unified Asset Workflow</title>
+  <desc id="desc">MJCF, URDF and USD inputs are unified into MSD World, then processed with attach, transform, prefix and build into SceneModel.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7fbff; }
+      .title { font: 700 30px "Segoe UI", Arial, sans-serif; fill: #0b2545; }
+      .subtitle { font: 500 18px "Segoe UI", Arial, sans-serif; fill: #1b3a57; }
+      .label { font: 600 17px "Segoe UI", Arial, sans-serif; fill: #0b2545; }
+      .small { font: 500 14px "Segoe UI", Arial, sans-serif; fill: #244b6b; }
+      .box-in { fill: #e8f2ff; stroke: #4d88c7; stroke-width: 2; rx: 14; }
+      .box-core { fill: #fff3e9; stroke: #de7a1a; stroke-width: 2.5; rx: 16; }
+      .box-op { fill: #edfdf4; stroke: #1f9d61; stroke-width: 2; rx: 14; }
+      .box-out { fill: #f2ecff; stroke: #7453c1; stroke-width: 2; rx: 14; }
+      .arrow { stroke: #335b80; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .arrow2 { stroke: #1f9d61; stroke-width: 3; fill: none; marker-end: url(#arrow2); }
+      .chip { fill: #ffffff; stroke: #8ab0d7; stroke-width: 1.5; rx: 8; }
+      .chiptext { font: 600 13px "Segoe UI", Arial, sans-serif; fill: #2d4f70; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#335b80"/>
+    </marker>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1f9d61"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="540"/>
+  <text class="title" x="50" y="56">Unified Asset Workflow</text>
+  <text class="subtitle" x="50" y="88">Different asset formats -> one MSD World -> one programmable pipeline</text>
+
+  <rect class="box-in" x="60" y="140" width="200" height="84"/>
+  <text class="label" x="95" y="190">MJCF</text>
+  <rect class="box-in" x="60" y="246" width="200" height="84"/>
+  <text class="label" x="98" y="296">URDF</text>
+  <rect class="box-in" x="60" y="352" width="200" height="84"/>
+  <text class="label" x="110" y="402">USD</text>
+
+  <rect class="box-core" x="360" y="216" width="290" height="144"/>
+  <text class="label" x="425" y="260">Unified MSD World</text>
+  <rect class="chip" x="402" y="280" width="205" height="30"/>
+  <text class="chiptext" x="427" y="300">same scene graph space</text>
+  <rect class="chip" x="402" y="318" width="205" height="30"/>
+  <text class="chiptext" x="422" y="338">editable before simulation</text>
+
+  <rect class="box-op" x="730" y="178" width="240" height="220"/>
+  <text class="label" x="807" y="214">Programmatic Ops</text>
+  <text class="small" x="766" y="252">- attach subtree</text>
+  <text class="small" x="766" y="282">- translation / rotation</text>
+  <text class="small" x="766" y="312">- prefix / suffix</text>
+  <text class="small" x="766" y="342">- add camera / assets</text>
+  <text class="small" x="766" y="372">- build()</text>
+
+  <rect class="box-out" x="1010" y="238" width="150" height="100"/>
+  <text class="label" x="1035" y="286">SceneModel</text>
+
+  <path class="arrow" d="M260 182 C300 182, 314 250, 360 250"/>
+  <path class="arrow" d="M260 288 C314 288, 314 288, 360 288"/>
+  <path class="arrow" d="M260 394 C300 394, 314 326, 360 326"/>
+
+  <path class="arrow2" d="M650 288 L730 288"/>
+  <path class="arrow2" d="M970 288 L1010 288"/>
+</svg>

@@ -27,7 +27,7 @@ An IK chain model consists of a series of connected joints and an end-effector, 
 
 In MotrixSim, you can create an IK chain model as follows:
 
-```{literalinclude} ../../../../examples/ik.py
+```{literalinclude} ../../../../examples/control/ik.py
 :language: python
 :dedent:
 :start-after: "# tag::create_ik_chain"
@@ -54,7 +54,7 @@ The Damped Least Squares (DLS) method is a robust optimization algorithm that ad
 
 In MotrixSim, you can create a DLS IK solver as follows:
 
-```{literalinclude} ../../../../examples/ik.py
+```{literalinclude} ../../../../examples/control/ik.py
 :language: python
 :dedent:
 :start-after: "# tag::create_ik_solver"
@@ -81,7 +81,7 @@ The Gauss-Newton solver is simpler and may converge faster when the system is we
 
 Then, execute the IK solving process by calling the `solve` method:
 
-```{literalinclude} ../../../../examples/ik.py
+```{literalinclude} ../../../../examples/control/ik.py
 :language: python
 :dedent:
 :start-after: "# tag::solve_ik"
@@ -106,7 +106,7 @@ When using the IK Solver, it may sometimes fail to converge. Possible reasons in
 - Consider breaking down large movements into smaller incremental steps
 ```
 
-_See the complete code in [examples/ik.py](../../../../examples/ik.py)_
+_See the complete code in [examples/control/ik.py](../../../../examples/control/ik.py)_
 
 [`IkChain`]: motrixsim.ik.IkChain
 [`GaussNewtonSolver`]: motrixsim.ik.GaussNewtonSolver

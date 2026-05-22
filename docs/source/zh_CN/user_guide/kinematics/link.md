@@ -1,4 +1,4 @@
-# 📏 连杆（Link）
+# 📏 连杆
 
 我们将多体系统中的刚性构件称为连杆（Link）。在 MotrixSim 中，连杆是一个重要的概念，它代表了多体系统中的每个刚性部分。每个连杆都可以有不同的属性和行为，并通过 Joint（关节）连接到其他连杆。
 
@@ -29,12 +29,12 @@ MJCF 中的`<worldbody>`不会被视作一个 Link 对象。
 您可以通过
 
 ```bash
-uv run examples/link.py
+uv run examples/physics/link.py
 ```
 
 来运行一个简单的关于 link api 调用的例子。
 
-源码可以参考 [`examples/link.py`](../../../../examples/link.py)。
+源码可以参考 [`examples/physics/link.py`](../../../../examples/physics/link.py)。
 
 ## API Reference
 

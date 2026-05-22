@@ -1,4 +1,4 @@
-# 🎮 交互式查看器（Interactive Viewer）
+# 🎮 交互式查看器
 
 ## 概述
 
@@ -129,7 +129,7 @@ mx.viewer.launch(model, data)
 
 在启动查看器之前运行一些物理步骤以稳定初始状态：
 
-```{literalinclude} ../../../../examples/interactive_viewer.py
+```{literalinclude} ../../../../examples/viewer/interactive_viewer.py
 :language: python
 :dedent:
 :start-after: "# Use custom model with physics data"
@@ -146,7 +146,7 @@ mx.viewer.launch(model, data)
 
 以下是一个使用波士顿动力 Spot 机器人演示交互式查看器的完整示例：
 
-```{literalinclude} ../../../../examples/interactive_viewer.py
+```{literalinclude} ../../../../examples/viewer/interactive_viewer.py
 :language: python
 :dedent:
 :start-after: "# Copyright (C)"

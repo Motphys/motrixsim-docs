@@ -304,7 +304,7 @@ This configuration creates a contact sensor named `box_floor_contact` that monit
 
 Below is the complete contact sensor visualization code:
 
-```{literalinclude} ../../../../../examples/site_and_sensor.py
+```{literalinclude} ../../../../../examples/physics/site_and_sensor.py
 :language: python
 :lines: 16-19
 :lines: 91-142

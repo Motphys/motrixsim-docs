@@ -1,0 +1,12 @@
+{
+  "env": "shadow-hand-repose",
+  "rllib": "skrl",
+  "train_backend": "torch",
+  "policy": "runs/shadow-hand-repose/skrl/26-04-13_11-47-41-371034_PPO/checkpoints/best_agent.pt",
+  "onnx": "exports/shadow_hand_repose.onnx",
+  "obs_dim": 157,
+  "action_dim": 20,
+  "state_preprocessor_included": true,
+  "output": "deterministic_mean_actions",
+  "opset": 17
+}

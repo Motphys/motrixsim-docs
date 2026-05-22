@@ -1,116 +1,69 @@
-# 🔨 模型构建
+# 🔨 程序化模型构建
 
-MotrixSim 提供了程序化模型构建 API，允许您在仿真前加载、变换和组合多个模型。这对以下场景非常有用：
+`motphys-scene-descriptor`（下文简称 `MSD`）是 MotrixSim 的场景描述与组合能力。在 Python 侧，它通过 [`motrixsim.msd`](../../api_reference/msd/msd.md) 暴露给用户。
 
--   将机器人模型与不同的末端执行器组合
--   创建多机器人场景
--   在运行时动态组装模型
+如果把仿真流程拆成两个阶段：
 
-## 基本概念
+1. 场景描述与组装阶段（可变）
+2. 物理仿真运行阶段（高性能、稳定）
 
-模型构建 API 通过 [`motrixsim.msd`](../../api_reference/msd/msd.md) 模块提供：
+那么 `MSD` 就是第 1 阶段的核心工具，负责把 MJCF/URDF/MSD 文件组织、变换、组合后，构建成可仿真的 [`SceneModel`](scene_model.md)。
 
-| 类/函数                                                  | 描述                                                                    |
-| -------------------------------------------------------- | ----------------------------------------------------------------------- |
-| [`msd.from_file(path)`](motrixsim.msd.from_file)         | 加载模型文件（MJCF/URDF/MSD）并返回 [`Scene`](motrixsim.msd.Scene) 对象 |
-| [`msd.from_str(string, format)`](motrixsim.msd.from_str) | 从字符串加载模型                                                        |
-| [`Scene.attach(other, ...)`](motrixsim.msd.Scene.attach) | 将另一个模型附加到当前模型                                              |
-| [`Scene.build()`](motrixsim.msd.Scene.build)             | 构建用于仿真的最终 [`SceneModel`](motrixsim.SceneModel)                 |
+## 它解决了什么问题
 
-[`Scene`](motrixsim.msd.Scene) 对象是模型的可变表示，可以在编译为不可变的 [`SceneModel`](motrixsim.SceneModel) 之前进行变换和组合。
+在机器人或多体系统开发中，常见需求是：
 
-## 基本用法
+-   同一机器人挂载不同末端执行器
+-   同一个模型在场景里实例化多份
+-   从大模型中提取子树拼接到另一个模型
+-   在仿真前统一做平移、旋转和命名空间管理
 
-### 加载和构建模型
+如果直接在原始模型文件里反复手改，维护成本高且容易出错。`MSD` 的关键价值是把不同来源的资产先统一到同一个 `World` 空间，再做程序化操作：
 
-最简单的用法是加载模型文件并构建：
+-   MJCF/URDF 可通过 `msd.from_file` 或 `msd.from_str` 读入 `World`
+-   USD 可通过 `load_usd2msd` 先转换为 `World`（依赖 `usd2msd`）
+-   统一后就能用同一套 `attach/transform/prefix/build` 流程完成组装与编译
 
-```python
-import motrixsim as mx
+```{figure} /_static/images/msd/msd-unified-space.svg
+:alt: MSD unified asset space
+:width: 100%
+:align: center
 
-# 链式调用加载并构建
-model = mx.msd.from_file("robot.xml").build()
-
-# 或分步骤进行
-scene = mx.msd.from_file("robot.xml")
-model = scene.build()
+MSD 将 MJCF/URDF/USD 等不同资产格式统一到同一可编排空间。
 ```
 
-### 从字符串加载
+## 5 分钟快速上手
 
-您也可以从 MJCF/URDF 字符串创建模型：
+### 第一步：加载场景与模型
 
 ```python
 import motrixsim as mx
 
-mjcf_string = """
-<mujoco>
-  <worldbody>
-    <body name="box">
-      <geom type="box" size="0.1 0.1 0.1"/>
-    </body>
-  </worldbody>
-</mujoco>
-"""
-
-model = mx.msd.from_str(mjcf_string, format="mjcf").build()
+scene = mx.msd.from_file("examples/assets/store/scene.xml")
+robot = mx.msd.from_file("examples/assets/boston_dynamics_spot/spot.xml")
 ```
 
-## 组合模型
-
-`attach` 方法允许您将多个模型组合在一起：
+### 第二步：把模型附加到场景
 
 ```python
-import motrixsim as mx
-
-# 加载两个模型
-robot = mx.msd.from_file("robot.xml")
-gripper = mx.msd.from_file("gripper.xml")
-
-# 将夹爪附加到机器人的手部连杆
-robot.attach(
-    gripper,
-    self_link_name="hand",      # 机器人中要附加到的连杆
-    other_prefix="gripper_",    # 夹爪名称的前缀
-    other_translation=[0.1, 0, 0]  # 偏移量
+scene.attach(
+    robot,
+    other_translation=[1.0, 0.0, 0.0],
+    other_prefix="spot_",
 )
-
-model = robot.build()
 ```
 
-### Attach 参数
-
-| 参数                | 类型           | 描述                                                    |
-| ------------------- | -------------- | ------------------------------------------------------- |
-| `other`             | `Scene`        | 要附加的模型（内部会克隆，可重复使用）                  |
-| `self_link_name`    | `str`          | 当前模型中要附加到的连杆。如果为 `None`，则在根级别合并 |
-| `other_link_name`   | `str`          | 仅从另一个模型中提取此子树                              |
-| `other_translation` | `[x, y, z]`    | 附加模型的平移偏移                                      |
-| `other_rotation`    | `[x, y, z, w]` | 附加模型的旋转四元数                                    |
-| `other_prefix`      | `str`          | 添加到附加模型中所有名称的前缀                          |
-| `other_suffix`      | `str`          | 添加到附加模型中所有名称的后缀                          |
-
-### 创建多个实例
-
-由于 `attach` 会在内部克隆另一个模型，您可以多次附加同一个模型：
+### 第三步：构建为可仿真的 SceneModel
 
 ```python
-import motrixsim as mx
-
-scene = mx.msd.from_file("scene.xml")
-robot = mx.msd.from_file("robot.xml")
-
-# 在不同位置创建多个机器人实例
-scene.attach(robot, other_prefix="robot1_", other_translation=[0, 0, 0])
-scene.attach(robot, other_prefix="robot2_", other_translation=[2, 0, 0])
-scene.attach(robot, other_prefix="robot3_", other_translation=[4, 0, 0])
-
 model = scene.build()
+data = mx.SceneData(model)
+mx.step(model, data)
 ```
 
-### 提取子树
+上面这三步就是最常见的 `MSD` 工作流：`加载 -> 组合 -> build -> 仿真`。
 
-您可以在附加之前从模型中提取特定的子树：
+### 完整示例代码
 
 ```python
 import motrixsim as mx
@@ -131,36 +84,42 @@ model = robot.build()
 
 ## 完整示例
 
-以下是一个创建包含多个机器人场景的完整示例。完整代码请参阅 [`examples/combine_msd.py`](../../../../examples/combine_msd.py)。
+以下是一个创建包含多个机器人场景的完整示例。完整代码请参阅 [`examples/physics/combine_msd.py`](../../../../examples/physics/combine_msd.py)。
 
-```{literalinclude} ../../../../examples/combine_msd.py
+```{literalinclude} ../../../../examples/physics/combine_msd.py
 :language: python
 :start-after: "# tag::combine_msd_example[]"
 :end-before: "# end::combine_msd_example[]"
 ```
 
-## MJCF Attach 元素
+## 核心概念
 
-MotrixSim 还支持 MJCF 的 `<attach>` 元素，用于在 XML 中组合模型：
+| 概念        | 说明                                                          |
+| ----------- | ------------------------------------------------------------- |
+| `World`     | `MSD` 的可变场景对象。可以持续 `attach`、增删元素、设置变换。 |
+| `attach`    | 把另一个 `World` 合并到当前场景，可设置挂接点、位姿、前后缀。 |
+| `build`     | 把 `World` 编译成不可变的 `SceneModel`，用于实际仿真。        |
+| `base_path` | 解析纹理、网格等相对路径的基准目录，文件引用场景必须明确。    |
 
-```xml
-<mujoco>
-  <asset>
-    <model name="gripper" file="gripper.xml"/>
-  </asset>
-  <worldbody>
-    <body name="robot">
-      <!-- 机器人定义 -->
-      <body name="hand">
-        <attach model="gripper" prefix="gripper_"/>
-      </body>
-    </body>
-  </worldbody>
-</mujoco>
-```
+## 常用接口速览
 
-有关 MJCF 支持的详细信息，请参阅 [MJCF 文件](../getting_started/mjcf_reference.md)。
+| 接口                                                                | 用途                                     |
+| ------------------------------------------------------------------- | ---------------------------------------- |
+| [`msd.from_file(path)`](motrixsim.msd.from_file)                    | 从 MJCF/URDF/MSD 文件加载 `World`        |
+| [`msd.from_str(string, format, base_path)`](motrixsim.msd.from_str) | 从字符串加载，适合动态生成模型           |
+| `motrixsim.load_usd2msd(usd_path)`                                  | 将 USD 转换为 `World`，接入相同编排流程  |
+| [`World.attach(...)`](motrixsim.msd.World.attach)                   | 组合模型，支持平移旋转、前后缀、子树提取 |
+| [`World.build(base_path)`](motrixsim.msd.build)                     | 构建最终 `SceneModel`                    |
 
-## API 参考
+完整 API 参见：[`motrixsim.msd`](../../api_reference/msd/msd.md)。
 
-有关详细的 API 文档，请参阅 [`motrixsim.msd`](../../api_reference/msd/msd.md)。
+## FAQ
+
+1. Q：我已经有 MJCF/URDF，还需要手写 MSD 吗？  
+   A：通常不需要。可以直接 `msd.from_file(...).build()`，只有在“程序化组合/编辑”场景下才需要深入使用 MSD 对象。
+
+2. Q：我可以复用同一个被附加模型多次吗？  
+   A：可以。`attach` 时会内部克隆 `other`，适合批量实例化同一个子模型。
+
+3. Q：USD 场景如何接入？  
+   A：可使用 `motrixsim` 提供的 USD 加载流程先转换到 `MSD` 再构建 `SceneModel`（需要安装 `usd2msd` 相关依赖）。

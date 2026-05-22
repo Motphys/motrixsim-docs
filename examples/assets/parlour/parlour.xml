@@ -2,11 +2,16 @@
   <compiler angle="radian" assetdir="assets" autolimits="true"/>
   <visual>
     <!-- <ssao active="true"/> -->
+    <headlight diffuse="0.0 0.0 0.0" ambient="0.0 0.0 0.0" specular="0 0 0"/>
+    <map envmapintensity="500"/>
+    <ssgi active="true"/>
     <tonemapping method="aces"/>
   </visual>
   <asset>
 
     <!-- Textures -->
+    <texture name="env_diff" type="envdiff" file="diff.ktx2"/>
+    <texture name="env_spec" type="envspec" file="spec.ktx2"/>
     <texture type="2d" colorspace="sRGB" name="342dbda6268f75c9b5a2ca21ea02dbb6" file="342dbda6268f75c9b5a2ca21ea02dbb6.png"/>
     <texture type="2d" colorspace="sRGB" name="T_02_ZS_BX_04_01" file="T_02_ZS_BX_04_01.png"/>
     <texture type="2d" colorspace="linear" name="T_02_ZS_BX_04_03" file="T_02_ZS_BX_04_03.png"/>
@@ -51,180 +56,180 @@
     <texture type="2d" colorspace="sRGB" name="1f072207cdb1bde2aab539cd9bf5be43" file="1f072207cdb1bde2aab539cd9bf5be43.png"/>
 
     <!-- Materials -->
-    <material name="Ground" rgba="0.800000011920929 0.800000011920929 0.800000011920929 1.0" reflectance="0.5" metallic="0.0" roughness="0.5"/>
-    <material name="mat_71" rgba="0.9882352948188782 0.9882352948188782 0.9882352948188782 1.0" reflectance="0.5" metallic="0.0" roughness="0.10999999940395355"/>
-    <material name="mat_76" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="1.0" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
-      <layer texture="342dbda6268f75c9b5a2ca21ea02dbb6" role="rgb"/>
-    </material>
-    <material name="MI_02_ZS_BX_04_01" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.5">
-      <layer texture="T_02_ZS_BX_04_01" role="rgb"/>
-      <layer texture="T_02_ZS_BX_04_03" role="normal"/>
-    </material>
-    <material name="mat_591" rgba="1 1 1 1" reflectance="0.5" metallic="0.23999999463558197" roughness="0.32999998331069946" texrepeat="1.0 1.0" texuniform="true">
-      <layer texture="4a71adde5feb7a68a887f63e83b66412" role="rgb"/>
-    </material>
-    <material name="mat_65" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.5" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
-      <layer texture="70a5ce32d150f6309e75fb7d85a07eda" role="rgb"/>
-    </material>
-    <material name="SM_02_ZS_BX_05_01" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.30000001192092896">
+    <material name="Ground" rgba="0.9063317593127924 0.9063317593127924 0.9063317593127924 1.0" reflectance="0.5" roughness="0.5" metallic="0.0"/>
+    <material name="SM_02_ZS_BX_05_01" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.25" metallic="0.0">
       <layer texture="T_02_ZS_BX_05_04" role="rgb"/>
       <layer texture="T_02_ZS_BX_05_05" role="normal"/>
     </material>
-    <material name="mat_50304F94B0643138" rgba="0.3409999907016754 0.37400001287460327 0.37599998712539673 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
-    <material name="mat_43F828562E521817" rgba="1.0 0.9215686321258545 0.800000011920929 1.0" reflectance="0.5" metallic="0.0" roughness="0.10000000149011612" emission="1.0 1.0 1.0 1.0" emissionintensity="10.0"/>
-    <material name="mat_2784D6E2065B3E4B" rgba="0.5803921818733215 0.6509804129600525 0.7215686440467834 1.0" reflectance="0.5" metallic="0.0" roughness="0.44999998807907104"/>
-    <material name="mat_73496A3838D8D09E" rgba="0.4191201329231262 0.512275755405426 0.5313531160354614 1.0" reflectance="0.5" metallic="0.5399999618530273" roughness="0.2199999988079071"/>
-    <material name="mat_80755" rgba="0.8196078538894653 0.8156862854957581 0.8117647171020508 1.0" reflectance="0.5" metallic="0.0" roughness="0.0"/>
-    <material name="mat_148968" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="0.5" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
-      <layer texture="2d440f29648430cf633ba9141d350007" role="rgb"/>
+    <material name="MI_02_ZS_BX_04_01" rgba="0.7 0.7 0.7 1.0" reflectance="0.5" roughness="0.5" metallic="0.0">
+      <layer texture="T_02_ZS_BX_04_01" role="rgb"/>
+      <layer texture="T_02_ZS_BX_04_03" role="normal"/>
     </material>
-    <material name="mat_0" rgba="0.9725490212440491 0.9843137264251709 1.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
-    <material name="mat_148970" rgba="0.1764705926179886 0.1764705926179886 0.1764705926179886 1.0" reflectance="0.5" metallic="1.0" roughness="0.14000000059604645"/>
-    <material name="mat_148971" rgba="0.6196078658103943 0.4941176474094391 0.32156863808631897 1.0" reflectance="0.5" metallic="1.0" roughness="0.11999999731779099"/>
-    <material name="mat_83" rgba="0.47843137383461 0.4313725531101227 0.4000000059604645 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
-    <material name="mat_88" rgba="0.019607843831181526 0.0117647061124444 0.007843137718737125 1.0" reflectance="0.5" metallic="0.12999999523162842" roughness="0.09999999403953552"/>
-    <material name="mat_909054" rgba="0.6000000238418579 0.4941176474094391 0.3450980484485626 1.0" reflectance="0.5" metallic="0.11999999731779099" roughness="0.11999999731779099"/>
-    <material name="mat_150326" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.14999999105930328" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
-      <layer texture="024132e0c58801b87e67843c8b98a38b" role="rgb"/>
-    </material>
-    <material name="mat_792108" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="0.5" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
-      <layer texture="e665515175473bb1b186eaaa9df67489" role="rgb"/>
-    </material>
-    <material name="mat_792104" rgba="1 1 1 1" reflectance="0.5" metallic="0.14000000059604645" roughness="0.14000000059604645" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
-      <layer texture="997b0ef8c50beee3787857242b84b01a" role="rgb"/>
-    </material>
-    <material name="mat_792110" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="0.5" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
-      <layer texture="9f089bc9c03d7bc250d6648eec5e0d0a" role="rgb"/>
-    </material>
-    <material name="mat_21454" rgba="0.4274509847164154 0.3960784375667572 0.19607843458652496 1.0" reflectance="0.5" metallic="0.0" roughness="0.09999999403953552"/>
-    <material name="mat_21455" rgba="1.0 1.0 0.9411764740943909 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
-    <material name="mat_42400" rgba="1 1 1 1" reflectance="0.5" metallic="0.11999999731779099" roughness="0.08999999612569809" texrepeat="3.3333332538604736 3.3333332538604736" texuniform="true">
+    <material name="mat_42400" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.08999999612569809" metallic="0.0" texuniform="true" texrepeat="3.3333332538604736 3.3333332538604736">
       <layer texture="dae60a53aa59e8e355383e2ef7d269cf" role="rgb"/>
     </material>
-    <material name="mat_21456" rgba="0.22745098173618317 0.22745098173618317 0.22745098173618317 1.0" reflectance="0.5" metallic="0.0" roughness="0.07000000029802322"/>
-    <material name="mat_21457" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.11999999731779099">
-      <layer texture="5da83112d0a42a674ad2a57d512a6912" role="rgb"/>
+    <material name="mat_42403" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.09999999403953552" metallic="0.0"/>
+    <material name="mat_42402" rgba="0.9999999999999999 0.9554494816588325 0.7429142733255684 1.0" reflectance="0.5" roughness="0.20000000298023224" metallic="0.0"/>
+    <material name="mat_60" rgba="0.9999999999999999 0.9948105750750323 0.9537700273940545 1.0" reflectance="0.5" roughness="0.10999999940395355" metallic="0.0"/>
+    <material name="mat_58" rgba="0.9999999999999999 0.9948105750750323 0.989584985950953 1.0" reflectance="0.5" roughness="0.12999999523162842" metallic="0.0"/>
+    <material name="mat_59" rgba="0.43762978250208373 0.5820884356272703 0.48891217480436683 1.0" reflectance="0.5" roughness="0.11999999731779099" metallic="0.0"/>
+    <material name="mat_792104" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.14000000059604645" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
+      <layer texture="997b0ef8c50beee3787857242b84b01a" role="rgb"/>
     </material>
-    <material name="mat_60" rgba="1.0 0.9882352948188782 0.8980392217636108 1.0" reflectance="0.5" metallic="0.0" roughness="0.10999999940395355"/>
-    <material name="mat_792103" rgba="0.6470588445663452 0.6117647290229797 0.5490196347236633 1.0" reflectance="0.5" metallic="0.17999999225139618" roughness="0.12999999523162842"/>
-    <material name="mat_62043" rgba="0.21176470816135406 0.2235294133424759 0.25882354378700256 1.0" reflectance="0.5" metallic="0.0" roughness="0.14999999105930328"/>
-    <material name="mat_21459" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.10999999940395355">
-      <layer texture="daa9b13c485f6352da093235bff97ee3" role="rgb"/>
+    <material name="mat_21454" rgba="0.6853807078006628 0.6622347005747138 0.48009581689082376 1.0" reflectance="0.5" roughness="0.09999999403953552" metallic="0.0"/>
+    <material name="mat_50304F94B0643138" rgba="0.6188555028785472 0.6452970552018958 0.6468549849068559 1.0" reflectance="0.5" roughness="0.5" metallic="1.0"/>
+    <material name="mat_71" rgba="0.9948105750750323 0.9948105750750323 0.9948105750750323 1.0" reflectance="0.5" roughness="0.10999999940395355" metallic="0.0"/>
+    <material name="mat_73496A3838D8D09E" rgba="0.6793337873742679 0.7433850155165435 0.7556414495074419 1.0" reflectance="0.5" roughness="0.2199999988079071" metallic="1.0"/>
+    <material name="mat_148968" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.5" metallic="1.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
+      <layer texture="2d440f29648430cf633ba9141d350007" role="rgb"/>
     </material>
-    <material name="Clear_Glass" rgba="1.0 1.0 1.0 0.1" reflectance="0.5" metallic="0.0" roughness="0.0"/>
-    <material name="mat_62035" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.09999999403953552" texrepeat="0.9594369530677795 0.971505343914032" texuniform="false">
+    <material name="mat_21456" rgba="0.5142316632386907 0.5142316632386907 0.5142316632386907 1.0" reflectance="0.5" roughness="0.07000000029802322" metallic="0.0"/>
+    <material name="Clear_Glass" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 0.10000000149011612" reflectance="0.5" roughness="0.0" metallic="0.0"/>
+    <material name="mat_76" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="1.0" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
+      <layer texture="342dbda6268f75c9b5a2ca21ea02dbb6" role="rgb"/>
+    </material>
+    <material name="mat_909054" rgba="0.7977377471499069 0.7314693070074499 0.6222180153501936 1.0" reflectance="0.5" roughness="0.10000000149011612" metallic="0.0"/>
+    <material name="mat_62035" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.09999999403953552" metallic="0.0" texuniform="false" texrepeat="0.9594369530677795 0.971505343914032">
       <layer texture="af648c759ae2dc741b699d8f3af20e69" role="rgb"/>
     </material>
-    <material name="Tinted_Glass_R02_01" rgba="0.10000000149011612 0.10000000149011612 0.10000000149011612 1.0" reflectance="0.5" metallic="0.0" roughness="1.0"/>
-    <material name="mat_38619" rgba="0.47058823704719543 0.47058823704719543 0.47058823704719543 1.0" reflectance="0.5" metallic="0.0" roughness="0.5"/>
-    <material name="mat_5188AE9D9AEFEA48" rgba="0.9607843160629272 0.9607843160629272 0.9607843160629272 1.0" reflectance="0.5" metallic="0.0" roughness="0.17999999225139618"/>
-    <material name="mat_738B63C3F0EB49E4" rgba="0.026402652263641357 0.026054102927446365 0.026054102927446365 1.0" reflectance="0.5" metallic="0.3100000023841858" roughness="0.17000000178813934"/>
-    <material name="mat_22672001CBED8985" rgba="0.9843137264251709 0.9843137264251709 0.9843137264251709 1.0" reflectance="0.5" metallic="0.11999999731779099" roughness="0.14000000059604645"/>
-    <material name="mat_42403" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" metallic="0.17000000178813934" roughness="0.09999999403953552"/>
-    <material name="mat_17118" rgba="1 1 1 1" reflectance="0.5" metallic="0.14000000059604645" roughness="0.12999999523162842" texrepeat="0.6410256028175354 0.4273504316806793" texuniform="false">
-      <layer texture="3b082332acb0e3ebf755cab969513bcc" role="rgb"/>
+    <material name="mat_43F828562E521817" rgba="0.9999999999999999 0.9646997855887388 0.9063317593127924 1.0" reflectance="0.5" roughness="0.10000000149011612" metallic="0.0" emission="1.0 1.0 1.0 1.0" emissionintensity="2.0"/>
+    <material name="mat_83" rgba="0.72096830234287 0.6882033723711205 0.6651850891023338 1.0" reflectance="0.5" roughness="0.5" metallic="1.0"/>
+    <material name="mat_150326" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.14999999105930328" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
+      <layer texture="024132e0c58801b87e67843c8b98a38b" role="rgb"/>
     </material>
-    <material name="mat_17111" rgba="0.95686274766922 0.95686274766922 0.95686274766922 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
-    <material name="mat_816195" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="0.5" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
-      <layer texture="ef4df2df7ca2b21868d75a9630774cb3" role="rgb"/>
+    <material name="mat_21459" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.10999999940395355" metallic="0.0">
+      <layer texture="daa9b13c485f6352da093235bff97ee3" role="rgb"/>
     </material>
-    <material name="mat_113" rgba="1 1 1 1" reflectance="0.5" metallic="0.14999999105930328" roughness="0.14000000059604645" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
-      <layer texture="cd33cb7aceb26b08be997e59bf572ce5" role="rgb"/>
+    <material name="mat_792110" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.5" metallic="1.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
+      <layer texture="9f089bc9c03d7bc250d6648eec5e0d0a" role="rgb"/>
     </material>
-    <material name="mat_816191" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="0.5" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
-      <layer texture="9ed13a225ff37e93286113e4d5937bb9" role="rgb"/>
+    <material name="Tinted_Glass_R02_01" rgba="0.34919021513783693 0.34919021513783693 0.34919021513783693 1.0" reflectance="0.5" roughness="0.0" metallic="0.0"/>
+    <material name="mat_792103" rgba="0.8249926276492987 0.8046651224165007 0.7667645610219354 1.0" reflectance="0.5" roughness="0.12999999523162842" metallic="0.0"/>
+    <material name="mat_0" rgba="0.9878349673782353 0.9930727640276592 0.9999999999999999 1.0" reflectance="0.5" roughness="0.5" metallic="1.0"/>
+    <material name="mat_62043" rgba="0.4975328706327364 0.5101216023005872 0.5457180768713816 1.0" reflectance="0.5" roughness="0.14999999105930328" metallic="0.0"/>
+    <material name="mat_21455" rgba="0.9999999999999999 0.9999999999999999 0.9736841995313018 1.0" reflectance="0.5" roughness="0.5" metallic="1.0"/>
+    <material name="mat_88" rgba="0.1500052073153946 0.11070206122511578 0.08494473368830213 1.0" reflectance="0.5" roughness="0.09999999403953552" metallic="0.0"/>
+    <material name="mat_2784D6E2065B3E4B" rgba="0.7860137707685327 0.8272109154285895 0.8658766935012076 1.0" reflectance="0.5" roughness="0.44999998807907104" metallic="0.0"/>
+    <material name="mat_148970" rgba="0.45711316013775755 0.45711316013775755 0.45711316013775755 1.0" reflectance="0.5" roughness="0.14000000059604645" metallic="1.0"/>
+    <material name="mat_80755" rgba="0.9160799919323223 0.9141413186282693 0.9121972006819492 1.0" reflectance="0.5" roughness="0.0" metallic="0.0"/>
+    <material name="mat_148971" rgba="0.8092402936344896 0.7314693070074499 0.6025818670348971 1.0" reflectance="0.5" roughness="0.11999999731779099" metallic="1.0"/>
+    <material name="mat_792108" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.5" metallic="1.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
+      <layer texture="e665515175473bb1b186eaaa9df67489" role="rgb"/>
     </material>
-    <material name="mat_70" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.12999999523162842" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+    <material name="mat_21457" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.11999999731779099" metallic="0.0">
+      <layer texture="5da83112d0a42a674ad2a57d512a6912" role="rgb"/>
+    </material>
+    <material name="mat_78" rgba="0.0 0.0 0.0 1.0" reflectance="0.5" roughness="0.5" metallic="1.0"/>
+    <material name="mat_70" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.12999999523162842" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
       <layer texture="f5d074d26c2a54f62dc37ccadf3188e9" role="rgb"/>
     </material>
-    <material name="mat_865820" rgba="0.6784313917160034 0.5803921818733215 0.43921568989753723 1.0" reflectance="0.5" metallic="0.0" roughness="0.05999999865889549"/>
-    <material name="mat_150344" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.1899999976158142">
-      <layer texture="cd5bc466fcc85473fb52ce218716ff7f" role="rgb"/>
-    </material>
-    <material name="mat_816193" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.09999999403953552" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
-      <layer texture="0435e1496dcaad26034f649c4f65abbb" role="rgb"/>
-    </material>
-    <material name="mat_78" rgba="0.0 0.0 0.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
-    <material name="mat_CC75C949BEC6B8FE" rgba="0.0117647061124444 0.0117647061124444 0.0117647061124444 1.0" reflectance="0.5" metallic="0.8799999952316284" roughness="0.07999999821186066"/>
-    <material name="mat_38616" rgba="0.7843137383460999 0.7843137383460999 0.7843137383460999 1.0" reflectance="0.5" metallic="0.14999999105930328" roughness="0.12999999523162842"/>
-    <material name="mat_865819" rgba="0.8196078538894653 0.8156862854957581 0.8117647171020508 1.0" reflectance="0.5" metallic="0.0" roughness="0.10999999940395355"/>
-    <material name="mat_4594" rgba="0.95686274766922 0.95686274766922 0.95686274766922 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
-    <material name="mat_62039" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.5" texrepeat="8.513216972351074 4.256608486175537" texuniform="false">
-      <layer texture="cf3472da40947958461c00502e28a7f6" role="rgb"/>
-    </material>
-    <material name="mat_6200524" rgba="0.9490196108818054 0.9490196108818054 0.9490196108818054 1.0" reflectance="0.5" metallic="0.0" roughness="0.5"/>
-    <material name="mat_17114" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="0.5" texrepeat="0.3333333432674408 3.846153974533081" texuniform="false">
+    <material name="mat_6200524" rgba="0.9772473759144528 0.9772473759144528 0.9772473759144528 1.0" reflectance="0.5" roughness="0.5" metallic="0.0"/>
+    <material name="mat_17114" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.3499999940395355" metallic="0.0" texuniform="false" texrepeat="0.3333333432674408 3.846153974533081">
       <layer texture="e37d992cafc6e1999e4e905bbf30ad80" role="rgb"/>
     </material>
-    <material name="mat_42402" rgba="1.0 0.9016316533088684 0.5115511417388916 1.0" reflectance="0.5" metallic="0.10999999940395355" roughness="0.08999999612569809"/>
-    <material name="mat_600780DB2B1AA2AF" rgba="0.6392157077789307 0.5215686559677124 0.1764705926179886 1.0" reflectance="0.5" metallic="1.0" roughness="0.25999999046325684"/>
-    <material name="mat_4B8219087698A8CB" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="1.0" texrepeat="1.6404199600219727 1.6404199600219727" texuniform="true">
-      <layer texture="3bb23ac398fd6ee91727e94752ad0269" role="rgb"/>
+    <material name="mat_CC75C949BEC6B8FE" rgba="0.11070206122511578 0.11070206122511578 0.11070206122511578 1.0" reflectance="0.5" roughness="0.10000000149011612" metallic="0.0"/>
+    <material name="mat_17118" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.12999999523162842" metallic="0.0" texuniform="false" texrepeat="0.6410256028175354 0.4273504316806793">
+      <layer texture="3b082332acb0e3ebf755cab969513bcc" role="rgb"/>
     </material>
-    <material name="mat_816189" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.10999999940395355" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
-      <layer texture="9e8f4affe6de406056a211f8095a77a2" role="rgb"/>
+    <material name="mat_17111" rgba="0.9807934155399257 0.9807934155399257 0.9807934155399257 1.0" reflectance="0.5" roughness="0.5" metallic="1.0"/>
+    <material name="mat_816193" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.09999999403953552" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
+      <layer texture="0435e1496dcaad26034f649c4f65abbb" role="rgb"/>
     </material>
-    <material name="mat_61" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="0.5">
-      <layer texture="bd688bfd08aabcc1ceaec42dda1a40f0" role="rgb"/>
+    <material name="mat_22672001CBED8985" rgba="0.9930727640276592 0.9930727640276592 0.9930727640276592 1.0" reflectance="0.5" roughness="0.14000000059604645" metallic="0.0"/>
+    <material name="mat_62039" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.5" metallic="0.0" texuniform="false" texrepeat="8.513216972351074 4.256608486175537">
+      <layer texture="cf3472da40947958461c00502e28a7f6" role="rgb"/>
     </material>
-    <material name="mat_E358529B5F9DA6C1" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.5" texrepeat="0.5555253028869629 0.8024254441261292" texuniform="false">
-      <layer texture="6d7caa1042f542ff7c68054637d22bb5" role="rgb"/>
+    <material name="mat_38619" rgba="0.715642408014487 0.715642408014487 0.715642408014487 1.0" reflectance="0.5" roughness="0.5" metallic="0.0"/>
+    <material name="mat_792107" rgba="0.45711316013775755 0.45711316013775755 0.45711316013775755 1.0" reflectance="0.5" roughness="0.5" metallic="1.0"/>
+    <material name="mat_113" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.14000000059604645" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
+      <layer texture="cd33cb7aceb26b08be997e59bf572ce5" role="rgb"/>
     </material>
-    <material name="mat_D033E7AF68B3AE04" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.5" texrepeat="0.2734033167362213 0.2734033167362213" texuniform="true">
+    <material name="mat_5188AE9D9AEFEA48" rgba="0.9825600785884171 0.9825600785884171 0.9825600785884171 1.0" reflectance="0.5" roughness="0.17999999225139618" metallic="0.0"/>
+    <material name="mat_150356" rgba="0.5899399446655881 0.5499615984452857 0.18409328920419915 1.0" reflectance="0.5" roughness="0.12999999523162842" metallic="0.0"/>
+    <material name="mat_816195" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.5" metallic="1.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
+      <layer texture="ef4df2df7ca2b21868d75a9630774cb3" role="rgb"/>
+    </material>
+    <material name="mat_4594" rgba="0.9807934155399257 0.9807934155399257 0.9807934155399257 1.0" reflectance="0.5" roughness="0.5" metallic="1.0"/>
+    <material name="mat_73" rgba="0.0 0.0 0.0 1.0" reflectance="0.5" roughness="0.5" metallic="1.0"/>
+    <material name="mat_D033E7AF68B3AE04" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.5" metallic="0.0" texuniform="true" texrepeat="0.2734033167362213 0.2734033167362213">
       <layer texture="624740c4c8dd40937e50274214767d7e" role="rgb"/>
     </material>
-    <material name="mat_29424" rgba="0.95686274766922 0.95686274766922 0.95686274766922 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
-    <material name="mat_6200527" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.12999999523162842" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
-      <layer texture="ab934adced4e3e633dcbb4828445ef8f" role="rgb"/>
+    <material name="mat_738B63C3F0EB49E4" rgba="0.17706284269764708 0.17578142191430463 0.17578142191430463 1.0" reflectance="0.5" roughness="0.17000000178813934" metallic="0.0"/>
+    <material name="mat_816191" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.5" metallic="1.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
+      <layer texture="9ed13a225ff37e93286113e4d5937bb9" role="rgb"/>
     </material>
-    <material name="mat_148964" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.11999999731779099" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+    <material name="mat_865819" rgba="0.9160799919323223 0.9141413186282693 0.9121972006819492 1.0" reflectance="0.5" roughness="0.10999999940395355" metallic="0.0"/>
+    <material name="mat_600780DB2B1AA2AF" rgba="0.8205324069887459 0.7493879907215089 0.45711316013775755 1.0" reflectance="0.5" roughness="0.25999999046325684" metallic="1.0"/>
+    <material name="mat_148964" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.11999999731779099" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
       <layer texture="dc826344ef6ac101f1aadd2fb8948071" role="rgb"/>
     </material>
-    <material name="mat_25582" rgba="0.95686274766922 0.95686274766922 0.95686274766922 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
-    <material name="mat_58" rgba="1.0 0.9882352948188782 0.9764705896377563 1.0" reflectance="0.5" metallic="0.0" roughness="0.12999999523162842"/>
-    <material name="mat_6200525" rgba="1 1 1 1" reflectance="0.5" metallic="0.17000000178813934" roughness="0.11999999731779099" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+    <material name="mat_865820" rgba="0.8425250925457559 0.7860137707685327 0.6938041259548433 1.0" reflectance="0.5" roughness="0.05999999865889549" metallic="0.0"/>
+    <material name="mat_6200527" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.12999999523162842" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
+      <layer texture="ab934adced4e3e633dcbb4828445ef8f" role="rgb"/>
+    </material>
+    <material name="mat_6200525" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.11999999731779099" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
       <layer texture="296c697442bcfde5b054e3e82c15c77d" role="rgb"/>
     </material>
-    <material name="mat_73" rgba="0.0 0.0 0.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
-    <material name="mat_6200533" rgba="0.0 0.0 0.0 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
-    <material name="mat_150356" rgba="0.3069307208061218 0.2632333040237427 0.028363239020109177 1.0" reflectance="0.5" metallic="0.0" roughness="0.12999999523162842"/>
-    <material name="mat_792107" rgba="0.1764705926179886 0.1764705926179886 0.1764705926179886 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
-    <material name="mat_6200532" rgba="0.9450980424880981 0.9372549057006836 0.9372549057006836 1.0" reflectance="0.5" metallic="0.1899999976158142" roughness="0.14999999105930328"/>
-    <material name="mat_AB2965A62A122711" rgba="0.6392157077789307 0.5215686559677124 0.1764705926179886 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
-    <material name="mat_12863" rgba="0.95686274766922 0.95686274766922 0.95686274766922 1.0" reflectance="0.5" metallic="1.0" roughness="0.5"/>
-    <material name="mat_67" rgba="1 1 1 1" reflectance="0.5" metallic="0.11999999731779099" roughness="0.10999999940395355" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+    <material name="mat_6200532" rgba="0.9754679438702997 0.9718961144135277 0.9718961144135277 1.0" reflectance="0.5" roughness="0.14999999105930328" metallic="0.0"/>
+    <material name="mat_38616" rgba="0.8984323547005854 0.8984323547005854 0.8984323547005854 1.0" reflectance="0.5" roughness="0.12999999523162842" metallic="0.0"/>
+    <material name="mat_25582" rgba="0.9807934155399257 0.9807934155399257 0.9807934155399257 1.0" reflectance="0.5" roughness="0.5" metallic="1.0"/>
+    <material name="mat_6200533" rgba="0.0 0.0 0.0 1.0" reflectance="0.5" roughness="0.5" metallic="1.0"/>
+    <material name="mat_61" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.5" metallic="1.0">
+      <layer texture="bd688bfd08aabcc1ceaec42dda1a40f0" role="rgb"/>
+    </material>
+    <material name="mat_150344" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.1899999976158142" metallic="0.0">
+      <layer texture="cd5bc466fcc85473fb52ce218716ff7f" role="rgb"/>
+    </material>
+    <material name="mat_67" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.5" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
       <layer texture="ca27e58cfd3f73f2c272b1687442fb81" role="rgb"/>
     </material>
-    <material name="mat_6200522" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.12999999523162842" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+    <material name="mat_4B8219087698A8CB" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="1.0" metallic="1.0" texuniform="true" texrepeat="1.6404199600219727 1.6404199600219727">
+      <layer texture="3bb23ac398fd6ee91727e94752ad0269" role="rgb"/>
+    </material>
+    <material name="mat_E358529B5F9DA6C1" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.1" metallic="0.0" texuniform="false" texrepeat="0.5555253028869629 0.8024254441261292">
+      <layer texture="6d7caa1042f542ff7c68054637d22bb5" role="rgb"/>
+    </material>
+    <material name="mat_AB2965A62A122711" rgba="0.8205324069887459 0.7493879907215089 0.45711316013775755 1.0" reflectance="0.5" roughness="0.5" metallic="1.0"/>
+    <material name="mat_12863" rgba="0.9807934155399257 0.9807934155399257 0.9807934155399257 1.0" reflectance="0.5" roughness="0.5" metallic="1.0"/>
+    <material name="mat_816189" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.10999999940395355" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
+      <layer texture="9e8f4affe6de406056a211f8095a77a2" role="rgb"/>
+    </material>
+    <material name="mat_29424" rgba="0.9807934155399257 0.9807934155399257 0.9807934155399257 1.0" reflectance="0.5" roughness="0.5" metallic="1.0"/>
+    <material name="mat_6200522" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.12999999523162842" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
       <layer texture="ca61980e37f497908190543131d995c7" role="rgb"/>
     </material>
-    <material name="mat_148966" rgba="1 1 1 1" reflectance="0.5" metallic="1.0" roughness="0.5" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+    <material name="mat_148966" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.5" metallic="1.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
       <layer texture="b1b7e8f84aabc50644f2eefc9a715b7d" role="rgb"/>
     </material>
-    <material name="mat_62041" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.5" texrepeat="6.5819597244262695 6.16405725479126" texuniform="false">
+    <material name="mat_38620" rgba="0.45711316013775755 0.45711316013775755 0.45711316013775755 1.0" reflectance="0.5" roughness="0.08999999612569809" metallic="0.0"/>
+    <material name="mat_792106" rgba="0.37750842790700434 0.37750842790700434 0.37750842790700434 1.0" reflectance="0.5" roughness="0.11999999731779099" metallic="0.0"/>
+    <material name="OmniPBR" rgba="0.5766986619259209 0.9673799585144832 0.3004396346624468 1.0" reflectance="0.5" roughness="1.0" metallic="0.0"/>
+    <material name="mat_591" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.32999998331069946" metallic="0.0" texuniform="true" texrepeat="1.0 1.0">
+      <layer texture="4a71adde5feb7a68a887f63e83b66412" role="rgb"/>
+    </material>
+    <material name="mat_62041" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.5" metallic="0.0" texuniform="false" texrepeat="6.5819597244262695 6.16405725479126">
       <layer texture="6d486e2c335bb078c1c21e3192111710" role="rgb"/>
     </material>
-    <material name="mat_38617" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.5" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
-      <layer texture="37a4063dce8b4bafedf9573fbe6eb420" role="rgb"/>
-    </material>
-    <material name="mat_816199" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.05999999865889549" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
-      <layer texture="1ded8ec0359984ca45dc1c933b271c40" role="rgb"/>
-    </material>
-    <material name="mat_816197" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.11999999731779099" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
-      <layer texture="067de916b77910cb8fd6f497da030e47" role="rgb"/>
-    </material>
-    <material name="mat_93" rgba="1 1 1 1" reflectance="0.5" metallic="0.11999999731779099" roughness="0.10999999940395355">
-      <layer texture="1db53a9f0e0993b9843d8bb9c8dbf1d8" role="rgb"/>
-    </material>
-    <material name="mat_38620" rgba="0.1764705926179886 0.1764705926179886 0.1764705926179886 1.0" reflectance="0.5" metallic="0.14000000059604645" roughness="0.08999999612569809"/>
-    <material name="mat_792106" rgba="0.11764705926179886 0.11764705926179886 0.11764705926179886 1.0" reflectance="0.5" metallic="0.11999999731779099" roughness="0.11999999731779099"/>
-    <material name="mat_6200530" rgba="1 1 1 1" reflectance="0.5" metallic="0.17999999225139618" roughness="0.12999999523162842" texrepeat="39.370079040527344 39.370079040527344" texuniform="true">
+    <material name="mat_6200530" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.12999999523162842" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
       <layer texture="1f072207cdb1bde2aab539cd9bf5be43" role="rgb"/>
     </material>
-    <material name="OmniPBR" rgba="0.292023628950119 0.9273927211761475 0.07345682382583618 1.0" reflectance="0.5" metallic="0.0" roughness="1.0"/>
-    <material name="OmniPBR_01" rgba="0.1441035121679306 0.8910890817642212 0.8243938684463501 1.0" reflectance="0.5" metallic="0.0" roughness="1.0"/>
-    <material name="mat_6200529" rgba="1.0 0.8313725590705872 0.7098039388656616 1.0" reflectance="0.5" metallic="0.1599999964237213" roughness="0.09999999403953552"/>
-    <material name="mat_59" rgba="0.16078431904315948 0.2980392277240753 0.20392157137393951 1.0" reflectance="0.5" metallic="0.0" roughness="0.11999999731779099"/>
+    <material name="mat_38617" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.5" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
+      <layer texture="37a4063dce8b4bafedf9573fbe6eb420" role="rgb"/>
+    </material>
+    <material name="OmniPBR_01" rgba="0.4156523108689849 0.9505096910130982 0.9184386970033317 1.0" reflectance="0.5" roughness="1.0" metallic="0.0"/>
+    <material name="mat_6200529" rgba="0.9999999999999999 0.9218637533703636 0.8595907297082769 1.0" reflectance="0.5" roughness="0.09999999403953552" metallic="0.0"/>
+    <material name="mat_65" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.5" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
+      <layer texture="70a5ce32d150f6309e75fb7d85a07eda" role="rgb"/>
+    </material>
+    <material name="mat_93" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.10999999940395355" metallic="0.0">
+      <layer texture="1db53a9f0e0993b9843d8bb9c8dbf1d8" role="rgb"/>
+    </material>
+    <material name="mat_816197" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.11999999731779099" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
+      <layer texture="067de916b77910cb8fd6f497da030e47" role="rgb"/>
+    </material>
+    <material name="mat_816199" rgba="0.9999999999999999 0.9999999999999999 0.9999999999999999 1.0" reflectance="0.5" roughness="0.05999999865889549" metallic="0.0" texuniform="true" texrepeat="39.370079040527344 39.370079040527344">
+      <layer texture="1ded8ec0359984ca45dc1c933b271c40" role="rgb"/>
+    </material>
 
     <!-- Visual meshes -->
     <mesh class="visual" name="E_Pot" file="E_Pot.obj"/>

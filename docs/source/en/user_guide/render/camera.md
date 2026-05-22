@@ -36,6 +36,19 @@ system_camera.active = True # enable camera
 system_camera.active = False # disable camera
 ```
 
+After `render.launch(...)`, you can set the system camera view with orbit/look-at
+parameters. This controls the renderer's system camera, not a model-defined MJCF
+camera. `azimuth` and `elevation` are in degrees.
+
+```python
+render.system_camera.set_view(
+    lookat=[0.0, 0.0, 0.75],
+    distance=6.0,
+    elevation=-20.0,
+    azimuth=90.0,
+)
+```
+
 ## Scene Camera
 
 In addition to the system camera, you can configure additional Camera tags in MJCF files. We refer to these as scene cameras. Scene cameras can provide additional viewing angles for visualization.
@@ -75,7 +88,7 @@ preview_cameras = [None,*cameras] # None indicates system camera
 
 Switch cameras using keyboard events:
 
-```{literalinclude} ../../../../examples/go1.py
+```{literalinclude} ../../../../examples/control/go1.py
 :language: python
 :dedent:
 :start-after: "# tag: switch camera"
@@ -97,7 +110,7 @@ Switch cameras using keyboard events:
 
 MotrixSim supports converting scene cameras into RGBD vision sensors, allowing you to obtain both RGB images and depth images. You can use the following interface to render a scene camera to an offline image:
 
-```{literalinclude} ../../../../examples/go1.py
+```{literalinclude} ../../../../examples/control/go1.py
 :language: python
 :dedent:
 :start-after: "# tag: camera render target"
@@ -107,7 +120,7 @@ MotrixSim supports converting scene cameras into RGBD vision sensors, allowing y
 
 By default, the camera uses RGB rendering mode. If you want the camera to only render depth images, you can set the camera's depth_only property to True:
 
-```{literalinclude} ../../../../examples/go1.py
+```{literalinclude} ../../../../examples/control/go1.py
 :language: python
 :dedent:
 :start-after: "# tag: depth camera"
@@ -138,7 +151,7 @@ The real-time effects of the RGBD camera will be displayed in the Camera panel o
 
 To read camera image data, you need to obtain the RenderCamera object from RenderApp and then perform a capture operation.
 
-```{literalinclude} ../../../../examples/go1.py
+```{literalinclude} ../../../../examples/control/go1.py
 :language: python
 :dedent:
 :start-after: "# tag: camera capture"

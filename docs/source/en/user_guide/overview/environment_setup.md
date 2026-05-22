@@ -25,7 +25,7 @@ You can choose either of the following methods to install dependencies:
 :::{tab-item} Check for Updates and Install
 
 ```bash
-uv sync --extra examples --upgrade
+uv sync --upgrade
 ```
 
 :::
@@ -33,7 +33,7 @@ uv sync --extra examples --upgrade
 :::{tab-item} Direct Install
 
 ```bash
-uv sync --extra examples
+uv sync
 ```
 
 :::
@@ -45,7 +45,7 @@ uv sync --extra examples
 Run a simple example to verify that the environment is configured correctly:
 
 ```bash
-uv run examples/empty.py
+uv run examples/getting_started/empty.py
 ```
 
 If the simulation window opens successfully, the environment setup is complete!

@@ -1,116 +1,69 @@
-# 🔨 Model Building
+# 🔨 Programmatic Model Building
 
-MotrixSim provides a programmatic model building API that allows you to load, transform, and combine multiple models before simulation. This is useful for:
+`motphys-scene-descriptor` (`MSD`) provides scene description and composition capabilities in MotrixSim. In Python, it is exposed through [`motrixsim.msd`](../../api_reference/msd/msd.md).
 
--   Combining robot models with different end-effectors
--   Creating multi-robot scenes
--   Dynamically assembling models at runtime
+If we split the simulation workflow into two stages:
 
-## Basic Concepts
+1. Scene description and assembly (mutable)
+2. Physics simulation runtime (high-performance, stable)
 
-The model building API is available through the [`motrixsim.msd`](../../api_reference/msd/msd.md) module:
+Then `MSD` is the core tool for stage 1. It organizes, transforms, and combines MJCF/URDF/MSD assets, then builds them into a simulatable [`SceneModel`](scene_model.md).
 
-| Class/Function                                           | Description                                                                          |
-| -------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [`msd.from_file(path)`](motrixsim.msd.from_file)         | Load a model file (MJCF/URDF/MSD) and return a [`Scene`](motrixsim.msd.Scene) object |
-| [`msd.from_str(string, format)`](motrixsim.msd.from_str) | Load a model from string                                                             |
-| [`Scene.attach(other, ...)`](motrixsim.msd.Scene.attach) | Attach another model to this one                                                     |
-| [`Scene.build()`](motrixsim.msd.Scene.build)             | Build the final [`SceneModel`](motrixsim.SceneModel) for simulation                  |
+## What Problems It Solves
 
-The [`Scene`](motrixsim.msd.Scene) object is a mutable representation of a model that can be transformed and combined before being compiled into an immutable [`SceneModel`](motrixsim.SceneModel).
+In robotics and multibody workflows, common needs include:
 
-## Basic Usage
+-   Mounting different end-effectors on the same robot
+-   Instancing the same model multiple times in one scene
+-   Extracting a subtree from a large model and attaching it elsewhere
+-   Applying translation/rotation and naming conventions before simulation
 
-### Loading and Building a Model
+Editing raw model files repeatedly is costly and error-prone. The key value of `MSD` is to unify assets from different formats into one `World` space, then apply one programmatic pipeline:
 
-The simplest usage is to load a model file and build it:
+-   Load MJCF/URDF through `msd.from_file` or `msd.from_str`
+-   Convert USD to `World` through `load_usd2msd` (requires `usd2msd`)
+-   Use the same `attach/transform/prefix/build` flow after unification
 
-```python
-import motrixsim as mx
+```{figure} /_static/images/msd/msd-unified-space.svg
+:alt: MSD unified asset workflow
+:width: 100%
+:align: center
 
-# Load and build in one chain
-model = mx.msd.from_file("robot.xml").build()
-
-# Or step by step
-scene = mx.msd.from_file("robot.xml")
-model = scene.build()
+MSD unifies MJCF/URDF/USD assets into one programmable space.
 ```
 
-### Loading from String
+## 5-Minute Quick Start
 
-You can also create a model from an MJCF/URDF string:
+### Step 1: Load scene and model
 
 ```python
 import motrixsim as mx
 
-mjcf_string = """
-<mujoco>
-  <worldbody>
-    <body name="box">
-      <geom type="box" size="0.1 0.1 0.1"/>
-    </body>
-  </worldbody>
-</mujoco>
-"""
-
-model = mx.msd.from_str(mjcf_string, format="mjcf").build()
+scene = mx.msd.from_file("examples/assets/store/scene.xml")
+robot = mx.msd.from_file("examples/assets/boston_dynamics_spot/spot.xml")
 ```
 
-## Combining Models
-
-The `attach` method allows you to combine multiple models together:
+### Step 2: Attach model into scene
 
 ```python
-import motrixsim as mx
-
-# Load two models
-robot = mx.msd.from_file("robot.xml")
-gripper = mx.msd.from_file("gripper.xml")
-
-# Attach gripper to robot's hand link
-robot.attach(
-    gripper,
-    self_link_name="hand",      # Link in robot to attach to
-    other_prefix="gripper_",    # Prefix for gripper's names
-    other_translation=[0.1, 0, 0]  # Offset
+scene.attach(
+    robot,
+    other_translation=[1.0, 0.0, 0.0],
+    other_prefix="spot_",
 )
-
-model = robot.build()
 ```
 
-### Attach Parameters
-
-| Parameter           | Type           | Description                                                     |
-| ------------------- | -------------- | --------------------------------------------------------------- |
-| `other`             | `Scene`        | The model to attach (cloned internally, can be reused)          |
-| `self_link_name`    | `str`          | Link in this model to attach to. If `None`, merge at root level |
-| `other_link_name`   | `str`          | Extract only this subtree from the other model                  |
-| `other_translation` | `[x, y, z]`    | Translation offset for the attached model                       |
-| `other_rotation`    | `[x, y, z, w]` | Rotation quaternion for the attached model                      |
-| `other_prefix`      | `str`          | Prefix to add to all names in the attached model                |
-| `other_suffix`      | `str`          | Suffix to add to all names in the attached model                |
-
-### Creating Multiple Instances
-
-Since `attach` clones the other model internally, you can attach the same model multiple times:
+### Step 3: Build into a simulatable SceneModel
 
 ```python
-import motrixsim as mx
-
-scene = mx.msd.from_file("scene.xml")
-robot = mx.msd.from_file("robot.xml")
-
-# Create multiple robot instances at different positions
-scene.attach(robot, other_prefix="robot1_", other_translation=[0, 0, 0])
-scene.attach(robot, other_prefix="robot2_", other_translation=[2, 0, 0])
-scene.attach(robot, other_prefix="robot3_", other_translation=[4, 0, 0])
-
 model = scene.build()
+data = mx.SceneData(model)
+mx.step(model, data)
 ```
 
-### Extracting Subtrees
+This is the most common `MSD` workflow: `load -> compose -> build -> simulate`.
 
-You can extract a specific subtree from a model before attaching:
+### Full Example Code
 
 ```python
 import motrixsim as mx
@@ -131,36 +84,42 @@ model = robot.build()
 
 ## Complete Example
 
-Here's a complete example that creates a scene with multiple robots. For the full example, see [`examples/combine_msd.py`](../../../../examples/combine_msd.py).
+Here's a complete example that creates a scene with multiple robots. For the full example, see [`examples/physics/combine_msd.py`](../../../../examples/physics/combine_msd.py).
 
-```{literalinclude} ../../../../examples/combine_msd.py
+```{literalinclude} ../../../../examples/physics/combine_msd.py
 :language: python
 :start-after: "# tag::combine_msd_example[]"
 :end-before: "# end::combine_msd_example[]"
 ```
 
-## MJCF Attach Element
+## Core Concepts
 
-MotrixSim also supports the MJCF `<attach>` element for combining models in XML:
+| Concept     | Description                                                                       |
+| ----------- | --------------------------------------------------------------------------------- |
+| `World`     | Mutable scene object in `MSD`; supports repeated `attach` and edits.              |
+| `attach`    | Merge another `World` into current one with target link, pose, prefixes/suffixes. |
+| `build`     | Compile `World` into an immutable `SceneModel` for simulation.                    |
+| `base_path` | Base directory for resolving relative texture/mesh asset paths.                   |
 
-```xml
-<mujoco>
-  <asset>
-    <model name="gripper" file="gripper.xml"/>
-  </asset>
-  <worldbody>
-    <body name="robot">
-      <!-- robot definition -->
-      <body name="hand">
-        <attach model="gripper" prefix="gripper_"/>
-      </body>
-    </body>
-  </worldbody>
-</mujoco>
-```
+## API Quick Reference
 
-For MJCF support details, see [MJCF Files](../getting_started/mjcf_reference.md).
+| API                                                                 | Usage                                                                 |
+| ------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| [`msd.from_file(path)`](motrixsim.msd.from_file)                    | Load `World` from MJCF/URDF/MSD file                                  |
+| [`msd.from_str(string, format, base_path)`](motrixsim.msd.from_str) | Load from model string (dynamic generation)                           |
+| `motrixsim.load_usd2msd(usd_path)`                                  | Convert USD to `World` for the same composition pipeline              |
+| [`World.attach(...)`](motrixsim.msd.World.attach)                   | Compose models with transforms, prefixes/suffixes, subtree extraction |
+| [`World.build(base_path)`](motrixsim.msd.build)                     | Build final `SceneModel`                                              |
 
-## API Reference
+Full API details: [`motrixsim.msd`](../../api_reference/msd/msd.md).
 
-For detailed API documentation, see [`motrixsim.msd`](../../api_reference/msd/msd.md).
+## FAQ
+
+1. Q: I already have MJCF/URDF. Do I still need to write MSD manually?  
+   A: Usually no. You can directly use `msd.from_file(...).build()`. Deep MSD editing is only needed for programmatic composition/editing cases.
+
+2. Q: Can I reuse the same attached model multiple times?  
+   A: Yes. `attach` clones `other` internally, which is suitable for batch instancing.
+
+3. Q: How do I use USD scenes?  
+   A: Use the USD loading flow provided by `motrixsim` to convert into `MSD`, then build `SceneModel` (requires `usd2msd` dependency).

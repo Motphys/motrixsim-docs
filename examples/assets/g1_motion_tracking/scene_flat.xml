@@ -1,0 +1,21 @@
+<mujoco model="g1_29dof_rev_1_0 scene">
+  <statistic center="1 -0.8 1.1" extent=".35"/>
+
+  <visual>
+    <headlight diffuse="0.7 0.7 0.7" ambient="0.25 0.25 0.25" specular="0.6 0.6 0.6"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="140" elevation="-20"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture name="motphys-ground" type="2d" file="../common/motphys-ground.png" />
+    <material name="motphys-ground" texture="motphys-ground" texuniform="true" texrepeat="0.4 0.4" />
+  </asset>
+
+  <worldbody>
+    <light name="key_light" pos="1 0 3.5" dir="0 0 -1" directional="true"/>
+    <geom name="floor" size="0 0 0.01" type="plane" material="motphys-ground" priority="1" friction="0.6" condim="3"/>
+  </worldbody>
+
+</mujoco>

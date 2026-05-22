@@ -1,4 +1,4 @@
-# MotrixSim Web Viewer
+# 🌐 WebViewer
 
 This page explains how to use the MotrixSim web viewer, including how to load files, how to understand the file tree, what the top bar buttons do, and how to operate the viewer with mouse and keyboard.
 

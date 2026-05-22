@@ -1,0 +1,37 @@
+<mujoco model="rm65 scene">
+  <include file="mjx_rm65.xml" />
+  <include file="sektion_cabinet_2.xml" />
+
+  <statistic center="0.3 0 0.4" extent="1" />
+
+  <option timestep="0.005" iterations="50" ls_iterations="20" integrator="implicitfast">
+    <flag eulerdamp="disable" />
+  </option>
+
+
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0" />
+    <rgba haze="0.1 0.1 0.1 1" />
+    <global azimuth="120" elevation="-20" />
+    <scale contactwidth="0.075" contactheight="0.025" forcewidth="0.05" com="0.05" framewidth="0.01"
+      framelength="0.2" />
+  </visual>
+
+  <asset>
+    <texture name="skybox" type="skybox" builtin="gradient" rgb1="0.4 0.4 0.4" rgb2="0 0 0"
+      width="512"
+      height="512" />
+    <texture name="motphys-ground" type="2d" file="../common/motphys-ground.png" />
+    <material name="motphys-ground" texture="motphys-ground" texuniform="true"
+      texrepeat="0.4 0.4" />
+  </asset>
+
+
+  <worldbody>
+    <light diffuse="0.6 0.6 0.6" pos="0 0 1.5"
+      dir="-0.49835488200187683 0.2925136387348175 -0.8161361217498779" directional="true" />
+    <geom name="floor" size="0 0 0.01" type="plane" material="motphys-ground" contype="1"
+      conaffinity="0" priority="1" friction="0.6" condim="3" />
+    <site name="world_origin" pos="0 0 0" size="0.02" rgba="0 0 1 1" />
+  </worldbody>
+</mujoco>

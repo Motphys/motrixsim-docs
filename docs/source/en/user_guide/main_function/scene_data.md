@@ -1,4 +1,4 @@
-# 💾 Data (SceneData)
+# 💾 Data
 
 In the previous chapter, we learned that [`SceneModel`](scene_model.md) is used to describe the static physical model. This chapter focuses on the creation and usage of `SceneData`.
 
@@ -12,14 +12,14 @@ State updates in `SceneData` require calling kinematic functions to update the s
 
 ### Basic Creation
 
-```{literalinclude} ../../../../examples/empty.py
+```{literalinclude} ../../../../examples/getting_started/empty.py
 :language: python
 :dedent:
 :start-after: "# tag::create_data[]"
 :end-before:  "# end::create_data[]"
 ```
 
-For the complete example, see [`examples/empty.py`](../../../../examples/empty.py).
+For the complete example, see [`examples/getting_started/empty.py`](../../../../examples/getting_started/empty.py).
 
 ### Multiple Data Instances
 
@@ -44,14 +44,14 @@ For detailed `SceneData` attributes, see: [**API Quick Reference - SceneData**](
 
 Combined with the Named Access of `SceneModel`, you can access or set specific states through component objects:
 
-```{literalinclude} ../../../../examples/body.py
+```{literalinclude} ../../../../examples/physics/body.py
 :language: python
 :dedent:
 :start-after: "# tag::access_body[]"
 :end-before:  "# end::access_body[]"
 ```
 
-For the complete example, see [`examples/body.py`](../../../../examples/body.py).
+For the complete example, see [`examples/physics/body.py`](../../../../examples/physics/body.py).
 
 ## API Reference
 

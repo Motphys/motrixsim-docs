@@ -1,4 +1,4 @@
-# 🌡️ 传感器（Sensor）
+# 🌡️ 传感器
 
 通过配置传感器，用户可以更方便的获取物理对象状态信息，如位置，旋转，速度，加速度等。传感器不会影响到物理仿真的结果，可以添加在不同的对象上，如刚体（Body）、参考点（Site）、关节（Joint）等。
 
@@ -63,7 +63,7 @@
 
 获取指定传感器的数据：
 
-```{literalinclude} ../../../../examples/site_and_sensor.py
+```{literalinclude} ../../../../examples/physics/site_and_sensor.py
 :language: python
 :dedent:
 :start-after: "# tag::get_sensor_value[]"

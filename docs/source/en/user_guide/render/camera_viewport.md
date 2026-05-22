@@ -44,7 +44,7 @@ viewport = render.widgets.create_camera_viewport(
 
 You can create multiple viewports in the same window, each displaying a different camera's view:
 
-```{literalinclude} ../../../../examples/render/camera_viewport.py
+```{literalinclude} ../../../../examples/viewer/camera_viewport.py
 :language: python
 :dedent:
 :start-after: "# Viewport 1: Top-left with pixel-based layout"
@@ -107,7 +107,7 @@ The following example shows how to update widgets through keyboard interactions:
 
 ### Switching Cameras
 
-```{literalinclude} ../../../../examples/render/camera_viewport.py
+```{literalinclude} ../../../../examples/viewer/camera_viewport.py
 :language: python
 :dedent:
 :start-after: "# Switch vp1 camera"
@@ -118,7 +118,7 @@ Press 1/2/3 keys to switch the camera displayed by vp1.
 
 ### Moving Viewport Position
 
-```{literalinclude} ../../../../examples/render/camera_viewport.py
+```{literalinclude} ../../../../examples/viewer/camera_viewport.py
 :language: python
 :dedent:
 :start-after: "# Move vp1 viewport"
@@ -129,7 +129,7 @@ Press w/a/s/d keys to move the position of vp1.
 
 ### Resizing Viewport
 
-```{literalinclude} ../../../../examples/render/camera_viewport.py
+```{literalinclude} ../../../../examples/viewer/camera_viewport.py
 :language: python
 :dedent:
 :start-after: "# Resize vp1 viewport"
@@ -152,7 +152,7 @@ After calling the `remove()` method, the viewport will be permanently removed. S
 
 The following example shows how to remove a viewport through keyboard interaction:
 
-```{literalinclude} ../../../../examples/render/camera_viewport.py
+```{literalinclude} ../../../../examples/viewer/camera_viewport.py
 :language: python
 :dedent:
 :start-after: "# Remove vp3 from screen"
@@ -165,7 +165,7 @@ Press the k key to remove vp3. After removal, vp3 will completely disappear from
 
 The following is a complete interactive CameraViewport widget system with creation, update, and interaction control features:
 
-```{literalinclude} ../../../../examples/render/camera_viewport.py
+```{literalinclude} ../../../../examples/viewer/camera_viewport.py
 :language: python
 :dedent:
 :start-after: "# Copyright (C)"

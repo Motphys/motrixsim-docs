@@ -1,6 +1,7 @@
 <mujoco model="panda scene pick ball">
   <!-- <include file="panda.xml"/> -->
   <include file="mjx_panda.xml"/>
+  <include file="sensors.xml"/>
   <statistic center="0.3 0 0.4" extent="1"/>
 
   <visual>
@@ -20,7 +21,7 @@
     <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
     <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
     <camera name="front_cam" pos="1.155 0.016 0.526" xyaxes="0.000 1.000 -0.000 -0.513 0.000 0.858"/>
-    <body name="ball" pos="0.65 0 0.02">
+    <body name="obj" pos="0.65 0 0.02">
       <freejoint/>
       <geom size="0.02" type="sphere" rgba="0.8 0.1 0.1 1"/>
     </body>

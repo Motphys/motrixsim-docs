@@ -304,7 +304,7 @@ contact_data[10:13]         # 切向量0（全局坐标系，语义改变）
 
 下面是完整的接触传感器可视化代码：
 
-```{literalinclude} ../../../../../examples/site_and_sensor.py
+```{literalinclude} ../../../../../examples/physics/site_and_sensor.py
 :language: python
 :lines: 16-19
 :lines: 91-142

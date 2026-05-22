@@ -1,6 +1,5 @@
 <mujoco model="panda">
   <compiler angle="radian" meshdir="assets" autolimits="true"/>
-  <!-- <option noslip_iterations="1"/> -->
 
   <default>
     <default class="panda">

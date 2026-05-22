@@ -66,6 +66,7 @@ def main():
 
         # Create the render instance of the model
         render.launch(model, batch=16, render_offset=render_offset)
+        render.system_camera.set_view(lookat=[-3.75, 3.75, 0.5], distance=12.0, elevation=-35, azimuth=90)
 
         # Create the physics data of the model
         data = SceneData(model, batch=(16,))

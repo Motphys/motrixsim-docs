@@ -1,4 +1,4 @@
-# 🏗️ Model (SceneModel)
+# 🏗️ Model
 
 In MotrixSim, the model `SceneModel` and the data `SceneData` are essential components for building a simulation environment and are used throughout the entire physics simulation process. This chapter mainly introduces the creation and usage of `SceneModel`, while [`SceneData`](scene_data.md) will be described in detail in the next chapter.
 
@@ -19,33 +19,33 @@ In MotrixSim, the model `SceneModel` and the data `SceneData` are essential comp
 
 The most common way is to create a model from an MJCF or URDF file:
 
-```{literalinclude} ../../../../examples/empty.py
+```{literalinclude} ../../../../examples/getting_started/empty.py
 :language: python
 :dedent:
 :start-after: "# tag::load_model_from_file[]"
 :end-before:  "# end::load_model_from_file[]"
 ```
 
-For the complete example, see [`examples/empty.py`](../../../../examples/empty.py).
+For the complete example, see [`examples/getting_started/empty.py`](../../../../examples/getting_started/empty.py).
 
 ### Loading from String
 
 You can also create a model directly from an MJCF string:
 
-```{literalinclude} ../../../../examples/load_from_str.py
+```{literalinclude} ../../../../examples/getting_started/load_from_str.py
 :language: python
 :dedent:
 :start-after: "# tag::model_load_from_string[]"
 :end-before:  "# end::model_load_from_string[]"
 ```
 
-For the complete example, see [`examples/load_from_str.py`](../../../../examples/load_from_str.py).
+For the complete example, see [`examples/getting_started/load_from_str.py`](../../../../examples/getting_started/load_from_str.py).
 
 ## Component Access (Named Access)
 
 After creating a model, you often need to access its components to set parameters, retrieve information, or perform control. MotrixSim provides convenient named access interfaces for model components, supporting direct access to various components by **name** or **index**.
 
-Below is an example of accessing a `joint` by name and index. For the complete example, see [`examples/joint.py`](../../../../examples/joint.py).
+Below is an example of accessing a `joint` by name and index. For the complete example, see [`examples/physics/joint.py`](../../../../examples/physics/joint.py).
 
 ### Basic Access Methods
 
@@ -57,7 +57,7 @@ Below is an example of accessing a `joint` by name and index. For the complete e
 
 -   Access by **index** (an interface for name-to-index conversion is also provided)
 
-```{literalinclude} ../../../../examples/joint.py
+```{literalinclude} ../../../../examples/physics/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::joint_index[]"
@@ -68,7 +68,7 @@ Below is an example of accessing a `joint` by name and index. For the complete e
 
 In addition to accessing individual components, you can also retrieve lists of component objects or names in batch:
 
-```{literalinclude} ../../../../examples/joint.py
+```{literalinclude} ../../../../examples/physics/joint.py
 :language: python
 :dedent:
 :start-after: "# tag::access_all[]"
@@ -83,3 +83,17 @@ For more APIs related to SceneModel, see [`SceneModel API`]
 
 [`SceneModel API`]: motrixsim.SceneModel
 [`Basic Concepts`]: #basic-concepts
+
+```{toctree}
+:caption: Model Components
+:maxdepth: 1
+
+../kinematics/body
+../kinematics/floating_base
+../kinematics/joint
+../kinematics/link
+../kinematics/geometry
+../kinematics/actuator
+../kinematics/sensor
+../kinematics/site
+```

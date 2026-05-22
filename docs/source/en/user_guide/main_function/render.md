@@ -1,4 +1,4 @@
-# 🎨 Renderer (RenderApp)
+# 🎨 Renderer
 
 ## Launching and Loading
 
@@ -35,7 +35,7 @@ Currently, there is a configuration item `RenderSettings` for global rendering c
 
 Specifically, the corresponding rendering effects will only take effect when both global configuration is enabled AND certain rendering items are also enabled in the scene description file (mjcf/msd).
 
-_Example code see [examples/render_settings.py](../../../../examples/render_settings.py)_
+_Example code see [examples/viewer/render_settings.py](../../../../examples/viewer/render_settings.py)_
 
 ## Custom UI Components
 
@@ -43,14 +43,14 @@ Currently supports two types of components: buttons ([`add_button`]) and toggles
 
 Users need to display the left panel through [`render.opt.set_left_panel_vis(True)`], and components will be displayed on the panel in the order they are added.
 
-```{literalinclude} ../../../../examples/custom_ui.py
+```{literalinclude} ../../../../examples/viewer/custom_ui.py
 :language: python
 :dedent:
 :start-after: "# tag::custom_ui[]"
 :end-before:  "# end::custom_ui[]"
 ```
 
-_Full code see [examples/custom_ui.py](../../../../examples/custom_ui.py)_
+_Full code see [examples/viewer/custom_ui.py](../../../../examples/viewer/custom_ui.py)_
 
 ## Gizmos Drawing
 
@@ -78,14 +78,14 @@ Gizmos are graphical elements used for debugging assistance. The renderer provid
 
 Gizmos use immediate mode, so even if no update is needed, users need to add gizmos during each render synchronization.
 
-```{literalinclude} ../../../../examples/gizmos.py
+```{literalinclude} ../../../../examples/viewer/gizmos.py
 :language: python
 :dedent:
 :start-after: "# tag::draw_gizmos[]"
 :end-before:  "# end::draw_gizmos[]"
 ```
 
-_Full code see [examples/gizmos.py](../../../../examples/gizmos.py)_
+_Full code see [examples/viewer/gizmos.py](../../../../examples/viewer/gizmos.py)_
 
 ## IO Input Events
 
@@ -93,8 +93,8 @@ You can get the [`Input`] object through [`render.input`]. The Input object prov
 
 You can understand more detailed usage through the following examples:
 
--   [example/mouse_click.py](../../../../examples/mouse_click.py)
--   [example/keyboard_car.py](../../../../examples/keyboard_car.py)
+-   [example/mouse_click.py](../../../../examples/control/mouse_click.py)
+-   [example/keyboard_car.py](../../../../examples/control/keyboard_car.py)
 
 #### Valid Keyboard Input List
 
@@ -123,14 +123,14 @@ For more camera control methods, please refer to [Camera](../render/camera.md).
 
 [`render.launch(model)`] also supports two optional parameters: batch:int and render_offset:List[:3]. These are used to set the number of instances and the offset positions when rendering multiple instances of a single model.
 
-```{literalinclude} ../../../../examples/model.py
+```{literalinclude} ../../../../examples/physics/model.py
 :language: python
 :dedent:
 :start-after: "model = load_model(path)"
 :end-before:  "# Create the physics data of the model"
 ```
 
-_See the complete code at [examples/model.py](../../../../examples/model.py)_
+_See the complete code at [examples/physics/model.py](../../../../examples/physics/model.py)_
 
 ### Instance Visibility
 
@@ -160,7 +160,7 @@ render.set_all_scene_vis(True) # Show all instances
 
 The above operations only affect rendering visibility and do not affect the object's physics simulation.
 
-_Full code see [examples/partial_rendering.py](../../../../examples/partial_rendering.py)_
+_Full code see [examples/viewer/partial_rendering.py](../../../../examples/viewer/partial_rendering.py)_
 
 [`RenderApp`]: motrixsim.render.RenderApp
 [`load_model`]: motrixsim.load_model

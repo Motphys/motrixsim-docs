@@ -63,7 +63,7 @@ Sensor configuration examples can be found in [`examples/assets/site_and_sensor.
 
 Get data from specified sensors:
 
-```{literalinclude} ../../../../examples/site_and_sensor.py
+```{literalinclude} ../../../../examples/physics/site_and_sensor.py
 :language: python
 :dedent:
 :start-after: "# tag::get_sensor_value[]"

@@ -19,8 +19,8 @@ MotrixSim is a high-performance physics simulation engine designed specifically 
 
 :::{grid-item}
 
-```{video} _static/videos/gyroscope_motrixsim.mp4
-:poster: _static/images/poster/gyroscope_motrixsim.jpg
+```{video} _static/videos/complex_car.mp4
+:poster: _static/images/poster/complex_car.jpg
 :nocontrols:
 :autoplay:
 :playsinline:
@@ -33,8 +33,8 @@ MotrixSim is a high-performance physics simulation engine designed specifically 
 
 :::{grid-item}
 
-```{video} _static/videos/go2_keyboard_control.mp4
-:poster: _static/images/poster/go2_keyboard_control.jpg
+```{video} _static/videos/go2-ssgi.mp4
+:poster: _static/images/poster/go2-ssgi.jpg
 :nocontrols:
 :autoplay:
 :playsinline:
@@ -75,8 +75,8 @@ MotrixSim is a high-performance physics simulation engine designed specifically 
 
 :::{grid-item}
 
-```{video} _static/videos/store_motrixsim.mp4
-:poster: _static/images/poster/store_motrixsim.jpg
+```{video} _static/videos/shadow_hand_repose.mp4
+:poster: _static/images/poster/shadow_hand_repose.jpg
 :nocontrols:
 :autoplay:
 :playsinline:

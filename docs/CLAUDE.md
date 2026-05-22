@@ -17,7 +17,7 @@ This is the documentation project for MotrixSim, a high-performance physics simu
 
 **Working Directory**: Always run commands from the `docs/` directory:
 ```bash
-cd /path/to/motrixsim-oni/motrixsim-py/docs
+cd /path/to/motrixsim-python/motrixsim-docs/docs
 uv run make html
 ```
 
@@ -159,7 +159,7 @@ The build system automatically copies content from language-specific directories
 4. Test all embedded media and interactive elements
 
 ## Integration Notes
-- This documentation project is part of the larger motrixsim-py package
+- This documentation project is part of the larger `motrixsim-python` workspace
 - The build system automatically detects and documents the motrixsim package
 - Documentation is deployed to ReadTheDocs at https://motrixsim.readthedocs.io
 - Source code is hosted at https://github.com/Motphys/motrixsim-docs

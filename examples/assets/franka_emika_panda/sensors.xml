@@ -1,0 +1,10 @@
+<mujoco model="panda sensors">
+
+
+    <sensor>
+        <contact name="grasp contact 1" body1="left_finger" body2="obj" data="found force torque dist pos normal tangent" num="4"/>
+        <contact name="grasp contact 2" body1="right_finger" body2="obj" data="found force torque dist pos normal tangent" num="4"/>
+
+    </sensor>
+
+</mujoco>

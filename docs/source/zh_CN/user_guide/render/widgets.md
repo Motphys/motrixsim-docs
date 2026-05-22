@@ -100,7 +100,7 @@ layout = Layout(left=10, top="60%", width=320, height=240)
 
 以下示例展示了三种不同的布局格式：
 
-```{literalinclude} ../../../../examples/render/camera_viewport.py
+```{literalinclude} ../../../../examples/viewer/camera_viewport.py
 :language: python
 :dedent:
 :start-after: "# Viewport 1: Top-left with pixel-based layout"

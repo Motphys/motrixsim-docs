@@ -1,4 +1,4 @@
-# 🔋 驱动器（Actuator）
+# 🔋 驱动器
 
 驱动器 (Actuator) 是控制机器人关节运动的核心组件，MotrixSim 支持多种类型的驱动器。
 
@@ -27,7 +27,7 @@
 
 以下是涵盖上述所有内容的完整代码脚本：
 
-```{literalinclude} ../../../../examples/actuator.py
+```{literalinclude} ../../../../examples/physics/actuator.py
 :language: python
 :dedent:
 ```

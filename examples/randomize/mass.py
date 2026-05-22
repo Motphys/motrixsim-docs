@@ -37,6 +37,7 @@ def main():
             for j in range(4):
                 render_offset.append([-i * 2, j * 2, 0])
         render.launch(model, batch=16, render_offset=render_offset)
+        render.system_camera.set_view(lookat=[-3, 3, 1.5], distance=10.0, elevation=-35, azimuth=90)
         # Create the physics data of the model
         data = SceneData(model, batch=(16,))
         ball = model.get_link(0)

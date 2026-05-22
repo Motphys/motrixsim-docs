@@ -53,13 +53,13 @@ MotrixSim 和 MuJoCo 使用同一份 mjcf 模型：[`gyroscope.xml`](../../../..
 您可以通过
 
 ```bash
-uv run examples/gyroscope.py
+uv run examples/bench/gyroscope/gyroscope_mx.py
 ```
 
 以及
 
 ```bash
-uv run examples/mujoco/gyroscope.py
+uv run examples/bench/gyroscope/gyroscope_mj.py
 ```
 
 来运行这两个示例。
@@ -118,13 +118,13 @@ uv run examples/mujoco/gyroscope.py
 您可以通过
 
 ```bash
-uv run examples/newton_cradle.py
+uv run examples/bench/newton_cradle/newton_cradle_mx.py
 ```
 
 以及
 
 ```bash
-uv run examples/mujoco/newton_cradle.py
+uv run examples/bench/newton_cradle/newton_cradle_mj.py
 ```
 
 来运行这两个示例。
@@ -295,13 +295,19 @@ uv run python -m mujoco.viewer --mjcf=examples/assets/store/scene.xml
 要运行该对比示例，请分别执行：
 
 ```bash
-uv run examples/bench/grasp/grasp_mx.py
+uv run examples/bench/grasp/shake_test_mx.py
 ```
 
 以及
 
 ```bash
-uv run examples/bench/grasp/grasp_mj.py
+uv run examples/bench/grasp/shake_test_mj.py
 ```
 
 该用例直观展示了两套仿真器在接触建模与摩擦处理上的差异，便于开发者评估在抓取与操纵任务中的稳定性表现。
+
+```{toctree}
+:hidden:
+
+grasp_contact_bench
+```

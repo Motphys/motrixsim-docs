@@ -164,7 +164,7 @@ height = hfield.get(row=5, col=10)    # 获取指定行列的高程
 
 ### 基本高度场操作
 
-```{literalinclude} ../../../../../examples/hfield.py
+```{literalinclude} ../../../../../examples/physics/hfield.py
 :language: python
 :dedent:
 :start-after: "# tag::basic_access"
@@ -173,7 +173,7 @@ height = hfield.get(row=5, col=10)    # 获取指定行列的高程
 
 ### 高程数据分析
 
-```{literalinclude} ../../../../../examples/hfield.py
+```{literalinclude} ../../../../../examples/physics/hfield.py
 :language: python
 :dedent:
 :start-after: "# tag::height_analysis"
@@ -182,7 +182,7 @@ height = hfield.get(row=5, col=10)    # 获取指定行列的高程
 
 ### 完整仿真示例
 
-```{literalinclude} ../../../../../examples/hfield.py
+```{literalinclude} ../../../../../examples/physics/hfield.py
 :language: python
 :dedent:
 ```
@@ -190,7 +190,7 @@ height = hfield.get(row=5, col=10)    # 获取指定行列的高程
 运行高度场仿真示例：
 
 ```bash
-uv run examples/hfield.py
+uv run examples/physics/hfield.py
 ```
 
 ## 文件格式

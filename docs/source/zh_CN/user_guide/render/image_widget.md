@@ -59,7 +59,7 @@ widget = render.widgets.create_image_widget(
 
 您可以在同一窗口中创建多个 ImageWidget，每个显示不同的图像：
 
-```{literalinclude} ../../../../examples/render/image_widget.py
+```{literalinclude} ../../../../examples/viewer/image_widget.py
 :language: python
 :dedent:
 :start-after: "# Widget 1: Top-left"
@@ -135,7 +135,7 @@ widget.update(
 
 ### 切换图像内容
 
-```{literalinclude} ../../../../examples/render/image_widget.py
+```{literalinclude} ../../../../examples/viewer/image_widget.py
 :language: python
 :dedent:
 :start-after: "# Change widget1 pattern type"
@@ -146,7 +146,7 @@ widget.update(
 
 ### 移动 ImageWidget 位置
 
-```{literalinclude} ../../../../examples/render/image_widget.py
+```{literalinclude} ../../../../examples/viewer/image_widget.py
 :language: python
 :dedent:
 :start-after: "# Move widget1 (10 pixels per keypress)"
@@ -157,7 +157,7 @@ widget.update(
 
 ### 调整 ImageWidget 大小
 
-```{literalinclude} ../../../../examples/render/image_widget.py
+```{literalinclude} ../../../../examples/viewer/image_widget.py
 :language: python
 :dedent:
 :start-after: "# Resize widget1 (20 pixels per keypress)"
@@ -182,7 +182,7 @@ widget.remove()
 
 以下是一个完整的 ImageWidget 交互示例，展示如何动态生成和更新图像：
 
-```{literalinclude} ../../../../examples/render/image_widget.py
+```{literalinclude} ../../../../examples/viewer/image_widget.py
 :language: python
 :dedent:
 :start-after: "# Copyright (C)"

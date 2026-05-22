@@ -1,32 +1,41 @@
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["uv_build>=0.11.7,<0.12"]
+build-backend = "uv_build"
 
 [project]
 name = "motrixsim-docs"
+version = "0.8.0"
 description = "A high-performance physics simulation engine designed for multibody dynamics and robotics simulation."
-authors = [
-    { name = "Motphys", email = "developers@motphys.com" },
-]
-dependencies = [
-    "motrixsim",
-]
-requires-python = "==3.10.*"
+authors = [{ name = "Motphys", email = "developers@motphys.com" }]
+requires-python = "<3.14,>=3.10"
 readme = "README.md"
 license = "Apache-2.0"
-dynamic = ["version"]
-
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["legged_gym*"]
+dependencies = [
+    "motrixsim-core",
+    "onnxruntime>=1.23,<1.24",
+    "numpy-quaternion>=2024.0.8",
+    "imageio[ffmpeg]>=2.37.2",
+    "matplotlib>=3.10.8",
+    "mujoco>=3.5.0",
+    "pandas>=2.3.3",
+]
 
 [project.optional-dependencies]
-docs = [
-    "motrixsim[docs]",
+usd = [
+    "motrixsim-core[usd]"
 ]
-examples = [
-    "motrixsim[demo,mujoco_demo]",
+docs = [
+    "sphinx",
+    "autodocsumm",
+    "pydata-sphinx-theme",
+    "myst-parser",
+    "sphinx-copybutton",
+    "sphinx-subfigure",
+    "sphinxcontrib-video",
+    "sphinx-togglebutton",
+    "sphinx-design",
 ]
 
-[tool.uv]
-prerelease = "allow"
+[tool.uv.build-backend]
+module-name = "legged_gym"
+module-root = ""

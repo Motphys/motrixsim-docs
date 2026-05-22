@@ -100,7 +100,7 @@ This means the left distance is 10 pixels, the top distance is 60%, with a width
 
 The following example shows three different layout formats:
 
-```{literalinclude} ../../../../examples/render/camera_viewport.py
+```{literalinclude} ../../../../examples/viewer/camera_viewport.py
 :language: python
 :dedent:
 :start-after: "# Viewport 1: Top-left with pixel-based layout"

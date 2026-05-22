@@ -1,0 +1,26 @@
+<mujoco>
+  <compiler autolimits="true" angle="degree"/>
+  <visual>
+    <headlight diffuse="0.0 0.0 0.0" ambient="0.0 0.0 0.0" specular="0 0 0"/>
+    <!-- <ssao active="true"/> -->
+    <map envmapintensity="800"/>
+    <ssgi active="true"
+    resolutionscale="1"
+    raycount="2"
+    stepcount="8"
+    thickness="0.25"
+    intensity="1.2"
+    gidenoiseoffset="3"
+    rraycount="256"
+    rdenoiseoffset="3"
+    />
+    <!-- <tonemapping method="aces"/> -->
+  </visual>
+  <include file="./ssgi_playground.xml"/>
+
+  <asset>
+    <texture name="env_diff" type="envdiff" file="venetian_crossroads_diff.ktx2"/>
+    <texture name="env_spec" type="envspec" file="venetian_crossroads_spec.ktx2"/>
+  </asset>
+  
+</mujoco>

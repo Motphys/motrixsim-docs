@@ -59,7 +59,7 @@ widget = render.widgets.create_image_widget(
 
 You can create multiple ImageWidgets in the same window, each displaying different images:
 
-```{literalinclude} ../../../../examples/render/image_widget.py
+```{literalinclude} ../../../../examples/viewer/image_widget.py
 :language: python
 :dedent:
 :start-after: "# Widget 1: Top-left"
@@ -135,7 +135,7 @@ The following example shows how to control ImageWidget through keyboard interact
 
 ### Switching Image Content
 
-```{literalinclude} ../../../../examples/render/image_widget.py
+```{literalinclude} ../../../../examples/viewer/image_widget.py
 :language: python
 :dedent:
 :start-after: "# Change widget1 pattern type"
@@ -146,7 +146,7 @@ Press 1/2/3 keys to switch the image type displayed by widget1 (random noise/gra
 
 ### Moving ImageWidget Position
 
-```{literalinclude} ../../../../examples/render/image_widget.py
+```{literalinclude} ../../../../examples/viewer/image_widget.py
 :language: python
 :dedent:
 :start-after: "# Move widget1 (10 pixels per keypress)"
@@ -157,7 +157,7 @@ Press w/a/s/d keys to move the position of widget1.
 
 ### Resizing ImageWidget
 
-```{literalinclude} ../../../../examples/render/image_widget.py
+```{literalinclude} ../../../../examples/viewer/image_widget.py
 :language: python
 :dedent:
 :start-after: "# Resize widget1 (20 pixels per keypress)"
@@ -182,7 +182,7 @@ After calling the `remove()` method, the widget will be permanently removed. Sub
 
 The following is a complete ImageWidget interaction example showing how to dynamically generate and update images:
 
-```{literalinclude} ../../../../examples/render/image_widget.py
+```{literalinclude} ../../../../examples/viewer/image_widget.py
 :language: python
 :dedent:
 :start-after: "# Copyright (C)"

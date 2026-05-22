@@ -298,3 +298,22 @@ class G1Robot(RobotBase):
             3D angular velocity vector [wx, wy, wz]
         """
         return self._model.get_sensor_value("gyro_pelvis", data)
+
+
+class G1Robot12Dof(RobotBase):
+    """12DoF G1 robot state accessor."""
+
+    mjcf_path = "examples/assets/g1/g1_12dof.xml"
+    base_link_name = "pelvis"
+
+    def __init__(self, body: Body):
+        """Initialize the 12DoF G1 robot state accessor."""
+        super().__init__(body)
+
+    def local_linear_vel(self, data: SceneData) -> np.ndarray:
+        """Get the linear velocity in the local coordinate system."""
+        return self._model.get_sensor_value("local_linvel", data)
+
+    def gyro(self, data: SceneData) -> np.ndarray:
+        """Get the gyroscope angular velocity."""
+        return self._model.get_sensor_value("gyro", data)

@@ -53,13 +53,13 @@ MotrixSim and MuJoCo use the same MJCF model: [`gyroscope.xml`](../../../../exam
 You can run these examples with:
 
 ```bash
-uv run examples/gyroscope.py
+uv run examples/bench/gyroscope/gyroscope_mx.py
 ```
 
 and
 
 ```bash
-uv run examples/mujoco/gyroscope.py
+uv run examples/bench/gyroscope/gyroscope_mj.py
 ```
 
 ## Newton's Cradle
@@ -116,13 +116,13 @@ Here, `hard=true` indicates a hard contact geometry. In this case, `solref=(boun
 You can run these examples with:
 
 ```bash
-uv run examples/newton_cradle.py
+uv run examples/bench/newton_cradle/newton_cradle_mx.py
 ```
 
 and
 
 ```bash
-uv run examples/mujoco/newton_cradle.py
+uv run examples/bench/newton_cradle/newton_cradle_mj.py
 ```
 
 ## Boston Dynamics Spot
@@ -287,13 +287,19 @@ This example compares MotrixSim and MuJoCo on the stability of a Franka robotic 
 Run the comparison examples with:
 
 ```bash
-uv run examples/bench/grasp/grasp_mx.py
+uv run examples/bench/grasp/shake_test_mx.py
 ```
 
 and
 
 ```bash
-uv run examples/bench/grasp/grasp_mj.py
+uv run examples/bench/grasp/shake_test_mj.py
 ```
 
 This example provides a clear, visual comparison of how the two simulators handle contact and friction during manipulation tasks.
+
+```{toctree}
+:hidden:
+
+grasp_contact_bench
+```

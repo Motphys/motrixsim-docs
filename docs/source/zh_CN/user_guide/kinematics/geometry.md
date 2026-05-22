@@ -1,4 +1,4 @@
-# 🔷 几何体（Geometry）
+# 🔷 几何体
 
 几何体决定了场景中物体的外观和碰撞属性。几何体可以添加在`<body>`或`<worldbody>`下，或者用于配置 default 的相关属性。 [MJCF 几何体标签可配置属性](https://mujoco.readthedocs.io/en/stable/XMLreference.html#body-geom)
 
@@ -30,12 +30,12 @@
 您可以通过
 
 ```bash
-uv run examples/geom.py
+uv run examples/physics/geom.py
 ```
 
 来运行一个简单的关于 geom api 调用的例子。
 
-源码可以参考 [`examples/geom.py`](../../../../examples/geom.py)。
+源码可以参考 [`examples/physics/geom.py`](../../../../examples/physics/geom.py)。
 
 [`model.num_geoms`]: motrixsim.SceneModel.num_geoms
 [`model.geoms`]: motrixsim.SceneModel.geoms

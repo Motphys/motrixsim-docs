@@ -14,10 +14,13 @@
 # ==============================================================================
 
 from .controller import BaseController, KeyboardCommandAdapter, OnnxController
-from .policy import G1LocomotionPolicy, Go1LocomotionPolicy, Go2LocomotionPolicy
-from .robot import G1Robot, Go1Robot, Go2Robot
+from .policy import G1LocomotionPolicy, G1Policy12Dof, Go1LocomotionPolicy, Go2LocomotionPolicy
+from .robot import G1Robot, G1Robot12Dof, Go1Robot, Go2Robot
+from .terrain_scan_visualizer import TerrainScanVisualizer
 
 __all__ = [
+    "G1Robot12Dof",
+    "G1Policy12Dof",
     "G1Robot",
     "G1LocomotionPolicy",
     "Go1Robot",
@@ -27,4 +30,5 @@ __all__ = [
     "BaseController",
     "OnnxController",  # Kept for backward compatibility
     "KeyboardCommandAdapter",
+    "TerrainScanVisualizer",
 ]
