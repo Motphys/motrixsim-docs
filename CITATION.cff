@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use MotrixSim in your research, please cite it as below."
+title: "MotrixSim: A Physics Simulation Engine for Robotics and Embodied AI"
+type: software
+authors:
+  - name: "Motphys Team"
+year: 2026
+url: "https://motrixsim.readthedocs.io/"

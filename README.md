@@ -1,7 +1,7 @@
 # MotrixSim Docs
 
 ![PyPI - Version](https://img.shields.io/pypi/v/motrixsim)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/motrixsim)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/motrixsim-core)
 
 ![GitHub License](https://img.shields.io/github/license/motphys/motrixsim-docs)
 
@@ -68,3 +68,17 @@ uv sync
 -   GitHub Issues: [提交问题](https://github.com/Motphys/motrixsim-docs/issues)
 
 -   Discussions: [加入讨论](https://github.com/Motphys/motrixsim-docs/discussions)
+
+## 引用
+
+如果您在研究中使用 MotrixSim，请按以下方式引用：
+
+```bibtex
+@software{motrixsim2026,
+  title  = {MotrixSim: A Physics Simulation Engine for Robotics and Embodied AI},
+  author = {{Motphys Team}},
+  year   = {2026},
+  url    = {https://motrixsim.readthedocs.io/},
+  note   = {Python binary package}
+}
+```
