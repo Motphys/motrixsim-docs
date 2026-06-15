@@ -1,49 +1,57 @@
 # MotrixSim Docs
 
+English | [简体中文](README.zh-CN.md)
+
 ![PyPI - Version](https://img.shields.io/pypi/v/motrixsim)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/motrixsim-core)
 
 ![GitHub License](https://img.shields.io/github/license/motphys/motrixsim-docs)
 
-`MotrixSim` 是一个高性能的物理仿真引擎，专为多体动力学和机器人仿真设计。它提供了一个高效、稳定的物理仿真平台，支持广泛的应用场景，包括机器人控制、强化学习、工业仿真等。
+`MotrixSim` is a high-performance physics simulation engine designed for multibody dynamics and robot simulation. It provides an efficient and stable simulation platform for a wide range of applications, including robot control, reinforcement learning, and industrial simulation.
 
-> 文档地址：https://motrixsim.readthedocs.io
+> Documentation: https://motrixsim.readthedocs.io
 >
-> 线上体验地址：https://motrix.motphys.com
+> Online demo: https://motrix.motphys.com
 
-## 主要特性
+## Key Features
 
--   **物理仿真**: 支持刚体动力学、碰撞检测等完整的物理仿真功能
--   **广义坐标建模**: 采用广义坐标系统，支持复杂的多体系统建模
--   **全新求解器**: 采用自研的约束模型和求解器，提供高效、稳定的多体动力学计算
--   **高性能计算**: CPU 版本基于 Rust 开发，提供出色的性能和内存安全性
--   **Python API**: 简洁易用的 Python 接口，便于快速开发和原型制作
--   **机器人支持**: 专门优化的机器人仿真功能，高度兼容 MJCF 模型格式
+-   **Physics simulation**: Supports rigid-body dynamics, collision detection, and core physics simulation capabilities.
+-   **Generalized-coordinate modeling**: Uses generalized coordinates to model complex multibody systems.
+-   **New solver architecture**: Provides efficient and stable multibody dynamics computation through in-house constraint models and solvers.
+-   **High-performance computing**: The CPU backend is developed in Rust, providing strong performance and memory safety.
+-   **Python API**: Offers a concise Python interface for rapid development and prototyping.
+-   **Robot support**: Optimized for robot simulation and highly compatible with the MJCF model format.
 
-## 适用场景
+## Use Cases
 
--   机器人控制算法开发和测试
--   强化学习环境构建
--   工业实时物理仿真
--   物理现象模拟和分析
--   工程设计验证
--   教育和研究
+-   Robot control algorithm development and testing
+-   Reinforcement learning environment construction
+-   Industrial real-time physics simulation
+-   Physical phenomenon simulation and analysis
+-   Engineering design validation
+-   Education and research
 
-## 🚀 快速开始
+## MotrixSim Ecosystem and Research
 
-> 以下示例使用了 Python 项目管理工具：[UV](https://docs.astral.sh/uv/)
+-   **MotrixLab**: A robot reinforcement learning framework built on MotrixSim. It provides environment registration, training configuration, RL framework adapters, evaluation, and replay tools for quadrupeds, humanoids, robotic arms, dexterous hands, and related robot tasks. Repository: [Motphys/MotrixLab](https://github.com/Motphys/MotrixLab), documentation: [motrixlab.readthedocs.io](https://motrixlab.readthedocs.io/).
+-   **GS-Playground**: A high-fidelity embodied simulation platform developed by Tsinghua AIR DISCOVER Lab, Motphys, and collaborators. It combines MotrixSim parallel physics simulation with 3D Gaussian Splatting rendering for visual navigation, manipulation, locomotion, and Sim2Real research. The work has been accepted by RSS 2026. Repository: [discoverse-dev/gs_playground](https://github.com/discoverse-dev/gs_playground), paper: [arXiv:2604.25459](https://arxiv.org/abs/2604.25459), project page: [gsplayground.github.io](https://gsplayground.github.io/).
+-   **UniLab**: A heterogeneous CPU-simulation / GPU-learning system for robot reinforcement learning. MotrixSim is integrated as a CPU-batched physics backend in the unified training runtime, supporting large-scale rollouts and cross-platform training. Repository: [unilabsim/UniLab](https://github.com/unilabsim/UniLab), paper: [arXiv:2605.30313](https://arxiv.org/abs/2605.30313).
+
+## 🚀 Quick Start
+
+> The following example uses [UV](https://docs.astral.sh/uv/), a Python project management tool.
 >
-> 在开始之前，请先[安装](https://docs.astral.sh/uv/getting-started/installation/)该工具。
+> Please [install UV](https://docs.astral.sh/uv/getting-started/installation/) before getting started.
 
-### 1. 安装 Git LFS
+### 1. Install Git LFS
 
-仓库中包含通过 Git LFS 管理的大文件，请先安装 [Git LFS](https://git-lfs.com/) 并完成初始化：
+This repository contains large files managed by [Git LFS](https://git-lfs.com/). Install Git LFS and initialize it first:
 
 ```bash
 git lfs install
 ```
 
-### 2. 克隆仓库:
+### 2. Clone the Repository
 
 ```bash
 git clone https://github.com/Motphys/motrixsim-docs
@@ -51,27 +59,27 @@ git clone https://github.com/Motphys/motrixsim-docs
 cd motrixsim-docs
 ```
 
-### 3. 安装依赖
+### 3. Install Dependencies
 
-```
+```bash
 uv sync
 ```
 
-### 4. 执行对比与示例
+### 4. Run Comparisons and Examples
 
-> 参考 [文档](https://motrixsim.readthedocs.io) 中的说明
+> See the [documentation](https://motrixsim.readthedocs.io) for details.
 
-## 📬 联系方式
+## 📬 Contact
 
-有问题或建议？欢迎通过以下方式联系我们：
+Questions and suggestions are welcome:
 
--   GitHub Issues: [提交问题](https://github.com/Motphys/motrixsim-docs/issues)
+-   GitHub Issues: [Submit an issue](https://github.com/Motphys/motrixsim-docs/issues)
 
--   Discussions: [加入讨论](https://github.com/Motphys/motrixsim-docs/discussions)
+-   Discussions: [Join the discussion](https://github.com/Motphys/motrixsim-docs/discussions)
 
-## 引用
+## Citation
 
-如果您在研究中使用 MotrixSim，请按以下方式引用：
+If you use MotrixSim in your research, please cite it as follows:
 
 ```bibtex
 @software{motrixsim2026,
