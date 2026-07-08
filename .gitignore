@@ -9,6 +9,7 @@ node_modules
 package.json
 package-lock.json
 
+docs/build
 docs/source/index.md
 docs/source/api_reference
 docs/source/user_guide

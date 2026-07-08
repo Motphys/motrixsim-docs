@@ -57,6 +57,8 @@ git lfs install
 git clone https://github.com/Motphys/motrixsim-docs
 
 cd motrixsim-docs
+
+git lfs pull
 ```
 
 ### 3. Install Dependencies
@@ -76,6 +78,12 @@ Questions and suggestions are welcome:
 -   GitHub Issues: [Submit an issue](https://github.com/Motphys/motrixsim-docs/issues)
 
 -   Discussions: [Join the discussion](https://github.com/Motphys/motrixsim-docs/discussions)
+
+<p align="center">
+  <img src="docs/source/_static/images/weichat-qr.jpg" alt="WeChat QR code" width="180">
+</p>
+
+<p align="center">Add the assistant on WeChat to join the group. Please include <code>MotrixSim 交流</code> in your request.</p>
 
 ## Citation
 

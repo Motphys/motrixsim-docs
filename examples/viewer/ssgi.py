@@ -1,4 +1,4 @@
-# Copyright (C) 2020-2025 Motphys Technology Co., Ltd. All Rights Reserved.
+# Copyright (C) 2020-2026 Motphys Technology Co., Ltd. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -32,9 +32,11 @@ def main():
         # Performance render settings, no shadows, no screen space effect.
         # performance_settings = RenderSettings.performance()
         # Quality render settings, enable shadows and screen space effect.
-        quality_settings = RenderSettings(True, True, True, False, False, True)
+        # tag: ssgi on
+        render_settings = RenderSettings.quality()
         # Create the render instance of the model
-        render.launch(model, render_settings=quality_settings)
+        render.launch(model, render_settings=render_settings)
+        # endtag
         render.opt.set_left_panel_vis(True)
         # Create the physics data of the model
         data = SceneData(model)

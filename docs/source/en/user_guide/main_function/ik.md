@@ -1,6 +1,6 @@
 # 🦾 Inverse Kinematics (IK)
 
-MotrixSim provides an efficient and easy-to-use Inverse Kinematics (IK) solver located in the `motrixsim.ik` module. It supports two IK solvers: a Gauss-Newton-based solver ([`GaussNewtonSolver`]) and a Damped Least Squares (DLS) solver ([`DlsSolver`]), along with a simple IK chain model ([`IkChain`]).
+MotrixSim provides an efficient and easy-to-use Inverse Kinematics (IK) solver located in the `motrixsim.ik` module. It supports Gauss-Newton ([`GaussNewtonSolver`]) and Damped Least Squares (DLS, [`DlsSolver`]), along with a simple IK chain model ([`IkChain`]).
 
 ```{video} /_static/videos/ik.mp4
 :nocontrols:
@@ -40,7 +40,7 @@ Refer to the API documentation for more details about [`IkChain`].
 
 ## IK Solver
 
-After defining the IKModel, you can use an IK Solver to perform the actual IK solving. MotrixSim supports two IK solvers: the traditional Gauss-Newton solver [`GaussNewtonSolver`] and the more robust Damped Least Squares (DLS) solver [`DlsSolver`].
+After defining the IKModel, you can use an IK Solver to perform the actual IK solving. MotrixSim supports the traditional Gauss-Newton solver [`GaussNewtonSolver`] and the more robust Damped Least Squares (DLS) solver [`DlsSolver`].
 
 ### Damped Least Squares (DLS) IK Solver
 

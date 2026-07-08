@@ -57,7 +57,29 @@ git lfs install
 git clone https://github.com/Motphys/motrixsim-docs
 
 cd motrixsim-docs
+
+git lfs pull
 ```
+
+> 如果您身处中国大陆，建议通过下面方式克隆仓库，并配置国内镜像源以加速依赖下载：
+>
+> 1. 克隆仓库
+>
+>     ```bash
+>     git clone https://www.modelscope.cn/datasets/motphysdevelopers/motrixsim-docs.git
+>     cd motrixsim-docs
+>     git lfs pull
+>     ```
+>
+> 2. 修改 `pyproject.toml` 文件，添加国内镜像源
+>
+>     ```toml
+>     [[tool.uv.index]]
+>     name = "mirror"
+>     # 请填写您选择的国内镜像源，例如：
+>     # 清华源: "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
+>     url = ""
+>     ```
 
 ### 3. 安装依赖
 
@@ -76,6 +98,12 @@ uv sync
 -   GitHub Issues: [提交问题](https://github.com/Motphys/motrixsim-docs/issues)
 
 -   Discussions: [加入讨论](https://github.com/Motphys/motrixsim-docs/discussions)
+
+<p align="center">
+  <img src="docs/source/_static/images/weichat-qr.jpg" alt="微信二维码" width="180">
+</p>
+
+<p align="center">添加小助手微信进群，请备注：<code>MotrixSim 交流</code></p>
 
 ## 引用
 

@@ -6,8 +6,10 @@
 
 getting_started/installation
 getting_started/hello_motrixsim
+getting_started/agent_skill
 getting_started/motrixsim_web
 getting_started/mjcf_reference
+getting_started/usd_reference
 
 ```
 
@@ -29,6 +31,7 @@ overview/legged_gym
 main_function/scene_model
 main_function/scene_data
 main_function/model_building
+main_function/acd
 main_function/options
 main_function/parallel
 main_function/randomization
@@ -43,7 +46,10 @@ main_function/managed_viewer
 :caption: 渲染
 :maxdepth: 1
 
+render/advanced
 render/camera
 render/widgets
+render/3dgs
+render/headless_cpu
 
 ```

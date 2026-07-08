@@ -17,7 +17,23 @@ In MotrixSim, the model `SceneModel` and the data `SceneData` are essential comp
 
 ### Loading from File
 
-The most common way is to create a model from an MJCF or URDF file:
+Use `motrixsim.load_model(path)` to load MJCF, URDF, or USD files into a `SceneModel`.
+
+USD scenes use the same loading entry point, but require installing the optional `usd` extra:
+
+```bash
+pip install "motrixsim[usd]"
+```
+
+With `uv`:
+
+```bash
+uv add "motrixsim[usd]"
+```
+
+Install the extra in the same Python environment where you run MotrixSim. If MotrixSim is already installed without USD support, run one of the commands above again to update that environment with the optional USD dependencies. For the current USD conversion support list, see [USD Reference](../getting_started/usd_reference.md).
+
+The example below loads an MJCF scene with `load_model`:
 
 ```{literalinclude} ../../../../examples/getting_started/empty.py
 :language: python
@@ -27,6 +43,15 @@ The most common way is to create a model from an MJCF or URDF file:
 ```
 
 For the complete example, see [`examples/getting_started/empty.py`](../../../../examples/getting_started/empty.py).
+
+For USD scenes, the same entry point loads directly into `SceneModel`:
+
+```python
+import motrixsim as mx
+
+model = mx.load_model("scene.usda")
+data = mx.SceneData(model)
+```
 
 ### Loading from String
 

@@ -110,10 +110,10 @@ uv run examples/bench/gyroscope/gyroscope_mj.py
 因为 MuJoCo 只支持 Soft Contact， 而 MotrixSim 同时支持 Soft Contact 和 Hard Contact， 所以我们对 MJCF 作了一些扩展：
 
 ```xml
-<geom solref="1 0" hard="true" />
+<geom _hard="true" _bounciness="1" _erp="0" />
 ```
 
-这里的 `hard=true` 表示这是一个硬接触的几何体， 在此情况下， `solref=(bounciness, ERP)`表示弹性系数和 ERP（误差修正）的值。
+这里的 `_hard="true"` 表示这是一个硬接触的几何体；此时接触行为由 `_bounciness`（弹性/恢复系数，范围 [0, 1]）和 `_erp`（误差修正参数）控制，取代 soft contact 所用的 `solref`/`solimp`。
 
 您可以通过
 

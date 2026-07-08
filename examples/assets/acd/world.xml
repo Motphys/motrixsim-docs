@@ -1,0 +1,24 @@
+<mujoco>
+  <statistic center="2.4 4.2 0.8" extent="1.0" />
+  <visual>
+    <global fovy="60" azimuth="90" elevation="-20" />
+    <shadowsize width="4096" height="4096" />
+    <map zfar="1000" />
+    <tonemapping method="aces" />
+    <headlight diffuse="0.0 0.0 0.0" ambient="0.0 0.0 0.0" specular="0 0 0" />
+    <ssgi active="true" resolutionscale="2" raycount="4" stepcount="6" thickness="1" intensity="1" gidenoiseoffset="3" rraycount="256" rdenoiseoffset="3" />
+    <ssao active="true" />
+  </visual>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.816 0.875 1.0" rgb2="0.427 0.580 0.757" width="256" height="1024" />
+    <model name="light" file="assets/new_light.xml" />
+    <model name="ground" file="assets/ground.xml" />
+    <model name="room" file="assets/room.xml" />
+  </asset>
+  <worldbody>
+    <attach model="light" prefix="light_" />
+    <attach model="ground" prefix="gnd_" />
+    <attach model="room" prefix="room_" />
+  </worldbody>
+  <option gravity="0 0 -9.81" />
+</mujoco>

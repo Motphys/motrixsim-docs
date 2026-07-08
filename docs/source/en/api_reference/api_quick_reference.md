@@ -4,7 +4,7 @@
 
 | Function Category   | API                                                             | Description                            |
 | ------------------- | --------------------------------------------------------------- | -------------------------------------- |
-| **Model Loading**   | [`load_model(path)`](motrixsim.load_model)                      | Load MJCF/URDF model files             |
+| **Model Loading**   | [`load_model(path)`](core/motrixsim.md)                         | Load MJCF, URDF, or USD model files    |
 | **Simulation Step** | [`step(model, data)`](motrixsim.step)                           | Execute a single simulation time step  |
 | **Kinematics**      | [`forward_kinematic(model, data)`](motrixsim.forward_kinematic) | Perform forward kinematics computation |
 
@@ -65,13 +65,21 @@ Each component access method returns the corresponding component object, providi
 | [`data.reset(model)`](motrixsim.SceneData.reset)            | -       | Reset scene data state                     |
 | [`data.low`](motrixsim.SceneData.low)                       | LowData | Low-level data object (contact info, etc.) |
 
+#### Contact Query
+
+| API                                                                       | Description                                                         |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| [`model.get_contact_query(data)`](motrixsim.SceneModel.get_contact_query) | Create a current-step contact query object                          |
+| [`query.is_colliding(pairs)`](motrixsim.ContactQuery.is_colliding)        | Batch-test known high-level geom pairs                              |
+| [`query.contacting_geoms(geom)`](motrixsim.ContactQuery.contacting_geoms) | Return high-level geom indices currently contacting one target geom |
+
 ---
 
 ## 🔨 Model Building Module - [`motrixsim.msd`](msd/index.md)
 
 | Function/Method                                          | Description                                    |
 | -------------------------------------------------------- | ---------------------------------------------- |
-| [`msd.from_file(path)`](motrixsim.msd.from_file)         | Load model file for combining and building     |
+| [`msd.from_file(path)`](motrixsim.msd.from_file)         | Load MJCF, URDF, or USD for combining          |
 | [`world.attach(other, ...)`](motrixsim.msd.World.attach) | Attach another model with transform and prefix |
 | [`world.build()`](motrixsim.msd.build)                   | Build the final `SceneModel` for simulation    |
 

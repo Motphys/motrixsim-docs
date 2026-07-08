@@ -1,0 +1,4 @@
+<mujoco model="T1">
+    <include file="soccer_field/Soccer_field.xml"/>
+    <include file="T1_serial_f.xml"/>
+</mujoco>

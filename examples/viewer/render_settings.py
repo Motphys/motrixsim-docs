@@ -1,4 +1,4 @@
-# Copyright (C) 2020-2025 Motphys Technology Co., Ltd. All Rights Reserved.
+# Copyright (C) 2020-2026 Motphys Technology Co., Ltd. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -36,8 +36,7 @@ def main():
         quality_settings.simplify_render_mesh = True
         quality_settings.enable_oit = False
         quality_settings.enable_shadow = True
-        quality_settings.enable_ssao = False
-        quality_settings.enable_ssgi = True
+        quality_settings.enable_ssao = True
         # Create the render instance of the model
         render.launch(model, render_settings=quality_settings)
         # Create the physics data of the model

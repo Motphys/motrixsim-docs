@@ -1,4 +1,4 @@
-# Copyright (C) 2020-2025 Motphys Technology Co., Ltd. All Rights Reserved.
+# Copyright (C) 2020-2026 Motphys Technology Co., Ltd. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -92,6 +92,9 @@ class Legged_Robot:
         self._render.gizmos.collider_color = Color.rgb(0.5, 1, 0.5)
         self._render.gizmos.joint_color = Color.rgb(1, 1, 0.5)
 
+    def get_render(self):
+        return self._render
+
     def buffer_init(self):
         # init buffers
         unified_stiffness = False
@@ -147,6 +150,13 @@ class Legged_Robot:
         self.torque_limits = self.config.control.torque_limits
         self.dt = self.config.sim.dt * self.config.control.decimation
         self._sync_dof_data()
+
+        self.body = self.model.get_body(self.config.asset.body_name)
+        self.fb = self.body.floatingbase
+        self.joints = []
+        names = self.model.joint_names
+        for i in range(len(names)):
+            self.joints.append(self.model.get_joint(names[i]))
 
     def render_init(self):
         # Create render window for visualization

@@ -1,5 +1,9 @@
 /* Custom CSS for MotrixSim Documentation */
 
+img {
+    filter: brightness(1) contrast(1) !important;
+}
+
 /* Logo adjustments for PyData Sphinx Theme */
 .navbar-brand img {
     max-height: 130px !important;
@@ -91,6 +95,21 @@
     color: #f5222d;
     border-color: rgba(245, 34, 45, 0.2);
 }
+.badge.supported {
+    background-color: rgba(22, 163, 74, 0.12);
+    color: #15803d;
+    border-color: rgba(22, 163, 74, 0.28);
+}
+.badge.partial {
+    background-color: rgba(217, 119, 6, 0.12);
+    color: #b45309;
+    border-color: rgba(217, 119, 6, 0.28);
+}
+.badge.unsupported {
+    background-color: rgba(220, 38, 38, 0.12);
+    color: #b91c1c;
+    border-color: rgba(220, 38, 38, 0.28);
+}
 .badge.custom {
     background-color: rgba(0, 0, 0, 0.05);
     color: var(--pst-color-text-base);
@@ -170,10 +189,48 @@ html[data-theme="dark"] .motphys-extension-label {
     box-shadow: 0 2px 4px rgba(129, 140, 248, 0.3) !important;
 }
 
+/* Small-print licensing notice shown under license-gated items */
+.motphys-pro-license-note {
+    font-size: 0.8em !important;
+    line-height: 1.4 !important;
+    color: #6b7280 !important;
+    opacity: 0.9 !important;
+    margin: 0 0 12px !important;
+}
+
+html[data-theme="dark"] .motphys-pro-license-note {
+    color: #9ca3af !important;
+}
+
 html[data-theme="dark"] .badge.mpex,
 html[data-theme="dark"] .badge.motphys {
     background-color: #818cf8 !important;
     box-shadow: 0 2px 4px rgba(129, 140, 248, 0.4) !important;
+}
+
+.usd-index {
+    margin: 1rem 0 1.5rem;
+}
+
+.usd-index details {
+    margin: 0.35rem 0;
+}
+
+.usd-index summary {
+    padding: 8px 12px;
+    background-color: rgba(127, 127, 127, 0.08);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.usd-index ul {
+    margin: 6px 0 10px 1.2rem;
+}
+
+.usd-index li {
+    margin: 5px 0;
 }
 
 /* Ensure MyST anchors look good */
@@ -183,4 +240,34 @@ html[data-theme="dark"] .badge.motphys {
 h2:hover > .headerlink,
 h3:hover > .headerlink {
     visibility: visible;
+}
+
+/* Reusable "contact Motphys for a license" button. The href is set at runtime
+   by _static/js/custom.js from the URL configured once in conf.py. */
+a.pro-license-btn {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2px 10px;
+    border-radius: 6px;
+    background-color: #6366f1;
+    color: #fff !important;
+    font-size: 0.95em;
+    font-weight: 600;
+    line-height: 1.6;
+    text-decoration: none !important;
+    white-space: nowrap;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+a.pro-license-btn:hover {
+    background-color: #4f46e5;
+    box-shadow: 0 2px 6px rgba(99, 102, 241, 0.35);
+}
+
+html[data-theme="dark"] a.pro-license-btn {
+    background-color: #818cf8;
+}
+
+html[data-theme="dark"] a.pro-license-btn:hover {
+    background-color: #a5b4fc;
 }

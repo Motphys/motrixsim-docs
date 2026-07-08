@@ -1,4 +1,4 @@
-# Copyright (C) 2020-2025 Motphys Technology Co., Ltd. All Rights Reserved.
+# Copyright (C) 2020-2026 Motphys Technology Co., Ltd. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,3 +21,5 @@ from legged_gym.envs.go1.go1 import Go1_env
 from legged_gym.envs.go1.go1_config import Go1Cfg
 from legged_gym.envs.T1.T1 import T1_env
 from legged_gym.envs.T1.T1_config import T1Cfg
+from legged_gym.envs.T1_football.T1 import T1_Football_env
+from legged_gym.envs.T1_football.T1_config import T1FootballCfg

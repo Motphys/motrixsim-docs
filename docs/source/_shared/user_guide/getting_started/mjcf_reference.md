@@ -9,7 +9,7 @@ outline: [2, 6]
 This document provides a hierarchical reference for all supported MJCF XML elements.
 
 ```{note}
-Items marked with <span class="badge mpex">MPEX</span> (**M**ot**p**hys **Ex**tension) are Motphys-specific extensions to the standard MJCF specification and are not part of the original MuJoCo format.
+Items marked with <span class="badge mpex">MPEX</span> (**M**ot**p**hys **Ex**tension) are Motphys-specific extensions to the standard MJCF specification and are not part of the original MuJoCo format. Some extensions are only available with a commercial or academic license; such items carry a short licensing notice right below their heading.
 ```
 
 ## Index
@@ -101,6 +101,7 @@ Items marked with <span class="badge mpex">MPEX</span> (**M**ot**p**hys **Ex**te
 <details>
 <summary style="padding: 8px 12px; background-color: rgba(127, 127, 127, 0.08); border-radius: 6px; cursor: pointer; font-weight: 600; font-family: monospace; transition: background-color 0.2s;"><a href="#asset-mesh" style="text-decoration: none; color: inherit;">mesh</a></summary>
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; padding: 8px 12px; margin: 4px 0;">
+  <div><a href="#asset-mesh-acd" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">acd</a></div>
   <div><a href="#asset-mesh-class" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">class</a></div>
   <div><a href="#asset-mesh-face" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">face</a></div>
   <div><a href="#asset-mesh-file" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">file</a></div>
@@ -146,6 +147,16 @@ Items marked with <span class="badge mpex">MPEX</span> (**M**ot**p**hys **Ex**te
   <div><a href="#asset-hfield-ncol" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">ncol</a></div>
   <div><a href="#asset-hfield-nrow" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">nrow</a></div>
   <div><a href="#asset-hfield-size" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">size</a></div>
+</div>
+</details>
+</div>
+<div style="margin-bottom: 6px; margin-left: 16px; border-left: 2px solid rgba(127, 127, 127, 0.3); padding-left: 12px;">
+<details>
+<summary style="padding: 8px 12px; background-color: rgba(127, 127, 127, 0.08); border-radius: 6px; cursor: pointer; font-weight: 600; font-family: monospace; transition: background-color 0.2s;"><a href="#asset-gsplat" style="text-decoration: none; color: inherit;">gsplat</a></summary>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; padding: 8px 12px; margin: 4px 0;">
+  <div><a href="#asset-gsplat-content_type" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">content_type</a></div>
+  <div><a href="#asset-gsplat-file" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">file</a></div>
+  <div><a href="#asset-gsplat-name" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">name</a></div>
 </div>
 </details>
 </div>
@@ -369,6 +380,25 @@ Items marked with <span class="badge mpex">MPEX</span> (**M**ot**p**hys **Ex**te
   <div><a href="#worldbody-geom-type" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">type</a></div>
   <div><a href="#worldbody-geom-xyaxes" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">xyaxes</a></div>
   <div><a href="#worldbody-geom-zaxis" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">zaxis</a></div>
+</div>
+</details>
+</div>
+<div style="margin-bottom: 6px; margin-left: 16px; border-left: 2px solid rgba(127, 127, 127, 0.3); padding-left: 12px;">
+<details>
+<summary style="padding: 8px 12px; background-color: rgba(127, 127, 127, 0.08); border-radius: 6px; cursor: pointer; font-weight: 600; font-family: monospace; transition: background-color 0.2s;"><a href="#worldbody-gsplat" style="text-decoration: none; color: inherit;">gsplat</a></summary>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; padding: 8px 12px; margin: 4px 0;">
+  <div><a href="#worldbody-gsplat-asset" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">asset</a></div>
+  <div><a href="#worldbody-gsplat-axisangle" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">axisangle</a></div>
+  <div><a href="#worldbody-gsplat-euler" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">euler</a></div>
+  <div><a href="#worldbody-gsplat-group" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">group</a></div>
+  <div><a href="#worldbody-gsplat-name" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">name</a></div>
+  <div><a href="#worldbody-gsplat-opacity" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">opacity</a></div>
+  <div><a href="#worldbody-gsplat-pos" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">pos</a></div>
+  <div><a href="#worldbody-gsplat-quat" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">quat</a></div>
+  <div><a href="#worldbody-gsplat-scale" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">scale</a></div>
+  <div><a href="#worldbody-gsplat-splatscale" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">splatscale</a></div>
+  <div><a href="#worldbody-gsplat-xyaxes" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">xyaxes</a></div>
+  <div><a href="#worldbody-gsplat-zaxis" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">zaxis</a></div>
 </div>
 </details>
 </div>
@@ -605,6 +635,7 @@ Items marked with <span class="badge mpex">MPEX</span> (**M**ot**p**hys **Ex**te
 <details>
 <summary style="padding: 8px 12px; background-color: rgba(127, 127, 127, 0.08); border-radius: 6px; cursor: pointer; font-weight: 600; font-family: monospace; transition: background-color 0.2s;"><a href="#visual-quality" style="text-decoration: none; color: inherit;">quality</a></summary>
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; padding: 8px 12px; margin: 4px 0;">
+  <div><a href="#visual-quality-pointshadowsize" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">pointshadowsize</a></div>
   <div><a href="#visual-quality-shadowsize" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">shadowsize</a></div>
 </div>
 </details>
@@ -1291,7 +1322,7 @@ This is a grouping element for defining assets. It does not have
 
 **Parent Elements**: [`mujoco`](#mujoco)
 
-**Child Elements**: [`material`](#asset-material), [`mesh`](#asset-mesh), [`texture`](#asset-texture), [`hfield`](#asset-hfield), [`model`](#asset-model)
+**Child Elements**: [`material`](#asset-material), [`mesh`](#asset-mesh), [`texture`](#asset-texture), [`hfield`](#asset-hfield), [`gsplat`](#asset-gsplat), [`model`](#asset-model)
 
 ---
 
@@ -1343,9 +1374,9 @@ This element creates a material asset. It can be referenced from
    advanced rendering (e.g., Physics-Based Rendering), more texture types
    need to be specified. In that case, this texture attribute should be
    omitted, and the texture types should be specified using layer child
-   elements. Note that the built-in renderer does not support PBR
-   properties, so these advanced rendering features are only available
-   when using an external renderer.
+   elements. The built-in renderer supports PBR, so these advanced
+   rendering features can be rendered directly once the corresponding
+   texture types are provided via the layer child elements.
 
 (asset-material-texuniform)=
 * **`texuniform`** [ <span class="badge bool">bool</span> | <span class="badge required">Required</span> | **Default:** `false` ]
@@ -1368,39 +1399,34 @@ This element creates a material asset. It can be referenced from
 (asset-material-reflectance)=
 * **`reflectance`** [ <span class="badge real">real</span> | <span class="badge required">Required</span> | **Default:** `0.0` ]
 
-  This attribute should be in the range [0 1]. If the value is greater
-   than 0, and the material is applied to a plane or a box geom, the
-   renderer will simulate reflectance. The larger the value, the stronger
-   the reflectance. For boxes, only the face in the direction of the local
-   +Z axis is reflective. Simulating reflectance properly requires
-   ray-tracing. Only the first reflective geom in the model is rendered
-   as such.
+  This attribute should be in the range [0 1]. It controls the specular
+   reflectance of the material in the built-in physically-based renderer:
+   the larger the value, the stronger the reflection. Unlike a planar
+   mirror, it is a per-material property and applies to every geom that
+   references this material, regardless of the geom shape.
 
 (asset-material-metallic)=
 * **`metallic`** [ <span class="badge real">real</span> | <span class="badge required">Required</span> | **Default:** `0.0` ]
 
   This attribute corresponds to uniform metallicity coefficient applied to
-   the entire material. This attribute is only used by physically-based
-   renderers and has no effect in Phong-based rendering. If a non-negative
-   value is specified, this metallic value should be multiplied by the
+   the entire material, used by the built-in physically-based renderer. If a
+   non-negative value is specified, this metallic value should be multiplied by the
    metallic texture sampled value to obtain the final metallicity of the material.
 
 (asset-material-roughness)=
 * **`roughness`** [ <span class="badge real">real</span> | <span class="badge required">Required</span> | **Default:** `0.0` ]
 
   This attribute corresponds to uniform roughness coefficient applied to
-   the entire material. This attribute is only used by physically-based
-   renderers and has no effect in Phong-based rendering. If a non-negative
-   value is specified, this roughness value should be multiplied by the
+   the entire material, used by the built-in physically-based renderer. If a
+   non-negative value is specified, this roughness value should be multiplied by the
    roughness texture sampled value to obtain the final roughness of the material.
 
 (asset-material-emission)=
 * **`emission`** [ <span class="badge array">real(4)</span> | <span class="badge required">Required</span> | **Default:** `0. 0. 0. 0.` ]
 
-  Emission in OpenGL has the RGBA format, however we only provide a scalar
-   setting. The RGB components of the OpenGL emission vector are the RGB
-   components of the material color multiplied by the value specified here.
-   The alpha component is 1.
+  Emissive color of the material in RGBA format. The emissive contribution
+   is this color scaled by the emissionintensity attribute. Use
+   emissionintensity to control the overall strength of the emission.
 
 <div class="motphys-extension-block">
 <div class="motphys-extension-label">MPEX</div>
@@ -1443,17 +1469,19 @@ This element creates a mesh asset, which can then be referenced from geoms.
  model, otherwise a geometric primitive is automatically fitted to it.
 
  The parser works with triangulated meshes. They can be loaded from binary
- STL files, OBJ files or MSH files with a custom format, or vertex and face
- data can be specified directly in the XML. While any collection of triangles
- can be loaded as a mesh and rendered, collision detection works with the
- convex hull of the mesh. The mesh appearance (including texture mapping) is
- controlled by the material and rgba attributes of the referencing geom.
+ STL files, OBJ files, glTF/GLB files or COLLADA (.dae) files, or vertex and
+ face data can be specified directly in the XML. The legacy MSH binary mesh
+ format is not supported; convert such meshes to OBJ or glTF. While any
+ collection of triangles can be loaded as a mesh and rendered, collision
+ detection works with the convex hull of the mesh. The mesh appearance
+ (including texture mapping) is controlled by the material and rgba attributes
+ of the referencing geom.
 
  Meshes can have explicit texture coordinates instead of relying on the
  automated texture mapping mechanism. When provided, these explicit
- coordinates have priority. Texture coordinates can be specified with OBJ
- files and MSH files, as well as explicitly in the XML with the texcoord
- attribute, but not via STL files.
+ coordinates have priority. Texture coordinates can be specified with OBJ and
+ glTF files, as well as explicitly in the XML with the texcoord attribute, but
+ not via STL files.
 
  The size of the mesh is determined by the 3D coordinates of the vertex data
  multiplied by the components of the scale attribute. Scaling is applied
@@ -1489,9 +1517,9 @@ Vertex data in source assets is often relative to coordinate frames whose
 
   The file from which the mesh will be loaded. The path is determined as
    described in the meshdir attribute of the compiler element. The file
-   extension must be \"stl\", \"msh\", or \"obj\" (not case sensitive) specifying
-   the file type. If the file name is omitted, the vertex attribute becomes
-   required.
+   extension must be \"stl\", \"obj\", \"gltf\", \"glb\", or \"dae\" (not case
+   sensitive) specifying the file type. If the file name is omitted, the
+   vertex attribute becomes required.
 
 (asset-mesh-scale)=
 * **`scale`** [ <span class="badge array">real(3)</span> | <span class="badge optional">Optional</span> ]
@@ -1540,6 +1568,16 @@ Vertex data in source assets is often relative to coordinate frames whose
    normals are defined. The conjugate of this quaternion is used to rotate
    the positions and normals. The model compiler normalizes the quaternion
    automatically.
+
+<div class="motphys-extension-block">
+<div class="motphys-extension-label">MPEX</div>
+
+(asset-mesh-acd)=
+* **`acd`** [ <span class="badge bool">bool</span> | <span class="badge required">Required</span> | **Default:** `false` ]
+
+  Override whether this mesh asset participates in convex decomposition.
+
+</div>
 
 **Parent Elements**: [`asset`](#asset), [`default`](#default)
 
@@ -1768,6 +1806,38 @@ For collision detection, a height field is treated as a union of triangular
 
 ---
 
+(asset-gsplat)=
+#### `gsplat` <span class="badge mpex">MPEX</span>
+
+<div class="motphys-extension-block">
+
+<p class="motphys-pro-license-note">🔒 This feature requires a commercial or academic license. <a class="pro-license-btn">Contact Motphys</a></p>
+
+This element creates a reusable Gaussian cloud asset.
+
+**Attributes:**
+
+(asset-gsplat-name)=
+* **`name`** [ <span class="badge string">string</span> | <span class="badge required">Required</span> | **Default:** `""` ]
+
+  Name used by body and world Gaussian cloud instances.
+
+(asset-gsplat-file)=
+* **`file`** [ <span class="badge string">string</span> | <span class="badge required">Required</span> | **Default:** `""` ]
+
+  Gaussian cloud file path.
+
+(asset-gsplat-content_type)=
+* **`content_type`** [ <span class="badge string">string</span> | <span class="badge optional">Optional</span> ]
+
+  Optional media type of the Gaussian cloud file.
+
+**Parent Elements**: [`asset`](#asset)
+
+</div>
+
+---
+
 (asset-model)=
 #### `model`
 
@@ -1806,7 +1876,7 @@ This element is used to define default settings for various model elements.
 
   Name of the default class.
 
-**Parent Elements**: [`default`](#default), [`mujoco`](#mujoco)
+**Parent Elements**: [`default`](#default)
 
 **Child Elements**: [`default`](#default), [`geom`](#worldbody-geom), [`joint`](#worldbody-joint), [`light`](#worldbody-light), [`mesh`](#asset-mesh), [`material`](#asset-material), [`general`](#actuator-general), [`motor`](#actuator-motor), [`position`](#actuator-position), [`velocity`](#actuator-velocity), [`adhesion`](#actuator-adhesion), [`camera`](#worldbody-camera), [`site`](#worldbody-site), [`tendon`](#tendon), [`equality`](#equality)
 
@@ -1961,9 +2031,9 @@ This element is used to construct the kinematic tree via nesting. The element wo
    value of 1 creates an upward force equal to the body's weight and compensates for gravity
    exactly. Values greater than 1 will create a net upwards force or buoyancy effect.
 
-**Parent Elements**: [`(world)body`](#worldbody-worldbody), [`mujoco`](#mujoco)
+**Parent Elements**: [`(world)body`](#worldbody-worldbody)
 
-**Child Elements**: [`inertial`](#worldbody-inertial), [`joint`](#worldbody-joint), [`freejoint`](#worldbody-freejoint), [`(world)body`](#worldbody-worldbody), [`attach`](#worldbody-attach), [`camera`](#worldbody-camera), [`frame`](#worldbody-frame), [`geom`](#worldbody-geom), [`light`](#worldbody-light), [`replicate`](#worldbody-replicate), [`site`](#worldbody-site)
+**Child Elements**: [`inertial`](#worldbody-inertial), [`joint`](#worldbody-joint), [`freejoint`](#worldbody-freejoint), [`(world)body`](#worldbody-worldbody), [`attach`](#worldbody-attach), [`camera`](#worldbody-camera), [`frame`](#worldbody-frame), [`geom`](#worldbody-geom), [`gsplat`](#worldbody-gsplat), [`light`](#worldbody-light), [`replicate`](#worldbody-replicate), [`site`](#worldbody-site)
 
 ---
 
@@ -2253,7 +2323,7 @@ Free joints do not have a position within the body frame and cannot have limits.
 
 </div>
 
-**Parent Elements**: [`(world)body`](#worldbody-worldbody), [`default`](#default), [`equality`](#equality), [`fixed`](#tendon-fixed)
+**Parent Elements**: [`(world)body`](#worldbody-worldbody), [`default`](#default)
 
 ---
 
@@ -2441,6 +2511,9 @@ The `xyaxes` orientation attribute is semantically convenient for cameras, as th
 
   -
 
+<div class="motphys-extension-block">
+<div class="motphys-extension-label">MPEX</div>
+
 (worldbody-camera-trackposspeed)=
 * **`trackposspeed`** [ <span class="badge real">real</span> | <span class="badge required">Required</span> | **Default:** `0.0` ]
 
@@ -2468,6 +2541,8 @@ The `xyaxes` orientation attribute is semantically convenient for cameras, as th
 
   Motphys-only extension. The far clipping plane distance. If not specified, it will be
    automatically computed.
+
+</div>
 
 **Parent Elements**: [`(world)body`](#worldbody-worldbody), [`default`](#default)
 
@@ -2785,6 +2860,83 @@ The following MJCF attributes are not currently supported:
 
 ---
 
+(worldbody-gsplat)=
+#### `gsplat` <span class="badge mpex">MPEX</span>
+
+<div class="motphys-extension-block">
+
+<p class="motphys-pro-license-note">🔒 This feature requires a commercial or academic license. <a class="pro-license-btn">Contact Motphys</a></p>
+
+A Gaussian cloud instance attached to the world or a body.
+
+**Attributes:**
+
+(worldbody-gsplat-name)=
+* **`name`** [ <span class="badge string">string</span> | <span class="badge optional">Optional</span> ]
+
+  Optional instance name.
+
+(worldbody-gsplat-asset)=
+* **`asset`** [ <span class="badge string">string</span> | <span class="badge required">Required</span> | **Default:** `""` ]
+
+  Gaussian cloud asset name.
+
+(worldbody-gsplat-pos)=
+* **`pos`** [ <span class="badge array">real(3)</span> | <span class="badge required">Required</span> | **Default:** `0.0 0.0 0.0` ]
+
+  Position of the Gaussian cloud frame.
+
+(worldbody-gsplat-quat)=
+* **`quat`** [ <span class="badge array">real(4)</span> | <span class="badge optional">Optional</span> ]
+
+  Orientation of the Gaussian cloud frame as unit quaternion.
+
+(worldbody-gsplat-euler)=
+* **`euler`** [ <span class="badge array">real(3)</span> | <span class="badge optional">Optional</span> ]
+
+  Orientation of the Gaussian cloud frame as Euler angles.
+
+(worldbody-gsplat-axisangle)=
+* **`axisangle`** [ <span class="badge array">real(4)</span> | <span class="badge optional">Optional</span> ]
+
+  Orientation of the Gaussian cloud frame as an axis-angle pair.
+
+(worldbody-gsplat-xyaxes)=
+* **`xyaxes`** [ <span class="badge array">real(6)</span> | <span class="badge optional">Optional</span> ]
+
+  Orientation of the Gaussian cloud frame via X and Y axes.
+
+(worldbody-gsplat-zaxis)=
+* **`zaxis`** [ <span class="badge array">real(3)</span> | <span class="badge optional">Optional</span> ]
+
+  Orientation of the Gaussian cloud frame via Z axis direction.
+
+(worldbody-gsplat-scale)=
+* **`scale`** [ <span class="badge array">real(3)</span> | <span class="badge required">Required</span> | **Default:** `1.0 1.0 1.0` ]
+
+  Per-axis instance scale.
+
+(worldbody-gsplat-opacity)=
+* **`opacity`** [ <span class="badge real">real</span> | <span class="badge required">Required</span> | **Default:** `1.0` ]
+
+  Opacity multiplier.
+
+(worldbody-gsplat-splatscale)=
+* **`splatscale`** [ <span class="badge real">real</span> | <span class="badge required">Required</span> | **Default:** `1.0` ]
+
+  Gaussian covariance scale multiplier.
+
+(worldbody-gsplat-group)=
+* **`group`** [ <span class="badge int">int</span> | <span class="badge required">Required</span> | **Default:** `0` ]
+
+  Visibility group.
+
+**Parent Elements**: [`(world)body`](#worldbody-worldbody)
+
+</div>
+
+---
+
 (worldbody-light)=
 #### `light`
 
@@ -2842,9 +2994,8 @@ To create a fixed light that does not move with any body, define it in the world
 
   **Choice:** [ `spot` | `point` | `directional` ]
 
-  Determines the type of light. Note that some light types may not be supported by some
-   renderers (e.g. only spot and directional lights are supported by the default native
-   renderer).
+  Determines the type of light. The built-in renderer supports spot, point and directional
+   lights.
 
 (worldbody-light-directional)=
 * **`directional`** [ <span class="badge bool">bool</span> | <span class="badge required">Required</span> | **Default:** `false` ]
@@ -4030,11 +4181,20 @@ Settings that affect the quality of rendering.
 **Attributes:**
 
 (visual-quality-shadowsize)=
-* **`shadowsize`** [ <span class="badge int">int</span> | <span class="badge required">Required</span> | **Default:** `4096` ]
+* **`shadowsize`** [ <span class="badge int">int</span> | <span class="badge required">Required</span> | **Default:** `1024` ]
 
-  This attribute specifies the size of the square texture used for shadow mapping. Higher
-   values result is smoother shadows. The size of the area over which a light can cast shadows
-   also affects smoothness, so these settings should be adjusted jointly.
+  This attribute specifies the size of the square texture used for directional and spot light
+   shadow mapping. Higher values result is smoother shadows. The size of the area over
+   which a light can cast shadows also affects smoothness, so these settings should be
+   adjusted jointly.
+
+(visual-quality-pointshadowsize)=
+* **`pointshadowsize`** [ <span class="badge int">int</span> | <span class="badge required">Required</span> | **Default:** `512` ]
+
+  This attribute specifies the size of the square texture used for point light shadow
+   mapping. Higher values result is smoother shadows. The size of the area over which a
+   light can cast shadows also affects smoothness, so these settings should be adjusted
+   jointly.
 
 **Parent Elements**: [`visual`](#visual)
 
@@ -4290,7 +4450,7 @@ This is a grouping element for equality constraints. It does not have attributes
  attributes are common to all equality constraint types and are documented once under the connect
  element.
 
-**Parent Elements**: [`default`](#default), [`mujoco`](#mujoco)
+**Parent Elements**: [`default`](#default)
 
 **Child Elements**: [`connect`](#equality-connect), [`joint`](#equality-joint), [`weld`](#equality-weld)
 
@@ -4450,7 +4610,7 @@ Omitting joint2 is equivalent to setting x = x0, in which case the constraint re
    their reference positions are y0 and x0, the constraint is:
    y - y0 = a0 + a1*(x - x0) + a2*(x - x0)^2 + a3*(x - x0)^3 + a4*(x - x0)^4.
 
-**Parent Elements**: [`(world)body`](#worldbody-worldbody), [`default`](#default), [`equality`](#equality), [`fixed`](#tendon-fixed)
+**Parent Elements**: [`default`](#default), [`equality`](#equality)
 
 ---
 
@@ -4701,7 +4861,7 @@ Grouping element for tendon definitions.
  as well as attach actuators to them. When used in equality constraints, tendons can also
  represent different forms of mechanical coupling.
 
-**Parent Elements**: [`default`](#default), [`mujoco`](#mujoco)
+**Parent Elements**: [`default`](#default)
 
 **Child Elements**: [`fixed`](#tendon-fixed)
 
@@ -4856,7 +5016,7 @@ A joint contributing to the length computation of a fixed tendon.
 
   Scalar coefficient multiplying the position or angle of the specified joint.
 
-**Parent Elements**: [`(world)body`](#worldbody-worldbody), [`default`](#default), [`equality`](#equality), [`fixed`](#tendon-fixed)
+**Parent Elements**: [`default`](#default), [`fixed`](#tendon-fixed)
 
 ---
 
@@ -5949,7 +6109,7 @@ Exactly one of the following filter groups may be used at a time: (geom1, geom2)
 
   The method used to reduce multiple contacts to a single output value.
 
-**Parent Elements**: [`mujoco`](#mujoco), [`sensor`](#sensor)
+**Parent Elements**: [`sensor`](#sensor)
 
 ---
 

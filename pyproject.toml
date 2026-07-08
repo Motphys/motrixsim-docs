@@ -4,14 +4,14 @@ build-backend = "uv_build"
 
 [project]
 name = "motrixsim-docs"
-version = "0.8.0"
+version = "0.9.0"
 description = "A high-performance physics simulation engine designed for multibody dynamics and robotics simulation."
 authors = [{ name = "Motphys", email = "developers@motphys.com" }]
 requires-python = "<3.14,>=3.10"
 readme = "README.md"
 license = "Apache-2.0"
 dependencies = [
-    "motrixsim-core",
+    "motrixsim",
     "onnxruntime>=1.23,<1.24",
     "numpy-quaternion>=2024.0.8",
     "imageio[ffmpeg]>=2.37.2",
@@ -22,7 +22,7 @@ dependencies = [
 
 [project.optional-dependencies]
 usd = [
-    "motrixsim-core[usd]"
+    "motrixsim[usd]"
 ]
 docs = [
     "sphinx",

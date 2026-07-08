@@ -107,6 +107,12 @@ MotrixSim is a high-performance physics simulation engine designed specifically 
 -   Engineering design verification
 -   Education and research
 
+## MotrixSim Ecosystem and Research
+
+-   **MotrixLab**: A robot reinforcement learning framework built on MotrixSim. It provides environment registration, training configuration, RL framework adapters, evaluation, and replay tools for quadrupeds, humanoids, robotic arms, dexterous hands, and related robot tasks. Repository: [Motphys/MotrixLab](https://github.com/Motphys/MotrixLab), documentation: [motrixlab.readthedocs.io](https://motrixlab.readthedocs.io/).
+-   **GS-Playground**: A high-fidelity embodied simulation platform developed by Tsinghua AIR DISCOVER Lab, Motphys, and collaborators. It combines MotrixSim parallel physics simulation with 3D Gaussian Splatting rendering for visual navigation, manipulation, locomotion, and Sim2Real research. The work has been accepted by RSS 2026. Repository: [discoverse-dev/gs_playground](https://github.com/discoverse-dev/gs_playground), paper: [arXiv:2604.25459](https://arxiv.org/abs/2604.25459), project page: [gsplayground.github.io](https://gsplayground.github.io/).
+-   **UniLab**: A heterogeneous CPU-simulation / GPU-learning system for robot reinforcement learning. MotrixSim is integrated as a CPU-batched physics backend in the unified training runtime, supporting large-scale rollouts and cross-platform training. Repository: [unilabsim/UniLab](https://github.com/unilabsim/UniLab), paper: [arXiv:2605.30313](https://arxiv.org/abs/2605.30313).
+
 ```{toctree}
 :maxdepth: 1
 

@@ -1,0 +1,25 @@
+<mujoco>
+  <statistic center="0 0 0.43" extent="1.1" />
+  <visual>
+    <global fovy="55" azimuth="125" elevation="-25" />
+    <shadowsize width="2048" height="2048" />
+    <map zfar="100" />
+    <tonemapping method="aces" />
+  </visual>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.816 0.875 1.0" rgb2="0.427 0.580 0.757" width="256" height="1024" />
+    <material name="chair_cushion" rgba="0.78 0.74 0.70 1.0" reflectance="0.35" roughness="0.82" metallic="0.0" />
+    <material name="chair_wood" rgba="0.62 0.36 0.17 1.0" reflectance="0.45" roughness="0.65" metallic="0.0" />
+    <mesh name="chair_cushion" file="assets/GEO_chair_001a.obj" acd="true" />
+    <mesh name="chair_frame" file="assets/GEO_chair_001b.obj" acd="true" />
+  </asset>
+  <worldbody>
+    <light name="key" pos="-2 -3 4" dir="2 3 -4" diffuse="0.9 0.85 0.75" />
+    <geom name="floor" size="0 0 0.05" type="plane" rgba="0.78 0.80 0.82 1" />
+    <body name="chair" pos="0 0 0.43">
+      <geom name="chair_cushion_online_acd" type="mesh" mesh="chair_cushion" material="chair_cushion" group="2" contype="1" conaffinity="1" />
+      <geom name="chair_frame_online_acd" type="mesh" mesh="chair_frame" material="chair_wood" group="2" contype="1" conaffinity="1" />
+    </body>
+  </worldbody>
+  <option gravity="0 0 -9.81" />
+</mujoco>

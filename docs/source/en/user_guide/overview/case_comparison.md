@@ -108,10 +108,10 @@ In this example, MotrixSim and MuJoCo use two different MJCF files:
 Since MuJoCo only supports soft contact, while MotrixSim supports both soft and hard contact, we made some extensions to the MJCF:
 
 ```xml
-<geom solref="1 0" hard="true" />
+<geom _hard="true" _bounciness="1" _erp="0" />
 ```
 
-Here, `hard=true` indicates a hard contact geometry. In this case, `solref=(bounciness, ERP)` specifies the restitution coefficient and ERP (error reduction parameter).
+Here, `_hard="true"` indicates a hard contact geometry. The contact behavior is then controlled by `_bounciness` (restitution coefficient, range [0, 1]) and `_erp` (error reduction parameter), replacing the `solref`/`solimp` used for soft contact.
 
 You can run these examples with:
 

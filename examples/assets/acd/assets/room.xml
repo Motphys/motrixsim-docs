@@ -1,0 +1,330 @@
+<mujoco>
+  <compiler angle="radian" autolimits="true" />
+  <asset>
+    <texture type="2d" colorspace="sRGB" name="ceiling_color" file="ceiling_color.jpg" />
+    <texture type="2d" colorspace="sRGB" name="plaster_color" file="plaster_color.jpg" />
+    <texture type="2d" colorspace="linear" name="plaster_normal" file="plaster_normal.jpg" />
+    <texture type="2d" colorspace="sRGB" name="basket_color" file="basket_color.jpg" />
+    <texture type="2d" colorspace="linear" name="basket_normal" file="basket_normal.jpg" />
+    <texture type="2d" colorspace="sRGB" name="cabinet_color" file="cabinet_color.jpg" />
+    <texture type="2d" colorspace="linear" name="cabinet_normal" file="cabinet_normal.jpg" />
+    <texture type="2d" colorspace="linear" name="lamp_normal" file="lamp_normal.jpg" />
+    <texture type="2d" colorspace="sRGB" name="floorlamp_color" file="floorlamp_color.jpg" />
+    <texture type="2d" colorspace="linear" name="floorlamp_normal" file="floorlamp_normal.jpg" />
+    <texture type="2d" colorspace="sRGB" name="painting_003_color" file="painting_003_color.jpg" />
+    <texture type="2d" colorspace="sRGB" name="shelf_color" file="shelf_color.jpg" />
+    <texture type="2d" colorspace="linear" name="shelf_002_normal" file="shelf_002_normal.jpg" />
+    <texture type="2d" colorspace="sRGB" name="tv_screen" file="tv_screen.png" />
+    <texture type="2d" colorspace="sRGB" name="chair_wood_color" file="chair_wood_color.jpg" />
+    <texture type="2d" colorspace="sRGB" name="sofa_color" file="sofa_color.jpg" />
+    <texture type="2d" colorspace="sRGB" name="tv_cabinet_color" file="tv_cabinet_color.jpg" />
+    <texture type="2d" colorspace="sRGB" name="plant_001_color" file="plant_001_color.png" />
+    <texture type="2d" colorspace="linear" name="plant_001_normal" file="plant_001_normal.jpg" />
+    <texture type="2d" colorspace="sRGB" name="plant_002_color" file="plant_002_color.jpg" />
+    <texture type="2d" colorspace="linear" name="plant_002_normal" file="plant_002_normal.jpg" />
+    <texture type="2d" colorspace="sRGB" name="teatable_color" file="teatable_color.png" />
+    <texture type="2d" colorspace="linear" name="teatable_normal" file="teatable_normal.jpg" />
+    <texture type="2d" colorspace="sRGB" name="table_color" file="table_color.jpg" />
+    <texture type="2d" colorspace="sRGB" name="coffeetable_color" file="coffeetable_color.jpg" />
+    <texture type="2d" colorspace="sRGB" name="painting_002_color" file="painting_002_color.jpg" />
+    <texture type="2d" colorspace="linear" name="painting_002_normal" file="painting_002_normal.jpg" />
+    <texture type="2d" colorspace="sRGB" name="stone_specular" file="stone_specular.jpg" />
+    <texture type="2d" colorspace="sRGB" name="painting_001_color" file="painting_001_color.jpg" />
+    <texture type="2d" colorspace="sRGB" name="painting_004_color" file="painting_004_color.jpg" />
+    <texture type="2d" colorspace="sRGB" name="floor_color" file="floor_color.jpg" />
+    <texture type="2d" colorspace="linear" name="floor_normal" file="floor_normal.jpg" />
+    <texture type="2d" colorspace="linear" name="tv_normal" file="tv_normal.jpg" />
+    <texture type="2d" colorspace="sRGB" name="wallpaper_color" file="wallpaper_color.jpg" />
+    <texture type="2d" colorspace="linear" name="wallpaper_normal" file="wallpaper_normal.jpg" />
+    <texture type="2d" colorspace="sRGB" name="pillow_color" file="pillow_color.jpg" />
+    <texture type="2d" colorspace="linear" name="pillow_fabric_normal" file="pillow_fabric_normal.jpg" />
+    <texture type="2d" colorspace="sRGB" name="carpet_001_color" file="carpet_001_color.jpg" />
+    <texture type="2d" colorspace="linear" name="carpet_normal" file="carpet_normal.jpg" />
+    <texture type="2d" colorspace="sRGB" name="carpet_002_color" file="carpet_002_color.jpg" />
+    <texture type="2d" colorspace="linear" name="bed_normal" file="bed_normal.jpg" />
+    <texture type="2d" colorspace="sRGB" name="curtain_color" file="curtain_color.png" />
+    <texture type="2d" colorspace="linear" name="curtain_normal" file="curtain_normal.jpg" />
+    <material name="MI_bedlamp" rgba="0.85 0.62 0.42 1.0" reflectance="0.5" roughness="0.5" metallic="0.05">
+      <layer texture="coffeetable_color" role="rgb" />
+    </material>
+    <material name="MI_light_bulb" rgba="0.706 0.776 0.753 1.0" reflectance="0.5" roughness="0.0" metallic="0.0" emission="1.0 0.701 0.392 1.0" emissionintensity="1.5" />
+    <material name="MI_warm_light" rgba="0.9063318 0.8300389 0.694361 1.0" reflectance="0.5" roughness="0.5" metallic="0.0" emission="1.0 0.84 0.6 1.0" emissionintensity="10.0" />
+    <material name="MI_ceiling" rgba="1.0 0.9639762 0.9063318 1.0" reflectance="0.5" roughness="0.5" metallic="0.0">
+      <layer texture="ceiling_color" role="rgb" />
+    </material>
+    <material name="MI_ceiling_plaster" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="1.0" metallic="0.0">
+      <layer texture="plaster_color" role="rgb" />
+      <layer texture="plaster_normal" role="normal" />
+    </material>
+    <material name="MI_small_lamp_001" rgba="0.9309246 0.8797844 0.7947696 1.0" reflectance="0.5" roughness="0.3" metallic="0.0" />
+    <material name="MI_basket_001" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.5" metallic="0.0" texuniform="true" texrepeat="2.0 2.0">
+      <layer texture="basket_color" role="rgb" />
+      <layer texture="basket_normal" role="normal" />
+    </material>
+    <material name="MI_cabinet_001b" rgba="1.0 1.0 1.0 1.0" reflectance="1.0" roughness="0.2" metallic="0.0">
+      <layer texture="cabinet_color" role="rgb" />
+      <layer texture="cabinet_normal" role="normal" />
+    </material>
+    <material name="MI_cabinet_001a" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.65" metallic="0.0">
+      <layer texture="cabinet_color" role="rgb" />
+      <layer texture="cabinet_normal" role="normal" />
+    </material>
+    <material name="MI_lamp" rgba="0.8117627 0.576471 0.3607844 1.0" reflectance="0.5" roughness="0.5" metallic="0.0">
+      <layer texture="lamp_normal" role="normal" />
+    </material>
+    <material name="MI_floorlamp" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.5" metallic="0.0" emission="1.0 1.0 1.0 1.0" emissionintensity="1.5">
+      <layer texture="floorlamp_color" role="rgb" />
+      <layer texture="floorlamp_normal" role="normal" />
+      <layer texture="floorlamp_color" role="emissive" />
+    </material>
+    <material name="MI_painting_wood_001" rgba="0.735357 0.5208064 0.3241327 1.0" reflectance="0.5" roughness="0.25" metallic="0.0" />
+    <material name="MI_painting_003" rgba="1.0 1.0 1.0 1.0" reflectance="0.8" roughness="0.05" metallic="0.0">
+      <layer texture="painting_003_color" role="rgb" />
+    </material>
+    <material name="MI_shelf001a" rgba="0.5838294 0.5838315 0.5838313 1.0" reflectance="0.5" roughness="0.6" metallic="0.0" />
+    <material name="MI_shelf_wood" rgba="1.0 0.9639762 0.9063318 1.0" reflectance="0.5" roughness="0.5" metallic="0.0">
+      <layer texture="shelf_color" role="rgb" />
+    </material>
+    <material name="MI_shelf_002" rgba="0.880825 0.8152506 0.7014107 1.0" reflectance="0.5" roughness="0.5" metallic="0.0">
+      <layer texture="shelf_color" role="rgb" />
+      <layer texture="shelf_002_normal" role="normal" />
+    </material>
+    <material name="MI_television_002" rgba="1.0 1.0 1.0 1.0" reflectance="1.0" roughness="0.01" metallic="0.05" emission="1.0 1.0 1.0 1.0" emissionintensity="6.0">
+      <layer texture="tv_screen" role="rgb" />
+      <layer texture="tv_screen" role="emissive" />
+    </material>
+    <material name="MI_chair_wood" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.5" metallic="0.0">
+      <layer texture="chair_wood_color" role="rgb" />
+    </material>
+    <material name="MI_sofa_001" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.85" metallic="0.0">
+      <layer texture="sofa_color" role="rgb" />
+    </material>
+    <material name="MI_TV_cabinet" rgba="1.0 0.9544399 0.9309246 1.0" reflectance="0.5" roughness="0.8" metallic="0.0">
+      <layer texture="tv_cabinet_color" role="rgb" />
+    </material>
+    <material name="MI_table_grey" rgba="0.880825 0.880825 0.880825 1.0" reflectance="0.5" roughness="0.5" metallic="0.0" />
+    <material name="MI_plant_001" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.5" metallic="0.0">
+      <layer texture="plant_001_color" role="rgba" />
+      <layer texture="plant_001_normal" role="normal" />
+    </material>
+    <material name="MI_plant_002" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.5" metallic="0.0">
+      <layer texture="plant_002_color" role="rgb" />
+      <layer texture="plant_002_normal" role="normal" />
+    </material>
+    <material name="MI_teatable" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="1.0" metallic="1.0">
+      <layer texture="teatable_color" role="rgb" />
+      <layer texture="teatable_normal" role="normal" />
+      <layer texture="teatable_color" role="orm" />
+    </material>
+    <material name="MI_trashcan" rgba="0.1593318 0.1593318 0.1593318 1.0" reflectance="0.5" roughness="0.3" metallic="0.2" />
+    <material name="MI_white_bin" rgba="0.9063318 0.9063318 0.9063318 1.0" reflectance="0.5" roughness="0.3" metallic="0.0" />
+    <material name="MI_table_white" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.5" metallic="0.0">
+      <layer texture="table_color" role="rgb" />
+    </material>
+    <material name="MI_coffeetable" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.5" metallic="0.05">
+      <layer texture="coffeetable_color" role="rgb" />
+    </material>
+    <material name="MI_painting_002" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.65" metallic="0.0">
+      <layer texture="painting_002_color" role="rgb" />
+      <layer texture="painting_002_normal" role="normal" />
+    </material>
+    <material name="MI_sofa_002" rgba="0.60 0.78 0.90 1.0" reflectance="0.5" roughness="0.75" metallic="0.0">
+      <layer texture="sofa_color" role="rgb" />
+    </material>
+    <material name="MI_pillow_001" rgba="0.55 0.88 0.82 1.0" reflectance="0.5" roughness="0.5" metallic="0.0" />
+    <material name="MI_walldecorate_stone" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.3" metallic="0.0">
+      <layer texture="stone_specular" role="rgb" />
+    </material>
+    <material name="MI_painting_001" rgba="1.0 1.0 1.0 1.0" reflectance="0.9" roughness="0.15" metallic="0.0">
+      <layer texture="painting_001_color" role="rgb" />
+    </material>
+    <material name="MI_painting_001c" rgba="0.8543058 0.8543058 0.8543058 0.1" reflectance="0.95" roughness="0.01" metallic="0.05" />
+    <material name="MI_painting_004" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.5" metallic="0.0">
+      <layer texture="painting_004_color" role="rgb" />
+    </material>
+    <material name="MI_wooden_floor" rgba="1.0 1.0 1.0 1.0" reflectance="1.0" roughness="0.2" metallic="0.0">
+      <layer texture="floor_color" role="rgb" />
+      <layer texture="floor_normal" role="normal" />
+    </material>
+    <material name="MI_television_001" rgba="0.2069708 0.2069708 0.2069708 1.0" reflectance="0.5" roughness="0.2" metallic="0.05">
+      <layer texture="tv_normal" role="normal" />
+    </material>
+    <material name="MI_wallpaper" rgba="0.9063318 0.8976652 0.886004 1.0" reflectance="0.5" roughness="0.5" metallic="0.0" texuniform="true" texrepeat="1.0 1.0">
+      <layer texture="wallpaper_color" role="rgb" />
+      <layer texture="wallpaper_normal" role="normal" />
+    </material>
+    <material name="MI_pillow_002" rgba="0.92 0.87 0.68 1.0" reflectance="0.5" roughness="0.5" metallic="0.0" />
+    <material name="MI_sofa_001c" rgba="0.72 0.92 0.80 1.0" reflectance="0.5" roughness="0.75" metallic="0.0">
+      <layer texture="sofa_color" role="rgb" />
+    </material>
+    <material name="MI_child_pillow" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.5" metallic="0.0">
+      <layer texture="pillow_color" role="rgb" />
+      <layer texture="pillow_fabric_normal" role="normal" />
+    </material>
+    <material name="MI_sofa_001b" rgba="0.88 0.80 0.70 1.0" reflectance="0.5" roughness="0.75" metallic="0.0">
+      <layer texture="sofa_color" role="rgb" />
+    </material>
+    <material name="MI_window_light" rgba="0.85 0.92 1.0 1.0" reflectance="0.5" roughness="0.5" metallic="0.0" emission="0.75 0.88 1.0 1.0" emissionintensity="1.5" />
+    <material name="MI_white" rgba="0.9063318 0.8888868 0.865042 1.0" reflectance="0.5" roughness="0.7" metallic="0.0" />
+    <material name="MI_window_trans1" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.6" metallic="0.0" texuniform="true" texrepeat="1.0 1.0">
+      <layer texture="curtain_color" role="rgba" />
+      <layer texture="curtain_normal" role="normal" />
+    </material>
+    <material name="MI_window_trans2" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.6" metallic="0.0" texuniform="true" texrepeat="1.0 1.0">
+      <layer texture="curtain_color" role="rgba" />
+      <layer texture="curtain_normal" role="normal" />
+    </material>
+    <material name="MI_window_white" rgba="0.8878042 0.8878042 0.8878042 1.0" reflectance="0.5" roughness="0.4" metallic="0.0" />
+    <material name="MI_carpet_001" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.5" metallic="0.0">
+      <layer texture="carpet_001_color" role="rgb" />
+      <layer texture="carpet_normal" role="normal" />
+    </material>
+    <material name="MI_carpet_002" rgba="1.0 1.0 1.0 1.0" reflectance="0.5" roughness="0.5" metallic="0.0">
+      <layer texture="carpet_002_color" role="rgb" />
+      <layer texture="carpet_normal" role="normal" />
+    </material>
+    <material name="MI_bed_002" rgba="0.93754 0.6000303 0.465959 1.0" reflectance="0.5" roughness="0.7" metallic="0.0">
+      <layer texture="bed_normal" role="normal" />
+    </material>
+    <material name="MI_bed_001" rgba="0.9296567 0.7954794 0.6635579 1.0" reflectance="0.5" roughness="0.7" metallic="0.0">
+      <layer texture="bed_normal" role="normal" />
+    </material>
+    <material name="MI_bed_003" rgba="0.9195151 0.9195151 0.9195151 1.0" reflectance="0.5" roughness="0.7" metallic="0.0">
+      <layer texture="bed_normal" role="normal" />
+    </material>
+    <mesh name="GEO_lamp" file="GEO_lamp.obj" />
+    <mesh name="GEO_lamp_light" file="GEO_lamp_light.obj" />
+    <mesh name="GEO_V_big_lamp_001" file="GEO_V_big_lamp_001.obj" />
+    <mesh name="GEO_V_ceiling_001" file="GEO_V_ceiling_001.obj" />
+    <mesh name="GEO_V_ceiling_003" file="GEO_V_ceiling_003.obj" />
+    <mesh name="GEO_V_ceiling_003_001" file="GEO_V_ceiling_003_001.obj" />
+    <mesh name="GEO_V_small_lamp_001" file="GEO_V_small_lamp_001.obj" />
+    <mesh name="GEO_V_small_lamp_002" file="GEO_V_small_lamp_002.obj" />
+    <mesh name="GEO_basket_001" file="GEO_basket_001.obj" />
+    <mesh name="GEO_cabinet_001" file="GEO_cabinet_001.obj" />
+    <mesh name="GEO_cabinet_001_001" file="GEO_cabinet_001_001.obj" />
+    <mesh name="GEO_lamp_001" file="GEO_lamp_001.obj" />
+    <mesh name="GEO_lamp_002" file="GEO_lamp_002.obj" />
+    <mesh name="GEO_painting_001a" file="GEO_painting_001a.obj" />
+    <mesh name="GEO_painting_003" file="GEO_painting_003.obj" />
+    <mesh name="GEO_shelf_001c" file="GEO_shelf_001c.obj" />
+    <mesh name="GEO_shelf_001a" file="GEO_shelf_001a.obj" />
+    <mesh name="GEO_shelf_001b" file="GEO_shelf_001b.obj" />
+    <mesh name="GEO_shelf_002" file="GEO_shelf_002.obj" />
+    <mesh name="GEO_television_a" file="GEO_television_a.obj" />
+    <mesh name="GEO_wall_decorate_001a" file="GEO_wall_decorate_001a.obj" />
+    <mesh name="GEO_armchair_001" file="GEO_armchair_001.obj" />
+    <mesh name="GEO_armchair_002" file="GEO_armchair_002.obj" />
+    <mesh name="GEO_desk_001a" file="GEO_desk_001a.obj" />
+    <mesh name="GEO_plant_001" file="GEO_plant_001.obj" />
+    <mesh name="GEO_plant_002" file="GEO_plant_002.obj" />
+    <mesh name="GEO_tea_table" file="GEO_tea_table.obj" />
+    <mesh name="GEO_trashcan" file="GEO_trashcan.obj" />
+    <mesh name="GEO_white_bin" file="GEO_white_bin.obj" />
+    <mesh name="GEO_desk_001b" file="GEO_desk_001b.obj" />
+    <mesh name="GEO_desk_001c" file="GEO_desk_001c.obj" />
+    <mesh name="GEO_chair_001a" file="GEO_chair_001a.obj" />
+    <mesh name="GEO_coffeetable" file="GEO_coffeetable.obj" />
+    <mesh name="GEO_painting_002" file="GEO_painting_002.obj" />
+    <mesh name="GEO_sofa_001" file="GEO_sofa_001.obj" />
+    <mesh name="GEO_sofa_002a" file="GEO_sofa_002a.obj" />
+    <mesh name="GEO_sofa_002b" file="GEO_sofa_002b.obj" />
+    <mesh name="GEO_tv_cabinet" file="GEO_tv_cabinet.obj" />
+    <mesh name="GEO_wall_decorate_001b" file="GEO_wall_decorate_001b.obj" />
+    <mesh name="GEO_painting_001b" file="GEO_painting_001b.obj" />
+    <mesh name="GEO_painting_001c" file="GEO_painting_001c.obj" />
+    <mesh name="GEO_painting_004a" file="GEO_painting_004a.obj" />
+    <mesh name="GEO_painting_004b" file="GEO_painting_004b.obj" />
+    <mesh name="GEO_painting_004c" file="GEO_painting_004c.obj" />
+    <mesh name="GEO_floor" file="GEO_floor.obj" />
+    <mesh name="GEO_television_b" file="GEO_television_b.obj" />
+    <mesh name="GEO_chair_001b" file="GEO_chair_001b.obj" />
+    <mesh name="wall_001" file="wall_001.obj" />
+    <mesh name="wall_002" file="wall_002.obj" />
+    <mesh name="wall_003" file="wall_003.obj" />
+    <mesh name="wall_004" file="wall_004.obj" />
+    <mesh name="GEO_sofa_002a_001" file="GEO_sofa_002a_001.obj" />
+    <mesh name="GEO_sofa_001_001" file="GEO_sofa_001_001.obj" />
+    <mesh name="GEO_sofa_001_002" file="GEO_sofa_001_002.obj" />
+    <mesh name="GEO_sofa_001_003" file="GEO_sofa_001_003.obj" />
+    <mesh name="wall_001_001" file="wall_001_001.obj" />
+    <mesh name="wall_001_001_001" file="wall_001_001_001.obj" />
+    <mesh name="GEO_carpet_001_001" file="GEO_carpet_001_001.obj" />
+    <mesh name="carpet_002" file="carpet_002.obj" />
+    <mesh name="GEO_bed_002" file="GEO_bed_002.obj" />
+    <mesh name="GEO_bed_001" file="GEO_bed_001.obj" />
+    <mesh name="GEO_bed_003" file="GEO_bed_003.obj" />
+    <mesh name="curtain_001" file="curtain_001.obj" />
+    <mesh name="curtain_002" file="curtain_002.obj" />
+    <mesh name="curtain_rod" file="curtain_rod.obj" />
+  </asset>
+  <worldbody>
+    <body name="LNK_Link" pos="2.3988655 4.1777534 3.2000003" quat="1.0 0.0 0.0 0.0">
+      <geom name="GEO_lamp" pos="-2.2159512 3.2399826 -1.5423048" quat="0.4999997 0.4999996 0.5000004 0.5000003" type="mesh" mesh="GEO_lamp" material="MI_bedlamp" group="2" />
+      <geom name="GEO_lamp_light" pos="-2.18695 3.2400889 -1.6636417" quat="0.4999997 0.4999996 0.5000004 0.5000003" type="mesh" mesh="GEO_lamp_light" material="MI_light_bulb" group="2" />
+      <geom name="GEO_armchair_001" pos="-0.9768145 -3.1234112 -3.1359845" quat="0.5693076 0.0 0.0 0.8221246" type="mesh" mesh="GEO_armchair_001" material="MI_sofa_001" group="2" />
+      <geom name="GEO_armchair_002" pos="-0.9768145 -3.1234112 -3.1359845" quat="0.5693076 0.0 0.0 0.8221246" type="mesh" mesh="GEO_armchair_002" material="MI_TV_cabinet" group="2" />
+      <geom name="GEO_basket_001" pos="1.3687358 -3.9578962 -2.6724246" quat="0.9947878 0.0 0.0 0.1019665" type="mesh" mesh="GEO_basket_001" material="MI_basket_001" group="2" />
+      <geom name="GEO_bed_a" pos="-1.6685157 3.239378 -2.6344794" quat="1e-07 0.0 0.0 1.0" type="mesh" mesh="GEO_bed_001" material="MI_bed_001" group="2" />
+      <geom name="GEO_bed_b" pos="-1.6685157 3.239378 -2.6344794" quat="1e-07 0.0 0.0 1.0" type="mesh" mesh="GEO_bed_002" material="MI_bed_002" group="2" />
+      <geom name="GEO_bed_c" pos="-1.6685157 3.239378 -2.6344794" quat="1e-07 0.0 0.0 1.0" type="mesh" mesh="GEO_bed_003" material="MI_bed_003" group="2" />
+      <geom name="GEO_cabinet_001a" pos="-1.8276908 0.4161096 -2.7113062" quat="0.7071066 0.0 0.0 0.7071069" type="mesh" mesh="GEO_cabinet_001" material="MI_cabinet_001b" group="2" />
+      <geom name="GEO_cabinet_001b" pos="-1.8276908 0.4161096 -2.7113062" quat="0.7071066 0.0 0.0 0.7071069" type="mesh" mesh="GEO_cabinet_001_001" material="MI_cabinet_001a" group="2" />
+      <geom name="GEO_carpet_001" pos="0.3563495 -1.6749058 -3.141" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="GEO_carpet_001_001" material="MI_carpet_001" group="2" />
+      <geom name="GEO_carpet_002" pos="0.9126127 0.8749113 -3.141" quat="0.9994292 0.0 0.0 -0.0337824" type="mesh" mesh="carpet_002" material="MI_carpet_002" group="2" />
+      <geom name="GEO_chair_001a" pos="1.5703938 2.983376 -2.7144989" quat="1.0 -1e-07 0.0 0.0" type="mesh" mesh="GEO_chair_001a" material="MI_sofa_001" group="2" />
+      <geom name="GEO_chair_001b" pos="1.5703938 2.983376 -2.7144989" quat="1.0 -1e-07 0.0 0.0" type="mesh" mesh="GEO_chair_001b" material="MI_TV_cabinet" group="2" />
+      <geom name="GEO_coffeetable" pos="0.7216825 0.8377824 -2.923108" quat="0.7071069 -1e-07 -1e-07 0.7071066" type="mesh" mesh="GEO_coffeetable" material="MI_coffeetable" group="2" />
+      <geom name="GEO_desk_001a" pos="2.0643122 2.1702538 -3.1350003" quat="1e-07 -0.0 -0.0 -1.0" type="mesh" mesh="GEO_desk_001a" material="MI_table_grey" group="2" />
+      <geom name="GEO_desk_001b" pos="2.0643122 2.1702538 -3.1350003" quat="1e-07 -0.0 -0.0 -1.0" type="mesh" mesh="GEO_desk_001b" material="MI_TV_cabinet" group="2" />
+      <geom name="GEO_desk_001c" pos="2.0643122 2.1702538 -3.1350003" quat="1e-07 -0.0 -0.0 -1.0" type="mesh" mesh="GEO_desk_001c" material="MI_table_white" group="2" />
+      <geom name="GEO_floor" pos="-0.2727804 -3.3143349 -4.1500001" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="GEO_floor" material="MI_wooden_floor" group="2" />
+      <geom name="GEO_lamp_001" pos="2.2197044 2.0263395 -2.2874799" quat="0.7071069 0.0 0.0 0.7071066" type="mesh" mesh="GEO_lamp_001" material="MI_lamp" group="2" />
+      <geom name="GEO_lamp_002" pos="1.9090922 -0.2740898 -2.2438908" quat="0.7071069 0.0 0.0 0.7071066" type="mesh" mesh="GEO_lamp_002" material="MI_floorlamp" group="2" />
+      <geom name="GEO_painting_001a" pos="2.3525012 0.9138193 -1.685194" quat="0.7071069 0.0 0.0 -0.7071066" type="mesh" mesh="GEO_painting_001a" material="MI_painting_wood_001" group="2" />
+      <geom name="GEO_painting_001b" pos="2.3525012 0.9138193 -1.685194" quat="0.7071069 0.0 0.0 -0.7071066" type="mesh" mesh="GEO_painting_001b" material="MI_painting_001" group="2" />
+      <geom name="GEO_painting_001c" pos="2.3525012 0.9138193 -1.685194" quat="0.7071069 0.0 0.0 -0.7071066" type="mesh" mesh="GEO_painting_001c" material="MI_painting_001c" group="2" />
+      <geom name="GEO_painting_002" pos="0.4665818 -4.0983496 -1.0060508" quat="2e-07 0.0 -0.0 -1.0" type="mesh" mesh="GEO_painting_002" material="MI_painting_002" group="2" />
+      <geom name="GEO_painting_003" pos="-0.2164013 -4.1476002 -1.482164" quat="2e-07 -0.0 -0.0 -1.0" type="mesh" mesh="GEO_painting_003" material="MI_painting_003" group="2" />
+      <geom name="GEO_painting_004a" pos="0.2868445 4.1740665 -1.2648039" quat="1.0 0.0 0.0 2e-07" type="mesh" mesh="GEO_painting_004a" material="MI_painting_wood_001" group="2" />
+      <geom name="GEO_painting_004b" pos="0.2868445 4.1740665 -1.2648039" quat="1.0 0.0 0.0 2e-07" type="mesh" mesh="GEO_painting_004b" material="MI_painting_004" group="2" />
+      <geom name="GEO_painting_004c" pos="0.2868445 4.1740665 -1.2648039" quat="1.0 0.0 0.0 2e-07" type="mesh" mesh="GEO_painting_004c" material="MI_painting_001c" group="2" />
+      <geom name="GEO_plant_001" pos="2.2255433 -3.9694331 -2.351932" quat="0.7071069 0.0 0.0 0.7071066" type="mesh" mesh="GEO_plant_001" material="MI_plant_001" group="2" />
+      <geom name="GEO_plant_002" pos="-2.0892875 1.9181457 -2.3164349" quat="0.5211444 -0.0 -0.0 -0.8534685" type="mesh" mesh="GEO_plant_002" material="MI_plant_002" group="2" />
+      <geom name="GEO_shelf_001a" pos="-1.4748635 -4.2004886 -1.8680556" quat="0.7071069 0.0 0.0 -0.7071066" type="mesh" mesh="GEO_shelf_001a" material="MI_shelf001a" group="2" />
+      <geom name="GEO_shelf_001b" pos="-1.4748635 -4.2004886 -1.8680556" quat="0.7071069 0.0 0.0 -0.7071066" type="mesh" mesh="GEO_shelf_001b" material="MI_shelf_wood" group="2" />
+      <geom name="GEO_shelf_001c" pos="-1.4748635 -4.2004886 -1.8680556" quat="0.7071069 0.0 0.0 -0.7071066" type="mesh" mesh="GEO_shelf_001c" material="MI_shelf001a" group="2" />
+      <geom name="GEO_shelf_002" pos="1.8087699 4.0760632 -2.1424556" quat="0.7071069 0.0 0.0 0.7071066" type="mesh" mesh="GEO_shelf_002" material="MI_shelf_002" group="2" />
+      <geom name="GEO_sofa_001a" pos="1.864403 0.9069114 -3.1509286" quat="0.7071069 -1e-07 1e-07 -0.7071066" type="mesh" mesh="GEO_sofa_001_003" material="MI_sofa_001b" group="2" />
+      <geom name="GEO_sofa_001b" pos="1.864403 0.9069114 -3.1509286" quat="0.7071069 -1e-07 1e-07 -0.7071066" type="mesh" mesh="GEO_sofa_001_002" material="MI_child_pillow" group="2" />
+      <geom name="GEO_sofa_001c" pos="1.864403 0.9069114 -3.1509286" quat="0.7071069 -1e-07 1e-07 -0.7071066" type="mesh" mesh="GEO_sofa_001_001" material="MI_sofa_001c" group="2" />
+      <geom name="GEO_sofa_001d" pos="1.864403 0.9069114 -3.1509286" quat="0.7071069 -1e-07 1e-07 -0.7071066" type="mesh" mesh="GEO_sofa_001" material="MI_sofa_002" group="2" />
+      <geom name="GEO_sofa_002a" pos="1.0833809 -1.6471596 -2.6992665" quat="1.0 -1e-07 0.0 0.0" type="mesh" mesh="GEO_sofa_002a" material="MI_sofa_001" group="2" />
+      <geom name="GEO_sofa_002b" pos="1.0833809 -1.6471596 -2.6992665" quat="1.0 -1e-07 0.0 0.0" type="mesh" mesh="GEO_sofa_002b" material="MI_pillow_001" group="2" />
+      <geom name="GEO_sofa_002c" pos="1.0833809 -1.6471596 -2.6992665" quat="1.0 -1e-07 0.0 0.0" type="mesh" mesh="GEO_sofa_002a_001" material="MI_pillow_002" group="2" />
+      <geom name="GEO_tea_table" pos="1.0289481 -2.9280422 -2.9830731" quat="0.7071069 0.0 0.0 0.7071066" type="mesh" mesh="GEO_tea_table" material="MI_teatable" group="2" />
+      <geom name="GEO_television_a" pos="1.0091906 -4.1255636 -1.993929" quat="2e-07 -0.0 -0.0 -1.0" type="mesh" mesh="GEO_television_a" material="MI_television_002" group="2" />
+      <geom name="GEO_television_b" pos="1.0091906 -4.1255636 -1.993929" quat="2e-07 -0.0 -0.0 -1.0" type="mesh" mesh="GEO_television_b" material="MI_television_001" group="2" />
+      <geom name="GEO_trashcan" pos="1.4450603 -0.2168841 -3.1502643" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="GEO_trashcan" material="MI_trashcan" group="2" />
+      <geom name="GEO_tv_cabinet" pos="1.0533781 -3.9749613 -3.1350003" quat="2e-07 0.0 -0.0 -1.0" type="mesh" mesh="GEO_tv_cabinet" material="MI_TV_cabinet" group="2" />
+      <geom name="GEO_V_big_lamp_001" pos="0.0 0.0 -0.4250004" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="GEO_V_big_lamp_001" material="MI_warm_light" group="2" />
+      <geom name="GEO_V_ceiling_001" pos="-2.3988655 -4.1777534 -3.2000003" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="GEO_V_ceiling_001" material="MI_warm_light" group="2" />
+      <geom name="GEO_V_ceiling_003" pos="-2.3988655 -4.1777534 -3.2000003" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="GEO_V_ceiling_003" material="MI_ceiling" group="2" />
+      <geom name="GEO_V_ceiling_003_001" pos="-2.3988655 -4.1777534 -3.2000003" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="GEO_V_ceiling_003_001" material="MI_ceiling_plaster" group="2" />
+      <geom name="GEO_V_small_lamp_001" pos="-2.1291625 3.8286085 -0.4850001" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="GEO_V_small_lamp_001" material="MI_small_lamp_001" group="2" />
+      <geom name="GEO_V_small_lamp_002" pos="-2.1291625 3.8286085 -0.4850001" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="GEO_V_small_lamp_002" material="MI_warm_light" group="2" />
+      <geom name="GEO_wall_001" pos="2.4046776 -0.033545 -1.5987499" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="wall_001" material="MI_wallpaper" group="2" />
+      <geom name="GEO_wall_002" pos="-2.4024086 -0.0335441 -1.5987499" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="wall_002" material="MI_wallpaper" group="2" />
+      <geom name="GEO_wall_003" pos="0.9136355 -4.2335443 -1.5987496" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="wall_003" material="MI_wallpaper" group="2" />
+      <geom name="GEO_wall_004" pos="0.0011361 4.1664581 -1.59875" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="wall_004" material="MI_wallpaper" group="2" />
+      <geom name="GEO_wall_decorate_001a" pos="2.3460486 2.0242682 -1.28546" quat="0.7071069 0.0 0.0 -0.7071066" type="mesh" mesh="GEO_wall_decorate_001a" material="MI_chair_wood" group="2" />
+      <geom name="GEO_wall_decorate_001b" pos="2.3460486 2.0242677 -1.2854601" quat="0.7071069 -1e-07 1e-07 -0.7071066" type="mesh" mesh="GEO_wall_decorate_001b" material="MI_walldecorate_stone" group="2" />
+      <geom name="GEO_white_bin" pos="1.3452342 2.1520782 -2.3351014" quat="0.9931107 0.0 0.0 -0.1171801" type="mesh" mesh="GEO_white_bin" material="MI_white_bin" group="2" />
+      <geom name="GEO_window_001a" pos="2.3546774 -0.033545 -1.5987499" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="wall_001_001" material="MI_window_light" group="2" />
+      <geom name="GEO_window_001b" pos="2.3546774 -0.033545 -1.5987499" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="wall_001_001_001" material="MI_white" group="2" />
+      <geom name="GEO_window-drapes1" pos="2.3776935 -2.4394944 -3.0707573" quat="0.707041 0.009648 -0.009648 -0.707041" type="mesh" mesh="curtain_001" material="MI_window_trans1" group="2" />
+      <geom name="GEO_window-drapes2" pos="2.3824495 -2.4394944 -3.0701633" quat="0.707015 0.011393 -0.011393 -0.707015" type="mesh" mesh="curtain_002" material="MI_window_trans2" group="2" />
+      <geom name="GEO_window-track" pos="2.3073971 -2.4394946 -0.634676" quat="0.7071069 0.0 0.0 -0.7071066" type="mesh" mesh="curtain_rod" material="MI_window_white" group="2" />
+    </body>
+  </worldbody>
+</mujoco>

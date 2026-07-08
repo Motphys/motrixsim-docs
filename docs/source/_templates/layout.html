@@ -1,0 +1,7 @@
+{% extends "!layout.html" %} {# Expose configurable URLs from conf.py (html_context) to client-side scripts. Keep this
+list small; each entry becomes a window.* global consumed by _static/js/custom.js. #} {% block extrahead %} {{ super()
+}}
+<script>
+    window.MOTRIXSIM_PRO_LICENSE_URL = "{{ pro_license_url | default('', true) }}";
+</script>
+{% endblock %}

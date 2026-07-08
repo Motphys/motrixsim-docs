@@ -31,37 +31,48 @@ For production applications requiring fine-grained control over the simulation l
 
 ## Command-Line Interface
 
-The interactive viewer can also be launched directly from the command line:
+Installing `motrixsim` provides the `mxview` command, an out-of-the-box visualization entry point that requires no Python code (with the virtual environment activated you can run `mxview` directly; in a uv-managed environment use `uv run mxview`):
 
 ```bash
 # Launch with a specific model file
-uv run python -m motrixsim.interactive_viewer --file=path/to/your/model.xml
+uv run mxview path/to/your/model.xml
+
+# Preview a standalone mesh (OBJ/STL)
+uv run mxview path/to/convex_parts/part.stl
 
 # Launch empty viewer (drag and drop model files to load)
-uv run python -m motrixsim.interactive_viewer
+uv run mxview
+
+# Start playing immediately after launch
+uv run mxview path/to/your/model.xml --play
 ```
+
+`mxview` is built on the interactive viewer ([`viewer.launch()`]); the physics and render loops are handled internally.
 
 ### CLI Arguments
 
-| Argument | Required | Description                                                                                                |
-| -------- | -------- | ---------------------------------------------------------------------------------------------------------- |
-| `--file` | No       | Path to the model file. If not provided, launches an empty viewer where you can drag and drop model files. |
+| Argument | Required | Description                                                                                                                                 |
+| -------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `model`  | No       | Path to a model file or standalone OBJ/STL mesh (positional). If not provided, launches an empty viewer where you can drag and drop models. |
+| `--play` | No       | Start in the playing (simulation running) state instead of the default paused (editor) state.                                               |
 
 ### Examples
 
 ```bash
 # Launch viewer with a specific model
-uv run python -m motrixsim.interactive_viewer --file=examples/assets/boston_dynamics_spot/scene_arm.xml
+uv run mxview examples/assets/boston_dynamics_spot/scene_arm.xml
+
+# Preview offline convex decomposition output
+uv run mxview path/to/convex_parts/link1_convex.obj
 
 # Launch empty viewer for drag-and-drop interaction
-uv run python -m motrixsim.interactive_viewer
+uv run mxview
 ```
 
 The CLI provides a quick way to visualize models without writing Python code. When a file is provided, it automatically:
 
--   Loads the specified model
+-   Loads the specified model, or wraps a standalone OBJ/STL mesh in a minimal display-only scene
 -   Creates scene data with initial state
--   Runs a few physics steps for stabilization
 -   Launches the interactive viewer
 
 When launched without arguments, you can simply drag XML model files into the viewer window to load them instantly.

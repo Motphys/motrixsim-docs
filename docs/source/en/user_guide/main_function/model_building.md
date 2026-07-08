@@ -7,7 +7,7 @@ If we split the simulation workflow into two stages:
 1. Scene description and assembly (mutable)
 2. Physics simulation runtime (high-performance, stable)
 
-Then `MSD` is the core tool for stage 1. It organizes, transforms, and combines MJCF/URDF/MSD assets, then builds them into a simulatable [`SceneModel`](scene_model.md).
+Then `MSD` is the core tool for stage 1. It organizes, transforms, and combines MJCF, URDF, and USD assets, then builds them into a simulatable [`SceneModel`](scene_model.md).
 
 ## What Problems It Solves
 
@@ -20,8 +20,8 @@ In robotics and multibody workflows, common needs include:
 
 Editing raw model files repeatedly is costly and error-prone. The key value of `MSD` is to unify assets from different formats into one `World` space, then apply one programmatic pipeline:
 
--   Load MJCF/URDF through `msd.from_file` or `msd.from_str`
--   Convert USD to `World` through `load_usd2msd` (requires `usd2msd`)
+-   Load MJCF, URDF, or USD through `msd.from_file`
+-   Load generated MJCF/URDF strings through `msd.from_str`
 -   Use the same `attach/transform/prefix/build` flow after unification
 
 ```{figure} /_static/images/msd/msd-unified-space.svg
@@ -105,9 +105,8 @@ Here's a complete example that creates a scene with multiple robots. For the ful
 
 | API                                                                 | Usage                                                                 |
 | ------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| [`msd.from_file(path)`](motrixsim.msd.from_file)                    | Load `World` from MJCF/URDF/MSD file                                  |
+| [`msd.from_file(path)`](motrixsim.msd.from_file)                    | Load `World` from MJCF, URDF, or USD file                             |
 | [`msd.from_str(string, format, base_path)`](motrixsim.msd.from_str) | Load from model string (dynamic generation)                           |
-| `motrixsim.load_usd2msd(usd_path)`                                  | Convert USD to `World` for the same composition pipeline              |
 | [`World.attach(...)`](motrixsim.msd.World.attach)                   | Compose models with transforms, prefixes/suffixes, subtree extraction |
 | [`World.build(base_path)`](motrixsim.msd.build)                     | Build final `SceneModel`                                              |
 
@@ -122,4 +121,4 @@ Full API details: [`motrixsim.msd`](../../api_reference/msd/msd.md).
    A: Yes. `attach` clones `other` internally, which is suitable for batch instancing.
 
 3. Q: How do I use USD scenes?  
-   A: Use the USD loading flow provided by `motrixsim` to convert into `MSD`, then build `SceneModel` (requires `usd2msd` dependency).
+   A: Use `motrixsim.load_model(...)` to load directly as `SceneModel`, or `motrixsim.msd.from_file(...)` when you need to compose the USD asset with other `MSD` worlds first. Both require the `usd` extra.

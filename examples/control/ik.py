@@ -1,4 +1,4 @@
-# Copyright (C) 2020-2025 Motphys Technology Co., Ltd. All Rights Reserved.
+# Copyright (C) 2020-2026 Motphys Technology Co., Ltd. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -43,12 +43,14 @@ def main():
 
         # tag::create_ik_solver
 
-        # Damped Least Squares (DLS) solver with robust numerical stability
+        # Damped Least Squares (DLS) solver with robust numerical stability.
+        # In a realtime control loop, warm-starting from the current state keeps
+        # the IK solution continuous from frame to frame.
         solver = ik.DlsSolver(
             max_iter=100,
             step_size=0.5,
             tolerance=1e-3,
-            damping=1e-3,  # Key parameter for DLS - start with 1e-3 for most applications
+            damping=1e-3,
         )
 
         # Alternative: use Gauss-Newton solver (faster but less stable near singularities)

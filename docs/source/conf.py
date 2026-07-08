@@ -1,4 +1,4 @@
-# Copyright (C) 2020-2025 Motphys Technology Co., Ltd. All Rights Reserved.
+# Copyright (C) 2020-2026 Motphys Technology Co., Ltd. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -225,7 +225,17 @@ html_theme_options = {
 project_version = os.environ.get("READTHEDOCS_VERSION")
 if project_version is None:
     project_version = __version__
-html_context = {}
+
+# Single source of truth for the "contact Motphys for a commercial/academic license"
+# link. Referenced from many places (hand-written guides and the auto-generated MJCF
+# reference), so it is configured once here and injected into every page as a global
+# JS variable via `_templates/layout.html`; `_static/js/custom.js` then wires it onto
+# every `<a class="pro-license-btn">`.
+pro_license_url = "https://www.motphys.com/zh/motrixsim/#compare"
+
+html_context = {
+    "pro_license_url": pro_license_url,
+}
 html_css_files = [
     "css/custom.css",
 ]

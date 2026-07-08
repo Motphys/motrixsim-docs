@@ -16,6 +16,32 @@ cd motrixsim-docs
 git lfs pull
 ```
 
+:::{dropdown} 通过国内站点克隆仓库并配置国内镜像源（可选）
+:animate: fade-in
+:color: warning
+:icon: desktop-download
+如果您身处中国大陆，建议通过下面方式克隆仓库，并配置国内镜像源以加速依赖下载：
+
+1. 克隆仓库
+
+    ```bash
+    git clone https://www.modelscope.cn/datasets/motphysdevelopers/motrixsim-docs.git
+    cd motrixsim-docs
+    git lfs pull
+    ```
+
+2. 修改 `pyproject.toml` 文件，添加国内镜像源
+
+    ```toml
+    [[tool.uv.index]]
+    name = "mirror"
+    # 请填写您选择的国内镜像源，例如：
+    # 清华源: "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
+    url = ""
+    ```
+
+:::
+
 ### 步骤 2: 安装依赖
 
 您可以选择以下任一方式安装依赖：
@@ -40,7 +66,7 @@ uv sync
 
 ::::
 
-### 步骤 4: 验证安装
+### 步骤 3: 验证安装
 
 运行一个简单的示例来验证环境配置是否成功：
 

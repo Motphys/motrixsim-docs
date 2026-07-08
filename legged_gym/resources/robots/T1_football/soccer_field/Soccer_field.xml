@@ -1,0 +1,174 @@
+<mujoco>
+  <compiler angle="radian" autolimits="true"/>
+
+  <asset>
+
+    <!-- Textures -->
+    <texture type="2d" colorspace="sRGB" name="Tex_Net_Albedo" file="./soccer_field/assets/Tex_Net_Albedo.png"/>
+    <texture type="2d" colorspace="linear" name="Tex_Net_Normal" file="./soccer_field/assets/Tex_Net_Normal.png"/>
+    <texture type="2d" colorspace="sRGB" name="Billboard" file="./soccer_field/assets/Billboard.png"/>
+    <texture type="2d" colorspace="sRGB" name="grass1-albedo3" file="./soccer_field/assets/grass1-albedo3.png"/>
+    <texture type="2d" colorspace="linear" name="grass1-normal2-ogl" file="./soccer_field/assets/grass1-normal2-ogl.png"/>
+    <texture type="2d" colorspace="sRGB" name="grass1-ao" file="./soccer_field/assets/grass1-ao.png"/>
+    <texture type="2d" colorspace="sRGB" name="football-albedo" file="./soccer_field/assets/football-albedo.png"/>
+
+    <!-- Materials -->
+    <material name="White_Paint" rgba="0.800000011920929 0.800000011920929 0.800000011920929 1.0" reflectance="0.5" metallic="0.0" roughness="0.5"/>
+    <material name="White_Net" rgba="1 1 1 0.99" reflectance="0.5" metallic="0.0" roughness="0.5" texrepeat="2.0 2.0" texuniform="true">
+      <layer texture="Tex_Net_Albedo" role="rgba"/>
+      <layer texture="Tex_Net_Normal" role="normal"/>
+    </material>
+    <material name="Ground" rgba="0.03999999910593033 0.03999999910593033 0.03999999910593033 1.0" reflectance="0.5" metallic="0.0" roughness="0.5"/>
+    <material name="Billboard" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.5">
+      <layer texture="Billboard" role="rgb"/>
+    </material>
+    <material name="Field" rgba="0.5 0.6 0.3 1" reflectance="0.2" metallic="0.0" roughness="0.800000011920929" texrepeat="8.0 8.0" texuniform="true">
+      <layer texture="grass1-albedo3" role="rgb"/>
+      <layer texture="grass1-normal2-ogl" role="normal"/>
+    </material>
+    <material name="Lines" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.800000011920929" texrepeat="8.0 8.0" texuniform="true">
+      <layer texture="grass1-ao" role="rgb"/>
+      <layer texture="grass1-normal2-ogl" role="normal"/>
+    </material>
+    <material name="Football" rgba="1 1 1 1" reflectance="0.5" metallic="0.0" roughness="0.5">
+      <layer texture="football-albedo" role="rgb"/>
+    </material>
+
+    <!-- Visual meshes -->
+    <mesh class="visual" name="V_GoalGate" file="./soccer_field/assets/V_GoalGate.obj"/>
+    <mesh class="visual" name="V_GoalNet" file="./soccer_field/assets/V_GoalNet.obj"/>
+    <mesh class="visual" name="Ground" file="./soccer_field/assets/Ground.obj"/>
+    <mesh class="visual" name="S_Billboard_001" file="./soccer_field/assets/S_Billboard_001.obj"/>
+    <mesh class="visual" name="S_Billboard_002" file="./soccer_field/assets/S_Billboard_002.obj"/>
+    <mesh class="visual" name="S_Billboard_003" file="./soccer_field/assets/S_Billboard_003.obj"/>
+    <mesh class="visual" name="S_Billboard_004" file="./soccer_field/assets/S_Billboard_004.obj"/>
+    <mesh class="visual" name="S_Field" file="./soccer_field/assets/S_Field.obj"/>
+    <mesh class="visual" name="S_Lines" file="./soccer_field/assets/S_Lines.obj"/>
+    <mesh class="visual" name="V_Football" file="./soccer_field/assets/V_Football.obj"/>
+
+    <!-- Collision meshes -->
+    <mesh class="collision" name="C_GoalNet_001" file="./soccer_field/assets/C_GoalNet_001.stl"/>
+    <mesh class="collision" name="C_GoalNet_003" file="./soccer_field/assets/C_GoalNet_003.stl"/>
+  </asset>
+
+  <default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" density="0"/>
+      </default>
+      <default class="collision">
+        <geom type="mesh" rgba="1 1 1 1" group="3" contype="1" conaffinity="1"/>
+          <default class="C_GoalGate_001">
+            <geom type="box" rgba="1 1 1 1" size="0.02499997615814209 0.02500009536743164 0.5750000476837158" quat="1.0 0.0 0.0 0.0" pos="-1.274999976158142 0.025000084191560745 0.574999988079071" density="1000.0"/>
+          </default>
+          <default class="C_GoalGate_002">
+            <geom type="box" rgba="1 1 1 1" size="1.2999999523162842 0.02500009536743164 0.02499997615814209" quat="1.0 0.0 0.0 0.0" pos="8.8697351685596e-09 0.025000043213367462 1.1750000715255737" density="1000.0"/>
+          </default>
+          <default class="C_GoalGate_003">
+            <geom type="box" rgba="1 1 1 1" size="0.02499997615814209 0.2499999850988388 0.02500009536743164" quat="1.0 0.0 0.0 0.0" pos="1.2749998569488525 0.30000001192092896 0.6749998927116394" density="1000.0"/>
+          </default>
+          <default class="C_GoalGate_004">
+            <geom type="box" rgba="1 1 1 1" size="0.02499997615814209 0.02500009536743164 0.5750000476837158" quat="1.0 0.0 0.0 0.0" pos="1.274999976158142 0.025000084191560745 0.574999988079071" density="1000.0"/>
+          </default>
+          <default class="C_GoalGate_005">
+            <geom type="box" rgba="1 1 1 1" size="0.02499997615814209 0.2499999850988388 0.02500009536743164" quat="1.0 0.0 0.0 0.0" pos="-1.2749998569488525 0.30000001192092896 0.6749998927116394" density="1000.0"/>
+          </default>
+          <default class="C_GoalGate_006">
+            <geom type="box" rgba="1 1 1 1" size="0.02499997615814209 0.02500009536743164 0.32500001788139343" quat="1.0 0.0 0.0 0.0" pos="-1.274999976158142 0.5750002861022949 0.32499998807907104" density="1000.0"/>
+          </default>
+          <default class="C_GoalGate_007">
+            <geom type="box" rgba="1 1 1 1" size="1.2999999523162842 0.02500009536743164 0.02499997615814209" quat="1.0 0.0 0.0 0.0" pos="3.5478937565613933e-09 0.5750002264976501 0.675000011920929" density="1000.0"/>
+          </default>
+          <default class="C_GoalGate_008">
+            <geom type="box" rgba="1 1 1 1" size="0.02499997615814209 0.02500009536743164 0.32500001788139343" quat="1.0 0.0 0.0 0.0" pos="1.274999976158142 0.5750002861022949 0.32499998807907104" density="1000.0"/>
+          </default>
+          <default class="C_GoalNet_001">
+            <geom type="mesh" rgba="1 1 1 1" mesh="C_GoalNet_001" quat="1.0 0.0 0.0 0.0" pos="-1.2599999904632568 0.2756982445716858 0.4640923738479614" density="1000.0"/>
+          </default>
+          <default class="C_GoalNet_002">
+            <geom type="box" rgba="1 1 1 1" size="1.25 0.3535533845424652 0.010000071488320827" quat="0.9238795042037964 -0.3826834559440613 0.0 0.0" pos="-1.0167771069546916e-09 0.3070712685585022 0.9070711135864258" density="1000.0"/>
+          </default>
+          <default class="C_GoalNet_003">
+            <geom type="mesh" rgba="1 1 1 1" mesh="C_GoalNet_003" quat="1.0 0.0 0.0 0.0" pos="1.2599999904632568 0.2756982445716858 0.4640923738479614" density="1000.0"/>
+          </default>
+          <default class="C_GoalNet_004">
+            <geom type="box" rgba="1 1 1 1" size="1.25 0.009999990463256836 0.32500001788139343" quat="1.0 0.0 0.0 0.0" pos="0.0 0.5600001811981201 0.32500001788139343" density="1000.0"/>
+          </default>
+          <default class="C_Billboard_001">
+            <geom type="box" rgba="1 1 1 1" size="4.100001811981201 0.04999995231628418 0.4000000059604645" quat="1.0 0.0 0.0 0.0" pos="2.9962108349934624e-09 0.0 0.0" density="1000.0"/>
+          </default>
+          <default class="C_Billboard_002">
+            <geom type="box" rgba="1 1 1 1" size="0.04999995231628418 5.499998569488525 0.4000000059604645" quat="1.0 0.0 0.0 0.0" pos="0.0 0.0 0.0" density="1000.0"/>
+          </default>
+          <default class="C_Billboard_003">
+            <geom type="box" rgba="1 1 1 1" size="4.100001811981201 0.04999995231628418 0.4000000059604645" quat="1.0 0.0 0.0 0.0" pos="-2.9962108349934624e-09 0.0 0.0" density="1000.0"/>
+          </default>
+          <default class="C_Billboard_004">
+            <geom type="box" rgba="1 1 1 1" size="0.04999995231628418 5.499998569488525 0.4000000059604645" quat="1.0 0.0 0.0 0.0" pos="0.0 0.0 0.0" density="1000.0"/>
+          </default>
+          <default class="C_Ball">
+            <geom type="sphere" rgba="1 1 1 1" size="0.07999999821186066" quat="1.0 0.0 0.0 0.0" pos="0.0 0.0 0.0" density="200.0" friction="0.6 0.01 0.005"/>
+          </default>
+      </default>
+  </default>
+
+  <worldbody>
+    <light name="EL_Sun" pos="0.0 0.0 2.0" dir="-0.3251127600669861 -0.5224105715751648 -0.7882822155952454" diffuse="1.0 1.0 1.0"  directional="true" castshadow="true"/>
+
+    <geom name="Ground" size="0 0 0.01" type="plane" pos="0.0 0.0 -0.0020000000949949026" quat="1.0 0.0 0.0 0.0" material="Ground" contype="2" conaffinity="1"/>
+    <geom class="visual" mesh="S_Billboard_001" pos="0.0 -5.5499982833862305 0.4000000059604645" quat="1.0 0.0 0.0 0.0" material="Billboard"/>
+    <geom class="C_Billboard_001" pos="2.9962108349934624e-09 -5.5499982833862305 0.4000000059604645" quat="1.0 0.0 0.0 0.0"/>
+    <geom class="visual" mesh="S_Billboard_002" pos="4.050002098083496 0.0 0.4000000059604645" quat="1.0 0.0 0.0 0.0" material="Billboard"/>
+    <geom class="C_Billboard_002" pos="4.050002098083496 0.0 0.4000000059604645" quat="1.0 0.0 0.0 0.0"/>
+    <geom class="visual" mesh="S_Billboard_003" pos="0.0 5.5499982833862305 0.4000000059604645" quat="1.0 0.0 0.0 0.0" material="Billboard"/>
+    <geom class="C_Billboard_003" pos="-2.9962108349934624e-09 5.5499982833862305 0.4000000059604645" quat="1.0 0.0 0.0 0.0"/>
+    <geom class="visual" mesh="S_Billboard_004" pos="-4.050002098083496 0.0 0.4000000059604645" quat="1.0 0.0 0.0 0.0" material="Billboard"/>
+    <geom class="C_Billboard_004" pos="-4.050002098083496 0.0 0.4000000059604645" quat="1.0 0.0 0.0 0.0"/>
+    <geom class="visual" mesh="S_Field" pos="0.0 0.0 0.0" quat="0.70710688829422 0.0 0.0 0.7071066498756409" material="Field"/>
+    <geom class="visual" mesh="S_Lines" pos="0.0 0.0 0.0020000000949949026" quat="0.7071067094802856 0.0 0.0 0.7071068286895752" material="Lines"/>
+    <body name="B_Ball" pos="0.0 1.0 0.25" quat="1.0 0.0 0.0 0.0">
+      <geom class="C_Ball"/>
+      <joint name="J_Ball" type="free" pos="0.0 0.0 0.0"/>
+      <geom class="visual" mesh="V_Football" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" material="Football"/>
+    </body>
+    <body name="B_Gate_0" pos="-2.384185791015625e-07 4.449999809265137 0.0" quat="1.0 0.0 0.0 0.0">
+      <geom class="C_GoalGate_001"/>
+      <geom class="C_GoalGate_002"/>
+      <geom class="C_GoalGate_003"/>
+      <geom class="C_GoalGate_004"/>
+      <geom class="C_GoalGate_005"/>
+      <geom class="C_GoalGate_006"/>
+      <geom class="C_GoalGate_007"/>
+      <geom class="C_GoalGate_008"/>
+      <geom class="C_GoalNet_001"/>
+      <geom class="C_GoalNet_002"/>
+      <geom class="C_GoalNet_003"/>
+      <geom class="C_GoalNet_004"/>
+      <geom class="visual" mesh="V_GoalGate" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" material="White_Paint"/>
+      <geom class="visual" mesh="V_GoalNet" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" material="White_Net"/>
+    </body>
+    <body name="B_Gate_1" pos="-2.384185791015625e-07 -4.449999809265137 0.0" quat="7.549790126404332e-08 0.0 0.0 -1.0">
+      <geom class="C_GoalGate_001"/>
+      <geom class="C_GoalGate_002"/>
+      <geom class="C_GoalGate_003"/>
+      <geom class="C_GoalGate_004"/>
+      <geom class="C_GoalGate_005"/>
+      <geom class="C_GoalGate_006"/>
+      <geom class="C_GoalGate_007"/>
+      <geom class="C_GoalGate_008"/>
+      <geom class="C_GoalNet_001"/>
+      <geom class="C_GoalNet_002"/>
+      <geom class="C_GoalNet_003"/>
+      <geom class="C_GoalNet_004"/>
+      <geom class="visual" mesh="V_GoalGate" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" material="White_Paint"/>
+      <geom class="visual" mesh="V_GoalNet" pos="0.0 0.0 0.0" quat="1.0 0.0 0.0 0.0" material="White_Net"/>
+    </body>
+  </worldbody>
+  <contact>
+  </contact>
+  <equality>
+  </equality>
+  <tendon>
+  </tendon>
+  <actuator>
+  </actuator>
+</mujoco>

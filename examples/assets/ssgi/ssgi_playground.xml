@@ -16,7 +16,7 @@
     <mesh name="Mesh_Geometry" file="Mesh_Geometry.obj"/>
   </asset>
   <worldbody>
-    <camera name="CAM_Camera" pos="10.191129684448242 -11.551356315612793 6.343680381774902" quat="0.7435349822044373 0.6107521057128906 0.1728261262178421 0.21040144562721252" fovy="39.597755335771296" mode="fixed"/>
+    <camera name="CAM_Camera" pos="10.191129684448242 -11.551356315612793 5.0" quat="0.7255282402038574 0.5875211954116821 0.2255282700061798 0.27850422263145447" fovy="45.0" mode="fixed"/>
     <light name="LIT_Sun" pos="10.0 -10.0 14.0" dir="-0.4330127239227295 0.5 -0.75" type="directional" diffuse="1.0 1.0 1.0" intensity="6830.0" directional="true" castshadow="true" mode="fixed"/>
     <geom name="GEO_Plane" pos="0.024265289306640625 0.00038909912109375 -0.25" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="Mesh_Geometry" material="Material.002"/>
     <geom name="GEO_Geom_001" pos="-9.72573471069336 0.00038909912109375 3.0" quat="1.0 0.0 0.0 0.0" type="box" size="0.25 10.0 3.0" material="Material"/>

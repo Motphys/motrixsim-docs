@@ -42,7 +42,7 @@ IK 链模型由一系列连接的关节和一个末端执行器组成, 如下图
 
 ## IK Solver
 
-在定义了 IKModel 之后，您可以使用 IK Solver 来做具体的 IK 求解工作。MotrixSim 支持两种 IK 求解器：传统的高斯-牛顿法求解器（[`GaussNewtonSolver`]）和更稳定的阻尼最小二乘法（DLS）求解器（[`DlsSolver`]）。
+在定义了 IKModel 之后，您可以使用 IK Solver 来做具体的 IK 求解工作。MotrixSim 支持传统的高斯-牛顿法求解器（[`GaussNewtonSolver`]）和更稳定的阻尼最小二乘法（DLS）求解器（[`DlsSolver`]）。
 
 ### 阻尼最小二乘法（DLS）IK 求解器
 

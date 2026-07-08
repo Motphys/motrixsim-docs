@@ -163,7 +163,7 @@ The above operations only affect rendering visibility and do not affect the obje
 _Full code see [examples/viewer/partial_rendering.py](../../../../examples/viewer/partial_rendering.py)_
 
 [`RenderApp`]: motrixsim.render.RenderApp
-[`load_model`]: motrixsim.load_model
+[`load_model`]: scene_model.md
 [`render.launch(model)`]: motrixsim.render.RenderApp.launch
 [`render.sync(data)`]: motrixsim.render.RenderApp.sync
 [`render.input`]: motrixsim.render.RenderApp.input

@@ -7,7 +7,7 @@
 1. 场景描述与组装阶段（可变）
 2. 物理仿真运行阶段（高性能、稳定）
 
-那么 `MSD` 就是第 1 阶段的核心工具，负责把 MJCF/URDF/MSD 文件组织、变换、组合后，构建成可仿真的 [`SceneModel`](scene_model.md)。
+那么 `MSD` 就是第 1 阶段的核心工具，负责把 MJCF、URDF 和 USD 资产组织、变换、组合后，构建成可仿真的 [`SceneModel`](scene_model.md)。
 
 ## 它解决了什么问题
 
@@ -20,8 +20,8 @@
 
 如果直接在原始模型文件里反复手改，维护成本高且容易出错。`MSD` 的关键价值是把不同来源的资产先统一到同一个 `World` 空间，再做程序化操作：
 
--   MJCF/URDF 可通过 `msd.from_file` 或 `msd.from_str` 读入 `World`
--   USD 可通过 `load_usd2msd` 先转换为 `World`（依赖 `usd2msd`）
+-   MJCF、URDF 或 USD 可通过 `msd.from_file` 读入 `World`
+-   动态生成的 MJCF/URDF 字符串可通过 `msd.from_str` 读入 `World`
 -   统一后就能用同一套 `attach/transform/prefix/build` 流程完成组装与编译
 
 ```{figure} /_static/images/msd/msd-unified-space.svg
@@ -105,9 +105,8 @@ model = robot.build()
 
 | 接口                                                                | 用途                                     |
 | ------------------------------------------------------------------- | ---------------------------------------- |
-| [`msd.from_file(path)`](motrixsim.msd.from_file)                    | 从 MJCF/URDF/MSD 文件加载 `World`        |
+| [`msd.from_file(path)`](motrixsim.msd.from_file)                    | 从 MJCF、URDF 或 USD 文件加载 `World`    |
 | [`msd.from_str(string, format, base_path)`](motrixsim.msd.from_str) | 从字符串加载，适合动态生成模型           |
-| `motrixsim.load_usd2msd(usd_path)`                                  | 将 USD 转换为 `World`，接入相同编排流程  |
 | [`World.attach(...)`](motrixsim.msd.World.attach)                   | 组合模型，支持平移旋转、前后缀、子树提取 |
 | [`World.build(base_path)`](motrixsim.msd.build)                     | 构建最终 `SceneModel`                    |
 
@@ -122,4 +121,4 @@ model = robot.build()
    A：可以。`attach` 时会内部克隆 `other`，适合批量实例化同一个子模型。
 
 3. Q：USD 场景如何接入？  
-   A：可使用 `motrixsim` 提供的 USD 加载流程先转换到 `MSD` 再构建 `SceneModel`（需要安装 `usd2msd` 相关依赖）。
+   A：如果只需要直接仿真，使用 `motrixsim.load_model(...)` 加载为 `SceneModel`；如果需要先和其他 `MSD` world 组合，使用 `motrixsim.msd.from_file(...)` 转换。二者都需要安装 `usd` extra。

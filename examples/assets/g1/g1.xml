@@ -22,7 +22,7 @@
 
   <asset>
     <material name="black" rgba="0.2 0.2 0.2 1"/>
-    <material name="metal" rgba="0.7 0.7 0.7 1"/>
+    <material name="metal" rgba="0.7 0.7 0.7 1" metallic="1" roughness="0.5"/>
 
     <mesh file="pelvis.STL"/>
     <mesh file="pelvis_contour_link.STL"/>

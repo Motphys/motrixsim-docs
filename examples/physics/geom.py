@@ -1,4 +1,4 @@
-# Copyright (C) 2020-2025 Motphys Technology Co., Ltd. All Rights Reserved.
+# Copyright (C) 2020-2026 Motphys Technology Co., Ltd. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,8 +13,10 @@
 # limitations under the License.
 # ==============================================================================
 
+import numpy as np
+
 from motrixsim import SceneData, load_model, run, step
-from motrixsim.render import RenderApp
+from motrixsim.render import Color, RenderApp
 
 
 # Mouse controls:
@@ -55,7 +57,26 @@ def main():
         print(f"cube_A_name: {cube_A_name}, cube_A_pose : {cube_A_pose}")
         print(f"cube_A_linear_vel: {cube_A_linear_vel}, cube_A_angular_vel : {cube_A_angular_vel}")
 
-        run.render_loop(model.options.timestep, 60, lambda: step(model, data), lambda: render.sync(data))
+        aabb_buffers = [np.empty((2, 3), dtype=np.float32) for _ in geoms]
+        identity_rot = np.array([0.0, 0.0, 0.0, 1.0], dtype=np.float32)
+        aabb_color = Color.rgb(1.0, 0.9, 0.1)
+
+        def render_step():
+            for geom, out in zip(geoms, aabb_buffers):
+                aabb = geom.get_world_aabb(data, out=out)
+                if aabb is None:
+                    continue
+
+                size = aabb[1] - aabb[0]
+                if not np.any(size > 1e-6):
+                    continue
+
+                center = (aabb[0] + aabb[1]) * 0.5
+                render.gizmos.draw_cuboid(size, center, identity_rot, color=aabb_color)
+
+            render.sync(data)
+
+        run.render_loop(model.options.timestep, 60, lambda: step(model, data), render_step)
 
 
 if __name__ == "__main__":

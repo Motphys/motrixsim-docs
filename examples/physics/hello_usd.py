@@ -1,4 +1,4 @@
-# Copyright (C) 2020-2025 Motphys Technology Co., Ltd. All Rights Reserved.
+# Copyright (C) 2020-2026 Motphys Technology Co., Ltd. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,18 +13,13 @@
 # limitations under the License.
 # ==============================================================================
 
-import logging
-
 import motrixsim as mx
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s: %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
+model = mx.load_model("examples/assets/usd/cobotta_pro_1300.usd")
 
-input_path = "examples/assets/usd/anymal_c.usda"
-model = mx.load_usd(input_path)
-
-# Create initial scene data
-data = mx.SceneData(model)
-
-# Launch viewer with model and data
-print("Launching interactive viewer...")
-mx.viewer.launch(model, data)
+with mx.render.RenderApp("warn") as render:
+    render.launch(model)
+    data = mx.SceneData(model)
+    while True:
+        model.step(data)
+        render.sync(data)

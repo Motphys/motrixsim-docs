@@ -4,7 +4,7 @@ The core module is the primary user interface of MotrixSim, providing fundamenta
 
 ## 🔧 Main Features
 
--   **Model Management**: Loading and parsing MJCF/URDF models
+-   **Model Management**: Loading and parsing MJCF, URDF, and USD scenes
 -   **Simulation Control**: Time stepping, state management, kinematics computation
 -   **Component Access**: Access to components such as Body, Joint, Sensor, etc.
 

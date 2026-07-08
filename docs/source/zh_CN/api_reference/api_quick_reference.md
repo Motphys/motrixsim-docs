@@ -2,11 +2,11 @@
 
 ## 📋 核心模块 - [`motrixsim`](core/motrixsim.md)
 
-| 功能类别     | API                                                             | 说明                    |
-| ------------ | --------------------------------------------------------------- | ----------------------- |
-| **模型加载** | [`load_model(path)`](motrixsim.load_model)                      | 加载 MJCF/URDF 模型文件 |
-| **仿真步进** | [`step(model, data)`](motrixsim.step)                           | 执行一个仿真时间步      |
-| **运动学**   | [`forward_kinematic(model, data)`](motrixsim.forward_kinematic) | 前向运动学计算          |
+| 功能类别     | API                                                             | 说明                            |
+| ------------ | --------------------------------------------------------------- | ------------------------------- |
+| **模型加载** | [`load_model(path)`](core/motrixsim.md)                         | 加载 MJCF、URDF 或 USD 模型文件 |
+| **仿真步进** | [`step(model, data)`](motrixsim.step)                           | 执行一个仿真时间步              |
+| **运动学**   | [`forward_kinematic(model, data)`](motrixsim.forward_kinematic) | 前向运动学计算                  |
 
 ### 🔧 核心对象
 
@@ -71,7 +71,7 @@ MotrixSim 的 Named Access 支持两种访问方式：
 
 | 函数/方法                                                | 说明                            |
 | -------------------------------------------------------- | ------------------------------- |
-| [`msd.from_file(path)`](motrixsim.msd.from_file)         | 加载模型文件用于组合和构建      |
+| [`msd.from_file(path)`](motrixsim.msd.from_file)         | 加载 MJCF、URDF 或 USD 用于组合 |
 | [`world.attach(other, ...)`](motrixsim.msd.World.attach) | 附加另一个模型并设置变换和前缀  |
 | [`world.build()`](motrixsim.msd.build)                   | 构建用于仿真的最终 `SceneModel` |
 

@@ -1,0 +1,14 @@
+<mujoco>
+  <option timestep="0.01" />
+  <compiler angle="radian" autolimits="true" />
+  <visual>
+    <headlight ambient="0.12 0.12 0.12" diffuse="0.36 0.36 0.36" active="1" />
+  </visual>
+  <asset>
+    <texture type="2d" name="groundplane" file="ground_logo.png" />
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="0.2 0.2" reflectance="0.2" rgba="0.7 0.7 0.7 1" />
+  </asset>
+  <worldbody>
+    <geom name="infinite_floor" size="0 0 0.05" pos="0 0 0" type="plane" material="groundplane" rgba="0.8 0.8 0.8 1" />
+  </worldbody>
+</mujoco>

@@ -1,14 +1,13 @@
 <mujoco>
   <compiler autolimits="true" angle="degree"/>
   <visual>
+    <headlight diffuse="0.0 0.0 0.0" ambient="0.0 0.0 0.0" specular="0 0 0"/>
     <ssao active="true"/>
-    <!-- <ssgi active="true"/> -->
-    <!-- <tonemapping method="aces"/> -->
   </visual>
   <include file="./ssgi_playground.xml"/>
   <asset>
-    <texture name="env_diff" type="envdiff" file="venetian_crossroads_diff.ktx2"/>
-    <texture name="env_spec" type="envspec" file="venetian_crossroads_spec.ktx2"/>
+    <texture name="env_diff" type="envdiff" file="diff.ktx2"/>
+    <texture name="env_spec" type="envspec" file="spec.ktx2"/>
   </asset>
   
 </mujoco>

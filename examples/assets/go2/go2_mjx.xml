@@ -29,7 +29,7 @@
         <general ctrlrange="-2.6227 -0.84776"/>
       </default>
       <default class="visual">
-        <geom type="mesh" contype="0" conaffinity="0" group="0"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="2"/>
       </default>
       <default class="go2foot">
         <site pos="0 0 -0.213" type="sphere" size="0.023" group="5"/>
@@ -38,17 +38,28 @@
       <default class="collision">
         <geom group="3"/>
         <default class="foot">
-          <geom type="sphere" size="0.0175" pos="-0.002 0 -0.213" solimp="0.9 .95 0.023" condim="3"/>
+          <geom type="sphere" size="0.0225" pos="-0.001 0 -0.212" solimp="0.9 .95 0.023" condim="3"/>
         </default>
       </default>
     </default>
   </default>
 
   <asset>
-    <material name="metal" rgba=".9 .95 .95 1"/>
-    <material name="black" rgba="0 0 0 1"/>
+    <texture type="2d" colorspace="linear" name="noise_normal" file="assets/noise_normal.png"/>
+    <material name="black_plastic" rgba="0.0507087 0.0507087 0.0507087 1.0" reflectance="0.5" roughness="0.4" metallic="0.0" texuniform="true" texrepeat="12.0 12.0">
+      <layer texture="noise_normal" role="normal"/>
+    </material>
+    <material name="black" rgba="0.220085 0.220813 0.2209164 1.0" reflectance="0.5" roughness="0.5" metallic="1.0" texuniform="true" texrepeat="16.0 16.0">
+      <layer texture="noise_normal" role="normal"/>
+    </material>
+    <material name="metal" rgba="0.9621279 0.9653596 0.9658199 1.0" reflectance="0.4" roughness="0.6" metallic="1.0" texuniform="true" texrepeat="12.0 12.0">
+      <layer texture="noise_normal" role="normal"/>
+    </material>
+    <material name="gray" rgba="0.5969514 0.5983734 0.6262097 1.0" reflectance="0.5" roughness="0.5" metallic="0.0"/>
+    <material name="black_rubber" rgba="0.0507087 0.0507087 0.0507087 1.0" reflectance="0.5" roughness="0.7" metallic="0.0" texuniform="true" texrepeat="16.0 16.0">
+      <layer texture="noise_normal" role="normal"/>
+    </material>
     <material name="white" rgba="1 1 1 1"/>
-    <material name="gray" rgba="0.671705 0.692426 0.774270 1"/>
 
     <mesh file="assets/base_0.obj"/>
     <mesh file="assets/base_1.obj"/>
@@ -62,9 +73,7 @@
     <mesh file="assets/thigh_mirror_0.obj"/>
     <mesh file="assets/thigh_mirror_1.obj"/>
     <mesh file="assets/calf_0.obj"/>
-    <mesh file="assets/calf_1.obj"/>
     <mesh file="assets/calf_mirror_0.obj"/>
-    <mesh file="assets/calf_mirror_1.obj"/>
     <mesh file="assets/foot.obj"/>
   </asset>
 
@@ -79,9 +88,9 @@
       <!-- <body name="base_0">
         <geom mesh="base_0" material="black" class="visual"/>
       </body> -->
-      <geom mesh="base_0" material="black" class="visual"/>
+      <geom mesh="base_0" material="black_plastic" class="visual"/>
       <geom mesh="base_1" material="black" class="visual"/>
-      <geom mesh="base_2" material="black" class="visual"/>
+      <geom mesh="base_2" material="black_plastic" class="visual"/>
       <geom mesh="base_3" material="white" class="visual"/>
       <geom mesh="base_4" material="gray" class="visual"/>
       <geom size="0.057 0.04675 0.057" class="collision"/>
@@ -108,10 +117,9 @@
               mass="0.241352" diaginertia="0.0014901 0.00146356 5.31397e-05"/>
             <joint name="FL_calf_joint" class="knee"/>
             <geom mesh="calf_0" material="gray" class="visual"/>
-            <geom mesh="calf_1" material="black" class="visual"/>
             <geom name="fl_calf_0" size="0.012 0.06" pos="0.008 0 -0.06" quat="0.994493 0 -0.104807 0" class="collision"/>
             <geom name="fl_calf_1" size="0.011 0.0325" pos="0.02 0 -0.148" quat="0.999688 0 0.0249974 0" class="collision"/>
-            <geom pos="0 0 -0.213" mesh="foot" class="visual" material="black"/>
+            <geom pos="0 0 -0.213" mesh="foot" class="visual" material="black_rubber"/>
             <geom name="FL" class="foot"/>
             <site name="FL" class="go2foot"/>
           </body>
@@ -136,10 +144,9 @@
               mass="0.241352" diaginertia="0.0014901 0.00146356 5.31397e-05"/>
             <joint name="FR_calf_joint" class="knee"/>
             <geom mesh="calf_mirror_0" material="gray" class="visual"/>
-            <geom mesh="calf_mirror_1" material="black" class="visual"/>
             <geom name="fr_calf_0" size="0.013 0.06" pos="0.01 0 -0.06" quat="0.995004 0 -0.0998334 0" class="collision"/>
             <geom name="fr_calf_1" size="0.011 0.0325" pos="0.02 0 -0.148" quat="0.999688 0 0.0249974 0" class="collision"/>
-            <geom pos="0 0 -0.213" mesh="foot" class="visual" material="black"/>
+            <geom pos="0 0 -0.213" mesh="foot" class="visual" material="black_rubber"/>
             <geom name="FR" class="foot"/>
             <site name="FR" class="go2foot"/>
           </body>
@@ -164,10 +171,9 @@
               mass="0.241352" diaginertia="0.0014901 0.00146356 5.31397e-05"/>
             <joint name="RL_calf_joint" class="knee"/>
             <geom mesh="calf_0" material="gray" class="visual"/>
-            <geom mesh="calf_1" material="black" class="visual"/>
             <geom name="rl_calf_0" size="0.013 0.06" pos="0.01 0 -0.06" quat="0.995004 0 -0.0998334 0" class="collision"/>
             <geom name="rl_calf_1" size="0.011 0.0325" pos="0.02 0 -0.148" quat="0.999688 0 0.0249974 0" class="collision"/>
-            <geom pos="0 0 -0.213" mesh="foot" class="visual" material="black"/>
+            <geom pos="0 0 -0.213" mesh="foot" class="visual" material="black_rubber"/>
             <geom name="RL" class="foot"/>
             <site name="RL" class="go2foot"/>
           </body>
@@ -192,10 +198,9 @@
               mass="0.241352" diaginertia="0.0014901 0.00146356 5.31397e-05"/>
             <joint name="RR_calf_joint" class="knee"/>
             <geom mesh="calf_mirror_0" material="gray" class="visual"/>
-            <geom mesh="calf_mirror_1" material="black" class="visual"/>
             <geom name="rr_calf_0" size="0.013 0.06" pos="0.01 0 -0.06" quat="0.995004 0 -0.0998334 0" class="collision"/>
             <geom name="rr_calf_1" size="0.011 0.0325" pos="0.02 0 -0.148" quat="0.999688 0 0.0249974 0" class="collision"/>
-            <geom pos="0 0 -0.213" mesh="foot" class="visual" material="black"/>
+            <geom pos="0 0 -0.213" mesh="foot" class="visual" material="black_rubber"/>
             <geom name="RR" class="foot"/>
             <site name="RR" class="go2foot"/>
           </body>

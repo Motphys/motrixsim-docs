@@ -1,0 +1,24 @@
+<mujoco>
+  <compiler />
+  <worldbody>
+    <body name="LNK_Link" pos="2.3988655 4.1777534 3.2000003" quat="1.0 0.0 0.0 0.0">
+      <light name="LIT_window" pos="2.0 -2.1562681 -1.5" dir="-0.5952845 -0.6061993 -0.5274075" type="spot" diffuse="0.96 0.91 0.47" intensity="3025" range="40.0" cutoff="88" innerangle="36.0" attenuation="0.0 0.5 0.01" bulbradius="1.0" nearz="0.2" castshadow="true" mode="fixed" />
+      <light name="LIT_sofa" pos="-1.7 -3.3606791 -1.3" dir="0.4190558 0.8314969 -0.3646992" type="spot" diffuse="0.9 1.0 1.0" intensity="3025" range="40.0" cutoff="86.5" innerangle="36.0" attenuation="0.0 0.4 0.03" bulbradius="1.0" nearz="0.2" castshadow="true" mode="fixed" />
+      <light name="light_LIT_Point_01" pos="0 2.5 -0.5523746" dir="-0.0 -0.0 -1.0" type="spot" diffuse="0.9 1.0 1.0" intensity="3800" range="40.0" cutoff="86" innerangle="40" attenuation="0.0 0.0 1" castshadow="true" bulbradius="1" mode="fixed" />
+      <light name="light_LIT_Point_02" pos="0 -2.5 -0.5523746" dir="-0.0 -0.0 -1.0" type="spot" diffuse="0.9 1.0 1.0" intensity="3800" range="40.0" cutoff="86" innerangle="40" attenuation="0.0 0.0 1" castshadow="true" bulbradius="1" mode="fixed" />
+      <light name="light_LIT_Spot_b" pos="1.9090922 -0.2740898 -1.790612" dir="0.1041834 -0.0 -0.9945581" type="spot" diffuse="1.0 0.4730034 0.1186304" intensity="4273.5" range="40.0" cutoff="60.0" innerangle="0.0" attenuation="0.0 0.4 0.08" castshadow="true" bulbradius="1" mode="fixed" />
+      <light name="light_LIT_Spot_s_o" pos="1.9861882 2.0263395 -1.9017183" dir="0.218012 -0.0 -0.975946" type="spot" diffuse="1.0 0.554269 0.1633432" intensity="1141" range="40.0" cutoff="65.0000007" innerangle="0.0" attenuation="0.0 0.4 0.08" bulbradius="1" castshadow="true" mode="fixed" />
+      <light name="light_LIT_Spot_s" pos="2.2197044 2.0263395 -2.2874799" dir="-0.0 -0.0 -1.0" type="spot" diffuse="1.0 0.86 0.7" intensity="115" range="40.0" cutoff="70" innerangle="10.0" castshadow="true" bulbradius="1" mode="fixed" />
+      <light name="LIT_main" pos="0.0 0.0 -0.4592299" dir="-0.0 -0.0 -1.0" type="spot" diffuse="1.0 0.80 0.55" intensity="15704" range="40.0" cutoff="89" innerangle="86" attenuation="0.0 0.0 1.0" castshadow="true" bulbradius="1" mode="fixed" />
+      <light name="light_LIT_ceiling_spot_001" pos="1.0791628 -3.9487414 -0.5030453" dir="-1e-07 5e-07 -1.0" type="spot" diffuse="1.0 0.5121 0.15" intensity="854.7008752" range="40.0" cutoff="60" innerangle="0.0" attenuation="0.0 0.4 0.08" bulbradius="1" castshadow="true" mode="fixed" />
+      <light name="light_LIT_ceiling_spot_002" pos="0.0291634 -3.9487414 -0.503045" dir="-1e-07 5e-07 -1.0" type="spot" diffuse="1.0 0.5121 0.15" intensity="854.7008752" range="40.0" cutoff="60" innerangle="0.0" attenuation="0.0 0.4 0.08" bulbradius="1" castshadow="true" mode="fixed" />
+      <light name="light_LIT_ceiling_spot_003" pos="-1.0791621 -3.9487412 -0.4930453" dir="-1e-07 5e-07 -1.0" type="spot" diffuse="1.0 0.5121 0.15" intensity="854.7008752" range="40.0" cutoff="60" innerangle="0.0" attenuation="0.0 0.4 0.08" bulbradius="1" castshadow="true" mode="fixed" />
+      <light name="light_LIT_Spot_big_o" pos="1.9090922 -0.2740898 -1.6136988" dir="0.1756508 -0.1495599 0.9730255" type="spot" diffuse="1.0 0.5215001 0.13" intensity="3024.33" range="40.0" cutoff="60" innerangle="0.0" attenuation="0.0 0.4 0.08" bulbradius="1" castshadow="true" mode="fixed" />
+      <light name="LIT_window_down" pos="2.0000002 -2.1562681 -2.0823655" dir="-0.8258276 -0.4364074 -0.3571517" type="spot" diffuse="0.96 0.7492999 0.47" intensity="3025.0000782" range="40.0" cutoff="80" innerangle="8.0000017" attenuation="0.0 0.5 0.01" bulbradius="1" castshadow="true" mode="fixed" />
+      <light name="LIT_window_up" pos="2.4472713 -2.3179898 -1.1920664" dir="-0.8781654 -0.4518995 0.1568825" type="spot" diffuse="0.7681456 0.863158 0.9559736" intensity="3025.0000782" range="40.0" cutoff="87.500003" innerangle="4.3750012" attenuation="0.0 0.5 0.01" bulbradius="1" castshadow="true" mode="fixed" />
+      <light name="LIT_window_001" pos="0.042092 -2.1562681 -1.7891839" dir="0.9766995 -0.0725934 0.201961" type="spot" diffuse="0.96 0.91 0.47" intensity="3025.0000782" range="40.0" cutoff="60.0000017" innerangle="24.5454569" attenuation="0.0 0.5 0.01" bulbradius="1" castshadow="true" mode="fixed" />
+      <light name="LIT_bed_right" pos="0.1591564 2.8793175 -1.1184084" dir="-0.6702757 0.2170066 -0.7096747" type="spot" diffuse="1.0 0.7120117 0.2218565" intensity="6520.28" range="40.0" cutoff="37.5" innerangle="0.0" attenuation="0.0 0.0 1" bulbradius="1" castshadow="true" mode="fixed" />
+      <light name="LIT_bed" pos="-2.1057825 2.4286585 -1.6609569" dir="0.653555 0.1705097 -0.7374226" type="spot" diffuse="1.0 0.7120117 0.2218565" intensity="5433.57" range="40.0" cutoff="54.9999993" innerangle="0.0" attenuation="0.0 0.0 1" bulbradius="1" castshadow="true" mode="fixed" />
+    </body>
+  </worldbody>
+</mujoco>

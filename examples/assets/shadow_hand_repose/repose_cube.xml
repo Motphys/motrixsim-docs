@@ -15,7 +15,7 @@
 
     <visual>
         <rgba haze="0.15 0.25 0.35 1" />
-        <quality shadowsize="4096" />
+        <quality shadowsize="2048" />
         <global azimuth="220" elevation="-30" />
     </visual>
 

@@ -4,7 +4,7 @@ MotrixSim provides a programmatic model building API for loading, transforming, 
 
 ## Main Features
 
--   **Model Loading**: Support for MJCF/URDF/MSD formats
+-   **Model Loading**: Support for MJCF, URDF, and USD formats
 -   **Model Combining**: Attach multiple models together
 -   **Transform Operations**: Set translation, rotation, name prefix/suffix
 

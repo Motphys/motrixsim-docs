@@ -70,7 +70,7 @@ The left file tree has two data sources.
 
 -   Built from folders or files you drag into the page
 -   Exists only in the current browser session
--   Best for testing your own MJCF, URDF, MSD, meshes, and textures
+-   Best for testing your own MJCF, URDF, meshes, and textures
 
 In short:
 

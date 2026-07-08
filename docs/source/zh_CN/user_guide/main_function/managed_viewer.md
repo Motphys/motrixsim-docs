@@ -31,37 +31,48 @@
 
 ## 命令行接口
 
-交互式查看器也可以直接从命令行启动：
+安装 `motrixsim` 后会附带 `mxview` 命令，作为开箱即用的可视化入口，无需编写任何 Python 代码（激活虚拟环境后可直接运行 `mxview`，在 uv 管理的环境中则用 `uv run mxview`）：
 
 ```bash
 # 使用指定模型文件启动
-uv run python -m motrixsim.interactive_viewer --file=path/to/your/model.xml
+uv run mxview path/to/your/model.xml
+
+# 直接预览 standalone mesh（OBJ/STL）
+uv run mxview path/to/part.stl
 
 # 启动空查看器（拖放模型文件即可加载）
-uv run python -m motrixsim.interactive_viewer
+uv run mxview
+
+# 启动后立即进入播放状态
+uv run mxview path/to/your/model.xml --play
 ```
+
+`mxview` 底层走交互式查看器（[`viewer.launch()`]），物理与渲染循环在内部自动处理。
 
 ### CLI 参数
 
-| 参数     | 必需 | 描述                                                                 |
-| -------- | ---- | -------------------------------------------------------------------- |
-| `--file` | 否   | 模型文件路径。如果不提供，将启动空查看器，可以通过拖放模型文件加载。 |
+| 参数     | 必需 | 描述                                                                                                        |
+| -------- | ---- | ----------------------------------------------------------------------------------------------------------- |
+| `model`  | 否   | 模型文件或 standalone OBJ/STL mesh 路径（位置参数）。如果不提供，将启动空查看器，可以通过拖放模型文件加载。 |
+| `--play` | 否   | 启动后立即进入播放（仿真运行）状态，而不是默认的暂停（编辑）状态。                                          |
 
 ### 示例
 
 ```bash
 # 使用指定模型启动查看器
-uv run python -m motrixsim.interactive_viewer --file=examples/assets/boston_dynamics_spot/scene_arm.xml
+uv run mxview examples/assets/boston_dynamics_spot/scene_arm.xml
+
+# 预览离线凸分解输出
+uv run mxview path/to/convex_parts/link1_convex.obj
 
 # 启动空查看器进行拖放交互
-uv run python -m motrixsim.interactive_viewer
+uv run mxview
 ```
 
 CLI 提供了一种无需编写 Python 代码即可快速可视化模型的方式。当提供文件参数时，它会自动：
 
--   加载指定的模型
+-   加载指定的模型，或将 standalone OBJ/STL mesh 包装为只用于显示的最小场景
 -   创建具有初始状态的场景数据
--   运行几个物理步骤以稳定仿真
 -   启动交互式查看器
 
 不带参数启动时，你可以直接将 XML 模型文件拖入查看器窗口即可即时加载。

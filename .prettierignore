@@ -6,3 +6,5 @@ examples/assets/**/*.md
 docs/build/
 docs/CLAUDE.md
 .readthedocs.yaml
+docs/source/_shared
+docs/source/user_guide/getting_started/mjcf_reference.md
