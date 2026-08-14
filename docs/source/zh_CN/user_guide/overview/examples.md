@@ -135,7 +135,7 @@ uv run examples/{category}/{example_name}.py
   - go1 机械狗的随机运动，展示如何引入神经网络和使用`.onnx`文件。
 * - ![go2](/_static/images/poster/go2_keyboard_control.jpg)
   - [`robot_locomotion.py`](../../../../examples/control/robot_locomotion.py)
-  - go2 机械狗的键盘控制示例，方向键和wasd控制机械狗行走与转向。使用 `uv run examples/control/robot_locomotion.py --robot go2` 运行该示例。
+  - go2 机械狗的键盘控制示例，方向键和wasd控制机械狗行走与转向。使用 `uv run examples/control/robot_locomotion.py --robot go2` 在默认的 playground 场景中运行该示例。默认不挂载 lidar；可传入 catalog 型号（例如 `--lidar ouster_os1_rev6_32ch_10hz_512res`）启用，Go1 和 G1 也支持该选项。
 * - ![g1](/_static/images/poster/g1_keyboard_control.jpg)
   - [`robot_locomotion.py`](../../../../examples/control/robot_locomotion.py)
   - g1 人形机器人的键盘控制示例，方向键和wasd控制机器人行走与转向。使用 `uv run examples/control/robot_locomotion.py --robot g1` 运行该示例。

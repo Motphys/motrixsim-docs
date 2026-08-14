@@ -65,6 +65,7 @@ Items marked with <span class="badge mpex">MPEX</span> (**M**ot**p**hys **Ex**te
   <div><a href="#compiler-angle" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">angle</a></div>
   <div><a href="#compiler-assetdir" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">assetdir</a></div>
   <div><a href="#compiler-autolimits" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">autolimits</a></div>
+  <div><a href="#compiler-compress" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">compress</a></div>
   <div><a href="#compiler-eulerseq" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">eulerseq</a></div>
   <div><a href="#compiler-fitaabb" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">fitaabb</a></div>
   <div><a href="#compiler-meshdir" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">meshdir</a></div>
@@ -166,6 +167,23 @@ Items marked with <span class="badge mpex">MPEX</span> (**M**ot**p**hys **Ex**te
 <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; padding: 8px 12px; margin: 4px 0;">
   <div><a href="#asset-model-file" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">file</a></div>
   <div><a href="#asset-model-name" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">name</a></div>
+</div>
+</details>
+</div>
+<div style="margin-bottom: 6px; margin-left: 16px; border-left: 2px solid rgba(127, 127, 127, 0.3); padding-left: 12px;">
+<details>
+<summary style="padding: 8px 12px; background-color: rgba(127, 127, 127, 0.08); border-radius: 6px; cursor: pointer; font-weight: 600; font-family: monospace; transition: background-color 0.2s;"><a href="#asset-lidar" style="text-decoration: none; color: inherit;">lidar</a></summary>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; padding: 8px 12px; margin: 4px 0;">
+  <div><a href="#asset-lidar-cutoff" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">cutoff</a></div>
+  <div><a href="#asset-lidar-elevations" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">elevations</a></div>
+  <div><a href="#asset-lidar-hrange" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">hrange</a></div>
+  <div><a href="#asset-lidar-hscan" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">hscan</a></div>
+  <div><a href="#asset-lidar-hzrange" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">hzrange</a></div>
+  <div><a href="#asset-lidar-name" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">name</a></div>
+  <div><a href="#asset-lidar-pattern" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">pattern</a></div>
+  <div><a href="#asset-lidar-reportrate" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">reportrate</a></div>
+  <div><a href="#asset-lidar-vrange" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">vrange</a></div>
+  <div><a href="#asset-lidar-vscan" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">vscan</a></div>
 </div>
 </details>
 </div>
@@ -473,6 +491,8 @@ Items marked with <span class="badge mpex">MPEX</span> (**M**ot**p**hys **Ex**te
   <div><a href="#option-o_margin" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">o_margin</a></div>
   <div><a href="#option-o_solimp" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">o_solimp</a></div>
   <div><a href="#option-o_solref" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">o_solref</a></div>
+  <div><a href="#option-sdf_initpoints" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">sdf_initpoints</a></div>
+  <div><a href="#option-sdf_iterations" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">sdf_iterations</a></div>
   <div><a href="#option-timestep" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">timestep</a></div>
   <div><a href="#option-tolerance" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">tolerance</a></div>
 </div>
@@ -1103,6 +1123,18 @@ Items marked with <span class="badge mpex">MPEX</span> (**M**ot**p**hys **Ex**te
 </div>
 </details>
 </div>
+<div style="margin-bottom: 6px; margin-left: 16px; border-left: 2px solid rgba(127, 127, 127, 0.3); padding-left: 12px;">
+<details>
+<summary style="padding: 8px 12px; background-color: rgba(127, 127, 127, 0.08); border-radius: 6px; cursor: pointer; font-weight: 600; font-family: monospace; transition: background-color 0.2s;"><a href="#sensor-lidar" style="text-decoration: none; color: inherit;">lidar</a></summary>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 8px; padding: 8px 12px; margin: 4px 0;">
+  <div><a href="#sensor-lidar-asset" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">asset</a></div>
+  <div><a href="#sensor-lidar-exclude" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">exclude</a></div>
+  <div><a href="#sensor-lidar-hz" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">hz</a></div>
+  <div><a href="#sensor-lidar-name" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">name</a></div>
+  <div><a href="#sensor-lidar-site" style="text-decoration: none; font-size: 0.95em; opacity: 0.85;">site</a></div>
+</div>
+</details>
+</div>
 </div>
 </details>
 </div>
@@ -1304,6 +1336,19 @@ This element is used to set options for the built-in parser and
    equivalent-inertia box of the mesh. The type of geometric primitive used
    for fitting is specified separately for each geom.
 
+<div class="motphys-extension-block">
+<div class="motphys-extension-label">MPEX</div>
+
+(compiler-compress)=
+* **`compress`** [ <span class="badge bool">bool</span> | <span class="badge required">Required</span> | **Default:** `false` ]
+
+  Motphys Only: Whether to compress textures at load time. When `true`, D2
+   textures are runtime-compressed to a GPU block-compressed format (BC3 on
+   native) to reduce GPU memory (~1/4). Off by default to keep texture
+   ready/display latency low.
+
+</div>
+
 **Parent Elements**: [`mujoco`](#mujoco)
 
 ---
@@ -1322,7 +1367,7 @@ This is a grouping element for defining assets. It does not have
 
 **Parent Elements**: [`mujoco`](#mujoco)
 
-**Child Elements**: [`material`](#asset-material), [`mesh`](#asset-mesh), [`texture`](#asset-texture), [`hfield`](#asset-hfield), [`gsplat`](#asset-gsplat), [`model`](#asset-model)
+**Child Elements**: [`material`](#asset-material), [`mesh`](#asset-mesh), [`texture`](#asset-texture), [`hfield`](#asset-hfield), [`gsplat`](#asset-gsplat), [`model`](#asset-model), [`lidar`](#asset-lidar)
 
 ---
 
@@ -1486,10 +1531,7 @@ This element creates a mesh asset, which can then be referenced from geoms.
  The size of the mesh is determined by the 3D coordinates of the vertex data
  multiplied by the components of the scale attribute. Scaling is applied
  separately for each coordinate axis. Negative scaling values can be used to
- flip the mesh. The compiler pre-processes the mesh so that it is centered
- around (0,0,0) and its principal axes of inertia are the coordinate axes,
- saving the translation and rotation offsets for subsequent geom-related
- computations.
+ flip the mesh.
 
 ```{note}
 Vertex data in source assets is often relative to coordinate frames whose
@@ -1634,7 +1676,7 @@ As with all other assets, a texture must have a name in order to be
 (asset-texture-type)=
 * **`type`** [ <span class="badge string">string</span> | <span class="badge required">Required</span> | **Default:** `cube` ]
 
-  **Choice:** [ `cube` | `2d` | `skybox` | `envdiff` | `envspec` | `probe` ]
+  **Choice:** [ `cube` | `2d` | `skybox` | `envhdr` | `envdiff` | `envspec` | `probe` ]
 
   This attribute determines how the texture is represented and mapped to
    objects. It also determines which of the remaining attributes are
@@ -1859,6 +1901,79 @@ This element specifies other MJCF models which may be used for attachment
    a valid MJCF model.
 
 **Parent Elements**: [`asset`](#asset)
+
+---
+
+(asset-lidar)=
+#### `lidar` <span class="badge mpex">MPEX</span>
+
+<div class="motphys-extension-block">
+
+A reusable lidar model profile referenced by `sensor/lidar`.
+
+```{note}
+This is a MotrixSim extension to MJCF. It contains reusable model and scan attributes. Sensor
+ identity, mounting site, asset reference, self-filter policy, and scan rate remain on the sensor
+ instance.
+```
+
+**Attributes:**
+
+(asset-lidar-name)=
+* **`name`** [ <span class="badge string">string</span> | <span class="badge required">Required</span> | **Default:** `""` ]
+
+  Name used by sensor instances to reference this profile.
+
+(asset-lidar-cutoff)=
+* **`cutoff`** [ <span class="badge real">real</span> | <span class="badge required">Required</span> | **Default:** `100.0` ]
+
+  Maximum ray distance in meters.
+
+(asset-lidar-pattern)=
+* **`pattern`** [ <span class="badge string">string</span> | <span class="badge required">Required</span> | **Default:** `grid` ]
+
+  **Choice:** [ `grid` | `rings` ]
+
+  Geometric scan pattern.
+
+(asset-lidar-hscan)=
+* **`hscan`** [ <span class="badge int">int</span> | <span class="badge required">Required</span> | **Default:** `1` ]
+
+  Number of horizontal azimuth samples for grid and rings patterns.
+
+(asset-lidar-vscan)=
+* **`vscan`** [ <span class="badge int">int</span> | <span class="badge required">Required</span> | **Default:** `1` ]
+
+  Number of vertical elevation samples for the grid pattern.
+
+(asset-lidar-hrange)=
+* **`hrange`** [ <span class="badge array">real(2)</span> | <span class="badge required">Required</span> | **Default:** `0.0 0.0` ]
+
+  Horizontal azimuth range in degrees.
+
+(asset-lidar-vrange)=
+* **`vrange`** [ <span class="badge array">real(2)</span> | <span class="badge required">Required</span> | **Default:** `0.0 0.0` ]
+
+  Vertical elevation range in degrees for the grid pattern.
+
+(asset-lidar-elevations)=
+* **`elevations`** [ <span class="badge array">real(n)</span> | <span class="badge optional">Optional</span> ]
+
+  Elevation angles in degrees for the rings pattern.
+
+(asset-lidar-reportrate)=
+* **`reportrate`** [ <span class="badge real">real</span> | <span class="badge optional">Optional</span> ]
+
+  Number of horizontal columns reported per second, used to derive `hscan` from `hz`.
+
+(asset-lidar-hzrange)=
+* **`hzrange`** [ <span class="badge array">real(2)</span> | <span class="badge optional">Optional</span> ]
+
+  Supported inclusive full-scan frequency range in hertz; equal endpoints fix the frequency.
+
+**Parent Elements**: [`asset`](#asset)
+
+</div>
 
 ---
 
@@ -2644,7 +2759,7 @@ The following MJCF attributes are not currently supported:
 (worldbody-geom-type)=
 * **`type`** [ <span class="badge string">string</span> | <span class="badge required">Required</span> | **Default:** `sphere` ]
 
-  **Choice:** [ `plane` | `hfield` | `sphere` | `capsule` | `cylinder` | `box` | `ellipsoid` | `mesh` ]
+  **Choice:** [ `plane` | `hfield` | `sphere` | `capsule` | `cylinder` | `box` | `ellipsoid` | `mesh` | `sdf` ]
 
   Type of geometric shape. The keywords have the following meaning: the plane type defines
    a plane which is infinite for collision detection purposes; it can only be attached to the
@@ -3308,6 +3423,16 @@ The most important parameter affecting the speed-accuracy trade-off is `timestep
    override is enabled. Otherwise the element-specific margin attribute of geom or pair is
    used depending on how the contact pair was generated. The related gap parameter does not
    have a global override.
+
+(option-sdf_iterations)=
+* **`sdf_iterations`** [ <span class="badge int">int</span> | <span class="badge required">Required</span> | **Default:** `10` ]
+
+  Number of iterations used for Signed Distance Field collisions (per initial poing)
+
+(option-sdf_initpoints)=
+* **`sdf_initpoints`** [ <span class="badge int">int</span> | <span class="badge required">Required</span> | **Default:** `40` ]
+
+  Number of starting points used for finding contacts with Signed Distance Field collisions
 
 **Parent Elements**: [`mujoco`](#mujoco)
 
@@ -5085,7 +5210,7 @@ This element is a grouping element for sensors.
 
 **Parent Elements**: [`mujoco`](#mujoco)
 
-**Child Elements**: [`touch`](#sensor-touch), [`accelerometer`](#sensor-accelerometer), [`velocimeter`](#sensor-velocimeter), [`gyro`](#sensor-gyro), `force`, `torque`, [`jointpos`](#sensor-jointpos), [`jointvel`](#sensor-jointvel), `jointactuatorfrc`, `ballquat`, `ballangvel`, `jointlimitpos`, `jointlimitvel`, `jointlimitfrc`, `tendonpos`, `tendonvel`, `tendonlimitpos`, `tendonlimitvel`, `tendonlimitfrc`, `actuatorpos`, `actuatorvel`, `actuatorfrc`, [`framepos`](#sensor-framepos), [`framequat`](#sensor-framequat), [`framexaxis`](#sensor-framexaxis), [`frameyaxis`](#sensor-frameyaxis), [`framezaxis`](#sensor-framezaxis), [`framelinvel`](#sensor-framelinvel), [`frameangvel`](#sensor-frameangvel), `framelinacc`, `frameangacc`, [`subtreecom`](#sensor-subtreecom), [`subtreelinvel`](#sensor-subtreelinvel), [`subtreeangmom`](#sensor-subtreeangmom), `distance`, `normal`, `fromto`, [`contact`](#sensor-contact)
+**Child Elements**: [`touch`](#sensor-touch), [`accelerometer`](#sensor-accelerometer), [`velocimeter`](#sensor-velocimeter), [`gyro`](#sensor-gyro), `force`, `torque`, [`jointpos`](#sensor-jointpos), [`jointvel`](#sensor-jointvel), `jointactuatorfrc`, `ballquat`, `ballangvel`, `jointlimitpos`, `jointlimitvel`, `jointlimitfrc`, `tendonpos`, `tendonvel`, `tendonlimitpos`, `tendonlimitvel`, `tendonlimitfrc`, `actuatorpos`, `actuatorvel`, `actuatorfrc`, [`framepos`](#sensor-framepos), [`framequat`](#sensor-framequat), [`framexaxis`](#sensor-framexaxis), [`frameyaxis`](#sensor-frameyaxis), [`framezaxis`](#sensor-framezaxis), [`framelinvel`](#sensor-framelinvel), [`frameangvel`](#sensor-frameangvel), `framelinacc`, `frameangacc`, [`subtreecom`](#sensor-subtreecom), [`subtreelinvel`](#sensor-subtreelinvel), [`subtreeangmom`](#sensor-subtreeangmom), `distance`, `normal`, `fromto`, [`contact`](#sensor-contact), [`lidar`](#sensor-lidar)
 
 ---
 
@@ -6110,6 +6235,55 @@ Exactly one of the following filter groups may be used at a time: (geom1, geom2)
   The method used to reduce multiple contacts to a single output value.
 
 **Parent Elements**: [`sensor`](#sensor)
+
+---
+
+(sensor-lidar)=
+#### `lidar` <span class="badge mpex">MPEX</span>
+
+<div class="motphys-extension-block">
+
+A multi-beam lidar sensor attached to a site.
+
+```{note}
+This is a MotrixSim extension to MJCF. Model and scan attributes are defined by the referenced
+ `asset/lidar` profile; the sensor instance contains only identity, mounting, filtering, and
+ runtime-adjustable scan rate.
+```
+
+**Attributes:**
+
+(sensor-lidar-name)=
+* **`name`** [ <span class="badge string">string</span> | <span class="badge optional">Optional</span> ]
+
+  Name of the sensor.
+
+(sensor-lidar-asset)=
+* **`asset`** [ <span class="badge string">string</span> | <span class="badge required">Required</span> | **Default:** `""` ]
+
+  Name of the required `asset/lidar` profile.
+
+(sensor-lidar-site)=
+* **`site`** [ <span class="badge string">string</span> | <span class="badge required">Required</span> | **Default:** `""` ]
+
+  The site whose local frame defines the ray origins and directions. This attribute is
+   required on sensor instances and is not supplied by `asset/lidar`.
+
+(sensor-lidar-exclude)=
+* **`exclude`** [ <span class="badge string">string</span> | <span class="badge required">Required</span> | **Default:** `parentbody` ]
+
+  **Choice:** [ `none` | `parentbody` | `parentsubtree` ]
+
+  Self-filter policy for colliders belonging to the sensor's parent hierarchy.
+
+(sensor-lidar-hz)=
+* **`hz`** [ <span class="badge real">real</span> | <span class="badge optional">Optional</span> ]
+
+  Full-scan rate in hertz. If omitted, the complete pattern is sampled every physics step.
+
+**Parent Elements**: [`sensor`](#sensor)
+
+</div>
 
 ---
 

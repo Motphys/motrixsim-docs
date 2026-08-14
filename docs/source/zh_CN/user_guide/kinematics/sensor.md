@@ -22,6 +22,7 @@
 | subtreeangmom          | 子树角动量       | 全局       | 3        | 动量守恒、旋转分析             |
 | touch                  | site 接触法向力  | site 局部  | 1        | 触觉感知、碰撞检测、力反馈     |
 | contact                | 几何体间接触信息 | 局部接触系 | 变长     | 触地检测、抓取力反馈、碰撞分析 |
+| lidar                  | collider 点云    | 世界       | beam × 3 | 避障、地形感知、定位与建图     |
 
 ## 🚀 快速开始
 
@@ -82,4 +83,5 @@ sensor/frame
 sensor/subtree
 sensor/touch
 sensor/contact
+sensor/lidar
 ```

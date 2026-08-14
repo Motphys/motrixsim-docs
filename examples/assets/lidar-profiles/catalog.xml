@@ -1,0 +1,6 @@
+<mujoco model="motrixsim_lidar_profile_catalog">
+  <include file="hesai/xt32.xml"/>
+  <include file="ouster/os0.xml"/>
+  <include file="ouster/os1.xml"/>
+  <include file="ouster/os2.xml"/>
+</mujoco>

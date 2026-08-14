@@ -15,6 +15,7 @@
 
 import argparse
 import sys
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 import numpy as np
@@ -29,7 +30,7 @@ from utils.terrain_scan_visualizer import TerrainScanVisualizer
 from motrixsim import GeomHField, SceneData, TerrainScanner, msd
 from motrixsim.render import Layout, RenderApp, RenderSettings
 
-DEFAULT_SCENE = "plane"
+DEFAULT_SCENE = "playground"
 SCENE_FILES = {
     "plane": "examples/assets/common/flat_scene_with_ssgi.xml",
     "parlour": "examples/assets/parlour/parlour.xml",
@@ -73,10 +74,100 @@ SCENE_CAMERA_OVERRIDES = {
 }
 DEFAULT_TERRAIN_SCAN_SCENES = {"stairs"}
 ROBOT_CHOICES = ("g1", "go1", "go2")
+ROBOT_LIDAR_MOUNTS = {
+    G1Robot: {
+        "name": "g1",
+        "link": "torso_link",
+        "pos": (0.0, 0.0, 0.52),
+    },
+    G1Robot12Dof: {
+        "name": "g1",
+        "link": G1Robot12Dof.base_link_name,
+        "pos": (0.0, 0.0, 0.56),
+    },
+    Go1Robot: {
+        "name": "go1",
+        "link": Go1Robot.base_link_name,
+        "pos": (0.25, 0.0, 0.12),
+    },
+    Go2Robot: {
+        "name": "go2",
+        "link": Go2Robot.base_link_name,
+        "pos": (0.25, 0.0, 0.12),
+    },
+}
+LIDAR_PROFILE_DIR = Path(__file__).resolve().parent.parent / "assets" / "lidar-profiles"
+LIDAR_CATALOG_PATH = LIDAR_PROFILE_DIR / "catalog.xml"
 DEFAULT_TERRAIN_SCAN_OFFSETS = np.array(
     [(x, y) for x in np.linspace(-0.8, 0.8, 8) for y in np.linspace(-0.8, 0.8, 8)],
     dtype=np.float32,
 )
+
+
+def load_lidar_profile_rates(catalog_path: Path = LIDAR_CATALOG_PATH) -> dict[str, float]:
+    """Return the fixed scan rate of every profile reachable from the catalog."""
+    profile_rates: dict[str, float] = {}
+    visited: set[Path] = set()
+
+    def visit(path: Path) -> None:
+        path = path.resolve()
+        if path in visited:
+            return
+        visited.add(path)
+        root = ET.parse(path).getroot()
+        for include in root.findall("include"):
+            visit(path.parent / include.attrib["file"])
+        for lidar in root.findall("./asset/lidar"):
+            name = lidar.attrib["name"]
+            hzrange = [float(value) for value in lidar.attrib["hzrange"].split()]
+            if len(hzrange) != 2 or hzrange[0] != hzrange[1]:
+                raise ValueError(f"lidar profile '{name}' must define one fixed hzrange")
+            if name in profile_rates:
+                raise ValueError(f"duplicate lidar profile '{name}'")
+            profile_rates[name] = hzrange[0]
+
+    visit(catalog_path)
+    return profile_rates
+
+
+LIDAR_PROFILE_RATES = load_lidar_profile_rates()
+LIDAR_PROFILE_CHOICES = tuple(LIDAR_PROFILE_RATES)
+
+
+def load_robot_lidar(robot_class: type, profile: str) -> msd.World:
+    """Compile a selected catalog profile and the robot-specific mounting site to MSD."""
+    try:
+        hz = LIDAR_PROFILE_RATES[profile]
+    except KeyError as exc:
+        raise ValueError(f"unknown lidar profile '{profile}'") from exc
+    try:
+        mount = ROBOT_LIDAR_MOUNTS[robot_class]
+    except KeyError as exc:
+        raise ValueError(f"no lidar mount defined for robot class '{robot_class.__name__}'") from exc
+
+    sensor_name = f"{mount['name']}_lidar"
+    site_name = f"{mount['name']}_lidar_site"
+    site_pos = " ".join(f"{value:g}" for value in mount["pos"])
+
+    lidar_mount_mjcf = f"""<mujoco model="{mount["name"]}_lidar_mount">
+  <include file="catalog.xml" />
+  <worldbody>
+    <site name="{site_name}" pos="{site_pos}"
+      quat="0.5 0.5 0.5 0.5" rgba="0 1 0.2 1" size="0.015" />
+  </worldbody>
+  <sensor>
+    <lidar name="{sensor_name}" site="{site_name}"
+      asset="{profile}" exclude="parentsubtree" hz="{hz:g}" />
+  </sensor>
+</mujoco>"""
+    source_path = LIDAR_PROFILE_DIR / "robot_locomotion_lidar.xml"
+    return msd.from_str(lidar_mount_mjcf, file_path=str(source_path))
+
+
+def attach_robot_lidar(robot: msd.World, robot_class: type, profile: str) -> None:
+    """Attach one selected catalog lidar profile to a supported robot."""
+    mount = ROBOT_LIDAR_MOUNTS[robot_class]
+    robot.attach(load_robot_lidar(robot_class, profile), mount["link"])
 
 
 def build_model(
@@ -84,6 +175,7 @@ def build_model(
     robot_class: type,
     camera_position: list[float],
     camera_fovy: float,
+    lidar_profile: str | None = None,
     extra_worlds=None,
     head_camera: dict | None = None,
 ):
@@ -104,6 +196,11 @@ def build_model(
 </mujoco>"""
     camera = msd.from_str(camera_mjcf)
     robot.attach(camera, robot_class.base_link_name)
+
+    if lidar_profile is not None:
+        attach_robot_lidar(robot, robot_class, lidar_profile)
+        scene.visual.sensor.lidar_point_cloud.point_size_px = 6.0
+        scene.visual.sensor.lidar_point_cloud.max_color_distance = 12.0
 
     if head_camera is not None:
         head_pos = " ".join(str(x) for x in head_camera["pos"])
@@ -144,6 +241,7 @@ def run_locomotion(
     camera_position: list[float] | None = None,
     camera_fovy: float | None = None,
     head_camera: dict | None = None,
+    lidar_profile: str | None = None,
 ):
     # Stairs scene only supports G1 robot
     if scene == "stairs" and robot != "g1":
@@ -180,6 +278,7 @@ def run_locomotion(
         RobotClass,
         camera_position,
         camera_fovy,
+        lidar_profile=lidar_profile,
         extra_worlds=extra_worlds,
         head_camera=head_camera,
     )
@@ -236,6 +335,8 @@ def run_locomotion(
 
         # Launch the render instance of the model
         render.launch(model, render_settings=render_settings)
+        if lidar_profile is not None:
+            render.opt.set_lidar_point_vis(True)
 
         # Show the robot's head camera as an on-screen viewport widget. This also puts
         # multiple Gaussian-splat cameras (window + head) on screen at once, which is the
@@ -289,7 +390,7 @@ def run_locomotion(
                 render.sync(data)
 
 
-def main():
+def create_argument_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Keyboard control for robots")
     parser.add_argument(
         "--robot",
@@ -305,10 +406,30 @@ def main():
         default=DEFAULT_SCENE,
         help=f"Scene type to load (default: {DEFAULT_SCENE})",
     )
+    parser.add_argument(
+        "--lidar",
+        choices=LIDAR_PROFILE_CHOICES,
+        default=None,
+        metavar="PROFILE",
+        help="Lidar profile to attach to the selected robot; see --list-lidars (default: no lidar)",
+    )
+    parser.add_argument(
+        "--list-lidars",
+        action="store_true",
+        help="List available lidar profiles and exit",
+    )
+    return parser
+
+
+def main():
+    parser = create_argument_parser()
     args = parser.parse_args()
+    if args.list_lidars:
+        print("\n".join(LIDAR_PROFILE_CHOICES))
+        return
 
     try:
-        run_locomotion(args.robot, args.scene)
+        run_locomotion(args.robot, args.scene, lidar_profile=args.lidar)
     except ValueError as exc:
         parser.error(str(exc))
 

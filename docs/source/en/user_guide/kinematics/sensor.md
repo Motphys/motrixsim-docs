@@ -22,6 +22,7 @@ By configuring sensors, users can more conveniently obtain the state information
 | subtreeangmom          | subtree angular momentum   | global              | 3                 | momentum conservation, rotation analysis                              |
 | touch                  | site contact normal force  | site local          | 1                 | tactile perception, collision detection, force feedback               |
 | contact                | geometric contact info     | local contact frame | variable          | ground contact detection, grasping force feedback, collision analysis |
+| lidar                  | collider point cloud       | world               | beam × 3          | obstacle avoidance, terrain perception, localization and mapping      |
 
 ## 🚀 Quick Start
 
@@ -82,4 +83,5 @@ sensor/frame
 sensor/subtree
 sensor/touch
 sensor/contact
+sensor/lidar
 ```

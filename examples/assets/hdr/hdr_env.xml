@@ -1,0 +1,25 @@
+<mujoco>
+  <compiler assetdir="assets"/>
+  <visual>
+    <headlight diffuse="0.0 0.0 0.0" ambient="0.0 0.0 0.0" specular="0 0 0"/>
+  </visual>
+  <asset>
+    <texture name="env_hdr" type="envhdr" file="empty_warehouse_01_2k.hdr"/>
+    <material name="mat_sample_m_0_r_0" rgba="0.8 0.8 0.8 1.0" reflectance="0.5" roughness="0.0" metallic="1.0"/>
+    <material name="mat_sample_m_0_r_1" rgba="0.8 0.8 0.8 1.0" reflectance="0.5" roughness="0.2" metallic="1.0"/>
+    <material name="mat_sample_m_0_r_2" rgba="0.8 0.8 0.8 1.0" reflectance="0.5" roughness="0.4" metallic="1.0"/>
+    <material name="mat_sample_m_0_r_3" rgba="0.8 0.8 0.8 1.0" reflectance="0.5" roughness="0.6" metallic="1.0"/>
+    <material name="mat_sample_m_0_r_4" rgba="0.8 0.8 0.8 1.0" reflectance="0.5" roughness="0.8" metallic="1.0"/>
+    <material name="mat_sample_m_0_r_5" rgba="0.8 0.8 0.8 1.0" reflectance="0.5" roughness="1.0" metallic="1.0"/>
+  </asset>
+  <worldbody>
+    <camera name="CAM_Camera" pos="0.0 -25.4410686 15.067399" quat="0.8660254 0.5 0.0 0.0" fovy="9.9999997" mode="fixed"/>
+    <light name="LIT_Sun" pos="0.0 0.0 4.0" dir="0.4484359 -0.3361787 -0.8281842" type="directional" diffuse="1.0 1.0 1.0" intensity="2732.0" directional="true" castshadow="true" mode="fixed"/>
+    <geom name="GEO_Shader_Ball_Base_000" pos="-3.75 0.0 0.0" quat="0.9961947 0.0 0.0 0.0871558" type="sphere" size="0.5" material="mat_sample_m_0_r_0" group="2"/>
+    <geom name="GEO_Shader_Ball_Base_001" pos="-2.25 0.0 0.0" quat="0.9961947 0.0 0.0 0.0871558" type="sphere" size="0.5" material="mat_sample_m_0_r_1" group="2"/>
+    <geom name="GEO_Shader_Ball_Base_002" pos="-0.75 0.0 0.0" quat="0.9961947 0.0 0.0 0.0871558" type="sphere" size="0.5" material="mat_sample_m_0_r_2" group="2"/>
+    <geom name="GEO_Shader_Ball_Base_003" pos="0.75 0.0 0.0" quat="0.9961947 0.0 0.0 0.0871558" type="sphere" size="0.5" material="mat_sample_m_0_r_3" group="2"/>
+    <geom name="GEO_Shader_Ball_Base_004" pos="2.25 0.0 0.0" quat="0.9961947 0.0 0.0 0.0871558" type="sphere" size="0.5" material="mat_sample_m_0_r_4" group="2"/>
+    <geom name="GEO_Shader_Ball_Base_005" pos="3.75 0.0 0.0" quat="0.9961947 0.0 0.0 0.0871558" type="sphere" size="0.5" material="mat_sample_m_0_r_5" group="2"/>
+  </worldbody>
+</mujoco>

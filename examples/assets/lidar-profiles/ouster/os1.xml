@@ -1,0 +1,49 @@
+<mujoco model="ouster_os1_profiles">
+  <asset>
+    <lidar name="ouster_os1_rev6_32ch_10hz_512res" cutoff="120" vscan="32"
+      hrange="-180 180" vrange="-22.5 22.5"
+      reportrate="5120" hzrange="10 10"/>
+    <lidar name="ouster_os1_rev6_32ch_10hz_1024res" cutoff="120" vscan="32"
+      hrange="-180 180" vrange="-22.5 22.5"
+      reportrate="10240" hzrange="10 10"/>
+    <lidar name="ouster_os1_rev6_32ch_10hz_2048res" cutoff="120" vscan="32"
+      hrange="-180 180" vrange="-22.5 22.5"
+      reportrate="20480" hzrange="10 10"/>
+    <lidar name="ouster_os1_rev6_32ch_20hz_512res" cutoff="120" vscan="32"
+      hrange="-180 180" vrange="-22.5 22.5"
+      reportrate="10240" hzrange="20 20"/>
+    <lidar name="ouster_os1_rev6_32ch_20hz_1024res" cutoff="120" vscan="32"
+      hrange="-180 180" vrange="-22.5 22.5"
+      reportrate="20480" hzrange="20 20"/>
+    <lidar name="ouster_os1_rev6_128ch_10hz_512res" cutoff="120" vscan="128"
+      hrange="-180 180" vrange="-22.5 22.5"
+      reportrate="5120" hzrange="10 10"/>
+    <lidar name="ouster_os1_rev6_128ch_10hz_1024res" cutoff="120" vscan="128"
+      hrange="-180 180" vrange="-22.5 22.5"
+      reportrate="10240" hzrange="10 10"/>
+    <lidar name="ouster_os1_rev6_128ch_10hz_2048res" cutoff="120" vscan="128"
+      hrange="-180 180" vrange="-22.5 22.5"
+      reportrate="20480" hzrange="10 10"/>
+    <lidar name="ouster_os1_rev6_128ch_20hz_512res" cutoff="120" vscan="128"
+      hrange="-180 180" vrange="-22.5 22.5"
+      reportrate="10240" hzrange="20 20"/>
+    <lidar name="ouster_os1_rev6_128ch_20hz_1024res" cutoff="120" vscan="128"
+      hrange="-180 180" vrange="-22.5 22.5"
+      reportrate="20480" hzrange="20 20"/>
+    <lidar name="ouster_os1_rev7_128ch_10hz_512res" cutoff="170" vscan="128"
+      hrange="-180 180" vrange="-21.2 21.2"
+      reportrate="5120" hzrange="10 10"/>
+    <lidar name="ouster_os1_rev7_128ch_10hz_1024res" cutoff="170" vscan="128"
+      hrange="-180 180" vrange="-21.2 21.2"
+      reportrate="10240" hzrange="10 10"/>
+    <lidar name="ouster_os1_rev7_128ch_10hz_2048res" cutoff="170" vscan="128"
+      hrange="-180 180" vrange="-21.2 21.2"
+      reportrate="20480" hzrange="10 10"/>
+    <lidar name="ouster_os1_rev7_128ch_20hz_512res" cutoff="170" vscan="128"
+      hrange="-180 180" vrange="-21.2 21.2"
+      reportrate="10240" hzrange="20 20"/>
+    <lidar name="ouster_os1_rev7_128ch_20hz_1024res" cutoff="170" vscan="128"
+      hrange="-180 180" vrange="-21.2 21.2"
+      reportrate="20480" hzrange="20 20"/>
+  </asset>
+</mujoco>

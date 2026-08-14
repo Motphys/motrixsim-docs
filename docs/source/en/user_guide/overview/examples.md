@@ -130,7 +130,7 @@ Most examples requiring visual rendering (such as robotic arm control, robot loc
   - Random motion of the Go1 quadruped robot, demonstrating how to integrate a neural network and use `.onnx` files.
 * - ![go2](/_static/images/poster/go2_keyboard_control.jpg)
   - [`robot_locomotion.py`](../../../../examples/control/robot_locomotion.py)
-  - Go2 quadruped keyboard control example: arrow keys and WASD control walking and turning. Use `uv run examples/control/robot_locomotion.py --robot go2` to run.
+  - Go2 quadruped keyboard control example: arrow keys and WASD control walking and turning. Use `uv run examples/control/robot_locomotion.py --robot go2` to run in the default playground scene. No lidar is attached by default; pass a catalog profile such as `--lidar ouster_os1_rev6_32ch_10hz_512res` to enable one. The option also supports Go1 and G1.
 * - ![g1](/_static/images/poster/g1_keyboard_control.jpg)
   - [`robot_locomotion.py`](../../../../examples/control/robot_locomotion.py)
   - G1 humanoid keyboard control example: arrow keys and WASD control walking and turning. Use `uv run examples/control/robot_locomotion.py --robot g1` to run.

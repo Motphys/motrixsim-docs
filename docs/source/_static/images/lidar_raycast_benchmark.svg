@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Lidar raycast throughput benchmark</title>
+  <desc id="desc">Bar chart comparing 63.495 million raycasts per second for one environment with one lidar, 78.324 million for one environment with 128 lidars, and 80.656 million for 1024 environments with one lidar each.</desc>
+  <rect width="900" height="520" rx="12" fill="#ffffff"/>
+  <text x="450" y="34" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700" fill="#172033">Lidar Raycast Throughput</text>
+  <text x="450" y="58" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#526176">Grid 1024×64 · static snapshot · model.step() · median of 3 rounds</text>
+
+  <g font-family="sans-serif" font-size="12" fill="#526176">
+    <line x1="90" y1="420" x2="850" y2="420" stroke="#9aa6b2" stroke-width="1.5"/>
+    <line x1="90" y1="340" x2="850" y2="340" stroke="#d9dee5"/>
+    <line x1="90" y1="260" x2="850" y2="260" stroke="#d9dee5"/>
+    <line x1="90" y1="180" x2="850" y2="180" stroke="#d9dee5"/>
+    <line x1="90" y1="100" x2="850" y2="100" stroke="#d9dee5"/>
+    <text x="78" y="424" text-anchor="end">0</text>
+    <text x="78" y="344" text-anchor="end">20</text>
+    <text x="78" y="264" text-anchor="end">40</text>
+    <text x="78" y="184" text-anchor="end">60</text>
+    <text x="78" y="104" text-anchor="end">80</text>
+    <text x="24" y="260" text-anchor="middle" transform="rotate(-90 24 260)" font-size="14">Million raycasts / second</text>
+  </g>
+
+  <g font-family="sans-serif">
+    <rect x="150" y="166.02" width="150" height="253.98" rx="6" fill="#4c78a8"/>
+    <rect x="375" y="106.70" width="150" height="313.30" rx="6" fill="#59a14f"/>
+    <rect x="600" y="97.38" width="150" height="322.62" rx="6" fill="#f28e2b"/>
+    <text x="225" y="153" text-anchor="middle" font-size="17" font-weight="700" fill="#172033">63.495</text>
+    <text x="450" y="94" text-anchor="middle" font-size="17" font-weight="700" fill="#172033">78.324</text>
+    <text x="675" y="85" text-anchor="middle" font-size="17" font-weight="700" fill="#172033">80.656</text>
+    <text x="225" y="448" text-anchor="middle" font-size="14" font-weight="600" fill="#172033">1 env × 1 lidar</text>
+    <text x="450" y="448" text-anchor="middle" font-size="14" font-weight="600" fill="#172033">1 env × 128 lidars</text>
+    <text x="675" y="448" text-anchor="middle" font-size="14" font-weight="600" fill="#172033">1024 envs × 1 lidar</text>
+    <text x="225" y="469" text-anchor="middle" font-size="12" fill="#526176">65,536 rays / step</text>
+    <text x="450" y="469" text-anchor="middle" font-size="12" fill="#526176">8,388,608 rays / step</text>
+    <text x="675" y="469" text-anchor="middle" font-size="12" fill="#526176">67,108,864 rays / step</text>
+  </g>
+
+  <text x="450" y="505" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#6b778c">Playground scene · 32 logical CPUs · Rayon threads: auto · rendering excluded</text>
+</svg>

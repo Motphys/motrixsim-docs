@@ -182,8 +182,8 @@ Non-finite values and non-positive mass values are ignored with warnings. This g
 | `convexDecomposition`                                          | <span class="badge supported">Supported</span>     | Marks the mesh asset as `collision_cooking = ConvexDecomposition` and enables `CoACDConfig` |
 | Unknown `MeshCollisionAPI.approximation`                       | <span class="badge unsupported">Unsupported</span> | Warns and falls back to the default mesh collider                                           |
 | `FilteredPairsAPI`                                             | <span class="badge supported">Supported</span>     | Creates collision ignore pairs                                                              |
-| `physxCollider:contactOffset`                                  | <span class="badge supported">Supported</span>     | `geometry.margin`                                                                           |
-| `physxCollider:restOffset`                                     | <span class="badge unsupported">Unsupported</span> | Reported as a warning                                                                       |
+| `physxCollision:contactOffset`                                 | <span class="badge supported">Supported</span>     | `geometry.margin`                                                                           |
+| `physxCollision:restOffset`                                    | <span class="badge unsupported">Unsupported</span> | Reported as a warning                                                                       |
 | `MotrixPhysicsGeomAPI`                                         | <span class="badge supported">Supported</span>     | Supports Motrix custom impedance contact model and priority                                 |
 
 (usd-materials-textures)=

@@ -1,0 +1,7 @@
+<mujoco model="hesai_xt32_profiles">
+  <asset>
+    <lidar name="hesai_xt32_sd10" cutoff="120" vscan="32"
+      hrange="-180 180" vrange="-16 15"
+      reportrate="20000" hzrange="10 10"/>
+  </asset>
+</mujoco>

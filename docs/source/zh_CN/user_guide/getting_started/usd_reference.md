@@ -182,8 +182,8 @@
 | `convexDecomposition`                                          | <span class="badge supported">支持</span>     | 标记 mesh asset `collision_cooking = ConvexDecomposition`，并启用 `CoACDConfig` |
 | 未知 `MeshCollisionAPI.approximation`                          | <span class="badge unsupported">未支持</span> | 输出 warning，并回退为默认 mesh collider                                        |
 | `FilteredPairsAPI`                                             | <span class="badge supported">支持</span>     | 生成 collision ignore pair                                                      |
-| `physxCollider:contactOffset`                                  | <span class="badge supported">支持</span>     | `geometry.margin`                                                               |
-| `physxCollider:restOffset`                                     | <span class="badge unsupported">未支持</span> | 输出 warning                                                                    |
+| `physxCollision:contactOffset`                                 | <span class="badge supported">支持</span>     | `geometry.margin`                                                               |
+| `physxCollision:restOffset`                                    | <span class="badge unsupported">未支持</span> | 输出 warning                                                                    |
 | `MotrixPhysicsGeomAPI`                                         | <span class="badge supported">支持</span>     | 支持 Motrix 自定义 impedance contact model 和 priority                          |
 
 (usd-materials-textures)=
